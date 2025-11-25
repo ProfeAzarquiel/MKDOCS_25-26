@@ -1,0 +1,2271 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ud3/">
+      
+      
+        <link rel="next" href="../ud5/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>UD4. Docker - MATERIALES INFORMÁTICA IES AZARQUIEL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unidad-4-introduccion-a-docker" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MATERIALES INFORMÁTICA IES AZARQUIEL" class="md-header__button md-logo" aria-label="MATERIALES INFORMÁTICA IES AZARQUIEL" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MATERIALES INFORMÁTICA IES AZARQUIEL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD4. Docker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="orange"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="green"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MATERIALES INFORMÁTICA IES AZARQUIEL" class="md-nav__button md-logo" aria-label="MATERIALES INFORMÁTICA IES AZARQUIEL" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MATERIALES INFORMÁTICA IES AZARQUIEL
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INICIO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTACIÓN EN LA NUBE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    COMPUTACIÓN EN LA NUBE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../indexc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD0. Libros de referencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1. Infraestructura de Red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2. Infraestructura Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Virtualización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4. Docker
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4. Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concepto-y-caracteristicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONCEPTO Y CARACTERÍSTICAS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INSTALACIÓN DE DOCKER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejecucion-de-contenedores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EJECUCIÓN DE CONTENEDORES
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-imagenes-en-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GESTIÓN DE IMAGENES EN DOCKER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#almacenamiento-de-datos-en-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALMACENAMIENTO DE DATOS EN DOCKER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redes-en-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REDES EN DOCKER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escenarios-multicontenedor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESCENARIOS MULTICONTENEDOR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-imagenes-en-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CREACIÓN DE IMÁGENES EN DOCKER
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5. Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BIGDATA APLICADO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BIGDATA APLICADO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BIGDATA/indexb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BIGDATA/ud0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD0. Libros de referencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BIGDATA/ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1. Introducción a BigData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BIGDATA/ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2. Ingesta de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BIGDATA/ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Ecosistema Hadoop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DISEÑO WEB
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DISEÑO WEB
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/indexw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/ud0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD0. Libros de referencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1. Principios del Diseño
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2. Maquetación CSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Preprocesadores CSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PYTHON
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PYTHON
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYTHON/indexp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYTHON/ud0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD0. Libros de referencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYTHON/ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1. Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYTHON/ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2. Análisis de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concepto-y-caracteristicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONCEPTO Y CARACTERÍSTICAS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INSTALACIÓN DE DOCKER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejecucion-de-contenedores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EJECUCIÓN DE CONTENEDORES
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-imagenes-en-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GESTIÓN DE IMAGENES EN DOCKER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#almacenamiento-de-datos-en-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALMACENAMIENTO DE DATOS EN DOCKER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redes-en-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REDES EN DOCKER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escenarios-multicontenedor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESCENARIOS MULTICONTENEDOR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-imagenes-en-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CREACIÓN DE IMÁGENES EN DOCKER
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="unidad-4-introduccion-a-docker">UNIDAD 4: INTRODUCCIÓN A DOCKER</h1>
+<h2 id="concepto-y-caracteristicas">CONCEPTO Y CARACTERÍSTICAS</h2>
+<h3 id="que-es-docker">¿QUE ES DOCKER?</h3>
+<ul>
+<li>Tecnología de virtualización ligera de software libre, también conocida como virtualización por contenedores.</li>
+<li>Son entornos de ejecución aislados, con su propio sistema de ficheros, su propia configuración de red y que acceden directamente a los recursos del anfitrión (memoria, procesador...)</li>
+<li>No tienen kernel propio, utilizan el del anfitrión.</li>
+<li>Su uso principal es para el despliegue de aplicaciones.</li>
+</ul>
+<p><img alt="Logo Docker" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/1024px-Docker_%28container_engine%29_logo.svg.png" /></p>
+<h3 id="elementos-basicos-de-docker">ELEMENTOS BÁSICOS DE DOCKER</h3>
+<ul>
+<li><strong>IMAGEN</strong>: aplicación empaquetada, es el sistema de ficheros de nuestro contenedor</li>
+<li><strong>CONTENEDOR</strong>: una imagen en ejecución</li>
+<li>Los contenedores pueden conectarse a diferentes <strong>REDES VIRTUALES</strong> y tienen sus propios <strong>VOLÚMENES</strong> o sistemas de almacenamiento.</li>
+</ul>
+<h3 id="arquitectura-de-docker">ARQUITECTURA DE DOCKER</h3>
+<ul>
+<li><strong>DEMONIO</strong>: es el más importante (Docker Engine) estará siempre en ejecución y es el que gestiona los contenedores</li>
+<li><strong>CLIENTE</strong>: linea de comandos que nos permite decirle al demonio que queremos hacer</li>
+<li><strong>REGISTRO</strong>: repositorio de imágenes local (existe tambien uno público, Docker Hub, de donde podemos descargar)</li>
+<li><strong>DOCKER SWARN</strong>: software orquestador de contenedores de Docker. Sirve para gestionar y automatizar la operativa con conjuntos de contenedores ejecutados en clusteres de servidores. El más conocido es <strong>KUBERNETES</strong>.
+<img alt="Arquitectura Docker" src="https://miro.medium.com/v2/resize:fit:1400/1*09i6gCc0tBhSsXToKA7Cnw.png" /></li>
+</ul>
+<p>Algunas <strong>alternativas a Docker</strong> son:</p>
+<ul>
+<li>Podman (RedHat)</li>
+<li>Containerd (proyecto independiente basado en Docker)</li>
+<li>CRI-0 (RedHat, pensada para trabajar con Kubernetes)</li>
+<li>Pouch (AliBaba).</li>
+</ul>
+<h2 id="instalacion-de-docker">INSTALACIÓN DE DOCKER</h2>
+<ul>
+<li><a href="https://docs.docker.com/engine/install/">Documentación oficial</a></li>
+<li><a href="https://docs.docker.com/engine/install/ubuntu/">Requerimientos mínimos Ubuntu</a></li>
+<li>
+<p>Docker solo corre sobre distribuciones Linux, para Windows y MAC, se puede usar instalando el software <strong>Docker Desktop</strong>, que en realidad crea una máquina virtual Linux para ejecutar el demonio Docker sobre ella. Sin embargo el cliente si corre sobre el SO anfitrión.</p>
+</li>
+<li>
+<p>Existen varios métodos de instalación, en nuestro caso usaremos los repositorios apt de de Docker:</p>
+<ol>
+<li>
+<p>Actualizamos los repositorios e instalamos los paquetes necesarios para instalar desde repositorios HTTPS:</p>
+<div class="language-text highlight"><pre><span></span><code>sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+</code></pre></div>
+</li>
+<li>
+<p>Añadir la clave GPG oficial de Docker:</p>
+<div class="language-text highlight"><pre><span></span><code>sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+</code></pre></div>
+</li>
+<li>
+<p>Añadimos el repositorio oficial de Docker:</p>
+<div class="language-text highlight"><pre><span></span><code>echo \
+&quot;deb [arch=&quot;$(dpkg --print-architecture)&quot; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+&quot;$(. /etc/os-release &amp;&amp; echo &quot;$VERSION_CODENAME&quot;)&quot; stable&quot; | \
+sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</code></pre></div>
+</li>
+<li>
+<p>Instalamos Docker Engine:</p>
+<div class="language-text highlight"><pre><span></span><code>sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</code></pre></div>
+</li>
+</ol>
+</li>
+<li>
+<p>Para manejar Docker con un usuario sin privilegio, debemos añadir el usuario al grupo <code>docker</code>, para ello:</p>
+<div class="language-text highlight"><pre><span></span><code>sudo usermod -aG docker $USER
+</code></pre></div>
+</li>
+<li>
+<p>Debes volver a iniciar una terminal con el usuario, o ejecutar el siguiente comando:</p>
+<div class="language-text highlight"><pre><span></span><code>su - $USER
+</code></pre></div>
+</li>
+<li>
+<p>Y finalmente, comprobamos la versión con la que vamos a trabajar:</p>
+<div class="language-text highlight"><pre><span></span><code>docker --version
+</code></pre></div>
+</li>
+<li>
+<p>Si queremos más información de las versiones de los componentes con los que vamos a trabajar, ejecutamos:</p>
+<div class="language-text highlight"><pre><span></span><code>docker version
+</code></pre></div>
+</li>
+<li>
+<p>Para más información del sistema que hemos instalado podemos ejecutar:</p>
+<div class="language-text highlight"><pre><span></span><code>docker info
+</code></pre></div>
+</li>
+</ul>
+<h2 id="ejecucion-de-contenedores">EJECUCIÓN DE CONTENEDORES</h2>
+<ul>
+<li><strong>HOLA MUNDO:</strong></li>
+<li>
+<p>Todos los subcomandos referidos a contenedores, estan dentro del bloque "docker container", pero por abreviación, se omite "container" y solo se escribe "docker". Por ejemplo: <strong>docker container run = docker run</strong></p>
+</li>
+<li>
+<p>Para ver todos los subcomandos con referidos a contenedores, podemos ejecutar:</p>
+<div class="language-text highlight"><pre><span></span><code>docker container
+</code></pre></div>
+</li>
+<li>
+<p>Como mínimo, para crear un contenedor debemos indicarle una imagen. Esa imagen debe estar en nuestro REGISTRO (repositorio) local, si no es así, la buscara en el REGISTRO público (<strong>Docker Hub</strong>) y la descargará. Por ejemplo, existe la imagen pública "hello-world" que ejecuta un programa Hello World en el contenedor.</p>
+</li>
+<li>
+<p>Si no especificamos un nombre de contenedor al crearlo, la herramienta le asigna un nombre aleatorio.</p>
+</li>
+<li>
+<p>Todas las imágenes tienen definido un comando por defecto que ejecutarán al crear un contenedor con ellas. Por ejemplo, en el caso de las imagenes de sistemas operativos, como ubuntu, por defecto ejecutan el comando  <strong><code>bash</code></strong>.</p>
+</li>
+<li>
+<p><strong>COMANDOS DE GESTIÓN BÁSICA:</strong></p>
+</li>
+<li>
+<p>Crear y ejecutar un contenedor:</p>
+<div class="language-text highlight"><pre><span></span><code>docker run hello-world
+</code></pre></div>
+</li>
+<li>
+<p>Crear un contenedor sin ejecutarlo:</p>
+</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>create<span class="w"> </span>hello-world
+</span></code></pre></div>
+<ul>
+<li>Iniciar un contenedor ya creado:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>start<span class="w"> </span>-a<span class="w"> </span>micontenedor1
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># La opción -a sirve para ver la salida que genera la ejecución de ese contenedor, en este caso el mensaje &quot;Hello form Docker!&quot;</span>
+</span></code></pre></div>
+<ul>
+<li>Pausar la ejecución de un contenedor:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>pause<span class="w"> </span>micontenedor
+</span></code></pre></div>
+<ul>
+<li>Finalizar la ejecución de un contenedor:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>stop<span class="w"> </span>micontenedor
+</span></code></pre></div>
+<ul>
+<li>Reiniciar la ejecución de un contenedor:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>restart<span class="w"> </span>micontenedor
+</span></code></pre></div>
+<ul>
+<li>Renombrar un contenedor ya creado:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>rename<span class="w"> </span>micontenedor<span class="w"> </span>nuevo_nombre
+</span></code></pre></div>
+<ul>
+<li>Borrar un contenedor:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="c1">#Mediante su ID:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span>docker<span class="w"> </span>rm<span class="w"> </span>64f44087771a
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="c1"># Mediante su nombre</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>docker<span class="w"> </span>rm<span class="w"> </span>micontenedor1
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="c1"># Para forzar el borrado de un contenedor en ejecución, se usaría la opción -f</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>micontenedor1
+</span></code></pre></div>
+<ul>
+<li>Enlazar con la entrada/salida de un contenedor interactivo en ejecución:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>attach<span class="w"> </span>micontenedor
+</span></code></pre></div>
+<ul>
+<li>Mostrar contenedores en ejecución:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span>ps
+</span></code></pre></div>
+<ul>
+<li>Mostrar contenedores creados:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a
+</span></code></pre></div>
+<ul>
+<li>Mostrar imágenes de nuestro REGISTRO local:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker<span class="w"> </span>images
+</span></code></pre></div>
+<ul>
+<li>Descargar una imagen del REGISTRO público:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">#Por ejemplo, descargar la imagen del SO Ubuntu</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>docker<span class="w"> </span>pull<span class="w"> </span>ubuntu
+</span></code></pre></div>
+<ul>
+<li>Visualizar los pasos que se dan cuando creamos o ejecutamos contenedores:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">#Dejamos lanzado este comando y se nos mostrarán logs detallados de todos las acciones que ejecutemos despues:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>docker<span class="w"> </span>events
+</span></code></pre></div>
+<ul>
+<li><strong>OPCIONES COMUNES SOBRE LOS COMANDOS BÁSICOS:</strong></li>
+<li>Indicar nombre del contenedor al crearlo:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>contenedor1<span class="w"> </span>ubuntu
+</span></code></pre></div>
+<ul>
+<li>Para especificar que comando o comandos queremos que ejecute nuestro contenedor, se indican despues de la imagen:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>contenedor1<span class="w"> </span>ubuntu<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hola Mundo&quot;</span>
+</span></code></pre></div>
+<ul>
+<li>Indicar hostname del contenedor al crearlo:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">#Aunque no es muy común utilizarlo, ya que los contenedores ofrecen un servicio y por lo general no nos conectamos a ellos. Es decir, no suelen tratarse como máquinas virtuales tradicionales a las que solemos conectarnos para realizar distintas tareas</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>docker<span class="w"> </span>-h<span class="w"> </span>contenedor_ubuntu
+</span></code></pre></div>
+<ul>
+<li>Crear una sesión de terminal interactivo al crear un contenedor:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>contenedor2<span class="w"> </span>-h<span class="w"> </span>cont2<span class="w"> </span>ubuntu<span class="w"> </span>bash
+</span></code></pre></div>
+<ul>
+<li>Borrar el contenedor despues de que termine su ejecución:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>--name<span class="w"> </span>contenedor3<span class="w"> </span>-h<span class="w"> </span>cont3<span class="w"> </span>ubuntu<span class="w"> </span>top
+</span></code></pre></div>
+<ul>
+<li><strong>CONTENEDORES DEMONIO:</strong> ejecutan procesos indefinidamente y de forma desatendida (no veremos su salida). Ejemplo:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># La opción -d indica que la ejecución es desatendida, es decir, no veremos su salida. Y la opción -c, permite especificar entre comillas, un listado de comandos para ejecutar:</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>micontenedor<span class="w"> </span>ubuntu<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;while true; do echo hello world; sleep 1; done&quot;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># Para ver la salida generada por un contenedor demonio</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>docker<span class="w"> </span>logs<span class="w"> </span>micontenedor
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="c1">#Y si queremos verlo de forma continuada, podemos especificar</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>micontenedor
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="c1"># Para detener un contenedor demonio</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>docker<span class="w"> </span>stop<span class="w"> </span>micontenedor
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="c1"># Una vez detenido, podemos eliminarlo si queremos</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>docker<span class="w"> </span>rm<span class="w"> </span>micontenedor
+</span></code></pre></div>
+<ul>
+<li><strong>CREACIÓN DE VARIABLES DE ENTORNO ASOCIADAS A UN CONTENEDOR:</strong> Las variables de entorno son del tipo "clave:valor", y podemos crearlas al arrancar un contenedor. En el siguiente ejemplo, creamos la variable "USUARIO" y le asignamos el valor "prueba":</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">#Crea un contenedor interactivo (-it) con la imagen de ubuntu y define una variable de entorno (-e) para ese contenedor:</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>micontenedor<span class="w"> </span>-e<span class="w"> </span><span class="nv">USUARIO</span><span class="o">=</span>prueba<span class="w"> </span>ubuntu
+</span></code></pre></div>
+<ul>
+<li>Para comprobar que realmente se ha creado la variable, dentro del BASH del contenedor escribimos <strong><code>env</code></strong> y veremos todas las variables d entorno.</li>
+<li>
+<p>Las variables de entorno, suele utilizarse mucho para definir ciertos parámetros de configuración de las aplicaciones que se desplegamos mediante contenedores.</p>
+</li>
+<li>
+<p><strong>COMANDOS DE GESTIÓN MÁS AVANZADOS:</strong>
+Ejecutar un comando dentro de un contenedor en ejecución:</p>
+</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>docker<span class="w">  </span><span class="nb">exec</span><span class="w"> </span>micontenedor<span class="w"> </span>ls
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="c1">#o</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>micontenedor<span class="w"> </span>cat<span class="w"> </span>datos.txt
+</span></code></pre></div>
+<p>El comando anterior es muy utilizado para levantar sesiones interactivas de consola en contenedores ya creados, por ejemplo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Abrir una sesión interactiva en un contenedor MariaDB existente, ejecutando bash y pasándole usuario y contraseña para autenticarse</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>some-mariadb<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;mysql -u root -p$MARIADB_ROOT_PASSWORD&#39;</span>
+</span></code></pre></div>
+<p>Copiar ficheros del Host al Contenedor o viceversa:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1">#Para copiar del host al contenedor, se especifica el nombre del contenedor y el directorio donde lo queremos copiar</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>docker<span class="w"> </span>cp<span class="w"> </span>mifichero.txt<span class="w"> </span>micontenedor:/
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1">#Para copiar del contenedor al host, debemos especificar el directorio destino, en este caso &quot;.&quot; para indicar el directorio actual</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>docker<span class="w"> </span>cp<span class="w"> </span>micontenedor:/hora.txt<span class="w"> </span>.
+</span></code></pre></div>
+<p>Visualizar los procesos que se estan ejecutando dentro de un contenedor:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>docker<span class="w"> </span>top<span class="w"> </span>micontenedor
+</span></code></pre></div>
+<p>Obtener información detallada de un contenedor:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Muestra en formato JSON el identificador, puertos abiertos, almacenamiento, tamaño, configuración de red, comandos, varibles de entorno... </span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>docker<span class="w"> </span>inspect<span class="w"> </span>micontenedor
+</span></code></pre></div>
+<p>Podemos formatear la salida del comando anterior, para que solo muestre ciertos parámetros:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Para mostrar el ID del contenedor</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>docker<span class="w"> </span>inspect<span class="w"> </span>--format<span class="o">=</span><span class="s1">&#39;{{.Id}}&#39;</span><span class="w"> </span>micontenedor
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="c1">#Para mostrar todas las variables de entorno:</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>docker<span class="w"> </span>inspect<span class="w"> </span>--format<span class="o">=</span><span class="s1">&#39;{{range .Config.Env}}{{println .}}{{end}}&#39;</span><span class="w"> </span>micontenedor
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="c1">#Para mostrar la dirección o direcciones IPs que tiene el contenedor:</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>docker<span class="w"> </span>inspect<span class="w"> </span>--format<span class="o">=</span><span class="s1">&#39;{{range .NetworkSettings.Networks}}{{IPAddress}}{{end}}&#39;</span><span class="w"> </span>micontenedor
+</span></code></pre></div>
+<p>Etiquetar contenedores, para filtrarlos o agruparlos</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># USO ETIQUETADO</span>
+</span></code></pre></div>
+<p>Limitar recursos utilizados por contenedores:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># La cantidad de CPU --cpus</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="c1"># La cantidad de memoria --memory</span>
+</span></code></pre></div>
+<p>Visualizar estadísticas de uso de recursos de un contenedor</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># ESTADISTICAS</span>
+</span></code></pre></div>
+<p>Modificar en tiempo real las limitaciones de recursos de un contenedor en ejecución</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># MODIFICACIÓN LIMITACIONES</span>
+</span></code></pre></div>
+<h3 id="desplegar-un-servidor-web-apache-con-docker">DESPLEGAR UN SERVIDOR WEB APACHE CON DOCKER</h3>
+<p>Generalmente, nunca se va a utilizar la dirección IP del contenedor para acceder a los servicios que despliega, ya que esta es dinámica y puede ir cambiando dependiendo de que acciones realicemos en el contenedor.</p>
+<p>Además, la dirección IP de un contenedor solamente es accesible desde el anfitrión. No sería alcanzable desde otros equipos de la red.</p>
+<p>Por lo tanto, en este caso para acceder al servidor Web que nos proporcionará este contenedor, vamos a <code>mapear puertos</code>. Es decir, con la opción <code>-p</code> indicamos que cuando accedamos al puerto 8080 del host, esa petición se reenvíe al puerto 80 del contenedor, independientemente de la dirección IP.</p>
+<p>Sería como si definieramos una regla de NAT en el Firewall del anfitrión.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># httpd:2.4 es la imagen oficial del Servidor Web APACHE</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>my-apache-app<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>httpd:2.4
+</span></code></pre></div>
+<p>Para ver las redirecciones o nateos que se están haciendo en nuestro contenedor:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1"># Muestra tanto IPv4 como IPv6</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>docker<span class="w"> </span>port<span class="w"> </span>my-apache-app
+</span></code></pre></div>
+<p>Para conectarnos al servidor web bastará con ir al navegador del host y acceder a <code>https://localhost:8080</code></p>
+<h3 id="desplegar-un-servidor-de-bbdd-con-docker">DESPLEGAR UN SERVIDOR DE BBDD CON DOCKER</h3>
+<h2 id="gestion-de-imagenes-en-docker">GESTIÓN DE IMAGENES EN DOCKER</h2>
+<p>Las imágenes son plantillas de solo lectura que define el sistema de ficheros que va a tener el contenedor. También establece el comando por defecto que ejecutará ese contenedor, siempre que no se indique otro.</p>
+<p>Por defecto en docker se usa el registro público de Docker Hub para descargar imágenes a nuestro registro local.</p>
+<p>La nomenclatura para identificar una imagen es <code>usuario/nombre:etiqueta</code>. Las imágenes oficiales de docker vienen sin nombre de usuario para diferenciarlas.</p>
+<p>Si no idicamos etiqueta al usar una imagen, por defecto se utiliza la etiqueta "latest" que se refiere a la última versión disponible de esa imagen.</p>
+<p>Además de la version, las etiquetas pueden indicar la tecnología interna que se usa para servir esa aplicación y el SO base que usa esa imagen.</p>
+<ul>
+<li><strong>¿Como se organizan las imágenes?</strong>
+El sistema de ficheros (FS) de una imágen se llama sistema de ficheros de unión, ya que es el resultado de la unión de varias capas.</li>
+</ul>
+<p>Cada capa representa una serie de directorios, que al juntarlos todos obtenemos nuestro FS final.</p>
+<p>Las imagenes suelen partir de una capa base, que contiene los directorios y archivos básicos para su funcionamiento. Y luego cada una de las otras capas define un conjunto de diferencias respecto a la capa anterior (ficheros añadidos, modificados o eliminados).</p>
+<p><img alt="Formato capas Docker" src="https://miro.medium.com/v2/resize:fit:1138/1*B5qyIxFVIDvFOcx7t1ogsQ.png" /></p>
+<p>Si tengo varias imágenes que tengan la misma capa base, solo se almacenará una vez en nuestra máquina y será compartida por todas esas imágenes. Esto podemos verlo con el comando:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1"># Nos da la información del almacenamiento utilizado por docker</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>docker<span class="w"> </span>system<span class="w"> </span>df<span class="w"> </span>-v
+</span></code></pre></div>
+<p>Esto por ejemplo tambien ocurre cuando creamos contenedores con diferentes versiones de una misma imagen, muchas de sus capas, son compartidas.</p>
+<p>Cuando creamos un contenedor, usa el FS de la imagen en <code>solo lectura</code>. Por tanto, cuando instalamos o modificamos algo en un contenedor, esto se hace en una nueva <code>capa de lectura/escritura</code> que se genera al crearlo, para así no modificar las capas de la imagen. De este modo, si creamos varios contenedores a partir de la misma imagen, todos ellos compartirar el mismo FS.</p>
+<p>Esto hace que al crear un contenedor, su tamaño sea mínimo Esto podemos verlo con el comando:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1"># La opción -s nos muestra el tamaño del contenedor</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="c1"># indicando el tamaño de la capa R/W del contenedor y</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="c1"># el tamaño (virtual) del FS de la imagen usada</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w"> </span>-s
+</span></code></pre></div>
+<p>Cuando borramos un contenedor, esta capa R/W desaparece, se perderían los datos de ese contenedor.</p>
+<h3 id="comandos-de-gestion-de-imagenes">COMANDOS DE GESTIÓN DE IMÁGENES</h3>
+<ul>
+<li>Buscar imágnes en Docker Hub:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>docker<span class="w"> </span>search<span class="w"> </span>nginx
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="c1"># Si queremos ver los posibles filtros</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>docker<span class="w"> </span>search<span class="w"> </span>--help
+</span></code></pre></div>
+<ul>
+<li>Para borrar una imagen que ya no vayamos a usar:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>docker<span class="w"> </span>rmi<span class="w"> </span>hello-world
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">ATENCIÓN:</p>
+<p>No podremos borrar una imagen de nuestro repositorio local, mientras exista algún contenedor creado a partir de ella.</p>
+</div>
+<ul>
+<li>Ver la información detallada de una imagen, como su identificador, puertos que utiliza, arquitectura, SO, variables de entorno, el comando por defecto, las distintas capas...</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>docker<span class="w"> </span>inspect<span class="w"> </span>nginx:stable
+</span></code></pre></div>
+<h3 id="docker-hub">DOCKER HUB</h3>
+<p><a href="https://hub.docker.com/">Enlace Docker Hub</a></p>
+<p>Su filosofía es bastante parecida a GitHub, ya que denominan a las imágenes como repositorios y usan practicamente los mismos comandos que este (pull, push, commit...)</p>
+<p>Existe contenido confiable marcado con 3 tipos de insignias, como <code>imagen oficial de docker</code> (las mantiene el equipo de docker), <code>proveedores verificados</code> (suelen ser fabricantes reconocidos) y <code>proyectos de código libre esponsorizados</code>.</p>
+<p>Podemos entrar a un repositorio par ver toda su información, etiquetas, versiones, como utilizarlo... Hay imagenes de SO, de servicios (apache, maraidb...), de lenguajes de programación o aplicaciones comerciales (Wordpress...)</p>
+<p>Es imporante tener en cuenta la arquitectura en la que estamos trabajando, ya que dependiendo de eso deberemos buscar una imagen u otra.</p>
+<h2 id="almacenamiento-de-datos-en-docker">ALMACENAMIENTO DE DATOS EN DOCKER</h2>
+<p>Para no perder la información generada por los contenedores una vez sean borrados (por defecto se guarda en la capa R/W del contenedor), existen formas de almacenarla en el equipo anfitrión.</p>
+<p>Un <strong>VOLUMEN</strong> es un directorio creado y gestionados únicamente por Docker, que se va a montar en un directorio interno del contenedor. Es decir, cuando guardemos información en ese directorio montado, se estaremos escribiendo en el directorio de nuestro Host que corresponde a ese volumen. Es decir, esa información no se perdería al borrar el contenedor.</p>
+<p>El directorio del contenedor donde se montan es <code>/var/lib/docker/volumes/</code>.</p>
+<p>Los volúmenes se pueden montar simultaneamente en diferentes contenedores (almacenamiento compartido). Es decir, lo que escribe un contenedor, puede ser leido más tarde por otro contenedor.</p>
+<p>Como la información persiste al borrar el contenedor, podemos usar esa información para que sea utilizada por otro contenedor que creemos en el futuro. Además, gracias a esto son muy útiles para realizar copias de seguridad o migrar datos.</p>
+<p>Hay dos posibles formas de asociar un volumen a un contenedor, ambas hacen exactamente lo mismo pero tienen diferente nomenclatura:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Volumen con <code>-v</code></label><label for="__tabbed_1_2">Volumen con <code>--mount</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="w">    </span>-v<span class="w"> </span>miweb:/usr/local/apache2/htdocs:ro
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="w">    </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>volume,src<span class="o">=</span>miweb,dst<span class="o">=</span>/usr/local/apache2/htdocs,ro
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Otra opción es <strong>BIND MOUNT</strong>, que es un directorio o fichero propiedad del usuario, que podemos montar en un directorio interno del contenedor.</p>
+<p>Se referencian por su ruta completa, aunque podemos crear un punto de montaje para más comodidad.</p>
+<p>En este caso, no se gestionan desde el cliente Docker. Y se puede cambiar su contenido desde el anfitrión.</p>
+<p>Son útiles cuando queremos compartir archivos de configuración o código fuente en nuestro contenedor. Y al igual que pasaba con los volúmenes, podemos asociarlos a un contenedor de dos formas distintas:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Bind Mount con <code>-v</code></label><label for="__tabbed_2_2">Bind Mount con <code>--mount</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="w">    </span>-v<span class="w"> </span>/opt/web:/usr/local/apache2/htdocs:ro
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="w">    </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,src<span class="o">=</span>/opt/web,dst<span class="o">=</span>/usr/local/apache2/htdocs,ro
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Volumenes y BindMount Docker" src="https://iamachs.com/images/posts/docker/part-5-understanding-docker-storage-and-volumes/docker-storage.png" width="350" /></p>
+<ul>
+<li><strong>Ejercicio con Volúmenes:</strong>
+Todos los subcomandos de acciones con Volúmenes, estan bajo el bloque <code>docker volume</code>. Por ejemplo:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c1"># Para crear un volumen:</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>docker<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>mivolumen
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="c1"># Para borrar un volumen:</span>
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>docker<span class="w"> </span>volume<span class="w"> </span>rm<span class="w"> </span>mivolumen
+</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>
+</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="c1"># Mostrar los volumenes creados:</span>
+</span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a>docker<span class="w"> </span>volume<span class="w"> </span>ls
+</span><span id="__span-41-9"><a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>
+</span><span id="__span-41-10"><a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="c1"># Mostrar información detallada de un volumen que hayamos creado:</span>
+</span><span id="__span-41-11"><a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a>docker<span class="w"> </span>volume<span class="w"> </span>inspect<span class="w"> </span>mivolumen
+</span></code></pre></div>
+<p>Para asociar un contenedor a un volumen que hayamos creado, un comando de ejemplo sería el siguiente. Aunque igualmente, si indicamos un volumen que no se haya creado previamente, docker lo creará en este momento:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>
+</span></code></pre></div>
+<p>Podemos comprobar el acceso al servidor web usando el navegador web o desde la consola, usando el comando <code>curl</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>curl<span class="w"> </span>http://localhost:8080
+</span></code></pre></div>
+<ul>
+<li><strong>Ejercicios con Bind Mount:</strong></li>
+</ul>
+<p>En este caso, no necesitamos crear volúmenes, si no que vamos a crear un directorio en el sistema de archivos del Host, donde añadiremos nuestro fichero <code>index.html</code>. Para ello, desde la consola del host:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>mkdir<span class="w"> </span>miweb
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="nb">cd</span><span class="w"> </span>miweb
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;h1&gt;Hola Mundo&lt;/h1&gt;&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>index.html
+</span></code></pre></div>
+<p>A continuación, ya podemos montar ese directorio en un contenedor:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>my-apache-app<span class="w"> </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,src<span class="o">=</span>/home/usuario/miweb,dst<span class="o">=</span>/usr/local/apache2/htdocs<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>httpd:2.4
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="c1"># O si lo preferimos, sería lo mismo que:</span>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>my-apache-app<span class="w"> </span>-v<span class="w"> </span>/home/usuario/miweb:/usr/local/apache2/htdocs<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>httpd:2.4
+</span></code></pre></div>
+<p>En este caso, con bind mount, puedo modificar mi fichero HTML desde el anfitrión y al estar montado, esos cambios se verán directamente reflejados en mi servidor web.</p>
+<h3 id="desplegar-el-servicio-nextcloud-en-un-contenedor-con-almacenamiento-persistente">DESPLEGAR EL SERVICIO NEXTCLOUD EN UN CONTENEDOR CON ALMACENAMIENTO PERSISTENTE</h3>
+<p>Lo primero es ir a la página de documentación de la imagen de Nextcloud en <a href="https://hub.docker.com/_/nextcloud">Docker Hub</a>.</p>
+<p>Allí buscamos el apartado <code>Persistent data</code> para saber cual es el directorio que debo montar en un volumen para no perder los datos que nos interesan generados por esta aplicación. En este caso sería <code>/var/www/html</code>.</p>
+<p>Por lo tanto, si usamos volumenes el comando quedaría algo así:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>-v<span class="w"> </span>nextcloud:/var/www/html<span class="w"> </span>--name<span class="w"> </span>contenedor_nextcloud<span class="w"> </span>nextcloud:28.0.1
+</span></code></pre></div>
+<h3 id="desplegar-el-servicio-mariadb-en-un-contenedor-con-almacenamiento-persistente">DESPLEGAR EL SERVICIO MARIADB EN UN CONTENEDOR CON ALMACENAMIENTO PERSISTENTE</h3>
+<p>De nuevo, vamos a la página de documentación de la imagen que vamos a usar en <a href="https://hub.docker.com/_/mariadb">Docker Hub</a>.</p>
+<p>En el caso de MariaDB, la información sobre alamcenamiento persistente, aparece bajo el título <code>Where to Store Data</code>. Ahí podemos leer que el directorio a montar es <code>/var/lib/mysql</code></p>
+<p>En este caso vamos a hacerlo con Bind Mount, y quedaría así:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>some-mariadb<span class="w"> </span>-v<span class="w"> </span>/opt/mariadb:/var/lib/mysql<span class="w"> </span>-e<span class="w"> </span><span class="nv">MARIADB_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw<span class="w"> </span>-d<span class="w"> </span>mariadb:10.5
+</span></code></pre></div>
+<p>Si el directorio <code>/opt/mariadb</code> no existe en nuestro host, con la opción -v se creará en ese momento.</p>
+<h3 id="otros-usos-del-almacenamiento-persistente">OTROS USOS DEL ALMACENAMIENTO PERSISTENTE</h3>
+<ul>
+<li>
+<p>Almacenamiento compartido entre distintos contenedores.</p>
+</li>
+<li>
+<p>Por ejemplo, tener un servidor web en un contenedor, cuyo <code>index.html</code> deba ser actualizarse automáticamente leyendo de un repositorio GitHub o similar. Podemos tener un segundo contenedor, que modifique el código de ese HTML.</p>
+</li>
+<li>
+<p>Otro ejemplo sería probar como funciona un mismo código en diferentes versiones del lenguaje de programación (vease el caso de PHP que hay isntrucciones que cambian su comportamiento entre la versión 5 y la 7, o entre la 7 y la 8).</p>
+</li>
+</ul>
+<h2 id="redes-en-docker">REDES EN DOCKER</h2>
+<p>Existen <strong>3 tipos</strong> principales de redes en Docker:</p>
+<ol>
+<li><strong>Bridge:</strong> es la que usaremos generalmente, genera una red privada virtual, asignando direccionamiento IP propio al contenedor y proporciona reclas SNAT (salida a internet) y DNAT (acceso desde el exterior al contenedor).</li>
+<li><strong>Host:</strong> el contenedor no tendría dirección IP propia, si no que se ejecuta como un proceso más en el Host, saliendo con la IP de este por el puerto que le indiquemos.</li>
+<li><strong>None:</strong> para contenedores que no queremos que tengan conexión a internet.</li>
+</ol>
+<p>Hay que diferenciar entre la red Bridge que crea Docker por defecto y las redes Bridge que puede crear el usuario. La <strong>red por defecto</strong> se llama <strong>bridge</strong> y va a crear un switch virtual (Linux Bridge) llamado <strong>docker0</strong> con el direccionamiento <strong>172.17.0.0/16</strong> a la que estarán conectados todos los contenedores que creemos (mientras no indiquemos lo contrario). Al anfitrión se le asigna la <strong>172.17.0.1</strong>, que será la puerta de enlace de nuestros contenedores.</p>
+<p><img alt="Esquema Bridge Docker" src="https://godleon.github.io/blog/images/docker/docker-bridge-network-custom.png" width="600" /></p>
+<p>Sin embargo, cuando creamos una <strong>red definida por el usuario</strong>, podemos personalizar que contenedores que contenedores queremos que se conecten a esa red, además tendremos un servicio de DNS que permitirá la interconexión de contenedores mediante sus nombres.
+Tambien podemos conectar y desconectar contenedores en caliente a redes definidas por el usuario.</p>
+<p>Los subcomandos para gestionar las redes se engloban bajo el comando <code>docker network</code>.</p>
+<hr />
+<ul>
+<li><strong>EJERCICIO CONEXION RED HOST:</strong></li>
+</ul>
+<blockquote>
+<p>Listamos las redes disponibles en docker, y vemos que por defecto están los tres tipos que hemos indicado más arriba.</p>
+<p>Luego vamos a crear un contenedor con un servidor web NGINX usando la red Host. De modo que si accedemos directamente al localhost, podremos ver nuestro servidor, ya que el contenedor no tiene IP propia, si no que usa la del HOST ejecutandose como un proceso más sobre un puerto específico:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>docker<span class="w"> </span>network<span class="w"> </span>ls
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>--name<span class="w"> </span>myNGINX<span class="w"> </span>nginx
+</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>
+</span><span id="__span-48-5"><a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>curl<span class="w"> </span>http://localhost
+</span></code></pre></div>
+</blockquote>
+<hr />
+<ul>
+<li><strong>EJERCICIO CONEXION RED BRIDGE POR DEFECTO:</strong></li>
+</ul>
+<blockquote>
+<p>En la siguiente práctica creamos un contenedor interactivo con la distribución linux Alpine mapeando el puerto 8080 del host al 80 del contenedor.</p>
+<p>Luego comprobamos en el terminal del contenedor la dirección ip asignada, la puerta de enlace y las entradas del servicio DNS.</p>
+<p>Luego en el terminal del host, podemos comprobar que ha creado una conexión con la IP que usará el contenedor como Gateway.</p>
+</blockquote>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>--name<span class="w"> </span>CONT1<span class="w"> </span>alpine<span class="w"> </span>ash
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>/$<span class="w"> </span>ip<span class="w"> </span>a
+</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>/$<span class="w"> </span>ip<span class="w"> </span>r
+</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>/$<span class="w"> </span>cat<span class="w"> </span>/etc/resolv.conf
+</span><span id="__span-49-6"><a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>
+</span><span id="__span-49-7"><a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a>ip<span class="w"> </span>a<span class="w">    </span><span class="c1">#En el anfitrión</span>
+</span></code></pre></div>
+<blockquote>
+<p>Aquí podemos instalar un servidor apache dentro de Alpine y levantar el servicio. Luego desde el anfitrión accedemos al localhost con el puerto 8080 y vemos que nos muestra nuestro servidor.</p>
+<p>Tambien desde el host, podemos comprobar las reglas iptables que se han creado para gestionar la comunicación de nuestros contenedores (bajo el nombre MASQUERADE y DNAT).</p>
+</blockquote>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>/$<span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>apache2
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>/$<span class="w"> </span>http<span class="w"> </span>-D<span class="w"> </span>foreground
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>
+</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>curl<span class="w"> </span>http://localhost:8080<span class="w">      </span><span class="c1">#En el anfitrión</span>
+</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a>sudo<span class="w"> </span>iptables<span class="w"> </span>-L<span class="w"> </span>-n<span class="w"> </span>-t<span class="w"> </span>nat<span class="w">      </span><span class="c1">#En el anfitrión</span>
+</span></code></pre></div>
+<hr />
+<ul>
+<li><strong>EJERCICIO CONEXION RED DEFINIDA POR EL USUARIO:</strong></li>
+</ul>
+<blockquote>
+<p>Para este ejercicio creamos primero una red definida por el usuario, sin indicar ningun parámetro, para ver que valores le da docker por defecto. Que como vemos, será el siguiente valor a la 17, que es el bridge por defecto.</p>
+<p>Listamos nuestras redes en docker, para ver que la ha creado y luego consultamos la información detallada de la red que acabamos de crear.</p>
+<p>Tambien podemos comprobar en el HOST que se ha creado un nuevo interfaz de red que es el que hará la función de gateway para esta red.</p>
+<p>Por último, borramos esta red de prueba, ya que generalmente especificaremos el direcciónamiento que queremos.</p>
+</blockquote>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>red1
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>docker<span class="w"> </span>network<span class="w"> </span>ls
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>
+</span><span id="__span-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>red1
+</span><span id="__span-51-6"><a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a>
+</span><span id="__span-51-7"><a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a>ip<span class="w"> </span>a
+</span><span id="__span-51-8"><a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a>
+</span><span id="__span-51-9"><a id="__codelineno-51-9" name="__codelineno-51-9" href="#__codelineno-51-9"></a>docker<span class="w"> </span>network<span class="w"> </span>rm<span class="w"> </span>red1
+</span></code></pre></div>
+<blockquote>
+<p>Ahora, creamos una segunda red pero personalizando los valores que queramos, y luego comprobaremos que se ha creado correctamente:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>--subnet<span class="w"> </span><span class="m">192</span>.168.0.0/24<span class="w"> </span>--gateway<span class="w"> </span><span class="m">192</span>.168.0.1<span class="w"> </span>red2
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>docker<span class="w"> </span>network<span class="w"> </span>ls
+</span><span id="__span-52-4"><a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>
+</span><span id="__span-52-5"><a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>red2
+</span><span id="__span-52-6"><a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a>
+</span><span id="__span-52-7"><a id="__codelineno-52-7" name="__codelineno-52-7" href="#__codelineno-52-7"></a>ip<span class="w"> </span>a
+</span></code></pre></div>
+</blockquote>
+<ul>
+<li><strong>PRÁCTICA: CONTENEDOR WORDPRESS CONECTACO CON CONTENEDOR MARIADB:</strong><blockquote>
+<p>Lo primero es revisar la documentación de las imágenes de <a href="https://hub.docker.com/_/mariadb"><code>mariadb</code></a> y de <a href="https://hub.docker.com/_/wordpress"><code>wordpress</code></a> en <code>Docker Hub</code>, para saber en que ruta debemos montar los volúmenes y que variables de entorno necesitamos crear para que se comuniquen. Nos quedará algo así:</p>
+</blockquote>
+</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>--subnet<span class="w"> </span><span class="m">192</span>.168.1.0/24<span class="w"> </span>--gateway<span class="w"> </span><span class="m">192</span>.168.1.1<span class="w"> </span>red_wp
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>
+</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>server_mariadb<span class="w"> </span>--network<span class="w"> </span>red_wp<span class="w"> </span>-v<span class="w"> </span>vol_mariadb:/var/lib/mysql<span class="w"> </span>-e<span class="w"> </span><span class="nv">MARIADB_DATABASE</span><span class="o">=</span>bd_wp<span class="w"> </span>-e<span class="w"> </span><span class="nv">MARIADB_USER</span><span class="o">=</span>user_wp<span class="w"> </span>-e<span class="w"> </span><span class="nv">MARIADB_PASSWORD</span><span class="o">=</span>user123<span class="w"> </span>-e<span class="w"> </span><span class="nv">MARIADB_ROOT_PASSWORD</span><span class="o">=</span>admin123<span class="w"> </span>mariadb
+</span><span id="__span-53-4"><a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a>
+</span><span id="__span-53-5"><a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>server_wp<span class="w"> </span>--network<span class="w"> </span>red_wp<span class="w"> </span>-v<span class="w"> </span>vol_wordpress:/var/www/html/<span class="w"> </span>-e<span class="w"> </span><span class="nv">WORDPRESS_DB_HOST</span><span class="o">=</span>server_mariadb<span class="w"> </span>-e<span class="w"> </span><span class="nv">WORDPRESS_DB_USER</span><span class="o">=</span>user_wp<span class="w"> </span>-e<span class="w"> </span><span class="nv">WORDPRESS_DB_PASSWORD</span><span class="o">=</span>user123<span class="w"> </span>-e<span class="w"> </span><span class="nv">WORDPRESS_DB_NAME</span><span class="o">=</span>bd_wp<span class="w"> </span>-p<span class="w"> </span><span class="m">8085</span>:80<span class="w"> </span>wordpress
+</span></code></pre></div>
+<blockquote>
+<p>Si te das cuenta la <strong>variable de entorno</strong> <code>WORDPRESS_DB_HOST</code> la hemos inicializado al nombre del servidor de base de datos. Como están conectada a la misma red bridge definida por el usuario, el contenedor WordPress al intentar acceder al nombre <code>servidor_mariadb</code> estará accediendo al contenedor de la base de datos.</p>
+<p>Como vamos a <strong>acceder desde el exterior</strong> al servidor web, por lo que hemos mapeado los puertos con la opción <code>-p</code>. Sin embargo, en el contenedor de la base de datos no es necesario mapear los puertos porque no vamos a acceder desde el exterior a él. Pero el contenedor <code>servidor_wp</code> si que podrá acceder al puerto 3306/tcp del <code>servidor_mariadb</code> sin problemas al estar conectados a la misma red.</p>
+<p>Nos registramos en Wordpress con un correo ficticio y creamos algún post. Luego ejecutamos los siguientes comandos para comprobar que la información se ha guardado en la BBDD:</p>
+</blockquote>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>server_mariadb<span class="w"> </span>bash
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>mariadb<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="w"> </span>admin123
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>
+</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>SHOW<span class="w"> </span>TABLES<span class="p">;</span>
+</span><span id="__span-54-6"><a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a>SELEC<span class="w"> </span>*<span class="w"> </span>FROM<span class="w"> </span>wp_posts
+</span></code></pre></div>
+<h2 id="escenarios-multicontenedor">ESCENARIOS MULTICONTENEDOR</h2>
+<p>Cuando queremos levantar aplicaciones o servicios compuestos por varios microservicios (contenedores), normalmente se hace uso de <strong>DOCKER COMPOSE</strong>.</p>
+<p>Compose es una especificación de Docker que permite declrar en un único fichero con formato <strong>.YAML</strong> o <strong>.YML</strong>, todas las características del escenario que queremos desplegar; como contenedores, volúmenes, redes, orden de arranque, variables de entorno, etc.</p>
+<p>Actualmente, Docker Compose V2 ya se encuentra integrado en el cliente Docker, por lo que podemos ejecutarlo con <code>docker compose</code></p>
+<h3 id="el-fichero-docker-composeyaml">EL FICHERO DOCKER-COMPOSE.YAML</h3>
+<p>En él definimos un escenario compuesto por varios servicios (<code>services</code>). Y dentro de cada servicio, especificamos todos los detalles que van a definir ese servicio.</p>
+<p>Los parámetros <code>version</code> y <code>name</code> son opcionales. El primero es meramente informativo y si no especificamos nombre del escenario, cogerá el del directorio en el que se encuentra nuestro fichero .YAML.</p>
+<p>Características de un servicio:</p>
+<ul>
+<li>Cada servicio está representado por un nombre de servicio y dentro de él cuelgan todas sus características.</li>
+<li>Nombre del contenedor asociado <code>container_name</code></li>
+<li>Imagen usada <code>image</code></li>
+<li>Política de reinicio cuando hay un fallo o error <code>restart</code></li>
+<li>Comando a ejecutar cuando creamos el contenedor <code>command</code></li>
+<li>Variables de entorno <code>environment</code></li>
+<li>Dependencias de arranque y apagado con otros servicios <code>depends_on</code></li>
+<li>Mapeo de puertos <code>ports</code></li>
+<li>Volúmenes de almacenamiento <code>volumes</code></li>
+<li>Configuración de red <code>networks</code></li>
+</ul>
+<p>Por defecto, al ejecutar un escenario compose se crear una red definida por el usuario, que permite la conexión entre todos los contenedores que se han generado,aceptando conexiones por nombre de contenedor o por nombre de servicio. Es por esto, que generalmente no suelen definirse las redes en los ficheros .YAML:</p>
+<p>Para arrancar un escenario, vamos al directorio donde está nuestro <code>docker-compose.yaml</code> y ejecutamos <strong>docker compose up -d</strong>.</p>
+<p>Para eliminar un escenario, sería con el comando <strong>docker compose down -v</strong>. ¡OJO! Esto eliminará tambien los volumenes asociados al escenario, si quisieramos mantenerlos, podemos quitar la opción <code>-v</code>.</p>
+<h3 id="uso-de-parametros-en-docker-compose">USO DE PARÁMETROS EN DOCKER COMPOSE</h3>
+<p>Podemos crear plantillas para el despliegue de aplicaciones o servicios mediante Docker Compose, y arrancarlas con diferentes valores, según la finalidad o necesidades que tengamos en los distintos entornos en que podemos ejecutar nuestro escenario.</p>
+<p>Para ello, en lugar de dar valores estáticos a las características definidas en el fichero .YAML, podemos usar variables usando la nomenclatura <code>${NOMBRE_VARIABLE}</code>. Por ejemplo:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.1&#39;</span>
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="nt">services</span><span class="p">:</span>
+</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a><span class="nt">db</span><span class="p">:</span>
+</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">servidor_mysql</span>
+</span><span id="__span-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb:${VERSION_MDB}</span>
+</span><span id="__span-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+</span><span id="__span-55-7"><a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-55-8"><a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a><span class="w">      </span><span class="nt">MARIADB_DATABASE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${BASEDEDATOS}</span>
+</span><span id="__span-55-9"><a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a><span class="w">      </span><span class="nt">MARIADB_USER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${USUARIO}</span>
+</span><span id="__span-55-10"><a id="__codelineno-55-10" name="__codelineno-55-10" href="#__codelineno-55-10"></a><span class="w">      </span><span class="nt">MARIADB_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PASS}</span>
+</span><span id="__span-55-11"><a id="__codelineno-55-11" name="__codelineno-55-11" href="#__codelineno-55-11"></a><span class="w">      </span><span class="nt">MARIADB_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PASS_ROOT}</span>
+</span><span id="__span-55-12"><a id="__codelineno-55-12" name="__codelineno-55-12" href="#__codelineno-55-12"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+</span><span id="__span-55-13"><a id="__codelineno-55-13" name="__codelineno-55-13" href="#__codelineno-55-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb_data:/var/lib/mysql</span>
+</span><span id="__span-55-14"><a id="__codelineno-55-14" name="__codelineno-55-14" href="#__codelineno-55-14"></a><span class="nt">volumes</span><span class="p">:</span>
+</span><span id="__span-55-15"><a id="__codelineno-55-15" name="__codelineno-55-15" href="#__codelineno-55-15"></a><span class="w">    </span><span class="nt">mariadb_data</span><span class="p">:</span>
+</span></code></pre></div>
+<p>Los valores de esas variables se definen en un fichero aparte de tipo <code>CLAVE=valor</code>, que por convenio podemos nombrar como <code>env_nombre_entorno</code>. Por ejemplo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="nv">VERSION_MDB</span><span class="o">=</span>latest
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a><span class="nv">PUERTO</span><span class="o">=</span><span class="m">8080</span>
+</span><span id="__span-56-3"><a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a><span class="nv">USUARIO</span><span class="o">=</span><span class="s2">&quot;prueba&quot;</span>
+</span><span id="__span-56-4"><a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a><span class="nv">PASS</span><span class="o">=</span><span class="s2">&quot;asdasd&quot;</span>
+</span><span id="__span-56-5"><a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a><span class="nv">PASS_ROOT</span><span class="o">=</span><span class="s2">&quot;asdasd&quot;</span>
+</span><span id="__span-56-6"><a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a><span class="nv">BASEDEDATOS</span><span class="o">=</span><span class="s2">&quot;wordpress&quot;</span>
+</span></code></pre></div>
+<p>Es decir, en el directorio donde se encuantre nuestro fichero .YAML crearemos tantos ficheros como posibles entornos de ejecución hayamos previsto. Por ejemplo, "<em>env_desarrollo</em>" y "<em>env_produccion</em>".</p>
+<p>Cuando queramos que nuestra plantilla arranque con los valores de un entorno específico, simplemente tendremos que renombrar ese fichero como <strong><code>.env</code></strong>, por ejemplo: <em><code>mv env_desarrollo .env</code></em>; y luego arrancar el escenario normalmente con <em><code>docker compose up -d</code></em>.</p>
+<p>Podemos comprobar el valor de las variables de entorno con las que ha arrancado nuestro contenedor con:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>db<span class="w"> </span>env
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">IMPORTANTE</p>
+<p>No olvidar que cuando queramos cambiar de entorno primero debemos deshacer el renombrado anterior con <em><code>mv .env env_desarrollo</code></em>; y luego renombrar el entorno que queremos arrancar ahora <em><code>mv env_produccion .env</code></em>.</p>
+</div>
+<h3 id="despliegue-real-con-docker-compose">DESPLIEGUE REAL CON DOCKER COMPOSE</h3>
+<p>Vamos a ver un ejemplo práctico real de Docker Compose, donde desplegaremos una aplicación de código abierto para gestión de reuniones online, similar al servicio Google Meet.</p>
+<p>Si accedemos al repositorio oficial de Jitsi en Github <a href="https://github.com/jitsi/docker-jitsi-meet">Jitsi Meet</a>, tenemos toda la documentación necesaria para desplegar la aplicación con Docker, incluyendo el fichero <code>docker-compse.yaml</code>.</p>
+<p>Si seguimos las intrucciones ahí indicadas:</p>
+<ol>
+<li>Descargamos los ficheros del repositorio, lo descomprimimos, accedemos al directorio y vemos lo que contiene:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>wget<span class="w"> </span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>https://api.github.com/repos/jitsi/docker-jitsi-meet/releases/latest<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;zip&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="se">\&quot;</span><span class="w"> </span>-f4<span class="k">)</span>
+</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>unzip<span class="w"> </span>stable-9258
+</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="nb">cd</span><span class="w"> </span>jitsi-docker-jitsi-meet-c92026a/
+</span><span id="__span-58-4"><a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a>ls
+</span></code></pre></div>
+<ol>
+<li>Utilizamos el fichero de variables globales para configurar la aplicación y ejecutamos el script para generar las contraseñas:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>cp<span class="w"> </span>env.example<span class="w"> </span>.env
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="w"> </span>$<span class="w"> </span>./gen-passwords.sh
+</span></code></pre></div>
+<ol>
+<li>Luego dentro del fichero <strong>.env</strong>, descomentamos el parámetro <code>PUBLIC_URL</code> y modificamos su valor con la dirección que queramos usar:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>nano<span class="w"> </span>.env
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="nv">PUBLIC_URL</span><span class="o">=</span>https://localhost:8443
+</span></code></pre></div>
+<ol>
+<li>Creamos los directorios donde vamos a guardar la información de la aplicación (Bind Mount en este caso):</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.jitsi-meet-cfg/<span class="o">{</span>web,transcripts,prosody/config,prosody/prosody-plugins-custom,jicofo,jvb,jigasi,jibri<span class="o">}</span>
+</span></code></pre></div>
+<ol>
+<li>Por último, levantamos el escenario y accedemos a la URL desde un navegador web:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</span></code></pre></div>
+<p><img alt="Interfaz Web Jitsi" src="https://plataforma.josedomingo.org/pledin/cursos/docker2024/contenido/modulo6/img/jitsi.png" width="700" /></p>
+<p>Si revisamos los contenedores que se han creado, veremos que Jitsi esta compuesto por 4 servicios:
+Se crean 4 contenedores que corresponde a cuatro componentes de Jitsi:</p>
+<ul>
+<li><strong>web</strong>: Jitsi Meet web UI, aplicación web servida por nginx.</li>
+<li><strong>prosody</strong>: Prosody, servidor XMPP.</li>
+<li><strong>jicofo</strong>: [Jicofo], el componente JItsi COnference FOcus.</li>
+<li><strong>jvb</strong>: Jitsi Videobridge, el enrutador de vídeo.</li>
+</ul>
+<h2 id="creacion-de-imagenes-en-docker">CREACIÓN DE IMÁGENES EN DOCKER</h2>
+<p>Hay dos mecánismos básicos de construcción:</p>
+<ul>
+<li><strong>A partir de un contenedor</strong> con <code>docker commit</code></li>
+<li><strong>Automatizar su construcción</strong> (recomendada), usando un fichero <code>Dockerfile</code> y el comando <code>docker build</code>.</li>
+</ul>
+<p>El <strong>Dockerfile</strong> es como una receta que contiene todos los comandos para construir la imágen. Además, se puede distribuir, versionar y cambiar la imagen base de manera sencilla.</p>
+<p>Tambien hay dos posibles formas de distribución de nuestras imágenes:</p>
+<ul>
+<li><strong>En un fichero</strong>: <code>docker load</code> / <code>docker save</code></li>
+<li><strong>En un registro</strong> (recomendada): <code>docker push</code> / <code>docker pull</code></li>
+</ul>
+<p><img alt="Creación de Imágenes" src="https://plataforma.josedomingo.org/pledin/cursos/docker2024/contenido/modulo7/img/build.png" width="500" /></p>
+<blockquote>
+<p><strong>EJERCICIO PRÁCTICO</strong>: Creación de una imágen a partir de un contenedor.
+Vamos a crear un contenedor a partir de una imagen base del SO Debian.</p>
+</blockquote>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>docker<span class="w">  </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>contenedor1<span class="w"> </span>debian<span class="w"> </span>
+</span></code></pre></div>
+<blockquote>
+<p>Realizamos las modificaciones que queramos sobre el contenedor, por ejemplo, actualizar, instalar un servidor web y modificar el fichero <em>index.html</em>:</p>
+</blockquote>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>apt<span class="w"> </span>update
+</span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
+</span><span id="__span-64-3"><a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;h1&gt;Curso Docker&lt;/h1&gt;&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/var/www/html/index.html
+</span><span id="__span-64-4"><a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a><span class="nb">exit</span>
+</span></code></pre></div>
+<blockquote>
+<p>Creamos una nueva imagen partiendo de ese contenedor usando <code>docker commit</code>.</p>
+</blockquote>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="w"> </span>docker<span class="w"> </span>commit<span class="w"> </span>--change<span class="o">=</span><span class="s1">&#39;CMD apachectl -D FOREGROUND&#39;</span><span class="w"> </span>contenedor1<span class="w"> </span>josedom24/myapache2:v1
+</span></code></pre></div>
+<blockquote>
+<p>Si quiero subir mi imagen a <strong>Docker Hub</strong>, es muy importante ponerle delante nuestro nombre de usuario de Docker Hub, si no, no me dejará. El formato sería <em>nombre_usuario</em>/<em>nombre_imagen</em>:<em>versión</em> (si no indicamos versión, asignará la etiqueta <em>latest</em>)</p>
+<p>El contenedor creado, va a ejecutar el comando por defecto de la imagen base, en este caso Debian, al ser un SO ejecuta <code>bash</code> por defecto. Pero podemos personalizarlos con la opción <code>--change</code> y la instruccion <code>CMD</code>. Por ejemplo, en este caso queremos que ejecute el servidor web por defecto, y e comando sería <code>apachectl -D FOREGROUND</code>.</p>
+</blockquote>
+<h3 id="el-fichero-dockerfile">EL FICHERO DOCKERFILE</h3>
+<p>Esta compuesto por una serie de instrucciones que se ejecutan de forma secuencial para crear de manera automatizada imágenes Docker.</p>
+<p>La primera linea de este fichero es <code># syntax=docker/dockerfile:1</code>.</p>
+<p>Hay multitud de instrucciones que pueden en un DockerFile, las más utilizadas son:</p>
+<ul>
+<li><strong>FROM</strong>: especifica la imagen base.</li>
+<li><strong>MAINTAINER</strong>: indica los datos del autor de la imagen.</li>
+<li><strong>LABEL</strong>: añade metadatos a la imagen del tipo <code>clave:valor</code>.</li>
+<li><strong>RUN</strong>: ejecuta un comando que modifica el sistema de ficheros de la imagen base.</li>
+<li><strong>COPY</strong>: copia ficheros desde mi equipo a la imagen, estos deben estar en la misma carpeta que el <em>Dockerfile</em>.</li>
+<li><strong>ADD</strong>: similar a "COPY", pero permite descargar archivos desde una URL o extraer automáticamente archivos <code>tar.gz</code> en el destino especificado.</li>
+<li><strong>EXPOSE</strong>: indica los puertos abiertos que usará esta imagen.</li>
+<li><strong>CMD</strong>: establede el comando por defecto que se ejecuta al crear un contenedor con esta imagen.</li>
+<li><strong>WORKDIR</strong>: establece el directorio de trabajo dentro de la imagen. Las siguientes instrucciones se ejecutarán en esa ruta.</li>
+<li><strong>ENV</strong>: establece las variables de entorno que se podrán usar dentro del contenedor.</li>
+<li><strong>ARG</strong>: define parámetros que se pueden personalizar a la hora de hacer el <code>docker build</code>.</li>
+<li><strong>ENTRYPOINT</strong>: prácticamente igual que CMD, pero no puede modificarse al crear un contenedor.</li>
+<li><strong>VOLUME</strong>: crea un punto de montaje en el directorio especificado y lo marca como volumen.</li>
+</ul>
+<p>Los comandos RUN, COPY y ADD, <strong>crean nuevas capas</strong> en la imagen, ya que modifican el sistema de ficheros de la imagen base.</p>
+<p>Un ejemplo de DockerFile sería:</p>
+<div class="language-text highlight"><pre><span></span><code>    FROM debian:stable-slim
+    RUN apt-get update  &amp;&amp; apt-get install -y  apache2 
+    WORKDIR /var/www/html
+    COPY index.html .
+    CMD apache2ctl -D FOREGROUND
+</code></pre></div>
+<p>Ejecutando el comando <strong><code>docker build</code></strong> en el mismo directorio del Dockerfile, crearemos la imagen definida en este. Por ejemplo:</p>
+<div class="language-text highlight"><pre><span></span><code>    docker build -t profe_web/milinux:v1 .
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">IMPORTANTE</p>
+<p>Nunca usar la etiqueta <strong>latest</strong> para crear imágenes, ya que esta apunta a la última versión de una imagen. Lo ideal es indicar versiones específicas de nuestra imagen.</p>
+</div>
+<p>Cuando usamos el comando <em>docker build</em> para construir imágenes, es común que aparezcan en nuestro repositorio local imágenes con nombre y etiqueta <code>&lt;none&gt;</code>. Son registros intermedios que se generan y que podriamos borrar mediante el comando <code>docker image prune</code>.</p>
+<div class="admonition danger">
+<p class="admonition-title">IMPORTANTE</p>
+<p>La opción <strong>PRUNE</strong> sirve para eliminar objetos docker de forma másiva, ya sean imágenes, contenedores, redes, volúmenes... Es por ello, que debemos usarla con cautela para no borrar cosas que no queramos.</p>
+</div>
+<h3 id="distribucion-de-imagenes-docker">DISTRIBUCIÓN DE IMÁGENES DOCKER</h3>
+<p>El comando <code>docker save</code> nos permite coger una imagen de nuestro repositorio local y comprimirla en un fichero <code>.TAR</code>. Y del mismo modo, con <code>docker load -i</code> puedo recuperar la imagen comprimida en ese <em>.TAR</em>.</p>
+<p>No obstante, no es la práctica más recomendada para distribuir imágenes. Ya que lo ideal es subirla al registro público de <strong>Docker Hub</strong> (es necesario estar registrado).</p>
+<p>Desde el terminal podemos hacerlo con:</p>
+<div class="language-text highlight"><pre><span></span><code>    docker login
+    docker push profe_web/milinux:v1
+</code></pre></div>
+<p>Una vez subidas, puedo acceder a ellas desde cualquier sitio mediante <code>docker pull</code>.</p>
+<h3 id="parametrizar-el-fichero-dockerfile">PARAMETRIZAR EL FICHERO DOCKERFILE</h3>
+<p>Podemos crear variables dentro del Dockerfile, para que a la hora de crear las imágenes el usuario pueda indicar valores específicos para ellas. Para ello usamos el comando <code>ARG</code> y un ejemplo sería el siguiente:</p>
+<div class="language-text highlight"><pre><span></span><code>    ARG PHP_VERSION=8.2-apache
+    FROM php:${PHP_VERSION}
+    ARG APP_VERSION=desarrollo
+    ENV VERSION=${APP_VERSION}
+    COPY app /var/www/html/
+    EXPOSE 80
+</code></pre></div>
+<p>De este modo, si al crear la imagen no se especifica nada, las variables cogerán el valor por defecto especificado dentro del comando <em>ARG</em>:</p>
+<div class="language-text highlight"><pre><span></span><code>docker build  -t josedom24/app_php:v1 .
+</code></pre></div>
+<p>Y en caso de que el usuario quiera personalizar sus valores, podría indicarlo en la cosntrucción de la siguiente manera:</p>
+<div class="language-text highlight"><pre><span></span><code>docker build --build-arg PHP_VERSION=7.4-apache --build-arg APP_VERSION=produccion -t josedom24/app_php:v2 .
+</code></pre></div>
+<h3 id="dockerizar-aplicaciones-python">DOCKERIZAR APLICACIONES PYTHON</h3>
+<p>En este ejemplo tenemos una aplicación web desarrollada en Python mediante el módulo Flask. Que va a servir el contenido por el puerto 3000.</p>
+<div class="language-text highlight"><pre><span></span><code>    from flask import Flask, render_template, abort, redirect, request
+    import datetime
+    import socket
+
+    app = Flask(__name__)
+
+    @app.route(&#39;/&#39;,methods=[&quot;GET&quot;,&quot;POST&quot;])
+    def inicio():
+        hoy=datetime.datetime.now()
+        return render_template(&quot;inicio.html&quot;,hoy=hoy,server=socket.gethostname())
+
+    if __name__ == &#39;__main__&#39;:
+        app.run(&#39;0.0.0.0&#39;,3000,debug=True)
+</code></pre></div>
+<p>Un posible <strong>dockerfile</strong> para crear la imagen de mi aplicación web, sería el siguiente:</p>
+<div class="language-text highlight"><pre><span></span><code>    FROM debian:12
+    RUN apt-get update &amp;&amp; apt-get install -y python3-pip  &amp;&amp; apt-get clean &amp;&amp; rm -rf /var/lib/apt/lists/*
+    WORKDIR /usr/share/app
+    COPY app .
+    RUN pip3 install --no-cache-dir --break-system-packages -r requirements.txt
+    EXPOSE 3000
+    CMD python3 app.py
+</code></pre></div>
+<p>Para crear un contenedor a partir de la imagen que hemos creado:</p>
+<div class="language-text highlight"><pre><span></span><code>    docker run -d -p 80:3000 --name appweb profe_web/miappweb:v1
+</code></pre></div>
+<p>Otra opción, sería usar una imagen base que ya contenga el paquete PIP, y el <em>dockerfile</em> quedaría así:</p>
+<div class="language-text highlight"><pre><span></span><code>    FROM python:3.12.1-bookworm
+    WORKDIR /usr/share/app
+    COPY app .
+    RUN pip install --no-cache-dir -r requirements.txt
+    EXPOSE 3000
+    CMD python app.py
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Licencia CC BY-NC-SA 4.0 | Lorenzo LV - 2025
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/ProfeAzarquiel" target="_blank" rel="noopener" title="Lorenzo on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
