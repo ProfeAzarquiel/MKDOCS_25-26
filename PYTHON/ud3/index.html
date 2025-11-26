@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../ud2/">
+      
       
       
         
@@ -19,7 +21,7 @@
     
     
       
-        <title>CREACIÓN DE API REST EN PYTHON - MATERIALES INFORMÁTICA IES AZARQUIEL</title>
+        <title>UD3. Creación de APIs - MATERIALES INFORMÁTICA IES AZARQUIEL</title>
       
     
     
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CREACIÓN DE API REST EN PYTHON
+              UD3. Creación de APIs
             
           </span>
         </div>
@@ -932,8 +934,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -945,15 +949,17 @@
       
         
       
+        
+      
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -974,7 +980,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1097,6 +1103,103 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Creación de APIs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Creación de APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-una-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿QUÉ ES UNA API?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principales-frameworks-para-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRINCIPALES FRAMEWORKS PARA APIs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1131,10 +1234,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fastapi" class="md-nav__link">
+  <a href="#que-es-una-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        FastAPI
+        ¿QUÉ ES UNA API?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principales-frameworks-para-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRINCIPALES FRAMEWORKS PARA APIs
       
     </span>
   </a>
@@ -1159,8 +1273,20 @@
 
 
 <h1 id="creacion-de-api-rest-en-python">CREACIÓN DE API REST EN PYTHON</h1>
+<h2 id="que-es-una-api">¿QUÉ ES UNA API?</h2>
+<p>Una API (Interfaz de Programación de Aplicaciones) es un conjunto de reglas y protocolos que permiten el intercambio de datos entre dos sistemas informáticos, de una manera segura y estandarizada.</p>
+<p>Es decir, actua como un intermediario que define la forma en que una aplicación puede solicitar, recibir y enviar información a otra.</p>
+<p>Su principal utilidad es simplificar el desarrollo de aplicaciones, ya que permiten reutilizar código e integrar servicios existentes con facilidad, sin necesidad de crear todo desde cero.</p>
+<p><img alt="Flujo API" src="../../img/apiflow.png" /></p>
+<h2 id="principales-frameworks-para-apis">PRINCIPALES FRAMEWORKS PARA APIs</h2>
 <p>Al crear aplicaciones web en Python, hay tres opciones de frameworks que destacan sobre el resto: <strong>Django</strong>, <strong>Flask</strong> y <strong>FastAPI</strong>. Cada uno aporta fortalezas, limitaciones y contextos de uso distintos, como vemos en la siguiente tabla:</p>
-<p><img alt="Frameworks Python" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*LOZgruzs6i82_D2oMYG4bw.png" width="500" /></p>
+<figure>
+  <img alt="Frameworks" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*LOZgruzs6i82_D2oMYG4bw.png" width="500" />
+<br />
+<figcaption>Frameworks Python</figcaption>
+</figure>
+<!-- ![Frameworks Python](https://miro.medium.com/v2/resize:fit:720/format:webp/1*LOZgruzs6i82_D2oMYG4bw.png){width="500"}-->
+
 <table>
 <thead>
 <tr>
@@ -1192,19 +1318,30 @@
 </tbody>
 </table>
 <p><em><a href="https://www.q2bstudio.com/nuestro-blog/18435/django-flask-y-fastapi-cual-elegir">Fuente: Q2B</a></em></p>
-<h2 id="fastapi"><strong>FastAPI</strong></h2>
+<h3 id="fastapi"><strong>FastAPI</strong></h3>
 <p>Es importante mencionar que FastAPI solo puede usarse con Python 3.6 o superior. Para utilizarlo debemos instalar dos librerías: fastapi y uvicorn.</p>
-<p><strong>Uvicorn</strong> es una librería de Python que actúa como servidor web asíncorno (ASGI) de alto rendimiento y se utiliza para ejecutar aplicaciones web y APIs, como las creadas con FastAPI. Se usa desde la línea de comandos para levantar el servidor, por ejemplo, si tu archivo se llama <em>"main.py"</em> y tu aplicación se llama <em>"app"</em>, ejecugtaríamos: <code>uvicorn main:app</code>.</p>
+<p><strong>Uvicorn</strong> es una librería de Python que actúa como servidor web asíncorno (ASGI) de alto rendimiento y se utiliza para ejecutar aplicaciones web y APIs, como las creadas con FastAPI. Se usa <strong>desde la línea de comandos</strong> para levantar el servidor, por ejemplo, si tu archivo se llama <em>"main.py"</em> y tu aplicación se llama <em>"app"</em>, ejecutaríamos: <code>uvicorn main:app --reload</code>.</p>
 <div class="language-text highlight"><pre><span></span><code>pip install fastapi
 pip install uvicorn
 </code></pre></div>
-<h3 id="tu-primera-api-en-python-con-fastapi">Tu primera API en Python con FastAPI</h3>
-<blockquote></blockquote>
-<p>Se pone un signo de interrogación (?) en una llamada a una API para indicar el comienzo de los parámetros de consulta, que son datos adicionales que se envían al servidor para especificar la solicitud. Estos parámetros le dicen a la API qué información específica obtener o qué acción realizar, funcionando como una extensión de la URL.</p>
-<p>Función: Separar la ruta principal del endpoint de los datos adicionales (parámetros) que se están enviando.
-Estructura: Después del signo de interrogación ((?)), se incluyen pares clave-valor (por ejemplo, $clave=valor$).
-Separador de parámetros: Si hay múltiples parámetros, se separan entre sí con un símbolo de y comercial (&amp;).
-Ejemplo: En una URL como $https://ejemplo.com/api/usuarios?id=123&amp;estado=activo$, el signo de interrogación marca el inicio de los parámetros $id=123$ y $estado=activo$, que especifican que se busca el usuario con el ID 123 y cuyo estado es activo. </p>
+<h4 id="mi-primera-api-con-fastapi">Mi primera API con FastAPI</h4>
+<div class="language-text highlight"><pre><span></span><code>from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get(&quot;/mi-primer-api&quot;)
+def hello():
+    return {&quot;Hello world from FastAPI!&quot;}
+</code></pre></div>
+<!-- Se pone un signo de interrogación (?) en una llamada a una API para indicar el comienzo de los parámetros de consulta, que son datos adicionales que se envían al servidor para especificar la solicitud. Estos parámetros le dicen a la API qué información específica obtener o qué acción realizar, funcionando como una extensión de la URL.
+
+Función: Separar la ruta principal del endpoint de los datos adicionales (parámetros) que se están enviando.
+Estructura: Después del signo de interrogación (\(?\)), se incluyen pares clave-valor (por ejemplo, $clave=valor$).
+Separador de parámetros: Si hay múltiples parámetros, se separan entre sí con un símbolo de y comercial (&).
+Ejemplo: En una URL como $https://ejemplo.com/api/usuarios?id=123&estado=activo$, el signo de interrogación marca el inicio de los parámetros $id=123$ y $estado=activo$, que especifican que se busca el usuario con el ID 123 y cuyo estado es activo. 
+-->
+
+<p><em><a href="https://anderfernandez.com/blog/como-crear-api-en-python/">Fuente: Ander Fernandez</a></em></p>
 
 
 
