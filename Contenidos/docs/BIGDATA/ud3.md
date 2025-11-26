@@ -88,54 +88,55 @@ Luego creamos el fichero *hosts* dentro de la carpeta *conf*:
 
 Utilizaremos el siguiente fichero `docker-compose.yaml` para desplegar nuestro escenario:
 
-    version: '3'
+??? abstract "docker-compose.yaml"
+        version: '3'
 
-    services:
-    bigtop_hostname0:
-        command: /sbin/init
-        domainname: bigtop.apache.org
-        image: bigtop/puppet:trunk-rockylinux-8
-        mem_limit: 8g
-        mem_swappiness: 0
-        ports:
-        - "8080:8080"
-        privileged: true
-        volumes:
-        - ./ambari-repo:/var/repo/ambari
-        - ./conf/hosts:/etc/hosts
+        services:
+        bigtop_hostname0:
+            command: /sbin/init
+            domainname: bigtop.apache.org
+            image: bigtop/puppet:trunk-rockylinux-8
+            mem_limit: 8g
+            mem_swappiness: 0
+            ports:
+            - "8080:8080"
+            privileged: true
+            volumes:
+            - ./ambari-repo:/var/repo/ambari
+            - ./conf/hosts:/etc/hosts
 
-    bigtop_hostname1:
-        command: /sbin/init
-        domainname: bigtop.apache.org
-        image: bigtop/puppet:trunk-rockylinux-8
-        mem_limit: 8g
-        mem_swappiness: 0
-        privileged: true
-        volumes:
-        - ./ambari-repo:/var/repo/ambari
-        - ./conf/hosts:/etc/hosts
+        bigtop_hostname1:
+            command: /sbin/init
+            domainname: bigtop.apache.org
+            image: bigtop/puppet:trunk-rockylinux-8
+            mem_limit: 8g
+            mem_swappiness: 0
+            privileged: true
+            volumes:
+            - ./ambari-repo:/var/repo/ambari
+            - ./conf/hosts:/etc/hosts
 
-    bigtop_hostname2:
-        command: /sbin/init
-        domainname: bigtop.apache.org
-        image: bigtop/puppet:trunk-rockylinux-8
-        mem_limit: 8g
-        mem_swappiness: 0
-        privileged: true
-        volumes:
-        - ./ambari-repo:/var/repo/ambari
-        - ./conf/hosts:/etc/hosts
+        bigtop_hostname2:
+            command: /sbin/init
+            domainname: bigtop.apache.org
+            image: bigtop/puppet:trunk-rockylinux-8
+            mem_limit: 8g
+            mem_swappiness: 0
+            privileged: true
+            volumes:
+            - ./ambari-repo:/var/repo/ambari
+            - ./conf/hosts:/etc/hosts
 
-    bigtop_hostname3:
-        command: /sbin/init
-        domainname: bigtop.apache.org
-        image: bigtop/puppet:trunk-rockylinux-8
-        mem_limit: 8g
-        mem_swappiness: 0
-        privileged: true
-        volumes:
-        - ./ambari-repo:/var/repo/ambari
-        - ./conf/hosts:/etc/hosts
+        bigtop_hostname3:
+            command: /sbin/init
+            domainname: bigtop.apache.org
+            image: bigtop/puppet:trunk-rockylinux-8
+            mem_limit: 8g
+            mem_swappiness: 0
+            privileged: true
+            volumes:
+            - ./ambari-repo:/var/repo/ambari
+            - ./conf/hosts:/etc/hosts
 
 Arrancamos el escenario con el comando:
 
@@ -210,7 +211,7 @@ Luego configuramos el acceso de los paquetes de estos repositorios, en todos los
     cd /var/repo/ambari/
     createrepo .
 
-    sudo tee /etc/yum.repos.d/ambari.repo << EOF
+    tee /etc/yum.repos.d/ambari.repo << EOF
     [ambari]
     name=Ambari Repository
     baseurl=file:///var/repo/ambari
@@ -297,7 +298,7 @@ Por último, iniciamos en cada nodo agente el servicio agent:
     sed -i "s/hostname=.*/hostname=ambari-bigtop_hostname0-1/" /etc/ambari-agent/conf/ambari-agent.ini
     ambari-agent start
 
-!!! bug "POSIBLE ERROR"
+!!! bug "POSIBLE FALLO"
     En caso de error al arrancar los agentes, lanzar los siguientes comandos y probar de nuevo:
 
         dnf install -y python3
@@ -305,3 +306,12 @@ Por último, iniciamos en cada nodo agente el servicio agent:
 
         yum reinstall -y ambari-agent
         ambari-agent start
+
+#### ACCESO A LA INTERFAZ GRÁFICA
+
+Una vez tenemos arrancado el servidor y los agentes, podemos ir a nuestro navegador y acceder a la interfaz gráfica a través de la dirección:
+
+    https://localhost:8080
+
+!!! tip "CREDENCIALES"
+    Tanto el usuario como la contraseña para acceder la primera vez es `admin`.

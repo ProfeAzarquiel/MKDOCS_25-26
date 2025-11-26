@@ -36,6 +36,7 @@ nav:
     - UD0. Libros de referencia: PYTHON/ud0.md
     - UD1. Fundamentos: PYTHON/ud1.md
     - UD2. Análisis de Datos: PYTHON/ud2.md
+    - UD3. Creación de APIs: PYTHON/ud3.md
 
 markdown_extensions:
   - admonition

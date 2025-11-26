@@ -1,8 +1,25 @@
 # CREACIÓN DE API REST EN PYTHON
 
+## ¿QUÉ ES UNA API?
+
+Una API (Interfaz de Programación de Aplicaciones) es un conjunto de reglas y protocolos que permiten el intercambio de datos entre dos sistemas informáticos, de una manera segura y estandarizada.
+
+Es decir, actua como un intermediario que define la forma en que una aplicación puede solicitar, recibir y enviar información a otra.
+
+Su principal utilidad es simplificar el desarrollo de aplicaciones, ya que permiten reutilizar código e integrar servicios existentes con facilidad, sin necesidad de crear todo desde cero.
+
+![Flujo API](../img/apiflow.png)
+
+## PRINCIPALES FRAMEWORKS PARA APIs
+
 Al crear aplicaciones web en Python, hay tres opciones de frameworks que destacan sobre el resto: **Django**, **Flask** y **FastAPI**. Cada uno aporta fortalezas, limitaciones y contextos de uso distintos, como vemos en la siguiente tabla:
 
-![Frameworks Python](https://miro.medium.com/v2/resize:fit:720/format:webp/1*LOZgruzs6i82_D2oMYG4bw.png){width="500"}
+<figure markdown="span">
+  ![Frameworks](https://miro.medium.com/v2/resize:fit:720/format:webp/1*LOZgruzs6i82_D2oMYG4bw.png){ width="500" }
+  <figcaption>Frameworks Python</figcaption>
+</figure>
+
+<!-- ![Frameworks Python](https://miro.medium.com/v2/resize:fit:720/format:webp/1*LOZgruzs6i82_D2oMYG4bw.png){width="500"}-->
 
 | CARACTERÍSTICAS     | DJANGO | FLASK | FASTAPI|
 | -------------------:| :------| :-----| :------|
@@ -12,26 +29,31 @@ Al crear aplicaciones web en Python, hay tres opciones de frameworks que destaca
 
 *[Fuente: Q2B](https://www.q2bstudio.com/nuestro-blog/18435/django-flask-y-fastapi-cual-elegir)*
 
-## **FastAPI**
+### **FastAPI**
 
 Es importante mencionar que FastAPI solo puede usarse con Python 3.6 o superior. Para utilizarlo debemos instalar dos librerías: fastapi y uvicorn.
 
-**Uvicorn** es una librería de Python que actúa como servidor web asíncorno (ASGI) de alto rendimiento y se utiliza para ejecutar aplicaciones web y APIs, como las creadas con FastAPI. Se usa desde la línea de comandos para levantar el servidor, por ejemplo, si tu archivo se llama *"main.py"* y tu aplicación se llama *"app"*, ejecugtaríamos: `uvicorn main:app`.
+**Uvicorn** es una librería de Python que actúa como servidor web asíncorno (ASGI) de alto rendimiento y se utiliza para ejecutar aplicaciones web y APIs, como las creadas con FastAPI. Se usa **desde la línea de comandos** para levantar el servidor, por ejemplo, si tu archivo se llama *"main.py"* y tu aplicación se llama *"app"*, ejecutaríamos: `uvicorn main:app --reload`.
 
     pip install fastapi
     pip install uvicorn
 
-### Tu primera API en Python con FastAPI
->
->
->
->
->
->
+#### Mi primera API con FastAPI
 
-Se pone un signo de interrogación (?) en una llamada a una API para indicar el comienzo de los parámetros de consulta, que son datos adicionales que se envían al servidor para especificar la solicitud. Estos parámetros le dicen a la API qué información específica obtener o qué acción realizar, funcionando como una extensión de la URL.
+    from fastapi import FastAPI
+    
+    app = FastAPI()
+    
+    @app.get("/mi-primer-api")
+    def hello():
+        return {"Hello world from FastAPI!"}
+
+<!-- Se pone un signo de interrogación (?) en una llamada a una API para indicar el comienzo de los parámetros de consulta, que son datos adicionales que se envían al servidor para especificar la solicitud. Estos parámetros le dicen a la API qué información específica obtener o qué acción realizar, funcionando como una extensión de la URL.
 
 Función: Separar la ruta principal del endpoint de los datos adicionales (parámetros) que se están enviando.
 Estructura: Después del signo de interrogación (\(?\)), se incluyen pares clave-valor (por ejemplo, $clave=valor$).
 Separador de parámetros: Si hay múltiples parámetros, se separan entre sí con un símbolo de y comercial (&).
-Ejemplo: En una URL como $https://ejemplo.com/api/usuarios?id=123&estado=activo$, el signo de interrogación marca el inicio de los parámetros $id=123$ y $estado=activo$, que especifican que se busca el usuario con el ID 123 y cuyo estado es activo. 
+Ejemplo: En una URL como $https://ejemplo.com/api/usuarios?id=123&estado=activo$, el signo de interrogación marca el inicio de los parámetros $id=123$ y $estado=activo$, que especifican que se busca el usuario con el ID 123 y cuyo estado es activo. 
+-->
+
+*[Fuente: Ander Fernandez](https://anderfernandez.com/blog/como-crear-api-en-python/)*
