@@ -2,7 +2,6 @@
 
 ## **¿QUE ES KUBERNETES?**
 
-
 Es una **plataforma de código abierto** que sirve para **automatizar** la implementación, escalado y **operación** de aplicaciones **con contenedores**. Desarrollado por Google y luego liberado como código abierto en 2014, actualmente es uno de los proyectos más populares de la Cloud Native Computing Foundation (CNCF). Ya que se ha convertido en la plataforma de orquestación de contenedores más utilizada y ampliamente adoptada por empresas de todo el mundo.
 
 Kubernetes crea una **capa de abstracción entre la infraestructura y las aplicaciones**. Por ejemplo, teníendo **múltiples servidores**, te permite agruparlos en lo que llamariamos **clúster** y consumirlo **como una pieza individual**, permitiendo desplegar aplicaciones sobre todos los nodos del clúster de una forma transparente para el usuario.
@@ -35,7 +34,6 @@ El *"control plane"* o **nodo maestro**: responsable de gestionar al resto de no
 Los *"workers"* o **nodos de trabajo** alojan los `pods` (contenedores) y las cargas de trabajo, es decir, son los encargados de ejecutar las aplicaciones y servicios que se despliegan en el clúster.
 
 ![Arquitectura Básica Kubernetes](https://pabpereza.dev/assets/images/arquitectura.drawio-54cb22f9d63be3a366cb3a68e7b9030c.svg){width="600"}
-
 
 ### **COMPONENTES BÁSICOS DE CUALQUIER NODO**
 
@@ -106,19 +104,21 @@ Ya podríamos usar comandos *kubctl* para realizar peticiones a nuestro cluster,
     kubectl get nodes
     kubctl config view
 
-## TIPOS DE OBJETOS KUBERNETES
+## **TIPOS DE OBJETOS KUBERNETES**
 
 Un objeto o recurso, es cualquier cosa que podemos definir en un cluster de kubernetes. Cada objeto es de un tipo concreto y tiene unas propiedades y atributos que lo definen. Para definir un objeto, se hace mediante **archivos manifiesto** que se aplican al cluster para que se crear o modificar recursos. Estos manifiestos pueden ser escritos en formato YAML o JSON, y los principales objetos que podemos definir son:
 
-**POD**: aa
+**POD**: es el recurso más básico que podemos crear en Kubernetes, generalmente compuesto por un contenedor (o varios). No es habitual crear pods manualmente, si no a partir de un objeto *"Deployment"*.
 
-**DEPLOYMENT**: aa
+**DEPLOYMENT**: generalmente se utilizan para definir aplicaciones compuestas por varios *"Pods"* y las características específicas de cada uno.
 
-**SERVICE**: aa
+**SERVICE**: permite exponer los pods o aplicaciones para que se accede desde fuera del cluster.
 
-**VOLUME**: aa
+**VOLUME**: usado para persistir información de uno o varios pods.
 
-**NAMESPACE**: aa
+**NAMESPACE**: permite agrupar una serie de recursos en diferentes espacios lógicos separados, dentro del mismo cluster.
+
+![Objetos Kubernetes](../img/kubernetes.png){width="400"}
 
 ### LOS MANIFIESTOS .YAML
 

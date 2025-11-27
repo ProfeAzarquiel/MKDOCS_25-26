@@ -10,6 +10,19 @@ Su principal utilidad es simplificar el desarrollo de aplicaciones, ya que permi
 
 ![Flujo API](../img/apiflow.png)
 
+La principal forma de comunicarnos con una API es mediante un navegador web, usando el protocolo HTTP. Es decir, introduciremos una dirección URL que nos permitirá acceder a los recursos que proporciona la API. Las partes que diferenciamos en esta dirección son:
+
+* Protocolo: http:// o https://
+* Dominio: nombre del host en el que está alojada la API
+* Endpoint: ubicación lógica específica a la que se envía la solicitud.
+
+Los diferentes métodos utilizados para interactuar con una API son:
+
+* **GET**: para obtener información.
+* **POST**: para enviar información.
+* **PUT**: para actualizar información.
+* **DELETE**: para eliminar información.
+
 ## PRINCIPALES FRAMEWORKS PARA APIs
 
 Al crear aplicaciones web en Python, hay tres opciones de frameworks que destacan sobre el resto: **Django**, **Flask** y **FastAPI**. Cada uno aporta fortalezas, limitaciones y contextos de uso distintos, como vemos en la siguiente tabla:
