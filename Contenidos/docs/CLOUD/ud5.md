@@ -139,3 +139,67 @@ Un ejemplo de manifiesto para definir un pod, podría ser el siguiente:
     containers:
     - name: cont1
       image: nginx:alpine
+
+## **CREACIÓN DE UN CLUSTER CON KIND**
+
+### CREAR LA RED VIRTUAL DEL CLUSTER
+
+Cuando levantamos un cluster con KIND, este crea una red Bridge llamada *kind* con un direccionamiento por defecto. Para que ese direccionamiento no se solape o interfiera en los direccionamientos que ya tenemos en uso, vamos a crear nosotros esa red con los parámetros que queramos:
+
+    docker network create --subnet 192.168.0.0/24 --gateway 192.168.0.1 kind
+
+### CREAR FICHERO DE CONFIGURACIÓN DEL CLUSTER
+
+Por otro lado, podemos personalizar las características que tendrá nuestro cluster mediante el fichero `config.yaml`, como el nombre del cluster, el número de nodos, el rol de cada nodo, mapeado de puertos, direccionamiento de los pods y servicios, almacenamiento persistente, etc. Un ejemplo sencillo de un cluster con 4 nodos, puede ser:
+
+??? info "Ejemplo **config.yaml**"
+        kind: Cluster
+        apiVersion: kind.x-k8s.io/v1alpha4
+        name: cpd
+        nodes:
+        - role: control-plane
+        - role: worker
+        - role: worker
+        - role: worker
+
+### LEVANTAR EL CLUSTER
+
+Por último, solo tenemos que crear nuestro cluster con el siguiente comando:
+
+    kind create cluster --config=config.yaml
+
+Comprobaremos que se han creado tantos contenedores como nodos habiamos indicado en el fichero de configuración:
+
+    docker ps
+
+Y si todo ha ido bien, podemos usar la funcionalidad `kubectl` para confirmar que todos los nodos están en estado **"Ready"**:
+
+    kubectl get nodes
+
+## **DESPLIEGUE NGINX EN KUBERNETES**
+
+### CREAR EL FICHERO *DEPLOYMENT*
+
+### CREAR EL FICHERO *SERVICE*
+
+### CREAR EL DESPLIEGUE Y EL SERVICIO
+
+        kubectl apply -f deployment.yaml 
+        kubectl create -f service.yaml
+
+Comprobamos que se han creado los pods relativos al despiegue y estan en ejecución; y que se ha creado el servicio y sobre que puerto del nodo lo ha mapeado:
+
+    kubectl get all
+
+Por último, comprobamos la dirección ip que tiene el nodo maestro (ya que será el que reciba las peticiones):
+
+    docker inspect cpd-control-plane | grep Address
+
+Y si todo fue bien, abrimos un navegador y deberíamos poder acceder al servicio indicando la IP del nodo y el puerto en el que se ha mapeado el servicio. Por ejemplo `http://192.168.0.4:31287`.
+
+## AMPLIAR MEMORIA DE LA MÁQUINA VIRTUAL:
+
+df -h
+lsblk
+sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+sudo resize2fs /dev/ubuntu-vg/ubuntu-lv

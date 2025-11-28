@@ -597,6 +597,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creacion-de-un-cluster-con-kind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CREACIÓN DE UN CLUSTER CON KIND
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#despliegue-nginx-en-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DESPLIEGUE NGINX EN KUBERNETES
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ampliar-memoria-de-la-maquina-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AMPLIAR MEMORIA DE LA MÁQUINA VIRTUAL:
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1301,6 +1334,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creacion-de-un-cluster-con-kind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CREACIÓN DE UN CLUSTER CON KIND
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#despliegue-nginx-en-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DESPLIEGUE NGINX EN KUBERNETES
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ampliar-memoria-de-la-maquina-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AMPLIAR MEMORIA DE LA MÁQUINA VIRTUAL:
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1415,6 +1481,54 @@ containers:
 - name: cont1
   image: nginx:alpine
 </code></pre></div>
+<h2 id="creacion-de-un-cluster-con-kind"><strong>CREACIÓN DE UN CLUSTER CON KIND</strong></h2>
+<h3 id="crear-la-red-virtual-del-cluster">CREAR LA RED VIRTUAL DEL CLUSTER</h3>
+<p>Cuando levantamos un cluster con KIND, este crea una red Bridge llamada <em>kind</em> con un direccionamiento por defecto. Para que ese direccionamiento no se solape o interfiera en los direccionamientos que ya tenemos en uso, vamos a crear nosotros esa red con los parámetros que queramos:</p>
+<div class="language-text highlight"><pre><span></span><code>docker network create --subnet 192.168.0.0/24 --gateway 192.168.0.1 kind
+</code></pre></div>
+<h3 id="crear-fichero-de-configuracion-del-cluster">CREAR FICHERO DE CONFIGURACIÓN DEL CLUSTER</h3>
+<p>Por otro lado, podemos personalizar las características que tendrá nuestro cluster mediante el fichero <code>config.yaml</code>, como el nombre del cluster, el número de nodos, el rol de cada nodo, mapeado de puertos, direccionamiento de los pods y servicios, almacenamiento persistente, etc. Un ejemplo sencillo de un cluster con 4 nodos, puede ser:</p>
+<details class="info">
+<summary>Ejemplo <strong>config.yaml</strong></summary>
+<div class="language-text highlight"><pre><span></span><code>kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: cpd
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
+- role: worker
+</code></pre></div>
+</details>
+<h3 id="levantar-el-cluster">LEVANTAR EL CLUSTER</h3>
+<p>Por último, solo tenemos que crear nuestro cluster con el siguiente comando:</p>
+<div class="language-text highlight"><pre><span></span><code>kind create cluster --config=config.yaml
+</code></pre></div>
+<p>Comprobaremos que se han creado tantos contenedores como nodos habiamos indicado en el fichero de configuración:</p>
+<div class="language-text highlight"><pre><span></span><code>docker ps
+</code></pre></div>
+<p>Y si todo ha ido bien, podemos usar la funcionalidad <code>kubectl</code> para confirmar que todos los nodos están en estado <strong>"Ready"</strong>:</p>
+<div class="language-text highlight"><pre><span></span><code>kubectl get nodes
+</code></pre></div>
+<h2 id="despliegue-nginx-en-kubernetes"><strong>DESPLIEGUE NGINX EN KUBERNETES</strong></h2>
+<h3 id="crear-el-fichero-deployment">CREAR EL FICHERO <em>DEPLOYMENT</em></h3>
+<h3 id="crear-el-fichero-service">CREAR EL FICHERO <em>SERVICE</em></h3>
+<h3 id="crear-el-despliegue-y-el-servicio">CREAR EL DESPLIEGUE Y EL SERVICIO</h3>
+<div class="language-text highlight"><pre><span></span><code>    kubectl apply -f deployment.yaml 
+    kubectl create -f service.yaml
+</code></pre></div>
+<p>Comprobamos que se han creado los pods relativos al despiegue y estan en ejecución; y que se ha creado el servicio y sobre que puerto del nodo lo ha mapeado:</p>
+<div class="language-text highlight"><pre><span></span><code>kubectl get all
+</code></pre></div>
+<p>Por último, comprobamos la dirección ip que tiene el nodo maestro (ya que será el que reciba las peticiones):</p>
+<div class="language-text highlight"><pre><span></span><code>docker inspect cpd-control-plane | grep Address
+</code></pre></div>
+<p>Y si todo fue bien, abrimos un navegador y deberíamos poder acceder al servicio indicando la IP del nodo y el puerto en el que se ha mapeado el servicio. Por ejemplo <code>http://192.168.0.4:31287</code>.</p>
+<h2 id="ampliar-memoria-de-la-maquina-virtual">AMPLIAR MEMORIA DE LA MÁQUINA VIRTUAL:</h2>
+<p>df -h
+lsblk
+sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+sudo resize2fs /dev/ubuntu-vg/ubuntu-lv</p>
 
 
 
