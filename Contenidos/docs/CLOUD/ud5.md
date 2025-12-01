@@ -83,66 +83,11 @@ Por otro lado, instalamos la utilidad `kubectl` que es el cliente usado para int
     sudo mv ./kubectl /usr/local/bin
     kubectl version --client
 
-Una vez instalados, pasamos a crear un fichero `config.yaml` donde se declaran los nodos que tiene el cluster y los roles de cada uno de ellos:
-
-    kind: Cluster
-    apiVersion: kind.x-k8s.io/v1alpha4
-    nodes:
-    - role: control-plane
-    - role: worker
-    - role: worker
-
-Y luego lo levantamos con el comando_
-
-    kind create cluster --config=config.yaml
-
-!!! tip "CREDENCIALES DE ACCESO AL CLUSTER"
-    Podemos comprobar que cuando se crea un cluster, se crea también el fichero de configuración con nuestras credenciales para el acceso en `~/.kube/config`.
-
-Ya podríamos usar comandos *kubctl* para realizar peticiones a nuestro cluster, como por ejemplo:
-
-    kubectl get nodes
-    kubctl config view
-
-## **TIPOS DE OBJETOS KUBERNETES**
-
-Un objeto o recurso, es cualquier cosa que podemos definir en un cluster de kubernetes. Cada objeto es de un tipo concreto y tiene unas propiedades y atributos que lo definen. Para definir un objeto, se hace mediante **archivos manifiesto** que se aplican al cluster para que se crear o modificar recursos. Estos manifiestos pueden ser escritos en formato YAML o JSON, y los principales objetos que podemos definir son:
-
-**POD**: es el recurso más básico que podemos crear en Kubernetes, generalmente compuesto por un contenedor (o varios). No es habitual crear pods manualmente, si no a partir de un objeto *"Deployment"*.
-
-**DEPLOYMENT**: generalmente se utilizan para definir aplicaciones compuestas por varios *"Pods"* y las características específicas de cada uno.
-
-**SERVICE**: permite exponer los pods o aplicaciones para que se accede desde fuera del cluster.
-
-**VOLUME**: usado para persistir información de uno o varios pods.
-
-**NAMESPACE**: permite agrupar una serie de recursos en diferentes espacios lógicos separados, dentro del mismo cluster.
-
-![Objetos Kubernetes](../img/kubernetes.png){width="400"}
-
-### LOS MANIFIESTOS .YAML
-
-En el archivo .yaml del objeto que queramos crear, obligatoriamente debemos indicar (como mínimo) los siguientes apartados:
-
-**apiVersion**: versión de la API de Kubernetes que se va a usar.
-**kind**: tipo de objeto que quieres crear.
-**metadata**: datos que identifican unívocamente al objeto (name, uid, namespace...).
-**spec**: características específicas del objeto (contendores, volumenes...).
-
-Un ejemplo de manifiesto para definir un pod, podría ser el siguiente:
-
-    apiVersion: v1
-    kind: Pod
-    metadata:
-    name: podtest
-    spec:
-    containers:
-    - name: cont1
-      image: nginx:alpine
+Con estos simples pasos, ya podemos empezar a definir nuestro cluster Kubernetes con Kind.
 
 ## **CREACIÓN DE UN CLUSTER CON KIND**
 
-### CREAR LA RED VIRTUAL DEL CLUSTER
+### PERSONALIZAR LA RED VIRTUAL DEL CLUSTER
 
 Cuando levantamos un cluster con KIND, este crea una red Bridge llamada *kind* con un direccionamiento por defecto. Para que ese direccionamiento no se solape o interfiera en los direccionamientos que ya tenemos en uso, vamos a crear nosotros esa red con los parámetros que queramos:
 
@@ -152,7 +97,7 @@ Cuando levantamos un cluster con KIND, este crea una red Bridge llamada *kind* c
 
 Por otro lado, podemos personalizar las características que tendrá nuestro cluster mediante el fichero `config.yaml`, como el nombre del cluster, el número de nodos, el rol de cada nodo, mapeado de puertos, direccionamiento de los pods y servicios, almacenamiento persistente, etc. Un ejemplo sencillo de un cluster con 4 nodos, puede ser:
 
-??? info "Ejemplo **config.yaml**"
+??? info "nano **config.yaml**"
         kind: Cluster
         apiVersion: kind.x-k8s.io/v1alpha4
         name: cpd
@@ -168,6 +113,9 @@ Por último, solo tenemos que crear nuestro cluster con el siguiente comando:
 
     kind create cluster --config=config.yaml
 
+!!! tip "Credenciales de Acceso al Cluster"
+    Podemos comprobar que cuando se crea un cluster, se crea también el fichero de configuración con nuestras credenciales para el acceso en `~/.kube/config`.
+
 Comprobaremos que se han creado tantos contenedores como nodos habiamos indicado en el fichero de configuración:
 
     docker ps
@@ -175,17 +123,104 @@ Comprobaremos que se han creado tantos contenedores como nodos habiamos indicado
 Y si todo ha ido bien, podemos usar la funcionalidad `kubectl` para confirmar que todos los nodos están en estado **"Ready"**:
 
     kubectl get nodes
+    kubectl config view
 
-## **DESPLIEGUE NGINX EN KUBERNETES**
+## **TIPOS DE OBJETOS KUBERNETES**
+
+Un objeto o recurso, es cualquier cosa que podemos definir en un cluster de kubernetes. Cada objeto es de un tipo concreto y tiene unas propiedades y atributos que lo definen. Para definir un objeto, se hace mediante **archivos manifiesto** que se aplican al cluster para que se crear o modificar recursos. Estos manifiestos pueden ser escritos en formato YAML o JSON, y los principales objetos que podemos definir son:
+
+**POD**: es el recurso más básico que podemos crear en Kubernetes, generalmente compuesto por un contenedor (o varios). No es habitual crear pods manualmente, si no a partir de un objeto *"Deployment"*.
+
+**DEPLOYMENT**: generalmente se utilizan para definir aplicaciones compuestas por varios *"Pods"* y las características específicas de cada uno.
+
+**SERVICE**: permite exponer los pods o aplicaciones para que se accede desde fuera del cluster.
+
+**VOLUME**: usado para persistir información de uno o varios pods.
+
+**NAMESPACE**: permite agrupar una serie de recursos en diferentes espacios lógicos separados, dentro del mismo cluster.
+
+<figure markdown='span'>
+    ![Objetos Kubernetes](../img/kubernetes.png){width="400"}
+    <small><figcaption>Objetos Kubernetes</figcaption></small>
+</figure>
+
+### LOS MANIFIESTOS .YAML
+
+En el archivo .yaml del objeto que queramos crear, obligatoriamente debemos indicar (como mínimo) los siguientes apartados:
+
+**apiVersion**: versión de la API de Kubernetes que se va a usar.
+**kind**: tipo de objeto que quieres crear.
+**metadata**: datos que identifican unívocamente al objeto (name, uid, namespace...).
+**spec**: características específicas del objeto (contendores, volumenes...).
+
+### CREANDO MI PRIMER POD
+
+Un ejemplo de manifiesto para definir un pod, podría ser el siguiente:
+
+    apiVersion: v1
+    kind: Pod
+    metadata:
+    name: podtest
+    spec:
+    containers:
+    - name: cont1
+      image: nginx:alpine
+
+### CREANDO MI PRIMER DEPLOYMENT
+
+## :video_game: **PRÁCTICA**: DESPLIEGUE NGINX EN KUBERNETES
 
 ### CREAR EL FICHERO *DEPLOYMENT*
 
+??? abstract "nano **deployment.yaml**"
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+        name: nginx
+        namespace: default
+        labels:
+            app: nginx
+        spec:
+        revisionHistoryLimit: 2
+        strategy:
+            type: RollingUpdate
+        replicas: 2
+        selector:
+            matchLabels:
+            app: nginx
+        template:
+            metadata:
+            labels:
+                app: nginx
+            spec:
+            containers:
+            - image: nginx
+                name: nginx
+                ports:
+                - name: http
+                containerPort: 80
+
 ### CREAR EL FICHERO *SERVICE*
+
+??? abstract "nano **service.yaml**"
+        apiVersion: v1
+        kind: Service
+        metadata:
+        name: nginx
+        namespace: default
+        spec:
+        type: NodePort
+        ports:
+        - name: http
+            port: 80
+            targetPort: http
+        selector:
+            app: nginx
 
 ### CREAR EL DESPLIEGUE Y EL SERVICIO
 
-        kubectl apply -f deployment.yaml 
-        kubectl create -f service.yaml
+    kubectl apply -f deployment.yaml 
+    kubectl create -f service.yaml
 
 Comprobamos que se han creado los pods relativos al despiegue y estan en ejecución; y que se ha creado el servicio y sobre que puerto del nodo lo ha mapeado:
 
@@ -196,10 +231,3 @@ Por último, comprobamos la dirección ip que tiene el nodo maestro (ya que ser�
     docker inspect cpd-control-plane | grep Address
 
 Y si todo fue bien, abrimos un navegador y deberíamos poder acceder al servicio indicando la IP del nodo y el puerto en el que se ha mapeado el servicio. Por ejemplo `http://192.168.0.4:31287`.
-
-## AMPLIAR MEMORIA DE LA MÁQUINA VIRTUAL:
-
-df -h
-lsblk
-sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
-sudo resize2fs /dev/ubuntu-vg/ubuntu-lv

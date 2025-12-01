@@ -39,14 +39,16 @@ nav:
     - UD3. Creación de APIs: PYTHON/ud3.md
 
 markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - tables
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.emoji
-  - attr_list
   - md_in_html
   - pymdownx.blocks.caption
   - pymdownx.tabbed:
@@ -56,10 +58,12 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - toc:
-      toc_depth: 2
+      toc_depth: 3
 
 theme:
   name: material
+  favicon: ./img/favicon.png
+  logo: ./img/logo2.png
   features:
     - content.code.copy
     - content.tabs.link

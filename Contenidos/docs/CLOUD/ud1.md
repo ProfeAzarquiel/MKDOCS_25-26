@@ -88,6 +88,11 @@ DIRECCIONES
 - Para ello, tendremos configurado en nuestra red uno o más servidores DNS, a los cuales les enviaremos peticiones cada vez que nos comunicamos con otro equipo a través de su nombre de dominio; y estos realizaran la traducción de ese nombre o alias, a la dirección IP que le corresponde.
 - Este servicio funciona de manera totalmente transparente para el usuario.
 
+<figure markdown="span">
+  ![Funcionamiento DNS](https://www.devopsschool.com/blog/wp-content/uploads/2023/08/image-454-1024x785.png){width="500"}
+  <small><figcaption>Funcionamiento DNS</figcaption></small>
+</figure>
+
 ### NAT
 
 - Mecanismo mediante el cual podemos traducir una o varias direcciones IP privadas (locales), en una o varios IP públicas (globales) y viceversa. De esta forma, los equipos de una red local pueden acceder a internet sin que sus direcciones IP privadas sean visibles fuera de su red local.
