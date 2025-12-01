@@ -781,10 +781,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#yarn" class="md-nav__link">
+  <a href="#yarn-yet-another-resource-negotiator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        YARN
+        YARN (Yet Another Resource Negotiator)
       
     </span>
   </a>
@@ -1374,10 +1374,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#yarn" class="md-nav__link">
+  <a href="#yarn-yet-another-resource-negotiator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        YARN
+        YARN (Yet Another Resource Negotiator)
       
     </span>
   </a>
@@ -1558,9 +1558,16 @@
     <img alt="Replicación HDFS" src="https://substackcdn.com/image/fetch/$s_!_cKl!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8321d7f4-8e50-4990-a3c2-169c33106c5c_582x394.png" width="400" />
     <small><figcaption>División y replicación HDFS</figcaption></small>
 </figure>
-<h3 id="yarn"><strong>YARN</strong></h3>
-<p>Es el framework que permite a Hadoop soportar varios motores de ejecución incluyendo MapReduce, y proporciona un planificador agnóstico a los trabajos que se encuentran en ejecución en el clúster. Esta mejora de Hadoop también es conocida como Hadoop 2.</p>
-<p>Yarn separa las dos funcionalidades principales: la gestión de recursos y la planificación y monitorización de trabajos. Con esta idea, es posible tener un gestor global (Resource Manager) y un Application Master por cada aplicación.</p>
+<h3 id="yarn-yet-another-resource-negotiator"><strong>YARN</strong> (Yet Another Resource Negotiator)</h3>
+<p>Este framework proporciona un <strong>planificador de recursos</strong> desvinculado de los trabajos que se encuentran en ejecución en el clúster, ya que <strong>separa</strong> la <strong>gestión de recursos</strong> y la <strong>planificación y monitorización</strong><em> de trabajos. Lo que hace posible tener un gestor global (Resource Manager) por cluster y un Application Master por aplicación (considerando aplicación tanto un único </em>job<em>, como un conjunto de </em>jobs* cíclicos).</p>
+<p>Se divide en <strong>tres componentes principales</strong>: un Resource Manager, múltiples Node Manager y varios ApplicationMaster.</p>
+<p>El Resource Manager y el Node Manager componen el framework de computación de datos. En concreto, el ResourceManager controla el arranque de la aplicación, siendo la autoridad que orquesta los recursos entre todas las aplicaciones del sistema. A su vez, tendremos tantos NodeManager como datanodes tenga nuestro clúster, siendo responsables de gestionar y monitorizar los recursos de cada nodo (CPU, memoria, disco y red) y reportar estos datos al Resource Manager.</p>
+<p>El Application Master es una librería específica encargada de negociar los recursos con el ResourceManager y de trabajar con los Node Manager para ejecutar y monitorizar las tareas.</p>
+<p>Finalmente, en nuestro clúster, tendremos corriendo un Job History Server encargado de archivar los fichero de log de los jobs. Aunque es un proceso opcional, se recomienda su uso para monitorizar los jobs ejecutados.</p>
+<figure>
+    <img alt="YARN Architecture" src="../../img/yarn_schema.png" width="600" />
+    <small><figcaption>Arquitectura YARN</figcaption></small>
+</figure>
 <h3 id="map-reduce"><strong>MAP-REDUCE</strong></h3>
 <p>Hadoop MapReduce es un paradigma de procesamiento de datos caracterizado por dividirse en dos fases o pasos diferenciados: Map y Reduce. Estos subprocesos asociados a la tarea se ejecutan de manera distribuida, en diferentes nodos de procesamiento o esclavos. Para controlar y gestionar su ejecución, existe un proceso Master o Job Tracker. También es el encargado de aceptar los nuevos trabajos enviados al sistema por los clientes. Los resultados del procesamiento se pueden almacenar en el mismo sistema de almacenamiento o bien en una base de datos o sistema externo.</p>
 <h4 id="fases-de-hadoop-mapreduce"><strong>Fases de Hadoop MapReduce</strong></h4>
