@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#manipulacion-de-datos-con-python" class="md-skip">
+        <a href="#manejo-de-datos-con-pandas" class="md-skip">
           Skip to content
         </a>
       
@@ -1091,6 +1091,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2. Análisis de Datos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1107,6 +1125,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTRODUCCIÓN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ides-interactivos-para-trabajar-con-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDEs INTERACTIVOS PARA TRABAJAR CON DATOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IDEs INTERACTIVOS PARA TRABAJAR CON DATOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JUPYTER NOTEBOOK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-colab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GOOGLE COLAB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otras-alternativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OTRAS ALTERNATIVAS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-y-cargar-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CREAR Y CARGAR DATOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1168,6 +1277,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTRODUCCIÓN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ides-interactivos-para-trabajar-con-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDEs INTERACTIVOS PARA TRABAJAR CON DATOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IDEs INTERACTIVOS PARA TRABAJAR CON DATOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JUPYTER NOTEBOOK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-colab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GOOGLE COLAB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otras-alternativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OTRAS ALTERNATIVAS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-y-cargar-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CREAR Y CARGAR DATOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1183,7 +1372,222 @@
 
 
 
-<h1 id="manipulacion-de-datos-con-python">MANIPULACIÓN DE DATOS CON PYTHON</h1>
+<h1 id="manejo-de-datos-con-pandas">MANEJO DE DATOS CON PANDAS <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.224 0a3.14 3.14 0 0 0-3.14 3.127 3.1 3.1 0 0 0 1.079 2.36 11.8 11.8 0 0 0-2.037 6.639C.126 18.68 5.458 24 12 24s11.874-5.32 11.874-11.874a11.7 11.7 0 0 0-2.025-6.614 3.14 3.14 0 0 0 1.09-2.373A3.13 3.13 0 0 0 19.8.012a3.12 3.12 0 0 0-2.636 1.438A11.8 11.8 0 0 0 12.012.264 11.8 11.8 0 0 0 6.86 1.438 3.13 3.13 0 0 0 4.224 0M12 1.198c1.713 0 3.331.396 4.78 1.102a11 11 0 0 1 4.29 3.715 10.9 10.9 0 0 1 1.882 6.135c.011 6.039-4.901 10.951-10.94 10.951-6.04 0-10.951-4.912-10.951-10.951 0-2.277.694-4.386 1.88-6.135A11.1 11.1 0 0 1 7.232 2.3 10.8 10.8 0 0 1 12 1.198M7.367 6.345c-.853.012-1.743.292-2.28.653-1.031.682-2.29 2.156-2.085 4.181.191 2.025 1.785 3.283 2.612 3.283.826 0 1.234-.42 1.485-1.45.252-1.018 1.115-2.192 2.217-3.45s-.024-2.469-.024-2.469c-.393-.513-1.052-.727-1.755-.747zm9.233.007-.17.001c-.702.02-1.358.233-1.746.752 0 0-1.126 1.21-.024 2.469 1.114 1.258 1.965 2.432 2.217 3.45.251 1.019.659 1.438 1.485 1.45.827 0 2.409-1.258 2.612-3.283s-1.054-3.51-2.084-4.182c-.544-.36-1.437-.643-2.29-.657m-8.962 2c.348 0 .624.275.624.623-.012.335-.288.623-.624.623a.62.62 0 0 1-.623-.623.62.62 0 0 1 .623-.624zm8.891 0c.348 0 .623.275.623.623-.012.335-.287.623-.623.623a.62.62 0 0 1-.623-.623c0-.348.288-.624.623-.624zm-4.541 4.025c-.527 0-2.06.096-2.06.587 0 .887 1.88 1.522 2.06 1.474.18.048 2.06-.587 2.06-1.474 0-.49-1.52-.587-2.06-.587M9.076 15.17c0 1.414 1.294 2.564 2.912 2.564s2.924-1.15 2.924-2.564z"/></svg></span></h1>
+<h2 id="introduccion">INTRODUCCIÓN</h2>
+<p>Pandas es la librería estándar para manipulación de datos en Python.
+Permite leer, limpiar, transformar y exportar datos fácilmente, y será muy útil para preparar la información que serviremos desde nuestras APIs.</p>
+<p><strong>ESTRUCTURAS PRINCIPALES:</strong></p>
+<ul>
+<li><strong>Series</strong> → estructura 1D (como una lista con etiquetas).</li>
+<li><strong>DataFrame</strong> → estructura 2D (tabla con filas y columnas).</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">INSTALACIÓN</p>
+<p>Si usas Google Colab, Jupyter Notebook o Anaconda, pandas ya está instalado.
+Si trabajas desde VS Code, la terminal o un entorno virtual, instálalo con:</p>
+<div class="language-text highlight"><pre><span></span><code>pip install pandas
+</code></pre></div>
+</div>
+<h2 id="ides-interactivos-para-trabajar-con-datos">IDEs INTERACTIVOS PARA TRABAJAR CON DATOS</h2>
+<p>A la hora de manejar datos, es importante poder visualizar en tiempo real y de manera sencilla la salida o resultados de los comandos que ejecutamos. Para ello existen entornos de desarrollo interactivos, que nos van a facilitar mucho esta tarea.</p>
+<h3 id="jupyter-notebook"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.157 22.201A1.784 1.799 0 0 1 5.374 24a1.784 1.799 0 0 1-1.784-1.799 1.784 1.799 0 0 1 1.784-1.799 1.784 1.799 0 0 1 1.783 1.799M20.582 1.427a1.415 1.427 0 0 1-1.415 1.428 1.415 1.427 0 0 1-1.416-1.428A1.415 1.427 0 0 1 19.167 0a1.415 1.427 0 0 1 1.415 1.427M4.992 3.336A1.047 1.056 0 0 1 3.946 4.39a1.047 1.056 0 0 1-1.047-1.055A1.047 1.056 0 0 1 3.946 2.28a1.047 1.056 0 0 1 1.046 1.056m7.336 1.517c3.769 0 7.06 1.38 8.768 3.424a9.36 9.36 0 0 0-3.393-4.547 9.24 9.24 0 0 0-5.377-1.728A9.24 9.24 0 0 0 6.95 3.73a9.36 9.36 0 0 0-3.394 4.547c1.713-2.04 5.004-3.424 8.772-3.424m.001 13.295c-3.768 0-7.06-1.381-8.768-3.425a9.36 9.36 0 0 0 3.394 4.547A9.24 9.24 0 0 0 12.33 21a9.24 9.24 0 0 0 5.377-1.729 9.36 9.36 0 0 0 3.393-4.547c-1.712 2.044-5.003 3.425-8.772 3.425Z"/></svg></span> JUPYTER NOTEBOOK</h3>
+<h3 id="google-colab"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.941 4.976a7.03 7.03 0 0 0-4.93 2.064 7.033 7.033 0 0 0-.124 9.807l2.395-2.395a3.646 3.646 0 0 1 5.15-5.148l2.397-2.399a7.03 7.03 0 0 0-4.888-1.93m-9.871.01a7.03 7.03 0 0 0-4.888 1.931l2.391 2.391a3.643 3.643 0 0 1 5.023.127l1.734-2.973-.1-.08a7.03 7.03 0 0 0-4.16-1.396m15.01 2.172-2.39 2.39a3.646 3.646 0 0 1-5.15 5.15l-2.406 2.407a7.036 7.036 0 0 0 9.945-9.947m-20.148.01a7.033 7.033 0 0 0-.002 9.681l2.397-2.397a3.643 3.643 0 0 1-.004-4.892zm7.664 7.423a3.635 3.635 0 0 1-5.017.113L2.182 17.1a7.03 7.03 0 0 0 9.007.546l.137-.112z"/></svg></span> GOOGLE COLAB</h3>
+<h3 id="otras-alternativas"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 16.47V7.39l-6 4.54M2.22 9.19a.86.86 0 0 1-.02-1.15l1.2-1.11c.2-.18.69-.26 1.05 0l3.42 2.61 7.93-7.25c.32-.32.87-.45 1.5-.12l4 1.91c.36.21.7.54.7 1.15v13.5c0 .4-.29.83-.6 1l-4.4 2.1c-.32.13-.92.01-1.13-.2l-8.02-7.3-3.4 2.6c-.38.26-.85.19-1.05 0l-1.2-1.1c-.32-.33-.28-.87.05-1.2l3-2.7"/></svg></span> OTRAS ALTERNATIVAS</h3>
+<p>Jupyter Notebook: entorno interactivo para trabajar con datos</p>
+<p>Jupyter Notebook es una herramienta que permite escribir y ejecutar código Python de forma interactiva, mezclando texto, código y resultados en un mismo documento.
+Es el entorno más usado en ciencia de datos y análisis porque permite ir probando paso a paso el código y ver directamente las salidas de pandas en forma de tabla.</p>
+<p>🔹 Ventajas principales
+Ejecución celda a celda, ideal para pruebas incrementales.
+Permite documentar con texto y Markdown el análisis.
+Muestra los resultados de gráficos, tablas y outputs directamente bajo cada celda.
+Perfecto para experimentar, limpiar y explorar datos antes de usarlos en una aplicación o API.
+🔹 Estructura básica
+Cada notebook se compone de celdas:</p>
+<p>Celdas de código (donde se escribe Python).
+Celdas de texto Markdown (para explicaciones, títulos, listas, etc.).
+Ejemplo:</p>
+<div class="language-text highlight"><pre><span></span><code>import pandas as pd
+
+df = pd.DataFrame({
+        &quot;nombre&quot;: [&quot;Ana&quot;, &quot;Luis&quot;, &quot;Marta&quot;],
+        &quot;edad&quot;: [25, 30, 22]
+})
+
+df
+</code></pre></div>
+<p>💡 En un notebook, al ejecutar esa celda, la tabla DataFrame se muestra de forma visual y formateada (más agradable que en la consola).</p>
+<p>🔹 Cómo instalar y ejecutar Jupyter Notebook
+Si usas Anaconda, ya viene instalado.
+Si no, puedes instalarlo manualmente con:</p>
+<div class="language-text highlight"><pre><span></span><code>pip install notebook
+</code></pre></div>
+<p>Luego se lanza desde la terminal con:</p>
+<div class="language-text highlight"><pre><span></span><code>jupyter notebook
+</code></pre></div>
+<p>Esto abrirá una pestaña en el navegador, normalmente en la dirección</p>
+<div class="language-text highlight"><pre><span></span><code>http://localhost:8888, desde donde puedes crear nuevos notebooks .ipynb.
+</code></pre></div>
+<p>🔹 Alternativas modernas
+JupyterLab → versión más avanzada con pestañas, paneles, explorador de archivos, etc.
+VS Code → permite abrir y ejecutar notebooks directamente sin salir del editor.
+Google Colab → entorno online gratuito (no requiere instalación).
+🔹 Usar Jupyter online (Google Colab)</p>
+<p>Google Colab es una opción ideal para los alumnos que no quieren configurar nada localmente.
+Solo hace falta tener una cuenta de Google y acceder a:</p>
+<div class="language-text highlight"><pre><span></span><code>👉 https://colab.research.google.com
+</code></pre></div>
+<p>Ventajas:</p>
+<p>No requiere instalación.
+Permite guardar los notebooks en Google Drive.
+Ya trae pandas, NumPy y matplotlib instalados.
+Se pueden importar datasets directamente desde URLs o desde el Drive.
+Ejemplo de carga de CSV desde URL:</p>
+<div class="language-text highlight"><pre><span></span><code>import pandas as pd
+
+url = &quot;https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv&quot;
+df = pd.read_csv(url)
+df.head()
+</code></pre></div>
+<p>🔹 Guardar y compartir notebooks
+Los notebooks se guardan con extensión .ipynb.
+Pueden compartirse fácilmente:</p>
+<p>Por correo o Drive (como cualquier archivo).
+Exportándose a otros formatos: HTML, PDF, Markdown, etc.</p>
+<p>jupyter nbconvert --to html mi_notebook.ipynb
+⚙️ En resumen:
+Usa Jupyter Notebook o Colab para explorar y limpiar datos.
+Más adelante, cuando construyas las APIs, trabajarás con los mismos scripts .py pero ya listos para producción.</p>
+<h2 id="crear-y-cargar-datos">CREAR Y CARGAR DATOS</h2>
+<div class="language-text highlight"><pre><span></span><code>import pandas as pd
+
+# Crear un DataFrame desde un diccionario
+data = {
+    &quot;nombre&quot;: [&quot;Ana&quot;, &quot;Luis&quot;, &quot;Marta&quot;],
+    &quot;edad&quot;: [25, 30, 22],
+    &quot;ciudad&quot;: [&quot;Madrid&quot;, &quot;Sevilla&quot;, &quot;Valencia&quot;]
+}
+df = pd.DataFrame(data)
+</code></pre></div>
+<p>También podemos cargar datos desde distintos formatos:</p>
+<div class="language-text highlight"><pre><span></span><code># Desde un CSV
+df_csv = pd.read_csv(&quot;personas.csv&quot;)
+
+# Desde un Excel
+df_excel = pd.read_excel(&quot;personas.xlsx&quot;, sheet_name=&quot;Hoja1&quot;)
+
+# Desde un JSON
+df_json = pd.read_json(&quot;personas.json&quot;)
+</code></pre></div>
+<ol>
+<li>
+<p>Selección, filtrado y ordenación.</p>
+<h1 id="seleccionar-una-columna">Seleccionar una columna</h1>
+<p>nombres = df["nombre"]</p>
+<h1 id="filtrar-por-condicion">Filtrar por condición</h1>
+<p>mayores_25 = df[df["edad"] &gt; 25]</p>
+<h1 id="seleccionar-varias-columnas">Seleccionar varias columnas</h1>
+<p>sub_df = df[["nombre", "ciudad"]]</p>
+<h1 id="seleccionar-una-fila-por-indice">Seleccionar una fila por índice</h1>
+<p>fila_0 = df.loc[0]</p>
+</li>
+</ol>
+<p>Agrupaciones y ordenación</p>
+<h1 id="media-de-edad-por-ciudad">Media de edad por ciudad</h1>
+<p>print(df.groupby("ciudad")["edad"].mean())</p>
+<h1 id="ordenar-por-edad-descendente">Ordenar por edad descendente</h1>
+<p>df_ordenado = df.sort_values(by="edad", ascending=False)
+5. Exploración y detección de valores anómalos
+Exploración rápida</p>
+<p>print(df.head())       # primeras filas
+print(df.shape)        # dimensiones
+print(df.columns)      # nombres de columnas
+print(df.info())       # información general
+print(df.describe())   # estadísticas básicas
+Detección de valores anómalos
+Antes de limpiar los datos, es recomendable explorar su contenido para detectar errores frecuentes:</p>
+<p>Valores duplicados o vacíos.
+Diferencias de formato (por ejemplo, mayúsculas/minúsculas o espacios).
+Abreviaturas o nombres inconsistentes.
+Outliers (valores numéricos fuera de rango).
+Una función muy útil para inspeccionar el contenido de cada columna es .unique():</p>
+<p>import pandas as pd</p>
+<p>df = pd.read_csv("datos.csv")</p>
+<h1 id="mostrar-los-valores-unicos-de-las-columnas-categoricas">Mostrar los valores únicos de las columnas categóricas</h1>
+<p>print(df["ciudad"].unique())
+print(df["nombre"].unique())
+También se pueden obtener estadísticas rápidas con:</p>
+<p>df.describe(include="all")
+Esto muestra recuentos, medias, mínimos, máximos y frecuencias más comunes.
+A partir de aquí, puedes decidir qué reglas aplicar en tu limpieza (por ejemplo, reemplazar abreviaturas o eliminar valores anómalos).</p>
+<ol>
+<li>Limpieza de datos</li>
+</ol>
+<h1 id="comprobar-valores-nulos">Comprobar valores nulos</h1>
+<p>df.isna().sum()</p>
+<h1 id="eliminar-filas-con-valores-nulos">Eliminar filas con valores nulos</h1>
+<p>df = df.dropna()</p>
+<h1 id="rellenar-nulos-con-la-media-de-la-columna">Rellenar nulos con la media de la columna</h1>
+<p>df["edad"] = df["edad"].fillna(df["edad"].mean())</p>
+<h1 id="eliminar-duplicados">Eliminar duplicados</h1>
+<p>df = df.drop_duplicates()</p>
+<h1 id="normalizar-texto">Normalizar texto</h1>
+<p>df["nombre"] = df["nombre"].str.strip().str.title()</p>
+<h1 id="conversion-de-tipos">Conversión de tipos</h1>
+<p>df["edad"] = pd.to_numeric(df["edad"], errors="coerce")
+df["fecha"] = pd.to_datetime(df.get("fecha"), errors="coerce")</p>
+<h1 id="reemplazar-valores">Reemplazar valores</h1>
+<p>df["ciudad"] = df["ciudad"].replace({"Mad": "Madrid", "Sev": "Sevilla"})
+Uso de expresiones regulares en la limpieza de datos
+Las expresiones regulares (regex) son una herramienta muy potente para detectar o corregir patrones en texto.
+En pandas se pueden usar directamente con métodos como .str.contains() o .str.replace().</p>
+<p>Por ejemplo, para eliminar caracteres no alfabéticos de los nombres:</p>
+<p>df["nombre"] = df["nombre"].str.replace(r"[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]", "", regex=True)
+Para validar emails correctamente formados:</p>
+<p>df = df[df["email"].str.contains(r"^[\w.-]+@[\w.-]+.\w+$", na=False)]
+O para detectar filas donde el número de teléfono no tenga 9 dígitos:</p>
+<p>telefonos_erroneos = df[~df["telefono"].str.contains(r"^\d{9}$", na=False)]
+print(telefonos_erroneos)
+Las regex permiten automatizar muchas tareas de limpieza textual:</p>
+<p>Normalización de formatos (fechas, códigos postales, teléfonos).
+Detección de errores de escritura.
+Filtrado o eliminación de datos inválidos.
+💡 Consejo: puedes probar tus expresiones regulares en sitios web como regex101.com antes de aplicarlas en tu código.</p>
+<ol>
+<li>Guardar y exportar datos (CSV, Excel, JSON)
+Una vez limpios los datos, es habitual guardarlos para su reutilización o para servirlos desde una API.</li>
+</ol>
+<h1 id="guardar-como-csv">Guardar como CSV</h1>
+<p>df.to_csv("personas_limpias.csv", index=False)</p>
+<h1 id="guardar-como-excel">Guardar como Excel</h1>
+<p>df.to_excel("personas_limpias.xlsx", index=False, sheet_name="Datos")</p>
+<h1 id="guardar-como-json">Guardar como JSON</h1>
+<p>df.to_json("personas_limpias.json", orient="records", indent=4, force_ascii=False)
+👉 En general:</p>
+<p>CSV → formato más universal y ligero.
+Excel → práctico para informes o colaboración.
+JSON → ideal para APIs.
+9. Preparar datos para API
+Las APIs suelen devolver datos en formato JSON.
+Podemos convertir fácilmente un DataFrame en JSON o en una lista de diccionarios.</p>
+<h1 id="dataframe-lista-de-diccionarios">DataFrame → lista de diccionarios</h1>
+<p>data_api = df.to_dict(orient="records")</p>
+<h1 id="dataframe-cadena-json">DataFrame → cadena JSON</h1>
+<p>json_str = df.to_json(orient="records", indent=4, force_ascii=False)
+Ejemplo práctico (usando FastAPI):</p>
+<p>from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+import pandas as pd</p>
+<p>app = FastAPI()</p>
+<p>@app.get("/personas")
+def obtener_personas():
+    df = pd.read_csv("personas_limpias.csv")
+    data = df.to_dict(orient="records")
+    return JSONResponse(content=data)
+10. Resumen del flujo para APIs
+Cargar datos desde CSV, Excel o JSON.
+Explorar y limpiar: eliminar duplicados, manejar nulos, normalizar texto y tipos.
+Filtrar o transformar según las necesidades del endpoint.
+Exportar o convertir a JSON para devolver desde la API.</p>
 
 
 

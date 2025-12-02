@@ -1586,8 +1586,8 @@
 <h3 id="escenario-e-imagen-empleada">ESCENARIO E IMAGEN EMPLEADA</h3>
 <p>Partimos de una máquina con Ubuntu Desktop 25.10, en la que tenemos instalado Docker 28.5.1. En ella, vamos a desplegar un entorno con cuatro contenedores, consistente en:</p>
 <ul>
-<li><strong>Un contenedor</strong> ( bigtop_hostname0) para el servidor Ambari.</li>
-<li><strong>Tres contenedores</strong> ( bigtop_hostname1, bigtop_hostname2, bigtop_hostname3) para agentes de Ambari.</li>
+<li><strong>Un contenedor</strong> ( bigtop-hostname0) para el servidor Ambari.</li>
+<li><strong>Tres contenedores</strong> ( bigtop-hostname1, bigtop-hostname2, bigtop-hostname3) para agentes de Ambari.</li>
 <li><strong>Un volumen</strong> compartido para el repositorio Ambari.</li>
 </ul>
 <p>La imagen que usaremos <code>bigtop/puppet:trunk-rockylinux-8imagen</code>, forma parte del proyecto Apache BigTop y proporciona un marco de trabajo para la creación y prueba de proyectos relacionados con Hadoop, ya que viene preconfigurada con muchas de las dependencias necesarias para los servicios de Ambari y Hadoop. Esta imagen incluye:</p>
@@ -1637,10 +1637,10 @@ cat &gt; hosts &lt;&lt; EOF
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
 # Container hostnames
-172.20.0.2  ambari-bigtop_hostname1-1
-172.20.0.3  ambari-bigtop_hostname3-1
-172.20.0.4  ambari-bigtop_hostname0-1
-172.20.0.5  ambari-bigtop_hostname2-1
+172.20.0.2  ambari-bigtop-hostname1
+172.20.0.3  ambari-bigtop-hostname3
+172.20.0.4  ambari-bigtop-hostname0
+172.20.0.5  ambari-bigtop-hostname2
 EOF
 </code></pre></div>
 <div class="admonition warning">
@@ -1652,77 +1652,77 @@ EOF
 <details class="abstract">
 <summary>docker-compose.yaml</summary>
 <div class="language-text highlight"><pre><span></span><code>services:
-bigtop_hostname0:
-    container_name: ambari_server
-    command: /sbin/init
-    domainname: bigtop.apache.org
-    image: bigtop/puppet:trunk-rockylinux-8
-    mem_limit: 8g
-    mem_swappiness: 0
-    ports:
-    - &quot;8080:8080&quot;
-    privileged: true
-    networks:
-    red_cluster:
-        ipv4_address: 192.168.20.2
-    volumes:
-    - ./ambari-repo:/var/repo/ambari
-    - ./conf/hosts:/etc/hosts
+    bigtop-hostname0:
+        container_name: ambari_server
+        command: /sbin/init
+        domainname: bigtop.apache.org
+        image: bigtop/puppet:trunk-rockylinux-8
+        mem_limit: 8g
+        mem_swappiness: 0
+        ports:
+            - &quot;8080:8080&quot;
+        privileged: true
+        networks:
+        red_cluster:
+            ipv4_address: 192.168.20.2
+        volumes:
+            - ./ambari-repo:/var/repo/ambari
+            - ./conf/hosts:/etc/hosts
 
-bigtop_hostname1:
-    container_name: ambari_agent1
-    command: /sbin/init
-    domainname: bigtop.apache.org
-    image: bigtop/puppet:trunk-rockylinux-8
-    mem_limit: 8g
-    mem_swappiness: 0
-    privileged: true
-    networks:
-    red_cluster:
-        ipv4_address: 192.168.20.3
-    volumes:
-    - ./ambari-repo:/var/repo/ambari
-    - ./conf/hosts:/etc/hosts
+    bigtop-hostname1:
+        container_name: ambari_agent1
+        command: /sbin/init
+        domainname: bigtop.apache.org
+        image: bigtop/puppet:trunk-rockylinux-8
+        mem_limit: 8g
+        mem_swappiness: 0
+        privileged: true
+        networks:
+            red_cluster:
+                ipv4_address: 192.168.20.3
+        volumes:
+            - ./ambari-repo:/var/repo/ambari
+            - ./conf/hosts:/etc/hosts
 
-bigtop_hostname2:
-    container_name: ambari_agent2
-    command: /sbin/init
-    domainname: bigtop.apache.org
-    image: bigtop/puppet:trunk-rockylinux-8
-    mem_limit: 8g
-    mem_swappiness: 0
-    privileged: true
-    networks:
-    red_cluster:
-        ipv4_address: 192.168.20.4
-    volumes:
-    - ./ambari-repo:/var/repo/ambari
-    - ./conf/hosts:/etc/hosts
+    bigtop-hostname2:
+        container_name: ambari_agent2
+        command: /sbin/init
+        domainname: bigtop.apache.org
+        image: bigtop/puppet:trunk-rockylinux-8
+        mem_limit: 8g
+        mem_swappiness: 0
+        privileged: true
+        networks:
+            red_cluster:
+                ipv4_address: 192.168.20.4
+        volumes:
+            - ./ambari-repo:/var/repo/ambari
+            - ./conf/hosts:/etc/hosts
 
-bigtop_hostname3:
-    container_name: ambari_agent3
-    command: /sbin/init
-    domainname: bigtop.apache.org
-    image: bigtop/puppet:trunk-rockylinux-8
-    mem_limit: 8g
-    mem_swappiness: 0
-    privileged: true
-    networks:
-    red_cluster:
-        ipv4_address: 192.168.20.5
-    volumes:
-    - ./ambari-repo:/var/repo/ambari
-    - ./conf/hosts:/etc/hosts
+    bigtop-hostname3:
+        container_name: ambari_agent3
+        command: /sbin/init
+        domainname: bigtop.apache.org
+        image: bigtop/puppet:trunk-rockylinux-8
+        mem_limit: 8g
+        mem_swappiness: 0
+        privileged: true
+        networks:
+            red_cluster:
+                ipv4_address: 192.168.20.5
+        volumes:
+            - ./ambari-repo:/var/repo/ambari
+            - ./conf/hosts:/etc/hosts
 
 networks:
-red_cluster:
-    name: ambari_net
-    driver: bridge
-    ipam:
-    driver: default
-    config:
-        - subnet: 192.168.20.0/24
-        gateway: 192.168.20.1
+    red_cluster:
+        name: ambari_net
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 192.168.20.0/24
+                gateway: 192.168.20.1
 </code></pre></div>
 </details>
 <p>Arrancamos el escenario con el comando:</p>
@@ -1731,13 +1731,13 @@ red_cluster:
 <p>Y verificamos que se han creado nuestros contenedores y que hay conectividad entre ellos:</p>
 <div class="language-text highlight"><pre><span></span><code>docker ps
 
-docker exec -it ambari-bigtop_hostname0-1 ping -c 4 ambari-bigtop_hostname1-1
-docker exec -it ambari-bigtop_hostname0-1 ping -c 4 ambari-bigtop_hostname2-1
-docker exec -it ambari-bigtop_hostname0-1 ping -c 4 ambari-bigtop_hostname3-1
+docker exec -it ambari-bigtop-hostname0 ping -c 4 ambari-bigtop-hostname1
+docker exec -it ambari-bigtop-hostname0 ping -c 4 ambari-bigtop-hostname2
+docker exec -it ambari-bigtop-hostname0 ping -c 4 ambari-bigtop-hostname3
 </code></pre></div>
 <h4 id="conexion-ssh-entre-los-contenedores">CONEXIÓN SSH ENTRE LOS CONTENEDORES</h4>
 <p>Mediante la función que creamos al prinicipio, vamos conectandonos al terminal de consola de cada uno de nuestros contenedores e instalamos OPENSSH:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop_hostname0-1
+<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
 dnf install -y sudo openssh-server openssh-clients which iproute net-tools less vim-enhanced
 ssh-keygen -t rsa -N &quot;&quot; -f ~/.ssh/id_rsa
 systemctl enable sshd
@@ -1745,65 +1745,68 @@ systemctl start sshd
 exit
 </code></pre></div>
 <p>Luego desde nuestra máquina ubuntu copiamos la clave del SERVIDOR y luego la pegamos en cada uno de los AGENTES:</p>
-<div class="language-text highlight"><pre><span></span><code>docker exec -i ambari-bigtop_hostname0-1 bash -c &#39;cat ~/.ssh/id_rsa.pub&#39; &gt; id_rsa.pub
+<div class="language-text highlight"><pre><span></span><code>docker exec -i ambari-bigtop-hostname0 bash -c &#39;cat ~/.ssh/id_rsa.pub&#39; &gt; id_rsa.pub
 
-cat id_rsa.pub | docker exec -i ambari-bigtop_hostname1-1 bash -c &#39;cat &gt;&gt; ~/.ssh/authorized_keys&#39;
-cat id_rsa.pub | docker exec -i ambari-bigtop_hostname2-1 bash -c &#39;cat &gt;&gt; ~/.ssh/authorized_keys&#39;
-cat id_rsa.pub | docker exec -i ambari-bigtop_hostname3-1 bash -c &#39;cat &gt;&gt; ~/.ssh/authorized_keys&#39;
+cat id_rsa.pub | docker exec -i ambari-bigtop-hostname1 bash -c &#39;cat &gt;&gt; ~/.ssh/authorized_keys&#39;
+cat id_rsa.pub | docker exec -i ambari-bigtop-hostname2 bash -c &#39;cat &gt;&gt; ~/.ssh/authorized_keys&#39;
+cat id_rsa.pub | docker exec -i ambari-bigtop-hostname3 bash -c &#39;cat &gt;&gt; ~/.ssh/authorized_keys&#39;
 
 rm id_rsa.pub
 </code></pre></div>
 <p>Finalmente nos volvemos a conectar al SERVIDOR y comprobamos la conectividad con los agentes:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop_hostname0-1
-ssh -o StrictHostKeyChecking=no ambari-bigtop_hostname1-1 echo &quot;Connection successful&quot;
-ssh -o StrictHostKeyChecking=no ambari-bigtop_hostname2-1 echo &quot;Connection successful&quot;
-ssh -o StrictHostKeyChecking=no ambari-bigtop_hostname3-1 echo &quot;Connection successful&quot;
+<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
+ssh -o StrictHostKeyChecking=no ambari-bigtop-hostname1 echo &quot;Connection successful&quot;
+ssh -o StrictHostKeyChecking=no ambari-bigtop-hostname2 echo &quot;Connection successful&quot;
+ssh -o StrictHostKeyChecking=no ambari-bigtop-hostname3 echo &quot;Connection successful&quot;
 </code></pre></div>
 <h4 id="instalacion-de-software-externo-necesario">INSTALACIÓN DE SOFTWARE EXTERNO NECESARIO</h4>
 <p>Repetimos los siguientes pasos en todos los nodos del cluster:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop_hostname0-1
+<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
 dnf install -y initscripts wget curl tar unzip git
 dnf install -y dnf-plugins-core
 dnf config-manager --set-enabled powertools
 dnf update -y
-dnf install nano
-dnf install python3
-nano /etc/yum.repos.d/Rocky-Devel.repo
+dnf install -y nano
+dnf install -y python3
+</code></pre></div>
+<p>Editar el siguiente fichero para que indique <code>enabled=1</code> y no tenga ninguna linea comentada, excepto las dos superiores:</p>
+<div class="language-text highlight"><pre><span></span><code>nano /etc/yum.repos.d/Rocky-Devel.repo
 dnf repolist | grep devel
 </code></pre></div>
 <h3 id="instalacion-de-ambari">INSTALACIÓN DE AMBARI</h3>
 <h4 id="acceso-al-repositorio-local">ACCESO AL REPOSITORIO LOCAL</h4>
 <p>Luego configuramos el acceso de los paquetes de estos repositorios, en todos los nodos del Cluster:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop_hostname0-1
-
+<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
 dnf install -y createrepo
-
 cd /var/repo/ambari/
 createrepo .
 
 tee /etc/yum.repos.d/ambari.repo &lt;&lt; EOF
 [ambari]
 name=Ambari Repository
-baseurl=file:///var/repo/ambari
+baseurl=http://bigtop-hostname0
 gpgcheck=0
 enabled=1
 EOF
 </code></pre></div>
 <h4 id="instalacion-de-paquetes">INSTALACIÓN DE PAQUETES</h4>
 <p>Instalamos los siguientes paquetes en todos los nodos del cluster:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop_hostname0-1
+<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
 
 yum install -y iproute
 yum install -y python3-distro
 yum install -y java-17-openjdk-devel
 yum install -y java-1.8.0-openjdk-devel
+yum install -y chrony
 yum install -y ambari-agent
+
+yum remove -y rubygem-multi_json rubygem-semantic_puppet cpp-hocon rubygem-hocon rubygem-puppet-resource_api hiera leatherman ruby-facter rubygem-concurrent-ruby rubygem-deep_merge puppet rubygem-httpclient ruby-augeas facter yaml-cpp
 
 dnf clean all
 dnf makecache
 </code></pre></div>
 <p>Y además de lo anterior, solo en el SERVIDOR, instalamos lo siguiente:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop_hostname0-1
+<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
 
 yum install -y python3-psycopg2
 yum install -y ambari-server
@@ -1860,12 +1863,18 @@ ambari-server setup -s -j /usr/lib/jvm/java-1.8.0-openjdk --ambari-java-home /us
 
 ambari-server start
 
-sed -i &quot;s/hostname=.*/hostname=localhost/&quot; /etc/ambari-agent/conf/ambari-agent.ini
+sed -i &quot;s/hostname=.*/hostname=bigtop-hostname0.iabd.local/&quot; /etc/ambari-agent/conf/ambari-agent.ini
+systemctl enable chronyd
+systemctl start chronyd
 ambari-agent start
 </code></pre></div>
 <h4 id="arranque-del-servicio-en-los-agentes">ARRANQUE DEL SERVICIO EN LOS AGENTES</h4>
 <p>Por último, vamos accediendo a los nodos Agente y ejecutamos lo siguiente:</p>
-<div class="language-text highlight"><pre><span></span><code>sed -i &quot;s/hostname=.*/hostname=ambari-bigtop_hostname0-1/&quot; /etc/ambari-agent/conf/ambari-agent.ini
+<div class="language-text highlight"><pre><span></span><code># Nótese que en el siguiente comando estamos indicando el hostname del servidor, por lo que deberá modificarse ese dato para que coincida con el de nuestro nodo servidor:
+sed -i &quot;s/hostname=.*/hostname=bigtop-hostname0.iabd.local/&quot; /etc/ambari-agent/conf/ambari-agent.ini
+
+systemctl enable chronyd
+systemctl start chronyd
 ambari-agent start
 </code></pre></div>
 <div class="admonition bug">
@@ -1894,12 +1903,12 @@ ambari-agent start
 <p>Comenzamos por poner un nombre a nuestro cluster y luego seleccionamos la versión de BIGTOP que queremos, nosotros elegimos la 3.3.0, ya que es la que hemos utilizado en nuestros nodos.</p>
 <p>Más abajo, en esta misma página debemos marcar la opción de <strong>Usar Repositorio Local</strong> e indicar que distribución de SO tenemos, en nuestro caso Rocky Linux 8, esta basado en <strong>Red Hat 8</strong>. El resto de distribuciones las debemos borrar haciendo click en el botón <strong><code>- Remove</code></strong> que aparece en la parte izquierda de cada una de ellas.</p>
 <p>Por último, especificamos en el campo <strong>"Base URL"</strong> donde se encuentra nuestro repositorio local. Para ello indicaremos el hostname de nuesto nodo SERVIDOR y que acceda usando el protocolo HTTP:</p>
-<div class="language-text highlight"><pre><span></span><code>http://ambari-bigtop_hostname0-1
+<div class="language-text highlight"><pre><span></span><code>http://ambari-bigtop-hostname0
 </code></pre></div>
 <p><a class="md-button md-button--primary" href="# ."><small>NEXT</small></a></p>
 <p>En la siguiente página, donde dice <strong>Target Hosts</strong> tenemos que indicar el hostname de cada nodo de nuestro cluster, separados por saltos de línea.</p>
 <p>Luego en el apartado de <strong>Host Registration Information</strong> marcamos la opción de <code>Provide your SSH Private Key</code> y en el cuadro de texto debemos pegar nuestra clave SSH. Para ello, nos conectamos al nodo SERVIDOR y copiamos toda la salida del comando:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop_hostname0-1
+<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
 cat ~/.ssh/id_rsa
 </code></pre></div>
 <p>La clave será algo parecido a esto:</p>
@@ -1935,7 +1944,7 @@ NhAAAAAwEAAQAAAYEAlzHRzdd/3usUsUuwI8n04+YzVtCfRcmfphn+zhO1iPwwkxcd4Ub6
 </div>
 <p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 13h-4v4h-2v-4H7v-2h4V7h2v4h4m2-8H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> <a class="md-button" href="# ."><small>COMPLETE</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
 <p>Dejaremos unos segundos (o minutos) a que los servicios terminen de arrancar y podremos conectarnos a nuestro nodo SERVIDOR y comprobar que efectivamente tenemos habilitado el sistema de archivos de Hadoop:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop_hostname0-1
+<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
 hadoop fs -ls /
 </code></pre></div>
 <p><em><small><a href="https://ambari.apache.org/docs/3.0.0/quick-start/environment-setup/docker-environment-setup/">Fuente 1: Ambari Docker Environmet Setup</a></small></em> , <em><small><a href="https://ambari.apache.org/docs/3.0.0/quick-start/installation-guide">Fuente 2: Ambari Installation Guide</a></small></em> , <em><small><a href="https://youtu.be/Ao95xAGsA20">Fuente 3: Edward Viaene</a></small></em></p>
