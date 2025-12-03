@@ -1637,23 +1637,24 @@ cat &gt; hosts &lt;&lt; EOF
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
 # Container hostnames
-172.20.0.2  ambari-bigtop-hostname1
-172.20.0.3  ambari-bigtop-hostname3
-172.20.0.4  ambari-bigtop-hostname0
-172.20.0.5  ambari-bigtop-hostname2
+192.168.20.2  bigtop-hostname0.iabd.local
+192.168.20.3  bigtop-hostname1.iabd.local
+192.168.20.4  bigtop-hostname2.iabd.local
+192.168.20.5  bigtop-hostname3.iabd.local
 EOF
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">ATENCIóN:</p>
-<p>Los valores indicados más arriba para el fichero <strong><em>hosts</em></strong>, deben personalizarse según la instalación de cada uno. Para ello confirmaremos el direccionamiento que se le ha asignado a cada contenedor con <code>docker network inspect ambari_net</code>, así como los hostnames generados con <code>docker ps</code>.</p>
+<p>Los valores indicados más arriba para el fichero <strong><em>hosts</em></strong>, deben personalizarse según la instalación de cada uno. Para ello confirmaremos el direccionamiento que se le ha asignado a cada contenedor con <code>docker network inspect ambari_net</code>; y por otro lado, los hostnames deben ser los que les asignemos más adelante a cada nodo <a href="#actualizacion-del-hostname-de-cada-nodo">(ver apartado)</a>, seguidos de un nombre de dominio inventado (esto es necesario para que luego ambari los reconozca como Hostnames válidos).</p>
 </div>
 <h4 id="el-fichero-docker-compose">EL FICHERO DOCKER-COMPOSE</h4>
 <p>Utilizaremos el siguiente fichero <code>docker-compose.yaml</code> para desplegar nuestro escenario:</p>
 <details class="abstract">
-<summary>docker-compose.yaml</summary>
+<summary>nano docker-compose.yaml</summary>
 <div class="language-text highlight"><pre><span></span><code>services:
     bigtop-hostname0:
         container_name: ambari_server
+        hostname: bigtop-hostname0
         command: /sbin/init
         domainname: bigtop.apache.org
         image: bigtop/puppet:trunk-rockylinux-8
@@ -1671,6 +1672,7 @@ EOF
 
     bigtop-hostname1:
         container_name: ambari_agent1
+        hostname: bigtop-hostname1
         command: /sbin/init
         domainname: bigtop.apache.org
         image: bigtop/puppet:trunk-rockylinux-8
@@ -1686,6 +1688,7 @@ EOF
 
     bigtop-hostname2:
         container_name: ambari_agent2
+        hostname: bigtop-hostname2
         command: /sbin/init
         domainname: bigtop.apache.org
         image: bigtop/puppet:trunk-rockylinux-8
@@ -1701,6 +1704,7 @@ EOF
 
     bigtop-hostname3:
         container_name: ambari_agent3
+        hostname: bigtop-hostname3
         command: /sbin/init
         domainname: bigtop.apache.org
         image: bigtop/puppet:trunk-rockylinux-8
@@ -1726,7 +1730,7 @@ networks:
 </code></pre></div>
 </details>
 <p>Arrancamos el escenario con el comando:</p>
-<div class="language-text highlight"><pre><span></span><code>docker-compose up -d
+<div class="language-text highlight"><pre><span></span><code>docker compose up -d
 </code></pre></div>
 <p>Y verificamos que se han creado nuestros contenedores y que hay conectividad entre ellos:</p>
 <div class="language-text highlight"><pre><span></span><code>docker ps
@@ -1735,9 +1739,14 @@ docker exec -it ambari-bigtop-hostname0 ping -c 4 ambari-bigtop-hostname1
 docker exec -it ambari-bigtop-hostname0 ping -c 4 ambari-bigtop-hostname2
 docker exec -it ambari-bigtop-hostname0 ping -c 4 ambari-bigtop-hostname3
 </code></pre></div>
-<h4 id="conexion-ssh-entre-los-contenedores">CONEXIÓN SSH ENTRE LOS CONTENEDORES</h4>
+<h4 id="actualizacion-del-hostname-de-cada-nodo">ACTUALIZACION DEL HOSTNAME DE CADA NODO</h4>
+<p>Nos conectamos a cada nodo de nuestro cluster y actualizamos el hostname, ya que por defecto le asigna uno aleatorio:</p>
+<div class="language-text highlight"><pre><span></span><code>con ambari_server
+hostnamectl set-hostname bigtop-server
+</code></pre></div>
+<h4 id="conexion-ssh-entre-los-contenedores">CONEXION SSH ENTRE LOS CONTENEDORES</h4>
 <p>Mediante la función que creamos al prinicipio, vamos conectandonos al terminal de consola de cada uno de nuestros contenedores e instalamos OPENSSH:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
+<div class="language-text highlight"><pre><span></span><code>con ambari_server
 dnf install -y sudo openssh-server openssh-clients which iproute net-tools less vim-enhanced
 ssh-keygen -t rsa -N &quot;&quot; -f ~/.ssh/id_rsa
 systemctl enable sshd
@@ -1754,14 +1763,14 @@ cat id_rsa.pub | docker exec -i ambari-bigtop-hostname3 bash -c &#39;cat &gt;&gt
 rm id_rsa.pub
 </code></pre></div>
 <p>Finalmente nos volvemos a conectar al SERVIDOR y comprobamos la conectividad con los agentes:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
+<div class="language-text highlight"><pre><span></span><code>con ambari_server
 ssh -o StrictHostKeyChecking=no ambari-bigtop-hostname1 echo &quot;Connection successful&quot;
 ssh -o StrictHostKeyChecking=no ambari-bigtop-hostname2 echo &quot;Connection successful&quot;
 ssh -o StrictHostKeyChecking=no ambari-bigtop-hostname3 echo &quot;Connection successful&quot;
 </code></pre></div>
 <h4 id="instalacion-de-software-externo-necesario">INSTALACIÓN DE SOFTWARE EXTERNO NECESARIO</h4>
 <p>Repetimos los siguientes pasos en todos los nodos del cluster:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
+<div class="language-text highlight"><pre><span></span><code>con ambari_server
 dnf install -y initscripts wget curl tar unzip git
 dnf install -y dnf-plugins-core
 dnf config-manager --set-enabled powertools
@@ -1776,7 +1785,7 @@ dnf repolist | grep devel
 <h3 id="instalacion-de-ambari">INSTALACIÓN DE AMBARI</h3>
 <h4 id="acceso-al-repositorio-local">ACCESO AL REPOSITORIO LOCAL</h4>
 <p>Luego configuramos el acceso de los paquetes de estos repositorios, en todos los nodos del Cluster:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
+<div class="language-text highlight"><pre><span></span><code>con ambari_server
 dnf install -y createrepo
 cd /var/repo/ambari/
 createrepo .
@@ -1784,14 +1793,14 @@ createrepo .
 tee /etc/yum.repos.d/ambari.repo &lt;&lt; EOF
 [ambari]
 name=Ambari Repository
-baseurl=http://bigtop-hostname0
+baseurl=file:///var/repo/ambari
 gpgcheck=0
 enabled=1
 EOF
 </code></pre></div>
 <h4 id="instalacion-de-paquetes">INSTALACIÓN DE PAQUETES</h4>
 <p>Instalamos los siguientes paquetes en todos los nodos del cluster:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
+<div class="language-text highlight"><pre><span></span><code>con ambari_server
 
 yum install -y iproute
 yum install -y python3-distro
@@ -1806,7 +1815,7 @@ dnf clean all
 dnf makecache
 </code></pre></div>
 <p>Y además de lo anterior, solo en el SERVIDOR, instalamos lo siguiente:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
+<div class="language-text highlight"><pre><span></span><code>con ambari_server
 
 yum install -y python3-psycopg2
 yum install -y ambari-server
@@ -1863,14 +1872,16 @@ ambari-server setup -s -j /usr/lib/jvm/java-1.8.0-openjdk --ambari-java-home /us
 
 ambari-server start
 
+# ¡OJO! En el siguiente comando estamos indicando el hostname del servidor, por lo que deberá modificarse ese dato para que coincida con el de nuestro nodo servidor:
 sed -i &quot;s/hostname=.*/hostname=bigtop-hostname0.iabd.local/&quot; /etc/ambari-agent/conf/ambari-agent.ini
+
 systemctl enable chronyd
 systemctl start chronyd
 ambari-agent start
 </code></pre></div>
 <h4 id="arranque-del-servicio-en-los-agentes">ARRANQUE DEL SERVICIO EN LOS AGENTES</h4>
 <p>Por último, vamos accediendo a los nodos Agente y ejecutamos lo siguiente:</p>
-<div class="language-text highlight"><pre><span></span><code># Nótese que en el siguiente comando estamos indicando el hostname del servidor, por lo que deberá modificarse ese dato para que coincida con el de nuestro nodo servidor:
+<div class="language-text highlight"><pre><span></span><code># ¡OJO! En el siguiente comando estamos indicando el hostname del servidor, por lo que deberá modificarse ese dato para que coincida con el de nuestro nodo servidor:
 sed -i &quot;s/hostname=.*/hostname=bigtop-hostname0.iabd.local/&quot; /etc/ambari-agent/conf/ambari-agent.ini
 
 systemctl enable chronyd
@@ -1907,18 +1918,7 @@ ambari-agent start
 </code></pre></div>
 <p><a class="md-button md-button--primary" href="# ."><small>NEXT</small></a></p>
 <p>En la siguiente página, donde dice <strong>Target Hosts</strong> tenemos que indicar el hostname de cada nodo de nuestro cluster, separados por saltos de línea.</p>
-<p>Luego en el apartado de <strong>Host Registration Information</strong> marcamos la opción de <code>Provide your SSH Private Key</code> y en el cuadro de texto debemos pegar nuestra clave SSH. Para ello, nos conectamos al nodo SERVIDOR y copiamos toda la salida del comando:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
-cat ~/.ssh/id_rsa
-</code></pre></div>
-<p>La clave será algo parecido a esto:</p>
-<div class="language-text highlight"><pre><span></span><code>-----BEGIN OPENSSH PRIVATE KEY-----
-b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
-NhAAAAAwEAAQAAAYEAlzHRzdd/3usUsUuwI8n04+YzVtCfRcmfphn+zhO1iPwwkxcd4Ub6
-8SsLOIWIyR+eSoQ/2Dr27l2mk12dhcUkh/d9U8COiIlAt1QSLWPNEm5AQ+MvRgRBWADhMh
-...
------END OPENSSH PRIVATE KEY-----
-</code></pre></div>
+<p>Luego en el apartado de <strong>Host Registration Information</strong> como nosotros ya hemos copiado manualmente la clave SSH del servidor en el fichero de autorizados de los agentes, simplemente marcamos la opción de <code>Perform Manual Registration on Hosts</code>.</p>
 <p><a class="md-button md-button--primary" href="# ."><small>REGISTER AND CONFIRM</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
 <p>Esperamos a que finalice el proceso de registro de los nodos y si todo va bien recibiremos un mensaje que dirá <code>All hosts checks passed on 4 registered hosts</code>.</p>
 <p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
@@ -1944,7 +1944,7 @@ NhAAAAAwEAAQAAAYEAlzHRzdd/3usUsUuwI8n04+YzVtCfRcmfphn+zhO1iPwwkxcd4Ub6
 </div>
 <p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 13h-4v4h-2v-4H7v-2h4V7h2v4h4m2-8H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> <a class="md-button" href="# ."><small>COMPLETE</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
 <p>Dejaremos unos segundos (o minutos) a que los servicios terminen de arrancar y podremos conectarnos a nuestro nodo SERVIDOR y comprobar que efectivamente tenemos habilitado el sistema de archivos de Hadoop:</p>
-<div class="language-text highlight"><pre><span></span><code>con ambari-bigtop-hostname0
+<div class="language-text highlight"><pre><span></span><code>con ambari_server
 hadoop fs -ls /
 </code></pre></div>
 <p><em><small><a href="https://ambari.apache.org/docs/3.0.0/quick-start/environment-setup/docker-environment-setup/">Fuente 1: Ambari Docker Environmet Setup</a></small></em> , <em><small><a href="https://ambari.apache.org/docs/3.0.0/quick-start/installation-guide">Fuente 2: Ambari Installation Guide</a></small></em> , <em><small><a href="https://youtu.be/Ao95xAGsA20">Fuente 3: Edward Viaene</a></small></em></p>
