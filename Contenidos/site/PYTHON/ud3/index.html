@@ -1563,6 +1563,49 @@ def bienvenida():
 </code></pre></div>
 <p><em><small><a href="https://anderfernandez.com/blog/como-crear-api-en-python/">Fuente: Ander Fernandez</a></small></em></p>
 <h2 id="validacion-de-datos-con-pydantic"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23.826 17.316-4.23-5.866-6.847-9.496c-.348-.48-1.151-.48-1.497 0l-6.845 9.494-4.233 5.868a.925.925 0 0 0 .46 1.417l11.078 3.626h.002a.92.92 0 0 0 .572 0h.002l11.077-3.626c.28-.092.5-.31.59-.592a.92.92 0 0 0-.13-.825h.002ZM12.001 4.07l4.44 6.158-4.152-1.36c-.032-.01-.066-.008-.098-.016a1 1 0 0 0-.096-.016c-.032-.004-.062-.016-.094-.016s-.062.012-.094.016a1 1 0 0 0-.096.016c-.032.006-.066.006-.096.016L7.59 10.221l-.026.008 4.44-6.158h-.002Zm-6.273 8.7 4.834-1.583.516-.168v9.19L2.41 17.372l3.317-4.6Zm7.197 7.437V11.02l5.35 1.752 3.316 4.598-8.666 2.838Z"/></svg></span> VALIDACIÓN DE DATOS CON PYDANTIC</h2>
+<p>Cuando trabajamos con APIs, los <strong>datos</strong> que llegan desde clientes <strong>externos no son fiables</strong>. Pueden venir incompletos, con tipos incorrectos o con valores que no cumplen las reglas del negocio de la API.</p>
+<p>Para resolver este problema de forma automática, FastAPI utiliza <strong>Pydantic</strong>. Pydantic es una libreria Python que permite definir modelos de estructura de datos en clases y además se encarga de verificar los tipos de datos, realizar conversiones automáticas y generar errores detallados si la validación falla. Si entramos más en detalle:</p>
+<ol>
+<li>
+<p><strong>Validación automática de datos</strong>: verifica los tipos de datos (str, int, float, bool, list, dict, etc.), campos obligatorios, valores por defecto, estructuras complejas (listas, objetos anidados), restricciones (mínimos, máximos, longitudes…). Y si algo no se cumplo devuelve un error 422 con los detalles.</p>
+</li>
+<li>
+<p><strong>Conversión de tipos (“parsing”)</strong>: convierte automáticamente los valores al tipo esperado, haciendo que la lógica interna siempre reciba tipos correctos. Por ejemplo:</p>
+<div class="language-text highlight"><pre><span></span><code>&quot;10&quot; → int(10)
+&quot;true&quot; → bool(True)
+&quot;2024-05-10&quot; → datetime.date
+&quot;12.5&quot; → float(12.5)
+</code></pre></div>
+</li>
+<li>
+<p><strong>Modelado de estructuras complejas</strong>: Cuando los datos contienen objetos dentro de objetos, listas, relaciones… se necesita una estructura clara y tipada. FastAPI entiende este modelo, valida la anidación y genera documentación automática. Por ejemplo:</p>
+<div class="language-text highlight"><pre><span></span><code>from pydantic import BaseModel
+
+class Direccion(BaseModel):
+calle: str
+ciudad: str
+
+class Usuario(BaseModel):
+nombre: str
+edad: int
+direccion: Direccion
+</code></pre></div>
+</li>
+<li>
+<p><strong>Documentación automática</strong>: a través de los modelos Pydantic, FastAPI genera automáticamente documentación interactiva, esquemas OpenAPI y ejemplos de entrada/salida. De modo que cualquier cliente entienda exactamente como utilizar la API. Además mediante las siguientes funcionalidades podemos probar la API sin escribir código adicional:</p>
+<ul>
+<li><strong>Swagger UI</strong> → <code>/docs</code></li>
+<li><strong>ReDoc</strong> → <code>/redoc</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Consistencia de entrada y salida</strong>: los modelos pueden usarse tanto para recibir datos (request) como para devolverlos (response). Evitando inconsistencias en nuestra API:</p>
+<ul>
+<li><strong>Entrada</strong> → valida lo que envía el cliente</li>
+<li><strong>Salida</strong> → define claramente qué devuelve tu API</li>
+</ul>
+</li>
+</ol>
 <p><em><small><a href="https://jeatzr.github.io/python/">Fuente: J.Enrique Atiénzar</a></small></em></p>
 <!--
 Unidad 3: Frameworks para Construcción de APIs de Datos en Python
@@ -1776,64 +1819,7 @@ def obtener_producto(item_id: int):
         if p["id"] == item_id:
             return p
     return {"error": "Producto no encontrado"}
-6. Validación de datos con Pydantic
-Cuando trabajamos con APIs, los datos que llegan desde clientes externos no son fiables:
-pueden venir incompletos, con tipos incorrectos o con valores que no cumplen las reglas del negocio.
 
-FastAPI utiliza Pydantic para resolver este problema de forma automática.
-
-¿Por qué son necesarios los modelos Pydantic?
-Los modelos basados en BaseModel permiten:
-
-6.1 Validación automática de datos
-Cada vez que un cliente envía JSON al servidor, Pydantic comprueba:
-
-tipos (str, int, float, bool, list, dict, etc.)
-campos obligatorios
-valores por defecto
-estructuras más complejas (listas, objetos anidados)
-restricciones (mínimos, máximos, longitudes…)
-Si algo no cumple, FastAPI devuelve automáticamente un error 422 con detalles claros.
-
-Esto evita escribir validaciones manuales repetitivas.
-
-6.2 Conversión de tipos (“parsing”)
-Pydantic convierte automáticamente los valores al tipo esperado.
-
-Ejemplos:
-
-"10" → int(10)
-"true" → bool(True)
-"2024-05-10" → datetime.date
-"12.5" → float(12.5)
-Esto hace que tu lógica interna siempre reciba tipos correctos.
-
-6.3 Modelado de estructuras complejas
-Cuando los datos contienen objetos dentro de objetos, listas, relaciones…
-se necesita una estructura clara y tipada.
-
-Por ejemplo:
-
-
-from pydantic import BaseModel
-
-class Direccion(BaseModel):
-calle: str
-ciudad: str
-
-class Usuario(BaseModel):
-nombre: str
-edad: int
-direccion: Direccion
-FastAPI entiende este modelo, valida la anidación y genera documentación automática.
-
-6.4 Documentación automática (OpenAPI / Swagger)
-FastAPI utiliza los modelos Pydantic para generar:
-
-la documentación interactiva (/docs)
-los esquemas OpenAPI
-los ejemplos de entrada y salida
-Esto permite que cualquier cliente entienda exactamente qué datos debe enviar.
 
 6.5 Consistencia en datos de entrada y salida
 Los modelos pueden usarse tanto para recibir datos (request) como para devolverlos (response):
