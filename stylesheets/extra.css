@@ -28,9 +28,9 @@
 
 /* VARIABLES PARA PERSONALIZAR LOS COLORES DE LOS BLOQUES DE CÓDIGO */
 :root > * {
-    --md-code-bg-color: #b5c3c6;
-    --md-code-fg-color: #d74b00;
-    --md-code-hl-comment-color: #515151;
+    --md-code-bg-color: rgb(192, 139, 228);
+    --md-code-fg-color: #050504;
+    --md-code-hl-comment-color: #7a274b;
 
   /*
   --md-code-fg-color
