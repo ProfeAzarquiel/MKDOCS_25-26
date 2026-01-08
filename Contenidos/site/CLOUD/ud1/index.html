@@ -478,6 +478,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#redes-en-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REDES EN LINUX
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1373,6 +1384,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#redes-en-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REDES EN LINUX
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1505,6 +1527,37 @@ DIRECCIONES</p>
 <li>Es un protocolo de capa 7. Nos permite configurar varios parámetros de conectividad (dirección IP, Máscara, Puerta de Enlace, Servidores DNS...) de manera automática, en las diferentes máquinas conectadas a una red.</li>
 <li>Para ello, debemos configurar previamente uno de los equipos de red, para que ejecute dicho servicio, es decir, hará la función de servidor. De modo que cada vez que un equipo se conecte a dicha red, solamente tengamos que activar en él, la funcionalidad DHCP (Cliente, que generalmente viene habilitada por defecto) y realizará la petición de forma automática, obteniendo así su configuración de red, sin necesidad de hacerlo manualmente equipo por equipo.</li>
 </ul>
+<h2 id="redes-en-linux">REDES EN LINUX</h2>
+<h3 id="modificar-direccionamiento-de-una-interfaz-de-red">MODIFICAR DIRECCIONAMIENTO DE UNA INTERFAZ DE RED</h3>
+<p>-----NETPLAN GENERADO POR DEFECTO-----------------</p>
+<p>network:
+    ethernets:
+      ens18:
+        dhcp4: true
+        dhcp6: true
+        match:
+          macaddress: bc:24:11:39:b5:42
+        set-name: ens18
+    version: 2</p>
+<p>-----NETPLAN MODIFICADO PARA IP ESTÁTICA----------</p>
+<p>network:
+    ethernets:
+      ens18:
+        dhcp4: false
+        addresses:
+            - 172.21.184.38/16
+        routes:
+          - to: default
+            via: 172.21.0.254
+        nameservers:
+          addresses: [8.8.8.8, 1.1.1.1]
+        dhcp6: false
+        match:
+          macaddress: bc:24:11:39:b5:42
+        set-name: ens18
+    version: 2</p>
+<p>------ APLICAR LOS CAMBIOS REALIZADOS ---------
+  sudo netplan apply</p>
 
 
 
