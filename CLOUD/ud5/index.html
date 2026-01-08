@@ -1610,7 +1610,7 @@ EOF
 sysctl --system
 </code></pre></div>
 <p>Instalar las claves gpg de Docker para luego instalar y configurar containerd para que use cgroups:</p>
-<div class="language-text highlight"><pre><span></span><code>mkdir -p /etc/apt/keyrings
+<div class="language-text highlight"><pre><span></span><code>sudo install -m 0755 -d /etc/apt/keyrings
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
@@ -1625,9 +1625,7 @@ sed -e&#39;s/SystemdCgroup = false/SystemdCgroup = true/g&#39; -i /etc/container
 systemctl restart containerd
 </code></pre></div>
 <p>Instalar claves gpg de Kubernetes, añadir el repositorio (cambiar la versión si es necesario) e instalar kubeadm, kubelet y kubectl:</p>
-<div class="language-text highlight"><pre><span></span><code>mkdir -p -m 755 /etc/apt/keyrings
-
-curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+<div class="language-text highlight"><pre><span></span><code>curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 
 echo &quot;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /&quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
@@ -1650,9 +1648,21 @@ apt-mark hold kubelet kubeadm kubectl
 <p class="admonition-title">¡¡IMPORTANTE!!</p>
 <p>La salida del comando anterior nos mostrará una serie de datos, incluyendo un comando <code>kubeadm join</code> que luego tendremos que ejecutar en los nodos workers para unirlos al cluster.</p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">¿Como eliminar un cluster inicializado con Kubeam?</p>
+<div class="language-text highlight"><pre><span></span><code>sudo kubeadm reset
+sudo rm -R /etc/cni/net.d
+sudo iptables -F
+
+sudo rm -rf /etc/kubernetes/pki/
+sudo rm -rf /var/lib/kubelet/*
+sudo rm -rf /var/lib/etcd/
+sudo rm -rf ~/.kube/config
+</code></pre></div>
+</div>
 <p><strong>Salir del modo root</strong> y configurar kubectl e instalar autocompletado:</p>
 <div class="language-text highlight"><pre><span></span><code>exit
-mkdir -p $HOME/.kube
+#Comprobar si existe ya la carpeta, si no, crearla con: mkdir -p $HOME/.kube
 
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 

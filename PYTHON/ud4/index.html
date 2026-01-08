@@ -1213,6 +1213,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4. Aplicaciones Web con Python
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1229,6 +1247,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-a-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTRODUCCIÓN A DJANGO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primeros-pasos-con-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRIMEROS PASOS CON DJANGO
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1262,6 +1321,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-a-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTRODUCCIÓN A DJANGO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primeros-pasos-con-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRIMEROS PASOS CON DJANGO
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1278,6 +1367,62 @@
 
 
 <h1 id="aplicaciones-web-con-python">APLICACIONES WEB CON PYTHON</h1>
+<h2 id="introduccion-a-django"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.096.535-4.791 0-7.288-2.166-7.288-6.32 0-4.002 2.65-6.6 6.753-6.6.637 0 1.121.05 1.707.203zm0 9.143a3.9 3.9 0 0 0-1.325-.204c-1.988 0-3.134 1.223-3.134 3.365 0 2.09 1.096 3.236 3.109 3.236.433 0 .79-.025 1.35-.102V9.142zM21.314 6.06v9.098c0 3.134-.229 4.638-.917 5.937-.637 1.249-1.478 2.039-3.211 2.905l-3.644-1.733c1.733-.815 2.574-1.53 3.109-2.625.561-1.121.739-2.421.739-5.835V6.059zM17.39.021h3.924v4.026H17.39z"/></svg></span> INTRODUCCIÓN A DJANGO</h2>
+<p>Como ya habíamos mencionado, Django es un framework de código abierto basado en Python, que nos permite crear sitios web complejos de forma rápida y sencilla.</p>
+<p>Ya que nos permite simplificar las tareas repetiticas y pesadas que pueden darse a la hora de desarrollar este tipo de aplicaciones.</p>
+<h3 id="modelo-vista-controlador-mvc">MODELO VISTA CONTROLADOR (MVC)</h3>
+<p>Este modelo se basa en dividir una aplicación en 3 grandes módulos:</p>
+<ul>
+<li>
+<p><strong>MODELO</strong>: se encarga de gestionar la información almacenada en una Base de Datos.</p>
+</li>
+<li>
+<p><strong>VISTA</strong>: define todo lo referente a la interfaz grafica de usuario (GUI), es decir, que es lo que el usuario ve (Frontend); tanto a la hora de hacer una petición, como a la hora de visualizar la información solicitada.</p>
+</li>
+<li>
+<p><strong>CONTROLADOR</strong>: encargado de gestionar las comunicaciones entre la VISTA y el MODELO.</p>
+</li>
+</ul>
+<figure>
+    <img alt="Modelo Vista Controlador" src="https://miro.medium.com/v2/1*y8Z4MgBS_s8d4o26arDJ4w.png" width="450" />
+    <small><figcaption>Modelo Vista Controlador</figcaption></small>
+</figure>
+<p>Este modelo hace que nuestras aplicaciones sean más funcionales y faciles de mantener y escalar. Es por ello que la muchos de los principales frameworks de desarrollo de aplicaciones se basan en él.</p>
+<p>Aunque Django no usa exactamente este modelo, su filosofia es exactamente la misma. Se podría decir que es un MVC personalizado, llamado <strong>Model Template View (MTV)</strong>, donde el <code>Template = Vista</code> y el <code>View = Controlador</code>.</p>
+<h2 id="primeros-pasos-con-django">PRIMEROS PASOS CON DJANGO</h2>
+<p>En primer lugar, creamos una <strong>nueva carpeta</strong> para nuestros proyectos Django y la abrimos en Visual Studio Code. Luego creamos nuestro <strong>entorno virtual</strong>, lo <strong>activamos</strong> e <strong>instalamos Django</strong> en él:</p>
+<div class="language-text highlight"><pre><span></span><code>python -m venv envDjango
+
+.\envDjango\Scripts\activate
+
+pip install django
+
+python -m django --version
+</code></pre></div>
+<p>Para crear nuestro <strong>primer proyecto</strong>, podemos hacerlo con el siguiente comando:</p>
+<div class="language-text highlight"><pre><span></span><code>django-admin startproject Proyecto1
+</code></pre></div>
+<p>Prácticamente todo proyecto de Django (se presupone que si usamos este framework es porque estamos desarrollando una aplicación medianamente compleja) estará compuesto por una o varias <strong>apps</strong>. Las apps, no son más que bloques de código separados que podremos reutilizar dentro de otros proyectos.</p>
+<p>Para crear nuestra primera app, accedemos a la carpeta que se ha creado con el nombre de nuestro proyecto y ejecutamos lo siguiente:</p>
+<div class="language-text highlight"><pre><span></span><code>cd Proyecto1
+python manage.py startapp InicioSesion
+</code></pre></div>
+<h3 id="bbdd-en-django">BBDD EN DJANGO</h3>
+<div class="language-text highlight"><pre><span></span><code># En el &quot;models.py&quot; creamos tantas clases como tablas vaya a tener nuestra BBDD, para esta App.
+# En el &quot;settings.py&quot; añadimos nuestra App en la lista de &quot;INSTALED APPS&quot;
+
+# Para comprobar si hay algun problema en nuestro código:
+python manage.py check InicioSesion
+
+# Para crear la BBDD vacía (esto nos devuelve un nº de migración, por ejemplo 0001)
+python manage.py makemigrations
+
+# Para generar las tablas definidas en el &quot;models.py&quot; (debemos indicar el nº de miración anterior):
+python manage.py sqlmigrate InicioSesion 0001
+
+# Para incorportar esas tablas a nuestra BBDD:
+python manage.py migrate
+</code></pre></div>
 
 
 

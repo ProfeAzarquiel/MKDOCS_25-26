@@ -578,6 +578,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#virtualizacion-con-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VIRTUALIZACIÓN CON PROXMOX
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1461,6 +1472,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#virtualizacion-con-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VIRTUALIZACIÓN CON PROXMOX
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1486,6 +1508,91 @@
 <h2 id="beneficios-de-la-virtualizacion">BENEFICIOS DE LA VIRTUALIZACIÓN</h2>
 <h2 id="limitaciones">LIMITACIONES</h2>
 <h2 id="tecnologias-especificas-de-virtualizacion">TECNOLOGÍAS ESPECÍFICAS DE VIRTUALIZACIÓN</h2>
+<h2 id="virtualizacion-con-proxmox">VIRTUALIZACIÓN CON PROXMOX</h2>
+<h3 id="crear-plantilla-mv-ubuntu">CREAR PLANTILLA MV UBUNTU</h3>
+<p>Abrimos la consola del nodo Proxmox sobre el que vayamos a trabjar y creamos una máqina virtual con el siguiente comando:</p>
+<div class="language-text highlight"><pre><span></span><code>qm create 900 --name plantilla-ubuntu-2204 \
+--ostype=l26 \
+--scsihw virtio-scsi-single --agent enabled=1 \
+--cpu x86-64-v2-AES \
+--memory 2048 \
+--net0 virtio,bridge=vmbr0,firewall=1 \
+-ide2 none,media=cdrom
+</code></pre></div>
+<p>Añadimos una unidad <strong>cloud-init</strong> que servirá para configurar varios parametros de la máquina la primera vez que se arranque:</p>
+<div class="language-text highlight"><pre><span></span><code>qm set 900 --ide0 local-lvm:cloudinit
+</code></pre></div>
+<p>Luego establecemos los valores para los parámetros del cloud-init:</p>
+<div class="language-text highlight"><pre><span></span><code>qm set 900 --ciuser profe \
+--cipassword profe \
+--sshkey ~/.ssh/id_rsa.pub \
+--ipconfig0 ip=dhcp
+</code></pre></div>
+<p>Regeneramos la imagen de la máquina incluyendo el cloud-init:</p>
+<ol>
+<li>
+<p>En el panel izquierdo, seleccionar nuestra máquina virtual: <code>900</code>.</p>
+</li>
+<li>
+<p>Dentro de ella, selecciónar la opción <code>Cloud-Init</code>.</p>
+</li>
+<li>
+<p>Pulsar el botón <code>Regenerate image</code>.</p>
+</li>
+</ol>
+<p>Volvemos a la consola de nuestro nodo y añadimos un interfaz serial para nuestra máquina virtual:</p>
+<div class="language-text highlight"><pre><span></span><code>qm set 900 --serial0 socket --vga serial0
+</code></pre></div>
+<p>Descargamos la imagen cloud de Ubuntu:</p>
+<div class="language-text highlight"><pre><span></span><code>wget https://cloud-images.ubuntu.com/minimal/releases/jammy/release/ubuntu-22.04-minimal-cloudimg-amd64.img
+</code></pre></div>
+<p>Cambiamos el tamaño de la imagen descargada:</p>
+<div class="language-text highlight"><pre><span></span><code>qemu-img resize ubuntu-22.04-minimal-cloudimg-amd64.img 16G
+</code></pre></div>
+<p>Importamos la imagen ubuntu al disco local definido en nuestro Datacenter PROXMOX:</p>
+<div class="language-text highlight"><pre><span></span><code>qm importdisk 900 ubuntu-22.04-minimal-cloudimg-amd64.img local-lvm
+</code></pre></div>
+<p>Ahora configuramos el disco <strong>scsi0</strong> de nuestra máquina virtual, con el disco que nos ha generado el comando anterior:</p>
+<div class="language-text highlight"><pre><span></span><code>qm set 900 --scsi0 local-lvm:vm-900-disk-0,discard=on,iothread=1,ssd=1
+</code></pre></div>
+<p>Cambiamos el orden de arranque de la máquina:</p>
+<ol>
+<li>
+<p>Seleccionar la máquina virtual: <strong>900</strong></p>
+</li>
+<li>
+<p>Seleccionar la opción <strong>Opciones</strong></p>
+</li>
+<li>
+<p>Seleciconar el elemento <strong>Orden de arranque</strong> y pulsar el botón <strong>Editar</strong>:</p>
+<ul>
+<li>
+<p><strong>Activar</strong> el disco <strong>scsi0</strong></p>
+</li>
+<li>
+<p><strong>Arrastrarlo</strong> a la segunda posición (dejando el CDROM como primera opción por si algún día se necesita iniciar mediante una ISO)</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Volvemos a la consola de nuestro nodo Proxmox y convertimos la máquina en plantilla:</p>
+<div class="language-text highlight"><pre><span></span><code>qm template 900
+</code></pre></div>
+<h4 id="clonacion-de-la-plantilla">CLONACIÓN DE LA PLANTILLA</h4>
+<p>Para clonar nuestra plantilla, desde el shell del nodo Proxmox, ejecutamos:</p>
+<div class="language-text highlight"><pre><span></span><code>qm clone 900 101 --name ubuntu-clon1 --full 1 --storage NASinformatica
+</code></pre></div>
+<p>Modificando el valor <strong>101</strong> por el ID que queramos darle a la máquina clonada, tambien el nombre que se le quiera dar a la máquina; y por último indicando en donde queremos que se almacene su imagen (en este ejemplo usamos un NAS que tenemos conectado a Proxmox).</p>
+<h4 id="primer-inicio-de-la-maquina">PRIMER INICIO DE LA MÁQUINA</h4>
+<p>Antes de arrancar la máquina clonada, personalizamos los valores de username, password y direccionamiento IP:</p>
+<div class="language-text highlight"><pre><span></span><code>qm set 101 --ciuser clon1 --cipassword clon1
+qm set 101 --ipconfig0 ip=172.21.184.41/16,gw=172.21.0.254
+</code></pre></div>
+<p>Es un ubuntu minimal, por lo que trae lo justo. Deberemos ir instalandole las herramientas que necesitemos:</p>
+<div class="language-text highlight"><pre><span></span><code>apt install nano
+apt install openvswitch-switch
+</code></pre></div>
+<p><em><small><a href="https://anderfernandez.com/blog/como-crear-api-en-python/">Fuente1: Manel Rodero</a></small></em> <em><small><a href="https://pve.proxmox.com/wiki/Cloud-Init_Support">Fuente2: Proxmox Wiki</a></small></em></p>
 
 
 
