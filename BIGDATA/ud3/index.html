@@ -24,7 +24,7 @@
         
       
       
-      <link rel="icon" href="../../img/favicon.png">
+      <link rel="icon" href="../../img/favicon2.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
@@ -775,10 +775,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instalacion-de-apache-ambari-sobre-docker" class="md-nav__link">
+  <a href="#despliegue-cluster-hadoop-con-ambari-y-docker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        INSTALACIÓN DE APACHE AMBARI SOBRE DOCKER
+        DESPLIEGUE CLÚSTER HADOOP CON AMBARI Y DOCKER
       
     </span>
   </a>
@@ -790,6 +790,28 @@
     <span class="md-ellipsis">
       
         CONFIGURACIÓN DE HADOOP DESDE AMBARI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#despliegue-cluster-hadoop-sobre-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DESPLIEGUE CLÚSTER HADOOP SOBRE DOCKER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practica-hola-mundo-en-hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRÁCTICA: HOLA MUNDO EN HADOOP
       
     </span>
   </a>
@@ -1352,10 +1374,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instalacion-de-apache-ambari-sobre-docker" class="md-nav__link">
+  <a href="#despliegue-cluster-hadoop-con-ambari-y-docker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        INSTALACIÓN DE APACHE AMBARI SOBRE DOCKER
+        DESPLIEGUE CLÚSTER HADOOP CON AMBARI Y DOCKER
       
     </span>
   </a>
@@ -1367,6 +1389,28 @@
     <span class="md-ellipsis">
       
         CONFIGURACIÓN DE HADOOP DESDE AMBARI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#despliegue-cluster-hadoop-sobre-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DESPLIEGUE CLÚSTER HADOOP SOBRE DOCKER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practica-hola-mundo-en-hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRÁCTICA: HOLA MUNDO EN HADOOP
       
     </span>
   </a>
@@ -1393,7 +1437,7 @@
 <h1 id="apache-hadoop">APACHE HADOOP</h1>
 <p>Hadoop es un proyecto open source que aglutina una serie de herramientas para el procesamiento distribuido de grandes conjuntos de datos a través de clústers de ordenadores utilizando modelos de programación sencillos.</p>
 <figure>
-    <img alt="Hadoop Logo" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Hadoop_logo.svg" width="450" />
+    <img alt="Hadoop Logo" src="https://upload.wikimedia.org/wikipedia/commons/3/38/Hadoop_logo_new.svg" width="450" />
     <small><figcaption>Logo Apache Hadoop</figcaption></small>
 </figure>
 <h2 id="arquitectura-basica">ARQUITECTURA BÁSICA</h2>
@@ -1466,7 +1510,11 @@
 <p>MapReduce es la implementación básica de un framework de procesamiento en paralelo para cargas big data, por lo que al final tiene ciertas limitaciones como, por ejemplo, hasta que la fase map completa su procesamiento, los reducers no empiezan a ejecutarse; o que no se puede controlar su orden de ejecución.</p>
 <p>Es por ello, que existen alternativas como Apache Spark, Apache Hive o Pig; las cuales mantienen los principales puntos de MapReduce, pero son capaces de usar HDFS de manera más eficiente. La que resalta más entre el resto es <strong>SPARK</strong>, la cual veremos más adelante.</p>
 <p><em><small><a href="https://aitor-medrano.github.io/iabd/">Fuente 1: Aitor Medrano</a></small></em>, <em><small><a href="https://aprenderbigdata.com/hadoop/">Fuente 2: Oscar Fernández</a></small></em></p>
-<h2 id="instalacion-de-apache-ambari-sobre-docker">INSTALACIÓN DE APACHE AMBARI SOBRE DOCKER</h2>
+<h2 id="despliegue-cluster-hadoop-con-ambari-y-docker">DESPLIEGUE CLÚSTER HADOOP CON AMBARI Y DOCKER</h2>
+<figure>
+    <img alt="Apache Ambari" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Apache_Ambari_Logo.svg/2560px-Apache_Ambari_Logo.svg.png" width="500" />
+    <small><figcaption>Logo Apache Ambari</figcaption></small>
+</figure>
 <h3 id="escenario-e-imagen-empleada">ESCENARIO E IMAGEN EMPLEADA</h3>
 <p>Partimos de una máquina con Ubuntu Desktop 25.10, en la que tenemos instalado Docker 28.5.1. En ella, vamos a desplegar un entorno con cuatro contenedores, consistente en:</p>
 <ul>
@@ -1833,6 +1881,57 @@ ambari-agent start
 hadoop fs -ls /
 </code></pre></div>
 <p><em><small><a href="https://ambari.apache.org/docs/3.0.0/quick-start/environment-setup/docker-environment-setup/">Fuente 1: Ambari Docker Environmet Setup</a></small></em> , <em><small><a href="https://ambari.apache.org/docs/3.0.0/quick-start/installation-guide">Fuente 2: Ambari Installation Guide</a></small></em> , <em><small><a href="https://youtu.be/Ao95xAGsA20">Fuente 3: Edward Viaene</a></small></em></p>
+<h2 id="despliegue-cluster-hadoop-sobre-docker">DESPLIEGUE CLÚSTER HADOOP SOBRE DOCKER</h2>
+<figure>
+    <img alt="Hadoop over Docker" src="https://miro.medium.com/v2/resize:fit:1200/0*yJCSYpFpPk_VU2zi.png" width="450" />
+    <small><figcaption>Hadoop on Docker</figcaption></small>
+</figure>
+<p>El despligue anterior nos serviría para un entorno de producción (sustituyendo los nodos virtuales por máquinas físicas), pero si queremos desplegar Hadoop para un entorno de desarrollo o laboratorio práctico, existen imágenes de docker ya preparadas para realizar esta tarea de una forma más rápida y menos compleja.</p>
+<p>Existen varios repositorios Github donde podemos encontrar los archivos de configuración necesarios para llevar a cabo esta seugnda opción, pero uno de los más completos y estables es el de <a href="https://github.com/big-data-europe/" target="_blank">Big Data Europe</a>. Que podemos descargar en el siguiente <a href="https://github.com/big-data-europe/docker-hadoop/archive/refs/heads/master.zip" target="_blank">archivo comprimido</a>.</p>
+<figure>
+    <img alt="Big Data Europe" src="https://project-iasis.eu/sites/default/files/BDE.png" width="300" />
+    <small><figcaption>Logo Big Data Europe</figcaption></small>
+</figure>
+<p>Descomprimimos el archivo y se nos creará la carpeta <strong>"docker-hadoop"</strong>. Abrimos un terminal en esta carpeta y ejecutamos el comando para hacer el despliegue mediante docker:</p>
+<div class="language-text highlight"><pre><span></span><code>cd docker-hadoop
+docker compose up -d
+</code></pre></div>
+<p>Una vez acabe de ejecutarse, podremos <strong>ver los nombres de los contenedores</strong> que ha creado <strong>y la dirección IP asignada</strong> a cada uno, usando el siguiente comando (debes sustituir dentro del comando el nombre de tu red):</p>
+<div class="language-text highlight"><pre><span></span><code>docker network inspect &lt;nombre_de_la_red&gt; --format &#39;{{range .Containers}}{{.Name}}: {{.IPv4Address}}{{println}}{{end}}&#39;
+</code></pre></div>
+<p>En base a lo que nos muestre el comando anterior, para que nuestro clúster funcione correctamente, <strong>debemos añadir las direcciones IP (sin máscaras de red) con sus respectivos hostname al final del fichero <code>/etc/hosts</code></strong>. Y así podremos acceder a los diferentes recursos del clúster a través de nuestro navegador:</p>
+<ul>
+<li><strong>HDFS Master</strong>: http://namenode:9870</li>
+<li><strong>HDFS Slave</strong>: http://datanode:9864</li>
+<li><strong>Map Reduce</strong>: http://historyserver:8188</li>
+<li><strong>YARN Slave</strong>: http://nodemanager:8042</li>
+<li><strong>YARN Master</strong>: http://resourcemanager:8088</li>
+</ul>
+<p>Y con esto tendríamos nuestro clúster Hadoop listo. Que aunque sea un clúster simulado, pues los nodos corren como servicios dentro de una única máquina física, estós se configuran para actuar como nodos de un clúster distribuido, permitiendo ejecutar aplicaciones MapReduce y usar HDFS.</p>
+<h2 id="practica-hola-mundo-en-hadoop"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> PRÁCTICA: HOLA MUNDO EN HADOOP</h2>
+<p>El primer ejemplo que suele realizarse como Hola Mundo en Hadoop, es una aplicación que cuente las ocurrencias de cada palabra que aparece en un documento de texto.</p>
+<p>En este caso, nosotros vamos a contar las palabras de El Quijote, el cual podemos descargar en formato de texto plano, desde el siguiente <a href="https://gist.githubusercontent.com/jsdario/6d6c69398cb0c73111e49f1218960f79/raw/8d4fc4548d437e2a7203a5aeeace5477f598827d/el_quijote.txt">enlace de GitHub Gist</a>.</p>
+<p>Si se ha descargado en nuestra carpeta de Descargas, accedemos a ella desde el terminal y lo copiamos en el directorio raíz del nodo Maestro de HDFS. Luego creamos una carpeta personal dentro de HDFS y ahí moveremos nuestro fichero de texto. Los comandos serían estos:</p>
+<div class="language-text highlight"><pre><span></span><code>cd ~/Descargas
+
+docker cp el_quijote.txt namenode:/
+
+docker exec -it namenode bash
+
+hdfs dfs -mkdir /user/profe/
+
+hdfs dfs -put el_quijote.txt /user/profe/
+
+hdfs dfs -rm el_quijote.txt
+
+hdfs dfs -ls /user/profe/
+</code></pre></div>
+<p>Una vez tenemos el documento en nuestro sistema de ficheros HDFS, podemos procesar su información con Mapreduce. Para ello, Hadoop tiene una serie de ejemplos ya implementados para demostrar el uso de MapReduce.</p>
+<p>Estos se encuentran en la carpeta <strong>$HADOOP_HOME/share/hadoop/mapreduce</strong>. Así pues, podemos ejecutar el programa <code>wordcount</code> con el siguiente comando (debemos lanzarlo dentro del nodo Maestro):</p>
+<div class="language-text highlight"><pre><span></span><code>hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar \
+wordcount /user/profe/el_quijote.txt /user/profe/salidaQuijote
+</code></pre></div>
+<p><em><small><a href="https://escueladeinformatica.com/">Fuente 1: Escuela de Informática</a></small></em>, <em><small><a href="https://www.tutorialspoint.com/hadoop/index.htm">Fuente 2: Tutorials Point</a></small></em></p>
 
 
 
