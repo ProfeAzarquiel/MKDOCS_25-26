@@ -18,7 +18,7 @@
         <link rel="prev" href="../ud2/">
       
       
-        <link rel="next" href="../../WEB/indexw/">
+        <link rel="next" href="../ud4/">
       
       
         
@@ -281,6 +281,8 @@
       
         
       
+        
+      
     
     
     
@@ -363,7 +365,7 @@
   <span class="md-ellipsis">
     
   
-    UD0. Libros de referencia
+    UD0. Libros y Herramientas Útiles
   
 
     
@@ -517,6 +519,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLOUD/ud6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6. Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -534,6 +564,8 @@
   
     
     
+      
+        
       
         
       
@@ -627,7 +659,7 @@
   <span class="md-ellipsis">
     
   
-    UD0. Libros de referencia
+    UD0. Libros y Herramientas Útiles
   
 
     
@@ -822,6 +854,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4. Apache Spark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1121,6 +1181,8 @@
       
         
       
+        
+      
     
     
     
@@ -1203,7 +1265,7 @@
   <span class="md-ellipsis">
     
   
-    UD0. Libros de referencia
+    UD0. Libros y Herramientas Útiles
   
 
     
@@ -1315,7 +1377,35 @@
   <span class="md-ellipsis">
     
   
-    UD4. Aplicaciones Web con Python
+    UD4. Aplicaciones Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYTHON/ud5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5. Redes Neuronales
   
 
     
@@ -1887,7 +1977,7 @@ hadoop fs -ls /
     <small><figcaption>Hadoop on Docker</figcaption></small>
 </figure>
 <p>El despligue anterior nos serviría para un entorno de producción (sustituyendo los nodos virtuales por máquinas físicas), pero si queremos desplegar Hadoop para un entorno de desarrollo o laboratorio práctico, existen imágenes de docker ya preparadas para realizar esta tarea de una forma más rápida y menos compleja.</p>
-<p>Existen varios repositorios Github donde podemos encontrar los archivos de configuración necesarios para llevar a cabo esta seugnda opción, pero uno de los más completos y estables es el de <a href="https://github.com/big-data-europe/" target="_blank">Big Data Europe</a>. Que podemos descargar en el siguiente <a href="https://github.com/big-data-europe/docker-hadoop/archive/refs/heads/master.zip" target="_blank">archivo comprimido</a>.</p>
+<p>Existen varios repositorios Github donde podemos encontrar los archivos de configuración necesarios para llevar a cabo esta seugnda opción, pero uno de los más completos y estables es el de <a href="https://github.com/big-data-europe/" target="_blank">Big Data Europe</a>. Que podemos descargar en el siguiente <a href="https://github.com/big-data-europe/docker-hadoop/archive/refs/heads/master.zip" target="_blank">archivo comprimido</a> <img alt="📥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e5.svg" title=":inbox_tray:" />.</p>
 <figure>
     <img alt="Big Data Europe" src="https://project-iasis.eu/sites/default/files/BDE.png" width="300" />
     <small><figcaption>Logo Big Data Europe</figcaption></small>
@@ -1896,10 +1986,13 @@ hadoop fs -ls /
 <div class="language-text highlight"><pre><span></span><code>cd docker-hadoop
 docker compose up -d
 </code></pre></div>
-<p>Una vez acabe de ejecutarse, podremos <strong>ver los nombres de los contenedores</strong> que ha creado <strong>y la dirección IP asignada</strong> a cada uno, usando el siguiente comando (debes sustituir dentro del comando el nombre de tu red):</p>
+<p>Una vez acabe de ejecutarse, podemos ver la red que ha creado para los contenedores con el comando:</p>
+<div class="language-text highlight"><pre><span></span><code>docker network ls
+</code></pre></div>
+<p>Copiamos el nombre de la red y lo usaremos en el siguiente comando, para <strong>ver los nombres de los contenedores</strong> que se han creado <strong>y sus direcciones IP asignadas</strong> (debes sustituir dentro del comando el nombre de tu red):</p>
 <div class="language-text highlight"><pre><span></span><code>docker network inspect &lt;nombre_de_la_red&gt; --format &#39;{{range .Containers}}{{.Name}}: {{.IPv4Address}}{{println}}{{end}}&#39;
 </code></pre></div>
-<p>En base a lo que nos muestre el comando anterior, para que nuestro clúster funcione correctamente, <strong>debemos añadir las direcciones IP (sin máscaras de red) con sus respectivos hostname al final del fichero <code>/etc/hosts</code></strong>. Y así podremos acceder a los diferentes recursos del clúster a través de nuestro navegador:</p>
+<p>Ahora, según lo que nos muestre el comando anterior, <strong>debemos añadir las direcciones IP (sin máscaras de red) con sus respectivos hostname al final del fichero <code>/etc/hosts</code></strong>. Para que podamos acceder a los diferentes recursos del clúster a través de nuestro navegador, usando sus nombres:</p>
 <ul>
 <li><strong>HDFS Master</strong>: http://namenode:9870</li>
 <li><strong>HDFS Slave</strong>: http://datanode:9864</li>
@@ -1907,10 +2000,19 @@ docker compose up -d
 <li><strong>YARN Slave</strong>: http://nodemanager:8042</li>
 <li><strong>YARN Master</strong>: http://resourcemanager:8088</li>
 </ul>
+<p>Además de esas, hay que añadir dos traducciones más a <code>/etc/hosts</code>, que podemos ver en la interfaz gráfica de los servicios:</p>
+<figure style="display: inline-block; margin-left: 2rem">
+    <img alt="HDFS Datanode" src="../../img/azarquiel.png" width="275" />
+    <small><figcaption>Captura Datanode</figcaption></small>
+</figure>
+<figure style="display: inline-block; margin-left: 2rem">
+    <img alt="YARN Nodemanager" src="../../img/azarquiel.png" width="275" />
+    <small><figcaption>Captura Nodemanager</figcaption></small>
+</figure>
 <p>Y con esto tendríamos nuestro clúster Hadoop listo. Que aunque sea un clúster simulado, pues los nodos corren como servicios dentro de una única máquina física, estós se configuran para actuar como nodos de un clúster distribuido, permitiendo ejecutar aplicaciones MapReduce y usar HDFS.</p>
 <h2 id="practica-hola-mundo-en-hadoop"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> PRÁCTICA: HOLA MUNDO EN HADOOP</h2>
-<p>El primer ejemplo que suele realizarse como Hola Mundo en Hadoop, es una aplicación que cuente las ocurrencias de cada palabra que aparece en un documento de texto.</p>
-<p>En este caso, nosotros vamos a contar las palabras de El Quijote, el cual podemos descargar en formato de texto plano, desde el siguiente <a href="https://gist.githubusercontent.com/jsdario/6d6c69398cb0c73111e49f1218960f79/raw/8d4fc4548d437e2a7203a5aeeace5477f598827d/el_quijote.txt">enlace de GitHub Gist</a>.</p>
+<p>El primer ejemplo que suele realizarse como Hola Mundo en Hadoop, es una aplicación que cuente el número de ocurrencias de cada palabra en un documento de texto.</p>
+<p>En este caso, nosotros vamos a <strong>contar las palabras de El Quijote</strong>, el cual podemos descargar en formato de texto plano, desde el siguiente <a href="https://gist.githubusercontent.com/jsdario/6d6c69398cb0c73111e49f1218960f79/raw/8d4fc4548d437e2a7203a5aeeace5477f598827d/el_quijote.txt">enlace de GitHub</a> <img alt="📥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e5.svg" title=":inbox_tray:" />.</p>
 <p>Si se ha descargado en nuestra carpeta de Descargas, accedemos a ella desde el terminal y lo copiamos en el directorio raíz del nodo Maestro de HDFS. Luego creamos una carpeta personal dentro de HDFS y ahí moveremos nuestro fichero de texto. Los comandos serían estos:</p>
 <div class="language-text highlight"><pre><span></span><code>cd ~/Descargas
 
@@ -1918,18 +2020,95 @@ docker cp el_quijote.txt namenode:/
 
 docker exec -it namenode bash
 
+hdfs dfs -mkdir /user/
 hdfs dfs -mkdir /user/profe/
 
 hdfs dfs -put el_quijote.txt /user/profe/
-
-hdfs dfs -rm el_quijote.txt
 
 hdfs dfs -ls /user/profe/
 </code></pre></div>
 <p>Una vez tenemos el documento en nuestro sistema de ficheros HDFS, podemos procesar su información con Mapreduce. Para ello, Hadoop tiene una serie de ejemplos ya implementados para demostrar el uso de MapReduce.</p>
 <p>Estos se encuentran en la carpeta <strong>$HADOOP_HOME/share/hadoop/mapreduce</strong>. Así pues, podemos ejecutar el programa <code>wordcount</code> con el siguiente comando (debemos lanzarlo dentro del nodo Maestro):</p>
-<div class="language-text highlight"><pre><span></span><code>hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar \
+<div class="language-text highlight"><pre><span></span><code>hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.1.jar \
 wordcount /user/profe/el_quijote.txt /user/profe/salidaQuijote
+</code></pre></div>
+<h3 id="desarrollando-nuestros-scripts-mapreduce">DESARROLLANDO NUESTROS SCRIPTS MAPREDUCE</h3>
+<p>La API de MapReduce está escrita en Java, pero mediante la utilidad Hadoop Streaming podemos usar MapReduce con cualquier lenguaje de programación compatible con sistemas Unix. Para entender mejor como funciona, vamos a recrear el ejemplo anterior usando Python.</p>
+<p>Auque dependiendo del tipo de tarea que necesitemos llevar a cabo, el código de los scripts va a variar, siempre vamos a diferenciar dos grandes fases: el mapeo de datos y la reducción o resumen.</p>
+<h4 id="mapeo"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.672 23.969c-.352-.089-.534-.234-1.471-1.168C.085 21.688.014 21.579.018 20.999c0-.645-.196-.414 3.368-3.986 3.6-3.608 3.415-3.451 4.064-3.449.302 0 .378.016.62.14l.277.14 1.744-1.744-.218-.343c-.425-.662-.825-1.629-1.006-2.429a7.66 7.66 0 0 1 1.479-6.44c2.49-3.12 6.959-3.812 10.26-1.588 1.812 1.218 2.99 3.099 3.328 5.314.07.467.07 1.579 0 2.074a7.55 7.55 0 0 1-2.205 4.402 6.7 6.7 0 0 1-1.943 1.401c-.959.483-1.775.71-2.881.803-1.573.131-3.32-.305-4.656-1.163l-.343-.218-1.744 1.744.14.28c.125.241.14.316.14.617.003.651.156.467-3.426 4.049-2.761 2.756-3.186 3.164-3.398 3.261-.271.125-.69.171-.945.106zM17.485 13.95a6.43 6.43 0 0 0 4.603-3.51c1.391-2.899.455-6.306-2.227-8.108-.638-.43-1.529-.794-2.367-.962-.581-.117-1.809-.104-2.414.025a6.6 6.6 0 0 0-2.452 1.064c-.444.315-1.177 1.048-1.487 1.487a6.384 6.384 0 0 0 .38 7.907 6.4 6.4 0 0 0 3.901 2.136c.509.078 1.542.058 2.065-.037zm-3.738 7.376a81 81 0 0 1-2.196-.651c-.025-.028 1.207-4.396 1.257-4.449.023-.026 4.242 1.152 4.414 1.236.062.026-.003.288-.525 2.102a399 399 0 0 0-.635 2.236c-.025.087-.069.156-.097.156-.028-.003-1.028-.287-2.219-.631zm2.912.524c0-.053 1.227-4.333 1.246-4.347.047-.034 4.324-1.23 4.341-1.211.019.019-1.199 4.337-1.23 4.36-.02.019-4.126 1.191-4.259 1.218-.054.011-.098 0-.098-.019zm-7.105-1.911c.846-.852 1.599-1.627 1.674-1.728.171-.218.405-.732.472-1.015.026-.118.053-.352.058-.522l.011-.307.182-.051c.103-.028.193-.044.202-.034.023.025-1.207 4.321-1.246 4.36-.02.016-.677.213-1.464.436l-1.425.405 1.537-1.542zm8.289-3.06a1.4 1.4 0 0 1-.059-.187l-.044-.156.156-.028c1.339-.227 2.776-.856 3.908-1.713.16-.125.252-.171.265-.134.054.165.272.95.265.959-.034.034-4.48 1.282-4.492 1.261zm-15.083-1.3c-.05-.039-1.179-3.866-1.264-4.29-.016-.084.146-.044 2.174.536 2.121.604 2.192.629 2.222.74.028.098.011.129-.125.223-.084.059-.769.724-1.523 1.479a64 64 0 0 1-1.39 1.367c-.016 0-.056-.025-.093-.054zm.821-4.378c-1.188-.343-2.164-.623-2.167-.626-.016-.012 1.261-4.433 1.285-4.46.022-.022 4.422 1.211 4.469 1.252.009.009-.269 1.017-.618 2.239-.576 2.02-.643 2.224-.723 2.22-.05-.003-1.059-.285-2.247-.626zm2.959.538c.012-.031.212-.723.444-1.534l.42-1.476.056.321c.093.556.265 1.188.464 1.741.106.296.187.539.181.545-.008.006-.332.101-.719.212-.389.109-.741.21-.786.224q-.085.025-.059-.034zM4.905 6.112c-1.187-.339-2.167-.635-2.18-.654-.04-.062-1.246-4.321-1.23-4.338.026-.025 4.31 1.204 4.351 1.246.047.051 1.28 4.379 1.246 4.376L4.91 6.113zm2.148-1.713-.519-1.806-.078-.28 1.693-.483c.934-.265 1.724-.495 1.76-.508.034-.016-.083.14-.26.336A8.7 8.7 0 0 0 7.69 5.23a4 4 0 0 0-.132.561c0 .293-.115-.025-.505-1.39z"/></svg></span> Mapeo</h4>
+<p>Para crear el mapeador en este ejemplo de contador de palabras, vamos a hacer que el programa recorra línea a línea el documento recibido y genere una salida donde cada palabra se muestre en una nueva linea. De modo que cada línea sea una <em>tupla</em> compuesta por la palabra, un tabulador y el número 1 (indicando que hay una ocurrencia).</p>
+<div class="language-py highlight"><span class="filename">mapper.py</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    <span class="c1">#!/usr/bin/python3</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span> 
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span> 
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="c1"># eliminamos los espacios de delante y de detrás</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="n">linea</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> 
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="c1"># dividimos la línea en palabras</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="n">palabras</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> 
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="c1"># creamos tuplas de (palabra, 1)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">palabras</span><span class="p">:</span> 
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">1&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Para probar el funcionamiento de nuestro mapeador:</p>
+<div class="language-text highlight"><pre><span></span><code>cat el_quijote.txt | python3 mapper.py
+</code></pre></div>
+<h4 id="reduccion"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1.88.46.46 1.88 5.59 7H2v2h7V2H7v3.59M11 7v2h10v6h2V9a2 2 0 0 0-2-2M7 11v10a2 2 0 0 0 2 2h6v-2H9V11m6.88 3.46-1.42 1.42L19.6 21H17v2h6v-6h-2v2.59"/></svg></span> Reducción</h4>
+<p>A continuación, en el reducer vamos a recibir la salida del mapper y parsearemos la cadena para separar la palabra del contador.</p>
+<p>Para llevar la cuenta de las palabras, vamos a meterlas dentro de un diccionario para incrementar las ocurrencias encontradas.</p>
+<div class="language-py highlight"><span class="filename">reducer.py</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/usr/bin/python3 </span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># inicializamos el diccionario</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">dictPalabras</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="c1"># quitamos espacios de sobra</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">linea</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="c1"># parseamos la entrada de mapper.py</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">palabra</span><span class="p">,</span> <span class="n">cuenta</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="c1"># convertimos cuenta de string a int</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="n">cuenta</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cuenta</span><span class="p">)</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        <span class="c1"># cuenta no era un numero, descartamos la linea</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="k">continue</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>        <span class="n">dictPalabras</span><span class="p">[</span><span class="n">palabra</span><span class="p">]</span> <span class="o">+=</span> <span class="n">cuenta</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="k">except</span><span class="p">:</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="n">dictPalabras</span><span class="p">[</span><span class="n">palabra</span><span class="p">]</span> <span class="o">=</span> <span class="n">cuenta</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">dictPalabras</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">dictPalabras</span><span class="p">[</span><span class="n">palabra</span><span class="p">])</span>
+</span></code></pre></div>
+<p>Para probar el funcionamiento del proceso completo, podemos ejecutar lo siguiente:</p>
+<div class="language-text highlight"><pre><span></span><code>cat el_quijote.txt | python3 mapper.py | python3 reducer.py &gt; salida.tsv
+</code></pre></div>
+<h4 id="hadoop-streaming"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 13H8.061l-2.574 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25v-8.5C0 1.784.784 1 1.75 1M1.5 2.75v8.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.75.75 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25m5.28 1.72a.75.75 0 0 1 0 1.06L5.31 7l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.06 0m2.44 0a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042L10.69 7 9.22 5.53a.75.75 0 0 1 0-1.06"/></svg></span> Hadoop Streaming</h4>
+<p>Como hemos mencionado antes, para procesar nuestros scripts dentro de nuestro clúster Hadoop y aprovechar así su computación distribuida, usaremos <em>Hadoop Streaming</em>. Que nos permite ejecutar trabajos (jobs) Map/Reduce con scripts codificados en cualquier lenguaje de programación que pueda leer de la entrada estándar (stdin) y escribir a la salida estándar (stdout).</p>
+<p>En primer lugar, debemos dar permisos de ejecución a nuestros scripts con:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">     </span>chmod<span class="w"> </span>u+x<span class="w"> </span>mapper.py
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">     </span>chmod<span class="w"> </span>u+x<span class="w"> </span>reducer.py
+</span></code></pre></div>
+<p>El comando utilizado ejecutar un job es <code>mapred</code> y su sintáxis es la siguiente:</p>
+<div class="language-text highlight"><pre><span></span><code>mapred streaming \
+    -input &lt;directorio_entrada_HDFS&gt; \
+    -output &lt;directorio_salida_HDFS&gt; \
+    -mapper &lt;script_Mapper&gt; \
+    -reducer &lt;script_Reducer&gt;
+</code></pre></div>
+<p>Es decir, si aplicamos los valores de nuestor escenario, quedaría algo así:</p>
+<div class="language-text highlight"><pre><span></span><code>mapred streaming \
+    -input el_quijote.txt \
+    -output salidaQuijote2 \
+    -mapper mapper.py \
+    -reducer reducer.py
+</code></pre></div>
+<p>Sin embargo, como para esta prueba práctica tenemos los scripts en local, debemos indicarle la opción <code>-file</code> para que use dichos archivos:</p>
+<div class="language-text highlight"><pre><span></span><code>mapred streaming \
+    -input el_quijote.txt \
+    -output salidaQuijote2 \
+    -mapper mapper.py -file mapper.py \
+    -reducer reducer.py -file reducer.py
 </code></pre></div>
 <p><em><small><a href="https://escueladeinformatica.com/">Fuente 1: Escuela de Informática</a></small></em>, <em><small><a href="https://www.tutorialspoint.com/hadoop/index.htm">Fuente 2: Tutorials Point</a></small></em></p>
 
