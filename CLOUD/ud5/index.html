@@ -593,10 +593,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#practica-creacion-de-un-cluster-con-kind" class="md-nav__link">
+  <a href="#practica-1-creacion-de-un-cluster-con-kind" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PRÁCTICA: CREACIÓN DE UN CLUSTER CON KIND
+        PRÁCTICA 1: CREACIÓN DE UN CLUSTER CON KIND
       
     </span>
   </a>
@@ -615,10 +615,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pods" class="md-nav__link">
+  <a href="#practica-2-despliegue-nginx-en-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PODS
+        PRÁCTICA 2: DESPLIEGUE NGINX EN KUBERNETES
       
     </span>
   </a>
@@ -626,10 +626,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#namespace-y-contexto" class="md-nav__link">
+  <a href="#monitorizacion-de-cluster-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        NAMESPACE y CONTEXTO
+        MONITORIZACIÓN DE CLÚSTER KUBERNETES
       
     </span>
   </a>
@@ -637,21 +637,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-y-replicaset" class="md-nav__link">
+  <a href="#practica-3-monitorizando-mi-cluster-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DEPLOYMENT y REPLICASET
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practica-despliegue-nginx-en-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PRÁCTICA: DESPLIEGUE NGINX EN KUBERNETES
+        PRÁCTICA 3: MONITORIZANDO MI CLÚSTER KUBERNETES
       
     </span>
   </a>
@@ -1530,10 +1519,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#practica-creacion-de-un-cluster-con-kind" class="md-nav__link">
+  <a href="#practica-1-creacion-de-un-cluster-con-kind" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PRÁCTICA: CREACIÓN DE UN CLUSTER CON KIND
+        PRÁCTICA 1: CREACIÓN DE UN CLUSTER CON KIND
       
     </span>
   </a>
@@ -1552,10 +1541,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pods" class="md-nav__link">
+  <a href="#practica-2-despliegue-nginx-en-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PODS
+        PRÁCTICA 2: DESPLIEGUE NGINX EN KUBERNETES
       
     </span>
   </a>
@@ -1563,10 +1552,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#namespace-y-contexto" class="md-nav__link">
+  <a href="#monitorizacion-de-cluster-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        NAMESPACE y CONTEXTO
+        MONITORIZACIÓN DE CLÚSTER KUBERNETES
       
     </span>
   </a>
@@ -1574,21 +1563,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-y-replicaset" class="md-nav__link">
+  <a href="#practica-3-monitorizando-mi-cluster-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DEPLOYMENT y REPLICASET
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practica-despliegue-nginx-en-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PRÁCTICA: DESPLIEGUE NGINX EN KUBERNETES
+        PRÁCTICA 3: MONITORIZANDO MI CLÚSTER KUBERNETES
       
     </span>
   </a>
@@ -1613,6 +1591,10 @@
 
 
 <h1 id="unidad-5-introduccion-a-kubernetes-k8s">UNIDAD 5: INTRODUCCIÓN A KUBERNETES (K8S)</h1>
+<figure>
+    <img alt="Kubernetes" src="https://1000logos.net/wp-content/uploads/2022/07/Kubernetes-Logo.png" width="300" />
+    <small><figcaption>Logo Kubernetes</figcaption></small>
+</figure>
 <h2 id="que-es-kubernetes"><strong>¿QUE ES KUBERNETES?</strong></h2>
 <p>Es una <strong>plataforma de código abierto</strong> que sirve para <strong>automatizar</strong> la implementación, escalado y <strong>operación</strong> de aplicaciones <strong>con contenedores</strong>. Desarrollado por Google y luego liberado como código abierto en 2014, actualmente es uno de los proyectos más populares de la Cloud Native Computing Foundation (CNCF). Ya que se ha convertido en la plataforma de orquestación de contenedores más utilizada y ampliamente adoptada por empresas de todo el mundo.</p>
 <p>Kubernetes crea una <strong>capa de abstracción entre la infraestructura y las aplicaciones</strong>. Por ejemplo, teníendo <strong>múltiples servidores</strong>, te permite agruparlos en lo que llamariamos <strong>clúster</strong> y consumirlo <strong>como una pieza individual</strong>, permitiendo desplegar aplicaciones sobre todos los nodos del clúster de una forma transparente para el usuario.</p>
@@ -1821,7 +1803,7 @@ sudo mv ./kubectl /usr/local/bin
 kubectl version --client
 </code></pre></div>
 <p>Con estos simples pasos, ya podemos empezar a definir nuestro cluster Kubernetes con Kind.</p>
-<h2 id="practica-creacion-de-un-cluster-con-kind"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> <strong>PRÁCTICA</strong>: CREACIÓN DE UN CLUSTER CON KIND</h2>
+<h2 id="practica-1-creacion-de-un-cluster-con-kind"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> <strong>PRÁCTICA 1</strong>: CREACIÓN DE UN CLUSTER CON KIND</h2>
 <h3 id="personalizar-la-red-virtual-del-cluster">PERSONALIZAR LA RED VIRTUAL DEL CLUSTER</h3>
 <p>Cuando levantamos un cluster con KIND, este crea una red Bridge llamada <em>kind</em> con un direccionamiento por defecto. Para que ese direccionamiento no se solape o interfiera en los direccionamientos que ya tenemos en uso, vamos a crear nosotros esa red con los parámetros que queramos:</p>
 <div class="language-text highlight"><pre><span></span><code>docker network create --subnet 192.168.0.0/24 --gateway 192.168.0.1 kind
@@ -1875,13 +1857,13 @@ kubectl get nodes
 <li><strong>spec</strong>: características específicas del objeto (contendores, volumenes...).</li>
 </ul>
 <p>Por otro lado, es importante destacar que podemos crear <strong>varios objetos</strong> diferentes usando <strong>un único manifiesto.yaml</strong>, simplemente deben ir separados por un triple guión <code>---</code>.</p>
-<h2 id="pods"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m10.41.24 4.711 2.774c.544.316.878.897.879 1.526v5.01a1.77 1.77 0 0 1-.88 1.53l-7.753 4.521-.002.001a1.77 1.77 0 0 1-1.774 0H5.59L.873 12.85A1.76 1.76 0 0 1 0 11.327V6.292c0-.304.078-.598.22-.855l.004-.005.01-.019c.15-.262.369-.486.64-.643L8.641.239a1.75 1.75 0 0 1 1.765 0l.002.001ZM9.397 1.534l-7.17 4.182 4.116 2.388a.27.27 0 0 0 .269 0l7.152-4.148-4.115-2.422a.25.25 0 0 0-.252 0m-7.768 10.02 4.1 2.393V9.474a2 2 0 0 1-.138-.072L1.5 7.029v4.298c0 .095.05.181.129.227m8.6.642 1.521-.887v-4.45l-1.521.882ZM7.365 9.402h.001q-.066.038-.136.071v4.472l1.5-.875V8.61Zm5.885 1.032 1.115-.65h.002a.27.27 0 0 0 .133-.232V5.264l-1.25.725Z"/></svg></span> PODS</h2>
+<h3 id="pods"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m10.41.24 4.711 2.774c.544.316.878.897.879 1.526v5.01a1.77 1.77 0 0 1-.88 1.53l-7.753 4.521-.002.001a1.77 1.77 0 0 1-1.774 0H5.59L.873 12.85A1.76 1.76 0 0 1 0 11.327V6.292c0-.304.078-.598.22-.855l.004-.005.01-.019c.15-.262.369-.486.64-.643L8.641.239a1.75 1.75 0 0 1 1.765 0l.002.001ZM9.397 1.534l-7.17 4.182 4.116 2.388a.27.27 0 0 0 .269 0l7.152-4.148-4.115-2.422a.25.25 0 0 0-.252 0m-7.768 10.02 4.1 2.393V9.474a2 2 0 0 1-.138-.072L1.5 7.029v4.298c0 .095.05.181.129.227m8.6.642 1.521-.887v-4.45l-1.521.882ZM7.365 9.402h.001q-.066.038-.136.071v4.472l1.5-.875V8.61Zm5.885 1.032 1.115-.65h.002a.27.27 0 0 0 .133-.232V5.264l-1.25.725Z"/></svg></span> PODS</h3>
 <p>Como ya mencionamos, un pod es el recurso más básico de Kubernetes y aunque lo más común es crearlos a través de manifiestos de mayor nivel, como un Deployment; también es posible crear pods individualmente de las siguientes formas:</p>
-<h3 id="con-kubectl">CON KUBECTL</h3>
+<h4 id="con-kubectl">CON KUBECTL</h4>
 <p>Los principales gestores y orquestadores de contenedores, estan basados en el mismo estandar OCI (Open Container Initiative), es por ello que podemos usar cualquier imágen descargada de Docker Hub, para crear un Pod en Kubernetes:</p>
 <div class="language-text highlight"><pre><span></span><code>kubectl run mypod1 --image=nginx
 </code></pre></div>
-<h3 id="con-un-manifiesto">CON UN MANIFIESTO</h3>
+<h4 id="con-un-manifiesto">CON UN MANIFIESTO</h4>
 <p>No obstante, como ya hemos comentado, en Kubernetes lo normal es definir los recursos mediante manifiestos. Por lo tanto, un ejemplo para crear un Pod igual que el anterior a través de un fichero <code>pod.yaml</code>, sería el siguiente:</p>
 <div class="language-text highlight"><pre><span></span><code>apiVersion: v1
 kind: Pod
@@ -1907,7 +1889,7 @@ nano nginx.yaml
 <p>Como vemos, con la instrucción <code>kubectl exec &lt;nombre_pod&gt; -- &lt;comando&gt;</code> podemos <strong>ejecutar ordenes dentro de un pod</strong>.</p>
 <p>También, usando la instrucción <code>kubectl describe pod &lt;nombre_pod&gt;</code> podemos <strong>ver información detalla de un pod</strong>, como la imagen usada, en que nodos del cluster se está ejecutando o un histórico de eventos, entre otros.</p>
 <p>Por último, podemos borrar un pod usando la instrucción <code>kubectl delete pod &lt;nombre_pod&gt;</code>.</p>
-<h2 id="namespace-y-contexto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1 1v4h1v14H1v4h4v-1h14v1h4v-4h-1V5h1V1h-4v1H5V1m0 3h14v1h1v14h-1v1H5v-1H4V5h1m1 1v8h3v4h9V9h-4V6M8 8h4v4H8m6-1h2v5h-5v-2h3"/></svg></span> NAMESPACE y CONTEXTO</h2>
+<h3 id="namespace-y-contexto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1 1v4h1v14H1v4h4v-1h14v1h4v-4h-1V5h1V1h-4v1H5V1m0 3h14v1h1v14h-1v1H5v-1H4V5h1m1 1v8h3v4h9V9h-4V6M8 8h4v4H8m6-1h2v5h-5v-2h3"/></svg></span> NAMESPACE y CONTEXTO</h3>
 <p>Los <strong>namespaces</strong> son una forma de agrupar los recursos de kubernetes. Esto permite que podamos gestionar los diferentes recursos de una aplicación ( pod, deployment, service, etc) para establecer unas cuotas recursos, políticas de seguridad y configuraciones específicas.</p>
 <p>Por defecto, existen cuatro namespaces que usa Kubernetes, que no debemos tocar. Para <strong>listar los namespaces</strong> creados en nuestro cluster, mostrando sus etiquetas (opción que nos puede ser muy útil más adelante) podemos usar:</p>
 <div class="language-text highlight"><pre><span></span><code>kubectl get ns --show-labels
@@ -1931,10 +1913,10 @@ labels:
 </code></pre></div>
 <p>Para volver al namespace por default</p>
 <p>Es importante remarcar que un namespace no es una barrera de seguridad, sino una forma de organizar y gestionar los recursos de forma agrupada. Para aislar recursos de forma segura, debemos usar <em>Network Policies</em> y <em>RBAC</em>.</p>
-<h2 id="deployment-y-replicaset"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V4H1v13h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5M15 7h-2v7h-2V7H9v7H7V7H5v7H3V6h12zm3 11.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5M17 12V9.5h2.5l1.96 2.5z"/></svg></span> DEPLOYMENT y REPLICASET</h2>
+<h3 id="deployment-y-replicaset"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V4H1v13h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5M15 7h-2v7h-2V7H9v7H7V7H5v7H3V6h12zm3 11.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5M17 12V9.5h2.5l1.96 2.5z"/></svg></span> DEPLOYMENT y REPLICASET</h3>
 <p>Los <strong>Deployments</strong> son elementos de configuración que permiten la creación de una aplicación de una sola instancia. El deployment gestiona uno o varios objetos replicaset y estos a su vez gestionan uno o más pods.</p>
 <p>Un <strong>ReplicaSet</strong> es un objeto Kubernetes que asegura que un número específico de réplicas de un pod estén ejecutándose en todo momento. Los deployments utilizan este recurso para gestionar la creación, actualización y eliminación de pods; asegurando la alta disponibilidad y escalabilidad.</p>
-<h2 id="practica-despliegue-nginx-en-kubernetes"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> <strong>PRÁCTICA</strong>: DESPLIEGUE NGINX EN KUBERNETES</h2>
+<h2 id="practica-2-despliegue-nginx-en-kubernetes"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> <strong>PRÁCTICA 2</strong>: DESPLIEGUE NGINX EN KUBERNETES</h2>
 <h3 id="crear-el-fichero-deployment">CREAR EL FICHERO <em>DEPLOYMENT</em></h3>
 <details class="example">
 <summary>nano <strong>deployment.yaml</strong></summary>
@@ -1995,6 +1977,85 @@ kubectl create -f service.yaml
 <div class="language-text highlight"><pre><span></span><code>docker inspect cpd-control-plane | grep Address
 </code></pre></div>
 <p>Y si todo fue bien, abrimos un navegador y deberíamos poder acceder al servicio indicando la IP del nodo y el puerto en el que se ha mapeado el servicio. Por ejemplo <code>http://192.168.0.4:31287</code>.</p>
+<h2 id="monitorizacion-de-cluster-kubernetes"><img alt="📊" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" title=":bar_chart:" /> MONITORIZACIÓN DE CLÚSTER KUBERNETES</h2>
+<figure style="display: inline-block; margin-left: 3rem">
+    <img alt="Prometheus" src="https://www.shapeblue.com/wp-content/uploads/2025/11/Prometheus-logo.png" width="240" />
+    <small><figcaption>Logo Prometheus</figcaption></small>
+</figure>
+<figure style="display: inline-block; margin-left: 2rem">
+    <img alt="Grafana" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Grafana_logo.svg/960px-Grafana_logo.svg.png" width="200" />
+    <small><figcaption>Logo Grafana</figcaption></small>
+</figure>
+<h3 id="que-es-prometheus">¿QUÉ ES PROMETHEUS? <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.372 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-6.628-5.373-12-12-12m0 22.46c-1.885 0-3.414-1.26-3.414-2.814h6.828c0 1.553-1.528 2.813-3.414 2.813zm5.64-3.745H6.36v-2.046h11.28zm-.04-3.098H6.391q-.056-.064-.111-.13c-1.155-1.401-1.427-2.133-1.69-2.879-.005-.025 1.4.287 2.395.511 0 0 .513.119 1.262.255-.72-.843-1.147-1.915-1.147-3.01 0-2.406 1.845-4.508 1.18-6.207.648.053 1.34 1.367 1.387 3.422.689-.951.977-2.69.977-3.755 0-1.103.727-2.385 1.454-2.429-.648 1.069.168 1.984.894 4.256.272.854.237 2.29.447 3.201.07-1.892.395-4.652 1.595-5.605-.529 1.2.079 2.702.494 3.424.671 1.164 1.078 2.047 1.078 3.716a4.64 4.64 0 0 1-1.11 2.996c.792-.149 1.34-.283 1.34-.283l2.573-.502s-.374 1.538-1.81 3.019z"/></svg></span></h3>
+<p>Prometheus  es un conjunto de herramientas de código abierto para la monitorización y notficación de alertas de sistemas.</p>
+<p>Prometheus recopila y almacena localmente métricas sobre aplicaciones y servicios en ejecución en datos de series de tiempo, es decir, la información de las métricas se almacena con la <strong>marca de tiempo</strong> en la que se registró, junto con <strong>pares clave-valor</strong> opcionales llamados etiquetas.</p>
+<p>Podemos visualizar estos datos mediante clientes API como <strong>Grafana</strong>.</p>
+<h4 id="componentes-prometheus">COMPONENTES PROMETHEUS</h4>
+<p>El ecosistema Prometheus consta de múltiples componentes, muchos de los cuales son opcionales:</p>
+<ul>
+<li>El <strong>servidor  principal</strong> de Prometheus que recopila y almacena datos de series temporales.</li>
+<li><strong>Librerías de cliente</strong> para instrumentar el código de la aplicación.</li>
+<li>Un <strong>push gateway</strong> para dar soporte a trabajos (<em>jobs</em>) de corta duración.</li>
+<li><strong>Exportadores de terceros</strong> para diferentes propósitos, como por ejemplo <code>Grafana</code>.</li>
+<li>Un <strong>Alert Manager</strong>  para gestionar alertas.</li>
+<li><strong>Herramientas de soporte</strong> variadas.</li>
+</ul>
+<figure>
+    <img alt="Arquitectura Prometheus" src="https://prometheus.io/assets/docs/architecture.svg" width="400" />
+    <small><figcaption>Arquitectura Prometheus</figcaption></small>
+</figure>
+<h3 id="que-es-grafana">¿QUÉ ES GRAFANA? <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.02 10.59a8.6 8.6 0 0 0-.862-3.034 8.9 8.9 0 0 0-1.789-2.445c.337-1.342-.413-2.505-.413-2.505-1.292-.08-2.113.4-2.416.62q-.077-.032-.154-.064-.33-.134-.677-.247-.348-.11-.711-.197a10 10 0 0 0-.875-.161C14.557.753 12.94 0 12.94 0c-1.804 1.145-2.147 2.744-2.147 2.744l-.018.093q-.149.042-.298.088c-.138.042-.275.094-.413.143-.138.055-.275.107-.41.166a9 9 0 0 0-1.557.87l-.063-.029c-2.497-.955-4.716.195-4.716.195-.203 2.658.996 4.33 1.235 4.636a11.6 11.6 0 0 0-.607 2.635C1.636 12.677.953 15.014.953 15.014c1.926 2.214 4.171 2.351 4.171 2.351q.005-.002.006-.005c.285.509.615.994.986 1.446q.235.284.488.548c-.704 2.009.099 3.68.099 3.68 2.144.08 3.553-.937 3.849-1.173a9.8 9.8 0 0 0 3.164.501h.08l.055-.003.107-.002.103-.005.003.002c1.01 1.44 2.788 1.646 2.788 1.646 1.264-1.332 1.337-2.653 1.337-2.94v-.058q-.002-.03-.003-.06.4-.28.758-.6a7.9 7.9 0 0 0 1.415-1.7c1.43.083 2.437-.885 2.437-.885-.236-1.49-1.085-2.216-1.264-2.354l-.018-.013-.016-.013-.031-.02q.013-.137.02-.27.016-.244.016-.48v-.253l-.005-.098-.008-.135a2 2 0 0 0-.01-.13q-.005-.063-.013-.125l-.016-.124-.018-.122a6.2 6.2 0 0 0-2.032-3.73 6 6 0 0 0-3.222-1.46 6 6 0 0 0-.85-.048l-.107.002h-.063l-.044.003-.104.008a4.78 4.78 0 0 0-3.335 1.695c-.332.4-.592.84-.768 1.297a4.6 4.6 0 0 0-.312 1.817l.003.091q.006.083.013.164a3.6 3.6 0 0 0 .698 1.82 3.53 3.53 0 0 0 1.827 1.282c.33.098.66.14.971.137q.06 0 .114-.002l.063-.003q.03-.002.062-.003.05-.004.099-.01.012-.001.028-.003l.031-.005.06-.008a1 1 0 0 0 .112-.02c.036-.008.072-.013.109-.024a2.6 2.6 0 0 0 .914-.415q.042-.03.085-.065a.25.25 0 0 0 .039-.35.244.244 0 0 0-.309-.06l-.078.042q-.135.066-.283.116a2.5 2.5 0 0 1-.475.096q-.04.005-.083.006l-.083.002q-.04 0-.08-.002l-.102-.006h-.012l-.024.006q-.024-.003-.044-.006-.046-.004-.091-.01a2.6 2.6 0 0 1-.724-.213 2.6 2.6 0 0 1-.667-.438 2.52 2.52 0 0 1-.805-1.475 2.3 2.3 0 0 1-.029-.444l.006-.122v-.023l.002-.031q.003-.03.005-.06a3.16 3.16 0 0 1 1.352-2.29 3.1 3.1 0 0 1 .937-.43 3 3 0 0 1 .776-.101h.06l.07.002.045.003h.026l.07.005a4 4 0 0 1 1.635.49 3.94 3.94 0 0 1 1.602 1.662 3.8 3.8 0 0 1 .397 1.414l.005.076.003.075q.002.038.002.075c0 .024.003.052 0 .07v.065l-.002.073-.008.174a6 6 0 0 1-.08.639 5 5 0 0 1-.267.927 5.3 5.3 0 0 1-.624 1.13 5.05 5.05 0 0 1-3.237 2.014 5 5 0 0 1-.649.066l-.039.003h-.287a6.6 6.6 0 0 1-1.716-.265 6.78 6.78 0 0 1-3.4-2.274 6.8 6.8 0 0 1-.746-1.15 6.6 6.6 0 0 1-.714-2.596l-.005-.083-.002-.02v-.056l-.003-.073v-.096l-.003-.104v-.07l.003-.163c.008-.22.026-.45.054-.678a9 9 0 0 1 .28-1.355q.192-.668.473-1.277a7 7 0 0 1 1.456-2.1 6 6 0 0 1 .953-.763q.253-.166.524-.306c.089-.05.182-.091.273-.135q.07-.031.138-.062a7 7 0 0 1 .714-.267l.145-.045c.049-.015.098-.026.148-.041q.147-.042.296-.076c.049-.013.1-.02.15-.033l.15-.032.151-.028.076-.013.075-.01.153-.024c.057-.01.114-.013.171-.023l.169-.021q.055-.006.106-.01l.073-.008.036-.003.042-.002q.086-.006.171-.01l.086-.006h.023l.037-.003.145-.007a8 8 0 0 1 1.708.125 8 8 0 0 1 2.048.68 8.3 8.3 0 0 1 1.672 1.09l.09.077.089.078c.06.052.114.107.171.159q.085.079.166.16.08.08.159.164a8.7 8.7 0 0 1 1.41 1.978c.012.026.028.052.04.078l.04.078.075.156c.023.051.05.1.07.153l.065.15a9 9 0 0 1 .45 1.34.19.19 0 0 0 .201.142.186.186 0 0 0 .172-.184q.015-.37-.024-.856z"/></svg></span></h3>
+<h2 id="practica-3-monitorizando-mi-cluster-kubernetes"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> <strong>PRÁCTICA 3</strong>: MONITORIZANDO MI CLÚSTER KUBERNETES</h2>
+<p>Antes de nada, comprobamos que nuestro clúster se encuentra funcionando correctamente y todos los nodos están <strong>"Ready"</strong>. También, confirmamos si tenemos <strong>HELM</strong> instalado:</p>
+<div class="language-text highlight"><pre><span></span><code>kubectl get nodes
+
+helm version
+</code></pre></div>
+<p>Agregamos el paquete (<em>chart</em>) de Prometheus al repositorio de Helm y luego lo actualizamos:</p>
+<div class="language-text highlight"><pre><span></span><code>helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+helm repo update
+</code></pre></div>
+<p>Creamos un Namespace específico para las herramientas de monitorización:</p>
+<div class="language-text highlight"><pre><span></span><code>kubectl create namespace monitoring
+</code></pre></div>
+<div class="admonition question inline end">
+<p class="admonition-title">Objeto SECRET</p>
+<p>Un "Secret" en Kubernetes es un recurso para almacenar información sensible (contraseñas, tokens, claves SSH) de forma segura, separada del código y las configuraciones no confidenciales. Permitiendo que los Pods los consuman como archivos montados o variables de entorno sin exponerlos directamente.</p>
+</div>
+<p>Creamos dos ficheros, uno para el nombre de usuario y otro para la contraseña. Y con ellos creamos un objeto <strong><code>secret</code></strong> donde se almacenará esa información sensible:</p>
+<div class="language-text highlight"><pre><span></span><code>echo -n &#39;admin&#39; &gt; ./admin-user
+
+echo -n &#39;mipass123&#39; &gt; ./admin-password
+
+kubectl create secret generic grafana-admin-credentials --from-file=./admin-user --from-file=admin-password -n monitoring
+</code></pre></div>
+<p>Confirmamos que se ha creado nuestro <em>secret</em> y en caso positivo, podemos borrar los ficheros previamente creados:</p>
+<div class="language-text highlight"><pre><span></span><code>kubectl describe secret -n monitoring grafana-admin-credentials
+
+rm admin-user &amp;&amp; rm admin-password
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Si queremos verificar el usuario y contraseña:</p>
+<div class="language-text highlight"><pre><span></span><code># PARA EL NOMBRE DE USUARIO
+kubectl get secret -n monitoring grafana-admin-credentials -o jsonpath=&quot;{.data.admin-user}&quot; | base64 --decode
+
+# PARA LA CONTRASEÑA
+kubectl get secret -n monitoring grafana-admin-credentials -o jsonpath=&quot;{.data.admin-password}&quot; | base64 --decode
+</code></pre></div>
+</div>
+<p>Descargamos el archivo <a href="https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml">values.yaml</a> <img alt="📥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e5.svg" title=":inbox_tray:" /> desde el repositorio de Prometheus. Este archivo contiene todos los parámentros que podemos configurar dentro de la herramienta (nombre de los elementos, servicios habilitados, permisos...):</p>
+<div class="language-text highlight"><pre><span></span><code>curl -O https://raw.githubusercontent.com/prometheus-community/helm-charts/refs/heads/main/charts/kube-prometheus-stack/values.yaml
+</code></pre></div>
+<p>Y procedemos a instalar la herramienta:</p>
+<div class="language-text highlight"><pre><span></span><code>helm install -n monitoring prometheus prometheus-community/kube-prometheus-stack -f values.yaml
+</code></pre></div>
+<p>Por último, creamos un renvio de puertos hacía el contenedor de Grafana (¡OJO!: deberemos consultar primero su nombre), para que podamos acceder a la interfaz gráfica desde un navegador fuera de nuestro clúster:</p>
+<div class="language-text highlight"><pre><span></span><code>kubectl port-forward -n monitoring prometheus-grafana-xxxxxxx 52222:3000 --address 0.0.0.0
+</code></pre></div>
+<p>Si necesitamos realizar cambios en la configuración del <strong>values.yaml</strong>, podemos aplicar los cambios ejecutando:</p>
+<div class="language-text highlight"><pre><span></span><code>helm upgrade -n monitoring prometheus prometheus-community/kube-prometheus-stack -f values.yaml
+</code></pre></div>
 
 
 
