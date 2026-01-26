@@ -1764,7 +1764,7 @@ helm template cilium cilium/cilium --version 1.16.1 --namespace kube-system &gt;
 kubectl apply -f cilium.yaml
 </code></pre></div>
 <h4 id="unir-todos-los-nodos-al-cluster">UNIR TODOS LOS NODOS AL CLUSTER</h4>
-<p>En cada uno de los nodos worker pegamos el comando que nos devolvio la instrucción <a href="#material-server-network-outline-a-ejecutar-solo-en-el-nodo-maestro"><code>kubeadm init</code></a> lanzar el siguiente comando:</p>
+<p>En cada uno de los nodos worker pegamos el comando que nos devolvio la instrucción <a href="#alertwidth30-a-ejecutar-solo-en-el-nodo-maestro"><code>kubeadm init</code></a> lanzar el siguiente comando:</p>
 <div class="language-text highlight"><pre><span></span><code>    kubeadm join &lt;hostname_nodo_maestro&gt;:6443 --token &lt;token&gt; --discovery-token-ca-cert-hash sha256:&lt;hash&gt;
 </code></pre></div>
 <p>Si por algún motivo, no copiamos ese comando o no conocemos algunos de los datos necesarios, podemos ejecutar lo siguiente en el Nodo Maestro para conseguir la información:</p>
@@ -2047,15 +2047,34 @@ kubectl get secret -n monitoring grafana-admin-credentials -o jsonpath=&quot;{.d
 <p>Descargamos el archivo <a href="https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml">values.yaml</a> <img alt="📥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e5.svg" title=":inbox_tray:" /> desde el repositorio de Prometheus. Este archivo contiene todos los parámentros que podemos configurar dentro de la herramienta (nombre de los elementos, servicios habilitados, permisos...):</p>
 <div class="language-text highlight"><pre><span></span><code>curl -O https://raw.githubusercontent.com/prometheus-community/helm-charts/refs/heads/main/charts/kube-prometheus-stack/values.yaml
 </code></pre></div>
+<p>Y lo personalizamos para que Grafana coja las credenciales que hemos creado más arriba:</p>
+<div class="language-text highlight"><pre><span></span><code>sed -n &#39;1321p&#39; values.yaml
+
+sed -i &#39;1321c\    existingSecret: &quot;grafana-admin-credentials&quot;&#39; values.yaml
+
+sed -n &#39;1321p&#39; values.yaml
+</code></pre></div>
+<div class="admonition bug">
+<p class="admonition-title">DESINSTALACIÓN:</p>
+<p>Si por algún  motivo necesitamos eliminar el despliegue de Prometheus, podemos hacerlo con:
+    helm uninstall prometheus -n monitoring</p>
+</div>
 <p>Y procedemos a instalar la herramienta:</p>
 <div class="language-text highlight"><pre><span></span><code>helm install -n monitoring prometheus prometheus-community/kube-prometheus-stack -f values.yaml
-</code></pre></div>
-<p>Por último, creamos un renvio de puertos hacía el contenedor de Grafana (¡OJO!: deberemos consultar primero su nombre), para que podamos acceder a la interfaz gráfica desde un navegador fuera de nuestro clúster:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl port-forward -n monitoring prometheus-grafana-xxxxxxx 52222:3000 --address 0.0.0.0
 </code></pre></div>
 <p>Si necesitamos realizar cambios en la configuración del <strong>values.yaml</strong>, podemos aplicar los cambios ejecutando:</p>
 <div class="language-text highlight"><pre><span></span><code>helm upgrade -n monitoring prometheus prometheus-community/kube-prometheus-stack -f values.yaml
 </code></pre></div>
+<p>Por último, creamos un renvio de puertos hacía el contenedor de Grafana (¡OJO!: deberemos consultar primero su nombre), para que podamos acceder a la interfaz gráfica desde un navegador fuera de nuestro clúster:</p>
+<div class="language-text highlight"><pre><span></span><code># Para no permitir cualquier acceso, podemos sustituir &quot;0.0.0.0&quot; por la dirección IP del nodo Maestro
+
+kubectl port-forward -n monitoring prometheus-grafana-xxxxxxx 52222:3000 --address 0.0.0.0
+</code></pre></div>
+<p>Ahora ya podemos ir a nuestro navegador (desde un PC que tenga conectividad con los nodos de nuestro clúster) y podemos ver la interfaz de Grafana usando la dirección <code>http://&lt;IP_NODO_MAESTRO&gt;:52222</code>. Tras iniciar sesión, iremos al menú lateral izquierdo, al apartado de <strong>"Connnections"</strong>:</p>
+<figure>
+    <img alt="Captura Connections" src="../../img/azarquiel.jpg" width="400" />
+    <small><figcaption>Connections en Grafana</figcaption></small>
+</figure>
 
 
 
