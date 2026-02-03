@@ -1546,10 +1546,10 @@
 
 
 
-<h1 id="creacion-de-apis-rest-en-python">CREACIÓN DE APIs REST EN PYTHON <img alt="🌶" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f336.svg" title=":hot_pepper:" /></h1>
+<h1 id="creacion-de-apis-rest-en-python">CREACIÓN DE APIs REST EN PYTHON <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 7H5a2 2 0 0 0-2 2v8h2v-4h2v4h2V9a2 2 0 0 0-2-2m0 4H5V9h2m7-2h-4v10h2v-4h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2m0 4h-2V9h2m6 0v6h1v2h-4v-2h1V9h-1V7h4v2Z"/></svg></span></h1>
 <h2 id="que-es-una-api">¿QUÉ ES UNA API?</h2>
 <p>Una API (Interfaz de Programación de Aplicaciones) es un conjunto de reglas y protocolos que permiten el intercambio de datos entre dos sistemas informáticos, de una manera segura y estandarizada.</p>
-<p>Es decir, actua como un intermediario que define la forma en que una aplicación puede solicitar, recibir y enviar información a otra.</p>
+<p>Es decir, actúa como un intermediario que define la forma en que una aplicación puede solicitar, recibir y enviar información a otra.</p>
 <p>Su principal utilidad es simplificar el desarrollo de aplicaciones, ya que permiten reutilizar código e integrar servicios existentes con facilidad, sin necesidad de crear todo desde cero.</p>
 <p><img alt="Flujo API" src="../../img/apiflow.png" /></p>
 <h2 id="caracteristicas-de-una-api-rest">CARACTERÍSTICAS DE UNA API REST</h2>
@@ -1565,7 +1565,7 @@
 <li>Endpoint: ubicación lógica específica a la que se envía la solicitud. Por ejemplo, <code>/Toledo</code>.</li>
 <li>
 <p>Parámetros: etiquetas con valores que podemos usar para consultar datos concretos dentro de un endpoint. Por ejemplo, <code>?hora=15:00</code>. Si hay varios parametros, deben ir separados por el símbolo <code>&amp;</code>.</p>
-<p>https://www.eltiempo.es/Toledo?hora=15:00</p>
+<p><a href="https://www.eltiempo.es/Toledo?hora=15:00">https://www.eltiempo.es/Toledo?hora=15:00</a></p>
 </li>
 </ul>
 <p>Además, HTTP proporciona diferentes métodos, que nos permiten especificar la acción queremos realizar sobre un recurso:</p>
@@ -1596,11 +1596,11 @@
 <tr>
 <td style="text-align: right;"><strong>Definición</strong></td>
 <td style="text-align: left;">Framework web de alto nivel y full stack, que viene con todas las funciones y componentes necesarios para un uso completo desde el principio.</td>
-<td style="text-align: left;">Microframework ligero y minimalista, de facil aprendizaje y que apuesta por la felxibilidad.</td>
+<td style="text-align: left;">Microframework ligero y minimalista, de fácil aprendizaje y que apuesta por la flexibilidad.</td>
 <td style="text-align: left;">Framework moderno y de alto rendimiento pensado para construir APIs con validación, y generación de documentación automática.</td>
 </tr>
 <tr>
-<td style="text-align: right;"><strong>Uso Recomenado</strong></td>
+<td style="text-align: right;"><strong>Uso Recomendado</strong></td>
 <td style="text-align: left;">Aplicaciones web grandes con base de datos, panel de administración y varias funcionalidades listas para usar, como un e-commerce, CMS o ERP.</td>
 <td style="text-align: left;">APIs pequeñas o medianas, prototipos y proyectos de aprendizaje donde se busque libertad tecnológica.</td>
 <td style="text-align: left;">REST APIs y microservicios, aplicaciones en tiempo real como chat o IoT y despliegue de modelos de machine learning e IA cuando el rendimiento es crítico.</td>
@@ -1608,7 +1608,7 @@
 <tr>
 <td style="text-align: right;"><strong>Desventajas</strong></td>
 <td style="text-align: left;">Es más pesado y menos flexible al imponer convenciones y no tan rápido cuando se trata de APIs de alto rendimiento.</td>
-<td style="text-align: left;">Al ser tan ligero, suele ser necesario instalar librerias externas para integrar ciertas funcionalidades, lo que en proyectos grandes puede ser algo tedioso.</td>
+<td style="text-align: left;">Al ser tan ligero, suele ser necesario instalar librerías externas para integrar ciertas funcionalidades, lo que en proyectos grandes puede ser algo tedioso.</td>
 <td style="text-align: left;">Al ser más joven que los dos anteriores, puede que su comunidad no sea tan extensa y no está orientado a aplicaciones monolíticas.</td>
 </tr>
 </tbody>
@@ -1641,7 +1641,7 @@ def bienvenida():
 <p><em><small><a href="https://anderfernandez.com/blog/como-crear-api-en-python/">Fuente: Ander Fernandez</a></small></em></p>
 <h2 id="validacion-de-datos-con-pydantic"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23.826 17.316-4.23-5.866-6.847-9.496c-.348-.48-1.151-.48-1.497 0l-6.845 9.494-4.233 5.868a.925.925 0 0 0 .46 1.417l11.078 3.626h.002a.92.92 0 0 0 .572 0h.002l11.077-3.626c.28-.092.5-.31.59-.592a.92.92 0 0 0-.13-.825h.002ZM12.001 4.07l4.44 6.158-4.152-1.36c-.032-.01-.066-.008-.098-.016a1 1 0 0 0-.096-.016c-.032-.004-.062-.016-.094-.016s-.062.012-.094.016a1 1 0 0 0-.096.016c-.032.006-.066.006-.096.016L7.59 10.221l-.026.008 4.44-6.158h-.002Zm-6.273 8.7 4.834-1.583.516-.168v9.19L2.41 17.372l3.317-4.6Zm7.197 7.437V11.02l5.35 1.752 3.316 4.598-8.666 2.838Z"/></svg></span> VALIDACIÓN DE DATOS CON PYDANTIC</h2>
 <p>Cuando trabajamos con APIs, los <strong>datos</strong> que llegan desde clientes <strong>externos no son fiables</strong>. Pueden venir incompletos, con tipos incorrectos o con valores que no cumplen las reglas del negocio de la API.</p>
-<p>Para resolver este problema de forma automática, FastAPI utiliza <strong>Pydantic</strong>. Pydantic es una libreria Python que permite definir modelos de estructura de datos en clases y además se encarga de verificar los tipos de datos, realizar conversiones automáticas y generar errores detallados si la validación falla. Si entramos más en detalle:</p>
+<p>Para resolver este problema de forma automática, FastAPI utiliza <strong>Pydantic</strong>. Pydantic es una librería Python que permite definir modelos de estructura de datos en clases y además se encarga de verificar los tipos de datos, realizar conversiones automáticas y generar errores detallados si la validación falla. Si entramos más en detalle:</p>
 <ol>
 <li>
 <p><strong>Validación automática de datos</strong>: verifica los tipos de datos (str, int, float, bool, list, dict, etc.), campos obligatorios, valores por defecto, estructuras complejas (listas, objetos anidados), restricciones (mínimos, máximos, longitudes…). Y si algo no se cumplo devuelve un error 422 con los detalles.</p>
@@ -1686,9 +1686,13 @@ direccion: Direccion
 <p><em><small><a href="https://jeatzr.github.io/python/">Fuente: J.Enrique Atiénzar</a></small></em></p>
 <h2 id="flask"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.773 2.878c-.013 1.434.322 4.624.445 5.734l-8.558 3.83c-.56-.959-.98-2.304-1.237-3.38l-.06.027c-.205.09-.406.053-.494-.088l-.011-.018-.82-1.506c-.058-.105-.05-.252.024-.392a.78.78 0 0 1 .358-.331l9.824-4.207c.146-.064.299-.063.4.004.106.062.127.128.13.327Zm.68 7c.523 1.97.675 2.412.832 2.818l-7.263 3.7a19.4 19.4 0 0 1-1.81-2.83zm12.432 8.786h.003c.283.402-.047.657-.153.698l-.947.37c.037.125.035.319-.217.414l-.736.287c-.229.09-.398-.059-.42-.2l-.025-.125c-4.427 1.784-7.94 1.685-10.696.647-1.981-.745-3.576-1.983-4.846-3.379l6.948-3.54c.721 1.431 1.586 2.454 2.509 3.178 2.086 1.638 4.415 1.712 5.793 1.563l-.047-.233c-.015-.077.007-.135.086-.165l.734-.288a.3.3 0 0 1 .342.086l.748-.288a.31.31 0 0 1 .341.086z"/></svg></span> FLASK</h2>
 <h3 id="requerimientos-basicos">REQUERIMIENTOS BÁSICOS</h3>
-<h3 id="hola-mundo-con-flask">HOLA MUNDO CON FLASK</h3>
-<h3 id="_1"></h3>
-<h3 id="contenido-dinamico-con-jinja2">CONTENIDO DINÁMICO CON JINJA2 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.613 3.494h-.087C19.268 4.91 13.69 4.91 12.14 4.885l-1.434-.025C6.476 4.705 4.318 3.082.538 1.394c-.261-.116-.565.077-.536.348.029.927.275 4.818 3.186 5.836.102.04.218.077.32.103.144.026.202.142.231.22l.246.76c.044.18.174.334.32.334h.245c.217 0 .391.155.406.348v.735c0 .077-.073.141-.16.141H2.928c-.174 0-.319.13-.319.284v1.147c0 .154.145.283.32.283h1.867c.087 0 .16.064.16.142v.31c0 .076-.073.141-.16.141H2.928c-.174.012-.305.128-.305.283v1.148c0 .129.116.27.247.27h1.94c.088 0 .16.065.16.142v7.537c0 .387.362.709.797.709h1.318c.434 0 .797-.322.797-.71V14.37c0-.077.072-.142.16-.142l8.14-.013c.087 0 .16.065.16.142v7.576c0 .386.362.709.797.709h1.318c.434 0 .796-.323.796-.71v-7.588c0-.077.073-.141.16-.141 0 0 2.028-.013 2.057-.026a.29.29 0 0 0 .144-.245v-1.135c0-.155-.144-.283-.333-.283h-2.013V12.5h-.015v-.425c0-.078.073-.142.16-.142h1.868c.174 0 .319-.129.319-.283v-1.147c0-.155-.145-.284-.32-.284h-1.867c-.087 0-.16-.064-.16-.14v-.736c0-.18.174-.348.406-.348h.246c.174 0 .275-.167.319-.335l.246-.76c.03-.103.13-.193.246-.232 1.869-.412 2.637-1.636 3.274-3.556V4.1c.072-.49-.26-.58-.377-.605zM16.37 8.97v1.12c0 .155-.102.271-.232.271h-2.607c-.13 0-.232-.116-.232-.27v-1.12c0-.143.1-.272.232-.272h2.607a.28.28 0 0 1 .232.27zm-5.375 0v1.12c0 .142-.102.271-.232.271H8.157c-.13 0-.232-.116-.232-.27v-1.12c0-.143.101-.272.232-.272h2.607a.28.28 0 0 1 .232.27z"/></svg></span></h3>
+<h3 id="practica-1-hola-mundo-con-flask"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> <strong>PRÁCTICA 1</strong>: HOLA MUNDO CON FLASK</h3>
+<p>curl -X GET http://localhost:5000/students
+curl -X GET http://localhost:5000/students/1
+curl -X POST -H "Content-Type: application/json" -d '{"student_id": 1, "nombre": "Peter", "curso": "VS2DAW"}' http://localhost:5000/students
+curl -X DELETE http://localhost:5000/students/1</p>
+<h3 id="contenido-dinamico-con-jinja2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.613 3.494h-.087C19.268 4.91 13.69 4.91 12.14 4.885l-1.434-.025C6.476 4.705 4.318 3.082.538 1.394c-.261-.116-.565.077-.536.348.029.927.275 4.818 3.186 5.836.102.04.218.077.32.103.144.026.202.142.231.22l.246.76c.044.18.174.334.32.334h.245c.217 0 .391.155.406.348v.735c0 .077-.073.141-.16.141H2.928c-.174 0-.319.13-.319.284v1.147c0 .154.145.283.32.283h1.867c.087 0 .16.064.16.142v.31c0 .076-.073.141-.16.141H2.928c-.174.012-.305.128-.305.283v1.148c0 .129.116.27.247.27h1.94c.088 0 .16.065.16.142v7.537c0 .387.362.709.797.709h1.318c.434 0 .797-.322.797-.71V14.37c0-.077.072-.142.16-.142l8.14-.013c.087 0 .16.065.16.142v7.576c0 .386.362.709.797.709h1.318c.434 0 .796-.323.796-.71v-7.588c0-.077.073-.141.16-.141 0 0 2.028-.013 2.057-.026a.29.29 0 0 0 .144-.245v-1.135c0-.155-.144-.283-.333-.283h-2.013V12.5h-.015v-.425c0-.078.073-.142.16-.142h1.868c.174 0 .319-.129.319-.283v-1.147c0-.155-.145-.284-.32-.284h-1.867c-.087 0-.16-.064-.16-.14v-.736c0-.18.174-.348.406-.348h.246c.174 0 .275-.167.319-.335l.246-.76c.03-.103.13-.193.246-.232 1.869-.412 2.637-1.636 3.274-3.556V4.1c.072-.49-.26-.58-.377-.605zM16.37 8.97v1.12c0 .155-.102.271-.232.271h-2.607c-.13 0-.232-.116-.232-.27v-1.12c0-.143.1-.272.232-.272h2.607a.28.28 0 0 1 .232.27zm-5.375 0v1.12c0 .142-.102.271-.232.271H8.157c-.13 0-.232-.116-.232-.27v-1.12c0-.143.101-.272.232-.272h2.607a.28.28 0 0 1 .232.27z"/></svg></span> CONTENIDO DINÁMICO CON JINJA2</h3>
+<h3 id="practica-2-app-web-con-flask-y-mongodb"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> <strong>PRÁCTICA 2</strong>: APP WEB CON FLASK Y MONGODB</h3>
 <!--
 Unidad 3: Frameworks para Construcción de APIs de Datos en Python
 1. Introducción
@@ -1726,7 +1730,6 @@ Esto mejora la escalabilidad, la tolerancia a fallos y la simplicidad del servid
 
 Ejemplo de dos peticiones independientes:
 
-
 Request 1:
 GET /perfil
 Authorization: Bearer abc123
@@ -1763,7 +1766,6 @@ Está soportado ampliamente por todos los lenguajes.
 Es muy cómodo de usar con Python y FastAPI.
 Ejemplo de JSON típico:
 
-
 {
   "id": 12,
   "nombre": "Smart TV",
@@ -1785,7 +1787,6 @@ Desventajas:
 No ofrece validación ni documentación automática por defecto.
 Ejemplo mínimo:
 
-
 from flask import Flask
 app = Flask(__name__)
 
@@ -1804,7 +1805,6 @@ Desventajas:
 Requiere aprender Django.
 Más pesado que otros frameworks.
 Ejemplo mínimo:
-
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -1826,7 +1826,6 @@ Desventajas:
 Menos maduro que Django.
 Para proyectos enormes se necesita arquitectura adicional.
 Ejemplo mínimo:
-
 
 from fastapi import FastAPI
 app = FastAPI()
@@ -1850,7 +1849,6 @@ Muy útil en proyectos de datos.
 5.1 Instalación
 Instalación recomendada:
 
-
 pip install "fastapi[standard]"
 Esto instala FastAPI + Uvicorn + dependencias recomendadas.
 
@@ -1871,12 +1869,10 @@ def read_root():
 5.4 Ejecutar la API (versión moderna)
 FastAPI ahora incluye un comando propio para ejecutar la aplicación:
 
-
 fastapi run main.py --reload
 Este comando es un wrapper del servidor ASGI Uvicorn.
 
 También puedes ejecutar Uvicorn directamente:
-
 
 uvicorn main:app --reload
 Ambos son equivalentes.
@@ -1901,7 +1897,6 @@ def obtener_producto(item_id: int):
         if p["id"] == item_id:
             return p
     return {"error": "Producto no encontrado"}
-
 
 6.5 Consistencia en datos de entrada y salida
 Los modelos pueden usarse tanto para recibir datos (request) como para devolverlos (response):
@@ -1945,10 +1940,8 @@ Aunque ahora exista fastapi run, FastAPI sigue usando Uvicorn internamente.
 Modo multiproceso sin Gunicorn
 Actualmente puedes usar workers directamente:
 
-
 fastapi run main.py --workers 4
 O con Uvicorn:
-
 
 uvicorn main:app --workers 4
 Gunicorn ya no es necesario en la mayoría de despliegues.
