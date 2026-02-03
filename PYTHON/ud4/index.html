@@ -1328,6 +1328,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#flask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLASK
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistencia-en-mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERSISTENCIA EN MONGODB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#django" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DJANGO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#introduccion-a-django" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1420,6 +1453,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#flask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLASK
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistencia-en-mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERSISTENCIA EN MONGODB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#django" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DJANGO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#introduccion-a-django" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1459,11 +1525,277 @@
 
 
 <h1 id="aplicaciones-web-con-python">APLICACIONES WEB CON PYTHON</h1>
+<h2 id="flask">FLASK <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.773 2.878c-.013 1.434.322 4.624.445 5.734l-8.558 3.83c-.56-.959-.98-2.304-1.237-3.38l-.06.027c-.205.09-.406.053-.494-.088l-.011-.018-.82-1.506c-.058-.105-.05-.252.024-.392a.78.78 0 0 1 .358-.331l9.824-4.207c.146-.064.299-.063.4.004.106.062.127.128.13.327Zm.68 7c.523 1.97.675 2.412.832 2.818l-7.263 3.7a19.4 19.4 0 0 1-1.81-2.83zm12.432 8.786h.003c.283.402-.047.657-.153.698l-.947.37c.037.125.035.319-.217.414l-.736.287c-.229.09-.398-.059-.42-.2l-.025-.125c-4.427 1.784-7.94 1.685-10.696.647-1.981-.745-3.576-1.983-4.846-3.379l6.948-3.54c.721 1.431 1.586 2.454 2.509 3.178 2.086 1.638 4.415 1.712 5.793 1.563l-.047-.233c-.015-.077.007-.135.086-.165l.734-.288a.3.3 0 0 1 .342.086l.748-.288a.31.31 0 0 1 .341.086z"/></svg></span></h2>
+<p>Flask es un microframework de Python ligero y flexible diseñado para crear aplicaciones web y APIs RESTful de forma rápida y sencilla. Basado en herramientas como Jinja2 y Werkzeug, permite iniciar un servidor web con pocas líneas de código sin imponer una estructura rígida. Ideal para desarrolladores que buscan libertad y minimalismo.</p>
+<figure>
+    <img alt="Flask" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/500px-Flask_logo.svg.png" width="300" />
+    <small><figcaption>Logo Flask</figcaption></small>
+</figure>
+<h3 id="dependencias">DEPENDENCIAS</h3>
+<p>A medida que evolucione nuestr aplicación, seguramente necesitemos añadir otras librerías, pero para comenzar a trabajar, bastará con instalar <code>flask</code>:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>flask
+</span></code></pre></div>
+<h3 id="estructura-basica-api">ESTRUCTURA BÁSICA API</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">#Importación de módulos</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">#Creación de una instancia de la clase Flask</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">#Definición de los endpoints usando decoradores</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1">#Definición de la función que ejecuta dicho endpoint</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">raiz</span><span class="p">():</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="k">return</span> <span class="s2">&quot;Hola desde Flask&quot;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1">#Definición del bloque IfName, para controlar la ejecución del módulo principal.</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="ejecucion-del-servidor-de-pruebas">EJECUCIÓN DEL SERVIDOR DE PRUEBAS</h3>
+<p>Flask por defecto, levanta un servidor local sobre el puerto 5000, para que podamos testear nuestro código. Si nuestro módulo se llama <code>app.py</code>, podemos ejecutarlo con:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>flask<span class="w"> </span>run<span class="w"> </span>
+</span></code></pre></div>
+<p>Pero si queremos realizar pruebas con diferentes módulos que tengan otros nombres, lo ejecutaremos con:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>flask<span class="w"> </span>--app<span class="w"> </span>mimodulo.py<span class="w"> </span>--debug<span class="w"> </span>run<span class="w"> </span>
+</span></code></pre></div>
+<h3 id="tipos-de-rutas-para-los-endpoint">TIPOS DE RUTAS PARA LOS ENDPOINT</h3>
+<h4 id="ruta-estatica">RUTA ESTÁTICA</h4>
+<p>Se especifica una ruta fija para el endpoint:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">blog</span><span class="p">():</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">return</span> <span class="s2">&quot;Bienvenido a la seción BLOG&quot;</span>
+</span></code></pre></div>
+<h4 id="ruta-variable">RUTA VARIABLE</h4>
+<p>El endpoint contiene un parámetro variable y dependiendo de su valor, se mostrará un contenido u otro:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/blog/&lt;id_articulo&gt;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">articulo</span><span class="p">(</span><span class="n">id_articulo</span><span class="p">):</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Estas viendo el árticulo nº </span><span class="si">{</span><span class="n">id_articulo</span><span class="si">}</span><span class="s2"> del BLOG&quot;</span>
+</span></code></pre></div>
+<h3 id="tipos-de-metodos-para-los-endpoint">TIPOS DE MÉTODOS PARA LOS ENDPOINT</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Método</th>
+<th style="text-align: center;">Acción</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>GET</code></td>
+<td style="text-align: center;">Read</td>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.011 3.269H16.19a4.29 4.29 0 0 0-4.185 3.345A4.29 4.29 0 0 0 7.819 3.27H2a2 2 0 0 0-2.001 2v10.244a2 2 0 0 0 2 2h3.738c4.257 0 5.53 1.025 6.138 3.134a.11.11 0 0 0 .112.084h.024a.11.11 0 0 0 .112-.084c.612-2.109 1.885-3.133 6.138-3.133h3.737a2 2 0 0 0 2.001-2V5.27a2 2 0 0 0-1.989-2ZM10.083 14.325a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm10.804 5.07a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144v.952z"/></svg></span> Obtiene información del servidor.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>PUT</code></td>
+<td style="text-align: center;">Write</td>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.7 7c-.3.4-.7.7-.7 1s.3.6.6 1c.5.5 1 .9.9 1.4 0 .5-.5 1-1 1.5L16.4 16 15 14.7l4.2-4.2-1-1-1.4 1.4L13 7.1l4-3.8c.4-.4 1-.4 1.4 0l2.3 2.3c.4.4.4 1.1 0 1.4M3 17.2l9.6-9.6 3.7 3.8L6.8 21H3zM7 2v3h3v2H7v3H5V7H2V5h3V2z"/></svg></span> Crea un recurso nuevo.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>POST</code></td>
+<td style="text-align: center;">Update</td>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 12a9 9 0 0 0 9 9c2.39 0 4.68-.94 6.4-2.6l-1.5-1.5A6.7 6.7 0 0 1 11 19c-6.24 0-9.36-7.54-4.95-11.95S18 5.77 18 12h-3l4 4h.1l3.9-4h-3a9 9 0 0 0-18 0"/></svg></span> Reemplaza un recurso completo.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>PATCH</code></td>
+<td style="text-align: center;">Update</td>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2.03c4.73.47 8.5 4.22 8.95 8.97A9.976 9.976 0 0 1 13 21.93v-2c3.64-.43 6.5-3.32 6.96-6.96A7.994 7.994 0 0 0 13 4.05V2.03m-2 .03v2c-1.43.2-2.78.78-3.9 1.68L5.67 4.26A9.83 9.83 0 0 1 11 2.06M4.26 5.67 5.69 7.1A8 8 0 0 0 4.05 11h-2c.2-1.96.95-3.81 2.21-5.33M2.06 13h2c.18 1.42.75 2.77 1.63 3.9l-1.42 1.43A10.04 10.04 0 0 1 2.06 13m5.04 5.37c1.13.88 2.48 1.45 3.9 1.63v2c-1.96-.21-3.82-1-5.33-2.26zM12 7.5 7.5 12H11v4h2v-4h3.5z"/></svg></span> Modifica parte de un recurso.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>DELETE</code></td>
+<td style="text-align: center;">Remove</td>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6z"/></svg></span> Borra un recurso completo.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tipos-de-return-para-los-endpoints">TIPOS DE RETURN PARA LOS ENDPOINTS</h3>
+<h4 id="texto-plano">TEXTO PLANO</h4>
+<p>Es la opción más simple y generalmente solo la usamos para probar el funcionamiento inicial de nuestra app:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">raiz</span><span class="p">():</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="k">return</span> <span class="s2">&quot;Bienvenido a mi app web&quot;</span>
+</span></code></pre></div>
+<h4 id="fichero-json">FICHERO JSON</h4>
+<p>Flask incluye la funcionalidad <code>jsonify</code>, que convierte automaticamente diccionarios, listas u otros objetos Python en una respuesta JSON válida, estableciendo el <em>Content-Type</em> a <em>"application/json"</em>. Es muy útil cuando queremos crear una API:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">jsonify</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">estudiantes</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Luis&quot;</span><span class="p">,</span> <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">},</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;María&quot;</span><span class="p">,</span> <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">}]</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/students&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_students</span><span class="p">():</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">estudiantes</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="documento-html">DOCUMENTO HTML</h4>
+<p>Flask tambien nos permite devolver directamente el contenido de un documento HTML, usando la función <code>render_template</code>, que carga y procesa este tipo de archivos utilizando el motor <code>Jinja2</code>. Para ello, es <strong>estrictamente necesario</strong> que estos ficheros HTML se encuentren en la carpeta <strong><code>templates</code></strong> (que deberemos crear en nuestro proyecto):</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">render_template</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">raiz</span><span class="p">():</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;base.html&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="uso-de-plantillas-con-jinja2">USO DE PLANTILLAS CON <strong>JINJA2</strong></h3>
+<figure>
+    <img alt="Jinja2" src="https://dungeonofbits.com/images/jinja-logo.png" width="300" />
+    <small><figcaption>Logo Jinja2</figcaption></small>
+</figure>
+<p>Flask incluye un motor de plantillas llamado <strong>Jinja2</strong>, que permite, no solo renderizar documentos HTML, si no que también podemos pasarles variables y aplicar sobre ellas estructuras de programación como condicionales y bucles.</p>
+<h4 id="delimitadores-en-jinja2">DELIMITADORES EN JINJA2</h4>
+<ul>
+<li>
+<p><strong><code>{% %}</code></strong>: Declaración de sentencias de control de flujo (condicionales, bucles...) y operaciones con plantillas.</p>
+</li>
+<li>
+<p><strong><code>{{ }}</code></strong>: Evaluar y mostrar valores devueltos por las sentencias anteriores. </p>
+</li>
+</ul>
+<h4 id="uso-de-variables-en-jinja2">USO DE VARIABLES EN JINJA2</h4>
+<p>Cuando renderizamos un archivo HTML con Jinja2, podemos pasarle variables y dependiendo de sus valores mostrar unas cosas u otras. Por ejemplo, en el endpoint podemos devoler lo siguiente:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">blog</span><span class="p">():</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;blog.html&quot;</span><span class="p">,</span> <span class="n">autor</span><span class="o">=</span><span class="s2">&quot;ProfeDIW&quot;</span><span class="p">,</span> <span class="n">logeado</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="uso-condicionales-en-jinja2">USO CONDICIONALES EN JINJA2</h4>
+<p>Siguiente con el ejemplo anterior, dentro del código de "blog.html", podemos utilizar las variables que hemos pasado, ya sea para mostrar su valor o usarlas en condicionales:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Bienvenido al blog<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Mi nombre es {{ autor }}, y soy el creador de este sitio.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>{% if logeado %}
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Has iniciado sesión correctamente.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>{% else %}
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Necesitas iniciar sesión para ver este contenido.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>{% endif %}
+</span></code></pre></div>
+<h4 id="uso-de-bucles-en-jinja2">USO DE BUCLES EN JINJA2</h4>
+<p>Del mismo modo, también podemos utilizar bucles <code>for</code> dentro de un HTML, mediante los delimitadores Jinja2. Por ejemplo, imaginemos que tenemos una lista de alumnos llamada "estudiantes" y queremos imprimir una tarjeta por cada persona en la lista. No será necesario escribir el código muchas veces, simplemente podríamos aplicar algo como lo siguiente:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{% for alumno in estudiantes %}
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-content&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span> {{alumno.nombre}} <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> Curso: {{alumno.curso}} <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> Edad: {{alumno.edad} }<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a> <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>{% endfor %}
+</span></code></pre></div>
+<h4 id="herencia-de-plantillas-en-jinja2">HERENCIA DE PLANTILLAS EN JINJA2</h4>
+<p>Otra gran ventaja de las plantillas es evitar la repetición de código HTML, mediante el uso de la herencia.</p>
+<p>Esto nos permite usar un documento <em>"base.html"</em>, en el que incluiremos todo el código que sea común a todas las páginas de nuestra aplicación web.</p>
+<p>De este modo, en cada página específica solo tendremos que aplicar la sentencia <code>extends</code> y añadir el contenido a mostrar mediante un bloque de contenido, <code>block</code>. Por ejemplo, la plantilla <code>base.html</code>, podría tener el siguiente aspecto:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Página Base<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    {%block contenidos%}
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    {%end block%}    
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Y por otro lado, en las diferentes páginas tendríamos algo parecido a esto:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>{% extends &quot;base.html&quot; %}
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>{% block contenidos %}
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Contenido exclusivo de esta página<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>{% endblock %}
+</span></code></pre></div>
+<p>Podemos utilizar estilos predefinidos como los de <a href="https://bootswatch.com/">Bootswatch</a> en nuestros <em>templates</em>, para darle un diseño más profesional y de forma rápida a nuestra app web.</p>
+<h3 id="formularios-wtf">FORMULARIOS <strong>WTF</strong></h3>
+<figure>
+    <img alt="WTForms" src="https://user-images.githubusercontent.com/19359364/116413891-4be70b80-a838-11eb-8434-e96b1258bb43.png" width="300" />
+    <small><figcaption>Logo WTForms</figcaption></small>
+</figure>
+<p>Existe también una extensión para Flask llamada <code>Flask-WTF</code>, la cual integra la biblioteca <strong>WTForms</strong>, que nos permite definir formularios web como clases Python, facilitando mucho la creación, renderizado y validación segura de estos.</p>
+<h4 id="dependencias-wtforms">DEPENDENCIAS WTFORMS</h4>
+<p>Necesitaremos instalar la siguiente extensión:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>pip<span class="w"> </span>install<span class="w"> </span>flask-wtf
+</span></code></pre></div>
+<h4 id="uso-de-wtforms">USO DE WTFORMS</h4>
+<h5 id="importar-modulos"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7h4v10h-2V9h-2zm2-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8"/></svg></span> IMPORTAR MÓDULOS</h5>
+<p>Necesitaremos importar los siguientes componentes:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">flask_wtf</span><span class="w"> </span><span class="kn">import</span> <span class="n">FlaskForm</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">wtforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringField</span><span class="p">,</span> <span class="n">PasswordField</span><span class="p">,</span> <span class="n">SubmitField</span>
+</span></code></pre></div>
+<h5 id="crear-clave-secreta"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7h4a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2v2h4v2H9v-4a2 2 0 0 1 2-2h2V9H9zm3-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8"/></svg></span> CREAR CLAVE SECRETA</h5>
+<p>Lo primero que debemos hacer es crear una clave secreta <code>SECRET_KEY</code>, que Flask-WTF utilizará para firmar criptográficamente los tokens CSRF (Cross-Site Request Forgery) y las cookies de sesión. Garantizando así la seguridad de los formularios y previniendo ataques de terceros o peticiones maliciosas.</p>
+<p>Esta clave consistirá en una cadena de caracteres aleatorios, que se recomienda que sea larga y compleja para mayor seguridad. Por ejemplo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SECRET_KEY&#39;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;a262hs7sjd893jd74ejd83hwnsgh2y262h&quot;</span>
+</span></code></pre></div>
+<h5 id="definir-nuestra-clase-formulario"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15a2 2 0 0 1-2 2H9v-2h4v-2h-2v-2h2V9H9V7h4a2 2 0 0 1 2 2v1.5a1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1 1.5 1.5zM12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8"/></svg></span> DEFINIR NUESTRA CLASE FORMULARIO</h5>
+<p>Podemos crear un módulo <code>formularios.py</code>, donde definir todos nuestros formularios como clases de Python. Por ejemplo, si queremos añadir un formulario de registro, podría ser algo así:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">flask_wtf</span><span class="w"> </span><span class="kn">import</span> <span class="n">FlaskForm</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">wtforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringField</span><span class="p">,</span> <span class="n">PasswordField</span><span class="p">,</span> <span class="n">SubmitField</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">SignUpForm</span><span class="p">(</span><span class="n">FlaskForm</span><span class="p">):</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="n">usuario</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="s1">&#39;Username&#39;</span><span class="p">)</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    <span class="n">contraseña</span> <span class="o">=</span> <span class="n">PasswordField</span><span class="p">(</span><span class="s1">&#39;Password&#39;</span><span class="p">)</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    <span class="n">confirmar</span> <span class="o">=</span> <span class="n">SubmitField</span><span class="p">(</span><span class="s1">&#39;Sign up&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<h5 id="usar-nuestro-formulario-en-el-html-y-el-endpoint"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7h2v4h2V7h2v10h-2v-4H9zm3-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8"/></svg></span> USAR NUESTRO FORMULARIO EN EL HTML Y EL ENDPOINT</h5>
+<p>A la hora de definir el endpoint, podemos hacerlo así:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">formularios</span><span class="w"> </span><span class="kn">import</span> <span class="n">SignUpForm</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/signup&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a> <span class="k">def</span><span class="w"> </span><span class="nf">signup</span><span class="p">():</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="n">formulario</span> <span class="o">=</span> <span class="n">SignUpForm</span><span class="p">()</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;blog.html&quot;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="n">formulario</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Luego en el HTML:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>{% extends &quot;base.html&quot; %}
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>{% block content %}
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span> Sign Up <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>        {{ form.usuario.label }} <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>        {{ form.usuario(size=30) }}
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>        {{ form.contraseña.label }} <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>        {{ form.contraseña(size=30) }}
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ form.confirmar() }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>{% endblock %}
+</span></code></pre></div>
+<h5 id="recuperar-datos-de-un-formulario"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7h6v2h-4v2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H9v-2h4v-2H9zm3-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8"/></svg></span> RECUPERAR DATOS DE UN FORMULARIO</h5>
+<p><font color="#D31"> Próximamente...🚧👷‍♂️🚧</font></p>
+<h3 id="enlaces-html-a-los-diferentes-endpoints">ENLACES HTML A LOS DIFERENTES ENDPOINTS</h3>
+<p>Una vez tengamos definida nuestra estructura de plantillas Flask (templates), cuando queramos movernos entre ellas usando enlaces dentro del código HTML <code>(&lt;a href=""&gt;)</code>, no lo haremos indicando el nombre del documento html, que es lo que solemos hacer cuando estamos programando un sitio web normal.</p>
+<p>En este caso, como estamos usando Flask y su motor de plantillas Jinja2, debemos enlazarlo con el comando <code>url_for()</code> e indicar dentro el nombre de la función a la que queremos llamar (sin parentesis), es decir, la función que ejecuta alguno de nuestros endpoints. Por ejemplo:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav-link&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;blog&#39;) }}&quot;</span><span class="p">&gt;</span>Abrir Blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="persistencia-en-mongodb">PERSISTENCIA EN <strong>MONGODB</strong></h2>
+<figure>
+    <img alt="MongoDB" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/3840px-MongoDB_Logo.svg.png" width="300" />
+    <small><figcaption>Logo MongoDB</figcaption></small>
+</figure>
+<h3 id="introduccion-a-mongodb">INTRODUCCIÓN A MONGODB</h3>
+<p>MongoDB es una base de datos <strong>NoSQL</strong> de <strong>código abierto</strong>, <strong>orientada a documentos</strong> y de alto rendimiento, diseñada para la flexibilidad y escalabilidad en el desarrollo moderno.</p>
+<p>En lugar de tablas y filas, utiliza <strong>documentos tipo JSON</strong> (con almacenamiento <strong>BSON</strong> binario) agrupados en colecciones, lo que permite manejar datos estructurados, semiestructurados y no estructurados con esquemas dinámicos.</p>
+<h3 id="dependencias-mongo">DEPENDENCIAS MONGO</h3>
+<p>Insalaremos la siguiente librería para poder interactuar con nuestra BBDD Mongo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">pymongo</span>
+</span></code></pre></div>
+<h3 id="levantar-mongodb-en-un-contenedor">LEVANTAR MONGODB EN UN CONTENEDOR</h3>
+<p><font color="#D31"> Próximamente...🚧👷‍♂️🚧</font></p>
+<h3 id="enlazar-mi-api-con-mongo">ENLAZAR MI API CON MONGO</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pymongo</span><span class="w"> </span><span class="kn">import</span> <span class="n">MongoClient</span>
+</span></code></pre></div>
+<p><font color="#D31"> Próximamente...🚧👷‍♂️🚧</font></p>
+<h2 id="django">DJANGO <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.096.535-4.791 0-7.288-2.166-7.288-6.32 0-4.002 2.65-6.6 6.753-6.6.637 0 1.121.05 1.707.203zm0 9.143a3.9 3.9 0 0 0-1.325-.204c-1.988 0-3.134 1.223-3.134 3.365 0 2.09 1.096 3.236 3.109 3.236.433 0 .79-.025 1.35-.102V9.142zM21.314 6.06v9.098c0 3.134-.229 4.638-.917 5.937-.637 1.249-1.478 2.039-3.211 2.905l-3.644-1.733c1.733-.815 2.574-1.53 3.109-2.625.561-1.121.739-2.421.739-5.835V6.059zM17.39.021h3.924v4.026H17.39z"/></svg></span></h2>
 <figure>
     <img alt="Django" src="https://1000logos.net/wp-content/uploads/2020/08/Django-Logo.png" width="300" />
     <small><figcaption>Logo de Django</figcaption></small>
 </figure>
-<h2 id="introduccion-a-django"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.096.535-4.791 0-7.288-2.166-7.288-6.32 0-4.002 2.65-6.6 6.753-6.6.637 0 1.121.05 1.707.203zm0 9.143a3.9 3.9 0 0 0-1.325-.204c-1.988 0-3.134 1.223-3.134 3.365 0 2.09 1.096 3.236 3.109 3.236.433 0 .79-.025 1.35-.102V9.142zM21.314 6.06v9.098c0 3.134-.229 4.638-.917 5.937-.637 1.249-1.478 2.039-3.211 2.905l-3.644-1.733c1.733-.815 2.574-1.53 3.109-2.625.561-1.121.739-2.421.739-5.835V6.059zM17.39.021h3.924v4.026H17.39z"/></svg></span> INTRODUCCIÓN A DJANGO</h2>
+<h2 id="introduccion-a-django">INTRODUCCIÓN A DJANGO</h2>
 <p>Como ya habíamos mencionado, Django es un framework de código abierto basado en Python, que nos permite crear sitios web complejos de forma rápida y sencilla.</p>
 <p>Ya que nos permite simplificar las tareas repetiticas y pesadas que pueden darse a la hora de desarrollar este tipo de aplicaciones.</p>
 <h3 id="modelo-vista-controlador-mvc">MODELO VISTA CONTROLADOR (MVC)</h3>
@@ -1503,7 +1835,7 @@ python -m django --version
 <div class="language-text highlight"><pre><span></span><code>cd Proyecto1
 python manage.py startapp InicioSesion
 </code></pre></div>
-<h3 id="bbdd-en-django">BBDD EN DJANGO</h3>
+<h3 id="bbdd-en-django-en-construccion-">BBDD EN DJANGO <font color="red"> -- En construcción... 🚧 --</font></h3>
 <div class="language-text highlight"><pre><span></span><code># En el &quot;models.py&quot; creamos tantas clases como tablas vaya a tener nuestra BBDD, para esta App.
 # En el &quot;settings.py&quot; añadimos nuestra App en la lista de &quot;INSTALED APPS&quot;
 
@@ -1519,6 +1851,26 @@ python manage.py sqlmigrate InicioSesion 0001
 # Para incorportar esas tablas a nuestra BBDD:
 python manage.py migrate
 </code></pre></div>
+<!--
+## DESARROLLO EN CONTENEDORES
+
+<figure markdown='span'>
+    ![Docker+VSCode](https://miro.medium.com/v2/1*vmW2Gu0ElsVxq79gYRLTlw.png){width='350'}
+    <small><figcaption>Docker + Dev Containers</figcaption></small>
+</figure>
+
+### PREPARACIÓN DEL ENTORNO DE TRABAJO
+
+Para poder desarrollar usando contenedores, debemos asegurarnos de instalar previamente algunos programas o complementos. Concretamente, nuestra máquina debe tener instalado un motor de contenedores (Container Engine), en nuestro caso utilizaremos **Docker**, por ser el más popular. Si estamos usando Windows o MacOS como sistema operativo, lo instalaremos mediante **`Docker Desktop`**, el cual nos proporciona además, una interfaz gráfica para visualizar e interactuar de manera más amigable con nuestros contenedores.
+
+Por otro lado, una herramienta muy útil para automatizar la creación de contenedores dedicados a entornos de desarrollo, es **`Dev Containers`**. Se trata de un plugin oficial de Microsoft para Visual Studio Code, mediante el cual podemos gestionar de manera rápida y eficiente todas las operaciones relacionadas con este tipo de contenedores.
+
+### EMPEZANDO CON DEV CONTAINERS
+
+**´Dependabot´** es una herramienta de escaneo de código en GitHub diseñada para gestionar y actualizar automáticamente las dependencias de tu proyecto . Al mantener las dependencias actualizadas, Dependabot ayuda a mantener la seguridad y el rendimiento de tu código fuente, cumpliendo con el estándar de seguridad DS-21 para la gestión de vulnerabilidades.
+
+Al darle al último "OK", nos va a crear un directorio llamado **.devcontainer** y dentro de este, un fichero **devcontainer.json** con la información que hemos seleccionado en las opciones anteriores. Que en este caso simplemente ha sido la lección de Python.
+-->
 
 
 

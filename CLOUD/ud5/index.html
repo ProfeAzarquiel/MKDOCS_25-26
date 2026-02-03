@@ -2070,10 +2070,22 @@ sed -n &#39;1321p&#39; values.yaml
 
 kubectl port-forward -n monitoring prometheus-grafana-xxxxxxx 52222:3000 --address 0.0.0.0
 </code></pre></div>
+<div class="admonition inline bug">
+<p class="admonition-title">ERROR PODS NOT RUNNING</p>
+<div class="language-text highlight"><pre><span></span><code>kubectl rollout restart *
+</code></pre></div>
+</div>
+<div class="admonition inline end bug">
+<p class="admonition-title">ERROR KUBECTL PORT 6443</p>
+<div class="language-text highlight"><pre><span></span><code>sudo -i
+swapoff -a
+exit
+</code></pre></div>
+</div>
 <p>Ahora ya podemos ir a nuestro navegador (desde un PC que tenga conectividad con los nodos de nuestro clúster) y podemos ver la interfaz de Grafana usando la dirección <code>http://&lt;IP_NODO_MAESTRO&gt;:52222</code>. Tras iniciar sesión, iremos al menú lateral izquierdo, al apartado de <strong>"Connnections"</strong>:</p>
 <figure>
     <img alt="Captura Connections" src="../../img/azarquiel.jpg" width="400" />
-    <small><figcaption>Connections en Grafana</figcaption></small>
+    <small><figcaption>Conections en Grafana</figcaption></small>
 </figure>
 
 
