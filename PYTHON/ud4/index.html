@@ -1350,6 +1350,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dockerizar-nuestra-aplicacion-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOCKERIZAR NUESTRA APLICACIÓN WEB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#django" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1468,6 +1479,17 @@
     <span class="md-ellipsis">
       
         PERSISTENCIA EN MONGODB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerizar-nuestra-aplicacion-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOCKERIZAR NUESTRA APLICACIÓN WEB
       
     </span>
   </a>
@@ -1716,6 +1738,7 @@
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>pip<span class="w"> </span>install<span class="w"> </span>flask-wtf
 </span></code></pre></div>
 <h4 id="uso-de-wtforms">USO DE WTFORMS</h4>
+<p>Ante cualquier duda o error, podemos consultar su <a href="https://wtforms.readthedocs.io/en/3.2.x/">documentación oficial</a>, sin embargo, a continuación algunos pasos básicos que nos van a ayudar a familiarizarnos con su uso:</p>
 <h5 id="importar-modulos"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7h4v10h-2V9h-2zm2-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8"/></svg></span> IMPORTAR MÓDULOS</h5>
 <p>Necesitaremos importar los siguientes componentes:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">flask_wtf</span><span class="w"> </span><span class="kn">import</span> <span class="n">FlaskForm</span>
@@ -1785,11 +1808,76 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">pymongo</span>
 </span></code></pre></div>
 <h3 id="levantar-mongodb-en-un-contenedor">LEVANTAR MONGODB EN UN CONTENEDOR</h3>
-<p><font color="#D31"> Próximamente...🚧👷‍♂️🚧</font></p>
-<h3 id="enlazar-mi-api-con-mongo">ENLAZAR MI API CON MONGO</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pymongo</span><span class="w"> </span><span class="kn">import</span> <span class="n">MongoClient</span>
+<p>Podríamos hacerlo mediante el comando <em>"docker run"</em>, pero queremos poder gestionar nuestra BBDD también a través de una interfaz gráfica. Es por ello que levantaremos 2 servicios interconectados, mongoDB y mongoXpress, usando la utilidad <code>docker compose</code>. A continuación se adjunta una sugerencia de configuración para el fichero .YAML:</p>
+<details class="abstract">
+<summary>docker-compose.yml</summary>
+<div class="language-text highlight"><pre><span></span><code>    services:
+        mongo:
+            image: mongo
+            container_name: mongoDB
+            restart: always
+            environment:
+                MONGO_INITDB_ROOT_USERNAME: root
+                MONGO_INITDB_ROOT_PASSWORD: pass123
+            volumes:
+                - mongoData:/data/db
+        mongo-express:
+            image: mongo-express
+            container_name: mongoGUI
+            restart: always
+            ports:
+                - 8081:8081
+            environment:
+                ME_CONFIG_MONGODB_URL: mongodb://root:pass123@mongo:27017/
+                ME_CONFIG_BASICAUTH_ENABLED: true
+                ME_CONFIG_BASICAUTH_USERNAME: mongoexpressuser
+                ME_CONFIG_BASICAUTH_PASSWORD: mongoexpresspass
+    volumes:
+        mongoData:
+</code></pre></div>
+</details>
+<p>Para levantar los servicios definidos en el fichero anterior, abrimos un terminal y nos ubicamos en la carpeta donde se encuentre, luego lanzamos el comando:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
 </span></code></pre></div>
-<p><font color="#D31"> Próximamente...🚧👷‍♂️🚧</font></p>
+<h3 id="vincular-mi-api-con-mongo">VINCULAR MI API CON MONGO</h3>
+<h4 id="importamos-la-libreria">IMPORTAMOS LA LIBRERIA</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pymongo</span><span class="w"> </span><span class="kn">import</span> <span class="n">MongoClient</span>
+</span></code></pre></div>
+<h4 id="cadena-de-conexion-a-mongo">CADENA DE CONEXIÓN A MONGO</h4>
+<p>Para conectarnos el sistema de Mongo desde otras aplicaciones o herramientas, se utiliza un parámetro llamado <code>MONGO_URI</code>, el cual podemos definir en una variable de entorno. Su estructura es la siguiente:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># El Nombre de la BBDD es opcional:</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>mongodb://<span class="o">[</span>usuario<span class="o">]</span>:<span class="o">[</span>contraseña<span class="o">]</span>@<span class="o">[</span>hostname<span class="o">]</span>:<span class="o">[</span>puerto<span class="o">]</span>/<span class="o">[</span>nombreBBDD<span class="o">]</span>
+</span></code></pre></div>
+<p>En nuestro código Python, realizamos la conexión mediante el método <code>MongoClient</code> y la podemos asignar a una variable, para usarla de manera sencilla cuando queramos realizar operaciones en Mongo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">cliente</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="s2">&quot;mongodb://root:pass123@mongo:27017&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="ejemplos-utiles-de-operaciones-en-mongo-desde-python">EJEMPLOS ÚTILES DE OPERACIONES EN MONGO DESDE PYTHON</h4>
+<h5 id="crear-una-bbdd-nueva">CREAR UNA BBDD NUEVA</h5>
+<div class="language-text highlight"><pre><span></span><code># Creamos una BBDD llamada COLEGIO y dentro de ella, una tabla llamada ALUMNOS
+new_db = cliente[&#39;colegio&#39;]
+tabla_alumnos = new_db[&#39;alumnos&#39;]
+</code></pre></div>
+<h5 id="listar-todos-los-registros-de-una-tabla">LISTAR TODOS LOS REGISTROS DE UNA tabla</h5>
+<div class="language-text highlight"><pre><span></span><code>alumnado = list(tabla_alumnos.find({}, {&#39;_id&#39;: 0}))
+</code></pre></div>
+<h5 id="devolver-un-alumno-por-su-id">DEVOLVER UN ALUMNO POR SU ID</h5>
+<div class="language-text highlight"><pre><span></span><code>alumno = tabla_alumnos.find_one({&quot;id_alumno&quot;:myid}, {&quot;_id&quot;:0})
+</code></pre></div>
+<h5 id="borrar-un-alumno-por-su-id">BORRAR UN ALUMNO POR SU ID</h5>
+<div class="language-text highlight"><pre><span></span><code>borrado = tabla_alumnos.delete_one({&quot;id_alumno&quot;: int(myid)})
+</code></pre></div>
+<!--
+    curl -X GET http://localhost:5000/students
+
+    curl -X GET http://localhost:5000/students/1
+
+    curl -X POST -H "Content-Type: application/json" -d '{"id_alumno": 1, "nombre": "Peter", "curso": "VS2DAW"}' http://localhost:5000/students
+
+    curl -X DELETE http://localhost:5000/students/1
+-->
+
+<h2 id="dockerizar-nuestra-aplicacion-web">DOCKERIZAR NUESTRA APLICACIÓN WEB</h2>
+<p><strong><font color="#C31"> En construcción...🚧👷‍♂️🚧</font></strong></p>
 <h2 id="django">DJANGO <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.096.535-4.791 0-7.288-2.166-7.288-6.32 0-4.002 2.65-6.6 6.753-6.6.637 0 1.121.05 1.707.203zm0 9.143a3.9 3.9 0 0 0-1.325-.204c-1.988 0-3.134 1.223-3.134 3.365 0 2.09 1.096 3.236 3.109 3.236.433 0 .79-.025 1.35-.102V9.142zM21.314 6.06v9.098c0 3.134-.229 4.638-.917 5.937-.637 1.249-1.478 2.039-3.211 2.905l-3.644-1.733c1.733-.815 2.574-1.53 3.109-2.625.561-1.121.739-2.421.739-5.835V6.059zM17.39.021h3.924v4.026H17.39z"/></svg></span></h2>
 <figure>
     <img alt="Django" src="https://1000logos.net/wp-content/uploads/2020/08/Django-Logo.png" width="300" />
