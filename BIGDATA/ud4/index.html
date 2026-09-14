@@ -29,7 +29,7 @@
     
     
       
-        <title>UD4. Apache Spark - MATERIALES INFORMÁTICA IES AZARQUIEL</title>
+        <title>UD4. Ingesta de Datos - MATERIALES INFORMÁTICA IES AZARQUIEL</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#apache-spark" class="md-skip">
+        <a href="#ingesta-de-datos" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UD4. Apache Spark
+              UD4. Ingesta de Datos
             
           </span>
         </div>
@@ -715,7 +715,7 @@
   <span class="md-ellipsis">
     
   
-    UD2. Ingesta de Datos
+    UD2. Gestión de Almacenamiento y Ecosistemas BigData
   
 
     
@@ -743,7 +743,7 @@
   <span class="md-ellipsis">
     
   
-    UD3. Ecosistema Hadoop
+    UD3. El Ecosistema Hadoop
   
 
     
@@ -773,6 +773,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4. Ingesta de Datos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -780,7 +798,7 @@
   <span class="md-ellipsis">
     
   
-    UD4. Apache Spark
+    UD4. Ingesta de Datos
   
 
     
@@ -789,6 +807,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ingesta-de-datos-con-apache-nifi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INGESTA DE DATOS CON APACHE NIFI
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1354,6 +1402,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ingesta-de-datos-con-apache-nifi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INGESTA DE DATOS CON APACHE NIFI
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1369,11 +1436,49 @@
 
 
 
-<h1 id="apache-spark">APACHE SPARK</h1>
+<h1 id="ingesta-de-datos">INGESTA DE DATOS</h1>
+<h2 id="ingesta-de-datos-con-apache-nifi">INGESTA DE DATOS CON APACHE NIFI</h2>
 <figure>
-    <img alt="Apache Spark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Apache_Spark_logo.svg/1280px-Apache_Spark_logo.svg.png" width="300" />
-    <small><figcaption>Logo Apache Spark</figcaption></small>
+    <img alt="Apache Nifi" src="https://www.sakurasky.com/images/logos/apache-nifi-logo.png" width="300" />
+    <small><figcaption>Logo Apache Nifi</figcaption></small>
 </figure>
+<h3 id="que-es-apache-nifi">¿QUE ES APACHE NIFI?</h3>
+<p>Apache NiFi es un sistema de <strong>software de código abierto</strong> para <strong>crear flujos de datos automatizados entre sistemas</strong>, así como para visualizarlos, editarlos, supervisarlos y administrarlos; de forma segura y escalable. Es decir, es una <strong>herramienta enfocada a la ingesta de datos</strong> (primera etapa del procesamiento de grandes volúmenes de datos).</p>
+<p>Su principal ventaja es su interfaz de usuario web visual de tipo “arrastrar y soltar”, que permite a los usuarios crear, monitorizar y controlar flujos de datos sin necesidad de programación compleja.</p>
+<p>Está diseñado para <strong>extraer, transformar y distribuir datos en tiempo real</strong>, permitiendo la transferencia de datos entre sistemas heterogéneos, el procesamiento por lotes y la integración con otras tecnologías como <strong>Hadoop</strong> y bases de datos NoSQL.</p>
+<figure>
+    <img alt="Ingesta de Datos" src="https://welearndata.com/wp-content/uploads/2023/08/imagen-5.png" width="650" />
+    <small><figcaption>Capa de Operación Nifi</figcaption></small>
+</figure>
+<h3 id="componentes-basicos-apache-nifi">COMPONENTES BÁSICOS APACHE NIFI</h3>
+<p>   Flujo: es la topología o ruta que establece como se mueven los datos entre sistemas. Va a estar definida por la interconexión de una serie de procesadores.
+   Fichero de Flujo (FF): son los datos en sí, o más bien un puntero que apunta al dato en su almacenamiento local. Se compone de 2 partes:
+↳   Contenido: el dato en sí.
+↳   Atributos: metadatos en formato de pares “clave:valor”.
+   Procesador:  es el encargado de ejecutar alguna transformación o regla sobre los datos para generar un nuevo FF. Ese FF de salida, será la entrada de otro procesador y así crearemos una secuencia de procesadores (flujo) que realicen las acciones que queremos sobre los datos.</p>
+<p>Todos los procesadores se ejecutan en paralelo y, aunque podemos diseñarlos a mano, NiFi ya ofrece un amplio catálogo con las operaciones más comunes, que suele ser suficiente en la mayoría de los casos.</p>
+<p>A grandes rasgos, los más utilizados son:
+   Transformación de datos: ReplaceText, JoltTransformJSON, CompressContent
+   Enrutado y mediación: RouteOnAttribute, RouteOnContent
+   Acceso a base de datos: ExecuteSQL, ConvertJSONToSQL, PutSQL
+   Extracción de atributos: EvaluateJsonPath, ExtractText, UpdateAttribute
+   Interacción con el sistema: ExecuteProcess
+   Ingestión de datos: GetFile, GetFTP, GetHTTP, GetHDFS
+   Envío de datos: PutEmail, PutFile, PutFTP, PutKafka, PutMongo
+   División y agregación: SplitText, SplitJson, SplitXml, MergeContent
+   HTTP: GetHTTP, ListenHTTP, PostHTTP
+   AWS: FetchS3Object, PutS3Object, PutSNS, PutSQS
+Para entrar en más detalle de cada uno, se puede consultar la siguiente documentación  https://www.nifi.rocks/apache-nifi-processors.</p>
+<p>   Conector: es una cola dirigida (con origen y destino) que une diferentes procesadores y contiene los FF que aun no se han ejecutado. Es decir, van a unir la salida de un procesador con la entrada de otro (o consigo mismo si queremos realizar reintentos de alguna operación).</p>
+<h3 id="instalacion-nifi">INSTALACIÓN NIFI</h3>
+<p>Nifi cuenta con una documentación oficial fantástica, en la que vamos a apoyarnos para trabajar con él. Nos referimos a las siguientes guías:</p>
+<ul>
+<li><a href="https://nifi.apache.org/docs/nifi-docs/html/getting-started.html">Instalación y Primeros Pasos</a></li>
+<li><a href="https://nifi.apache.org/docs/nifi-docs/html/user-guide.html">Guía de Usuario</a></li>
+<li><a href="https://nifi.apache.org/docs/nifi-docs/html/administration-guide.html">Guía de Adminsitrador</a></li>
+</ul>
+<p>Nosotros vamos a centrarnos principalmente en las dos primeras, la primera para instalar la herramienta y la segunda donde se detallan con capturas de pantalla la  creación y configuración de flujos de datos en Nifi y como trabajar con este software.</p>
+<h3 id="compo">COMPO</h3>
 
 
 
