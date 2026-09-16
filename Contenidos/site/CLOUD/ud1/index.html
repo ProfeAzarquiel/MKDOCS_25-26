@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#unidad-1-elementos-clave-de-una-infraestructura-de-red" class="md-skip">
+        <a href="#los-modelos-osi-y-tcpip" class="md-skip">
           Skip to content
         </a>
       
@@ -394,8 +394,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -438,14 +436,23 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#los-modelos-osi-y-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOS MODELOS OSI Y TCP/IP
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#el-protocolo-ip" class="md-nav__link">
@@ -481,10 +488,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#redes-en-linux" class="md-nav__link">
+  <a href="#dispositivos-de-red" class="md-nav__link">
     <span class="md-ellipsis">
       
-        REDES EN LINUX
+        DISPOSITIVOS DE RED
       
     </span>
   </a>
@@ -1638,14 +1645,23 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#los-modelos-osi-y-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOS MODELOS OSI Y TCP/IP
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#el-protocolo-ip" class="md-nav__link">
@@ -1681,10 +1697,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#redes-en-linux" class="md-nav__link">
+  <a href="#dispositivos-de-red" class="md-nav__link">
     <span class="md-ellipsis">
       
-        REDES EN LINUX
+        DISPOSITIVOS DE RED
       
     </span>
   </a>
@@ -1708,7 +1724,21 @@
 
 
 
-<h1 id="unidad-1-elementos-clave-de-una-infraestructura-de-red">UNIDAD 1: ELEMENTOS CLAVE DE UNA INFRAESTRUCTURA DE RED</h1>
+<h1 style="text-align: center;"><font color="#c31428">UD1: ELEMENTOS CLAVE DE UNA INFRAESTRUCTURA DE RED</font></h1>
+
+<div class="grid cards">
+<ul>
+<li><strong>CE 1.1.</strong> Identificación y explicación de los elementos clave de la infraestructura de redes.</li>
+</ul>
+</div>
+<h2 id="los-modelos-osi-y-tcpip">LOS MODELOS OSI Y TCP/IP</h2>
+<p>El <strong>modelo OSI</strong> (Open Systems Interconnection o Interconexión de Sistemas Abiertos) es un <strong>marco teórico</strong> de referencia creado por la Organización Internacional de Normalización (ISO) que divide el proceso de comunicación de datos en una red en <strong>siete capas</strong> independientes.</p>
+<p>Su objetivo es servir como guía estándar para que diferentes tecnologías de hardware y software puedan comunicarse entre sí sin importar el fabricante.</p>
+<p>Mientras que el <strong>modelo TCP/IP</strong> es el <strong>estándar práctico</strong> que define el conjunto de reglas y protocolos usados hasta la fecha para permitir la comunicación entre dispositivos a través de Internet y redes locales. Este se divide en <strong>cuatro capas</strong> y a continuación, vemos su corresponencia con el modelo OSI:</p>
+<figure>
+  <img alt="TCP vs OSI" src="../../img/tcp_osi.png" width="600" />
+  <small><figcaption>Correspondencia TCP/IP y OSI</figcaption></small>
+</figure>
 <h2 id="el-protocolo-ip">EL PROTOCOLO IP</h2>
 <h3 id="que-es">¿QUE ES?</h3>
 <ul>
@@ -1723,14 +1753,20 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
 </ul>
 <h3 id="clases-de-direcciones-ip">CLASES DE DIRECCIONES IP</h3>
 <ul>
-<li>Según su numeración, distinguiremos 5 clases diferentes de direcciones IP:
-<img alt="Tabla Clases Direcciones" src="https://static.platzi.com/media/user_upload/Captura%20de%20Pantalla%202022-01-26%20a%20la%28s%29%207.06.56%20p.m.-207132c7-4201-4ed4-a6b7-8344a3f91d2f.jpg" /></li>
+<li>Según su numeración, distinguiremos 5 clases diferentes de direcciones IP:</li>
 </ul>
+<figure>
+  <img alt="Tabla Clases Direcciones" src="https://static.platzi.com/media/user_upload/Captura%20de%20Pantalla%202022-01-26%20a%20la%28s%29%207.06.56%20p.m.-207132c7-4201-4ed4-a6b7-8344a3f91d2f.jpg" />
+  <small><figcaption>Clases de Direccionamiento</figcaption></small>
+</figure>
 <h3 id="direccionamiento-privado">DIRECCIONAMIENTO PRIVADO</h3>
 <ul>
 <li>No obstante, dentro de cada clase existen rangos privados de direccionamiento. Estos rangos son los que usaremos cuando estemos configurando los dispositivos englobados en una misma red LAN y cuyas direcciones no deban ser visibles desde internet. Son los siguientes:</li>
 </ul>
-<p><img alt="Rangos Privados" src="https://www.redeszone.net/app/uploads-redeszone.net/2020/11/Rangos-de-red-reservados-para-redes-privadas-1.jpg" /></p>
+<figure>
+  <img alt="Rangos Privados" src="https://www.redeszone.net/app/uploads-redeszone.net/2020/11/Rangos-de-red-reservados-para-redes-privadas-1.jpg" width="300" />
+  <small><figcaption>Rangos Privados</figcaption></small>
+</figure>
 <h3 id="direccionamiento-reservado">DIRECCIONAMIENTO RESERVADO</h3>
 <ul>
 <li>
@@ -1744,13 +1780,19 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
 <ul>
 <li>En una dirección IP vamos a diferenciar 2 partes, la izquierda o <strong>identificador de red</strong>, y la derecha o <strong>identificador de host</strong>. Como se ha visto en la tabla anterior, dependiendo de la clase a la que pertenezca una dirección IP, su red tendrá un tamaño por defecto para cada una de esas partes, que sería el siguiente:</li>
 </ul>
-<p><img alt="Partes IP segun Clase" src="../../img/partesIP.jpg" /></p>
+<figure>
+  <img alt="Partes IP segun Clase" src="../../img/partesIP.jpg" width="400" />
+  <small><figcaption>Identificadores según su Clase</figcaption></small>
+</figure>
 <h3 id="la-mascara-de-red">LA MÁSCARA DE RED</h3>
 <ul>
 <li>Para indicarnos la cantidad de bits pertenece a cada una de estas partes, tenemos la máscara de red. Se trata de un indicador númerico con el mismo tamaño y distribución de bits que una dirección IP, y que suele indicarse a continuación de esta.</li>
 <li>Podemos expresarla tanto en formato decimal (similar a una IP) o en formato abreviado o CIDR (Classles Inter-Domain Routing), con un /N, siendo N el número de bits usados para el identificador de red. Lo vemos en el siguiente ejemplo:</li>
 </ul>
-<p><img alt="Mascara de Red" src="../../img/mascara.jpg" /></p>
+<figure>
+  <img alt="Mascara de Red" src="../../img/mascara.jpg" width="300" />
+  <small><figcaption>Formato Decimal vs CIDR</figcaption></small>
+</figure>
 <h2 id="los-puertos-logicos">LOS PUERTOS LÓGICOS</h2>
 <h3 id="que-son">¿QUE SON?</h3>
 <ul>
@@ -1764,40 +1806,35 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
 <li><strong>Puertos dinámicos:</strong> estos puertos van desde el <strong>49152 hasta el 65535</strong>, este rango de puertos se utiliza por los programas del cliente y están constantemente reutilizándose. Este rango de puertos normalmente se utiliza cuando está transmitiendo a un puerto conocido o reservado desde otro dispositivo, como en el caso de web o FTP. Por ejemplo, cuando nosotros visitamos una web, el puerto de destino siempre será el 80 (HTTP) o el 443 (HTTPS), pero como puerto origen se usará uno dinámico.</li>
 </ul>
 <h3 id="puertos-mas-usados">PUERTOS MÁS USADOS</h3>
-<p><img alt="Puertos Lógicos más Usados" src="../../img/puertos.jpg" /></p>
-<h2 id="principales-protocolos-de-red">PRINCIPALES PROTOCOLOS DE RED</h2>
-<p>-</p>
-<h3 id="arp">ARP</h3>
-<ul>
-<li>Es un protocolo de capa 2. Se encarga de asociar la dirección
-MAC de cada maquina, a su dirección IP.
-ADDRESS RESOLUTION PROTOCOL</li>
-</ul>
-<hr />
-<p>PROTOCOLO DE RESOLUCIÓN DE
-DIRECCIONES</p>
-<ul>
-<li>Cuando un equipo intenta comunicarse por primera vez con otra maquina de su red, se enviará previamente una "petición ARP", en forma de mensaje de broadcast a todos los equipos de la red.</li>
-<li>De modo que solo responderá el equipo que tenga la MAC con la que queramos comunicarnos.</li>
-<li>Así, cada equipo de la red irá generando lo que llamamos su "Tabla ARP", en la que iran quedando registradas las direcciones MAC de cada máquina, asociada con su dirección IP correspondiente.</li>
-</ul>
-<h3 id="icmp">ICMP</h3>
+<figure>
+  <img alt="Puertos Lógicos más Usados" src="../../img/puertos.jpg" width="400" />
+  <small><figcaption>Puertos comunes</figcaption></small>
+</figure>
+<h2 id="principales-protocolos-de-red"><strong>PRINCIPALES PROTOCOLOS DE RED</strong></h2>
+<h3 id="arp-address-resolution-protocol"><font color="#8f1ade"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span></font> <strong>ARP</strong> (Address Resolution Protocol)</h3>
+<p>Es un protocolo de capa 2. Se encarga de asociar la dirección MAC de cada maquina, a su dirección IP.</p>
+<p>Cuando un equipo intenta <strong>comunicarse por primera vez</strong> con otra maquina de su red, <strong>se envia</strong> previamente una "<strong>petición ARP</strong>", en forma de mensaje de <strong>broadcast</strong> a todos los equipos de la red. Pero solo responde el equipo que tenga la dirección IP que estamos buscando.</p>
+<p>De este modo, cada equipo de la red irá generando una "<strong>tabla ARP</strong>" propia, donde se van registrando las direcciones MAC de cada máquina, asociadas a las direcciones IP que les correpsonde.</p>
+<figure>
+  <img alt="ARP" src="../../img/arp.jpg" width="500" />
+  <small><figcaption>Protocolo ARP</figcaption></small>
+</figure>
+<h3 id="icmp-internet-control-message-protocol"><font color="#8f1ade"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span></font> <strong>ICMP</strong> (Internet Control Message Protocol)</h3>
 <p>Es un protocolo de capa 3. Nos sirve para comprobar si tenemos conectividad con otro dispositivos de nuestra red o de otra distinta. Esto lo hace generando paquetes IP de un tamaño concreto y enviándolos a otra máquina de la red para ver si responde.</p>
-<ul>
-<li>Herramientas como <strong>ping</strong> y <strong>traceroute</strong> utilizan ICMP para probar la disponibilidad de un destino, medir tiempos de respuesta o mostrar la ruta que siguen los paquetes.</li>
-</ul>
-<h3 id="dns">DNS</h3>
-<ul>
-<li>Se considera un servicio de capa 7. Es un servicio o funcionalidad, que nos permite acceder o comunicarnos con otros equipos o recursos de una red, utilizando su nombre de dominio e incluso un alias.</li>
-<li>Evitando así tener que recordar la dirección IP de cada maquina, que sería mucho más complejo.</li>
-<li>Para ello, tendremos configurado en nuestra red uno o más servidores DNS, a los cuales les enviaremos peticiones cada vez que nos comunicamos con otro equipo a través de su nombre de dominio; y estos realizaran la traducción de ese nombre o alias, a la dirección IP que le corresponde.</li>
-<li>Este servicio funciona de manera totalmente transparente para el usuario.</li>
-</ul>
+<p>Herramientas como <strong>ping</strong> y <strong>traceroute</strong> utilizan ICMP para probar la disponibilidad de un destino, medir tiempos de respuesta o mostrar la ruta que siguen los paquetes.</p>
+<figure>
+  <img alt="ICMP" src="../../img/icmp.jpg" width="500" />
+  <small><figcaption>Protocolo ICMP</figcaption></small>
+</figure>
+<h3 id="dns-domain-name-system"><font color="#8f1ade"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span></font> <strong>DNS</strong> (Domain Name System)</h3>
+<p>Se considera un servicio de <strong>capa 7</strong>, y nos <strong>permite la comunicación</strong> con otros dispositivos de red, <strong>usando un nombre de dominio</strong> o alias, en lugar de una dirección IP. Evitando así tener que recordar la dirección IP de cada maquina, que sería mucho más complejo.</p>
+<p>Para ello, tendremos configurado en nuestra red uno o más servidores DNS, a los cuales les enviaremos peticiones cada vez que nos comunicamos con otro equipo a través de su nombre de dominio; y estos realizaran la traducción de ese nombre o alias, a la dirección IP que le corresponde.</p>
+<p>Este servicio funciona de manera <strong>totalmente transparente para el usuario</strong>.</p>
 <figure>
   <img alt="Funcionamiento DNS" src="https://www.devopsschool.com/blog/wp-content/uploads/2023/08/image-454-1024x785.png" width="500" />
   <small><figcaption>Funcionamiento DNS</figcaption></small>
 </figure>
-<h3 id="nat">NAT</h3>
+<h3 id="nat"><font color="#8f1ade"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span></font> NAT</h3>
 <ul>
 <li>Mecanismo mediante el cual podemos traducir una o varias direcciones IP privadas (locales), en una o varios IP públicas (globales) y viceversa. De esta forma, los equipos de una red local pueden acceder a internet sin que sus direcciones IP privadas sean visibles fuera de su red local.</li>
 <li>A parte de esta, la principal función de NAT es la de conservar el espacio global IPv4 y evitar su agotamiento. Ya qué gracias a él, podemos conseguir que utilizando una sola IP pública, salgan internet todos los equipos de una red local. Distinguimos 3 tipos de NAT:</li>
@@ -1818,15 +1855,31 @@ DIRECCIONES</p>
 <li><strong>Dirección local externa</strong>: la dirección del destino vista desde la red interna.</li>
 </ul>
 </div>
-<h3 id="dhcp">DHCP</h3>
-<ul>
-<li>Es un protocolo de capa 7. Nos permite configurar varios parámetros de conectividad (dirección IP, Máscara, Puerta de Enlace, Servidores DNS...) de manera automática, en las diferentes máquinas conectadas a una red.</li>
-<li>Para ello, debemos configurar previamente uno de los equipos de red, para que ejecute dicho servicio, es decir, hará la función de servidor. De modo que cada vez que un equipo se conecte a dicha red, solamente tengamos que activar en él, la funcionalidad DHCP (Cliente, que generalmente viene habilitada por defecto) y realizará la petición de forma automática, obteniendo así su configuración de red, sin necesidad de hacerlo manualmente equipo por equipo.</li>
-</ul>
-<h2 id="redes-en-linux">REDES EN LINUX</h2>
-<h3 id="modificar-direccionamiento-de-una-interfaz-de-red">MODIFICAR DIRECCIONAMIENTO DE UNA INTERFAZ DE RED</h3>
-<p>-----NETPLAN GENERADO POR DEFECTO-----------------</p>
-<p>network:
+<h3 id="dhcp"><font color="#8f1ade"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span></font> DHCP</h3>
+<p>Es un protocolo de capa 7. Nos permite configurar varios parámetros de conectividad (dirección IP, Máscara, Puerta de Enlace, Servidores DNS...) de manera automática, en las diferentes máquinas conectadas a una red.</p>
+<p>Para ello, debemos configurar previamente uno de los equipos de red, para que ejecute dicho servicio, es decir, hará la función de servidor. De modo que cada vez que un equipo se conecte a dicha red, solamente tengamos que activar en él, la funcionalidad DHCP (Cliente, que generalmente viene habilitada por defecto) y realizará la petición de forma automática, obteniendo así su configuración de red, sin necesidad de hacerlo manualmente equipo por equipo.</p>
+<figure>
+  <img alt="DHCP" src="../../img/dhcp.jpg" width="400" />
+  <small><figcaption>Protocolo DHCP</figcaption></small>
+</figure>
+<h2 id="dispositivos-de-red">DISPOSITIVOS DE RED</h2>
+<h3 id="_1"></h3>
+<h3 id="_2"></h3>
+<h3 id="_3"></h3>
+<h3 id="_4"></h3>
+<h3 id="_5"></h3>
+<h3 id="_6"></h3>
+<h3 id="_7"></h3>
+<h3 id="_8"></h3>
+<h3 id="_9"></h3>
+<!--
+## REDES EN LINUX
+
+### MODIFICAR DIRECCIONAMIENTO DE UNA INTERFAZ DE RED
+
+  -----NETPLAN GENERADO POR DEFECTO-----------------
+
+  network:
     ethernets:
       ens18:
         dhcp4: true
@@ -1834,9 +1887,11 @@ DIRECCIONES</p>
         match:
           macaddress: bc:24:11:39:b5:42
         set-name: ens18
-    version: 2</p>
-<p>-----NETPLAN MODIFICADO PARA IP ESTÁTICA----------</p>
-<p>network:
+    version: 2
+
+  -----NETPLAN MODIFICADO PARA IP ESTÁTICA----------
+
+  network:
     ethernets:
       ens18:
         dhcp4: false
@@ -1851,9 +1906,11 @@ DIRECCIONES</p>
         match:
           macaddress: bc:24:11:39:b5:42
         set-name: ens18
-    version: 2</p>
-<p>------ APLICAR LOS CAMBIOS REALIZADOS ---------
-  sudo netplan apply</p>
+    version: 2
+
+  ------ APLICAR LOS CAMBIOS REALIZADOS ---------
+  sudo netplan apply
+  -->
 
 
 
