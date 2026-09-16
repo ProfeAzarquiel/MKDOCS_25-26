@@ -1452,8 +1452,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1496,8 +1494,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1506,10 +1502,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#arquitectura-von-neummann" class="md-nav__link">
+  <a href="#elementos-funcionales-de-un-ordenador" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ARQUITECTURA VON NEUMMANN
+        ELEMENTOS FUNCIONALES DE UN ORDENADOR
       
     </span>
   </a>
@@ -1605,8 +1601,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1615,10 +1609,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#arquitectura-von-neummann" class="md-nav__link">
+  <a href="#elementos-funcionales-de-un-ordenador" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ARQUITECTURA VON NEUMMANN
+        ELEMENTOS FUNCIONALES DE UN ORDENADOR
       
     </span>
   </a>
@@ -1642,20 +1636,31 @@
 
 
 
-<h1 id="elementos-funcionales-de-un-ordenador">ELEMENTOS FUNCIONALES DE UN ORDENADOR</h1>
-<h2 id="arquitectura-von-neummann">ARQUITECTURA VON NEUMMANN</h2>
-<p>El funcionamiento de los <strong>ordenadores actuales</strong> esta <strong>basado en la arquitectura de Von Neummann</strong>, que establece una serie de unidades funcionales que, interconectadas entre sí funcionan de manera coordinada bajo un control central.</p>
+<h1 style="text-align: center;">UD1: BASES DE LA ARQUITECTURA DE COMPUTADORES</h1>
+
+<div class="grid cards">
+<ul>
+<li><strong>CE 1.1.</strong> Se han identificado y caracterizado los dispositivos que constituyen los bloques funcionales de un equipo microinformático.</li>
+<li><strong>CE 1.2.</strong> Se ha descrito el papel de los elementos físicos y lógicos que intervienen en el proceso de puesta en marcha de un equipo.</li>
+<li><strong>CE 1.3.</strong> Se ha analizado la arquitectura general de un equipo y los mecanismos de conexión entre dispositivos.</li>
+<li><strong>CE 1.8.</strong> Se han clasificado los dispositivos periféricos y sus mecanismos de comunicación.</li>
+</ul>
+</div>
+<h2 id="elementos-funcionales-de-un-ordenador">ELEMENTOS FUNCIONALES DE UN ORDENADOR</h2>
+<p>El funcionamiento de los <strong>ordenadores actuales</strong> esta <strong>basado en la <mark class="critic">Arquitectura de Von Neummann</mark></strong>, que establece una serie de unidades funcionales que, interconectadas entre sí funcionan de manera coordinada bajo un control central.</p>
 <p>Y con <strong>ordenador</strong>, nos referimos a <strong>cualquier máquina capaz de recibir datos, procesarlos</strong> automáticamente mediante instrucciones programadas <strong>y entregar un resultado</strong>. Es decir, a veces sin darnos cuenta, vivimos rodeados de ellos, como pueden ser un smartphone, smartwatch, smart TV, lavadora, robot aspirador, coches modernos, cajeros automáticos, etc.</p>
 <figure>
     <img alt="Arquitectura Von Neummann" src="../../img/von_neummann.png" width="400" />
-    <small><figcaption>Arquitectura Von Neummann</figcaption></small>
+    <small><figcaption>Arquitectura de Von Neummann</figcaption></small>
 </figure>
 <ul>
-<li><strong><code>CPU</code></strong>: (Unidad Central de Procesamiento) dirige el funcionamiento del ordenador y es el encargado de realizar las operaciones necesarias para obtener los datos que se solicitan.</li>
-<li><strong>Unidad Aritmético-Lógica</strong>, o ALU, realiza las operaciones de cálculo del ordenador. Por ejemplo las sumas, operaciones AND y OR, o comparaciones de valores.</li>
-<li><strong>Unidad de Control</strong>, o UC, hace de intermediaria entre la ALU y la memoria principal. Obtiene la operación de la memoria y los datos necesarios para ejecutarla, al finalizar devuelve el resultado a la memoria.</li>
 <li>
-<p>Los <strong>registros</strong> almacenan temporalmente la información del proceso que se está realizando. Un ejemplo de registro es el "registro acumulador", este guarda los resultados temporales de una operación que se encuentra en curso en la ALU.</p>
+<p><strong><code>CPU</code></strong>: (Unidad Central de Procesamiento) dirige el funcionamiento del ordenador y es el encargado de realizar las operaciones necesarias para obtener los datos que se solicitan.</p>
+<ul>
+<li><strong>Unidad Aritmético-Lógica</strong>, o ALU, realiza las operaciones de cálculo del ordenador. Por ejemplo las sumas, operaciones AND y OR, o comparaciones de valores.</li>
+<li><strong>Unidad de Control</strong>, o UC, hace de intermediaria entre la ALU y la memoria principal. Obtiene la instrucción de la memoria y los datos necesarios para ejecutarla, al finalizar devuelve el resultado a la memoria.</li>
+<li>Los <strong>registros</strong> almacenan temporalmente la información del proceso que se está realizando. Un ejemplo de registro es el "registro acumulador", este guarda los resultados temporales de una operación que se encuentra en curso en la ALU.</li>
+</ul>
 </li>
 <li>
 <p>La <strong><code>unidad de memoria</code></strong> almacena las instrucciones que debe ejecutar el procesador y los datos necesarios para llevarlas a cabo. Sería lo que hoy conocemos como memoria RAM.</p>
@@ -1664,11 +1669,11 @@
 <p>Los <strong><code>dispositivos de E/S</code></strong> (Entrada/Salida), tambien llamados periféricos, son dispositivos independientes que se conectan a una computadora para ampliar sus capacidades y permitir la interacción con el exterior, generalmente con el usuario. Como pueden ser el teclado, el ratón o el monitor.</p>
 </li>
 <li>
-<p>Los <strong>buses</strong> (marcados como flechas en la ilustración) son el sistema de cables o pistas de cobre impresas que transfieren datos y señales eléctricas entre el procesador, la memoria y los demás componentes del ordenador.</p>
+<p>Los <strong>buses</strong> son el sistema de cables o pistas de cobre impresas que transfieren datos y señales eléctricas entre el procesador, la memoria y los demás componentes del ordenador.</p>
 </li>
 </ul>
-<h3 id="ciclo-de-instruccion">CICLO DE INSTRUCCIÓN</h3>
-<p>Para explicar paso a paso y de forma muy simple, cómo trabaja el procesador de un ordenador, se podría decir que esta continuemente repitiendo ciclos de lectura y ejecución de instrucciones, de la siguiente forma:</p>
+<h3 id="ciclo-de-una-instruccion">CICLO DE UNA INSTRUCCIÓN</h3>
+<p>Para explicar paso a paso y de forma muy simple, cómo trabaja el procesador de un ordenador, se podría decir que esta continuamente repitiendo ciclos de lectura y ejecución de instrucciones, de la siguiente forma:</p>
 <p><strong>Lectura y Ejecución de una instrucción:</strong></p>
 <ol>
 <li>La UC detecta cual es la instrucción a realizar y se la solicita a la memoria principal.</li>
@@ -1676,8 +1681,149 @@
 <li>Si existe algún dato necesario para realizar la instrucción, también se envía al registro.</li>
 <li>La Unidad de Control envía la instrucción y los datos necesarios a la ALU.</li>
 <li>La ALU ejecuta la instrucción y obtiene el resultado.</li>
-<li>La UC envía el resultado a la memoria principal y lee cual es la siguiente instrucción, iniciando el ciclo de nuevo.gestionando</li>
+<li>La UC envía el resultado a la memoria principal y lee cual es la siguiente instrucción, iniciando el ciclo de nuevo.</li>
 </ol>
+<!--
+## DE VON NEUMMAN A LA PLACA BASE
+
+### CPU
+
+### MEMORIA
+
+#### RAM, ROM, CMOS
+
+#### JERARQUIA DE MEMORIA
+
+La memoria se organiza en varios niveles en función de su velocidad, capacidad y coste. En general, los niveles de la memoria son:
+
+- <ins class="critic">**REGISTROS**</ins>: memorias de alta velocidad y baja capacidad integradas en el procesador, utilizadas para el almacenamiento intermedio de los datos, especialmente en la UC y la UAL.
+
+- <ins class="critic">**CACHÉ**</ins>: memoria intermedia entre la UM y la CPU que permite acelerar el acceso a los datos. Cuando accedemos a un dato, este se copia en la caché para que podamos acceder más tarde a él de manera más rápida. Está dispuesta en varios niveles (L1, L2, L3, L4); y la diferenciación entre ellos obedece a un orden de jerarquía establecido por cercanía al procesador, velocidad y capacidad.
+    - <mark class="critic">Caché L1</mark>: la más cercana al procesador y la más rápida, pero la que menos capacidad tiene. Cada núcleo del procesador tiene su propia L1.
+    - <mark class="critic">Caché L2</mark>: Es propia de cada núcleo en la inmensa mayoría de las arquitecturas modernas. Es un poco más grande y ligeramente más lenta que la L1, pero actúa como un respaldo directo antes de salir del núcleo.
+    - <mark class="critic">Caché L3</mark>: se posiciona en un nivel inferior a la anterior tanto en cercanía como en velocidad, pero tiene una capacidad mucho mayor. Es compartida por todos los núcleos del procesador y sirve para que los núcleos intercambien datos entre sí de forma eficiente sin tener que pasar por la memoria RAM y para coordinar las tareas del sistema.
+    - <mark class="critic">Caché L4</mark>: es un tipo de memoria caché poco habitual que se utiliza normalmente como apoyo para mejorar el rendimiento de GPUs integradas, evitando que estás recurran a la RAM como memoria gráfica. Cuando está presente, se encuentra fuera del procesador (en un chip intermedio llamado <mark class="critic">eDRAM</mark>) y es totalmente compartida por los núcleos y la tarjeta gráfica integrada.
+
+![Memoria Caché](../img/cache.png){width='400' align=right}
+
+De este modo, cuando un **procesador busca instrucciones y datos** que necesita, **primero** tira de la **memoria caché**, siguiendo el orden de jerarquía indicado. Es decir, primero busca en la caché L1, si no encuentra nada, recurre a la caché L2 y así sucesivamente.
+
+Si la información **no se encuentra** en ningún nivel de la caché, entonces pasa a **solicitarla a la memoria RAM**.
+
+- <ins class="critic">**PRINCIPAL**</ins>: memoria RAM, empleada para almacenar datos y programas de forma temporal.  Aunque aquí también cabria mencionar dos memorias más, consideradas parte de la memoria principal, ya que son cruciales para el arranque del sistema:
+    - <mark class="critic">RAM</mark>:
+    - <mark class="critic">ROM</mark>: memoria no volátil de solo lectura, almacena el programa básico de inicio o BIOS, que verifica que los componentes funcionen al encender el equipo.
+    - <mark class="critic">CMOS</mark>: pequeña memoria de lectura/escritura (entre 512 y 2048 bits),que contiene los parámetros clave de configuración del sistema (hardware detectado, orden de arranque, contraseña de la BIOS, fecha y hora, etc.). Es una memoria volátila, pero mantiene la información guardada gracias a una pequeña pila de botón (CR2032) instalada en la placa base.
+- <ins class="critic">**SECUNDARIA**</ins> o memoria de disco: formada por los discos duros del ordenador, es una memoria de alta capacidad no volátil para almacenar la información de forma permanente.
+- <ins class="critic">**AUXILIAR**</ins>: esta memoria se usa como soporte de respaldo de información, pudiendo situarse en medios extraíbles o en red.
+
+### DISPOSITIVOS E/S
+
+#### TIPOS
+
+- `ENTRADA`
+- `SALIDA`
+- `MIXTO`
+
+#### CONECTORES
+
+`CONEXIONES INTERNAS`
+Están dentro de la torre o carcasa y unen las piezas principales a la placa base:
+
+- **Buses del sistema**: Canales físicos en la placa base que transportan datos entre el procesador y la memoria.
+- **Puertos SATA**: Conectan discos duros tradicionales y unidades de estado sólido (SSD).
+- **Ranuras PCI Express (PCIe)**: Alojan tarjetas gráficas y de expansión de alto rendimiento.
+- **Zócalos M.2**: Sirven para discos de almacenamiento ultrarrápidos directamente en la placa.
+
+`PUERTOS Y CONECTORES EXTERNOS`
+Son los puntos visibles en la parte trasera o frontal para conectar los periféricos:
+
+- **USB Tipo A** (Universal Serial Bus): Conecta ratones, teclados y memorias flash con facilidad. Puedes consultar más detalles en la guía de BEEP.
+- **USB Tipo C**:
+- **HDMI** y DisplayPort: Envían señal de video y audio de alta definición hacia los monitores.
+- **Ethernet (RJ45)**: Permite conectar el equipo a una red de internet mediante cable.
+- **Jack de 3.5 mm**: Se usa para auriculares, altavoces y micrófonos analógicos.
+
+`CONEXIONES INALÁMBRICAS`
+Eliminan los cables mediante ondas de radio o infrarrojos:
+
+- **Bluetooth** Conecta dispositivos cercanos como ratones, teclados o auriculares de forma directa.
+- **Wi-Fi** Conecta el equipo a redes locales y a internet sin usar cables de red.
+
+### BUSES
+
+#### BUS DE SISTEMA
+
+#### BUSES DE EXPANSIÓN
+
+### ORDEN DE ARRANQUE DE UN ORDENADOR
+
+El proceso de arranque (booting), dividido en 6 etapas secuenciales desde que presionas el botón hasta que el sistema está listo para usarse:
+
+1. Energía y Estabilización (Hardware)Presionas el botón de encendido: Se cierra el circuito eléctrico.La Fuente de alimentación (PSU) se activa, estabiliza el voltaje y envía la señal eléctrica Power Good a la Placa base.El Procesador (CPU) recibe energía y se limpia su memoria interna. Al despertar, lee una dirección de memoria fija en la ROM donde se encuentran las primeras instrucciones del firmware.
+2. El Autodiagnóstico o POST (Firmware)Se ejecuta el POST (Power-On Self-Test) administrado por la BIOS/UEFI.El sistema verifica que los componentes críticos respondan correctamente: el procesador, los módulos de Memoria RAM, la tarjeta gráfica y el teclado.Nota: Si el POST detecta un fallo grave (como RAM mal colocada), el proceso se detiene y la placa emite pitidos o muestra un código de error.
+3. Inicialización del Hardware Básica (Firmware)La BIOS/UEFI activa la tarjeta de video de forma muy básica para poder mostrar texto en la pantalla.Busca y detecta los dispositivos de almacenamiento conectados (unidades SSD, discos duros M.2, SATA o memorias USB).
+4. Localización del Gestor de Arranque (Firmware a Software)La BIOS/UEFI consulta su lista de prioridades de arranque (definida por el usuario) para saber en qué unidad buscar el sistema operativo.Una vez seleccionada la unidad (ej. el SSD principal), lee un sector específico de este: la partición EFI (en sistemas modernos con UEFI) o el MBR (en sistemas antiguos).Allí encuentra y cede el control al Gestor de arranque (Bootloader), como Windows Boot Manager o GRUB.
+5. Carga del Sistema Operativo (Software)El Bootloader busca el Núcleo (Kernel) del sistema operativo en el disco de almacenamiento.El Bootloader copia el Kernel y los archivos esenciales del sistema y los carga directamente en la Memoria RAM.Una vez copiados, el Bootloader se retira y el Kernel toma el control total de la computadora.
+6. Configuración del Entorno de Usuario (Software)El Kernel carga en la RAM los Controladores (Drivers) necesarios para que funcionen a pleno rendimiento el resto de componentes (red, audio de alta definición, gráficos avanzados).Se inician los servicios en segundo plano del sistema operativo.Aparece la pantalla de inicio de sesión (Login) y, tras introducir la contraseña, se carga la interfaz gráfica de usuario (Escritorio). El sistema está listo para trabajar.
+
+Vamos a ver no solo qué significan esos pitidos sino todo el sistema que lo ejecuta y todo lo que ocurre entre que pulsas el botón de encender hasta que ves como arranca el sistema operativo.
+
+<mark class="critic">BIOS</mark>
+
+El sistema básico de entrada y salida, BIOS por sus siglas en inglés, es un tipo de firmware incluido en todas las placas base el cual se pone en funcionamiento cuando uno inicia el ordenador. Usualmente también se conoce a la BIOS como Legacy, debido a que es un sistema antiguo y la UEFI lo ha sustituido casi completamente. La BIOS se encarga de detectar los componentes del ordenador, asegurarse que funcionan correctamente y buscar en los dispositivos de almacenamiento un gestor de arranque para darle todo el control del hardware al sistema operativo.
+
+Cuando encendemos el ordenador tenemos un pequeño periodo de tiempo en el que podemos acceder a la BIOS pulsando unas teclas concretas, estas dependen del fabricante de la placa base. Dentro de la BIOS tenemos varias posibles configuraciones, destacaremos algunas en este post, como por ejemplo el poder elegir la prioridad de dispositivos a la hora de buscar un sistema de arranque o la posibilidad de cambiar entre BIOS y UEFI.
+
+<mark class="critic">UEFI</mark>
+
+La interfaz de firmware extensible unificada, UEFI por sus siglas en inglés, apareció hace unos años para jubilar a la BIOS tras más de 45 años de leal servicio. La UEFI hace exactamente lo mismo que la BIOS, con ciertas mejoras y añadidos:
+
+Gestión más eficiente de la energía.
+Iniciar de forma más rápida.
+Admite particiones de más de 2TB.
+La posibilidad de gestionar los dispositivos PCIe.
+Gestión de fallos mejorada.
+Mejor interfaz gráfica, pudiendo usar el ratón.
+Actualizar su firmware desde Internet.
+Incluye Secure Boot, el cual se explicará más adelante.
+
+<mark class="critic">POST</mark>
+
+El POST es conocido como auto-prueba de arranque, forma parte de las medidas de seguridad de la BIOS y se encarga de realizar pruebas a los dispositivos antes de ejecutar la BIOS para asegurarse que ninguno está dañado a nivel de software ni de hardware. Técnicamente, la placa base lanzará un pitido de confirmación cuando el POST haya terminado de realizar las pruebas pero en los ordenadores más modernos me estoy encontrando placas que no sueltan ningún pitido de confirmación, solo cuando hay fallos.
+
+Los pitidos también suenan para identificar fallos, pueden variar según el fabricante pero en general suelen significar lo mismo. Durante mi estancia en prácticas en el departamento de Devoluciones y Garantías lidiaba diariamente con componentes dañados, por lo que los pitidos de error del POST eran comunes, a continuación añado algunos de los pitidos de error más comunes y sus significados:
+
+| Tonos | Significado |
+| ----------: | :----------------------------------- |
+|Tono ininterrumpido | Fallo en el sistema de alimentación. |
+|1 tono largo | No detecta memoria RAM. |
+|1 tono largo y 2 cortos | Fallo en la tarjeta gráfica. |
+|3 tonos cortos | RAM defectuosa. |
+|5 tonos cortos | Fallo en el procesador. |
+|10 tonos cortos | Error en el CMOS. |
+
+<mark class="critic">Secure Boot</mark>
+
+El Secure Boot es un sistema de seguridad de Microsoft para las BIOS que, como se puede deducir, favorece a los sistemas Windows. Su intención es evitar los Bootkits, un tipo de malware que toma el control del ordenador haciéndose pasar por un sistema operativo, bloqueando todo sistema operativo que no sea de “confianza”. De nuevo, como se puede deducir, los sistemas de “confianza” de Microsoft son sus propios sistemas operativos algún otro, pero se pueden contar con los dedos de una sola mano.
+
+Si se usa un sistema Windows es una buena idea mantener esta opción encendida, ya que da un plus de seguridad, pero si se va a instalar un GNU/Linux o un Dual Boot conviene desactivarlo para evitar problemas.
+
+<mark class="critic">Gestor de Arranque y GRUB</mark>
+
+Los gestores de arranque sirven para que la BIOS detecte dónde se encuentran almacenados los sistemas operativos y pueda darles el control al terminar todos los procesos que se indican arriba. Se instalan junto al sistema operativo y sirve de intermediarios entre estos y las BIOS.
+
+Existen gestores de arranque para varios sistemas operativos. Windows tiene el suyo propio y puede hacer que se pueda elegir entre distintos Windows antes de arrancarlos, pero a penas soporta otros sistemas. Yo todavía no he visto un sistema Linux que sea soportado por este sistema.
+
+Por otro lado está el llamado GRUB, el gestor de arranque múltiple. Este gestor de arranque permite elegir entre distintos sistemas, instalados en distintos discos, sin importar cual sea. Desde versiones Windows, distribuciones basadas en Ubuntu, CentOS… lo que sea.
+
+Son las instrucciones, programas y códigos que coordinan y controlan los componentes físicos.
+•   Firmware (BIOS o UEFI): Es el primer código que se ejecuta. UEFI es el estándar moderno que reemplazó a la antigua BIOS. Se encarga de la interfaz básica de configuración y de buscar el sistema operativo.
+•   POST (Power-On Self-Test): Es un programa de diagnóstico integrado en la BIOS/UEFI. Comprueba de forma rápida si el hardware esencial (RAM, procesador, tarjeta de video, teclado) funciona correctamente. Si algo falla, emite pitidos o códigos de error en la pantalla.
+•   Gestor de arranque (Bootloader): Un pequeño programa ubicado en un sector específico del disco (como el MBR o la partición EFI). Su única función es localizar el núcleo del sistema operativo y cargarlo en la memoria RAM (ejemplos: Windows Boot Manager, GRUB en Linux).
+•   Núcleo (Kernel): El corazón del sistema operativo. Toma el control absoluto del hardware tras el gestor de arranque, gestionando la memoria, los procesos y el acceso a los componentes.
+•   Controladores de dispositivos (Drivers): Software especializado que permite al sistema operativo comunicarse de forma óptima y explotar las funciones de cada componente de hardware (gráficos, red, sonido).
+-->
 
 
 

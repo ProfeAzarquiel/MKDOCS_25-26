@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#componentes-fisicos" class="md-skip">
+        <a href="#ud2" class="md-skip">
           Skip to content
         </a>
       
@@ -1483,24 +1483,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    UD2. Componentes Físicos
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1517,36 +1499,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#proceso-de-arranque" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PROCESO DE ARRANQUE
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1608,25 +1560,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#proceso-de-arranque" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PROCESO DE ARRANQUE
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1642,77 +1575,7 @@
 
 
 
-<h1 id="componentes-fisicos">COMPONENTES FÍSICOS</h1>
-<h2 id="proceso-de-arranque">PROCESO DE ARRANQUE</h2>
-<!--
-
-En el proceso de encendido de una computadora (conocido como proceso de arranque o booting), interactúan de forma secuencial una serie de componentes de hardware y programas de software.
-________________________________________
-🧱 Elementos Físicos (Hardware)
-Son los componentes tangibles que proveen la energía, las vías de comunicación y la potencia de cálculo.
-•   Fuente de alimentación (PSU): Convierte la corriente alterna en corriente continua y distribuye la energía a todos los componentes. Envía una señal eléctrica llamada Power Good a la placa base cuando el voltaje es estable.
-•   Placa base (Motherboard): Es la pista de aterrizaje donde se conectan todos los elementos. Contiene los circuitos impresos (buses) que permiten la comunicación entre el procesador, la memoria y el almacenamiento.
-•   Procesador (CPU): Es el cerebro de la máquina. Al recibir energía, ejecuta las primeras instrucciones lógicas grabadas de fábrica en la memoria ROM.
-•   Memoria ROM (Flash): Un chip integrado en la placa base que almacena de forma permanente el firmware del sistema (BIOS o UEFI).
-•   Memoria RAM: El espacio de trabajo temporal y de alta velocidad. El sistema operativo se carga aquí desde el disco de almacenamiento para que el procesador pueda ejecutarlo.
-•   Unidad de almacenamiento (SSD o HDD): El componente físico donde residen de forma permanente el sistema operativo, los controladores y los archivos del usuario.
-________________________________________
-💾 Elementos Lógicos (Software/Firmware)
-Son las instrucciones, programas y códigos que coordinan y controlan los componentes físicos.
-•   Firmware (BIOS o UEFI): Es el primer código que se ejecuta. UEFI es el estándar moderno que reemplazó a la antigua BIOS. Se encarga de la interfaz básica de configuración y de buscar el sistema operativo.
-•   POST (Power-On Self-Test): Es un programa de diagnóstico integrado en la BIOS/UEFI. Comprueba de forma rápida si el hardware esencial (RAM, procesador, tarjeta de video, teclado) funciona correctamente. Si algo falla, emite pitidos o códigos de error en la pantalla.
-•   Gestor de arranque (Bootloader): Un pequeño programa ubicado en un sector específico del disco (como el MBR o la partición EFI). Su única función es localizar el núcleo del sistema operativo y cargarlo en la memoria RAM (ejemplos: Windows Boot Manager, GRUB en Linux).
-•   Núcleo (Kernel): El corazón del sistema operativo. Toma el control absoluto del hardware tras el gestor de arranque, gestionando la memoria, los procesos y el acceso a los componentes.
-•   Controladores de dispositivos (Drivers): Software especializado que permite al sistema operativo comunicarse de forma óptima y explotar las funciones de cada componente de hardware (gráficos, red, sonido).
-________________________________________
-
-## ORDEN CRONOLÓGICO
-
-El proceso de arranque (booting), dividido en 6 etapas secuenciales desde que presionas el botón hasta que el sistema está listo para usarse:1. Energía y Estabilización (Hardware)Presionas el botón de encendido: Se cierra el circuito eléctrico.La Fuente de alimentación (PSU) se activa, estabiliza el voltaje y envía la señal eléctrica Power Good a la Placa base.El Procesador (CPU) recibe energía y se limpia su memoria interna. Al despertar, lee una dirección de memoria fija en la ROM donde se encuentran las primeras instrucciones del firmware.2. El Autodiagnóstico o POST (Firmware)Se ejecuta el POST (Power-On Self-Test) administrado por la BIOS/UEFI.El sistema verifica que los componentes críticos respondan correctamente: el procesador, los módulos de Memoria RAM, la tarjeta gráfica y el teclado.Nota: Si el POST detecta un fallo grave (como RAM mal colocada), el proceso se detiene y la placa emite pitidos o muestra un código de error.3. Inicialización del Hardware Básica (Firmware)La BIOS/UEFI activa la tarjeta de video de forma muy básica para poder mostrar texto en la pantalla.Busca y detecta los dispositivos de almacenamiento conectados (unidades SSD, discos duros M.2, SATA o memorias USB).4. Localización del Gestor de Arranque (Firmware a Software)La BIOS/UEFI consulta su lista de prioridades de arranque (definida por el usuario) para saber en qué unidad buscar el sistema operativo.Una vez seleccionada la unidad (ej. el SSD principal), lee un sector específico de este: la partición EFI (en sistemas modernos con UEFI) o el MBR (en sistemas antiguos).Allí encuentra y cede el control al Gestor de arranque (Bootloader), como Windows Boot Manager o GRUB.5. Carga del Sistema Operativo (Software)El Bootloader busca el Núcleo (Kernel) del sistema operativo en el disco de almacenamiento.El Bootloader copia el Kernel y los archivos esenciales del sistema y los carga directamente en la Memoria RAM.Una vez copiados, el Bootloader se retira y el Kernel toma el control total de la computadora.6. Configuración del Entorno de Usuario (Software)El Kernel carga en la RAM los Controladores (Drivers) necesarios para que funcionen a pleno rendimiento el resto de componentes (red, audio de alta definición, gráficos avanzados).Se inician los servicios en segundo plano del sistema operativo.Aparece la pantalla de inicio de sesión (Login) y, tras introducir la contraseña, se carga la interfaz gráfica de usuario (Escritorio). El sistema está listo para trabajar.
-
-Vamos a ver no solo qué significan esos pitidos sino todo el sistema que lo ejecuta y todo lo que ocurre entre que pulsas el botón de encender hasta que ves como arranca el sistema operativo.
-
-BIOS
-El sistema básico de entrada y salida, BIOS por sus siglas en inglés, es un tipo de firmware incluido en todas las placas base el cual se pone en funcionamiento cuando uno inicia el ordenador. Usualmente también se conoce a la BIOS como Legacy, debido a que es un sistema antiguo y la UEFI lo ha sustituido casi completamente. La BIOS se encarga de detectar los componentes del ordenador, asegurarse que funcionan correctamente y buscar en los dispositivos de almacenamiento un gestor de arranque para darle todo el control del hardware al sistema operativo.
-
-Cuando encendemos el ordenador tenemos un pequeño periodo de tiempo en el que podemos acceder a la BIOS pulsando unas teclas concretas, estas dependen del fabricante de la placa base. Dentro de la BIOS tenemos varias posibles configuraciones, destacaremos algunas en este post, como por ejemplo el poder elegir la prioridad de dispositivos a la hora de buscar un sistema de arranque o la posibilidad de cambiar entre BIOS y UEFI.
-
-UEFI
-La interfaz de firmware extensible unificada, UEFI por sus siglas en inglés, apareció hace unos años para jubilar a la BIOS tras más de 45 años de leal servicio. La UEFI hace exactamente lo mismo que la BIOS, con ciertas mejoras y añadidos:
-
-Gestión más eficiente de la energía.
-Iniciar de forma más rápida.
-Admite particiones de más de 2TB.
-La posibilidad de gestionar los dispositivos PCIe.
-Gestión de fallos mejorada.
-Mejor interfaz gráfica, pudiendo usar el ratón.
-Actualizar su firmware desde Internet.
-Incluye Secure Boot, el cual se explicará más adelante.
-Qué es el POST
-El POST es conocido como auto-prueba de arranque, forma parte de las medidas de seguridad de la BIOS y se encarga de realizar pruebas a los dispositivos antes de ejecutar la BIOS para asegurarse que ninguno está dañado a nivel de software ni de hardware. Técnicamente, la placa base lanzará un pitido de confirmación cuando el POST haya terminado de realizar las pruebas pero en los ordenadores más modernos me estoy encontrando placas que no sueltan ningún pitido de confirmación, solo cuando hay fallos.
-
-Los pitidos también suenan para identificar fallos, pueden variar según el fabricante pero en general suelen significar lo mismo. Durante mi estancia en prácticas en el departamento de Devoluciones y Garantías lidiaba diariamente con componentes dañados, por lo que los pitidos de error del POST eran comunes, a continuación añado algunos de los pitidos de error más comunes y sus significados:
-
-Tonos   Significado
-Tono ininterrumpido Fallo en el sistema de alimentación.
-1 tono largo    No detecta memoria RAM.
-1 tono largo y 2 cortos Fallo en la tarjeta gráfica
-3 tonos cortos  RAM defectuosa.
-5 tonos cortos  Fallo en el procesador
-10 tonos cortos Error en el CMOS.
-Secure Boot
-El Secure Boot es un sistema de seguridad de Microsoft para las BIOS que, como se puede deducir, favorece a los sistemas Windows. Su intención es evitar los Bootkits, un tipo de malware que toma el control del ordenador haciéndose pasar por un sistema operativo, bloqueando todo sistema operativo que no sea de “confianza”. De nuevo, como se puede deducir, los sistemas de “confianza” de Microsoft son sus propios sistemas operativos algún otro, pero se pueden contar con los dedos de una sola mano.
-
-Si se usa un sistema Windows es una buena idea mantener esta opción encendida, ya que da un plus de seguridad, pero si se va a instalar un GNU/Linux o un Dual Boot conviene desactivarlo para evitar problemas.
-
-Los gestores de arranque y el GRUB
-Los gestores de arranque sirven para que la BIOS detecte dónde se encuentran almacenados los sistemas operativos y pueda darles el control al terminar todos los procesos que se indican arriba. Se instalan junto al sistema operativo y sirve de intermediarios entre estos y las BIOS.
-
-Existen gestores de arranque para varios sistemas operativos. Windows tiene el suyo propio y puede hacer que se pueda elegir entre distintos Windows antes de arrancarlos, pero a penas soporta otros sistemas. Yo todavía no he visto un sistema Linux que sea soportado por este sistema.
-
-Por otro lado está el llamado GRUB, el gestor de arranque múltiple. Este gestor de arranque permite elegir entre distintos sistemas, instalados en distintos discos, sin importar cual sea. Desde versiones Windows, distribuciones basadas en Ubuntu, CentOS… lo que sea.
-
--->
+<h1 id="ud2">UD2</h1>
 
 
 
