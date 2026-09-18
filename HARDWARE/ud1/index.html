@@ -923,7 +923,7 @@
   <span class="md-ellipsis">
     
   
-    UD1. Principios del Diseño
+    UD1. Planificación de interfaces Gráficas
   
 
     
@@ -1754,7 +1754,11 @@
 <p>A las memorias se les administran una dirección, una señal de control que defina la operación y registro de intercambio donde se almacena el dato a bloque a leer o escribir.</p>
 <p>Su capacidad se expresa en bit, octetos (byte) o palabras, siendo habitual el de byte y sus múltiplos KiloByte, MegaByte, TeraByte, Petabyte, etc…</p>
 <h4 id="jerarquia-de-memoria">JERARQUIA DE MEMORIA</h4>
-<p>La memoria se organiza en varios niveles en función de su velocidad, capacidad y coste. En general, los niveles de la memoria son:</p>
+<p>La memoria se organiza en varios niveles en función de su velocidad, capacidad y coste. En general, los niveles de la memoria son los siguientes:</p>
+<figure>
+    <img alt="Jerarquia de Memoria" src="../../img/jerarquia_memoria.png" width="350" />
+    <small><figcaption>Pirámide de la Jerarquía de Memoria</figcaption></small>
+</figure>
 <ul>
 <li>
 <p><ins class="critic"><strong>REGISTROS</strong></ins>: memorias de alta velocidad y baja capacidad integradas en el procesador, utilizadas para el almacenamiento intermedio de los datos, especialmente en la UC y la UAL.</p>
@@ -1765,11 +1769,13 @@
 <li><mark class="critic">Caché L1</mark>: la más cercana al procesador y la más rápida, pero la que menos capacidad tiene. Cada núcleo del procesador tiene su propia L1.</li>
 <li><mark class="critic">Caché L2</mark>: Es propia de cada núcleo en la inmensa mayoría de las arquitecturas modernas. Es un poco más grande y ligeramente más lenta que la L1, pero actúa como un respaldo directo antes de salir del núcleo.</li>
 <li><mark class="critic">Caché L3</mark>: se posiciona en un nivel inferior a la anterior tanto en cercanía como en velocidad, pero tiene una capacidad mucho mayor. Es compartida por todos los núcleos del procesador y sirve para que los núcleos intercambien datos entre sí de forma eficiente sin tener que pasar por la memoria RAM y para coordinar las tareas del sistema.</li>
+</ul>
+<p><img align="right" alt="Memoria Caché" src="../../img/cache.png" width="400" /></p>
+<ul>
 <li><mark class="critic">Caché L4</mark>: es un tipo de memoria caché poco habitual que se utiliza normalmente como apoyo para mejorar el rendimiento de GPUs integradas, evitando que estás recurran a la RAM como memoria gráfica. Cuando está presente, se encuentra fuera del procesador (en un chip intermedio llamado <mark class="critic">eDRAM</mark>) y es totalmente compartida por los núcleos y la tarjeta gráfica integrada.</li>
 </ul>
 </li>
 </ul>
-<p><img align="right" alt="Memoria Caché" src="../../img/cache.png" width="400" /></p>
 <p>De este modo, cuando un <strong>procesador busca instrucciones y datos</strong> que necesita, <strong>primero</strong> tira de la <strong>memoria caché</strong>, siguiendo el orden de jerarquía indicado. Es decir, primero busca en la caché L1, si no encuentra nada, recurre a la caché L2 y así sucesivamente.</p>
 <p>Si la información <strong>no se encuentra</strong> en ningún nivel de la caché, entonces pasa a <strong>solicitarla a la memoria RAM</strong>.</p>
 <ul>
@@ -1790,10 +1796,9 @@
 <li><mark class="critic">CMOS</mark>: pequeña memoria de lectura/escritura (entre 512 y 2048 bits),que contiene los parámetros clave de configuración del sistema (hardware detectado, orden de arranque, contraseña de la BIOS, fecha y hora, etc.). Es una memoria volátila, pero mantiene la información guardada gracias a una pequeña pila de botón (CR2032) instalada en la placa base.</li>
 </ul>
 </li>
-</ul>
-<p><img align="left" alt="Jerarquia de Memoria" src="../../img/jerarquia_memoria.png" width="400" /></p>
-<ul>
-<li><ins class="critic"><strong>SECUNDARIA</strong></ins> o memoria de disco: formada por los discos duros del ordenador, es una memoria de alta capacidad no volátil para almacenar la información de forma permanente.</li>
+<li>
+<p><ins class="critic"><strong>SECUNDARIA</strong></ins> o memoria de disco: formada por los discos duros del ordenador, es una memoria de alta capacidad no volátil para almacenar la información de forma permanente.</p>
+</li>
 <li><ins class="critic"><strong>AUXILIAR</strong></ins>: esta memoria se usa como soporte de respaldo de información, pudiendo situarse en medios extraíbles o en red.</li>
 </ul>
 <h3 id="dispositivos-es"><font color="#c7b106">DISPOSITIVOS E/S</font></h3>
@@ -1828,8 +1833,85 @@
 <p>Estos buses permiten conectar tarjetas de expansión y periféricos para ampliar las funciones de una computadora, algunos ejemplos son: ISA, EISA, MCA, VLB, PCI, AGP, PCMCIA, PCI-X DE 1, 8 y 16 canales.</p>
 <h2 id="componentes-fisicos-de-un-ordenador"><font color="#dd9400">COMPONENTES FÍSICOS DE UN ORDENADOR</font></h2>
 <h3 id="la-caja"><font color="#c7b106">LA CAJA</font></h3>
+<p>Estructura, generalmente metálica, cuya función es alojar y proteger los componentes internos del ordenador.</p>
 <h3 id="fuente-de-alimentacion"><font color="#c7b106">FUENTE DE ALIMENTACIÓN</font></h3>
+<p>Dispositivo que transforma la corriente de la red eléctrica (alterna a 220V) en una corriente que pueda soportar el equipo (continua a 5-12V).</p>
+<h4 id="fuentes-atx">FUENTES ATX</h4>
+<p>Las fuentes AT-eXtendidas (ATX), constan de dos partes, una principal, que corresponde a la antigua AT, y otra auxiliar, que se encuentra siempre encendida.</p>
+<p>El interruptor de encendido solamente controla la primera parte y, a través de la auxiliar, se pueden realizar apagados y encendidos por soft­ware. Es decir, están permanentemente alimentadas, por lo que, a la hora de manipularlas debemos apagar el ordenador y además desconectarlo completamente de la corriente por precaución.</p>
+<p>Todas las fuentes generan una cantidad importante de calor, por ello tienen al menos un ventilador. En la actualidad, podemos encontrar fuentes de entre 180W y 2000W de potencia. En la mayoría de personas elige fuentes entre 450W y 850W.</p>
+<p>Es el formato de fuente más utilizado en la actualidad, con sus medidas de 150mm x 150mm x 86mm, es el que más potencia puede ofrecer.</p>
+<p>Los conectores que encontramos en una fuente ATX son:</p>
+<h4 id="otras-fuentes">OTRAS FUENTES</h4>
+<p>Hay fuentes adaptadas a cajas de dimensiones inferiores, como son:</p>
+<ul>
+<li>SFX: 125 x 63,5 x 100 mm</li>
+<li>TFX: 85 x 65 x 175 mm</li>
+<li>Flex ATX: 150 x 81,5 x 40,5 mm</li>
+</ul>
+<p>Además las fuentes de alimentación pueden presentarse en formato modular o semi-modular, dependiendo de si permiten desconectar los cables no utilizados parcial o totalmente.</p>
+<h4 id="certificaciones-de-energia">CERTIFICACIONES DE ENERGIA</h4>
+<p>Es un punto importante a valorar en la compra de nuestra fuente, puesto que, se trata de que eficiencia energética posee. Para ello, se utiliza el certificado 80 PLUS, el cual se subdivide en varios niveles. 80 PLUS significa que cumple con las siguientes especificaciones:</p>
+<ul>
+<li><strong>White</strong>: 80% de eficiencia con un nivel de carga del 20%, 85% con un PFC de 0,9 con el 50% de carga y 80% al 100%.</li>
+<li><strong>Bronze</strong>: 82% de eficiencia con un nivel de carga del 20%, 85% con un PFC de 0,9 con el 50% de carga y 82% al 100%.</li>
+<li><strong>Silver</strong>: 85% de eficiencia con un nivel de carga del 20%, 88% con un PFC de 0,9 con el 50% de carga y 87% al 100%.</li>
+<li><strong>Gold</strong>: 87% de eficiencia con un nivel de carga del 20%, 90% con un PFC de 0,9 con el 50% de carga y 87% al 100%.</li>
+<li><strong>Platinum</strong>: 90% de eficiencia con un nivel de carga del 20%, 90% con un PFC de 0,95 con el 50% de carga y 89% al 100%.</li>
+<li><strong>Titanium</strong>: 90% de eficiencia con un nivel de carga del 10%, 92% con un PFC de 0,95 con el 50% de carga y 90% al 100%.</li>
+</ul>
+<figure>
+    <img alt="Certificaciones 80 Plus" src="https://hardzone.es/app/uploads-hardzone.es/2018/04/80-PLUS-cetificaciones.jpg" width="600" />
+    <small><figcaption>Certificaciones  80PLUS</figcaption></small>
+</figure>
 <h3 id="placa-base"><font color="#c7b106">PLACA BASE</font></h3>
+<p>Circuito impreso donde se interconectan todos los componentes necesarios para que un ordenador funcione.</p>
+<h4 id="factor-de-forma">FACTOR DE FORMA</h4>
+<p>El factor de forma, define una serie de     características físicas básicas de la placa, para que esta pueda integrarse correctamente en la caja.</p>
+<p>Los más utilizados son:</p>
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Medidas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ATX</td>
+<td>30.5 x 24.4 cm</td>
+</tr>
+<tr>
+<td>MICRO-ATX</td>
+<td>24.4 x 24.4 cm</td>
+</tr>
+<tr>
+<td>MINI-ITX</td>
+<td>17 x 17 cm</td>
+</tr>
+<tr>
+<td>PICO-ITX</td>
+<td>10 x 7,2 cm</td>
+</tr>
+</tbody>
+</table>
+<h4 id="componentes-clave">COMPONENTES CLAVE</h4>
+<ul>
+<li>
+<p><mark class="critic">Socket</mark>: El socket o zócalo es el lugar de la placa base donde se aloja el microprocesador. Según como se conecte el procesador, diferenciamos LGA, PGA y BGA. Dependiendo del tipo que sean serán compatibles con unos procesadores y otros.</p>
+</li>
+<li>
+<p><mark class="critic">Chipset</mark>: El PCH o chipset, es un circuito integrado que sirve de apoyo al procesador en el control de componentes de la placa. Encargándose principalmente de comunicarse con las ranuras de expansión, los conectores SATA y los periféricos de E/S.</p>
+</li>
+<li>
+<p><mark class="critic">BIOS</mark>: La BIOS es un chip que, mediante una memoria CMOS, se encarga del proceso de arranque y el testeo de los componentes conectados a la placa. Vienen configuradas con unos valores de fábrica, pero muchos de ellos pueden modificarse. Esta puede resetearse mediante las cabeceras de configuración de la BIOS.</p>
+</li>
+</ul>
+<p>En muchas placas esta compuesta por dos chips, uno principal y el otro para guardar una copia de respaldo. Esto se conoce como DUAL BIOS.</p>
+<ul>
+<li><mark class="critic">Pila</mark>: Gracias a la pila, la memoria CMOS mantiene almacenada la información necesaria para el correcto arranque del sistema, incluyendo las posibles modificaciones hechas por el usuario. De hecho, si quitamos la pila durante unos segundos, la BIOS se restaurará a sus valores de fábrica.</li>
+</ul>
+<p>Además de estos, la placa cuenta con una serie de ranuras, <strong>conectores internos y cabeceras</strong> donde podemos conectar los diferentes componentes. Son los que vemos a continuación:</p>
 <h4 id="conectores">CONECTORES</h4>
 <p><code>CONEXIONES INTERNAS</code>
 Están dentro de la torre o carcasa y unen las piezas principales a la placa base:</p>
@@ -1854,11 +1936,69 @@ Eliminan los cables mediante ondas de radio o infrarrojos:</p>
 <li><strong>Bluetooth</strong> Conecta dispositivos cercanos como ratones, teclados o auriculares de forma directa.</li>
 <li><strong>Wi-Fi</strong> Conecta el equipo a redes locales y a internet sin usar cables de red.</li>
 </ul>
+<h4 id="cabeceras">CABECERAS</h4>
 <h3 id="procesador"><font color="#c7b106">PROCESADOR</font></h3>
+<p>Circuito integrado que dirige y controla el resto de componentes del equipo informático.</p>
+<p>Las principales características a tener en  cuenta a la hora de elegir un procesador son:
+Frecuencia: es la velocidad con la que el procesador realiza una tarea.
+Núcleos: son como pequeños microprocesadores dentro del procesador. A mayo número de núcleos se supone mayor rendimiento.
+Subprocesos o Hilos: es la cantidad de subtareas simultaneas que puede realizar cada núcleo. Por ejemplo, 4 núcleos y 8 hilos, quiere decir que cada núcleo puede ejecutar 2 hilos a la vez.
+Caché: se divide en niveles (L1, L2, L3…). Cuanto mayor sea la capacidad del nivel más alto, más efectivo será el procesador.</p>
+<p>Los principales fabricantes de procesadores para PC son Intel y AMD. A la hora de adquirir uno, debemos fijarnos que sea compatible con el tipo de socket que tiene nuestra placa (PGA o LGA).</p>
 <h3 id="refrigeracion"><font color="#c7b106">REFRIGERACIÓN</font></h3>
+<p>Reduce la temperatura de ciertos componentes del ordenador y de la caja en general.</p>
+<p>El sistema de refrigeración     esta compuesto por disipadores (refrigeración pasiva), que son piezas metálicas que absorben fácilmente el calor. Y por ventiladores (refrigeración activa), que aceleran el flujo de aire y lo empujan hacia fuera de la caja.
+Otro elemento extra que se añade es la pasta térmica, que aumenta la zona de contacto con el disipador y favorece el traspaso de calor a este.</p>
 <h3 id="memoria"><font color="#c7b106">MEMORIA</font></h3>
+<p>Memoria volátil donde se almacenan los datos e instrucciones de las aplicaciones que están en ejecución.</p>
+<h4 id="tipos">TIPOS</h4>
+<figure>
+    <img alt="Tipos de RAM" src="../../img/tipos_ram.png" width="650" />
+    <small><figcaption>Tipos de memoria RAM</figcaption></small>
+</figure>
+<p>Visualmente, podemos diferenciarlas facilmenta ya que las memorias SDR tienen dos muescas, mientras que las DDR solo una.</p>
+<h4 id="estandares-y-velocidades">ESTÁNDARES Y VELOCIDADES</h4>
+<p>SDR: funciona a la misma velocidad que el bus de memoria.
+DDR: el doble de velocidad que el bus de memoria.
+DDR2: cuatro veces más rápido que el bus de memoria.
+DDR3: ocho veces más rápido que el bus de memoria.
+DDR4: dieciséis veces más rápido que el bus de memoria.
+DDR5: treinta y dos veces más rápido que el bus de memoria.</p>
 <h3 id="almacenamiento"><font color="#c7b106">ALMACENAMIENTO</font></h3>
+<p>Su objetivo es guardar los datos e información que requerimos tener de forma permanente, como el Sistema Operativo, los documentos e imágenes del usuario…</p>
+<h3 id="tipos-de-almacenamiento-interno">TIPOS DE ALMACENAMIENTO INTERNO</h3>
+<ul>
+<li>
+<p><mark class="critic">HDD o Unidad de Disco Duro</mark>, compuesto por elementos mecánicos, como un brazo con varios cabezales que escriben o leen la información almacenada en varios platos metálicos mediante grabación magnética. Se conecta al puerto SATA y también a la fuente de alimentación.</p>
+</li>
+<li>
+<p><mark class="critic">SSD o Unidad de Estado Sólido</mark>, se basa en un circuito impreso compuesto por componentes electrónicos. Es más reducida en tamaño que un HDD y es hasta 5 veces más rápida. Se conecta por un lado al puerto SATA y por otro a la fuente de alimentación.</p>
+</li>
+<li>
+<p><mark class="critic">SSD M.2</mark>: es una evolución del SSD,  reduciendo considerable su tamaño. Aunque debido a limitaciones del protocolo de transferencia (AHCI), los primeros modelos tenían velocidades similares a las del SSD; pero con la llegada el protocolo NVMe, esto a cambiado totalmente. Se conecta a la ranura PCIe M.2.</p>
+</li>
+</ul>
 <h3 id="tarjetas-de-expansion"><font color="#c7b106">TARJETAS DE EXPANSIÓN</font></h3>
+<p>Son dispositivos que sirven para ampliar las capacidades del ordenador. Añadiendo funciones que el equipo no tiene o mejorando las que ya ofrece.</p>
+<h4 id="tarjeta-grafica">TARJETA GRÁFICA</h4>
+<p>Es el tipo de expansión más utilizada, llegando a convertirse casi en indispensable hoy en día. Ya que las gráficas que vienen integradas de serie, suelen ser muy básicas.</p>
+<p>Su función es procesar toda la información relacionada con imágenes y videos, para ofrecer una visualización de alta calidad. Para ello, cuentan con su <strong>propio procesador</strong> (<strong>GPU</strong>) y su <strong>propia memoria RAM</strong> (<strong>VRAM</strong>).</p>
+<p>Se conectan en las ranura PCIe-X16 y las más potentes, también a la fuente de alimentación.</p>
+<h4 id="otras-tarjetas">OTRAS TARJETAS</h4>
+<ul>
+<li>
+<p><strong>TARJETA DE SONIDO</strong>: Se basa en un chip que procesa el audio con alta calidad. Suele usarse para necesidades específicas de edición multimedia o videojuegos.</p>
+</li>
+<li>
+<p><strong>TARJETA DE RED</strong>: Proporcionan acceso a una red informática, como puede ser Internet. Pueden ser por cable o inalámbricas (WiFi, Bluetooth). Hoy en día viene integrada en la placa base</p>
+</li>
+<li>
+<p><strong>TARJETA DE EXPANSIÓN USB</strong>: Sirve para aumentar el número de puertos USB de un ordenador.</p>
+</li>
+<li>
+<p><strong>TARJETA CAPTURADORA DE VIDEO</strong>: Se utilizan para capturar la imagen de dispositivos externos como consolas o cámaras y procesarla en el ordenador.</p>
+</li>
+</ul>
 <!--
 ### ORDEN DE ARRANQUE DE UN ORDENADOR
 

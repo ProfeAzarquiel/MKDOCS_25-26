@@ -1023,7 +1023,7 @@
   <span class="md-ellipsis">
     
   
-    UD1. Principios del Diseño
+    UD1. Planificación de interfaces Gráficas
   
 
     
@@ -1731,7 +1731,7 @@
 <li><strong>CE 1.1.</strong> Identificación y explicación de los elementos clave de la infraestructura de redes.</li>
 </ul>
 </div>
-<h2 id="los-modelos-osi-y-tcpip">LOS MODELOS OSI Y TCP/IP</h2>
+<h2 id="los-modelos-osi-y-tcpip"><font color="#c31428"><strong>LOS MODELOS OSI Y TCP/IP</strong></font></h2>
 <p>El <strong>modelo OSI</strong> (Open Systems Interconnection o Interconexión de Sistemas Abiertos) es un <strong>marco teórico</strong> de referencia creado por la Organización Internacional de Normalización (ISO) que divide el proceso de comunicación de datos en una red en <strong>siete capas</strong> independientes.</p>
 <p>Su objetivo es servir como guía estándar para que diferentes tecnologías de hardware y software puedan comunicarse entre sí sin importar el fabricante.</p>
 <p>Mientras que el <strong>modelo TCP/IP</strong> es el <strong>estándar práctico</strong> que define el conjunto de reglas y protocolos usados hasta la fecha para permitir la comunicación entre dispositivos a través de Internet y redes locales. Este se divide en <strong>cuatro capas</strong> y a continuación, vemos su corresponencia con el modelo OSI:</p>
@@ -1739,7 +1739,7 @@
   <img alt="TCP vs OSI" src="../../img/tcp_osi.png" width="600" />
   <small><figcaption>Correspondencia TCP/IP y OSI</figcaption></small>
 </figure>
-<h2 id="el-protocolo-ip">EL PROTOCOLO IP</h2>
+<h2 id="el-protocolo-ip"><font color="#c31428"><strong>EL PROTOCOLO IP</strong></font></h2>
 <h3 id="que-es">¿QUE ES?</h3>
 <ul>
 <li>
@@ -1793,7 +1793,7 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
   <img alt="Mascara de Red" src="../../img/mascara.jpg" width="300" />
   <small><figcaption>Formato Decimal vs CIDR</figcaption></small>
 </figure>
-<h2 id="los-puertos-logicos">LOS PUERTOS LÓGICOS</h2>
+<h2 id="los-puertos-logicos"><font color="#c31428"><strong>LOS PUERTOS LÓGICOS</strong></font></h2>
 <h3 id="que-son">¿QUE SON?</h3>
 <ul>
 <li>Son como interfaces virtuales que permiten la comunicación entre diferentes aplicaciones o servicios en una misma computadora o entre distintas computadoras a través de la red. Son identificadores númericos de 16 bits, a través de los cuales podemos conocer que servicio o protocolo se está usando.</li>
@@ -1810,7 +1810,7 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
   <img alt="Puertos Lógicos más Usados" src="../../img/puertos.jpg" width="400" />
   <small><figcaption>Puertos comunes</figcaption></small>
 </figure>
-<h2 id="principales-protocolos-de-red"><strong>PRINCIPALES PROTOCOLOS DE RED</strong></h2>
+<h2 id="principales-protocolos-de-red"><font color="#c31428"><strong>PRINCIPALES PROTOCOLOS DE RED</strong></font></h2>
 <h3 id="arp-address-resolution-protocol"><font color="#8f1ade"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span></font> <strong>ARP</strong> (Address Resolution Protocol)</h3>
 <p>Es un protocolo de capa 2. Se encarga de asociar la dirección MAC de cada maquina, a su dirección IP.</p>
 <p>Cuando un equipo intenta <strong>comunicarse por primera vez</strong> con otra maquina de su red, <strong>se envia</strong> previamente una "<strong>petición ARP</strong>", en forma de mensaje de <strong>broadcast</strong> a todos los equipos de la red. Pero solo responde el equipo que tenga la dirección IP que estamos buscando.</p>
@@ -1835,17 +1835,17 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
   <small><figcaption>Funcionamiento DNS</figcaption></small>
 </figure>
 <h3 id="nat"><font color="#8f1ade"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span></font> NAT</h3>
-<ul>
-<li>Mecanismo mediante el cual podemos traducir una o varias direcciones IP privadas (locales), en una o varios IP públicas (globales) y viceversa. De esta forma, los equipos de una red local pueden acceder a internet sin que sus direcciones IP privadas sean visibles fuera de su red local.</li>
-<li>A parte de esta, la principal función de NAT es la de conservar el espacio global IPv4 y evitar su agotamiento. Ya qué gracias a él, podemos conseguir que utilizando una sola IP pública, salgan internet todos los equipos de una red local. Distinguimos 3 tipos de NAT:</li>
-</ul>
-<blockquote>
+<p>Mecanismo mediante el cual podemos traducir una o varias direcciones IP privadas (locales), en una o varios IP públicas (globales) y viceversa. De esta forma, los equipos de una red local pueden acceder a internet sin que sus direcciones IP privadas sean visibles fuera de su red local.</p>
+<p>A parte de esta, la principal función de NAT es la de conservar el espacio global IPv4 y evitar su agotamiento. Ya qué gracias a él, podemos conseguir que utilizando una sola IP pública, salgan internet todos los equipos de una red local. Distinguimos 3 tipos de NAT:</p>
 <ul>
 <li><strong>NAT Estático:</strong> asigna de forma manual una dirección IP pública a una dirección privada. Mapeo “uno a uno” permanente.</li>
 <li><strong>NAT Dinámico:</strong> consiste en asignar un grupo de direcciones públicas a una red local, de modo que los dispositivos podrán ir utilizando dinámicamente esas direcciones públicas para salir a internet y dejarlas libres cuando terminen. Mapeo “uno a uno” temporal.</li>
 <li><strong>NAT con Sobrecarga:</strong> también conocido como PAT (Port Address Translation), permite asignar una IP pública a toda una red y que los dispositivos la utilicen de forma simultanea para salir a internet. Realizándose la diferenciación entre equipos por puertos. Mapeo “uno a varios”.</li>
 </ul>
-</blockquote>
+<figure>
+  <img alt="PAT" src="../../img/nat2.jpg" width="500" />
+  <small><figcaption>NAT con sobrecarga o PAT</figcaption></small>
+</figure>
 <div class="admonition info">
 <p class="admonition-title">Aclaración</p>
 <ul>
@@ -1862,16 +1862,78 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
   <img alt="DHCP" src="../../img/dhcp.jpg" width="400" />
   <small><figcaption>Protocolo DHCP</figcaption></small>
 </figure>
-<h2 id="dispositivos-de-red">DISPOSITIVOS DE RED</h2>
-<h3 id="_1"></h3>
-<h3 id="_2"></h3>
-<h3 id="_3"></h3>
-<h3 id="_4"></h3>
-<h3 id="_5"></h3>
-<h3 id="_6"></h3>
-<h3 id="_7"></h3>
-<h3 id="_8"></h3>
-<h3 id="_9"></h3>
+<h2 id="dispositivos-de-red"><font color="#c31428"><strong>DISPOSITIVOS DE RED</strong></font></h2>
+<h3 id="estacion-de-trabajo">ESTACIÓN DE TRABAJO</h3>
+<figure>
+  <img alt="Estación de trabajo" src="https://img.blogs.es/bloglenovo/wp-content/uploads/2021/10/workstation.jpg" width="400" />
+  <small><figcaption>Estación de trabajo</figcaption></small>
+</figure>
+<h3 id="servidor">SERVIDOR</h3>
+<p>Un servidor es un elemento de red (físico o virtual) que proporciona diferentes recursos (datos, servicios, software…) a otros dispositivos.</p>
+<p>Una vez arrancado, se mantiene a la espera de peticiones de los “clientes” (equipos a los que presta servicios), y según le van llegando, las procesa y envía la respuesta correspondiente a cada una.</p>
+<p>En cuanto a arquitectura física y en muchas ocasiones incluso en aspecto, no son muy diferentes a un PC normal; ya que cuentan con los mismos componentes básicos.
+Pero estos suelen tener un hardware más robusto, paraobtener un mayor rendimiento sobre los servicios prestados.</p>
+<figure>
+  <img alt="Servidor" src="https://www.fibermall.com/blog/wp-content/uploads/2024/06/Servers-classified-by-product-form-1024x333.jpg" width="600" />
+  <small><figcaption>Tipos de Servidores</figcaption></small>
+</figure>
+<p>Si utilizamos dispositivos físicos dedicados para realizar la función de servidor, vamos a diferenciar tres tipos:</p>
+<ul>
+<li><strong>TORRE</strong>: con forma y estructura iguales a las de un PC ordinario. son altamente escalables y el chasis se reserva para el espacio, con el fin
+de alojar discos duros, energía y otras expansiones redundantes.</li>
+<li><strong>RACK</strong>: son pequeños en espacio, fáciles de administrar y se pueden instalar directamente en los racks o armarios de comunicaciones estándar. Suelen tener una altura de 1U a 4U.</li>
+<li><strong>BLADE</strong>: es una plataforma de servidor pensada para servicios de alta disponibilidad y alta densidad. Su estructura principal consta de un gran chasis en el que se van insertando varios “blades”. El blade es en realidad una placa base del sistema, similar a un servidor separado, pudiendo arrancar cada uno su propio sistema operativo.</li>
+</ul>
+<h3 id="hub">HUB</h3>
+<p>Son elementos hardware que permiten centralizar el cableado de varios equipos de red, funcionando como un punto central de conexión. Este dispositivo trabaja en capa 1 (Física), y por lo tanto no entiende o identifica la información que pasa por él, sino que simplemente repite la misma señal que recibe, a tantos puertos como equipos tenga conectados.</p>
+<p>Todos los equipos conectados a un HUB se encuentran en el mismo dominio de colisión, es decir, cuando se produce una colisión porque dos máquinas envíen al mismo tiempo, las consecuencias de esta (parada y tiempo aleatorio de espera) la sufrirán todos los dispositivos conectados al concentrador. Si tuviéramos dos o más HUBS conectados entre sí, este dominio de colisión se ampliaría a todos ellos.</p>
+<p>Un concentrador trabaja en todos sus puertos a la misma velocidad, que estará limitada (además de la velocidad a la que puedan trabajar los propios puertos del HUB) por la velocidad a la que pueda trabajar el equipo más lento de los que están conectados a él.</p>
+<figure>
+  <img alt="Concentrador" src="https://www.profesionalreview.com/wp-content/uploads/2019/02/HUB-Ethernet.jpg" width="400" />
+  <small><figcaption>Ethernet Hub</figcaption></small>
+</figure>
+<p>Es el elemento repartidor más básico y menos eficiente, pero también el más económico. Podemos diferenciar tres tipos de concentradores:</p>
+<ul>
+<li><strong>Activos</strong>: necesitan conectarse a una fuente de alimentación externa, ya que además de repartir la señal, funciona como amplificador de señal.</li>
+<li><strong>Pasivos</strong>: no necesitan ningún tipo de alimentación, ya que simplemente reenvían la señal a todos los dispositivos conectados.</li>
+<li><strong>Inteligentes</strong>: también llamados Smart-HUB además de regenerar la señal, pueden detectar excesos de colisiones, gestión de alarmas y visor de prestaciones de red, entre otros.</li>
+</ul>
+<p>Debido a sus limitaciones, es muy raro encontrar este tipo de equipos en una red actual. Ya que con la aparición de los SWITCHES, quedaron obsoletos</p>
+<h3 id="switch">SWITCH</h3>
+<p>Su función es similar a la de un HUB, es decir, hacer de punto de interconexión entre varios equipos de red, pero con la gran diferencia de que tienen la capacidad de procesar la información que pasa a través de ellos.</p>
+<p>Decimos que son dispositivos que operan en el nivel 2 del modelo OSI, ya que se basa en las direcciones MAC de los equipos que tiene conectados, para reenviar la información por el puerto correspondiente en cada caso. Evitando así los reenvíos de información innecesaria que ocurren cuando usamos un HUB.</p>
+<p>También existen algunos más avanzados, llamados “SWITCH MULTICAPA” que además implementan funcionalidades de capa 3, propias de un ROUTER.</p>
+<figure>
+  <img alt="Switch" src="https://m.media-amazon.com/images/I/71KPbVrQzsL.jpg" width="400" />
+  <small><figcaption>Switch</figcaption></small>
+</figure>
+<p>Suelen contar con gran cantidad de puertos, comúnmente los encontramos de 5, 8, 16, 24 y 48.</p>
+<p>Otra de las ventajas que tiene frente a un HUB, es que los SWITCHES, no funcionan como un medio compartido, si no que gestionan la velocidad de cada dispositivo por puertos.</p>
+<p>Lo mismo ocurre con los dominios de colisión, de modo que cada puerto se comporta como un dominio de colisión independiente.</p>
+<h3 id="router">ROUTER</h3>
+<p>Son equipos que trabajan en el nivel o la capa 3 del modelo OSI. Y su principal función es la de encaminar los datos de la manera más eficiente, entre redes diferentes.</p>
+<p>Esto lo hacen basándose en las direcciones IP de origen y destino. Para ello, cada ROUTER mantiene una tabla con información de cada red que conocen, ya sea por que la tienen directamente conectada o porque les llega a través de algún protocolo de enrutamiento. Es lo se conoce como “tabla de rutas” o “tabla de enrutamiento”.</p>
+<p>En un ROUTER, cada puerto funciona como un dominio de colisión independiente, pero además como un dominio de broadcast independiente.</p>
+<figure>
+  <img alt="Router" src="https://digalco.com/wp-content/uploads/images/product/12524/cisc00098_02.jpg" width="400" />
+  <small><figcaption>Router</figcaption></small>
+</figure>
+<h3 id="punto-de-acceso">PUNTO DE ACCESO</h3>
+<p>Es un dispositivo que recibe una conexión de internet por cable (Ethernet) y la convierte en una señal inalámbrica Wi-Fi.</p>
+<p>Trabaja principalmente en la Capa 1 (Física) por la transmisión de ondas de radio y en la Capa 2 (Enlace de Datos) porque gestiona las tramas y usa direcciones MAC para identificar los dispositivos en la red local.</p>
+<figure>
+  <img alt="Punto de Acceso" src="https://www.dlink.com/es/es/-/media/product-pages/dis/2650ap/dis_2650ap_a1_side.png" width="400" />
+  <small><figcaption>Punto de Acceso</figcaption></small>
+</figure>
+<p>Permite ampliar la cobertura de la red de forma estable, ya que crea una nueva señal WiFi limpia, como si fuera el router original. Además, gestiona el tráfico entre los dispositivos sin cables y el resto de la red cableada simultaneamente.</p>
+<h3 id="firewall">FIREWALL</h3>
+<p>Son elementos de red (pueden ser hardware o software) diseñados para controlar el tráfico entrante y saliente de una red. Generalmente diremos que son dispositivos que operan en las capas 3 y 4 del modelo OSI, aunque hoy en día existen algunos más avanzados que trabajan hasta en la capa 7.</p>
+<p>En todos los caso, van a contar, como mínimo, con dos interfaces de red (ya sean físicas o lógicas), una interna para la red protegida o LAN privada; y otra externa para la red ajena o pública.</p>
+<p>Su funcionamiento se basa en dos reglas básicas: PERMITIR y DENEGAR. Las cuales se aplicaran en cada caso, según si el tráfico cumple o no una serie de condiciones preestablecidas por el administrador de red.</p>
+<figure>
+  <img alt="Firewall" src="https://www.corporatearmor.com/wp-content/uploads/2025/04/fortinet-fg90g-landing-page-graphic-5.png" width="400" />
+  <small><figcaption>Firewall</figcaption></small>
+</figure>
 <!--
 ## REDES EN LINUX
 
