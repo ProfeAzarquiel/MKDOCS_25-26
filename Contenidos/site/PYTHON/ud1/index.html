@@ -1549,6 +1549,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#el-modulo-mainpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El módulo main.py
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2220,6 +2231,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#el-modulo-mainpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El módulo main.py
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2646,6 +2668,17 @@ Para crear un módulo en Python, simplemente creamos un archivo con extensión .
 </span><span id="__span-41-10"><a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="n">resultado_resta</span> <span class="o">=</span> <span class="n">restar</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </span><span id="__span-41-11"><a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado de la resta:&quot;</span><span class="p">,</span> <span class="n">resultado_resta</span><span class="p">)</span>
 </span></code></pre></div>
+<h3 id="el-modulo-mainpy">El módulo <strong>main.py</strong></h3>
+<p>Cuando ejecutamos un módulo directamente o cuando lo importamos, Python <strong>ejecuta todo el código</strong> que se encuentra en él. Creando variables, funciones, clases, métodos, condiciones, etc...</p>
+<p>Sin embargo, 
+Lo interesante de todo esto es que, al ejecutar o importar un módulo, Python asigna un nuevo atributo a él, llamado <strong>name</strong> (Recordemos que Python todo es un objeto, y los módulos también lo son). 😉</p>
+<p>Dependiendo del contexto donde se ejecute el módulo ,el valor de este atributo será diferente.</p>
+<p>Si el módulo es importando, el valor de su atributo será el mismo que el nombre del script. </p>
+<p>Sin embargo, si ejecutamos el módulo directo por el interprete, en terminal, el atributo almacenará <strong>main</strong>. Haciendo alusión que es el módulo principal, y no se esta siendo importando de otro.</p>
+<p>Con todo esto en mente podemos concluir que la condición if <strong>name</strong> == '<strong>main</strong>': permite ejecutar el código, sí, y solo sí, el módulo es el principal, es decir, fue ejecutado directamente con el interprete y no fue importado. 🐍</p>
+<p>Ahora, si importamos nuevamente no visualizaremos ningún tipo de mensaje, y podremos utilizar las funciones previamente definidas, ya que estas se encuentran antes de la condición.</p>
+<p>Ahora ya lo sabes, en Python los archivos con extensión .py los conoceremos como módulos. Y siempre que utilicemos un módulo, ya sea que lo ejecutamos o lo importemos, Python le asignará el atributo <strong>name</strong>, que podrá tomar diferente valor dependiendo de cómo el módulo se este llamando.</p>
+<p>Si el módulo es importado entonces el atributo tomará por valor el nombre del script, en caso contrario su valor será <strong>main</strong>. 🍻</p>
 <p><em><small><a href="https://ed.team/" target="_blank">Fuente 1: EDTeam</a></small></em>, <em><small><a href="https://www.luisllamas.es/" target="_blank">Fuente 2: Luis Llamas</a></small></em></p>
 
 
