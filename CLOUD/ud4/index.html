@@ -2214,7 +2214,7 @@
 
 
 
-<h1 style="text-align: center;"><font color="#c31428">UD4: VIRTUALIZACIÓN CON CONTENEDORES</font></h1>
+<h1 style="text-align: center;"><span style="color: var(--ceny-primary-color);">UD4: VIRTUALIZACIÓN CON CONTENEDORES</span></h1>
 
 <div class="grid cards">
 <ul>
@@ -2222,8 +2222,8 @@
 <li><strong>CE 4.2.</strong> Implementación efectiva de automatización en la gestión de servicios virtualizados.</li>
 </ul>
 </div>
-<h2 id="docker">DOCKER <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51q-.508.001-1.01.087c-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.75.75 0 0 0-.75.748 11.4 11.4 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137a15.7 15.7 0 0 0 2.93-.266 12.3 12.3 0 0 0 3.823-1.389 10.5 10.5 0 0 0 2.61-2.136c1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg></span></h2>
-<p>Dentro de las tecnologías actuales de virtualización, existe el estándar abierto para la virtualización de contenedores, llamado <strong>Open Container Initiative (OCI)</strong>. En este estandar se basan todas las empresas y plataformas que desarrollan este tipo de virtualización, entre las cuales hay una que destaca por encima del resto: <mark class="critic"><strong>Docker</strong></mark>. </p>
+<h2 id="docker"><span style="color: var(--ceny-primary-color);">DOCKER <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51q-.508.001-1.01.087c-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.75.75 0 0 0-.75.748 11.4 11.4 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137a15.7 15.7 0 0 0 2.93-.266 12.3 12.3 0 0 0 3.823-1.389 10.5 10.5 0 0 0 2.61-2.136c1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg></span></span></h2>
+<p>Dentro de las tecnologías actuales de virtualización, existe el estándar abierto para la virtualización de contenedores, llamado <strong>Open Container Initiative (OCI)</strong>. En este estandar se basan todas las empresas y plataformas que desarrollan este tipo de virtualización, entre las cuales hay una que destaca por encima del resto: <mark class="critic"><strong>Docker</strong></mark>.</p>
 <p>Esto se debe a que fueron pioneros en este campo y actualmente es la plataforma más conocida para empaquetar y ejecutar aplicaciones mediante contenedores ligeros. Algunas de las principales características que definen la virtualización con Docker, son:</p>
 <ul>
 <li>Tecnología de virtualización ligera de software libre.</li>
@@ -2231,14 +2231,17 @@
 <li>Los contenedores no tienen kernel propio, utilizan el del anfitrión.</li>
 <li>Se usa principálmente para el despliegue de aplicaciones.</li>
 </ul>
-<p><img alt="Logo Docker" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/1024px-Docker_%28container_engine%29_logo.svg.png" /></p>
-<h3 id="elementos-basicos-de-docker">ELEMENTOS BÁSICOS DE DOCKER</h3>
+<figure>
+    <img alt="Logo Docker" src="https://cdn.worldvectorlogo.com/logos/docker.svg" width="300" />
+    <small><figcaption>Logo Docker</figcaption></small>
+</figure>
+<h3 id="elementos-basicos-de-docker"><span style="color: var(--ceny-secondary-color);"> ELEMENTOS BÁSICOS DE DOCKER</span></h3>
 <ul>
 <li><strong>IMAGEN</strong>: aplicación empaquetada, es el sistema de ficheros de nuestro contenedor</li>
 <li><strong>CONTENEDOR</strong>: una imagen en ejecución</li>
 <li>Los contenedores pueden conectarse a diferentes <strong>REDES VIRTUALES</strong> y tienen sus propios <strong>VOLÚMENES</strong> o sistemas de almacenamiento.</li>
 </ul>
-<h3 id="arquitectura-de-docker">ARQUITECTURA DE DOCKER</h3>
+<h3 id="arquitectura-de-docker"><span style="color: var(--ceny-secondary-color);"> ARQUITECTURA DE DOCKER</span></h3>
 <ul>
 <li><strong>DEMONIO</strong>: es el más importante (Docker Engine) estará siempre en ejecución y es el que gestiona los contenedores</li>
 <li><strong>CLIENTE</strong>: linea de comandos que nos permite decirle al demonio que queremos hacer</li>
@@ -2253,7 +2256,7 @@
 <li>CRI-0 (RedHat, pensada para trabajar con Kubernetes)</li>
 <li>Pouch (AliBaba).</li>
 </ul>
-<h2 id="instalacion-de-docker">INSTALACIÓN DE DOCKER</h2>
+<h2 id="instalacion-de-docker"><span style="color: var(--ceny-primary-color);">INSTALACIÓN DE DOCKER</span></h2>
 <ul>
 <li><a href="https://docs.docker.com/engine/install/">Documentación oficial</a></li>
 <li><a href="https://docs.docker.com/engine/install/ubuntu/">Requerimientos mínimos Ubuntu</a></li>
@@ -2315,7 +2318,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 </code></pre></div>
 </li>
 </ul>
-<h2 id="ejecucion-de-contenedores">EJECUCIÓN DE CONTENEDORES</h2>
+<h2 id="ejecucion-de-contenedores"><span style="color: var(--ceny-primary-color);">EJECUCIÓN DE CONTENEDORES</span></h2>
 <ul>
 <li><strong>HOLA MUNDO:</strong></li>
 <li>
@@ -2525,7 +2528,7 @@ Ejecutar un comando dentro de un contenedor en ejecución:</p>
 <p>Modificar en tiempo real las limitaciones de recursos de un contenedor en ejecución</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># MODIFICACIÓN LIMITACIONES</span>
 </span></code></pre></div>
-<h3 id="desplegar-un-servidor-web-apache-con-docker">DESPLEGAR UN SERVIDOR WEB APACHE CON DOCKER</h3>
+<h3 id="desplegar-un-servidor-web-apache-con-docker"><span style="color: var(--ceny-secondary-color);"> DESPLEGAR UN SERVIDOR WEB APACHE CON DOCKER</span></h3>
 <p>Generalmente, nunca se va a utilizar la dirección IP del contenedor para acceder a los servicios que despliega, ya que esta es dinámica y puede ir cambiando dependiendo de que acciones realicemos en el contenedor.</p>
 <p>Además, la dirección IP de un contenedor solamente es accesible desde el anfitrión. No sería alcanzable desde otros equipos de la red.</p>
 <p>Por lo tanto, en este caso para acceder al servidor Web que nos proporcionará este contenedor, vamos a <code>mapear puertos</code>. Es decir, con la opción <code>-p</code> indicamos que cuando accedamos al puerto 8080 del host, esa petición se reenvíe al puerto 80 del contenedor, independientemente de la dirección IP.</p>
@@ -2538,8 +2541,8 @@ Ejecutar un comando dentro de un contenedor en ejecución:</p>
 </span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>docker<span class="w"> </span>port<span class="w"> </span>my-apache-app
 </span></code></pre></div>
 <p>Para conectarnos al servidor web bastará con ir al navegador del host y acceder a <code>https://localhost:8080</code></p>
-<h3 id="desplegar-un-servidor-de-bbdd-con-docker">DESPLEGAR UN SERVIDOR DE BBDD CON DOCKER</h3>
-<h2 id="gestion-de-imagenes-en-docker">GESTIÓN DE IMAGENES EN DOCKER</h2>
+<h3 id="desplegar-un-servidor-de-bbdd-con-docker"><span style="color: var(--ceny-secondary-color);"> DESPLEGAR UN SERVIDOR DE BBDD CON DOCKER</span></h3>
+<h2 id="gestion-de-imagenes-en-docker"><span style="color: var(--ceny-primary-color);">GESTIÓN DE IMAGENES EN DOCKER</span></h2>
 <p>Las imágenes son plantillas de solo lectura que define el sistema de ficheros que va a tener el contenedor. También establece el comando por defecto que ejecutará ese contenedor, siempre que no se indique otro.</p>
 <p>Por defecto en docker se usa el registro público de Docker Hub para descargar imágenes a nuestro registro local.</p>
 <p>La nomenclatura para identificar una imagen es <code>usuario/nombre:etiqueta</code>. Las imágenes oficiales de docker vienen sin nombre de usuario para diferenciarlas.</p>
@@ -2565,7 +2568,7 @@ El sistema de ficheros (FS) de una imágen se llama sistema de ficheros de unió
 </span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w"> </span>-s
 </span></code></pre></div>
 <p>Cuando borramos un contenedor, esta capa R/W desaparece, se perderían los datos de ese contenedor.</p>
-<h3 id="comandos-de-gestion-de-imagenes">COMANDOS DE GESTIÓN DE IMÁGENES</h3>
+<h3 id="comandos-de-gestion-de-imagenes"><span style="color: var(--ceny-secondary-color);"> COMANDOS DE GESTIÓN DE IMÁGENES</span></h3>
 <ul>
 <li>Buscar imágnes en Docker Hub:</li>
 </ul>
@@ -2588,13 +2591,13 @@ El sistema de ficheros (FS) de una imágen se llama sistema de ficheros de unió
 </ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>docker<span class="w"> </span>inspect<span class="w"> </span>nginx:stable
 </span></code></pre></div>
-<h3 id="docker-hub">DOCKER HUB</h3>
+<h3 id="docker-hub"><span style="color: var(--ceny-secondary-color);"> DOCKER HUB</span></h3>
 <p><a href="https://hub.docker.com/">Enlace Docker Hub</a></p>
 <p>Su filosofía es bastante parecida a GitHub, ya que denominan a las imágenes como repositorios y usan practicamente los mismos comandos que este (pull, push, commit...)</p>
 <p>Existe contenido confiable marcado con 3 tipos de insignias, como <code>imagen oficial de docker</code> (las mantiene el equipo de docker), <code>proveedores verificados</code> (suelen ser fabricantes reconocidos) y <code>proyectos de código libre esponsorizados</code>.</p>
 <p>Podemos entrar a un repositorio par ver toda su información, etiquetas, versiones, como utilizarlo... Hay imagenes de SO, de servicios (apache, maraidb...), de lenguajes de programación o aplicaciones comerciales (Wordpress...)</p>
 <p>Es imporante tener en cuenta la arquitectura en la que estamos trabajando, ya que dependiendo de eso deberemos buscar una imagen u otra.</p>
-<h2 id="almacenamiento-de-datos-en-docker">ALMACENAMIENTO DE DATOS EN DOCKER</h2>
+<h2 id="almacenamiento-de-datos-en-docker"><span style="color: var(--ceny-primary-color);">ALMACENAMIENTO DE DATOS EN DOCKER</span></h2>
 <p>Para no perder la información generada por los contenedores una vez sean borrados (por defecto se guarda en la capa R/W del contenedor), existen formas de almacenarla en el equipo anfitrión.</p>
 <p>Un <strong>VOLUMEN</strong> es un directorio creado y gestionados únicamente por Docker, que se va a montar en un directorio interno del contenedor. Es decir, cuando guardemos información en ese directorio montado, se estaremos escribiendo en el directorio de nuestro Host que corresponde a ese volumen. Es decir, esa información no se perdería al borrar el contenedor.</p>
 <p>El directorio del contenedor donde se montan es <code>/var/lib/docker/volumes/</code>.</p>
@@ -2667,20 +2670,20 @@ Todos los subcomandos de acciones con Volúmenes, estan bajo el bloque <code>doc
 </span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>my-apache-app<span class="w"> </span>-v<span class="w"> </span>/home/usuario/miweb:/usr/local/apache2/htdocs<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>httpd:2.4
 </span></code></pre></div>
 <p>En este caso, con bind mount, puedo modificar mi fichero HTML desde el anfitrión y al estar montado, esos cambios se verán directamente reflejados en mi servidor web.</p>
-<h3 id="desplegar-el-servicio-nextcloud-en-un-contenedor-con-almacenamiento-persistente">DESPLEGAR EL SERVICIO NEXTCLOUD EN UN CONTENEDOR CON ALMACENAMIENTO PERSISTENTE</h3>
+<h3 id="desplegar-el-servicio-nextcloud-en-un-contenedor-con-almacenamiento-persistente"><span style="color: var(--ceny-secondary-color);"> DESPLEGAR EL SERVICIO NEXTCLOUD EN UN CONTENEDOR CON ALMACENAMIENTO PERSISTENTE</span></h3>
 <p>Lo primero es ir a la página de documentación de la imagen de Nextcloud en <a href="https://hub.docker.com/_/nextcloud">Docker Hub</a>.</p>
 <p>Allí buscamos el apartado <code>Persistent data</code> para saber cual es el directorio que debo montar en un volumen para no perder los datos que nos interesan generados por esta aplicación. En este caso sería <code>/var/www/html</code>.</p>
 <p>Por lo tanto, si usamos volumenes el comando quedaría algo así:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>-v<span class="w"> </span>nextcloud:/var/www/html<span class="w"> </span>--name<span class="w"> </span>contenedor_nextcloud<span class="w"> </span>nextcloud:28.0.1
 </span></code></pre></div>
-<h3 id="desplegar-el-servicio-mariadb-en-un-contenedor-con-almacenamiento-persistente">DESPLEGAR EL SERVICIO MARIADB EN UN CONTENEDOR CON ALMACENAMIENTO PERSISTENTE</h3>
+<h3 id="desplegar-el-servicio-mariadb-en-un-contenedor-con-almacenamiento-persistente"><span style="color: var(--ceny-secondary-color);"> DESPLEGAR EL SERVICIO MARIADB EN UN CONTENEDOR CON ALMACENAMIENTO PERSISTENTE</span></h3>
 <p>De nuevo, vamos a la página de documentación de la imagen que vamos a usar en <a href="https://hub.docker.com/_/mariadb">Docker Hub</a>.</p>
 <p>En el caso de MariaDB, la información sobre alamcenamiento persistente, aparece bajo el título <code>Where to Store Data</code>. Ahí podemos leer que el directorio a montar es <code>/var/lib/mysql</code></p>
 <p>En este caso vamos a hacerlo con Bind Mount, y quedaría así:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>some-mariadb<span class="w"> </span>-v<span class="w"> </span>/opt/mariadb:/var/lib/mysql<span class="w"> </span>-e<span class="w"> </span><span class="nv">MARIADB_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw<span class="w"> </span>-d<span class="w"> </span>mariadb:10.5
 </span></code></pre></div>
 <p>Si el directorio <code>/opt/mariadb</code> no existe en nuestro host, con la opción -v se creará en ese momento.</p>
-<h3 id="otros-usos-del-almacenamiento-persistente">OTROS USOS DEL ALMACENAMIENTO PERSISTENTE</h3>
+<h3 id="otros-usos-del-almacenamiento-persistente"><span style="color: var(--ceny-secondary-color);"> OTROS USOS DEL ALMACENAMIENTO PERSISTENTE</span></h3>
 <ul>
 <li>
 <p>Almacenamiento compartido entre distintos contenedores.</p>
@@ -2692,7 +2695,7 @@ Todos los subcomandos de acciones con Volúmenes, estan bajo el bloque <code>doc
 <p>Otro ejemplo sería probar como funciona un mismo código en diferentes versiones del lenguaje de programación (vease el caso de PHP que hay isntrucciones que cambian su comportamiento entre la versión 5 y la 7, o entre la 7 y la 8).</p>
 </li>
 </ul>
-<h2 id="redes-en-docker">REDES EN DOCKER</h2>
+<h2 id="redes-en-docker"><span style="color: var(--ceny-primary-color);">REDES EN DOCKER</span></h2>
 <p>Existen <strong>3 tipos</strong> principales de redes en Docker:</p>
 <ol>
 <li><strong>Bridge:</strong> es la que usaremos generalmente, genera una red privada virtual, asignando direccionamiento IP propio al contenedor y proporciona reclas SNAT (salida a internet) y DNAT (acceso desde el exterior al contenedor).</li>
@@ -2800,11 +2803,11 @@ Tambien podemos conectar y desconectar contenedores en caliente a redes definida
 </span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>SHOW<span class="w"> </span>TABLES<span class="p">;</span>
 </span><span id="__span-54-6"><a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a>SELEC<span class="w"> </span>*<span class="w"> </span>FROM<span class="w"> </span>wp_posts
 </span></code></pre></div>
-<h2 id="escenarios-multicontenedor">ESCENARIOS MULTICONTENEDOR</h2>
+<h2 id="escenarios-multicontenedor"><span style="color: var(--ceny-primary-color);">ESCENARIOS MULTICONTENEDOR</span></h2>
 <p>Cuando queremos levantar aplicaciones o servicios compuestos por varios microservicios (contenedores), normalmente se hace uso de <strong>DOCKER COMPOSE</strong>.</p>
 <p>Compose es una especificación de Docker que permite declrar en un único fichero con formato <strong>.YAML</strong> o <strong>.YML</strong>, todas las características del escenario que queremos desplegar; como contenedores, volúmenes, redes, orden de arranque, variables de entorno, etc.</p>
 <p>Actualmente, Docker Compose V2 ya se encuentra integrado en el cliente Docker, por lo que podemos ejecutarlo con <code>docker compose</code></p>
-<h3 id="el-fichero-docker-composeyaml">EL FICHERO DOCKER-COMPOSE.YAML</h3>
+<h3 id="el-fichero-docker-composeyaml"><span style="color: var(--ceny-secondary-color);"> EL FICHERO DOCKER-COMPOSE.YAML</span></h3>
 <p>En él definimos un escenario compuesto por varios servicios (<code>services</code>). Y dentro de cada servicio, especificamos todos los detalles que van a definir ese servicio.</p>
 <p>Los parámetros <code>version</code> y <code>name</code> son opcionales. El primero es meramente informativo y si no especificamos nombre del escenario, cogerá el del directorio en el que se encuentra nuestro fichero .YAML.</p>
 <p>Características de un servicio:</p>
@@ -2823,7 +2826,7 @@ Tambien podemos conectar y desconectar contenedores en caliente a redes definida
 <p>Por defecto, al ejecutar un escenario compose se crear una red definida por el usuario, que permite la conexión entre todos los contenedores que se han generado,aceptando conexiones por nombre de contenedor o por nombre de servicio. Es por esto, que generalmente no suelen definirse las redes en los ficheros .YAML:</p>
 <p>Para arrancar un escenario, vamos al directorio donde está nuestro <code>docker-compose.yaml</code> y ejecutamos <strong>docker compose up -d</strong>.</p>
 <p>Para eliminar un escenario, sería con el comando <strong>docker compose down -v</strong>. ¡OJO! Esto eliminará tambien los volumenes asociados al escenario, si quisieramos mantenerlos, podemos quitar la opción <code>-v</code>.</p>
-<h3 id="uso-de-parametros-en-docker-compose">USO DE PARÁMETROS EN DOCKER COMPOSE</h3>
+<h3 id="uso-de-parametros-en-docker-compose"><span style="color: var(--ceny-secondary-color);"> USO DE PARÁMETROS EN DOCKER COMPOSE</span></h3>
 <p>Podemos crear plantillas para el despliegue de aplicaciones o servicios mediante Docker Compose, y arrancarlas con diferentes valores, según la finalidad o necesidades que tengamos en los distintos entornos en que podemos ejecutar nuestro escenario.</p>
 <p>Para ello, en lugar de dar valores estáticos a las características definidas en el fichero .YAML, podemos usar variables usando la nomenclatura <code>${NOMBRE_VARIABLE}</code>. Por ejemplo:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.1&#39;</span>
@@ -2859,7 +2862,7 @@ Tambien podemos conectar y desconectar contenedores en caliente a redes definida
 <p class="admonition-title">IMPORTANTE</p>
 <p>No olvidar que cuando queramos cambiar de entorno primero debemos deshacer el renombrado anterior con <em><code>mv .env env_desarrollo</code></em>; y luego renombrar el entorno que queremos arrancar ahora <em><code>mv env_produccion .env</code></em>.</p>
 </div>
-<h3 id="despliegue-real-con-docker-compose">DESPLIEGUE REAL CON DOCKER COMPOSE</h3>
+<h3 id="despliegue-real-con-docker-compose"><span style="color: var(--ceny-secondary-color);"> DESPLIEGUE REAL CON DOCKER COMPOSE</span></h3>
 <p>Vamos a ver un ejemplo práctico real de Docker Compose, donde desplegaremos una aplicación de código abierto para gestión de reuniones online, similar al servicio Google Meet.</p>
 <p>Si accedemos al repositorio oficial de Jitsi en Github <a href="https://github.com/jitsi/docker-jitsi-meet">Jitsi Meet</a>, tenemos toda la documentación necesaria para desplegar la aplicación con Docker, incluyendo el fichero <code>docker-compse.yaml</code>.</p>
 <p>Si seguimos las intrucciones ahí indicadas:</p>
@@ -2902,7 +2905,7 @@ Se crean 4 contenedores que corresponde a cuatro componentes de Jitsi:</p>
 <li><strong>jicofo</strong>: [Jicofo], el componente JItsi COnference FOcus.</li>
 <li><strong>jvb</strong>: Jitsi Videobridge, el enrutador de vídeo.</li>
 </ul>
-<h2 id="creacion-de-imagenes-en-docker">CREACIÓN DE IMÁGENES EN DOCKER</h2>
+<h2 id="creacion-de-imagenes-en-docker"><span style="color: var(--ceny-primary-color);">CREACIÓN DE IMÁGENES EN DOCKER</span></h2>
 <p>Hay dos mecánismos básicos de construcción:</p>
 <ul>
 <li><strong>A partir de un contenedor</strong> con <code>docker commit</code></li>
@@ -2938,7 +2941,7 @@ Vamos a crear un contenedor a partir de una imagen base del SO Debian.</p>
 <p>Si quiero subir mi imagen a <strong>Docker Hub</strong>, es muy importante ponerle delante nuestro nombre de usuario de Docker Hub, si no, no me dejará. El formato sería <em>nombre_usuario</em>/<em>nombre_imagen</em>:<em>versión</em> (si no indicamos versión, asignará la etiqueta <em>latest</em>)</p>
 <p>El contenedor creado, va a ejecutar el comando por defecto de la imagen base, en este caso Debian, al ser un SO ejecuta <code>bash</code> por defecto. Pero podemos personalizarlos con la opción <code>--change</code> y la instruccion <code>CMD</code>. Por ejemplo, en este caso queremos que ejecute el servidor web por defecto, y e comando sería <code>apachectl -D FOREGROUND</code>.</p>
 </blockquote>
-<h3 id="el-fichero-dockerfile">EL FICHERO DOCKERFILE</h3>
+<h3 id="el-fichero-dockerfile"><span style="color: var(--ceny-secondary-color);"> EL FICHERO DOCKERFILE</span></h3>
 <p>Esta compuesto por una serie de instrucciones que se ejecutan de forma secuencial para crear de manera automatizada imágenes Docker.</p>
 <p>La primera linea de este fichero es <code># syntax=docker/dockerfile:1</code>.</p>
 <p>Hay multitud de instrucciones que pueden en un DockerFile, las más utilizadas son:</p>
@@ -2977,7 +2980,7 @@ Vamos a crear un contenedor a partir de una imagen base del SO Debian.</p>
 <p class="admonition-title">IMPORTANTE</p>
 <p>La opción <strong>PRUNE</strong> sirve para eliminar objetos docker de forma másiva, ya sean imágenes, contenedores, redes, volúmenes... Es por ello, que debemos usarla con cautela para no borrar cosas que no queramos.</p>
 </div>
-<h3 id="distribucion-de-imagenes-docker">DISTRIBUCIÓN DE IMÁGENES DOCKER</h3>
+<h3 id="distribucion-de-imagenes-docker"><span style="color: var(--ceny-secondary-color);"> DISTRIBUCIÓN DE IMÁGENES DOCKER</span></h3>
 <p>El comando <code>docker save</code> nos permite coger una imagen de nuestro repositorio local y comprimirla en un fichero <code>.TAR</code>. Y del mismo modo, con <code>docker load -i</code> puedo recuperar la imagen comprimida en ese <em>.TAR</em>.</p>
 <p>No obstante, no es la práctica más recomendada para distribuir imágenes. Ya que lo ideal es subirla al registro público de <strong>Docker Hub</strong> (es necesario estar registrado).</p>
 <p>Desde el terminal podemos hacerlo con:</p>
@@ -2985,7 +2988,7 @@ Vamos a crear un contenedor a partir de una imagen base del SO Debian.</p>
     docker push profe_web/milinux:v1
 </code></pre></div>
 <p>Una vez subidas, puedo acceder a ellas desde cualquier sitio mediante <code>docker pull</code>.</p>
-<h3 id="parametrizar-el-fichero-dockerfile">PARAMETRIZAR EL FICHERO DOCKERFILE</h3>
+<h3 id="parametrizar-el-fichero-dockerfile"><span style="color: var(--ceny-secondary-color);"> PARAMETRIZAR EL FICHERO DOCKERFILE</span></h3>
 <p>Podemos crear variables dentro del Dockerfile, para que a la hora de crear las imágenes el usuario pueda indicar valores específicos para ellas. Para ello usamos el comando <code>ARG</code> y un ejemplo sería el siguiente:</p>
 <div class="language-text highlight"><pre><span></span><code>    ARG PHP_VERSION=8.2-apache
     FROM php:${PHP_VERSION}
@@ -3000,7 +3003,7 @@ Vamos a crear un contenedor a partir de una imagen base del SO Debian.</p>
 <p>Y en caso de que el usuario quiera personalizar sus valores, podría indicarlo en la cosntrucción de la siguiente manera:</p>
 <div class="language-text highlight"><pre><span></span><code>docker build --build-arg PHP_VERSION=7.4-apache --build-arg APP_VERSION=produccion -t josedom24/app_php:v2 .
 </code></pre></div>
-<h3 id="dockerizar-aplicaciones-python">DOCKERIZAR APLICACIONES PYTHON</h3>
+<h3 id="dockerizar-aplicaciones-python"><span style="color: var(--ceny-secondary-color);"> DOCKERIZAR APLICACIONES PYTHON</span></h3>
 <p>En este ejemplo tenemos una aplicación web desarrollada en Python mediante el módulo Flask. Que va a servir el contenido por el puerto 3000.</p>
 <div class="language-text highlight"><pre><span></span><code>    from flask import Flask, render_template, abort, redirect, request
     import datetime
