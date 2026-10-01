@@ -540,10 +540,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#virtualizacion-de-servidores-o-computo" class="md-nav__link">
+  <a href="#virtualizacion-de-servidores-computo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Virtualización de Servidores (o Cómputo)
+        Virtualización de Servidores (Cómputo)
       
     </span>
   </a>
@@ -566,17 +566,6 @@
     <span class="md-ellipsis">
       
         Virtualización de Red (SDN)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#virtualizacion-a-nivel-de-sistema-operativo-contenedores" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Virtualización a Nivel de Sistema Operativo (Contenedores)
       
     </span>
   </a>
@@ -667,10 +656,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#virtualizacion-a-nivel-de-os-basada-en-contenedores" class="md-nav__link">
+  <a href="#virtualizacion-basada-en-contenedores" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Virtualización a Nivel de OS / Basada en Contenedores
+        Virtualización basada en Contenedores
       
     </span>
   </a>
@@ -750,10 +739,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#proxmox-server-solutions-alternativa-open-source-de-nivel-empresarial" class="md-nav__link">
+  <a href="#proxmox-server-solutions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proxmox Server Solutions (Alternativa Open Source de Nivel Empresarial)
+        Proxmox Server Solutions
       
     </span>
   </a>
@@ -1982,10 +1971,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#virtualizacion-de-servidores-o-computo" class="md-nav__link">
+  <a href="#virtualizacion-de-servidores-computo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Virtualización de Servidores (o Cómputo)
+        Virtualización de Servidores (Cómputo)
       
     </span>
   </a>
@@ -2008,17 +1997,6 @@
     <span class="md-ellipsis">
       
         Virtualización de Red (SDN)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#virtualizacion-a-nivel-de-sistema-operativo-contenedores" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Virtualización a Nivel de Sistema Operativo (Contenedores)
       
     </span>
   </a>
@@ -2109,10 +2087,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#virtualizacion-a-nivel-de-os-basada-en-contenedores" class="md-nav__link">
+  <a href="#virtualizacion-basada-en-contenedores" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Virtualización a Nivel de OS / Basada en Contenedores
+        Virtualización basada en Contenedores
       
     </span>
   </a>
@@ -2192,10 +2170,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#proxmox-server-solutions-alternativa-open-source-de-nivel-empresarial" class="md-nav__link">
+  <a href="#proxmox-server-solutions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proxmox Server Solutions (Alternativa Open Source de Nivel Empresarial)
+        Proxmox Server Solutions
       
     </span>
   </a>
@@ -2317,159 +2295,131 @@
 <p><strong>A diferencia de la emulación</strong>, que traduce instrucciones entre distintas arquitecturas mediante software, <strong>la virtualización ejecuta</strong> la mayoría de las instrucciones directamente <strong>en la CPU física</strong> subyacente para garantizar un alto rendimiento.</p>
 <h3 id="que-aporta"><span style="color: var(--ceny-secondary-color);">¿QUE APORTA?</span></h3>
 <figure style="float:right; margin-left:10px;">
-    <img alt="Virtualización" src="https://scbweb.com.mx/wp-content/uploads/sites/4/2021/06/pngwing.com_-1024x708.png" width="400" />
-    <small><figcaption>Concepto de virtualización</figcaption></small>
+    <img alt="Virtualización" src="https://www.administracionderedes.com/wp-content/uploads/2021/11/la-virtualizacion.jpg" width="400" />
+    <small><figcaption>Virtualización</figcaption></small>
 </figure>
 <p>La virtualización <strong>ha transformado la infraestructura</strong> tecnológica, <strong>optimizando el uso del hardware</strong> mediante la consolidación (unificar varias máquinas físicas en una sola, en forma de VMs) de servidores, permitiendo ejecutar de forma aislada y segura (<strong><em>SANDBOXING</em></strong>) múltiples sistemas operativos y <strong>aplicaciones</strong> legadas (<strong><em>LEGACY</em></strong> = sofware aún crítico para una empresa, pero que ya no recibe soporte) en un mismo entorno.</p>
 <p>Además, esta independencia del software respecto al hardware, no solo garantiza la <strong>compatibilidad con sistemas heterogéneos</strong>, sino que también aporta una <strong>flexibilidad y portabilidad</strong> excepcionales que facilitan el despliegue rápido, la migración en caliente y una <strong>alta disponibilidad</strong> ante cualquier fallo.</p>
 <h2 id="categorias-de-virtualizacion"><span style="color: var(--ceny-primary-color);">CATEGORÍAS DE VIRTUALIZACIÓN</span></h2>
 <p>Podemos diferenciar distintas categorías de virtualización, según el recurso físico sobre el cual se aplica la capa de abstracción:</p>
-<h3 id="virtualizacion-de-servidores-o-computo"><span style="color: var(--ceny-secondary-color);">Virtualización de Servidores (o Cómputo)</span></h3>
-<p>Es la forma clásica de virtualización. Consiste en abstraer el hardware de un servidor físico (CPU, arquitectura de memoria, buses) para segmentarlo en múltiples máquinas virtuales (VMs), cada una ejecutando su propio sistema operativo (<em>Guest OS</em>).</p>
-<ul>
-<li><strong>Mecanismos clave:</strong></li>
-<li><strong>Trap-and-Emulate / Binary Translation:</strong> Métodos históricos para interceptar instrucciones privilegiadas del Guest OS.</li>
-<li>
-<p><strong>Virtualización asistida por hardware (Intel VT-x, AMD-V):</strong> Introduce modos de ejecución específicos en el procesador (p. ej., <em>VMX Root</em> y <em>Non-Root Operation</em>) para que las instrucciones no privilegiadas se ejecuten nativamente y las sensible interpelen directamente al hipervisor (<em>VM-Exits</em>).</p>
-</li>
-<li>
-<p><strong>Paradigmas principales:</strong></p>
-</li>
-<li><strong>Virtualización completa (<em>Full Virtualization</em>):</strong> El SO huésped no requiere modificación; cree interactuar con hardware real.</li>
-<li><strong>Paravirtualización (<em>Paravirtualization</em>):</strong> El SO huésped se modifica explícitamente para llamar al hipervisor mediante <em>hypercalls</em>, eliminando la necesidad de emular dispositivos rígidos y aumentando la eficiencia de E/S.</li>
-</ul>
+<h3 id="virtualizacion-de-servidores-computo"><span style="color: var(--ceny-secondary-color);">Virtualización de Servidores (Cómputo)</span></h3>
+<p>Es la <strong>forma clásica</strong> de virtualización. Consiste en <strong>abstraer</strong> el hardware de <strong>un servidor</strong> físico (CPU, memoria, buses...) para <strong>segmentarlo en múltiples máquinas virtuales</strong> (VMs), cada una ejecutando su propio sistema operativo (<em><code>Guest OS</code></em>). Suele implementarse tanto en virtualización completa, como con paravirtualización.</p>
+<p>Dependiendo de las características y antigüedad del equipo anfitrión, puede funcionar mediante el mecanismo <strong>Trap-and-Emulate</strong> (traducir y emular), donde el hipervisor debe hacer de intermediario entre la VM y la CPU física; o mediante <strong>Virtualización asistida por hardware</strong>, en donde la CPU incluye extensiones especiales (como Intel VT-x o AMD-V) que permiten al procesador entender directamente las instrucciones de las VMs, sin necesidad de que nadie se las traduzca, lo que mejora mucho el rendimiento.</p>
+<figure>
+    <img alt="Virtualización Servidor" src="https://blogs.salleurl.edu/sites/default/files/content/paragraphs/imatge-gran-peu/image/19619/64793/virtualizationinfographic-2.png" width="500" />
+    <small><figcaption>Virtualización de Servidores</figcaption></small>
+</figure>
 <h3 id="virtualizacion-de-almacenamiento"><span style="color: var(--ceny-secondary-color);">Virtualización de Almacenamiento</span></h3>
-<p>Abstrae los dispositivos físicos de almacenamiento (discos duros, SSDs, arrays SAN/NAS) creando un único grupo lógico de almacenamiento (<em>storage pool</em>) que se distribuye de manera flexible entre los sistemas.</p>
+<p>Abstrae los dispositivos físicos de almacenamiento (discos duros, SSDs, arrays SAN/NAS) creando un único <strong>grupo lógico de almacenamiento</strong> (<em><code>Storage Pool</code></em>) que se distribuye de manera flexible entre los sistemas. Diferenciamos dos niveles de abstracción:</p>
 <ul>
-<li><strong>Niveles de abstracción:</strong></li>
-<li><strong>A nivel de bloque (p. ej., SAN / SDS - <em>Software-Defined Storage</em>):</strong> Oculta la complejidad de las cabinas físicas. El sistema lógico asigna LUNs (<em>Logical Unit Numbers</em>) virtuales y volúmenes dinámicos sin importar la ubicación física de los sectores.</li>
-<li>
-<p><strong>A nivel de archivo (p. ej., NAS virtual):</strong> Abstrae los sistemas de archivos mediante espacios de nombres globales (<em>Global Name Spaces</em>).</p>
-</li>
-<li>
-<p><strong>Técnicas destacadas:</strong></p>
-</li>
-<li><strong>Aprovisionamiento fino (<em>Thin Provisioning</em>):</strong> Asignación bajo demanda de espacio en disco en lugar de la reserva estática inicial.</li>
-<li><strong>Capas dinámicas (<em>Tiering</em>):</strong> Movimiento automático de bloques de datos entre medios rápidos (NVMe/SSD) y lentos (HDD) según la frecuencia de acceso.</li>
+<li><strong>A nivel de bloque (SAN, SDS):</strong> Oculta la complejidad de las cabinas físicas. El sistema lógico asigna LUNs (<em><code>Logical Unit Numbers</code></em>) virtuales y volúmenes dinámicos sin importar la ubicación física de los sectores.</li>
+<li><strong>A nivel de archivo (NAS virtual):</strong> Abstrae los sistemas de archivos mediante espacios de nombres globales (<em><code>Global Name Spaces</code></em>).</li>
 </ul>
+<figure style="float:right;">
+    <img alt="Storage Virtulization" src="https://www.starwindsoftware.com/v20/assets/images/2829/hero-img.svg" width="400" />
+    <small><figcaption>Virtualización del almacenamiento</figcaption></small>
+</figure>
+<p>Algunas de las mejoras que aporta son el <strong>aprovisionamiento fino</strong> (<em><code>Thin Provisioning</code></em>), ya que el espacio se va asignando bajo demanda, sin reservarlo de forma estática desde el inicio; y la <strong>estratificación de niveles</strong> (<em><code>Tiering</code></em>), pues de forma automática, se usan los medios más rápidos y costosos (NVMe, SSD) para mover la información más relevante y los medios más lentos (HDD) para los elementos no tan importantes, basándose en la frecuencia de acceso a cada bloque de datos.</p>
 <h3 id="virtualizacion-de-red-sdn"><span style="color: var(--ceny-secondary-color);">Virtualización de Red (SDN)</span></h3>
-<p>Desacopla los servicios de red de la infraestructura de hardware subyacente. En la literatura académica, esto se formaliza mediante el paradigma de <strong>Redes Definidas por Software (SDN)</strong> y <strong>Virtualización de Funciones de Red (NFV)</strong>.</p>
-<ul>
-<li><strong>Desacoplamiento de planos:</strong></li>
-<li><strong>Plano de Control (<em>Control Plane</em>):</strong> Centralizado lógicamente en un software controlador que decide cómo se encamina el tráfico.</li>
-<li>
-<p><strong>Plano de Datos (<em>Data/Forwarding Plane</em>):</strong> Conmutadores físicos o virtuales (<em>vSwitches</em>) que solo ejecutan el reenvío de paquetes dictado por el plano de control.</p>
-</li>
-<li>
-<p><strong>Redes superpuestas (<em>Overlay Networks</em>):</strong> Encapsulación de tramas de red L2 sobre protocolos de transporte L3 (como VXLAN, NVGRE o GENEVE), permitiendo crear millones de redes virtuales aisladas sobre una única infraestructura física (<em>underlay</em>).</p>
-</li>
-<li><strong>NFV:</strong> Reemplazo de <em>appliances</em> propietarios (firewalls, balanceadores de carga, routers) por software que corre en VMs o contenedores.</li>
-</ul>
-<h3 id="virtualizacion-a-nivel-de-sistema-operativo-contenedores"><span style="color: var(--ceny-secondary-color);">Virtualización a Nivel de Sistema Operativo (Contenedores)</span></h3>
-<p>A diferencia de la virtualización de servidores, no se virtualiza el hardware subyacente mediante un hipervisor, sino que <strong>se comparte el mismo núcleo (<em>kernel</em>) del sistema operativo anfitrión</strong>.</p>
-<ul>
-<li><strong>Mecanismos del kernel (principalmente en Linux):</strong></li>
-<li><strong>Namespaces:</strong> Proveen <strong>aislamiento de vista</strong> (procesos, red, montaje de archivos, usuarios, IPC).</li>
-<li>
-<p><strong>Control Groups (cgroups):</strong> Proveen <strong>limitación y contabilidad de recursos</strong> (CPU, memoria, E/S de disco).</p>
-</li>
-<li>
-<p><strong>Ventajas frente a las VMs:</strong> Menor sobrecarga (<em>overhead</em>), arranque en milisegundos y mayor densidad de instancias por host, a costa de compartir el mismo <em>kernel</em> y ofrecer un aislamiento ligeramente menos estricto que el hardware dedicado.</p>
-</li>
-</ul>
+<p><strong>Desacopla los servicios de red</strong> de la infraestructura de hardware subyacente, ya sea mediante la tecnología de <strong>Redes Definidas por Software (SDN)</strong>, que permite gestionar, programar y automatizar una red de ordenadores mediante aplicaciones de software;  o mediante la <strong>Virtualización de Funciones de Red (NFV)</strong>, que traslada funciones de red de equipos propietarios dedicados (enrutadores, cortafuegos o balanceadores de carga) a aplicaciones software que se ejecutan en un servidor.</p>
+<p>Entre sus principales aportes esta el <strong>desacoplamiento de planos</strong>, ya que separa el plano de control (cálculo de rutas optimas para encaminar el tráfico), del plano de datos (reenvío de la información siguiendo las instrucciones del plano de control); o la creación de <strong>redes superpuestas</strong> (<em><code>Overlay Networks</code></em>), que permite crear millones de redes virtuales aisladas sobre una única infraestructura física, con la que se comunican encapsulando los datos mediante técnicas de tunelización (<strong>VXLAN, NVGRE</strong> o <strong>GENEVE</strong>).</p>
+<figure>
+    <img alt="Virtualización de red" src="https://www.netics.es/imagenes/poridentidad?identidad=854f2278-5825-40b5-aa16-231a257b9ccc" width="450" />
+    <small><figcaption>Virtualización de red</figcaption></small>
+</figure>
 <h3 id="virtualizacion-de-escritorio-vdi"><span style="color: var(--ceny-secondary-color);">Virtualización de Escritorio (VDI)</span></h3>
-<p>Separa el entorno de escritorio del usuario (sistema operativo, aplicaciones y datos) del dispositivo físico del cliente (<em>thin client</em>, PC o móvil).</p>
+<p><strong>Separa el entorno de escritorio</strong> del usuario (sistema operativo, aplicaciones y datos) <strong>del dispositivo físico</strong> del cliente. Puede aplicarse con dos enfoques diferentes:</p>
+<figure style="float:right;">
+    <img alt="Escritorio Virtual" src="https://www.ovhcloud.com/sites/default/files/styles/large_screens_1x/public/2019-09/Media1-2_Virtual%20desktop%402x.png" width="400" />
+    <small><figcaption>Escritorio Virtual</figcaption></small>
+</figure>
 <ul>
-<li><strong>Enfoque centralizado (VDI - <em>Virtual Desktop Infrastructure</em>):</strong> Los escritorios se ejecutan como VMs alojadas en un centro de datos. La interacción se realiza mediante protocolos de visualización remota (p. ej., PCoIP, ICA/HDX) encargados de comprimir y transmitir los eventos de teclado/ratón y los píxeles de pantalla.</li>
-<li><strong>Enfoque de aplicación (<em>Application Virtualization</em>):</strong> Encapsulamiento de una aplicación individual para que se ejecute en un entorno aislado sin interferir con las librerías del sistema operativo local (p. ej., Microsoft App-V).</li>
+<li><strong>Enfoque centralizado o VDI</strong> (<em>Virtual Desktop Infrastructure</em>): los escritorios se ejecutan como VMs alojadas en un centro de datos. La interacción se realiza mediante protocolos de visualización remota (como PCoIP o ICA/HDX) encargados de comprimir y transmitir los eventos de teclado/ratón y los píxeles de pantalla.</li>
+<li><strong>Enfoque de aplicación</strong> (<em>Application Virtualization</em>): donde s eencapsula una aplicación de forma individual para que se ejecute en un entorno aislado sin interferir con las librerías del sistema operativo local, un ejemplo sería Microsoft App-V.</li>
 </ul>
 <h3 id="virtualizacion-de-memoria"><span style="color: var(--ceny-secondary-color);">Virtualización de Memoria</span></h3>
-<p>Abstrae la memoria física del sistema ($RAM$) separándola del espacio de direcciones que ven los procesos o las máquinas virtuales.</p>
-<ul>
-<li><strong>Traducción de Direcciones de Dos Niveles (en VMs):</strong></li>
-<li>La VM traduce una <em>Dirección Virtual del Huésped (GVA)</em> a una <em>Dirección Física del Huésped (GPA)</em>.</li>
-<li>
-<p>El hipervisor traduce la <em>GPA</em> a la <em>Dirección Física del Host (HPA)</em>.</p>
-</li>
-<li>
-<p><strong>Optimización por Hardware:</strong> Se realiza mediante <strong>EPT</strong> (<em>Extended Page Tables</em> en Intel) o <strong>NPT/RVI</strong> (<em>Nested Page Tables</em> en AMD), reduciendo drásticamente la sobrecarga que imponían históricamente las tablas de páginas en sombra (<em>Shadow Page Tables</em>) implementadas puramente por software.</p>
-</li>
-</ul>
+<p>Abstrae la memoria física del sistema (<em>RAM</em>) <strong>separándola del espacio de direcciones</strong> que ven los procesos o las máquinas virtuales.</p>
+<p><strong>Historicamente</strong> ha habido problemas de paginación (<em><code>Shadow Page Tables</code></em>) que conllevaban <strong>lentitud de procesamiento</strong> al virtualizar memoria, ya que era necesario traducir las direcciones de memoria virtual (Guest OS) hasta en dos ocasiones hasta que llegaba a la memoria física (Host RAM), y se llevaban a cabo exclusivamente <strong>mediante software</strong>.</p>
+<p>Pero hoy en día, gracias a las tecnologías <strong>EPT</strong> de Intel (<em>Extended Page Tables</em>) o <strong>NPT</strong> de AMD (<em>Nested Page Tables</em>), se ha conseguido que esa traducción de direcciones en dos niveles sea administrada por hardware, realizando la <strong>conversión directamente dentro de la CPU</strong>. Lo que reduce drasticamente los tiempos de procesado y ofrece un rendimiento cercano al de una memoria física.</p>
+<figure>
+    <img alt="Virtualización de memoria" src="https://www.hostitsmart.com/blog/wp-content/uploads/2023/12/memory-virtualization.jpg" width="400" />
+    <small><figcaption>Memoria virtual</figcaption></small>
+</figure>
 <h2 id="metodos-de-implementacion"><span style="color: var(--ceny-primary-color);">MÉTODOS DE IMPLEMENTACIÓN</span></h2>
-<p>La clasificación de las implementaciones de virtualización se basa en <strong>la ubicación de la capa de abstracción</strong> (<em>virtualization layer</em>) y en <strong>el grado de modificación</strong> del sistema operativo huésped (<em>Guest OS</em>).</p>
+<p>La clasificación de las implementaciones de virtualización se basa en <strong>la ubicación de la capa de abstracción</strong> (<em>virtualization layer</em>) y en <strong>el grado de modificación</strong> del sistema operativo huésped (<em>Guest OS</em>). Según estas dos características, vamos a diferencias los siguientes métodos:</p>
 <h3 id="virtualizacion-tipo-1-o-bare-metal-nativa"><span style="color: var(--ceny-secondary-color);">Virtualización Tipo 1 o "Bare-Metal" (Nativa)</span></h3>
-<p>El hipervisor o <em>Virtual Machine Monitor</em> (VMM) se ejecuta directamente sobre el hardware físico, sin ningún sistema operativo intermediario. El hipervisor actúa como el propio núcleo del sistema.</p>
+<p>El hipervisor o <em>Virtual Machine Monitor</em> (VMM) <strong>se ejecuta directamente sobre el hardware físico</strong>, sin ningún sistema operativo intermediario. El hipervisor actúa como el propio núcleo del sistema, administrando directamente la CPU, la memoria principal y las interrupciones. Controla la asignación de hardware y programa la ejecución de las máquinas virtuales. Algunos ejemplos son <em>VMware ESXi</em>, <em>Xen</em>, <em>KVM</em> (convertido en Tipo 1 mediante el módulo del <em>kernel</em> de Linux), <em>Microsoft Hyper-V</em>.</p>
 <ul>
-<li><strong>Mecanismo de funcionamiento:</strong> El hipervisor administra de forma directa la CPU, la memoria principal y las interrupciones. Controla la asignación de hardware y programa la ejecución de las máquinas virtuales.</li>
-<li><strong>Ventajas:</strong></li>
+<li>
+<p><strong>Pros:</strong></p>
+<ul>
 <li><strong>Alto rendimiento y baja latencia:</strong> Al no existir capas adicionales de SO anfitrión, la sobrecarga (<em>overhead</em>) de gestión es mínima.</li>
-<li>
-<p><strong>Mayor aislamiento y seguridad:</strong> Se reduce la superficie de ataque al no depender de las vulnerabilidades de un SO multipropósito subyacente.</p>
+</ul>
+<p><figure markdown='span' style="float:right;">
+<img alt="Hypervisor tipo 1" src="https://cdn-images.tryhackme.com/user-uploads/5de96d9ca744773ea7ef8c00/room-content/5de96d9ca744773ea7ef8c00-1722331380372.png" width="400" />
+<small><figcaption>Hypervisor Tipo 1</figcaption></small>
+</figure></p>
+<ul>
+<li><strong>Mayor aislamiento y seguridad:</strong> Se reduce la superficie de ataque al no depender de las vulnerabilidades de un SO multipropósito subyacente.</li>
+</ul>
 </li>
 <li>
-<p><strong>Inconvenientes:</strong></p>
-</li>
-<li>
-<p>Gestión de controladores de dispositivos (<em>drivers</em>) más compleja, ya que el hipervisor debe incluir soporte específico para el hardware.</p>
-</li>
-<li>
-<p><strong>Ejemplos académicos/comerciales:</strong> VMware ESXi, Xen, KVM (convertido en Tipo 1 mediante el módulo del <em>kernel</em> de Linux), Microsoft Hyper-V.</p>
+<p><strong>Contras:</strong></p>
+<ul>
+<li>Gestión de controladores de dispositivos (<em>drivers</em>) más compleja, ya que el hipervisor debe incluir soporte específico para el hardware.</li>
+</ul>
 </li>
 </ul>
 <h3 id="virtualizacion-tipo-2-o-hosted-alojada"><span style="color: var(--ceny-secondary-color);">Virtualización Tipo 2 o "Hosted" (Alojada)</span></h3>
-<p>El hipervisor se ejecuta como un proceso o aplicación dentro de un sistema operativo anfitrión (<em>Host OS</em>) convencional.</p>
+<p>El hipervisor <strong>se ejecuta como</strong> un proceso o <strong>aplicación dentro de un SO anfitrión</strong> (<em>Host OS</em>). Las peticiones de hardware formuladas por las VMs pasan por el hipervisor, este las traduce a llamadas al sistema (<em>system calls</em>) del SO anfitrión, y es el SO anfitrión quien finalmente interactúa con el hardware. Algunos ejemplos son <em>Oracle VirtualBox</em>, <em>VMware Workstation</em>, <em>QEMU</em> (en modo emulación pura).</p>
 <ul>
-<li><strong>Mecanismo de funcionamiento:</strong> Las peticiones de hardware formuladas por las VMs pasan por el hipervisor, este las traduce a llamadas al sistema (<em>system calls</em>) del SO anfitrión, y es el SO anfitrión quien finalmente interactúa con el hardware.</li>
-<li><strong>Ventajas:</strong></li>
+<li>
+<p><strong>Pros:</strong></p>
+<ul>
 <li><strong>Amplia compatibilidad de hardware:</strong> Utiliza la base de controladores (<em>drivers</em>) ya instalada en el SO anfitrión.</li>
-<li>
-<p><strong>Facilidad de instalación y gestión:</strong> Funciona como cualquier software de escritorio estándar.</p>
+</ul>
+<p><figure markdown='span' style="float:right;">
+<img alt="Hypervisor tipo 2" src="https://cdn-images.tryhackme.com/user-uploads/5de96d9ca744773ea7ef8c00/room-content/5de96d9ca744773ea7ef8c00-1722332445912.png" width="400" />
+<small><figcaption>Hypervisor Tipo 2</figcaption></small>
+</figure></p>
+<ul>
+<li><strong>Facilidad de instalación y gestión:</strong> Funciona como cualquier software de escritorio estándar.</li>
+</ul>
 </li>
 <li>
-<p><strong>Inconvenientes:</strong></p>
-</li>
-<li>
-<p><strong>Sobrecarga de rendimiento elevada:</strong> Cada operación de E/S o llamada al sistema debe atravesar múltiples capas contextuales (cambios de contexto entre espacio de usuario y espacio de núcleo tanto en el huésped como en el anfitrión).</p>
-</li>
-<li>
-<p><strong>Ejemplos académicos/comerciales:</strong> Oracle VirtualBox, VMware Workstation, QEMU (en modo emulación pura).</p>
+<p><strong>Contras:</strong></p>
+<ul>
+<li><strong>Sobrecarga de rendimiento elevada:</strong> Cada operación de E/S o llamada al sistema debe atravesar múltiples capas contextuales (cambios de contexto entre espacio de usuario y espacio de núcleo tanto en el huésped como en el anfitrión).</li>
+</ul>
 </li>
 </ul>
 <h3 id="virtualizacion-completa-full-virtualization"><span style="color: var(--ceny-secondary-color);">Virtualización Completa (<em>Full Virtualization</em>)</span></h3>
-<p>Método de implementación donde el hardware físico se abstrae por completo de manera que el sistema operativo huésped <strong>no requiere ningún tipo de modificación</strong>; "cree" estar ejecutándose sobre un equipo físico real.</p>
+<p>Método de implementación donde el <strong>hardware físico se abstrae por completo</strong> de manera que el sistema operativo huésped <strong>no requiere ningún tipo de modificación</strong>; "cree" estar ejecutándose sobre un equipo físico real. Este tipo de virtualización ha ido experimentando una evolución técnica en su implementación, dentro de la cual se destacan los siguientes avances, en orden cronológico:</p>
 <ul>
-<li><strong>Evolución técnica de la implementación:</strong></li>
-<li><strong>Traducción Binaria Dinámica (<em>Dynamic Binary Translation</em>):</strong> Históricamente desarrollada por VMware para superar las limitaciones de la arquitectura x86 (teorema de Popek-Goldberg). El hipervisor escanea el código ejecutable del huésped en tiempo real, intercepta las instrucciones sensibles o privilegiadas que se ejecutan en anillo 1/2/3 y las reemplaza por secuencias de instrucciones seguras.</li>
-<li><strong>Virtualización Asistida por Hardware (<em>Hardware-Assisted Virtualization</em>):</strong> Estándar actual desde la introducción de las extensiones Intel VT-x y AMD-V. El procesador físico implementa modos de operación específicos:</li>
+<li><strong>Traducción Binaria Dinámica</strong> (<em>Dynamic Binary Translation</em>): Históricamente desarrollada por VMware, el hipervisor escanea el código ejecutable del huésped (cualquier programa o instrucción lanzada desde la VM) en tiempo real, intercepta las instrucciones sensibles o privilegiadas que se ejecutan en los anillos 1, 2 y 3 (niveles de privilegios de ejecución de la CPU) y las reemplaza por secuencias de instrucciones seguras.</li>
+<li><strong>Virtualización Asistida por Hardware</strong> (<em>Hardware-Assisted Virtualization</em>): Estándar actual desde la introducción de las extensiones Intel VT-x y AMD-V. El procesador físico implementa <strong>dos modos de operación</strong> específicos:<ul>
 <li><strong>VMX Root Operation:</strong> Modo con privilegios completos donde se ejecuta el hipervisor.</li>
-<li><strong>VMX Non-Root Operation:</strong> Modo restringido donde se ejecuta el <em>Guest OS</em>. Las instrucciones sensibles provocan un cambio de contexto automático hacia el hipervisor mediante un evento denominado <strong>VM-Exit</strong>.</li>
+<li><strong>VMX Non-Root Operation:</strong> Modo restringido donde se ejecuta el <em>Guest OS</em>. Las instrucciones sensibles provocan un cambio de contexto automático hacia el hipervisor mediante un evento denominado <em>VM-Exit</em>.</li>
+</ul>
+</li>
 </ul>
 <h3 id="paravirtualizacion-paravirtualization"><span style="color: var(--ceny-secondary-color);">Paravirtualización (<em>Paravirtualization</em>)</span></h3>
-<p>Método formalizado por Barham et al. (2003) en el diseño inicial de Xen. Consiste en <strong>modificar intencionadamente el código fuente del sistema operativo huésped</strong> para que sea consciente de que se está ejecutando dentro de un entorno virtualizado.</p>
+<p>Consiste en <strong>modificar intencionadamente el código fuente del sistema operativo huésped</strong> para que sea consciente de que se está ejecutando dentro de un entorno virtualizado. Su funcionamiento se basa por un lado, en eliminar las instrucciones sensibles no virtualizables del <em>kernel</em> del huésped y reemplazarlas por llamadas explícitas al hipervisor o <strong>hiperllamadas</strong> (<em>hypercalls</em>), análogas a las llamadas al sistema (<em>syscalls</em>). Y por otro lado, los controladores de dispositivos no emulan componentes de hardware rígidos (como tarjetas de red antiguas), sino que utilizan arquitecturas de <strong>controladores divididas</strong> (<em>split drivers</em>): un controlador frontal (<em>frontend</em>) en el huésped se comunica mediante memoria compartida con un controlador trasero (<em>backend</em>) en el hipervisor.</p>
 <ul>
-<li><strong>Mecanismo de funcionamiento:</strong></li>
-<li>Se eliminan las instrucciones sensibles no virtualizables del <em>kernel</em> del huésped y se reemplazan por llamadas explícitas al hipervisor, denominadas <strong>hiperllamadas</strong> (<em>hypercalls</em>), análogas a las llamadas al sistema (<em>syscalls</em>).</li>
-<li>
-<p>Los controladores de dispositivos no emulan componentes de hardware rígidos (como tarjetas de red antiguas), sino que utilizan arquitecturas de controladores divididas (<em>split drivers</em>): un controlador frontal (<em>frontend</em>) en el huésped se comunica mediante memoria compartida con un controlador trasero (<em>backend</em>) en el hipervisor.</p>
-</li>
-<li>
-<p><strong>Ventajas:</strong> Elimina la necesidad de traducción binaria o trampeo continuo por hardware, reduciendo significativamente la latencia en operaciones de entrada/salida (E/S).</p>
-</li>
-<li><strong>Inconvenientes:</strong> Requiere acceso al código fuente del sistema operativo para modificarlo (incompatible con sistemas operativos propietarios cerrados como Windows no adaptados).</li>
+<li><strong>Pros:</strong> Elimina la necesidad de traducción binaria o trampeo continuo por hardware, reduciendo significativamente la latencia en operaciones de entrada/salida (E/S).</li>
+<li><strong>Contras:</strong> Requiere acceso al código fuente del sistema operativo para modificarlo (incompatible con sistemas operativos propietarios cerrados como Windows no adaptados).</li>
 </ul>
-<h3 id="virtualizacion-a-nivel-de-os-basada-en-contenedores"><span style="color: var(--ceny-secondary-color);">Virtualización a Nivel de OS / Basada en Contenedores</span></h3>
-<p>Implementación donde <strong>no se utiliza un hipervisor</strong> ni se crean máquinas virtuales completas. En su lugar, el propio núcleo del sistema operativo anfitrión gestiona múltiples instancias de espacio de usuario aisladas entre sí.</p>
-<ul>
-<li><strong>Mecanismos clave en el núcleo (Linux):</strong></li>
-<li><strong>Namespaces:</strong> Asignan a cada contenedor su propia vista privada de los recursos del sistema (PID, red, puntos de montaje, usuarios, IPC).</li>
-<li>
-<p><strong>Control Groups (cgroups):</strong> Garantizan la contabilidad, priorización y restricción de recursos físicos (cuotas de CPU, límite de memoria RAM, ancho de banda de disco).</p>
-</li>
-<li>
-<p><strong>Diferencia fundamental:</strong> Todos los contenedores comparten el <strong>mismo <em>kernel</em></strong> del sistema operativo anfitrión, eliminando el coste de memoria y cómputo que supone ejecutar un <em>kernel</em> independiente por cada instancia.</p>
-</li>
-<li><strong>Ejemplos:</strong> LXC/LXD, Docker, Podman, FreeBSD Jails, Solaris Zones.</li>
-</ul>
+<figure>
+    <img alt="Paravirtualización" src="https://lh6.googleusercontent.com/iCsltY0qT-uSUoGDxMflL5V7Rhgs5EcKi2SPlEIy5i1e3ai327HOYfFdyyMBwCvZftREUFQN5cDkDdadq4uk7EyNBfUw5ZUfVhWegdh38uNrz2BxNX6XVZA3dMsBhc6xSJbB4Z0u" width="500" />
+    <small><figcaption>Paravirtualización</figcaption></small>
+</figure>
+<h3 id="virtualizacion-basada-en-contenedores"><span style="color: var(--ceny-secondary-color);">Virtualización basada en Contenedores</span></h3>
+<p>Implementación donde <strong>no se utiliza un hipervisor</strong> ni se crean máquinas virtuales completas. En su lugar, <strong>el propio núcleo del SO anfitrión</strong> gestiona múltiples instancias de entornos de usuario aisladas entre sí, cada uno con su propio sistema de ficheros. Esto se consigue mediante el uso de <strong>namespaces</strong> que asignan a cada contenedor su propia vista privada de los recursos del sistema (PID, red, puntos de montaje, usuarios, IPC); y la creación de <strong>control groups</strong> (cgroups), que garantizan la contabilidad, priorización y restricción de recursos físicos (cuotas de CPU, límite de memoria RAM, ancho de banda de disco).</p>
+<figure style="float:right;">
+    <img alt="Virtualización con Contenedores" src="https://www.prored.es/wp-content/uploads/2019/01/prored-esquema-arquitectura-contenedor-software.png" width="350" />
+    <small><figcaption>Virtualización con contenedores</figcaption></small>
+</figure>
+<p>Una de las grandes diferencias con las VMs, es que aquí <strong>todos los contenedores comparten el mismo <em>kernel</em></strong> del SO anfitrión, eliminando el coste de memoria y cómputo que supone ejecutar un <em>kernel</em> independiente por cada instancia. Esta compartición, causa un <strong>aislamiento ligeramente menos estricto</strong> que el hardware dedicado, pero a cambio se obtiene una menor sobrecarga (<em>overhead</em>), arranque en milisegundos y mayor densidad de instancias por host. Algunas de las tecnologías que usan este tipo de virtualiación son <em>LXC/LXD, Docker, Podman, FreeBSD Jails, Solaris Zones</em>.</p>
 <h3 id="comparativa-rapida"><span style="color: var(--ceny-secondary-color);">Comparativa Rápida</span></h3>
 <table>
 <thead>
@@ -2497,6 +2447,13 @@
 <td>Alto</td>
 </tr>
 <tr>
+<td><strong>Full Virtualization</strong></td>
+<td>No requerida</td>
+<td>Hipervisor + Asistencia por Hardware (VT-x/AMD-V) / Traducción Binaria</td>
+<td>Bajo a Medio (2-10%)</td>
+<td>Muy alto</td>
+</tr>
+<tr>
 <td><strong>Paravirtualización</strong></td>
 <td>Requerida (<em>Kernel</em>)</td>
 <td>Hipervisor (<em>Hypercalls</em>)</td>
@@ -2514,7 +2471,7 @@
 </table>
 <h2 id="tecnologias-especificas-de-virtualizacion"><span style="color: var(--ceny-primary-color);">TECNOLOGÍAS ESPECÍFICAS DE VIRTUALIZACIÓN</span></h2>
 <p>La virtualización comercial e industrial está dominada por un grupo selecto de tecnologías desarrolladas por las compañías líderes del sector. A continuación, se detallan las principales propuestas tecnológicas de cada una:</p>
-<h3 id="vmware-broadcom"><span style="color: var(--ceny-secondary-color);">VMware (Broadcom)</span></h3>
+<h3 id="vmware-broadcom"><span style="color: var(--ceny-secondary-color);">VMware (Broadcom) <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c6.628 0 12 5.372 12 12a12 12 0 0 1-.56 3.63 14 14 0 0 0-.867-.388c-1.372-.546-2.629-.363-3.888.4 0 0-.459.28-.597.366-.586.37-1.14.717-1.672.717-.508 0-1.007-.135-1.218-1.117-.33-1.533-1.135-5.298-1.486-7.162-.206-1.097-.319-1.688-.436-2.088-.208-.706-.586-1.09-1.124-1.15 0 0-.084-.013-.152-.013s-.162.014-.162.014c-.531.064-.907.447-1.114 1.15-.117.4-.23.99-.436 2.087-.351 1.864-1.156 5.63-1.486 7.162-.21.982-.71 1.117-1.218 1.117-.531 0-1.086-.348-1.672-.717-.138-.086-.597-.366-.597-.366-1.259-.763-2.516-.946-3.888-.4-.301.12-.586.251-.867.387A12 12 0 0 1 0 12C0 5.372 5.372 0 12 0m8.375 16.976c-.453.152-.855.42-1.256.672-.756.475-1.613 1.014-2.704 1.014-1.614 0-2.749-.964-3.112-2.647C13.023 14.712 12 9.793 12 9.793a496 496 0 0 1-1.303 6.222c-.362 1.683-1.497 2.647-3.112 2.647-1.09 0-1.946-.539-2.703-1.014-.401-.252-.804-.52-1.256-.672a2.3 2.3 0 0 0-1.414-.01c-.33.097-.644.234-.951.386C3.227 21.292 7.207 24 11.91 24s8.863-2.708 10.83-6.648a6 6 0 0 0-.95-.386 2.32 2.32 0 0 0-1.415.01"/></svg></span></span></h3>
 <p>Historicamente pionera en la traducción binaria y el desarrollo de hipervisores empresariales, VMware fundamenta su ecosistema en la arquitectura de hipervisor bare-metal.</p>
 <ul>
 <li><strong>VMware ESXi:</strong> Es su hipervisor Tipo 1 (bare-metal). Posee un micronúcleo propio (<em>VMkernel</em>) que gestiona directamente la memoria, los procesos y el acceso de E/S al hardware sin depender de un sistema operativo subyacente.</li>
@@ -2524,7 +2481,7 @@
 <li><strong>DRS (<em>Distributed Resource Scheduler</em>):</strong> Balanceo dinámico de carga basado en el análisis de consumo de CPU y RAM.</li>
 <li><strong>vSAN (<em>Storage Area Network</em> virtual):</strong> Tecnología de almacenamiento definido por software (SDS) que agrupa los discos locales de los hosts ESXi en un <em>pool</em> de almacenamiento distribuido.</li>
 </ul>
-<h3 id="microsoft"><span style="color: var(--ceny-secondary-color);">Microsoft</span></h3>
+<h3 id="microsoft"><span style="color: var(--ceny-secondary-color);">Microsoft <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2zm9 19H2v-9h9zM21 3v9h-9V3zm0 19h-9v-9h9z"/></svg></span></span></h3>
 <p>Microsoft evolucionó desde la virtualización alojada hacia un modelo de particionamiento basado en hipervisor nativo.</p>
 <ul>
 <li><strong>Microsoft Hyper-V:</strong> Hipervisor Tipo 1 basado en microkernel con arquitectura de particiones.</li>
@@ -2536,14 +2493,14 @@
 <p><strong>Azure Stack HCI:</strong> Solución de infraestructura hiperconvergente (HCI) orientada a entornos híbridos, que combina Hyper-V con tecnologías de red (Software-Defined Networking) y almacenamiento (<em>Storage Spaces Direct</em>) conectadas con la nube de Azure.</p>
 </li>
 </ul>
-<h3 id="red-hat-ibm"><span style="color: var(--ceny-secondary-color);">Red Hat (IBM)</span></h3>
+<h3 id="red-hat-ibm"><span style="color: var(--ceny-secondary-color);">Red Hat (IBM) <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.009 13.386c1.577 0 3.86-.326 3.86-2.202a1.8 1.8 0 0 0-.04-.431l-.94-4.08c-.216-.898-.406-1.305-1.982-2.093-1.223-.625-3.888-1.658-4.676-1.658-.733 0-.947.946-1.822.946-.842 0-1.467-.706-2.255-.706-.757 0-1.25.515-1.63 1.576 0 0-1.06 2.99-1.197 3.424a.8.8 0 0 0-.028.245c0 1.162 4.577 4.974 10.71 4.974m4.101-1.435c.218 1.032.218 1.14.218 1.277 0 1.765-1.984 2.745-4.593 2.745-5.895.004-11.06-3.451-11.06-5.734a2.3 2.3 0 0 1 .19-.925C2.746 9.415 0 9.794 0 12.217c0 3.969 9.405 8.861 16.851 8.861 5.71 0 7.149-2.582 7.149-4.62 0-1.605-1.387-3.425-3.887-4.512"/></svg></span></span></h3>
 <p>Red Hat centra su estrategia de virtualización en el código abierto empresarial y la convergencia entre máquinas virtuales y contenedores.</p>
 <ul>
 <li><strong>KVM (<em>Kernel-based Virtual Machine</em>):</strong> Módulo del núcleo Linux que transforma el <em>kernel</em> en un hipervisor Tipo 1. Maneja cada VM como un proceso estándar de Linux programado por el <em>scheduler</em> del sistema.</li>
 <li><strong>QEMU:</strong> Utilizado conjuntamente con KVM para realizar la emulación de componentes de hardware y la gestión del espacio de usuario.</li>
 <li><strong>Red Hat OpenShift Virtualization:</strong> Basado en el proyecto de código abierto <strong>KubeVirt</strong>. Permite ejecutar y gestionar máquinas virtuales tradicionales dentro de la misma plataforma de orquestación de contenedores (Kubernetes), permitiendo una gestión unificada de cargas legacy y nativas de la nube.</li>
 </ul>
-<h3 id="citrix-systems-cloud-software-group"><span style="color: var(--ceny-secondary-color);">Citrix Systems (Cloud Software Group)</span></h3>
+<h3 id="citrix-systems-cloud-software-group"><span style="color: var(--ceny-secondary-color);">Citrix Systems (Cloud Software Group) <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.983 0a1.78 1.78 0 0 0-1.78 1.78 1.78 1.78 0 0 0 1.78 1.78 1.78 1.78 0 0 0 1.78-1.78A1.78 1.78 0 0 0 11.983 0M5.17 5.991a1.026 1.026 0 0 0-1.095 1.027c0 .308.136.616.376.822l6.162 7.086-6.401 7.258a1.08 1.08 0 0 0-.309.787c0 .582.48 1.027 1.062 1.027.342 0 .684-.17.89-.444l6.128-7.19 6.162 7.19c.205.274.547.444.89.444.582.035 1.062-.445 1.062-1.027a1.14 1.14 0 0 0-.309-.787l-6.402-7.258 6.162-7.086c.24-.206.377-.514.377-.822v-.034c0-.582-.513-1.027-1.095-.993-.343 0-.65.171-.856.445l-5.957 7.018L6.06 6.436a1.07 1.07 0 0 0-.855-.445z"/></svg></span></span></h3>
 <p>Citrix ha centrado históricamente sus tecnologías en la virtualización de escritorios, aplicaciones y la capa de hipervisor optimizada para E/S.</p>
 <ul>
 <li><strong>XenServer (Citrix Hypervisor):</strong> Hipervisor Tipo 1 desarrollado comercialmente sobre el motor de paravirtualización y código abierto <strong>Xen</strong>.</li>
@@ -2555,7 +2512,7 @@
 <p><strong>Citrix DaaS / Virtual Apps and Desktops:</strong> Tecnología referente en la virtualización de aplicaciones y escritorios (VDI). Utiliza el protocolo propietario <strong>HDX / ICA</strong> (<em>Independent Computing Architecture</em>) para la compresión y transmisión eficiente del flujo de pantalla y eventos de entrada a través de redes WAN o de bajo ancho de banda.</p>
 </li>
 </ul>
-<h3 id="proxmox-server-solutions-alternativa-open-source-de-nivel-empresarial"><span style="color: var(--ceny-secondary-color);">Proxmox Server Solutions (Alternativa Open Source de Nivel Empresarial)</span></h3>
+<h3 id="proxmox-server-solutions"><span style="color: var(--ceny-secondary-color);">Proxmox Server Solutions <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.928 1.825c-1.09.553-1.09.64-.07 1.78 5.655 6.295 7.004 7.782 7.107 7.782.139.017 7.971-8.542 8.058-8.801.034-.07-.208-.312-.519-.536-.415-.312-.864-.433-1.712-.467-1.59-.104-2.144.242-4.115 2.455-.899 1.003-1.66 1.833-1.66 1.833-.017 0-.76-.813-1.642-1.798S8.473 2.1 8.127 1.91c-.796-.45-2.421-.484-3.2-.086zM1.297 4.367C.45 4.695 0 5.007 0 5.248c0 .121 1.331 1.678 2.94 3.459 1.625 1.78 2.939 3.268 2.939 3.302s-1.331 1.522-2.94 3.303C1.314 17.11.017 18.683.035 18.822c.086.467 1.504 1.055 2.541 1.055 1.678-.018 2.058-.312 5.603-4.202 1.78-1.954 3.233-3.614 3.233-3.666 0-.069-1.435-1.694-3.199-3.63-2.3-2.508-3.423-3.632-3.96-3.874-.812-.398-2.126-.467-2.956-.138m18.467.12c-.502.26-1.764 1.505-3.943 3.891-1.763 1.937-3.199 3.562-3.199 3.631 0 .07 1.453 1.712 3.234 3.666 3.544 3.89 3.925 4.184 5.602 4.202 1.038 0 2.455-.588 2.542-1.055.017-.156-1.28-1.712-2.905-3.493-1.608-1.78-2.94-3.285-2.94-3.32s1.332-1.539 2.94-3.32C22.72 6.91 24.017 5.352 24 5.214c-.087-.45-1.366-.968-2.473-1.038-.795-.034-1.21.035-1.763.312zM7.954 16.973c-2.144 2.369-3.908 4.374-3.943 4.46-.034.07.208.312.52.537.414.311.864.432 1.711.467 1.574.103 2.161-.26 4.15-2.508.864-.968 1.608-1.78 1.625-1.78s.761.812 1.643 1.798c2.023 2.248 2.559 2.576 4.132 2.49.848-.035 1.297-.156 1.712-.467.311-.225.553-.467.519-.536-.087-.26-7.92-8.819-8.058-8.801-.069 0-1.867 1.954-4.011 4.34"/></svg></span></span></h3>
 <p>Muy relevante en el sector por su implementación de código abierto sin licencias por <em>socket</em>.</p>
 <ul>
 <li><strong>Proxmox VE (<em>Virtual Environment</em>):</strong> Plataforma de gestión de virtualización empresarial basada en Debian GNU/Linux.</li>
@@ -2632,6 +2589,12 @@ Permite elevar la tasa media de uso de la CPU y memoria en los servidores físic
 Al disminuir la infraestructura física, decrece la inversión en adquisición de servidores (CapEx), así como los gastos asociados al consumo eléctrico, espacio físico en el centro de datos y sistemas de refrigeración (OpEx).</li>
 <li><strong>Aislamiento y tolerancia a fallos (<em>Sandboxing</em>):</strong>
 La separación lógica estricta entre instancias impide que un error crítico (<em>kernel panic</em>), un fallo de software o un incidente de seguridad en una máquina virtual o contenedor afecte al resto de entornos o al host físico.</li>
+</ul>
+<figure style="float:right;">
+    <img alt="Beneficios Virtualización" src="https://instel.es/wp-content/uploads/2015/04/6-razones-para-virtualizar-tus-servidores.png" width="400" />
+    <small><figcaption>Beneficios de virtualizar</figcaption></small>
+</figure>
+<ul>
 <li><strong>Continuidad de negocio y rápida recuperación:</strong>
 La encapsulación de todo el estado de un entorno en archivos facilita la realización de instantáneas (<em>snapshots</em>), copias de seguridad consistentes y la migración en vivo (<em>live migration</em>) entre servidores físicos para mantenimiento sin parada de servicio.</li>
 <li><strong>Flexibilidad y agilidad operativa:</strong>
