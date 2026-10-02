@@ -29,7 +29,7 @@
     
     
       
-        <title>UD5. Kubernetes - MATERIALES INFORMÁTICA IES AZARQUIEL</title>
+        <title>UD5. Proxmox - MATERIALES INFORMÁTICA IES AZARQUIEL</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#que-es-kubernetes" class="md-skip">
+        <a href="#crear-plantilla-mv-ubuntu" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UD5. Kubernetes
+              UD5. Proxmox
             
           </span>
         </div>
@@ -268,6 +268,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -514,7 +518,7 @@
   <span class="md-ellipsis">
     
   
-    UD5. Kubernetes
+    UD5. Proxmox
   
 
     
@@ -532,7 +536,7 @@
   <span class="md-ellipsis">
     
   
-    UD5. Kubernetes
+    UD5. Proxmox
   
 
     
@@ -556,299 +560,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#que-es-kubernetes" class="md-nav__link">
+  <a href="#crear-plantilla-mv-ubuntu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ¿QUE ES KUBERNETES?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arquitectura-de-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ARQUITECTURA DE KUBERNETES
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ARQUITECTURA DE KUBERNETES">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#componentes-basicos-de-cualquier-nodo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        COMPONENTES BÁSICOS DE CUALQUIER NODO
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#componentes-especificos-del-nodo-maestro" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        COMPONENTES ESPECÍFICOS DEL NODO MAESTRO
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-de-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        INSTALACIÓN DE KUBERNETES
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="INSTALACIÓN DE KUBERNETES">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#instalacion-con-kubeadm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        INSTALACIÓN CON KUBEADM
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#instalacion-kubernetes-con-kind" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        INSTALACIÓN KUBERNETES CON KIND
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practica-1-creacion-de-un-cluster-con-kind" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PRÁCTICA 1: CREACIÓN DE UN CLUSTER CON KIND
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="PRÁCTICA 1: CREACIÓN DE UN CLUSTER CON KIND">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#personalizar-la-red-virtual-del-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PERSONALIZAR LA RED VIRTUAL DEL CLUSTER
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#crear-fichero-de-configuracion-del-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CREAR FICHERO DE CONFIGURACIÓN DEL CLUSTER
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#levantar-el-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LEVANTAR EL CLUSTER
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tipos-de-objetos-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        TIPOS DE OBJETOS KUBERNETES
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="TIPOS DE OBJETOS KUBERNETES">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#los-manifiestos-yaml" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LOS MANIFIESTOS .YAML
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PODS
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#namespace-y-contexto" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NAMESPACE y CONTEXTO
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deployment-y-replicaset" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DEPLOYMENT y REPLICASET
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practica-2-despliegue-nginx-en-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PRÁCTICA 2: DESPLIEGUE NGINX EN KUBERNETES
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="PRÁCTICA 2: DESPLIEGUE NGINX EN KUBERNETES">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#crear-el-fichero-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CREAR EL FICHERO DEPLOYMENT
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#crear-el-fichero-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CREAR EL FICHERO SERVICE
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#crear-el-despliegue-y-el-servicio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CREAR EL DESPLIEGUE Y EL SERVICIO
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitorizacion-de-cluster-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MONITORIZACIÓN DE CLÚSTER KUBERNETES
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="MONITORIZACIÓN DE CLÚSTER KUBERNETES">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#que-es-prometheus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ¿QUÉ ES PROMETHEUS?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#que-es-grafana" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ¿QUÉ ES GRAFANA?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practica-3-monitorizando-mi-cluster-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PRÁCTICA 3: MONITORIZANDO MI CLÚSTER KUBERNETES
+        CREAR PLANTILLA MV UBUNTU
       
     </span>
   </a>
@@ -878,7 +593,63 @@
   <span class="md-ellipsis">
     
   
-    UD6. Terraform
+    UD6. Kubernetes y Monitorización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7. Automatización de la gestión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8. Normativa Cloud
   
 
     
@@ -1898,299 +1669,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#que-es-kubernetes" class="md-nav__link">
+  <a href="#crear-plantilla-mv-ubuntu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ¿QUE ES KUBERNETES?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arquitectura-de-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ARQUITECTURA DE KUBERNETES
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ARQUITECTURA DE KUBERNETES">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#componentes-basicos-de-cualquier-nodo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        COMPONENTES BÁSICOS DE CUALQUIER NODO
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#componentes-especificos-del-nodo-maestro" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        COMPONENTES ESPECÍFICOS DEL NODO MAESTRO
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacion-de-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        INSTALACIÓN DE KUBERNETES
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="INSTALACIÓN DE KUBERNETES">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#instalacion-con-kubeadm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        INSTALACIÓN CON KUBEADM
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#instalacion-kubernetes-con-kind" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        INSTALACIÓN KUBERNETES CON KIND
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practica-1-creacion-de-un-cluster-con-kind" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PRÁCTICA 1: CREACIÓN DE UN CLUSTER CON KIND
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="PRÁCTICA 1: CREACIÓN DE UN CLUSTER CON KIND">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#personalizar-la-red-virtual-del-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PERSONALIZAR LA RED VIRTUAL DEL CLUSTER
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#crear-fichero-de-configuracion-del-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CREAR FICHERO DE CONFIGURACIÓN DEL CLUSTER
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#levantar-el-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LEVANTAR EL CLUSTER
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tipos-de-objetos-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        TIPOS DE OBJETOS KUBERNETES
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="TIPOS DE OBJETOS KUBERNETES">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#los-manifiestos-yaml" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LOS MANIFIESTOS .YAML
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PODS
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#namespace-y-contexto" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NAMESPACE y CONTEXTO
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deployment-y-replicaset" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DEPLOYMENT y REPLICASET
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practica-2-despliegue-nginx-en-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PRÁCTICA 2: DESPLIEGUE NGINX EN KUBERNETES
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="PRÁCTICA 2: DESPLIEGUE NGINX EN KUBERNETES">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#crear-el-fichero-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CREAR EL FICHERO DEPLOYMENT
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#crear-el-fichero-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CREAR EL FICHERO SERVICE
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#crear-el-despliegue-y-el-servicio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CREAR EL DESPLIEGUE Y EL SERVICIO
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitorizacion-de-cluster-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MONITORIZACIÓN DE CLÚSTER KUBERNETES
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="MONITORIZACIÓN DE CLÚSTER KUBERNETES">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#que-es-prometheus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ¿QUÉ ES PROMETHEUS?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#que-es-grafana" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ¿QUÉ ES GRAFANA?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practica-3-monitorizando-mi-cluster-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PRÁCTICA 3: MONITORIZANDO MI CLÚSTER KUBERNETES
+        CREAR PLANTILLA MV UBUNTU
       
     </span>
   </a>
@@ -2214,510 +1696,103 @@
 
 
 
-<h1 style="text-align: center;"><font color="#c31428">UD5: MONITORIZACIÓN DE RECURSOS VIRTUALIZADOS</font></h1>
+<h1 style="text-align: center;"><span style="color: var(--ceny-primary-color);">UD5: :simple-proxmox: VIRTUALIZACIÓN CON PROXMOX</span></h1>
 
 <div class="grid cards">
 <ul>
-<li><strong>CE 4.3.</strong> Configuración y uso efectivo de herramientas de monitorización.</li>
-<li><strong>CE 4.4.</strong> Interpretación de datos de monitorización para la toma de decisiones.</li>
+<li><strong>CE 4.1.</strong> Demostración de habilidades en la gestión de máquinas virtuales y contenedores.</li>
+<li><strong>CE 4.2.</strong> Implementación efectiva de automatización en la gestión de servicios virtualizados.</li>
 </ul>
 </div>
-<h2 id="que-es-kubernetes"><strong>¿QUE ES KUBERNETES?</strong></h2>
-<figure style="float: right; margin: 10px">
-    <img alt="Kubernetes" src="https://1000logos.net/wp-content/uploads/2022/07/Kubernetes-Logo.png" width="250" />
-    <small><figcaption>Logo Kubernetes</figcaption></small>
-</figure>
-<p>Es una <strong>plataforma de código abierto</strong> que sirve para <strong>automatizar</strong> la implementación, escalado y <strong>operación</strong> de aplicaciones <strong>con contenedores</strong>. Desarrollado por Google y luego liberado como código abierto en 2014, actualmente es uno de los proyectos más populares de la Cloud Native Computing Foundation (CNCF). Ya que se ha convertido en la plataforma de orquestación de contenedores más utilizada y ampliamente adoptada por empresas de todo el mundo.</p>
-<p>Kubernetes crea una <strong>capa de abstracción entre la infraestructura y las aplicaciones</strong>. Por ejemplo, teníendo <strong>múltiples servidores</strong>, te permite agruparlos en lo que llamariamos <strong>clúster</strong> y consumirlo <strong>como una pieza individual</strong>, permitiendo desplegar aplicaciones sobre todos los nodos del clúster de una forma transparente para el usuario.</p>
-<p>Por ejemplo, en un entorno tradicional un administrador de sistemas tendría que provisionar una máquina virtual (con sus configuraciones de red, paquetería, hardware, etc) por cada aplicación.</p>
-<figure>
-    <img alt="Entorno Tradicional" src="https://pabpereza.dev/assets/images/intro-tradicional.drawio-c316d4c7e6eb4b1ba72290b72ae3bc2c.svg" width="400" />
-    <small><figcaption>Despliegue Tradicional</figcaption></small>
-</figure>
-<p>Mientras que en un entorno de Kubernetes, el administrador solo tiene que añadir y mantener los nodos del cluster, de modo que cuando se solicita una nueva aplicación, se le asigna una reserva lógica de recursos del cluster. Es decir, no le asignamos una "máquina" sino un numéro de recursos cuatificados en CPU y RAM, que no tienen por que estar en un nodo en concreto.</p>
-<figure>
-    <img alt="Entorno Kubernetes" src="https://pabpereza.dev/assets/images/intro-kubernetes.drawio-6aaa83a3cd6a4d14d3694f83097001d1.svg" width="600" />
-    <small><figcaption>Despliegue Kubernetes</figcaption></small>
-</figure>
-<p>En resumen, Kubernetes nos aporta:</p>
-<ul>
-<li><strong>Automatización</strong> de tareas y simplicación de la operativa.</li>
-<li><strong>Escalabilidad</strong> en función de la demanda (<img alt="⬆" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b06.svg" title=":arrow_up:" />Contenedores ó <img alt="⬆" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b06.svg" title=":arrow_up:" />Nodos).</li>
-<li><strong>Resiliencia</strong> ante errores o caídas.</li>
-<li><strong>Estandarización</strong> entre diferentes entornos (migraciones).</li>
-<li><strong>Ecosistemas</strong> de servicios y funcionalidades.</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Oportunidades laborales</p>
-<p>Kubernetes es una tecnología muy demandada en el mercado laboral, por lo que tener conocimientos en Kubernetes puede abrirte muchas puertas en tu carrera profesional ya sea como especialista DevOps, Administrador de Sistemas o especialista en seguridad.</p>
-</div>
-<h2 id="arquitectura-de-kubernetes"><strong>ARQUITECTURA DE KUBERNETES</strong></h2>
-<p>Todo clúster gestionado con Kubernetes consta de dos piezas fundamentales:</p>
-<p>El <em>"control plane"</em> o <strong>nodo maestro</strong>: responsable de gestionar al resto de nodos del clúster. No ejecuta <code>pods</code> ni ningún tipo de carga de trabajo, solo se limita a interactuar con el resto de nodos y gestionar los recursos del clúster.</p>
-<p>Los <em>"workers"</em> o <strong>nodos de trabajo</strong> alojan los <code>pods</code> (contenedores) y las cargas de trabajo, es decir, son los encargados de ejecutar las aplicaciones y servicios que se despliegan en el clúster.</p>
-<figure>
-    <img alt="Arquitectura Básica Kubernetes" src="https://pabpereza.dev/assets/images/arquitectura.drawio-54cb22f9d63be3a366cb3a68e7b9030c.svg" width="600" />
-    <small><figcaption>Arquitectura Kubernetes</figcaption></small>
-</figure>
-<h3 id="componentes-basicos-de-cualquier-nodo"><strong>COMPONENTES BÁSICOS DE CUALQUIER NODO</strong></h3>
-<p><strong>CONTAINER RUNTIME</strong>: es el software que se encarga de ejecutar los contenedores. <strong>Docker</strong> es el más popular, pero en Kubernetes lo más habitual es usar <strong>containerd</strong> o <strong>CRI-O</strong>, versiones más ligeras y especializadas es este tipo de entornos.</p>
-<p><strong>KUBELET</strong>: es el encargado de gestionar los contenedores en un nodo y de garantizar que estos se mantengan en el estado deseado. Se comunica con el API Server para recibir instrucciones y transmitirlas al runtime de contenedores.</p>
-<p><strong>KUBE-PROXY</strong>: gestiona el tráfico de red en el nodo. Se encarga de enrutar las peticiones a los servicios y de balancear la carga entre los pods. También se encarga de la exposición de los servicios al exterior. Traduce las necesidades de red de los servicios a reglas de iptables de forma automática.</p>
-<h3 id="componentes-especificos-del-nodo-maestro"><strong>COMPONENTES ESPECÍFICOS DEL NODO MAESTRO</strong></h3>
-<p><strong>KUBE-APISERVER</strong>: es el punto de entrada al clúster. Es el componente que recibe las peticiones de los usuarios y de los nodos de trabajo. Es el único que se comunica directamente con la base de datos de Kubernetes, etcd. Almacena el estado del clúster, gestiona las peticiones y las transforma en acciones.</p>
-<p><strong>KUBE-SCHEDULER</strong>: es el encargado de decidir en qué nodo se ejecutará un pod. Se basa en las necesidades de los pods y en las capacidades de los nodos para tomar la decisión.</p>
-<p><strong>ETCD</strong>: es la base de datos de Kubernetes. Almacena el estado del clúster y es el único componente que almacena información de forma persistente. Es altamente consistente y tolerante a fallos.</p>
-<p><strong>KUBE-CONTROLLER-MANAGER</strong>: es el componente que se encarga de gestionar los controladores de Kubernetes. Los controladores son procesos que se ejecutan de forma continua y que se encargan de mantener el estado deseado del clúster. Por ejemplo, el controlador de replicación se encarga de mantener el número de réplicas de un pod en el estado deseado.</p>
-<p><strong>CLOUD-CONTROLLER-MANAGER</strong>: es como el kube-controller-manager pero para entornos en la nube. Se encarga de interactuar con los servicios del proveedor, como los volúmenes de almacenamiento, balanceadores de carga, etc.</p>
-<p>En resumen, el <strong>api</strong> de kubernetes gestiona todas las peticiones de los usuarios o de los nodos y el <strong>scheduler</strong> decide donde se ejecutan los pods. Mientras que el <strong>controlador</strong> mantiene el estado deseado del clúster y el <strong>etcd</strong> almacena el estado del clúster.</p>
-<figure>
-    <img alt="Componentes Kubernets" src="https://www.cherryservers.com/v3/assets/blog/2025-05-19/img-01.png" />
-    <small><figcaption>Cluster Kubernetes y sus componentes</figcaption></small>
-</figure>
-<h2 id="instalacion-de-kubernetes"><strong>INSTALACIÓN DE KUBERNETES</strong></h2>
-<p>Existen varias formas mediante las cuales podemos instalar Kubernetes, dependiendo de que para que finalidad vayamos a usarlo. Principalmente, distinguiremos el uso en entornos de desarrollo y en entornos de producción.</p>
-<ul>
+<h2 id="crear-plantilla-mv-ubuntu"><span style="color: var(--ceny-secondary-color);">CREAR PLANTILLA MV UBUNTU</span></h2>
+<p>Abrimos la consola del nodo Proxmox sobre el que vayamos a trabjar y creamos una máqina virtual con el siguiente comando:</p>
+<div class="language-text highlight"><pre><span></span><code>qm create 900 --name plantilla-ubuntu-2204 \
+--ostype=l26 \
+--scsihw virtio-scsi-single --agent enabled=1 \
+--cpu x86-64-v2-AES \
+--memory 2048 \
+--net0 virtio,bridge=vmbr0,firewall=1 \
+-ide2 none,media=cdrom
+</code></pre></div>
+<p>Añadimos una unidad <strong>cloud-init</strong> que servirá para configurar varios parametros de la máquina la primera vez que se arranque:</p>
+<div class="language-text highlight"><pre><span></span><code>qm set 900 --ide0 local-lvm:cloudinit
+</code></pre></div>
+<p>Luego establecemos los valores para los parámetros del cloud-init:</p>
+<div class="language-text highlight"><pre><span></span><code>qm set 900 --ciuser profe \
+--cipassword profe \
+--sshkey ~/.ssh/id_rsa.pub \
+--ipconfig0 ip=dhcp
+</code></pre></div>
+<p>Regeneramos la imagen de la máquina incluyendo el cloud-init:</p>
+<ol>
 <li>
-<p><strong>Desarrollo</strong>: para crear de forma rápida entornos de prueba o laboratorios de prácticas ligeros, existen varias alternativas como MiniKube, Kind o a través de Docker Desktop.</p>
+<p>En el panel izquierdo, seleccionar nuestra máquina virtual: <code>900</code>.</p>
 </li>
 <li>
-<p><strong>Producción</strong>: por un lado, podemos crear un cluster Kubernetes mediante la herramienta oficial <strong>Kubeadm</strong>, la cual requiere que instalemos manualmente todos los recursos necesarios y puede ser una tarea compleja, sobretodo la primera vez que se hace.</p>
-<p>Y por otro lado, la forma más recomendada para un entorno de producción profesional, que es contratando servicios en la nube como <strong>Amazon EKS</strong> o <strong>Google GKE</strong>; que aunque conllevan un coste añadido, facilita mucho las cosas ya que el proveedor gestiona el plano de control por nosotros.</p>
-</li>
-</ul>
-<h3 id="instalacion-con-kubeadm"><img alt="🛠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f6e0.svg" title=":tools:" /> <strong>INSTALACIÓN CON KUBEADM</strong></h3>
-<figure>
-    <img alt="Logo Kubeadm" src="https://user-images.githubusercontent.com/22591623/59856252-74656b00-936e-11e9-8dd9-d6092845981b.png" width="200" />
-    <small><figcaption>Logo Kubeadm</figcaption></small>
-</figure>
-<p>En el siguiente <a href="https://www.nakivo.com/es/blog/install-kubernetes-ubuntu/" target="_blank">enlace</a> podemos ver un tutorial bastante completo sobre como crear un laboratorio práctico de Kubernetes con 3 máquinas virtuales Ubuntu (1 Nodo Maestro y 2 Nodos Trabajadores). Sin embargo, nosotros seguiremos el resumen de pasos que tenemos a continuación:</p>
-<h4 id="a-ejecutar-en-todos-los-nodos-del-cluster"><img alt="Info" src="https://cdn-icons-png.flaticon.com/512/1810/1810852.png" width="30" /> A EJECUTAR EN TODOS LOS NODOS DEL CLÚSTER</h4>
-<p>Hasta que se indique lo contrario, todos los siguientes comandos se ejecutan como <strong>root</strong>, para actualizar repositorio de paquetes, instalar requisitos previos, desactivar el swap, cargar módulos necesarios y configuración sysctl:</p>
-<div class="language-text highlight"><pre><span></span><code>sudo su
-
-apt update &amp;&amp; apt upgrade -y
-apt install curl apt-transport-https git wget software-properties-common lsb-release ca-certificates socat -y
-
-swapoff -a
-sed -i &#39;/swap/s/^\(.*\)$/#\1/g&#39; /etc/fstab
-
-modprobe overlay
-modprobe br_netfilter
-
-cat &lt;&lt; EOF | tee /etc/sysctl.d/kubernetes.conf
-net.bridge.bridge-nf-call-ip6tables = 1
-net.bridge.bridge-nf-call-iptables = 1
-net.ipv4.ip_forward = 1
-EOF
-
-sysctl --system
-</code></pre></div>
-<p>Instalar las claves gpg de Docker para luego instalar y configurar containerd para que use cgroups:</p>
-<div class="language-text highlight"><pre><span></span><code>sudo install -m 0755 -d /etc/apt/keyrings
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-
-echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
-
-apt update &amp;&amp; apt install containerd.io -y
-
-containerd config default | tee /etc/containerd/config.toml
-
-sed -e&#39;s/SystemdCgroup = false/SystemdCgroup = true/g&#39; -i /etc/containerd/config.toml
-
-systemctl restart containerd
-</code></pre></div>
-<p>Instalar claves gpg de Kubernetes, añadir el repositorio (cambiar la versión si es necesario) e instalar kubeadm, kubelet y kubectl:</p>
-<div class="language-text highlight"><pre><span></span><code>curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-
-echo &quot;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /&quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list
-
-apt update
-
-apt install -y kubeadm=1.30.1-1.1 kubelet=1.30.1-1.1 kubectl=1.30.1-1.1
-
-apt-mark hold kubelet kubeadm kubectl
-</code></pre></div>
-<p>Editamos el fichero <code>/etc/hosts</code>, para añadir el nombre del nodo maestro al DNS local, de modo que sea alcanzable por su hostname (en este ejemplo el hostname sería <strong>k8scp</strong>):</p>
-<div class="language-text highlight"><pre><span></span><code>echo &quot;&lt;Dirección_IP_Maestro&gt; k8scp&quot; &gt;&gt; /etc/hosts
-</code></pre></div>
-<h4 id="a-ejecutar-solo-en-el-nodo-maestro"><img alt="Alert" src="https://cdn-icons-png.flaticon.com/512/561/561739.png" width="30" /> A EJECUTAR SOLO EN EL NODO MAESTRO</h4>
-<p>Iniciar el cluster con kubeadm (importante cambiar el rango de IPs para pods por uno que no esté en uso en tu red, evitar también el rango 10.XXX.XXX.XXX ya que es un rango reservado para redes privadas). Por último, añadimos el nombre del nodo maestro (recuerda usar el de antes) y el puerto 6443:</p>
-<div class="language-text highlight"><pre><span></span><code>kubeadm init --pod-network-cidr=&lt;rango de IPs para pods&gt; --control-plane-endpoint=&lt;Nombre añañadido en el /etc/hosts&gt;:6443
-
-# EJEMPLO: kubeadm init --pod-network-cidr=192.168.0.0/16 --control-plane-endpoint=k8scp:6443
-</code></pre></div>
-<div class="admonition danger">
-<p class="admonition-title">¡¡IMPORTANTE!!</p>
-<p>La salida del comando anterior nos mostrará una serie de datos, incluyendo un comando <code>kubeadm join</code> que luego tendremos que ejecutar en los nodos workers para unirlos al cluster.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">¿Como eliminar un cluster inicializado con Kubeam?</p>
-<div class="language-text highlight"><pre><span></span><code>sudo kubeadm reset
-sudo rm -R /etc/cni/net.d
-sudo iptables -F
-
-sudo rm -rf /etc/kubernetes/pki/
-sudo rm -rf /var/lib/kubelet/*
-sudo rm -rf /var/lib/etcd/
-sudo rm -rf ~/.kube/config
-</code></pre></div>
-</div>
-<p><strong>Salir del modo root</strong> y configurar kubectl e instalar autocompletado:</p>
-<div class="language-text highlight"><pre><span></span><code>exit
-#Comprobar si existe ya la carpeta, si no, crearla con: mkdir -p $HOME/.kube
-
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
-sudo apt install bash-completion -y
-
-source &lt;(kubectl completion bash)
-
-echo &#39;source &lt;(kubectl completion bash)&#39; &gt;&gt; ~/.bashrc
-
-curl -fsSL https://packages.buildkite.com/helm-linux/helm-debian/gpgkey | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg &gt; /dev/null
-
-echo &quot;deb [signed-by=/usr/share/keyrings/helm.gpg] https://packages.buildkite.com/helm-linux/helm-debian/any/ any main&quot; | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
-</code></pre></div>
-<p>Instalar Helm (necesario para instalar algunas aplicaciones en Kubernetes) y Cilium (nos permitirá conectar los pods entre sí):</p>
-<div class="language-text highlight"><pre><span></span><code>sudo apt update
-
-sudo apt install helm -y
-
-helm repo add cilium https://helm.cilium.io/
-
-helm repo update
-
-helm template cilium cilium/cilium --version 1.16.1 --namespace kube-system &gt; cilium.yaml
-
-kubectl apply -f cilium.yaml
-</code></pre></div>
-<h4 id="unir-todos-los-nodos-al-cluster">UNIR TODOS LOS NODOS AL CLUSTER</h4>
-<p>En cada uno de los nodos worker pegamos el comando que nos devolvio la instrucción <a href="#alertwidth30-a-ejecutar-solo-en-el-nodo-maestro"><code>kubeadm init</code></a> lanzar el siguiente comando:</p>
-<div class="language-text highlight"><pre><span></span><code>    kubeadm join &lt;hostname_nodo_maestro&gt;:6443 --token &lt;token&gt; --discovery-token-ca-cert-hash sha256:&lt;hash&gt;
-</code></pre></div>
-<p>Si por algún motivo, no copiamos ese comando o no conocemos algunos de los datos necesarios, podemos ejecutar lo siguiente en el Nodo Maestro para conseguir la información:</p>
-<ul>
-<li>
-<p>Para ver el <strong>token</strong> o si fuera necesario, crear uno nuevo:</p>
-<div class="language-text highlight"><pre><span></span><code>kubeadm token list
-kubeadm token create
-</code></pre></div>
+<p>Dentro de ella, selecciónar la opción <code>Cloud-Init</code>.</p>
 </li>
 <li>
-<p>Para ver el <strong>hash</strong>:</p>
-<div class="language-text highlight"><pre><span></span><code>openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2&gt;/dev/null | openssl dgst -sha256 -hex | sed &#39;s/^.* //&#39;
+<p>Pulsar el botón <code>Regenerate image</code>.</p>
+</li>
+</ol>
+<p>Volvemos a la consola de nuestro nodo y añadimos un interfaz serial para nuestra máquina virtual:</p>
+<div class="language-text highlight"><pre><span></span><code>qm set 900 --serial0 socket --vga serial0
 </code></pre></div>
+<p>Descargamos la imagen cloud de Ubuntu:</p>
+<div class="language-text highlight"><pre><span></span><code>wget https://cloud-images.ubuntu.com/minimal/releases/jammy/release/ubuntu-22.04-minimal-cloudimg-amd64.img
+</code></pre></div>
+<p>Cambiamos el tamaño de la imagen descargada:</p>
+<div class="language-text highlight"><pre><span></span><code>qemu-img resize ubuntu-22.04-minimal-cloudimg-amd64.img 16G
+</code></pre></div>
+<p>Importamos la imagen ubuntu al disco local definido en nuestro Datacenter PROXMOX:</p>
+<div class="language-text highlight"><pre><span></span><code>qm importdisk 900 ubuntu-22.04-minimal-cloudimg-amd64.img local-lvm
+</code></pre></div>
+<p>Ahora configuramos el disco <strong>scsi0</strong> de nuestra máquina virtual, con el disco que nos ha generado el comando anterior:</p>
+<div class="language-text highlight"><pre><span></span><code>qm set 900 --scsi0 local-lvm:vm-900-disk-0,discard=on,iothread=1,ssd=1
+</code></pre></div>
+<p>Cambiamos el orden de arranque de la máquina:</p>
+<ol>
+<li>
+<p>Seleccionar la máquina virtual: <strong>900</strong></p>
+</li>
+<li>
+<p>Seleccionar la opción <strong>Opciones</strong></p>
+</li>
+<li>
+<p>Seleciconar el elemento <strong>Orden de arranque</strong> y pulsar el botón <strong>Editar</strong>:</p>
+<ul>
+<li>
+<p><strong>Activar</strong> el disco <strong>scsi0</strong></p>
+</li>
+<li>
+<p><strong>Arrastrarlo</strong> a la segunda posición (dejando el CDROM como primera opción por si algún día se necesita iniciar mediante una ISO)</p>
 </li>
 </ul>
-<p>Por último, comprobamos que los nodos se han añadido correctamente, ejecutando el siguiente comando en el nodo Maestro:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl get nodes
+</li>
+</ol>
+<p>Volvemos a la consola de nuestro nodo Proxmox y convertimos la máquina en plantilla:</p>
+<div class="language-text highlight"><pre><span></span><code>qm template 900
 </code></pre></div>
-<h3 id="instalacion-kubernetes-con-kind"><img alt="🪛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1fa9b.svg" title=":screwdriver:" /> <strong>INSTALACIÓN KUBERNETES CON KIND</strong></h3>
-<p>En este caso, vamos a configurar un entorno de prácticas más ligero y facil de configurar usando <em>"KIND"</em> (Kubernetes in Docker), que nos permite crear un clúster Kubernetes en el que cada nodo sea un contenedor.</p>
-<figure>
-    <img alt="Logo KIND" src="https://kind.sigs.k8s.io/logo/logo.png" width="300" />
-    <small><figcaption>Logo Kind</figcaption></small>
-</figure>
-<p>Partimos de una máquina Ubuntu en la que tenemos previamente instalado Docker. Entonces, vamos a descargar el binario de Kind y a colocarlo en un directorios accesible desde <code>$PATH</code>:</p>
-<div class="language-text highlight"><pre><span></span><code>curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.10.0/kind-linux-amd64
-chmod +x ./kind
-sudo mv ./kind /usr/local/bin
-kind version
+<h3 id="clonacion-de-la-plantilla"><span style="color: var(--ceny-tertiary-color);">CLONACIÓN DE LA PLANTILLA</span></h3>
+<p>Para clonar nuestra plantilla, desde el shell del nodo Proxmox, ejecutamos:</p>
+<div class="language-text highlight"><pre><span></span><code>qm clone 900 101 --name ubuntu-clon1 --full 1 --storage NASinformatica
 </code></pre></div>
-<p>Por otro lado, instalamos la utilidad <code>kubectl</code> que es el cliente usado para interactuar con nuestro clúster Kubernetes:</p>
-<div class="language-text highlight"><pre><span></span><code>curl -Lo ./kubectl &quot;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&quot;
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin
-kubectl version --client
+<p>Modificando el valor <strong>101</strong> por el ID que queramos darle a la máquina clonada, tambien el nombre que se le quiera dar a la máquina; y por último indicando en donde queremos que se almacene su imagen (en este ejemplo usamos un NAS que tenemos conectado a Proxmox).</p>
+<h3 id="primer-inicio-de-la-maquina"><span style="color: var(--ceny-tertiary-color);">PRIMER INICIO DE LA MÁQUINA</span></h3>
+<p><strong>Antes de arrancar la máquina</strong> clonada, personalizamos los valores de username, password y direccionamiento IP:</p>
+<div class="language-text highlight"><pre><span></span><code>qm set 101 --ciuser clon1 --cipassword clon1
+qm set 101 --ipconfig0 ip=172.21.184.41/16,gw=172.21.0.254
 </code></pre></div>
-<p>Con estos simples pasos, ya podemos empezar a definir nuestro cluster Kubernetes con Kind.</p>
-<h2 id="practica-1-creacion-de-un-cluster-con-kind"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> <strong>PRÁCTICA 1</strong>: CREACIÓN DE UN CLUSTER CON KIND</h2>
-<h3 id="personalizar-la-red-virtual-del-cluster">PERSONALIZAR LA RED VIRTUAL DEL CLUSTER</h3>
-<p>Cuando levantamos un cluster con KIND, este crea una red Bridge llamada <em>kind</em> con un direccionamiento por defecto. Para que ese direccionamiento no se solape o interfiera en los direccionamientos que ya tenemos en uso, vamos a crear nosotros esa red con los parámetros que queramos:</p>
-<div class="language-text highlight"><pre><span></span><code>docker network create --subnet 192.168.0.0/24 --gateway 192.168.0.1 kind
+<p>Si queremos asignar los clones a grupos de usuarios para que solo sean visibles por ellos, podemos hacerlo con el comando:</p>
+<div class="language-text highlight"><pre><span></span><code>pveum acl mod /vms/101 --group Grupo1_ASIR --role &quot;PVEVMAdmin&quot;
 </code></pre></div>
-<h3 id="crear-fichero-de-configuracion-del-cluster">CREAR FICHERO DE CONFIGURACIÓN DEL CLUSTER</h3>
-<p>Por otro lado, podemos personalizar las características que tendrá nuestro cluster mediante el fichero <code>config.yaml</code>, como el nombre del cluster, el número de nodos, el rol de cada nodo, mapeado de puertos, direccionamiento de los pods y servicios, almacenamiento persistente, etc. Un ejemplo sencillo de un cluster con 4 nodos, puede ser:</p>
-<details class="info">
-<summary>nano <strong>config.yaml</strong></summary>
-<div class="language-text highlight"><pre><span></span><code>kind: Cluster
-apiVersion: kind.x-k8s.io/v1alpha4
-name: cpd
-nodes:
-- role: control-plane
-- role: worker
-- role: worker
-- role: worker
+<p>Es un ubuntu minimal, por lo que trae lo justo. Deberemos ir instalandole las herramientas que necesitemos:</p>
+<div class="language-text highlight"><pre><span></span><code>apt install nano
+apt install openvswitch-switch
 </code></pre></div>
-</details>
-<h3 id="levantar-el-cluster">LEVANTAR EL CLUSTER</h3>
-<p>Por último, solo tenemos que crear nuestro cluster con el siguiente comando:</p>
-<div class="language-text highlight"><pre><span></span><code>kind create cluster --config=config.yaml
+<p>Además, para utilizar el DNS local añadiendo entradas en el fichero <code>/etc/hosts</code> y que no perdamos los datos, debemos editar el siguiente fichero y comentamos la línea que dice <strong>- update_etc_hosts</strong>:</p>
+<div class="language-text highlight"><pre><span></span><code>sudo nano /etc/cloud/cloud.cfg
 </code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Credenciales de Acceso al Cluster</p>
-<p>Podemos comprobar que cuando se crea un cluster, se crea también el fichero de configuración con nuestras credenciales para el acceso en <code>~/.kube/config</code>.</p>
-</div>
-<p>Comprobaremos que se han creado tantos contenedores como nodos habiamos indicado en el fichero de configuración:</p>
-<div class="language-text highlight"><pre><span></span><code>docker ps
-</code></pre></div>
-<p>Y si todo ha ido bien, podemos usar la funcionalidad <code>kubectl</code> para confirmar que todos los nodos están en estado <strong>"Ready"</strong>:</p>
-<div class="language-text highlight"><pre><span></span><code>kind get clusters
-kubectl get nodes
-</code></pre></div>
-<h2 id="tipos-de-objetos-kubernetes"><img alt="📦" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e6.svg" title=":package:" /> <strong>TIPOS DE OBJETOS KUBERNETES</strong></h2>
-<p>Un objeto o recurso, es cualquier cosa que podemos definir en un cluster de kubernetes. Cada objeto es de un tipo concreto y tiene unas propiedades y atributos que lo definen. Para definir un objeto, se hace mediante <strong>archivos manifiesto</strong> que se aplican al cluster para que se crear o modificar recursos. Estos manifiestos pueden ser escritos en formato YAML o JSON, y los principales objetos que podemos definir son:</p>
-<p><strong>POD</strong>: es el recurso más básico que podemos crear en Kubernetes, generalmente compuesto por un contenedor (o varios). No es habitual crear pods manualmente, si no a partir de un objeto <em>"Deployment"</em>.</p>
-<p><strong>DEPLOYMENT</strong>: generalmente se utilizan para definir aplicaciones compuestas por varios <em>"Pods"</em> y las características específicas de cada uno.</p>
-<p><strong>SERVICE</strong>: permite exponer los pods o aplicaciones para que se accede desde fuera del cluster.</p>
-<p><strong>VOLUME</strong>: usado para persistir información de uno o varios pods.</p>
-<p><strong>NAMESPACE</strong>: permite agrupar una serie de recursos en diferentes espacios lógicos separados, dentro del mismo cluster.</p>
-<figure>
-    <img alt="Objetos Kubernetes" src="../../img/kubernetes.png" width="500" />
-    <small><figcaption>Objetos Kubernetes</figcaption></small>
-</figure>
-<h3 id="los-manifiestos-yaml">LOS MANIFIESTOS .YAML</h3>
-<p>En el archivo .yaml del objeto que queramos crear, obligatoriamente debemos indicar (como mínimo) los siguientes apartados:</p>
-<ul>
-<li><strong>apiVersion</strong>: versión de la API de Kubernetes que se va a usar.</li>
-<li><strong>kind</strong>: tipo de objeto que quieres crear.</li>
-<li><strong>metadata</strong>: datos que identifican unívocamente al objeto (name, uid, namespace...).</li>
-<li><strong>spec</strong>: características específicas del objeto (contendores, volumenes...).</li>
-</ul>
-<p>Por otro lado, es importante destacar que podemos crear <strong>varios objetos</strong> diferentes usando <strong>un único manifiesto.yaml</strong>, simplemente deben ir separados por un triple guión <code>---</code>.</p>
-<h3 id="pods"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m10.41.24 4.711 2.774c.544.316.878.897.879 1.526v5.01a1.77 1.77 0 0 1-.88 1.53l-7.753 4.521-.002.001a1.77 1.77 0 0 1-1.774 0H5.59L.873 12.85A1.76 1.76 0 0 1 0 11.327V6.292c0-.304.078-.598.22-.855l.004-.005.01-.019c.15-.262.369-.486.64-.643L8.641.239a1.75 1.75 0 0 1 1.765 0l.002.001ZM9.397 1.534l-7.17 4.182 4.116 2.388a.27.27 0 0 0 .269 0l7.152-4.148-4.115-2.422a.25.25 0 0 0-.252 0m-7.768 10.02 4.1 2.393V9.474a2 2 0 0 1-.138-.072L1.5 7.029v4.298c0 .095.05.181.129.227m8.6.642 1.521-.887v-4.45l-1.521.882ZM7.365 9.402h.001q-.066.038-.136.071v4.472l1.5-.875V8.61Zm5.885 1.032 1.115-.65h.002a.27.27 0 0 0 .133-.232V5.264l-1.25.725Z"/></svg></span> PODS</h3>
-<p>Como ya mencionamos, un pod es el recurso más básico de Kubernetes y aunque lo más común es crearlos a través de manifiestos de mayor nivel, como un Deployment; también es posible crear pods individualmente de las siguientes formas:</p>
-<h4 id="con-kubectl">CON KUBECTL</h4>
-<p>Los principales gestores y orquestadores de contenedores, estan basados en el mismo estandar OCI (Open Container Initiative), es por ello que podemos usar cualquier imágen descargada de Docker Hub, para crear un Pod en Kubernetes:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl run mypod1 --image=nginx
-</code></pre></div>
-<h4 id="con-un-manifiesto">CON UN MANIFIESTO</h4>
-<p>No obstante, como ya hemos comentado, en Kubernetes lo normal es definir los recursos mediante manifiestos. Por lo tanto, un ejemplo para crear un Pod igual que el anterior a través de un fichero <code>pod.yaml</code>, sería el siguiente:</p>
-<div class="language-text highlight"><pre><span></span><code>apiVersion: v1
-kind: Pod
-metadata:
-    name: mypod2
-spec:
-    containers:
-      - name: webproxy
-        image: nginx
-</code></pre></div>
-<p>Luego creamos el Pod mediante el comando:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl apply -f pod.yaml
-</code></pre></div>
-<p>Una vez que hemos creado un recurso mediante un manifiesto, podemos modificarlo sin necesidad de pararlo. Simplemente editando su manifiesto y volviendo a ejecutar <code>kubectl apply</code>. Por ejemplo:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl exec nginx -- cat /etc/os-release
-nano nginx.yaml
-
-#  Modificamos la imagen por &quot;image: nginx:alpine&quot;
-
- kubectl apply -f pod.yaml
- kubectl exec nginx -- cat /etc/os-release
-</code></pre></div>
-<p>Como vemos, con la instrucción <code>kubectl exec &lt;nombre_pod&gt; -- &lt;comando&gt;</code> podemos <strong>ejecutar ordenes dentro de un pod</strong>.</p>
-<p>También, usando la instrucción <code>kubectl describe pod &lt;nombre_pod&gt;</code> podemos <strong>ver información detalla de un pod</strong>, como la imagen usada, en que nodos del cluster se está ejecutando o un histórico de eventos, entre otros.</p>
-<p>Por último, podemos borrar un pod usando la instrucción <code>kubectl delete pod &lt;nombre_pod&gt;</code>.</p>
-<h3 id="namespace-y-contexto"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1 1v4h1v14H1v4h4v-1h14v1h4v-4h-1V5h1V1h-4v1H5V1m0 3h14v1h1v14h-1v1H5v-1H4V5h1m1 1v8h3v4h9V9h-4V6M8 8h4v4H8m6-1h2v5h-5v-2h3"/></svg></span> NAMESPACE y CONTEXTO</h3>
-<p>Los <strong>namespaces</strong> son una forma de agrupar los recursos de kubernetes. Esto permite que podamos gestionar los diferentes recursos de una aplicación ( pod, deployment, service, etc) para establecer unas cuotas recursos, políticas de seguridad y configuraciones específicas.</p>
-<p>Por defecto, existen cuatro namespaces que usa Kubernetes, que no debemos tocar. Para <strong>listar los namespaces</strong> creados en nuestro cluster, mostrando sus etiquetas (opción que nos puede ser muy útil más adelante) podemos usar:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl get ns --show-labels
-</code></pre></div>
-<p>Al igual que pasaba con los pods, podemos crear namespaces por línea de comandos con <code>kubectl create ns &lt;nombre_namespace&gt;</code>; o mediante un manifiesto con la opción <code>kubectl create -f &lt;nombre_fichero&gt;</code>. Un ejemplo muy simple de manifiesto para un namespace sería:</p>
-<div class="language-text highlight"><pre><span></span><code>apiVersion: v1
-kind: Namespace
-metadata:
-name: desarrollo
-labels:
-    name: desarrollo
-</code></pre></div>
-<p>Para ejecutar comandos dentro de un namespace, usaremos la instrucción:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl --namespace desarrollo get pods
-</code></pre></div>
-<p>Sin embargo, salvo que queramos lanzar un comando puntual, lo que se suele hacer es asociar el namespace donde queremos trabajar al <strong>contexto</strong> actual. Un contexto Kubernetes define la configuración de acceso a un cluster específico, incluyendo el nombre del cluster, nombre de usuario y namespace predeterminado. Podemos ver nuestro contexto actual mediante el comando:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl config view
-</code></pre></div>
-<p>Como por defecto, usamos el namespace <em>"default"</em>, vemos que no se indica ningún namespace. Pero podemos asignar el namespace que queramos a nuestro contexto, usando:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl config set-context &lt;contexto_actual&gt; --namespace=&lt;nombre_namespace&gt;
-</code></pre></div>
-<p>Para volver al namespace por default</p>
-<p>Es importante remarcar que un namespace no es una barrera de seguridad, sino una forma de organizar y gestionar los recursos de forma agrupada. Para aislar recursos de forma segura, debemos usar <em>Network Policies</em> y <em>RBAC</em>.</p>
-<h3 id="deployment-y-replicaset"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V4H1v13h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5M15 7h-2v7h-2V7H9v7H7V7H5v7H3V6h12zm3 11.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5M17 12V9.5h2.5l1.96 2.5z"/></svg></span> DEPLOYMENT y REPLICASET</h3>
-<p>Los <strong>Deployments</strong> son elementos de configuración que permiten la creación de una aplicación de una sola instancia. El deployment gestiona uno o varios objetos replicaset y estos a su vez gestionan uno o más pods.</p>
-<p>Un <strong>ReplicaSet</strong> es un objeto Kubernetes que asegura que un número específico de réplicas de un pod estén ejecutándose en todo momento. Los deployments utilizan este recurso para gestionar la creación, actualización y eliminación de pods; asegurando la alta disponibilidad y escalabilidad.</p>
-<h2 id="practica-2-despliegue-nginx-en-kubernetes"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> <strong>PRÁCTICA 2</strong>: DESPLIEGUE NGINX EN KUBERNETES</h2>
-<h3 id="crear-el-fichero-deployment">CREAR EL FICHERO <em>DEPLOYMENT</em></h3>
-<details class="example">
-<summary>nano <strong>deployment.yaml</strong></summary>
-<div class="language-text highlight"><pre><span></span><code>apiVersion: apps/v1
-kind: Deployment
-metadata:
-name: nginx
-namespace: default
-labels:
-    app: nginx
-spec:
-revisionHistoryLimit: 2
-strategy:
-    type: RollingUpdate
-replicas: 2
-selector:
-    matchLabels:
-    app: nginx
-template:
-    metadata:
-    labels:
-        app: nginx
-    spec:
-    containers:
-    - image: nginx
-        name: nginx
-        ports:
-        - name: http
-        containerPort: 80
-</code></pre></div>
-</details>
-<h3 id="crear-el-fichero-service">CREAR EL FICHERO <em>SERVICE</em></h3>
-<details class="example">
-<summary>nano <strong>service.yaml</strong></summary>
-<div class="language-text highlight"><pre><span></span><code>apiVersion: v1
-kind: Service
-metadata:
-name: nginx
-namespace: default
-spec:
-type: NodePort
-ports:
-- name: http
-    port: 80
-    targetPort: http
-selector:
-    app: nginx
-</code></pre></div>
-</details>
-<h3 id="crear-el-despliegue-y-el-servicio">CREAR EL DESPLIEGUE Y EL SERVICIO</h3>
-<div class="language-text highlight"><pre><span></span><code>kubectl apply -f deployment.yaml 
-kubectl create -f service.yaml
-</code></pre></div>
-<p>Comprobamos que se han creado los pods relativos al despiegue y estan en ejecución; y que se ha creado el servicio y sobre que puerto del nodo lo ha mapeado:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl get all
-</code></pre></div>
-<p>Por último, comprobamos la dirección ip que tiene el nodo maestro (ya que será el que reciba las peticiones):</p>
-<div class="language-text highlight"><pre><span></span><code>docker inspect cpd-control-plane | grep Address
-</code></pre></div>
-<p>Y si todo fue bien, abrimos un navegador y deberíamos poder acceder al servicio indicando la IP del nodo y el puerto en el que se ha mapeado el servicio. Por ejemplo <code>http://192.168.0.4:31287</code>.</p>
-<h2 id="monitorizacion-de-cluster-kubernetes"><img alt="📊" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" title=":bar_chart:" /> MONITORIZACIÓN DE CLÚSTER KUBERNETES</h2>
-<figure style="display: inline-block; margin-left: 3rem">
-    <img alt="Prometheus" src="https://www.shapeblue.com/wp-content/uploads/2025/11/Prometheus-logo.png" width="240" />
-    <small><figcaption>Logo Prometheus</figcaption></small>
-</figure>
-<figure style="display: inline-block; margin-left: 2rem">
-    <img alt="Grafana" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Grafana_logo.svg/960px-Grafana_logo.svg.png" width="200" />
-    <small><figcaption>Logo Grafana</figcaption></small>
-</figure>
-<h3 id="que-es-prometheus">¿QUÉ ES PROMETHEUS? <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.372 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-6.628-5.373-12-12-12m0 22.46c-1.885 0-3.414-1.26-3.414-2.814h6.828c0 1.553-1.528 2.813-3.414 2.813zm5.64-3.745H6.36v-2.046h11.28zm-.04-3.098H6.391q-.056-.064-.111-.13c-1.155-1.401-1.427-2.133-1.69-2.879-.005-.025 1.4.287 2.395.511 0 0 .513.119 1.262.255-.72-.843-1.147-1.915-1.147-3.01 0-2.406 1.845-4.508 1.18-6.207.648.053 1.34 1.367 1.387 3.422.689-.951.977-2.69.977-3.755 0-1.103.727-2.385 1.454-2.429-.648 1.069.168 1.984.894 4.256.272.854.237 2.29.447 3.201.07-1.892.395-4.652 1.595-5.605-.529 1.2.079 2.702.494 3.424.671 1.164 1.078 2.047 1.078 3.716a4.64 4.64 0 0 1-1.11 2.996c.792-.149 1.34-.283 1.34-.283l2.573-.502s-.374 1.538-1.81 3.019z"/></svg></span></h3>
-<p>Prometheus  es un conjunto de herramientas de código abierto para la monitorización y notficación de alertas de sistemas.</p>
-<p>Prometheus recopila y almacena localmente métricas sobre aplicaciones y servicios en ejecución en datos de series de tiempo, es decir, la información de las métricas se almacena con la <strong>marca de tiempo</strong> en la que se registró, junto con <strong>pares clave-valor</strong> opcionales llamados etiquetas.</p>
-<p>Podemos visualizar estos datos mediante clientes API como <strong>Grafana</strong>.</p>
-<h4 id="componentes-prometheus">COMPONENTES PROMETHEUS</h4>
-<p>El ecosistema Prometheus consta de múltiples componentes, muchos de los cuales son opcionales:</p>
-<ul>
-<li>El <strong>servidor  principal</strong> de Prometheus que recopila y almacena datos de series temporales.</li>
-<li><strong>Librerías de cliente</strong> para instrumentar el código de la aplicación.</li>
-<li>Un <strong>push gateway</strong> para dar soporte a trabajos (<em>jobs</em>) de corta duración.</li>
-<li><strong>Exportadores de terceros</strong> para diferentes propósitos, como por ejemplo <code>Grafana</code>.</li>
-<li>Un <strong>Alert Manager</strong>  para gestionar alertas.</li>
-<li><strong>Herramientas de soporte</strong> variadas.</li>
-</ul>
-<figure>
-    <img alt="Arquitectura Prometheus" src="https://prometheus.io/assets/docs/architecture.svg" width="400" />
-    <small><figcaption>Arquitectura Prometheus</figcaption></small>
-</figure>
-<h3 id="que-es-grafana">¿QUÉ ES GRAFANA? <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.02 10.59a8.6 8.6 0 0 0-.862-3.034 8.9 8.9 0 0 0-1.789-2.445c.337-1.342-.413-2.505-.413-2.505-1.292-.08-2.113.4-2.416.62q-.077-.032-.154-.064-.33-.134-.677-.247-.348-.11-.711-.197a10 10 0 0 0-.875-.161C14.557.753 12.94 0 12.94 0c-1.804 1.145-2.147 2.744-2.147 2.744l-.018.093q-.149.042-.298.088c-.138.042-.275.094-.413.143-.138.055-.275.107-.41.166a9 9 0 0 0-1.557.87l-.063-.029c-2.497-.955-4.716.195-4.716.195-.203 2.658.996 4.33 1.235 4.636a11.6 11.6 0 0 0-.607 2.635C1.636 12.677.953 15.014.953 15.014c1.926 2.214 4.171 2.351 4.171 2.351q.005-.002.006-.005c.285.509.615.994.986 1.446q.235.284.488.548c-.704 2.009.099 3.68.099 3.68 2.144.08 3.553-.937 3.849-1.173a9.8 9.8 0 0 0 3.164.501h.08l.055-.003.107-.002.103-.005.003.002c1.01 1.44 2.788 1.646 2.788 1.646 1.264-1.332 1.337-2.653 1.337-2.94v-.058q-.002-.03-.003-.06.4-.28.758-.6a7.9 7.9 0 0 0 1.415-1.7c1.43.083 2.437-.885 2.437-.885-.236-1.49-1.085-2.216-1.264-2.354l-.018-.013-.016-.013-.031-.02q.013-.137.02-.27.016-.244.016-.48v-.253l-.005-.098-.008-.135a2 2 0 0 0-.01-.13q-.005-.063-.013-.125l-.016-.124-.018-.122a6.2 6.2 0 0 0-2.032-3.73 6 6 0 0 0-3.222-1.46 6 6 0 0 0-.85-.048l-.107.002h-.063l-.044.003-.104.008a4.78 4.78 0 0 0-3.335 1.695c-.332.4-.592.84-.768 1.297a4.6 4.6 0 0 0-.312 1.817l.003.091q.006.083.013.164a3.6 3.6 0 0 0 .698 1.82 3.53 3.53 0 0 0 1.827 1.282c.33.098.66.14.971.137q.06 0 .114-.002l.063-.003q.03-.002.062-.003.05-.004.099-.01.012-.001.028-.003l.031-.005.06-.008a1 1 0 0 0 .112-.02c.036-.008.072-.013.109-.024a2.6 2.6 0 0 0 .914-.415q.042-.03.085-.065a.25.25 0 0 0 .039-.35.244.244 0 0 0-.309-.06l-.078.042q-.135.066-.283.116a2.5 2.5 0 0 1-.475.096q-.04.005-.083.006l-.083.002q-.04 0-.08-.002l-.102-.006h-.012l-.024.006q-.024-.003-.044-.006-.046-.004-.091-.01a2.6 2.6 0 0 1-.724-.213 2.6 2.6 0 0 1-.667-.438 2.52 2.52 0 0 1-.805-1.475 2.3 2.3 0 0 1-.029-.444l.006-.122v-.023l.002-.031q.003-.03.005-.06a3.16 3.16 0 0 1 1.352-2.29 3.1 3.1 0 0 1 .937-.43 3 3 0 0 1 .776-.101h.06l.07.002.045.003h.026l.07.005a4 4 0 0 1 1.635.49 3.94 3.94 0 0 1 1.602 1.662 3.8 3.8 0 0 1 .397 1.414l.005.076.003.075q.002.038.002.075c0 .024.003.052 0 .07v.065l-.002.073-.008.174a6 6 0 0 1-.08.639 5 5 0 0 1-.267.927 5.3 5.3 0 0 1-.624 1.13 5.05 5.05 0 0 1-3.237 2.014 5 5 0 0 1-.649.066l-.039.003h-.287a6.6 6.6 0 0 1-1.716-.265 6.78 6.78 0 0 1-3.4-2.274 6.8 6.8 0 0 1-.746-1.15 6.6 6.6 0 0 1-.714-2.596l-.005-.083-.002-.02v-.056l-.003-.073v-.096l-.003-.104v-.07l.003-.163c.008-.22.026-.45.054-.678a9 9 0 0 1 .28-1.355q.192-.668.473-1.277a7 7 0 0 1 1.456-2.1 6 6 0 0 1 .953-.763q.253-.166.524-.306c.089-.05.182-.091.273-.135q.07-.031.138-.062a7 7 0 0 1 .714-.267l.145-.045c.049-.015.098-.026.148-.041q.147-.042.296-.076c.049-.013.1-.02.15-.033l.15-.032.151-.028.076-.013.075-.01.153-.024c.057-.01.114-.013.171-.023l.169-.021q.055-.006.106-.01l.073-.008.036-.003.042-.002q.086-.006.171-.01l.086-.006h.023l.037-.003.145-.007a8 8 0 0 1 1.708.125 8 8 0 0 1 2.048.68 8.3 8.3 0 0 1 1.672 1.09l.09.077.089.078c.06.052.114.107.171.159q.085.079.166.16.08.08.159.164a8.7 8.7 0 0 1 1.41 1.978c.012.026.028.052.04.078l.04.078.075.156c.023.051.05.1.07.153l.065.15a9 9 0 0 1 .45 1.34.19.19 0 0 0 .201.142.186.186 0 0 0 .172-.184q.015-.37-.024-.856z"/></svg></span></h3>
-<h2 id="practica-3-monitorizando-mi-cluster-kubernetes"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> <strong>PRÁCTICA 3</strong>: MONITORIZANDO MI CLÚSTER KUBERNETES</h2>
-<p>Antes de nada, comprobamos que nuestro clúster se encuentra funcionando correctamente y todos los nodos están <strong>"Ready"</strong>. También, confirmamos si tenemos <strong>HELM</strong> instalado:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl get nodes
-
-helm version
-</code></pre></div>
-<p>Agregamos el paquete (<em>chart</em>) de Prometheus al repositorio de Helm y luego lo actualizamos:</p>
-<div class="language-text highlight"><pre><span></span><code>helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-
-helm repo update
-</code></pre></div>
-<p>Creamos un Namespace específico para las herramientas de monitorización:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl create namespace monitoring
-</code></pre></div>
-<div class="admonition question inline end">
-<p class="admonition-title">Objeto SECRET</p>
-<p>Un "Secret" en Kubernetes es un recurso para almacenar información sensible (contraseñas, tokens, claves SSH) de forma segura, separada del código y las configuraciones no confidenciales. Permitiendo que los Pods los consuman como archivos montados o variables de entorno sin exponerlos directamente.</p>
-</div>
-<p>Creamos dos ficheros, uno para el nombre de usuario y otro para la contraseña. Y con ellos creamos un objeto <strong><code>secret</code></strong> donde se almacenará esa información sensible:</p>
-<div class="language-text highlight"><pre><span></span><code>echo -n &#39;admin&#39; &gt; ./admin-user
-
-echo -n &#39;mipass123&#39; &gt; ./admin-password
-
-kubectl create secret generic grafana-admin-credentials --from-file=./admin-user --from-file=admin-password -n monitoring
-</code></pre></div>
-<p>Confirmamos que se ha creado nuestro <em>secret</em> y en caso positivo, podemos borrar los ficheros previamente creados:</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl describe secret -n monitoring grafana-admin-credentials
-
-rm admin-user &amp;&amp; rm admin-password
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Si queremos verificar el usuario y contraseña:</p>
-<div class="language-text highlight"><pre><span></span><code># PARA EL NOMBRE DE USUARIO
-kubectl get secret -n monitoring grafana-admin-credentials -o jsonpath=&quot;{.data.admin-user}&quot; | base64 --decode
-
-# PARA LA CONTRASEÑA
-kubectl get secret -n monitoring grafana-admin-credentials -o jsonpath=&quot;{.data.admin-password}&quot; | base64 --decode
-</code></pre></div>
-</div>
-<p>Descargamos el archivo <a href="https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml">values.yaml</a> <img alt="📥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e5.svg" title=":inbox_tray:" /> desde el repositorio de Prometheus. Este archivo contiene todos los parámentros que podemos configurar dentro de la herramienta (nombre de los elementos, servicios habilitados, permisos...):</p>
-<div class="language-text highlight"><pre><span></span><code>curl -O https://raw.githubusercontent.com/prometheus-community/helm-charts/refs/heads/main/charts/kube-prometheus-stack/values.yaml
-</code></pre></div>
-<p>Y lo personalizamos para que Grafana coja las credenciales que hemos creado más arriba:</p>
-<div class="language-text highlight"><pre><span></span><code>sed -n &#39;1321p&#39; values.yaml
-
-sed -i &#39;1321c\    existingSecret: &quot;grafana-admin-credentials&quot;&#39; values.yaml
-
-sed -n &#39;1321p&#39; values.yaml
-</code></pre></div>
-<div class="admonition bug">
-<p class="admonition-title">DESINSTALACIÓN:</p>
-<p>Si por algún  motivo necesitamos eliminar el despliegue de Prometheus, podemos hacerlo con:
-    helm uninstall prometheus -n monitoring</p>
-</div>
-<p>Y procedemos a instalar la herramienta:</p>
-<div class="language-text highlight"><pre><span></span><code>helm install -n monitoring prometheus prometheus-community/kube-prometheus-stack -f values.yaml
-</code></pre></div>
-<p>Si necesitamos realizar cambios en la configuración del <strong>values.yaml</strong>, podemos aplicar los cambios ejecutando:</p>
-<div class="language-text highlight"><pre><span></span><code>helm upgrade -n monitoring prometheus prometheus-community/kube-prometheus-stack -f values.yaml
-</code></pre></div>
-<p>Por último, creamos un renvio de puertos hacía el contenedor de Grafana (¡OJO!: deberemos consultar primero su nombre), para que podamos acceder a la interfaz gráfica desde un navegador fuera de nuestro clúster:</p>
-<div class="language-text highlight"><pre><span></span><code># Para no permitir cualquier acceso, podemos sustituir &quot;0.0.0.0&quot; por la dirección IP del nodo Maestro
-
-kubectl port-forward -n monitoring prometheus-grafana-xxxxxxx 52222:3000 --address 0.0.0.0
-</code></pre></div>
-<div class="admonition inline bug">
-<p class="admonition-title">ERROR PODS NOT RUNNING</p>
-<div class="language-text highlight"><pre><span></span><code>kubectl rollout restart *
-</code></pre></div>
-</div>
-<div class="admonition inline end bug">
-<p class="admonition-title">ERROR KUBECTL PORT 6443</p>
-<div class="language-text highlight"><pre><span></span><code>sudo -i
-swapoff -a
-exit
-</code></pre></div>
-</div>
-<p>Ahora ya podemos ir a nuestro navegador (desde un PC que tenga conectividad con los nodos de nuestro clúster) y podemos ver la interfaz de Grafana usando la dirección <code>http://&lt;IP_NODO_MAESTRO&gt;:52222</code>. Tras iniciar sesión, iremos al menú lateral izquierdo, al apartado de <strong>"Connnections"</strong>:</p>
-<figure>
-    <img alt="Captura Connections" src="../../img/azarquiel.jpg" width="400" />
-    <small><figcaption>Conections en Grafana</figcaption></small>
-</figure>
 
 
 
