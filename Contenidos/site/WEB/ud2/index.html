@@ -1777,16 +1777,16 @@
 <li><strong>CE 2.10.</strong> Se han analizado y utilizado preprocesadores de estilos para traducir estilos comunes a un código estándar y reconocible por los navegadores.</li>
 </ul>
 </div>
-<h2 id="introduccion-y-conceptos-basicos">INTRODUCCIÓN Y CONCEPTOS BÁSICOS</h2>
-<h3 id="como-anadir-hojas-de-estilo-a-nuestro-html">COMO AÑADIR HOJAS DE ESTILO A NUESTRO HTML</h3>
-<p>Debemos insertar <strong>en la cabecera</strong> de nuestro sitio web una línea similar a la siguiente:</p>
+<h2 id="introduccion-y-conceptos-basicos"><span style="color: var(--diw-primary-color);"> INTRODUCCIÓN Y CONCEPTOS BÁSICOS</span></h2>
+<h3 id="como-anadir-hojas-de-estilo-a-nuestro-html"><span style="color: var(--diw-secondary-color);"> COMO AÑADIR HOJAS DE ESTILO A NUESTRO HTML</span></h3>
+<p>Debemos insertar <strong>en la cabecera</strong> (<em>head</em>) de nuestro sitio web una línea similar a la siguiente:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/misestilos.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
 </span></code></pre></div>
 <ul>
 <li><code>rel</code>: indica el tipo de contenido.</li>
 <li><code>type</code>: indica el tipo de archivo.</li>
 </ul>
-<h3 id="modelo-de-cajas">MODELO DE CAJAS</h3>
+<h3 id="modelo-de-cajas"><span style="color: var(--diw-secondary-color);"> MODELO DE CAJAS</span></h3>
 <p>Es el modelo que usa CSS, y que se basa en tratar todos los elementos que se representan en una página web como cajas con una serie de características que las definen.</p>
 <p><img alt="Modelo de Cajas CSS" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3A6Ixa1ai5rsZE1AfKsfhEiw0Ua_DC8Hx-bHeZr2y9AWLVCvzAZF6dts&amp;s=10" /></p>
 <p>La <mark class="critic">estructura</mark> que siguen estas cajas es la siguiente:</p>
@@ -1801,7 +1801,7 @@
 <li><strong>Como elemento en línea:</strong> Cada caja que introducimos <strong>se coloca al lado de la otra</strong> en la misma línea; cuando no caben más, salta a la siguiente línea. Por ejemplo: <code>&lt;img&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;label&gt;</code>... se comportan por defecto como elemento en línea.</li>
 <li><strong>Como elemento en bloque:</strong> Cada caja que introducimos <strong>se coloca en una nueva línea</strong>. Por ejemplo: <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h2&gt;</code>... se comportan por defecto como bloques.</li>
 </ul>
-<h3 id="selectores-css">SELECTORES CSS</h3>
+<h3 id="selectores-css"><span style="color: var(--diw-secondary-color);"> SELECTORES CSS</span></h3>
 <ul>
 <li><strong>Selector universal:</strong> Se aplica a todos los elementos de la página <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>*</code></li>
 <li><strong>Etiquetas:</strong> Se seleccionan escribiendo su propio nombre <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>img</code></li>
@@ -1814,45 +1814,47 @@
 <li><strong>Hermano adyacente:</strong> Para seleccionar una etiqueta que va justo después de otra <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>h1 + h2</code></li>
 <li><strong>Hermano general:</strong> Para seleccionar una etiqueta que va después (sin importar si es inmediatamente consecutiva) <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>p ~ img</code></li>
 </ul>
-<h3 id="estilos-en-cascada">ESTILOS EN CASCADA</h3>
+<h3 id="estilos-en-cascada"><span style="color: var(--diw-secondary-color);"> ESTILOS EN CASCADA</span></h3>
 <p>CSS, como su propio nombre indica, funciona en cascada, es decir, los estilos se propagan hacia abajo.</p>
 <p>Del mismo modo, si dos o más reglas entran en conflicto o se solapan, prevalecerá la regla que se aplica en el elemento más específico, es decir, el elemento más abajo en el árbol DOM.</p>
 <figure>
     <img alt="HTML vs DOM Tree" src="https://lenguajejs.com/dom/introduccion/que-es/que-es-dom.png" width="500" />
     <small><figcaption>HTML vs DOM</figcaption></small>
 </figure>
-<blockquote>
-<p><strong>Árbol DOM:</strong> Es una representación jerárquica de un documento HTML, donde el nodo raíz es <code>&lt;html&gt;</code> y cada etiqueta se convierte en un nodo.</p>
-</blockquote>
-<h3 id="css-dinner">CSS DINNER</h3>
-<p>Practica los selectores CSS con la siguiente aplicación: <a href="https://flukeout.github.io/">https://flukeout.github.io/</a></p>
-<h3 id="pseudo-clases">PSEUDO-CLASES</h3>
+<p><mark class="critic"><strong>Árbol DOM:</strong></mark> Es una representación jerárquica de un documento HTML, donde el nodo raíz es <code>&lt;html&gt;</code> y cada etiqueta se convierte en un nodo.</p>
+<div class="admonition game">
+<p class="admonition-title">PRÁCTICA LOS SELECTORES CSS</p>
+<p><figure markdown='span'>
+  <a href="https://flukeout.github.io/" target="_blank"><img alt="CSS DINER" src="https://i.ytimg.com/vi/BaiOGOmK9Mk/maxresdefault.jpg" width="250" /></a>
+</figure></p>
+</div>
+<h3 id="pseudo-clases"><span style="color: var(--diw-secondary-color);"> PSEUDO-CLASES</span></h3>
 <p>Especifican un estado especial del elemento seleccionado. Se seleccionan con:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">selector</span><span class="p">:</span><span class="nd">pseudo-clase</span>
 </span></code></pre></div>
 <ul>
 <li>🔗 <strong>Listado de referencia:</strong> <a href="https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes">MDN - Pseudo-classes</a></li>
 </ul>
-<h3 id="pseudo-elementos">PSEUDO-ELEMENTOS</h3>
+<h3 id="pseudo-elementos"><span style="color: var(--diw-secondary-color);"> PSEUDO-ELEMENTOS</span></h3>
 <p>Permiten añadir estilos a una parte concreta de un elemento. Se seleccionan con:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">selector</span><span class="p">::</span><span class="nd">pseudo-elemento</span>
 </span></code></pre></div>
 <ul>
 <li>🔗 <strong>Listado de referencia:</strong> <a href="https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements">MDN - Pseudo-elements</a></li>
 </ul>
-<h3 id="propiedades-css">PROPIEDADES CSS</h3>
+<h3 id="propiedades-css"><span style="color: var(--diw-secondary-color);"> PROPIEDADES CSS</span></h3>
 <p>Son los diferentes parámetros con los que definiremos el aspecto final de los elementos de nuestra página web, tales como color, tamaño, fondo, tipo de letra, posicionamiento, etc. Hay muchísimas.</p>
 <ul>
 <li>🔗 <strong>Listado de referencia:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Properties">MDN - CSS Properties</a></li>
 </ul>
-<h3 id="preprocesadores-css">PREPROCESADORES CSS</h3>
+<h3 id="preprocesadores-css"><span style="color: var(--diw-secondary-color);"> PREPROCESADORES CSS</span></h3>
 <ul>
 <li>Less</li>
 <li>Sass</li>
 <li>PostCSS</li>
 </ul>
-<h2 id="maquetacion-tradicional">MAQUETACIÓN TRADICIONAL</h2>
-<h3 id="todo-empieza-con-un-boceto-o-prototipo">TODO EMPIEZA CON UN BOCETO O PROTOTIPO</h3>
+<h2 id="maquetacion-tradicional"><span style="color: var(--diw-primary-color);"> MAQUETACIÓN TRADICIONAL</span></h2>
+<h3 id="todo-empieza-con-un-boceto-o-prototipo"><span style="color: var(--diw-secondary-color);"> TODO EMPIEZA CON UN BOCETO O PROTOTIPO</span></h3>
 <p>Diseña siempre <strong>"de lo grande a lo chico"</strong>. El primer paso es crear un prototipo o boceto previo que defina claramente la estructura principal de lo que queremos diseñar. Teniendo eso presente, vamos a agilizar mucho las cosas cuando pasemos a diseñar los detalles:</p>
 <ul>
 <li>Con lápiz y papel</li>
@@ -1863,14 +1865,14 @@
 <li><a href="https://ninjamock.com/">ninjamock.com</a></li>
 <li><a href="https://www.figma.com/">figma.com</a></li>
 </ul>
-<h3 id="propiedad-display">PROPIEDAD DISPLAY</h3>
+<h3 id="propiedad-display"><span style="color: var(--diw-secondary-color);"> PROPIEDAD DISPLAY</span></h3>
 <ul>
 <li><strong><code>inline</code>:</strong> No rompen el flujo de la línea y se van colocando uno detrás de otro mientras caben. Ignoran <code>width</code> y <code>height</code>.</li>
 <li><strong><code>inline-block</code>:</strong> Como <code>inline</code>, pero sí podemos asignarles <code>width</code> y <code>height</code>.</li>
 <li><strong><code>block</code>:</strong> Rompen el flujo de línea provocando un salto de línea anterior y posterior. Por defecto ocupan todo el ancho de la etiqueta padre.</li>
 <li><strong><code>none</code>:</strong> El elemento desaparece sin dejar hueco vacío en su lugar.</li>
 </ul>
-<h4 id="relacionados-con-tablas">Relacionados con tablas</h4>
+<h4 id="relacionados-con-tablas"><span style="color: var(--diw-tertiary-color);"> Relacionados con tablas</span></h4>
 <p>Se comportan como el elemento de tabla indicado:</p>
 <ul>
 <li><code>table</code></li>
@@ -1886,7 +1888,7 @@
 <blockquote>
 <p>ℹ <strong>Valores <code>flex</code> y <code>grid</code>:</strong> <em>(Próxima unidad)</em></p>
 </blockquote>
-<h3 id="layouts">LAYOUTS</h3>
+<h3 id="layouts"><span style="color: var(--diw-secondary-color);"> LAYOUTS</span></h3>
 <ul>
 <li><strong>Fixed:</strong> Establece un tamaño fijo en píxeles para la anchura de los elementos. Permite control total del tamaño, pero en pantallas pequeñas muestra <em>scroll</em> horizontal y en grandes deja muchos espacios en blanco en los márgenes.</li>
 <li><strong>Elastic:</strong> Establece la anchura de los elementos en <code>em</code> (tamaño de letra por defecto). Al usar el zoom, los elementos se escalan con el texto, pero según cuánto escalemos pueden llegar a solaparse.</li>
@@ -1894,8 +1896,8 @@
 <li><strong>Híbrido:</strong> Establece el ancho máximo y mínimo que podrán crecer o encoger los elementos en píxeles (<code>max-width</code> y <code>min-width</code>). Estos atributos suelen aplicarse combinados con los principios de alguno de los layouts anteriores.</li>
 <li><strong>Responsive:</strong> El layout va cambiando dependiendo generalmente de la anchura de la pantalla. Si uso más de un layout para la página, se denomina <em>adaptive</em>.</li>
 </ul>
-<h3 id="box-sizing">BOX-SIZING</h3>
-<h4 id="dimensiones-por-defecto-de-la-caja-de-un-elemento">Dimensiones por defecto de la caja de un elemento:</h4>
+<h3 id="box-sizing"><span style="color: var(--diw-secondary-color);"> BOX-SIZING</span></h3>
+<h4 id="dimensiones-por-defecto-de-la-caja-de-un-elemento"><span style="color: var(--diw-tertiary-color);"> Dimensiones por defecto de la caja de un elemento</span></h4>
 <ul>
 <li><strong>Altura del elemento</strong> = $\text{altura del contenido} + \text{padding} + \text{borde}$</li>
 <li><strong>Anchura del elemento</strong> = $\text{anchura del contenido} + \text{padding} + \text{borde}$</li>
@@ -1907,14 +1909,14 @@
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<h4 id="tipos-de-box-sizing">Tipos de <code>box-sizing</code>:</h4>
+<h4 id="tipos-de-box-sizing"><span style="color: var(--diw-tertiary-color);"> Tipos de <code>box-sizing</code></span></h4>
 <ul>
 <li><strong><code>border-box</code>:</strong> El tamaño que demos al elemento será la dimensión total de la caja.</li>
 <li><strong><code>content-box</code>:</strong> Funcionamiento por defecto (habría que realizar la suma explicada arriba).</li>
 <li><strong><code>padding-box</code>:</strong> Solo se suma el tamaño del borde y el contenido para calcular las dimensiones de la caja.</li>
 </ul>
-<h3 id="centrado">CENTRADO</h3>
-<h4 id="centrado-horizontal">Centrado Horizontal</h4>
+<h3 id="centrado"><span style="color: var(--diw-secondary-color);"> CENTRADO</h3>
+<h4 id="centrado-horizontal"><span style="color: var(--diw-tertiary-color);"> Centrado Horizontal</span></h4>
 <ul>
 <li><strong>Elementos en línea:</strong> Aplicar la propiedad <code>text-align: center</code> al contenedor padre.</li>
 <li><strong>Elementos en bloque:</strong></li>
@@ -1922,7 +1924,7 @@
 <li><strong>Varios elementos:</strong> Aplicar <code>text-align: center</code> al contenedor y <code>display: inline-block</code> en los elementos a centrar.</li>
 <li><strong>Contenedores flex:</strong> <em>(Próxima unidad)</em></li>
 </ul>
-<h4 id="centrado-vertical">Centrado Vertical</h4>
+<h4 id="centrado-vertical"><span style="color: var(--diw-tertiary-color);"> Centrado Vertical</span></h4>
 <ul>
 <li><strong>Elementos en línea:</strong> Indicando el mismo <em>padding</em> arriba y abajo, o bien simulando un elemento tabla con <code>display</code> e indicando la propiedad <code>vertical-align: middle</code> (en este caso el padre debe tener altura fija).</li>
 <li><strong>Elementos en bloque:</strong> Usando la propiedad <code>position</code> en el contenedor (padre) y en el elemento.</li>
@@ -1953,7 +1955,7 @@
 <ul>
 <li><strong>Contenedores flex:</strong> <em>(Próxima unidad)</em></li>
 </ul>
-<h3 id="position">POSITION</h3>
+<h3 id="position"><span style="color: var(--diw-secondary-color);"> POSITION</span></h3>
 <p>Permite romper el flujo normal de los elementos (en línea o en bloque) y colocarlos en lugares específicos. Sus valores pueden ser:</p>
 <ul>
 <li><strong><code>static</code>:</strong> Valor por defecto. El elemento sigue el flujo correspondiente y no atiende a <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code> o <code>z-index</code>.</li>
@@ -1965,7 +1967,7 @@
 <blockquote>
 <p>💡 <strong>Propiedad <code>z-index</code>:</strong> Sirve para establecer el orden de superposición cuando los elementos se solapan. Funciona como capas: el elemento con un <code>z-index</code> más alto se posicionará por delante.</p>
 </blockquote>
-<h3 id="columnas">COLUMNAS</h3>
+<h3 id="columnas"><span style="color: var(--diw-secondary-color);"> COLUMNAS</span></h3>
 <p>Podemos dividir el contenido en varias columnas mediante las siguientes propiedades:</p>
 <ul>
 <li><strong><code>column-count</code>:</strong> Especifica el número de columnas que tendrá el elemento contenedor.</li>
@@ -1976,7 +1978,7 @@
 <li><strong><code>column-fill</code>:</strong> El contenedor debe tener altura; establece cómo se rellenan las columnas (<code>auto</code> o <code>balance</code>).</li>
 <li><strong><code>break-inside</code>:</strong> Con valor <code>avoid</code> (o <code>void</code>) para evitar que un elemento se rompa entre dos columnas.</li>
 </ul>
-<h3 id="elementos-flotantes">ELEMENTOS FLOTANTES</h3>
+<h3 id="elementos-flotantes"><span style="color: var(--diw-secondary-color);"> ELEMENTOS FLOTANTES</span></h3>
 <ul>
 <li><strong><code>float</code>:</strong> Creada originalmente para disponer texto alrededor de una imagen. Hoy se utiliza para maquetación flotando elementos y ajustando sus dimensiones. Valores: <code>left</code> o <code>right</code>.</li>
 <li><strong><code>clear</code>:</strong> Fuerza a un elemento a dejar de flotar. Valores: <code>left</code>, <code>right</code> o <code>both</code>.</li>
@@ -1994,14 +1996,14 @@
 </span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">table</span><span class="p">;</span>
 </span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="maquetacion-con-flex-y-grid">MAQUETACIÓN CON FLEX y GRID</h2>
-<h3 id="que-son-flex-y-grid">¿QUÉ SON FLEX Y GRID?</h3>
+<h2 id="maquetacion-con-flex-y-grid"><span style="color: var(--diw-primary-color);"> MAQUETACIÓN CON FLEX y GRID</span></h2>
+<h3 id="que-son-flex-y-grid"><span style="color: var(--diw-secondary-color);"> ¿QUÉ SON FLEX Y GRID?</span></h3>
 <p>Son dos valores para la propiedad <code>display</code> añadidos a CSS3 / HTML5 que permiten maquetar webs de forma más sencilla y eficiente que con los métodos tradicionales.</p>
 <ul>
 <li><strong>Flex (<code>display: flex</code>):</strong> Trabaja en una sola dimensión (horizontal o vertical). Permite alinear, escalar y distribuir el espacio restante de sus elementos hijos.</li>
 <li><strong>Grid (<code>display: grid</code>):</strong> Es el sistema de maquetación bidimensional más potente, ya que permite trabajar de forma simultánea en filas y columnas.</li>
 </ul>
-<h3 id="maquetacion-con-flex">MAQUETACIÓN CON FLEX</h3>
+<h3 id="maquetacion-con-flex"><span style="color: var(--diw-secondary-color);"> MAQUETACIÓN CON FLEX</span></h3>
 <p>Al maquetar con Flex existen dos componentes principales: el <strong>contenedor Flex</strong> (etiqueta padre) y los <strong>elementos flexibles</strong> (hijos directos).</p>
 <p>Las propiedades modificables de los elementos flexibles incluyen:</p>
 <ul>
@@ -2010,7 +2012,7 @@
 <li>Alineación (horizontal o vertical)</li>
 <li>Distribución a lo largo del contenedor padre</li>
 </ul>
-<h4 id="propiedades-del-contenedor-flex">PROPIEDADES DEL CONTENEDOR FLEX</h4>
+<h4 id="propiedades-del-contenedor-flex"><span style="color: var(--diw-tertiary-color);"> PROPIEDADES DEL CONTENEDOR FLEX</span></h4>
 <p>Al asignar <code>display: flex</code> a un contenedor padre, este organiza automáticamente los elementos hijo en forma de fila (<code>row</code> por defecto), en el orden del documento HTML.</p>
 <ul>
 <li><strong><code>flex-direction</code>:</strong> Modifica la dirección de los elementos.</li>
@@ -2025,7 +2027,7 @@
 <li><strong><code>flex-flow</code>:</strong> Propiedad abreviada (<em>shorthand</em>) para combinar dirección y ajuste.  </li>
 <li><em>Ejemplo:</em> <code>flex-flow: row-reverse wrap;</code></li>
 </ul>
-<h5 id="alineacion-y-distribucion-horizontal">Alineación y Distribución Horizontal</h5>
+<h5 id="alineacion-y-distribucion-horizontal"><span style="color: var(--diw-cuaternary-color);"> Alineación y Distribución Horizontal</span></h5>
 <p>La propiedad <strong><code>justify-content</code></strong> controla la alineación a lo largo del eje principal (<em>main axis</em>):</p>
 <ul>
 <li><code>flex-start</code> (por defecto): Alinea los elementos al principio.</li>
@@ -2035,7 +2037,7 @@
 <li><code>space-around</code>: Distribuye el espacio equitativamente, reservando la mitad del espacio en los extremos.</li>
 <li><code>space-evenly</code>: Distribuye el espacio exactamente igual entre elementos y extremos.</li>
 </ul>
-<h5 id="alineacion-vertical">Alineación Vertical</h5>
+<h5 id="alineacion-vertical"><span style="color: var(--diw-cuaternary-color);"> Alineación Vertical</span></h5>
 <p>La propiedad <strong><code>align-items</code></strong> controla la alineación en el eje transversal (<em>cross axis</em>):</p>
 <ul>
 <li><code>flex-start</code>: Alinea arriba.</li>
@@ -2045,13 +2047,13 @@
 <li><code>baseline</code>: Alinea las líneas base del texto contenido en los elementos.</li>
 </ul>
 <p>Para personalizar la alineación cuando hay múltiples líneas de elementos hijos, se utiliza <strong><code>align-content</code></strong> (acepta valores como <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>stretch</code>, <code>space-between</code>, <code>space-around</code>).</p>
-<h4 id="propiedades-de-los-elementos-flexibles">PROPIEDADES DE LOS ELEMENTOS FLEXIBLES</h4>
-<h5 id="orden">Orden</h5>
+<h4 id="propiedades-de-los-elementos-flexibles"><span style="color: var(--diw-tertiary-color);"> PROPIEDADES DE LOS ELEMENTOS FLEXIBLES</span></h4>
+<h5 id="orden"><span style="color: var(--diw-cuaternary-color);"> Orden</span></h5>
 <ul>
 <li><strong><code>order</code>:</strong> (por defecto <code>0</code>) Permite cambiar el orden visual de aparición de un elemento hijo sin modificar el HTML.</li>
 <li><em>Ejemplo:</em> <code>order: 3;</code></li>
 </ul>
-<h5 id="tamano-y-crecimiento">Tamaño y Crecimiento</h5>
+<h5 id="tamano-y-crecimiento"><span style="color: var(--diw-cuaternary-color);"> Tamaño y Crecimiento</span></h5>
 <ul>
 <li><strong><code>flex-grow</code>:</strong> (por defecto <code>0</code>) Factor de crecimiento para repartir el espacio disponible sobrante.  </li>
 <li><em>Ejemplo:</em> <code>flex-grow: 2;</code></li>
@@ -2062,15 +2064,27 @@
 <li><strong><code>flex</code>:</strong> Abreviatura que engloba <code>flex-grow</code>, <code>flex-shrink</code> y <code>flex-basis</code>.  </li>
 <li><em>Ejemplo:</em> <code>flex: 1 1 20%;</code></li>
 </ul>
-<h5 id="alineacion-individual-con-flex">Alineación Individual con Flex</h5>
+<h5 id="alineacion-individual-con-flex"><span style="color: var(--diw-cuaternary-color);"> Alineación Individual con Flex</span></h5>
 <ul>
 <li><strong><code>align-self</code>:</strong> Permite sobrescribir la propiedad <code>align-items</code> del contenedor para un elemento individual. Acepta los mismos valores (<code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>stretch</code>, <code>baseline</code>).  </li>
 <li><em>Ejemplo:</em> <code>align-self: flex-end;</code></li>
 </ul>
-<h3 id="maquetacion-con-grid">MAQUETACIÓN CON GRID</h3>
+<div class="admonition game">
+<p class="admonition-title">PRÁCTICA LOS CONTENEDORES FLEX</p>
+<p><figure markdown='span'>
+  <a href="https://flexboxfroggy.com/" target="_blank"><img alt="FLEXBOX FROGGY" src="https://i.ytimg.com/vi/zPn-Ba9oWlo/maxresdefault.jpg" width="250" /></a>
+</figure></p>
+</div>
+<details class="tip">
+<summary>GENERADOR DE LAYOUTS CON FLEXBOX</summary>
+<p><figure markdown='span'>
+  <a href="https://flexboxlabs.netlify.app/" target="_blank"><img alt="FLEXBOX LABS" src="https://edgecomfort.online/og-image.png" width="250" /></a>
+</figure></p>
+</details>
+<h3 id="maquetacion-con-grid"><span style="color: var(--diw-secondary-color);"> MAQUETACIÓN CON GRID</span></h3>
 <p>Grid utiliza un contenedor padre con la propiedad <code>display: grid</code> para controlar una estructura en rejilla compuesta por filas y columnas.</p>
-<h4 id="propiedades-del-contenedor-grid">PROPIEDADES DEL CONTENEDOR GRID</h4>
-<h5 id="estructura-de-filas-y-columnas">Estructura de Filas y Columnas</h5>
+<h4 id="propiedades-del-contenedor-grid"><span style="color: var(--diw-tertiary-color);"> PROPIEDADES DEL CONTENEDOR GRID</span></h4>
+<h5 id="estructura-de-filas-y-columnas"><span style="color: var(--diw-cuaternary-color);"> Estructura de Filas y Columnas</span></h5>
 <ul>
 <li><strong><code>grid-template-columns</code>:</strong> Define el número, tamaño y nombre de las columnas.</li>
 <li><code>grid-template-columns: 20% 50% 30%;</code></li>
@@ -2084,7 +2098,7 @@
 <li><strong>Unidad <code>fr</code>:</strong> Fracción del espacio disponible para reparto por pesos.  </li>
 <li><em>Ejemplo:</em> <code>grid-template-columns: 2fr 100px 1fr 2fr;</code></li>
 </ul>
-<h5 id="alineacion-interna-de-celdas">Alineación Interna de Celdas</h5>
+<h5 id="alineacion-interna-de-celdas"><span style="color: var(--diw-cuaternary-color);"> Alineación Interna de Celdas</span></h5>
 <ul>
 <li><strong><code>justify-items</code> (Horizontal):</strong> Alinea los elementos dentro de sus respectivas celdas.</li>
 <li><code>start</code> | <code>end</code> | <code>center</code> | <code>stretch</code> (por defecto)</li>
@@ -2093,7 +2107,7 @@
 <li><strong><code>place-items</code>:</strong> Abreviatura para alineación vertical y horizontal (<code>place-items: &lt;align-items&gt; &lt;justify-items&gt;</code>).  </li>
 <li><em>Ejemplo:</em> <code>place-items: start center;</code></li>
 </ul>
-<h5 id="distribucion-del-grid-en-el-contenedor">Distribución del GRID en el Contenedor</h5>
+<h5 id="distribucion-del-grid-en-el-contenedor"><span style="color: var(--diw-cuaternary-color);"> Distribución del GRID en el Contenedor</span></h5>
 <p>Si la rejilla es más pequeña que el contenedor padre:</p>
 <ul>
 <li><strong><code>justify-content</code> (Horizontal):</strong> <code>start</code> | <code>end</code> | <code>center</code> | <code>stretch</code> | <code>space-between</code> | <code>space-around</code> | <code>space-evenly</code></li>
@@ -2101,7 +2115,7 @@
 <li><strong><code>place-content</code>:</strong> Abreviatura para ambos ejes.  </li>
 <li><em>Ejemplo:</em> <code>place-content: center space-around;</code></li>
 </ul>
-<h5 id="colocacion-implicita">Colocación Implícita</h5>
+<h5 id="colocacion-implicita"><span style="color: var(--diw-cuaternary-color);"> Colocación Implícita</span></h5>
 <p>Define el comportamiento de elementos colocados fuera de la rejilla definida:</p>
 <ul>
 <li><strong><code>grid-auto-columns</code>:</strong> Ancho por defecto de columnas implícitas.</li>
@@ -2111,37 +2125,41 @@
 <li><code>column</code> (llena columnas primero)</li>
 <li><code>dense</code> (intenta rellenar los huecos anteriores; usar con precaución)</li>
 </ul>
-<h4 id="propiedades-de-los-elementos-dentro-de-un-grid">PROPIEDADES DE LOS ELEMENTOS DENTRO DE UN GRID</h4>
-<blockquote>
-<p><strong>Nota:</strong> A los elementos dentro de un contenedor Grid <strong>NO</strong> les afectan las propiedades <code>float</code>, <code>display: inline-block</code>, <code>display: table-cell</code>, <code>vertical-align</code> ni las propiedades de columnas múltiples (<code>column-*</code>).</p>
-</blockquote>
-<h5 id="area-ocupada">Área Ocupada</h5>
-<p>Para indicar las líneas de la rejilla donde empieza y termina un elemento:</p>
+<h4 id="propiedades-de-los-elementos-dentro-de-un-grid"><span style="color: var(--diw-tertiary-color);"> PROPIEDADES DE LOS ELEMENTOS DENTRO DE UN GRID</span></h4>
+<p><strong><em>Nota:</em></strong> A los elementos dentro de un contenedor Grid <strong>NO</strong> les afectan las propiedades <code>float</code>, <code>display: inline-block</code>, <code>display: table-cell</code>, <code>vertical-align</code> ni las propiedades de columnas múltiples (<code>column-*</code>).</p>
+<h5 id="area-ocupada"><span style="color: var(--diw-cuaternary-color);"> Área Ocupada</span></h5>
+<p>Para indicar las líneas de la rejilla donde empieza y termina un elemento, se usan las propiedades:</p>
 <ul>
-<li><code>grid-column-start</code></li>
-<li><code>grid-column-end</code></li>
 <li><code>grid-row-start</code></li>
+<li><code>grid-column-start</code></li>
 <li><code>grid-row-end</code></li>
+<li><code>grid-column-end</code></li>
 </ul>
-<p><strong>Sintaxis abreviadas:</strong></p>
+<p>Aunque se pueden definir <strong>filas o columnas en una única linea</strong>, usando la <strong>sintaxis abreviada</strong> como se muestra a continuación:</p>
 <ul>
-<li><code>grid-column: &lt;start&gt; / &lt;end&gt;;</code></li>
-<li><code>grid-row: &lt;start&gt; / &lt;end&gt;;</code></li>
-<li><code>grid: &lt;row-start&gt; / &lt;column-start&gt; / &lt;row-end&gt; / &lt;column-end&gt;;</code></li>
+<li><code>grid-column:</code> &lt; start &gt; / &lt; end &gt;;</li>
+<li><code>grid-row:</code> &lt; start &gt; / &lt; end &gt;;</li>
 </ul>
-<p><em>Ejemplos de uso con <code>span</code>:</em></p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c">/* Ocupar desde la columna 2 hasta abarcar 3 columnas más */</span>
+<p>Y todas ellas, pueden definirse en una única linea, bajo la propiedad <code>grid-area</code>.</p>
+<ul>
+<li><code>grid-area:</code> &lt; row-start &gt; / &lt; column-start &gt; / &lt; row-end &gt; / &lt; column-end &gt;;</li>
+</ul>
+<p><em>Ejemplos de uso:</em></p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c">/* Elemento hijo que empiece en el separador de columna 2 y se extienda 3 columnas más */</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">grid-column-start</span><span class="o">:</span><span class="w"> </span><span class="nt">2</span><span class="o">;</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">grid-column-end</span><span class="o">:</span><span class="w"> </span><span class="nt">span</span><span class="w"> </span><span class="nt">3</span><span class="o">;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c">/* Elemento hijo que empiece en la fila 1 y columna 1; y termine en la fila 2 y columna 5*/</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nt">grid-area</span><span class="o">:</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nt">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nt">5</span>
 </span></code></pre></div>
-<h5 id="alineacion-individual-con-grid">Alineación Individual con Grid</h5>
+<h5 id="alineacion-individual-con-grid"><span style="color: var(--diw-cuaternary-color);"> Alineación Individual con Grid</span></h5>
 <ul>
 <li><strong><code>justify-self</code>:</strong> Alineación horizontal del elemento dentro de su celda (<code>start</code>, <code>end</code>, <code>center</code>, <code>stretch</code>).</li>
 <li><strong><code>align-self</code>:</strong> Alineación vertical del elemento dentro de su celda (<code>start</code>, <code>end</code>, <code>center</code>, <code>stretch</code>).</li>
 </ul>
-<h3 id="definicion-de-areas-en-grid">DEFINICIÓN DE ÁREAS EN GRID</h3>
-<p>En lugar de calcular líneas, podemos nombrar áreas dentro de los elementos con <strong><code>grid-area</code></strong> y distribuirlas visualmente en el contenedor mediante <strong><code>grid-template-areas</code></strong>.</p>
-<h4 id="ejemplo-de-configuracion-de-areas">Ejemplo de Configuración de Áreas:</h4>
+<h3 id="definicion-de-areas-en-grid"><span style="color: var(--diw-secondary-color);"> DEFINICIÓN DE ÁREAS EN GRID</span></h3>
+<p>Tambien tenemos otra opción, en lugar de calcular las líneas de la rejilla. Y es que podemos nombrar áreas dentro de los elementos hijos con <strong><code>grid-area</code></strong> y distribuirlas visualmente en el contenedor padre usando <strong><code>grid-template-areas</code></strong>, como vemos a continuación:</p>
+<h4 id="ejemplo-de-configuracion-de-areas"><span style="color: var(--diw-tertiary-color);"> Ejemplo de Configuración de Áreas</span></h4>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="kt">%</span><span class="p">);</span>
@@ -2158,19 +2176,29 @@
 </span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="p">.</span><span class="nc">main-content</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">grid-area</span><span class="p">:</span><span class="w"> </span><span class="n">main</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="p">.</span><span class="nc">footer</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">grid-area</span><span class="p">:</span><span class="w"> </span><span class="n">pie</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 </span></code></pre></div>
-<blockquote>
-<p><strong>Nota:</strong> El punto (<code>.</code>) en <code>grid-template-areas</code> representa un espacio o hueco vacío dentro de la rejilla.</p>
-</blockquote>
+<p><strong><em>Nota:</em></strong> El punto (<code>.</code>) en <code>grid-template-areas</code> representa un espacio o hueco vacío dentro de la rejilla.</p>
 <p>Es posible resumir la configuración completa en propiedades compuestas como <code>grid-template</code> o <code>grid</code>, aunque generalmente no se recomienda porque dificulta la lectura del código.</p>
-<h2 id="maquetacion-responsiva">MAQUETACIÓN RESPONSIVA</h2>
-<h3 id="que-es-el-diseno-responsivo">¿QUÉ ES EL DISEÑO RESPONSIVO?</h3>
+<div class="admonition game">
+<p class="admonition-title">PRÁCTICA LOS CONTENEDORES GRID</p>
+<p><figure markdown='span'>
+  <a href="https://cssgridgarden.com/" target="_blank"><img alt="GRID GARDEN" src="https://i.ytimg.com/vi/FsSleT2Xhdg/maxresdefault.jpg" width="250" /></a>
+</figure></p>
+</div>
+<details class="tip">
+<summary>GENERADOR DE LAYOUTS CON GRID</summary>
+<p><figure markdown='span'>
+  <a href="https://cssgrid-generator.netlify.app/" target="_blank"><img alt="CSS GRID GENERATOR" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/og-cssgrid.jpg" width="250" /></a>
+</figure></p>
+</details>
+<h2 id="maquetacion-responsiva"><span style="color: var(--diw-primary-color);"> MAQUETACIÓN RESPONSIVA</span></h2>
+<h3 id="que-es-el-diseno-responsivo"><span style="color: var(--diw-secondary-color);"> ¿QUÉ ES EL DISEÑO RESPONSIVO?</span></h3>
 <p>Es la característica del diseño web que permite que una página se muestre correctamente en una variedad de dispositivos y tamaños de pantalla, adaptando su maquetación (<em>layout</em>) al entorno de visualización.</p>
 <p>A grandes rasgos, esto se consigue mediante la combinación de <strong>HTML + CSS + Media Queries</strong>. Su funcionamiento se basa en realizar consultas sobre las características de la pantalla (como ancho o alto) y aplicar reglas CSS específicas según sus valores.</p>
 <ul>
 <li>🔗 <strong>Curso de referencia:</strong> <a href="https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html">Udacity - Responsive Web Design Fundamentals</a></li>
 </ul>
-<h3 id="elementos-responsivos">ELEMENTOS RESPONSIVOS</h3>
-<h4 id="viewport">VIEWPORT</h4>
+<h3 id="elementos-responsivos"><span style="color: var(--diw-secondary-color);"> ELEMENTOS RESPONSIVOS</span></h3>
+<h4 id="viewport"><span style="color: var(--diw-tertiary-color);"> VIEWPORT</span></h4>
 <p>Es el área de la pantalla en la que el navegador renderiza el contenido (el espacio disponible para mostrar la página web).</p>
 <p>En ordenadores de escritorio coincide con la ventana del navegador, pero en dispositivos móviles no es así. Por ello, se diferencian dos tipos:</p>
 <ul>
@@ -2180,14 +2208,14 @@
 <p>Para garantizar que una web se escale correctamente en móviles, es imprescindible incluir la siguiente etiqueta meta en el <code>&lt;head&gt;</code> del HTML:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="p">/&gt;</span>
 </span></code></pre></div>
-<h4 id="layout">LAYOUT</h4>
+<h4 id="layout"><span style="color: var(--diw-tertiary-color);"> LAYOUT</span></h4>
 <p>Se refiere a la disposición y comportamiento de los elementos según las unidades de medida utilizadas:</p>
 <ul>
 <li>⚠️ <strong>Fixed (Píxeles):</strong> Control total sobre las dimensiones, pero suele generar <em>scroll</em> horizontal en pantallas pequeñas si no se escala.</li>
 <li>⚠️ <strong>Elastic (<code>em</code>):</strong> Permite escalar con el zoom manteniendo proporciones, pero no se adapta automáticamente al cambiar el tamaño de pantalla.</li>
 <li>✅ <strong>Fluid (<code>%</code>):</strong> Al expresarse en porcentajes, los elementos se adaptan dinámicamente al <em>viewport</em>. Es el tipo de layout utilizado en el <strong>diseño responsivo</strong>.</li>
 </ul>
-<h4 id="breakpoints">BREAKPOINTS</h4>
+<h4 id="breakpoints"><span style="color: var(--diw-tertiary-color);"> BREAKPOINTS</span></h4>
 <p>Son los puntos de corte o anchos de pantalla en los que se produce un cambio en el <em>layout</em> mediante <em>Media Queries</em>.</p>
 <p>Una referencia ampliamente utilizada es la escala de <strong>Bootstrap</strong>:</p>
 <ul>
@@ -2197,20 +2225,20 @@
 <li><strong>$992\text{px} - 1200\text{px}$:</strong> Portátiles y pantallas de escritorio.</li>
 <li><strong>$&gt; 1200\text{px}$:</strong> Pantallas grandes.</li>
 </ul>
-<h3 id="media-queries">MEDIA QUERIES</h3>
+<h3 id="media-queries"><span style="color: var(--diw-secondary-color);"> MEDIA QUERIES</span></h3>
 <p>Característica de CSS3 que permite aplicar bloques de código CSS según las características del dispositivo.</p>
-<h4 id="sintaxis-basica">Sintaxis básica</h4>
+<h4 id="sintaxis-basica"><span style="color: var(--diw-tertiary-color);"> Sintaxis básica</span></h4>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">mediatype</span><span class="w"> </span><span class="nt">y</span><span class="w"> </span><span class="o">(</span><span class="nt">condiciones</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="c">/* Estilos aplicables cuando se cumplen las condiciones */</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">}</span>
 </span></code></pre></div>
-<h5 id="tipos-de-medio-mediatype">Tipos de medio (<code>mediatype</code>)</h5>
+<h5 id="tipos-de-medio-mediatype"><span style="color: var(--diw-cuaternary-color);"> Tipos de medio (<code>mediatype</code>)</span></h5>
 <ul>
 <li><strong><code>all</code>:</strong> Aplicable a todos los dispositivos (valor por defecto).</li>
 <li><strong><code>print</code>:</strong> Destinado a documentos en vista previa de impresión o paginados.</li>
 <li><strong><code>screen</code>:</strong> Destinado principalmente a pantallas.</li>
 </ul>
-<h5 id="condiciones-frecuentes">Condiciones frecuentes</h5>
+<h5 id="condiciones-frecuentes"><span style="color: var(--diw-cuaternary-color);"> Condiciones frecuentes</span></h5>
 <p>Se pueden combinar mediante operadores lógicos (<code>and</code>, <code>not</code>, <code>only</code>):</p>
 <ul>
 <li><code>width</code> | <code>min-width</code> | <code>max-width</code></li>
@@ -2219,7 +2247,7 @@
 <li><code>aspect-ratio</code> | <code>min-aspect-ratio</code> | <code>max-aspect-ratio</code></li>
 <li><code>color</code> | <code>min-color</code> | <code>max-color</code></li>
 </ul>
-<h4 id="ejemplos-en-css">Ejemplos en CSS</h4>
+<h4 id="ejemplos-en-css"><span style="color: var(--diw-tertiary-color);"> Ejemplos en CSS</span></h4>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c">/* Pantallas con un ancho máximo de 576px */</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">all</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">576px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="c">/* Estilos móviles */</span>
@@ -2235,7 +2263,7 @@
 </span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">  </span><span class="c">/* Estilos tablets/escritorio */</span>
 </span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="p">}</span>
 </span></code></pre></div>
-<h4 id="importacion-externa-en-html">Importación externa en HTML</h4>
+<h4 id="importacion-externa-en-html"><span style="color: var(--diw-tertiary-color);"> Importación externa en HTML</span></h4>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cm">&lt;!-- Para pantallas de hasta 576px de ancho --&gt;</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;(max-width: 576px)&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;small.css&quot;</span> <span class="p">/&gt;</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
@@ -2245,7 +2273,7 @@
 </span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="cm">&lt;!-- Para pantallas de hasta 992px de ancho --&gt;</span>
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;(max-width: 992px)&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;large.css&quot;</span> <span class="p">/&gt;</span>
 </span></code></pre></div>
-<h3 id="patrones-responsivos">PATRONES RESPONSIVOS</h3>
+<h3 id="patrones-responsivos"><span style="color: var(--diw-secondary-color);"> PATRONES RESPONSIVOS</span></h3>
 <ul>
 <li><strong>START SMALL (Mobile First):</strong> Consiste en diseñar prioritariamente para pantallas pequeñas y añadir complejidad a medida que el ancho aumenta.</li>
 <li><strong>COLUMN DROP:</strong> Es el patrón más básico; las columnas se van apilando verticalmente en cada <em>breakpoint</em>.</li>
@@ -2258,9 +2286,9 @@
 <p>🔗 <strong>Ejemplos prácticos:</strong> <a href="https://carlosazaustre.es/los-5-patrones-del-responsive-design">Los 5 patrones del Responsive Design - Carlos Azaustre</a></p>
 </li>
 </ul>
-<h3 id="imagenes-responsivas">IMÁGENES RESPONSIVAS</h3>
+<h3 id="imagenes-responsivas"><span style="color: var(--diw-secondary-color);"> IMÁGENES RESPONSIVAS</span></h3>
 <p>Para optimizar el uso de imágenes responsivas se busca reducir el consumo de ancho de banda y servir la resolución adecuada según la pantalla.</p>
-<h4 id="1-atributos-srcset-y-sizes">1. Atributos <code>srcset</code> y <code>sizes</code></h4>
+<h4 id="1-atributos-srcset-y-sizes"><span style="color: var(--diw-tertiary-color);"> 1. Atributos <code>srcset</code> y <code>sizes</code></span></h4>
 <p>Permiten declarar alternativas según densidad de píxeles o ancho de pantalla:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cm">&lt;!-- Según resolución/densidad de pantalla --&gt;</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
@@ -2279,7 +2307,7 @@
 </span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>    <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Ejemplo dimensiones&quot;</span> <span class="p">/&gt;</span>
 </span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<h4 id="2-direccion-de-arte-art-direction">2. Dirección de Arte (<em>Art Direction</em>)</h4>
+<h4 id="2-direccion-de-arte-art-direction"><span style="color: var(--diw-tertiary-color);"> 2. Dirección de Arte (<em>Art Direction</em>)</span></h4>
 <p>Permite cambiar la imagen o su encuadre usando la etiqueta <code>&lt;picture&gt;</code>:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;art&quot;</span><span class="p">&gt;</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  <span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
@@ -2290,9 +2318,9 @@
 </span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>  <span class="p">&lt;/</span><span class="nt">picture</span><span class="p">&gt;</span>
 </span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<h3 id="tablas-responsivas">TABLAS RESPONSIVAS</h3>
+<h3 id="tablas-responsivas"><span style="color: var(--diw-secondary-color);"> TABLAS RESPONSIVAS</span></h3>
 <p>Las tablas con muchas columnas suelen desbordar las pantallas pequeñas provocando un <em>scroll</em> horizontal no deseado. Existen tres enfoques comunes para resolverlo:</p>
-<h4 id="1-ocultar-columnas-secundarias">1. Ocultar Columnas Secundarias</h4>
+<h4 id="1-ocultar-columnas-secundarias"><span style="color: var(--diw-tertiary-color);"> 1. Ocultar Columnas Secundarias</span></h4>
 <p>Consiste en ocultar columnas prescindibles según el ancho de pantalla:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">576px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p">.</span><span class="nc">hidden</span><span class="w"> </span><span class="nt">td</span><span class="p">.</span><span class="nc">primero</span><span class="o">,</span>
@@ -2308,7 +2336,7 @@
 </span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="p">}</span>
 </span></code></pre></div>
-<h4 id="2-convertir-filas-en-bloques">2. Convertir Filas en Bloques</h4>
+<h4 id="2-convertir-filas-en-bloques"><span style="color: var(--diw-tertiary-color);"> 2. Convertir Filas en Bloques</span></h4>
 <p>Consiste en ocultar la cabecera <code>&lt;thead&gt;</code> y cambiar las celdas a <code>display: block</code> para que se muestren una debajo de otra:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">700px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">table</span><span class="p">.</span><span class="nc">listas</span><span class="o">,</span>
@@ -2325,7 +2353,7 @@
 </span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="p">}</span>
 </span></code></pre></div>
-<h4 id="3-scroll-horizontal-acotado">3. Scroll Horizontal Acotado</h4>
+<h4 id="3-scroll-horizontal-acotado"><span style="color: var(--diw-tertiary-color);"> 3. Scroll Horizontal Acotado</span></h4>
 <p>Encierra la tabla en un contenedor contenedor para que el desplazamiento afecte únicamente a la tabla y no a toda la ventana:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;localscroll&quot;</span><span class="p">&gt;</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
@@ -2338,9 +2366,9 @@
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
 </span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="texto-responsivo">TEXTO RESPONSIVO</h3>
+<h3 id="texto-responsivo"><span style="color: var(--diw-secondary-color);"> TEXTO RESPONSIVO</span></h3>
 <p>El tamaño del texto debe adaptarse para mantener una lectura cómoda. Se recomienda mantener una longitud de línea entre <strong>60 y 80 caracteres</strong>.</p>
-<h4 id="unidades-relativas-al-viewport">Unidades relativas al Viewport</h4>
+<h4 id="unidades-relativas-al-viewport"><span style="color: var(--diw-tertiary-color);"> Unidades relativas al Viewport</span></h4>
 <ul>
 <li><strong><code>vw</code>:</strong> $1\%$ de la anchura del <em>viewport</em>.</li>
 <li><strong><code>vh</code>:</strong> $1\%$ de la altura del <em>viewport</em>.</li>
