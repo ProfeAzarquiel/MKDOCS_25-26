@@ -13,21 +13,21 @@
 
 /* EJEMPLO DE ADMONITION PERSONALIZADO: */
 :root {
-  --md-admonition-icon--pied-piper: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M244 246c-3.2-2-6.3-2.9-10.1-2.9-6.6 0-12.6 3.2-19.3 3.7l1.7 4.9zm135.9 197.9c-19 0-64.1 9.5-79.9 19.8l6.9 45.1c35.7 6.1 70.1 3.6 106-9.8-4.8-10-23.5-55.1-33-55.1zM340.8 177c6.6 2.8 11.5 9.2 22.7 22.1 2-1.4 7.5-5.2 7.5-8.6 0-4.9-11.8-13.2-13.2-23 11.2-5.7 25.2-6 37.6-8.9 68.1-16.4 116.3-52.9 146.8-116.7C548.3 29.3 554 16.1 554.6 2l-2 2.6c-28.4 50-33 63.2-81.3 100-31.9 24.4-69.2 40.2-106.6 54.6l-6.3-.3v-21.8c-19.6 1.6-19.7-14.6-31.6-23-18.7 20.6-31.6 40.8-58.9 51.1-12.7 4.8-19.6 10-25.9 21.8 34.9-16.4 91.2-13.5 98.8-10zM555.5 0l-.6 1.1-.3.9.6-.6zm-59.2 382.1c-33.9-56.9-75.3-118.4-150-115.5l-.3-6c-1.1-13.5 32.8 3.2 35.1-31l-14.4 7.2c-19.8-45.7-8.6-54.3-65.5-54.3-14.7 0-26.7 1.7-41.4 4.6 2.9 18.6 2.2 36.7-10.9 50.3l19.5 5.5c-1.7 3.2-2.9 6.3-2.9 9.8 0 21 42.8 2.9 42.8 33.6 0 18.4-36.8 60.1-54.9 60.1-8 0-53.7-50-53.4-60.1l.3-4.6 52.3-11.5c13-2.6 12.3-22.7-2.9-22.7-3.7 0-43.1 9.2-49.4 10.6-2-5.2-7.5-14.1-13.8-14.1-3.2 0-6.3 3.2-9.5 4-9.2 2.6-31 2.9-21.5 20.1L15.9 298.5c-5.5 1.1-8.9 6.3-8.9 11.8 0 6 5.5 10.9 11.5 10.9 8 0 131.3-28.4 147.4-32.2 2.6 3.2 4.6 6.3 7.8 8.6 20.1 14.4 59.8 85.9 76.4 85.9 24.1 0 58-22.4 71.3-41.9 3.2-4.3 6.9-7.5 12.4-6.9.6 13.8-31.6 34.2-33 43.7-1.4 10.2-1 35.2-.3 41.1 26.7 8.1 52-3.6 77.9-2.9 4.3-21 10.6-41.9 9.8-63.5l-.3-9.5c-1.4-34.2-10.9-38.5-34.8-58.6-1.1-1.1-2.6-2.6-3.7-4 2.2-1.4 1.1-1 4.6-1.7 88.5 0 56.3 183.6 111.5 229.9 33.1-15 72.5-27.9 103.5-47.2-29-25.6-52.6-45.7-72.7-79.9zm-196.2 46.1v27.2l11.8-3.4-2.9-23.8zm-68.7-150.4l24.1 61.2 21-13.8-31.3-50.9zm84.4 154.9l2 12.4c9-1.5 58.4-6.6 58.4-14.1 0-1.4-.6-3.2-.9-4.6-26.8 0-36.9 3.8-59.5 6.3z"/></svg>')
+  --md-admonition-icon--game: url('data:image/svg+xml;charset=utf-8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 1.25C15.4142 1.25 15.75 1.58579 15.75 2V3C15.75 3.9665 14.9665 4.75 14 4.75H13C12.8619 4.75 12.75 4.86193 12.75 5V6H14C17.7712 6 19.6569 6 20.8284 7.17157C22 8.34315 22 10.2288 22 14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14C2 10.2288 2 8.34315 3.17157 7.17157C4.34315 6 6.22876 6 10 6H11.25V5C11.25 4.0335 12.0335 3.25 13 3.25H14C14.1381 3.25 14.25 3.13807 14.25 3V2C14.25 1.58579 14.5858 1.25 15 1.25ZM8.75 12C8.75 11.5858 8.41421 11.25 8 11.25C7.58579 11.25 7.25 11.5858 7.25 12V13.05C7.25 13.1605 7.16046 13.25 7.05 13.25H6C5.58579 13.25 5.25 13.5858 5.25 14C5.25 14.4142 5.58579 14.75 6 14.75H7.05C7.16046 14.75 7.25 14.8395 7.25 14.95V16C7.25 16.4142 7.58579 16.75 8 16.75C8.41421 16.75 8.75 16.4142 8.75 16V14.95C8.75 14.8395 8.83954 14.75 8.95 14.75H10C10.4142 14.75 10.75 14.4142 10.75 14C10.75 13.5858 10.4142 13.25 10 13.25H8.95C8.83954 13.25 8.75 13.1605 8.75 13.05V12ZM15 13.5C15.5523 13.5 16 13.0523 16 12.5C16 11.9477 15.5523 11.5 15 11.5C14.4477 11.5 14 11.9477 14 12.5C14 13.0523 14.4477 13.5 15 13.5ZM18 15.5C18 16.0523 17.5523 16.5 17 16.5C16.4477 16.5 16 16.0523 16 15.5C16 14.9477 16.4477 14.5 17 14.5C17.5523 14.5 18 14.9477 18 15.5Z" fill="black"/></svg>')
 }
-.md-typeset .admonition.pied-piper,
-.md-typeset details.pied-piper {
-  border-color: rgb(43, 155, 70);
+.md-typeset .admonition.game,
+.md-typeset details.game {
+  border-color: #FF8400;
 }
-.md-typeset .pied-piper > .admonition-title,
-.md-typeset .pied-piper > summary {
-  background-color: rgba(43, 155, 69, 0.239);
+.md-typeset .game > .admonition-title,
+.md-typeset .game > summary {
+  background-color: #ffad564f;
 }
-.md-typeset .pied-piper > .admonition-title::before,
-.md-typeset .pied-piper > summary::before {
-  background-color: rgb(43, 155, 70);
-  -webkit-mask-image: var(--md-admonition-icon--pied-piper);
-          mask-image: var(--md-admonition-icon--pied-piper);
+.md-typeset .game > .admonition-title::before,
+.md-typeset .game > summary::before {
+  background-color: #FF8400;
+  -webkit-mask-image: var(--md-admonition-icon--game);
+          mask-image: var(--md-admonition-icon--game);
 }
 
 /* VARIABLES PARA PERSONALIZAR LOS COLORES DE LOS BLOQUES DE CÓDIGO */
@@ -39,22 +39,27 @@
     --ceny-primary-color: #8359FF;
     --ceny-secondary-color: #622EFF;
     --ceny-tertiary-color: #3400D1;
+    --ceny-cuaternary-color: #1D0075;
 
     --bda-primary-color: #F86392;
     --bda-secondary-color: #f92c6d;
     --bda-tertiary-color: #F40B55;
+    --bda-cuaternary-color: #440318;
 
     --diw-primary-color: #f53a2d;
     --diw-secondary-color: #F41B0B;
     --diw-tertiary-color: #C81609;
+    --diw-cuaternary-color: #440803;
 
     --pcp-primary-color: #95F00E;
     --pcp-secondary-color: #7BC60C;
     --pcp-tertiary-color: #609A09;
+    --pcp-cuaternary-color: #2A4304;
 
     --fh-primary-color: #0EF1B8;
     --fh-secondary-color: #0CC697;
     --fh-tertiary-color: #066F55;
+    --fh-cuaternary-color: #044334;
 
   /*
 <span style="color: var(--ceny-secondary-color);">
