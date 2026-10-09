@@ -1784,14 +1784,14 @@
 
 
 
-<h1 style="text-align: center;"><font color="#c31428">UD1: ELEMENTOS CLAVE DE UNA INFRAESTRUCTURA DE RED</font></h1>
+<h1 style="text-align: center;"><span style="color: var(--ceny-primary-color);"><b>UD1:</b> ELEMENTOS CLAVE DE UNA INFRAESTRUCTURA DE RED</span></h1>
 
 <div class="grid cards">
 <ul>
 <li><strong>CE 1.1.</strong> Identificación y explicación de los elementos clave de la infraestructura de redes.</li>
 </ul>
 </div>
-<h2 id="los-modelos-osi-y-tcpip"><font color="#c31428"><strong>LOS MODELOS OSI Y TCP/IP</strong></font></h2>
+<h2 id="los-modelos-osi-y-tcpip"><span style="color: var(--ceny-primary-color);"><strong>LOS MODELOS OSI Y TCP/IP</strong></span></h2>
 <p>El <strong>modelo OSI</strong> (Open Systems Interconnection o Interconexión de Sistemas Abiertos) es un <strong>marco teórico</strong> de referencia creado por la Organización Internacional de Normalización (ISO) que divide el proceso de comunicación de datos en una red en <strong>siete capas</strong> independientes.</p>
 <p>Su objetivo es servir como guía estándar para que diferentes tecnologías de hardware y software puedan comunicarse entre sí sin importar el fabricante.</p>
 <p>Mientras que el <strong>modelo TCP/IP</strong> es el <strong>estándar práctico</strong> que define el conjunto de reglas y protocolos usados hasta la fecha para permitir la comunicación entre dispositivos a través de Internet y redes locales. Este se divide en <strong>cuatro capas</strong> y a continuación, vemos su corresponencia con el modelo OSI:</p>
@@ -1799,8 +1799,8 @@
   <img alt="TCP vs OSI" src="../../img/tcp_osi.png" width="600" />
   <small><figcaption>Correspondencia TCP/IP y OSI</figcaption></small>
 </figure>
-<h2 id="el-protocolo-ip"><font color="#c31428"><strong>EL PROTOCOLO IP</strong></font></h2>
-<h3 id="que-es">¿QUE ES?</h3>
+<h2 id="el-protocolo-ip"><span style="color: var(--ceny-primary-color);"><strong>EL PROTOCOLO IP</strong></span></h2>
+<h3 id="que-es"><span style="color: var(--ceny-secondary-color);">¿QUE ES?</span></h3>
 <ul>
 <li>
 <p>El protocolo IP (Internet Protocol) es uno de los más utilizados y más importantes de los que operan
@@ -1811,7 +1811,7 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
 <p>Una dirección IP consiste en un numero binario de <strong>32 bits</strong>, divido en grupos de <strong>4 octetos</strong> (8 bits; lo que implica que cada octeto podrá tomar valores <strong>de 0 hasta 255</strong> como máximo), separados por puntos. La forma más común de representarla es en formato decimal, como por ejemplo <strong>192.168.200.255</strong></p>
 </li>
 </ul>
-<h3 id="clases-de-direcciones-ip">CLASES DE DIRECCIONES IP</h3>
+<h3 id="clases-de-direcciones-ip"><span style="color: var(--ceny-secondary-color);">CLASES DE DIRECCIONES IP</span></h3>
 <ul>
 <li>Según su numeración, distinguiremos 5 clases diferentes de direcciones IP:</li>
 </ul>
@@ -1819,7 +1819,7 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
   <img alt="Tabla Clases Direcciones" src="https://static.platzi.com/media/user_upload/Captura%20de%20Pantalla%202022-01-26%20a%20la%28s%29%207.06.56%20p.m.-207132c7-4201-4ed4-a6b7-8344a3f91d2f.jpg" />
   <small><figcaption>Clases de Direccionamiento</figcaption></small>
 </figure>
-<h3 id="direccionamiento-privado">DIRECCIONAMIENTO PRIVADO</h3>
+<h3 id="direccionamiento-privado"><span style="color: var(--ceny-secondary-color);">DIRECCIONAMIENTO PRIVADO</span></h3>
 <ul>
 <li>No obstante, dentro de cada clase existen rangos privados de direccionamiento. Estos rangos son los que usaremos cuando estemos configurando los dispositivos englobados en una misma red LAN y cuyas direcciones no deban ser visibles desde internet. Son los siguientes:</li>
 </ul>
@@ -1827,7 +1827,7 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
   <img alt="Rangos Privados" src="https://www.redeszone.net/app/uploads-redeszone.net/2020/11/Rangos-de-red-reservados-para-redes-privadas-1.jpg" width="300" />
   <small><figcaption>Rangos Privados</figcaption></small>
 </figure>
-<h3 id="direccionamiento-reservado">DIRECCIONAMIENTO RESERVADO</h3>
+<h3 id="direccionamiento-reservado"><span style="color: var(--ceny-secondary-color);">DIRECCIONAMIENTO RESERVADO</span></h3>
 <ul>
 <li>
 <p>Además, también existen ciertos rangos de <strong>direcciones reservadas</strong>, que no deben usarse excepto para el uso que tienen asignados, como pueden ser el <strong>127.0.0.0/8</strong> que se utiliza para direcciones de Loopback, o el <strong>0.0.0.0/0</strong> que se utiliza como Ruta por Defecto.</p>
@@ -1836,7 +1836,7 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
 <p>Al resto de direccionamiento que no se incluye en los rangos privados y reservados, lo llamaremos <strong>direcciones públicas</strong>, que son las que se usan en <strong>Internet</strong>.</p>
 </li>
 </ul>
-<h3 id="estructura-de-una-direccion-ip">ESTRUCTURA DE UNA DIRECCIÓN IP</h3>
+<h3 id="estructura-de-una-direccion-ip"><span style="color: var(--ceny-secondary-color);">ESTRUCTURA DE UNA DIRECCIÓN IP</span></h3>
 <ul>
 <li>En una dirección IP vamos a diferenciar 2 partes, la izquierda o <strong>identificador de red</strong>, y la derecha o <strong>identificador de host</strong>. Como se ha visto en la tabla anterior, dependiendo de la clase a la que pertenezca una dirección IP, su red tendrá un tamaño por defecto para cada una de esas partes, que sería el siguiente:</li>
 </ul>
@@ -1844,7 +1844,7 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
   <img alt="Partes IP segun Clase" src="../../img/partesIP.jpg" width="400" />
   <small><figcaption>Identificadores según su Clase</figcaption></small>
 </figure>
-<h3 id="la-mascara-de-red">LA MÁSCARA DE RED</h3>
+<h3 id="la-mascara-de-red"><span style="color: var(--ceny-secondary-color);">LA MÁSCARA DE RED</span></h3>
 <ul>
 <li>Para indicarnos la cantidad de bits pertenece a cada una de estas partes, tenemos la máscara de red. Se trata de un indicador númerico con el mismo tamaño y distribución de bits que una dirección IP, y que suele indicarse a continuación de esta.</li>
 <li>Podemos expresarla tanto en formato decimal (similar a una IP) o en formato abreviado o CIDR (Classles Inter-Domain Routing), con un /N, siendo N el número de bits usados para el identificador de red. Lo vemos en el siguiente ejemplo:</li>
@@ -1853,25 +1853,25 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
   <img alt="Mascara de Red" src="../../img/mascara.jpg" width="300" />
   <small><figcaption>Formato Decimal vs CIDR</figcaption></small>
 </figure>
-<h2 id="los-puertos-logicos"><font color="#c31428"><strong>LOS PUERTOS LÓGICOS</strong></font></h2>
-<h3 id="que-son">¿QUE SON?</h3>
+<h2 id="los-puertos-logicos"><span style="color: var(--ceny-primary-color);"><strong>LOS PUERTOS LÓGICOS</strong></span></h2>
+<h3 id="que-son"><span style="color: var(--ceny-secondary-color);">¿QUE SON?</span></h3>
 <ul>
 <li>Son como interfaces virtuales que permiten la comunicación entre diferentes aplicaciones o servicios en una misma computadora o entre distintas computadoras a través de la red. Son identificadores númericos de 16 bits, a través de los cuales podemos conocer que servicio o protocolo se está usando.</li>
 </ul>
-<h3 id="tipos-de-puertos-logicos">TIPOS DE PUERTOS LÓGICOS</h3>
+<h3 id="tipos-de-puertos-logicos"><span style="color: var(--ceny-secondary-color);">TIPOS DE PUERTOS LÓGICOS</span></h3>
 <ul>
 <li>Tanto en TCP como en UDP tenemos un total de 65535 puertos disponibles, tenemos una clasificación dependiendo del número de puerto a utilizar, que es la siguiente:</li>
 <li><strong>Puertos conocidos:</strong> los puertos conocidos (well-known en inglés) van desde el puerto <strong>0 hasta al 1023</strong>, están registrados y asignados por la Autoridad de Números Asignados de Internet (IANA), a los servicios y protocolos de red más comunes.</li>
 <li><strong>Puertos registrados:</strong> los puertos registrados van desde el puerto <strong>1024 hasta al 49151</strong>. La principal diferencia de estos puertos, es que las diferentes organizaciones pueden hacer solicitudes a la IANA para que se le otorgue un determinado puerto por defecto, y se le asignará para su uso con una aplicación en concreto.</li>
 <li><strong>Puertos dinámicos:</strong> estos puertos van desde el <strong>49152 hasta el 65535</strong>, este rango de puertos se utiliza por los programas del cliente y están constantemente reutilizándose. Este rango de puertos normalmente se utiliza cuando está transmitiendo a un puerto conocido o reservado desde otro dispositivo, como en el caso de web o FTP. Por ejemplo, cuando nosotros visitamos una web, el puerto de destino siempre será el 80 (HTTP) o el 443 (HTTPS), pero como puerto origen se usará uno dinámico.</li>
 </ul>
-<h3 id="puertos-mas-usados">PUERTOS MÁS USADOS</h3>
+<h3 id="puertos-mas-usados"><span style="color: var(--ceny-secondary-color);">PUERTOS MÁS USADOS</span></h3>
 <figure>
   <img alt="Puertos Lógicos más Usados" src="../../img/puertos.jpg" width="400" />
   <small><figcaption>Puertos comunes</figcaption></small>
 </figure>
-<h2 id="principales-protocolos-de-red"><font color="#c31428"><strong>PRINCIPALES PROTOCOLOS DE RED</strong></font></h2>
-<h3 id="arp-address-resolution-protocol"><font color="#8f1ade"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span></font> <strong>ARP</strong> (Address Resolution Protocol)</h3>
+<h2 id="principales-protocolos-de-red"><span style="color: var(--ceny-primary-color);"><strong>PRINCIPALES PROTOCOLOS DE RED</strong></span></h2>
+<h3 id="arp-address-resolution-protocol"><span style="color: var(--ceny-secondary-color);"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span> <strong>ARP</strong> (Address Resolution Protocol)</span></h3>
 <p>Es un protocolo de capa 2. Se encarga de asociar la dirección MAC de cada maquina, a su dirección IP.</p>
 <p>Cuando un equipo intenta <strong>comunicarse por primera vez</strong> con otra maquina de su red, <strong>se envia</strong> previamente una "<strong>petición ARP</strong>", en forma de mensaje de <strong>broadcast</strong> a todos los equipos de la red. Pero solo responde el equipo que tenga la dirección IP que estamos buscando.</p>
 <p>De este modo, cada equipo de la red irá generando una "<strong>tabla ARP</strong>" propia, donde se van registrando las direcciones MAC de cada máquina, asociadas a las direcciones IP que les correpsonde.</p>
@@ -1879,14 +1879,14 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
   <img alt="ARP" src="../../img/arp.jpg" width="500" />
   <small><figcaption>Protocolo ARP</figcaption></small>
 </figure>
-<h3 id="icmp-internet-control-message-protocol"><font color="#8f1ade"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span></font> <strong>ICMP</strong> (Internet Control Message Protocol)</h3>
+<h3 id="icmp-internet-control-message-protocol"><span style="color: var(--ceny-secondary-color);"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span> <strong>ICMP</strong> (Internet Control Message Protocol)</span></h3>
 <p>Es un protocolo de capa 3. Nos sirve para comprobar si tenemos conectividad con otro dispositivos de nuestra red o de otra distinta. Esto lo hace generando paquetes IP de un tamaño concreto y enviándolos a otra máquina de la red para ver si responde.</p>
 <p>Herramientas como <strong>ping</strong> y <strong>traceroute</strong> utilizan ICMP para probar la disponibilidad de un destino, medir tiempos de respuesta o mostrar la ruta que siguen los paquetes.</p>
 <figure>
   <img alt="ICMP" src="../../img/icmp.jpg" width="500" />
   <small><figcaption>Protocolo ICMP</figcaption></small>
 </figure>
-<h3 id="dns-domain-name-system"><font color="#8f1ade"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span></font> <strong>DNS</strong> (Domain Name System)</h3>
+<h3 id="dns-domain-name-system"><span style="color: var(--ceny-secondary-color);"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span> <strong>DNS</strong> (Domain Name System)</span></h3>
 <p>Se considera un servicio de <strong>capa 7</strong>, y nos <strong>permite la comunicación</strong> con otros dispositivos de red, <strong>usando un nombre de dominio</strong> o alias, en lugar de una dirección IP. Evitando así tener que recordar la dirección IP de cada maquina, que sería mucho más complejo.</p>
 <p>Para ello, tendremos configurado en nuestra red uno o más servidores DNS, a los cuales les enviaremos peticiones cada vez que nos comunicamos con otro equipo a través de su nombre de dominio; y estos realizaran la traducción de ese nombre o alias, a la dirección IP que le corresponde.</p>
 <p>Este servicio funciona de manera <strong>totalmente transparente para el usuario</strong>.</p>
@@ -1894,7 +1894,7 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
   <img alt="Funcionamiento DNS" src="https://www.devopsschool.com/blog/wp-content/uploads/2023/08/image-454-1024x785.png" width="500" />
   <small><figcaption>Funcionamiento DNS</figcaption></small>
 </figure>
-<h3 id="nat"><font color="#8f1ade"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span></font> NAT</h3>
+<h3 id="nat"><span style="color: var(--ceny-secondary-color);"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span> <strong>NAT</strong></span></h3>
 <p>Mecanismo mediante el cual podemos traducir una o varias direcciones IP privadas (locales), en una o varios IP públicas (globales) y viceversa. De esta forma, los equipos de una red local pueden acceder a internet sin que sus direcciones IP privadas sean visibles fuera de su red local.</p>
 <p>A parte de esta, la principal función de NAT es la de conservar el espacio global IPv4 y evitar su agotamiento. Ya qué gracias a él, podemos conseguir que utilizando una sola IP pública, salgan internet todos los equipos de una red local. Distinguimos 3 tipos de NAT:</p>
 <ul>
@@ -1915,21 +1915,21 @@ Para ello, se le asigna una numeración a cada equipo, que lo identifica de form
 <li><strong>Dirección local externa</strong>: la dirección del destino vista desde la red interna.</li>
 </ul>
 </div>
-<h3 id="dhcp"><font color="#8f1ade"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span></font> DHCP</h3>
+<h3 id="dhcp"><span style="color: var(--ceny-secondary-color);"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M248 88h80v48h-80zm-8-56c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h16v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h192v32h-16c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48v-64c0-26.5-21.5-48-48-48h-16v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H320v-32h16c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm208 344h8v48h-80v-48zm-256 0h8v48h-80v-48z"/></svg></span> <strong>DHCP</strong></span></h3>
 <p>Es un protocolo de capa 7. Nos permite configurar varios parámetros de conectividad (dirección IP, Máscara, Puerta de Enlace, Servidores DNS...) de manera automática, en las diferentes máquinas conectadas a una red.</p>
 <p>Para ello, debemos configurar previamente uno de los equipos de red, para que ejecute dicho servicio, es decir, hará la función de servidor. De modo que cada vez que un equipo se conecte a dicha red, solamente tengamos que activar en él, la funcionalidad DHCP (Cliente, que generalmente viene habilitada por defecto) y realizará la petición de forma automática, obteniendo así su configuración de red, sin necesidad de hacerlo manualmente equipo por equipo.</p>
 <figure>
   <img alt="DHCP" src="../../img/dhcp.jpg" width="400" />
   <small><figcaption>Protocolo DHCP</figcaption></small>
 </figure>
-<h2 id="dispositivos-de-red"><font color="#c31428"><strong>DISPOSITIVOS DE RED</strong></font></h2>
-<h3 id="estacion-de-trabajo">ESTACIÓN DE TRABAJO</h3>
+<h2 id="dispositivos-de-red"><span style="color: var(--ceny-primary-color);"><strong>DISPOSITIVOS DE RED</strong></span></h2>
+<h3 id="estacion-de-trabajo"><span style="color: var(--ceny-secondary-color);">ESTACIÓN DE TRABAJO</span></h3>
 <p>Son ordenadores de alto rendimiento, que hacen de puntos terminales (<strong>endpoint</strong>) de la red. Desde ellos, los técnicos o administradores acceden a los diferentes recursos compartidos y centralizan la gestión y monitorización de los diferentes componentes del sistema.</p>
 <figure>
   <img alt="Estación de trabajo" src="https://img.blogs.es/bloglenovo/wp-content/uploads/2021/10/workstation.jpg" width="400" />
   <small><figcaption>Estación de trabajo</figcaption></small>
 </figure>
-<h3 id="servidor">SERVIDOR</h3>
+<h3 id="servidor"><span style="color: var(--ceny-secondary-color);">SERVIDOR</span></h3>
 <p>Un servidor es un elemento de red (físico o virtual) que proporciona diferentes recursos (datos, servicios, software…) a otros dispositivos.</p>
 <p>Una vez arrancado, se mantiene a la espera de peticiones de los “clientes” (equipos a los que presta servicios), y según le van llegando, las procesa y envía la respuesta correspondiente a cada una.</p>
 <p>En cuanto a arquitectura física y en muchas ocasiones incluso en aspecto, no son muy diferentes a un PC normal; ya que cuentan con los mismos componentes básicos.
@@ -1945,7 +1945,7 @@ de alojar discos duros, energía y otras expansiones redundantes.</li>
 <li><strong>RACK</strong>: son pequeños en espacio, fáciles de administrar y se pueden instalar directamente en los racks o armarios de comunicaciones estándar. Suelen tener una altura de 1U a 4U.</li>
 <li><strong>BLADE</strong>: es una plataforma de servidor pensada para servicios de alta disponibilidad y alta densidad. Su estructura principal consta de un gran chasis en el que se van insertando varios “blades”. El blade es en realidad una placa base del sistema, similar a un servidor separado, pudiendo arrancar cada uno su propio sistema operativo.</li>
 </ul>
-<h3 id="hub">HUB</h3>
+<h3 id="hub"><span style="color: var(--ceny-secondary-color);">HUB</span></h3>
 <p>Son elementos hardware que permiten centralizar el cableado de varios equipos de red, funcionando como un punto central de conexión. Este dispositivo trabaja en capa 1 (Física), y por lo tanto no entiende o identifica la información que pasa por él, sino que simplemente repite la misma señal que recibe, a tantos puertos como equipos tenga conectados.</p>
 <p>Todos los equipos conectados a un HUB se encuentran en el mismo dominio de colisión, es decir, cuando se produce una colisión porque dos máquinas envíen al mismo tiempo, las consecuencias de esta (parada y tiempo aleatorio de espera) la sufrirán todos los dispositivos conectados al concentrador. Si tuviéramos dos o más HUBS conectados entre sí, este dominio de colisión se ampliaría a todos ellos.</p>
 <p>Un concentrador trabaja en todos sus puertos a la misma velocidad, que estará limitada (además de la velocidad a la que puedan trabajar los propios puertos del HUB) por la velocidad a la que pueda trabajar el equipo más lento de los que están conectados a él.</p>
@@ -1960,7 +1960,7 @@ de alojar discos duros, energía y otras expansiones redundantes.</li>
 <li><strong>Inteligentes</strong>: también llamados Smart-HUB además de regenerar la señal, pueden detectar excesos de colisiones, gestión de alarmas y visor de prestaciones de red, entre otros.</li>
 </ul>
 <p>Debido a sus limitaciones, es muy raro encontrar este tipo de equipos en una red actual. Ya que con la aparición de los SWITCHES, quedaron obsoletos</p>
-<h3 id="switch">SWITCH</h3>
+<h3 id="switch"><span style="color: var(--ceny-secondary-color);">SWITCH</span></h3>
 <p>Su función es similar a la de un HUB, es decir, hacer de punto de interconexión entre varios equipos de red, pero con la gran diferencia de que tienen la capacidad de procesar la información que pasa a través de ellos.</p>
 <p>Decimos que son dispositivos que operan en el nivel 2 del modelo OSI, ya que se basa en las direcciones MAC de los equipos que tiene conectados, para reenviar la información por el puerto correspondiente en cada caso. Evitando así los reenvíos de información innecesaria que ocurren cuando usamos un HUB.</p>
 <p>También existen algunos más avanzados, llamados “SWITCH MULTICAPA” que además implementan funcionalidades de capa 3, propias de un ROUTER.</p>
@@ -1971,7 +1971,7 @@ de alojar discos duros, energía y otras expansiones redundantes.</li>
 <p>Suelen contar con gran cantidad de puertos, comúnmente los encontramos de 5, 8, 16, 24 y 48.</p>
 <p>Otra de las ventajas que tiene frente a un HUB, es que los SWITCHES, no funcionan como un medio compartido, si no que gestionan la velocidad de cada dispositivo por puertos.</p>
 <p>Lo mismo ocurre con los dominios de colisión, de modo que cada puerto se comporta como un dominio de colisión independiente.</p>
-<h3 id="router">ROUTER</h3>
+<h3 id="router"><span style="color: var(--ceny-secondary-color);">ROUTER</span></h3>
 <p>Son equipos que trabajan en el nivel o la capa 3 del modelo OSI. Y su principal función es la de encaminar los datos de la manera más eficiente, entre redes diferentes.</p>
 <p>Esto lo hacen basándose en las direcciones IP de origen y destino. Para ello, cada ROUTER mantiene una tabla con información de cada red que conocen, ya sea por que la tienen directamente conectada o porque les llega a través de algún protocolo de enrutamiento. Es lo se conoce como “tabla de rutas” o “tabla de enrutamiento”.</p>
 <p>En un ROUTER, cada puerto funciona como un dominio de colisión independiente, pero además como un dominio de broadcast independiente.</p>
@@ -1979,7 +1979,7 @@ de alojar discos duros, energía y otras expansiones redundantes.</li>
   <img alt="Router" src="https://digalco.com/wp-content/uploads/images/product/12524/cisc00098_02.jpg" width="400" />
   <small><figcaption>Router</figcaption></small>
 </figure>
-<h3 id="punto-de-acceso">PUNTO DE ACCESO</h3>
+<h3 id="punto-de-acceso"><span style="color: var(--ceny-secondary-color);">PUNTO DE ACCESO</span></h3>
 <p>Es un dispositivo que recibe una conexión de internet por cable (Ethernet) y la convierte en una señal inalámbrica Wi-Fi.</p>
 <p>Trabaja principalmente en la Capa 1 (Física) por la transmisión de ondas de radio y en la Capa 2 (Enlace de Datos) porque gestiona las tramas y usa direcciones MAC para identificar los dispositivos en la red local.</p>
 <figure>
@@ -1987,7 +1987,7 @@ de alojar discos duros, energía y otras expansiones redundantes.</li>
   <small><figcaption>Punto de Acceso</figcaption></small>
 </figure>
 <p>Permite ampliar la cobertura de la red de forma estable, ya que crea una nueva señal WiFi limpia, como si fuera el router original. Además, gestiona el tráfico entre los dispositivos sin cables y el resto de la red cableada simultaneamente.</p>
-<h3 id="firewall">FIREWALL</h3>
+<h3 id="firewall"><span style="color: var(--ceny-secondary-color);">FIREWALL</span></h3>
 <p>Son elementos de red (pueden ser hardware o software) diseñados para controlar el tráfico entrante y saliente de una red. Generalmente diremos que son dispositivos que operan en las capas 3 y 4 del modelo OSI, aunque hoy en día existen algunos más avanzados que trabajan hasta en la capa 7.</p>
 <p>En todos los caso, van a contar, como mínimo, con dos interfaces de red (ya sean físicas o lógicas), una interna para la red protegida o LAN privada; y otra externa para la red ajena o pública.</p>
 <p>Su funcionamiento se basa en dos reglas básicas: PERMITIR y DENEGAR. Las cuales se aplicaran en cada caso, según si el tráfico cumple o no una serie de condiciones preestablecidas por el administrador de red.</p>
