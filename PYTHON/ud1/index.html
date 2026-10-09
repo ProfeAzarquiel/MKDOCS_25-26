@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#que-es-python" class="md-skip">
+        <a href="#ud1-fundamentos-de-python" class="md-skip">
           Skip to content
         </a>
       
@@ -1250,6 +1250,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1291,6 +1293,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1771,6 +1775,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1916,8 +1922,7 @@
 
 
 
-<h1 style="text-align: center;"><span style="color: var(--pcp-primary-color);"><b>UD1:</b> FUNDAMENTOS DE PYTHON :snake:</span></h1>
-
+<h1 id="ud1-fundamentos-de-python"><h1 style="text-align: center;"><span style="color: var(--pcp-primary-color);"><b>UD1:</b> FUNDAMENTOS DE PYTHON <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.25.18.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg></span></span></h1></h1>
 <div class="grid cards">
 <ul>
 <li><strong>CE 1.1.</strong> Identifica la estructura básica de un programa en Python, incluyendo la declaración de funciones, clases y el uso de módulos.</li>
@@ -2332,19 +2337,28 @@ Para crear un módulo en Python, simplemente creamos un archivo con extensión .
 </span><span id="__span-41-11"><a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado de la resta:&quot;</span><span class="p">,</span> <span class="n">resultado_resta</span><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="el-modulo-mainpy">El módulo <strong>main.py</strong></h3>
-<p>Cuando ejecutamos un módulo directamente o cuando lo importamos, Python <strong>ejecuta todo el código</strong> que se encuentra en él. Creando variables, funciones, clases, métodos, condiciones, etc...</p>
-<p>Sin embargo, 
-Lo interesante de todo esto es que, al ejecutar o importar un módulo, Python asigna un nuevo atributo a él, llamado <strong>name</strong> (Recordemos que Python todo es un objeto, y los módulos también lo son). 😉</p>
-<p>Dependiendo del contexto donde se ejecute el módulo ,el valor de este atributo será diferente.</p>
-<p>Si el módulo es importando, el valor de su atributo será el mismo que el nombre del script. </p>
-<p>Sin embargo, si ejecutamos el módulo directo por el interprete, en terminal, el atributo almacenará <strong>main</strong>. Haciendo alusión que es el módulo principal, y no se esta siendo importando de otro.</p>
-<p>Con todo esto en mente podemos concluir que la condición if <strong>name</strong> == '<strong>main</strong>': permite ejecutar el código, sí, y solo sí, el módulo es el principal, es decir, fue ejecutado directamente con el interprete y no fue importado. 🐍</p>
-<p>Ahora, si importamos nuevamente no visualizaremos ningún tipo de mensaje, y podremos utilizar las funciones previamente definidas, ya que estas se encuentran antes de la condición.</p>
-<p>Ahora ya lo sabes, en Python los archivos con extensión .py los conoceremos como módulos. Y siempre que utilicemos un módulo, ya sea que lo ejecutamos o lo importemos, Python le asignará el atributo <strong>name</strong>, que podrá tomar diferente valor dependiendo de cómo el módulo se este llamando.</p>
-<p>Si el módulo es importado entonces el atributo tomará por valor el nombre del script, en caso contrario su valor será <strong>main</strong>. 🍻</p>
+<p>Cuando <strong>ejecutamos</strong> un módulo directamente <strong>o</strong> cuando lo <strong>importamos</strong>, Python <strong>ejecuta todo el código</strong> que se encuentra en él. Creando variables, funciones, clases, métodos, condiciones, etc...</p>
+<p>Esto se debe a que en Python <strong>todo es un objeto</strong> (POO), es decir, cada número, texto, función, clase o módulo (archivo.py) tiene un tipo (clase); y en base a ese tipo <strong>va a tener una serie de atributos y métodos</strong> que lo definen.</p>
+<p>En este caso concreto, nos vamos a fijar en <strong>el atributo <code>__name__</code></strong> que tienen los módulos. Y es que cuando ejecutamos o importamos un módulo, se le asigna un valor especifico a este atributo, que puede ser:</p>
+<ul>
+<li><strong>Cuando importamos</strong> un módulo, __name__ coge el valor del nombre del fichero importado. Por ejemplo: si importamos el módulo desde otro script con <mark class="critic"><em>import "misfunciones.py"</em></mark> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span> <code>__name__ = misfunciones</code></li>
+<li><strong>Cuando ejecutamos</strong> directamente un módulo a traves del interprete o por terminal, __name__ coge el valor especial <code>__main__</code>. Es decir, si lanzamos en un terminal el comnado <mark class="critic"><em>"python misfunciones.py"</em></mark> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span> <code>__name__ = __main__</code></li>
+</ul>
+<p><code>__main__</code> es el nombre del entorno en el cual se ejecuta el código de máximo nivel. «Código de máximo nivel» es el primer módulo de Python especificado por el usuario que empieza a ejecutarse. Es «de máximo nivel» porque importa todos los demás módulos que necesita el programa. A veces «código de máximo nivel» es llamado un punto de entrada a la aplicación.</p>
+<p>Por lo tanto, la variable __name__ en este caso, se utiliza para <strong>determinar si un módulo es el punto de entrada principal</strong> de un programa. Por tanto, un módulo puede incluir código que solo se ejecuta cuando se ejecuta directamente como script, pero no cuando se importa. Cualquier código que solo deba ejecutarse cuando el script se ejecute directamente se incluye en el bloque condicional <code>if __name__ == "__main__"</code>.</p>
+<p>Es decir, siempre que definamos el módulo principal de nuestro programa o proyecto (por convenio suele nombrarse como <code>main.py</code>), deberá tener una estructura similar a la siguiente:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="sd">    Función inicial de nuestro proyecto, aquí incluiremos todo el código que solo queremos que se ejecute cuando el módulo ha sido ejecutado directamente</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>    <span class="n">main</span><span class="p">()</span>
+</span></code></pre></div>
 <blockquote>
-<p><small><em>Fuentes: <a href="https://ed.team/" target="_blank">EDTeam</a></em>,</small>
-<small><em><a href="https://www.luisllamas.es/" target="_blank">Luis Llamas</a></em>,</small>
+<p><small><em>Fuentes: <a href="https://ed.team/">EDTeam</a>{target="</em>blank"}<em>,</small>
+<small></em><a href="https://www.luisllamas.es/">Luis Llamas</a>{target="<em>blank"}</em>,</small>
 </p>
 </blockquote>
 
