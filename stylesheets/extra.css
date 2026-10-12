@@ -10,6 +10,14 @@
 /*CAMBIO DE COLOR DEL LOGO SEGÚN EL TEMA ELEGIDO: */
 
 
+/*USAR IMAGEN DE FONDO PARA LA PÁGINA: */
+/* body {
+    background-image: url('https://plus.unsplash.com/premium_photo-1685148902854-9b9bb49fff08?fm=jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} */
+
 
 /* EJEMPLO DE ADMONITION PERSONALIZADO: */
 :root {
