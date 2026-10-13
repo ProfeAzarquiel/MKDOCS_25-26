@@ -917,7 +917,7 @@
   <span class="md-ellipsis">
     
   
-    UD2. Gestión de Almacenamiento y Ecosistemas BigData
+    UD2. Arquitecturas BigData
   
 
     
@@ -2201,7 +2201,7 @@
 <li><strong>Consumo</strong>: analítica, machine learning (ML) y reverse ETL.</li>
 </ol>
 <figure>
-    <img alt="Ciclo de vida del dato" src="https://aitor-medrano.github.io/iabd/de/images/05ciclo-vida-ingenieria-datos.svg" width="500" />
+    <img alt="Ciclo de vida del dato" src="https://aitor-medrano.github.io/iabd/de/images/05ciclo-vida-ingenieria-datos.svg" width="600" />
     <small><figcaption>Ciclo de vida del dato</figcaption></small>
 </figure>
 <h3 id="generacion">GENERACIÓN</h3>
@@ -2214,7 +2214,7 @@
 <li><strong>Las abstracciones de almacenamiento</strong>, entendida como la organización de los datos y los patrones de consulta que se construyen sobre los sistemas de almacenamiento, como son el data warehouse como solución OLAP para datos estructurados (por ejemplo, mediante AWS Redshift), el lago de datos que permite almacenar en crudo cualquier tipo de dato (mediante un ecosistema Hadoop o el uso de S3 y diversos servicios de AWS como Athena) y la evolución en el data lakehouse que aglutine las ventajas de ambos sistemas, tanto la posibilidad de trabajar con datos no estructurados y almacenar los datos en crudo y agregados, como soporte robusto de esquemas y tablas y características tan necesarias como las modificaciones incrementales y el borrado de datos, por ejemplo, mediante productos como Databricks mediante DeltaLake o Snowflake.</li>
 </ul>
 <figure>
-    <img alt="Stack de Almacenamiento" src="https://raw.githubusercontent.com/kantarcise/learningFundamentalsOfDataEngineering/refs/heads/main/img/storage_stack.png" width="400" />
+    <img alt="Stack de Almacenamiento" src="https://raw.githubusercontent.com/kantarcise/learningFundamentalsOfDataEngineering/refs/heads/main/img/storage_stack.png" width="450" />
     <small><figcaption>Stack de Almacenamiento</figcaption></small>
 </figure>
 <p>Sobre el almacenamiento se realizan las fases de <strong>ingesta</strong>, <strong>transformación</strong> y <strong><em>serving</em></strong>.</p>
@@ -2225,7 +2225,7 @@
 <p>Con la llegada del almacenamiento barato y escalable y de los motores que transforman <em>in situ</em>, el mercado se ha movido hacia <strong>ELT</strong> (<em>extract, load, transform</em>): primero se <strong>cargan los datos en crudo</strong> en el lago o <em>lakehouse</em> y la transformación se realiza después, ya dentro del propio sistema de destino.</p>
 <p>En este bloque <strong>adoptaremos el enfoque ELT</strong>: cargaremos en crudo con <a href="https://dlthub.com/">dlt</a>, almacenaremos sobre object storage y transformaremos con SQL y dbt.</p>
 <figure>
-    <img alt="ETL vs ELT" src="https://aitor-medrano.github.io/iabd/de/images/02etl-vs-elt.svg" width="400" />
+    <img alt="ETL vs ELT" src="https://aitor-medrano.github.io/iabd/de/images/02etl-vs-elt.svg" width="600" />
     <small><figcaption>ETL vs ELT</figcaption></small>
 </figure>
 <div class="admonition info">
