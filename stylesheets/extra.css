@@ -7,9 +7,6 @@
 }
 */
 
-/*CAMBIO DE COLOR DEL LOGO SEGÚN EL TEMA ELEGIDO: */
-
-
 /*USAR IMAGEN DE FONDO PARA LA PÁGINA: */
 /* body {
     background-image: url('https://plus.unsplash.com/premium_photo-1685148902854-9b9bb49fff08?fm=jpg');
@@ -18,6 +15,35 @@
     background-attachment: fixed;
 } */
 
+/*PERSONALIZAR EL ANCHO DE LOS CONTENIDOS PRINCIPALES (PARA REDUCIR EL ESPACIO QUE OCUPAN LOS MENUS NAV Y TOC) */
+.md-grid {
+  max-width: 1440px; 
+}
+
+/*CAMBIO DE COLOR DE LOS ELEMENTOS SEGÚN EL TEMA ELEGIDO: */
+/* Color del LOGO principal en modo claro */
+[data-md-color-scheme="default"] #path-logo {
+  fill: var(--general-white-color);
+}
+/* Color del LOGO principal en modo oscuro */
+[data-md-color-scheme="slate"] #path-logo {
+  fill: var(--general-black-color);
+}
+
+/* --- COLORES PERSONALIZADOS PARA MODO CLARO --- */
+[data-md-color-scheme="default"] {
+    --md-code-bg-color: rgb(170, 227, 214);
+    --md-code-fg-color: #050504;
+    --md-code-hl-comment-color: #0119c8;
+    --main-text-color: #009485;
+}
+/* --- COLORES PERSONALIZADOS PARA MODO OSCURO --- */
+[data-md-color-scheme="slate"] {
+    --md-code-bg-color: rgb(205, 227, 170);
+    --md-code-fg-color: #050504;
+    --md-code-hl-comment-color: #1d5d0e;
+    --main-text-color: #cbdc38;
+}
 
 /* EJEMPLO DE ADMONITION PERSONALIZADO: */
 :root {
@@ -40,9 +66,8 @@
 
 /* VARIABLES PARA PERSONALIZAR LOS COLORES DE LOS BLOQUES DE CÓDIGO */
 :root > * {
-    --md-code-bg-color: rgb(170, 227, 214);
-    --md-code-fg-color: #050504;
-    --md-code-hl-comment-color: #0119c8;
+    --general-white-color: #ffffff;
+    --general-black-color: #1e2129;
 
     --ceny-primary-color: #8359FF;
     --ceny-secondary-color: #622EFF;
