@@ -1513,14 +1513,13 @@
 </ul>
 </div>
 <h2 id="introduccion-y-conceptos-basicos"><span style="color: var(--diw-primary-color);"> INTRODUCCIÓN Y CONCEPTOS BÁSICOS</span></h2>
+<p>CSS es el acrónimo de Cascading Style Sheets (Hojas de Estilo en Cascada), y es un lenguaje que permite definir la apariencia de los elementos HTML en una página web.</p>
+<p>Es decir, mientras que HTML define la estructura y el contenido (lo qué hay en la página), CSS define cómo se distribuyen (donde y como se colocan) y como se ven esos elementos.</p>
+<p>De modo que CSS nos permite controlar los aspectos de diseño web como los colores, las tipografías, los márgenes y otros más relacionados con la maquetación web; en hojas de estilos, separando el contenido de su presentación.</p>
 <h3 id="como-anadir-hojas-de-estilo-a-nuestro-html"><span style="color: var(--diw-secondary-color);"> COMO AÑADIR HOJAS DE ESTILO A NUESTRO HTML</span></h3>
-<p>Debemos insertar <strong>en la cabecera</strong> (<em>head</em>) de nuestro sitio web una línea similar a la siguiente:</p>
+<p>Para enlazar un fichero HTML con su hoja de estilos, debemos insertar <strong>en la cabecera HTML</strong> (<em>head</em>) una línea similar a la que veremos a continuación, especificando entre otras cosas la ruta donde se encuentra dicha hoja:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/misestilos.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
 </span></code></pre></div>
-<ul>
-<li><code>rel</code>: indica el tipo de contenido.</li>
-<li><code>type</code>: indica el tipo de archivo.</li>
-</ul>
 <h3 id="modelo-de-cajas"><span style="color: var(--diw-secondary-color);"> MODELO DE CAJAS</span></h3>
 <p>Es el modelo que usa CSS, y que se basa en tratar todos los elementos que se representan en una página web como cajas con una serie de características que las definen.</p>
 <p><img alt="Modelo de Cajas CSS" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3A6Ixa1ai5rsZE1AfKsfhEiw0Ua_DC8Hx-bHeZr2y9AWLVCvzAZF6dts&amp;s=10" /></p>
@@ -1537,18 +1536,68 @@
 <li><strong>Como elemento en bloque:</strong> Cada caja que introducimos <strong>se coloca en una nueva línea</strong>. Por ejemplo: <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h2&gt;</code>... se comportan por defecto como bloques.</li>
 </ul>
 <h3 id="selectores-css"><span style="color: var(--diw-secondary-color);"> SELECTORES CSS</span></h3>
-<ul>
-<li><strong>Selector universal:</strong> Se aplica a todos los elementos de la página <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>*</code></li>
-<li><strong>Etiquetas:</strong> Se seleccionan escribiendo su propio nombre <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>img</code></li>
-<li><strong>ID:</strong> Para seleccionar un ID (se refiere a un único elemento) se usa la almohadilla <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>#myid</code></li>
-<li><strong>Clase:</strong> Para seleccionar una clase (se refiere a varios elementos) se usa el punto <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>.miclase</code></li>
-<li><strong>Varias etiquetas:</strong> Se separan por comas <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>h1, h2, h3</code></li>
-<li><strong>Etiqueta hija (descendiente):</strong> Se separan por espacio <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>h2 p</code></li>
-<li><strong>Etiqueta hija DIRECTA:</strong> Se usa el símbolo mayor que <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>p &gt; img</code></li>
-<li><strong>Por atributos:</strong> Para seleccionar una etiqueta por uno de sus atributos <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>img[alt="primero"]</code></li>
-<li><strong>Hermano adyacente:</strong> Para seleccionar una etiqueta que va justo después de otra <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>h1 + h2</code></li>
-<li><strong>Hermano general:</strong> Para seleccionar una etiqueta que va después (sin importar si es inmediatamente consecutiva) <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 10v4h9l-3.5 3.5 2.42 2.42L19.84 12l-7.92-7.92L9.5 6.5 13 10z"/></svg></span> <code>p ~ img</code></li>
-</ul>
+<p>Los selectores son códigos o patrones que sirven para especificar sobre qué elementos se aplicará un conjunto de reglas CSS:</p>
+<table>
+<thead>
+<tr>
+<th>TIPO</th>
+<th>EJEMPLO</th>
+<th>EXPLICACIÓN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Selector universal</strong></td>
+<td><code>*</code></td>
+<td>Se aplica a todos los elementos de la página.</td>
+</tr>
+<tr>
+<td><strong>Etiquetas</strong></td>
+<td><code>img</code></td>
+<td>Selecciona todos los elementos del tipo &lt;img&gt;.</td>
+</tr>
+<tr>
+<td><strong>ID</strong></td>
+<td><code>#contenedor</code></td>
+<td>Selecciona el único elemento cuyo Id sea contenedor.</td>
+</tr>
+<tr>
+<td><strong>Clase</strong></td>
+<td><code>.parrafo</code></td>
+<td>Selecciona todos los elementos pertenecientes a la clase parrafo.</td>
+</tr>
+<tr>
+<td><strong>Varias etiquetas</strong></td>
+<td><code>h1, h2, h3</code></td>
+<td>Selecciona todos los elementos h1, h2 y h3.</td>
+</tr>
+<tr>
+<td><strong>Etiqueta hija (descendiente)</strong></td>
+<td><code>section img</code></td>
+<td>Selecciona todas las imágenes que estén dentro de una sección.</td>
+</tr>
+<tr>
+<td><strong>Etiqueta hija DIRECTA</strong></td>
+<td><code>p &gt; img</code></td>
+<td>Se usa el símbolo mayor que</td>
+</tr>
+<tr>
+<td><strong>Por atributos</strong></td>
+<td><code>img[alt="primero"]</code></td>
+<td>Para seleccionar una etiqueta por uno de sus atributos</td>
+</tr>
+<tr>
+<td><strong>Hermano adyacente</strong></td>
+<td><code>h1 + h2</code></td>
+<td>Para seleccionar una etiqueta que va justo después de otra</td>
+</tr>
+<tr>
+<td><strong>Hermano general</strong></td>
+<td><code>p ~ img</code></td>
+<td>Para seleccionar una etiqueta que va después (sin importar si es inmediatamente consecutiva)</td>
+</tr>
+</tbody>
+</table>
 <h3 id="estilos-en-cascada"><span style="color: var(--diw-secondary-color);"> ESTILOS EN CASCADA</span></h3>
 <p>CSS, como su propio nombre indica, funciona en cascada, es decir, los estilos se propagan hacia abajo.</p>
 <p>Del mismo modo, si dos o más reglas entran en conflicto o se solapan, prevalecerá la regla que se aplica en el elemento más específico, es decir, el elemento más abajo en el árbol DOM.</p>

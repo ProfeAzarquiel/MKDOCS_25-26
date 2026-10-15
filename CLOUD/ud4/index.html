@@ -2173,8 +2173,13 @@ docker rmi nginx
 <p>Por defecto, <strong>al ejecutar un escenario</strong> compose, se <strong>crea una red definida por el usuario</strong>, que permite la <strong>conexión entre todos los contenedores</strong> que se han generado, aceptando conexiones por nombre de contenedor o por nombre de servicio. Es por esto, que <strong>no suelen definirse redes</strong> en los ficheros .YAML:</p>
 <p>Para <strong>arrancar un escenario</strong>, vamos al directorio donde está nuestro <em>docker-compose.yaml</em> y ejecutamos <mark class="critic"><strong>docker compose up -d</strong></mark>.</p>
 <p>Para <strong>eliminar un escenario</strong>, sería con el comando <mark class="critic"><strong>docker compose down -v</strong></mark>. ¡OJO! Esto eliminará tambien los volumenes asociados al escenario, si quisieramos mantenerlos, <strong>podemos quitar la opción <code>-v</code></strong>.</p>
-<details class="tip">
-<summary>Ejemplo escenario Wordpress + MariaDB con Docker Compose</summary>
+<h3 id="almacenamiento-con-docker-compose"><span style="color: var(--ceny-secondary-color);"> ALMACENAMIENTO CON DOCKER COMPOSE</span></h3>
+<p>Además de definir los servicios (parámetro <code>services</code>) en el fichero compose.yaml, podemos definir los volúmenes que vamos a necesitar en nuestra infraestructura e indicar que volumen va a utilizar cada contenedor.</p>
+<p>Para la definición del servicio indicamos que el contenedor montará un volumen en un directorio determinado con el parámetro <code>volumes</code>.</p>
+<p>De forma similar podemos indicar que un contenedor va a utilizar <strong>bind mount</strong> como almacenamiento, en este caso se haría del mismo modo, pero en lugar de un nombre de volumne, se especificará la ruta del directorio del anfitrión que vamos a usar.</p>
+<p>Hay que tener en cuenta que si usamos bind mount, el comando <code>docker compose down -v</code> no eliminará el directorio donde se guardan los datos, en este caso ./data.</p>
+<details class="example">
+<summary>Ejemplo escenario Wordpress + MariaDB con volumenes</summary>
 <div class="language-text highlight"><pre><span></span><code>name: wordpress con mariaDB
 services:
 wordpress:
@@ -2204,6 +2209,58 @@ mariadb:
 volumes:
     wordpress_data:
     mariadb_data:
+</code></pre></div>
+</details>
+<h3 id="redes-con-docker-compose"><span style="color: var(--ceny-secondary-color);"> REDES CON DOCKER COMPOSE</span></h3>
+<p>Como hemos indicado anteriormente, cuando creamos un escenario con Docker Compose se crea una nueva red bridge definida por el usuario donde se conectan los contenedores, por lo tanto, obtenemos resolución por DNS que resuelve tanto el nombre del contenedor, como el nombre del servicio.</p>
+<p>Sin embargo en el fichero compose.yaml podemos definir y configurar las redes que necesitemos en nuestro escenario, así como la conexión de los distintos contenedores a dichas redes.</p>
+<p>Por un lado, en la definición de los atributos de cada servicio, configuramos la conexión de los contenedores a las redes usando el parámetro <code>networks</code>:</p>
+<ul>
+<li>Indicamos el nombre de la red a la que está conectada.</li>
+<li>Indicamos su dirección IP con el parámetro <code>ipv4_address</code>. Este parámetro es optativo, sino se indica se tomará una dirección IP de forma dinámica.</li>
+<li>También hemos indicado el nombre del host con el parámetro hostname.</li>
+</ul>
+<p>Y por otro lado, volvemos a usar el parámetro <code>networks</code> más abajo a nivel de servicios, para definir las redes que estamos usando en el escenario:</p>
+<ul>
+<li>Indicamos el nombre de las redes que vamos a crear.</li>
+<li>Configuramos la red en el parámetro <code>IPAM</code> y <code>config</code>, por ejemplo indicando el direccionamiento con el parámetro <code>subnet</code> y la puerta de enlace de la red con el parámetro <code>gateway</code>.</li>
+</ul>
+<details class="example">
+<summary>Ejemplo escenario Alpine con IPs fijas</summary>
+<div class="language-text highlight"><pre><span></span><code>version: &#39;3.1&#39;
+services:
+c1:
+    container_name: contenedor1
+    image: alpine
+    restart: always
+    networks:
+    red_externa:
+        ipv4_address: 192.168.10.10
+    red_interna:
+        ipv4_address: 192.168.20.10
+    hostname: contenedor1
+    command: ash
+
+c2:
+    container_name: contenedor2
+    image: alpine
+    restart: always
+    networks:
+    red_interna:
+        ipv4_address: 192.168.20.20
+    hostname: contenedor2
+    command: ash
+networks:
+    red_externa:
+        ipam:
+            config:
+            - subnet: 192.168.10.0/24
+                gateway: 192.168.10.1
+    red_interna:
+        ipam:
+            config:
+            - subnet: 192.168.20.0/24
+                gateway: 192.168.20.1
 </code></pre></div>
 </details>
 <h3 id="uso-de-parametros-en-docker-compose"><span style="color: var(--ceny-secondary-color);"> USO DE PARÁMETROS EN DOCKER COMPOSE</span></h3>
@@ -2242,49 +2299,6 @@ volumes:
 <p class="admonition-title">IMPORTANTE</p>
 <p>No olvidar que cuando queramos cambiar de entorno primero debemos deshacer el renombrado anterior con <mark class="critic"><strong>mv .env env_desarrollo</strong></mark>; y luego renombrar el entorno que queremos arrancar ahora <mark class="critic"><strong>mv env_produccion .env</strong></mark>.</p>
 </div>
-<h3 id="despliegue-real-con-docker-compose"><span style="color: var(--ceny-secondary-color);"> DESPLIEGUE REAL CON DOCKER COMPOSE</span></h3>
-<p>Vamos a ver un ejemplo práctico real de Docker Compose, donde desplegaremos una aplicación de código abierto para gestión de reuniones online, similar al servicio Google Meet.</p>
-<p>Si accedemos al repositorio oficial de Jitsi en Github <a href="https://github.com/jitsi/docker-jitsi-meet">Jitsi Meet</a>, tenemos toda la documentación necesaria para desplegar la aplicación con Docker, incluyendo el fichero <code>docker-compse.yaml</code>.</p>
-<p>Si seguimos las intrucciones ahí indicadas:</p>
-<ol>
-<li>Descargamos los ficheros del repositorio, lo descomprimimos, accedemos al directorio y vemos lo que contiene:</li>
-</ol>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>wget<span class="w"> </span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>https://api.github.com/repos/jitsi/docker-jitsi-meet/releases/latest<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;zip&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="se">\&quot;</span><span class="w"> </span>-f4<span class="k">)</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>unzip<span class="w"> </span>stable-9258
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">cd</span><span class="w"> </span>jitsi-docker-jitsi-meet-c92026a/
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>ls
-</span></code></pre></div>
-<ol>
-<li>Utilizamos el fichero de variables globales para configurar la aplicación y ejecutamos el script para generar las contraseñas:</li>
-</ol>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cp<span class="w"> </span>env.example<span class="w"> </span>.env
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w"> </span>$<span class="w"> </span>./gen-passwords.sh
-</span></code></pre></div>
-<ol>
-<li>Luego dentro del fichero <strong>.env</strong>, descomentamos el parámetro <code>PUBLIC_URL</code> y modificamos su valor con la dirección que queramos usar:</li>
-</ol>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>nano<span class="w"> </span>.env
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nv">PUBLIC_URL</span><span class="o">=</span>https://localhost:8443
-</span></code></pre></div>
-<ol>
-<li>Creamos los directorios donde vamos a guardar la información de la aplicación (Bind Mount en este caso):</li>
-</ol>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.jitsi-meet-cfg/<span class="o">{</span>web,transcripts,prosody/config,prosody/prosody-plugins-custom,jicofo,jvb,jigasi,jibri<span class="o">}</span>
-</span></code></pre></div>
-<ol>
-<li>Por último, levantamos el escenario y accedemos a la URL desde un navegador web:</li>
-</ol>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
-</span></code></pre></div>
-<p><img alt="Interfaz Web Jitsi" src="https://jitsi.github.io/handbook/assets/images/user_guide_start_meeting-fe6cddef0eb178260fe8449bdad070c3.png" width="600" /></p>
-<p>Si revisamos los contenedores que se han creado, veremos que Jitsi esta compuesto por 4 servicios:
-Se crean 4 contenedores que corresponde a cuatro componentes de Jitsi:</p>
-<ul>
-<li><strong>web</strong>: Jitsi Meet web UI, aplicación web servida por nginx.</li>
-<li><strong>prosody</strong>: Prosody, servidor XMPP.</li>
-<li><strong>jicofo</strong>: [Jicofo], el componente JItsi COnference FOcus.</li>
-<li><strong>jvb</strong>: Jitsi Videobridge, el enrutador de vídeo.</li>
-</ul>
 <h2 id="creacion-de-imagenes-en-docker"><span style="color: var(--ceny-primary-color);">CREACIÓN DE IMÁGENES EN DOCKER</span></h2>
 <p>Hay dos mecánismos básicos de construcción:</p>
 <ul>
@@ -2302,20 +2316,20 @@ Se crean 4 contenedores que corresponde a cuatro componentes de Jitsi:</p>
 <p><strong>EJERCICIO PRÁCTICO</strong>: Creación de una imágen a partir de un contenedor.
 Vamos a crear un contenedor a partir de una imagen base del SO Debian.</p>
 </blockquote>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w">  </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>contenedor1<span class="w"> </span>debian<span class="w"> </span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker<span class="w">  </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>contenedor1<span class="w"> </span>debian<span class="w"> </span>
 </span></code></pre></div>
 <blockquote>
 <p>Realizamos las modificaciones que queramos sobre el contenedor, por ejemplo, actualizar, instalar un servidor web y modificar el fichero <em>index.html</em>:</p>
 </blockquote>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>apt<span class="w"> </span>update
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;h1&gt;Curso Docker&lt;/h1&gt;&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/var/www/html/index.html
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="nb">exit</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>apt<span class="w"> </span>update
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;h1&gt;Curso Docker&lt;/h1&gt;&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/var/www/html/index.html
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nb">exit</span>
 </span></code></pre></div>
 <blockquote>
 <p>Creamos una nueva imagen partiendo de ese contenedor usando <code>docker commit</code>.</p>
 </blockquote>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="w"> </span>docker<span class="w"> </span>commit<span class="w"> </span>--change<span class="o">=</span><span class="s1">&#39;CMD apachectl -D FOREGROUND&#39;</span><span class="w"> </span>contenedor1<span class="w"> </span>josedom24/myapache2:v1
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w"> </span>docker<span class="w"> </span>commit<span class="w"> </span>--change<span class="o">=</span><span class="s1">&#39;CMD apachectl -D FOREGROUND&#39;</span><span class="w"> </span>contenedor1<span class="w"> </span>josedom24/myapache2:v1
 </span></code></pre></div>
 <blockquote>
 <p>Si quiero subir mi imagen a <strong>Docker Hub</strong>, es muy importante ponerle delante nuestro nombre de usuario de Docker Hub, si no, no me dejará. El formato sería <em>nombre_usuario</em>/<em>nombre_imagen</em>:<em>versión</em> (si no indicamos versión, asignará la etiqueta <em>latest</em>)</p>
