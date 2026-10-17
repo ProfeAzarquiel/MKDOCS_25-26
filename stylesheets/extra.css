@@ -1,12 +1,3 @@
-/*PARA PERSONALIZAR EL ASPECTO DE LOS CUADROS DE LAS ADMONITIONS: */
-/*
-.md-typeset .admonition,
-.md-typeset details {
-  border-width: 0;
-  border-left-width: 4px;
-}
-*/
-
 /*USAR IMAGEN DE FONDO PARA LA PÁGINA: */
 /* body {
     background-image: url('https://plus.unsplash.com/premium_photo-1685148902854-9b9bb49fff08?fm=jpg');
@@ -15,12 +6,65 @@
     background-attachment: fixed;
 } */
 
+:root > * {
+    /* VARIABLES PROPIAS PARA COLORES DE ENCABEZADOS */
+    --general-white-color: #ffffff;
+    --general-black-color: #1e2129;
+
+    --ceny-primary-color: #8359FF;
+    --ceny-secondary-color: #622EFF;
+    --ceny-tertiary-color: #3400D1;
+    
+    --bda-primary-color: #F86392;
+    --bda-secondary-color: #f92c6d;
+    --bda-tertiary-color: #F40B55;
+   
+    --diw-primary-color: #FF8630;
+    --diw-secondary-color: #FF6A00;
+    --diw-tertiary-color: #D15700;
+
+    --pcp-primary-color: #64E028;
+    --pcp-secondary-color: #4EB71A;
+    --pcp-tertiary-color: #3D8F14;
+
+    --fh-primary-color: #0EF1B8;
+    --fh-secondary-color: #0CC697;
+    --fh-tertiary-color: #089B76;
+
+}
+
+:root > *[data-md-color-scheme="slate"] {
+      /* Colores de texto para los títulos h4 en modo OSCURO*/
+    --ceny-cuaternary-color: #A78AFF;
+    --bda-cuaternary-color: #FA8EB1;
+    --diw-cuaternary-color: #FFA05C;
+    --pcp-cuaternary-color: #99EB70;
+    --fh-cuaternary-color: #90F9DE;
+}
+
+:root > *[data-md-color-scheme="default"] {
+    /*Colores de texto para los títulos h4 en modo CLARO*/
+    --ceny-cuaternary-color: #1D0075;
+    --bda-cuaternary-color: #710527;
+    --diw-cuaternary-color: #A34400;
+    --pcp-cuaternary-color: #2C670F;
+    --fh-cuaternary-color: #066F56;
+}
+
 /*PERSONALIZAR EL ANCHO DE LOS CONTENIDOS PRINCIPALES (PARA REDUCIR EL ESPACIO QUE OCUPAN LOS MENUS NAV Y TOC) */
 .md-grid {
   max-width: 1440px; 
 }
 
-/*CAMBIO DE COLOR DE LOS ELEMENTOS SEGÚN EL TEMA ELEGIDO: */
+/* Cambiar el estilo de las citas en bloque */
+.md-typeset blockquote {
+  color: var(--general-black-color);                 /* Color del texto de la cita */
+  border-left: 8px solid #d9d931;   /* Color y grosor de la línea lateral */
+  background-color: #fdffe6;        /* Color de fondo de la cita (opcional) */
+  padding: 0.1em 0.1em;               /* Espaciado interno */
+}
+
+/*CAMBIO DE COLOR DEL LOGO PRINCIPAL PERSONALIZADO SEGÚN EL TEMA ELEGIDO: */
 /* Color del LOGO principal en modo claro */
 [data-md-color-scheme="default"] #path-logo {
   fill: var(--general-white-color);
@@ -32,23 +76,20 @@
 
 /* --- COLORES PERSONALIZADOS PARA MODO CLARO --- */
 [data-md-color-scheme="default"] {
-    --md-code-bg-color: rgb(170, 227, 214);
-    --md-code-fg-color: #050504;
-    --md-code-hl-comment-color: #0119c8;
+  /* Color para los cuadros de código fuente en modo CLARO:*/
+    --md-code-bg-color: #e4e4e4;
+  /* Color del texto genérico formateado*/
     --main-text-color: #009485;
 }
 /* --- COLORES PERSONALIZADOS PARA MODO OSCURO --- */
 [data-md-color-scheme="slate"] {
-    --md-code-bg-color: rgb(205, 227, 170);
-    --md-code-fg-color: #050504;
-    --md-code-hl-comment-color: #1d5d0e;
+  /* Color para los cuadros de código fuente en modo CLARO:*/
+    --md-code-bg-color: #404454;
+  /* Color del texto genérico formateado*/
     --main-text-color: #cbdc38;
 }
 
-/* EJEMPLO DE ADMONITION PERSONALIZADO: */
-:root {
-  --md-admonition-icon--game: url('data:image/svg+xml;charset=utf-8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 1.25C15.4142 1.25 15.75 1.58579 15.75 2V3C15.75 3.9665 14.9665 4.75 14 4.75H13C12.8619 4.75 12.75 4.86193 12.75 5V6H14C17.7712 6 19.6569 6 20.8284 7.17157C22 8.34315 22 10.2288 22 14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14C2 10.2288 2 8.34315 3.17157 7.17157C4.34315 6 6.22876 6 10 6H11.25V5C11.25 4.0335 12.0335 3.25 13 3.25H14C14.1381 3.25 14.25 3.13807 14.25 3V2C14.25 1.58579 14.5858 1.25 15 1.25ZM8.75 12C8.75 11.5858 8.41421 11.25 8 11.25C7.58579 11.25 7.25 11.5858 7.25 12V13.05C7.25 13.1605 7.16046 13.25 7.05 13.25H6C5.58579 13.25 5.25 13.5858 5.25 14C5.25 14.4142 5.58579 14.75 6 14.75H7.05C7.16046 14.75 7.25 14.8395 7.25 14.95V16C7.25 16.4142 7.58579 16.75 8 16.75C8.41421 16.75 8.75 16.4142 8.75 16V14.95C8.75 14.8395 8.83954 14.75 8.95 14.75H10C10.4142 14.75 10.75 14.4142 10.75 14C10.75 13.5858 10.4142 13.25 10 13.25H8.95C8.83954 13.25 8.75 13.1605 8.75 13.05V12ZM15 13.5C15.5523 13.5 16 13.0523 16 12.5C16 11.9477 15.5523 11.5 15 11.5C14.4477 11.5 14 11.9477 14 12.5C14 13.0523 14.4477 13.5 15 13.5ZM18 15.5C18 16.0523 17.5523 16.5 17 16.5C16.4477 16.5 16 16.0523 16 15.5C16 14.9477 16.4477 14.5 17 14.5C17.5523 14.5 18 14.9477 18 15.5Z" fill="black"/></svg>')
-}
+/* CREACIÓN DE UN ADMONITION PERSONALIZADO: -------------------------*/
 .md-typeset .admonition.game,
 .md-typeset details.game {
   border-color: #FF8400;
@@ -64,53 +105,7 @@
           mask-image: var(--md-admonition-icon--game);
 }
 
-/* VARIABLES PARA PERSONALIZAR LOS COLORES DE LOS BLOQUES DE CÓDIGO */
-:root > * {
-    --general-white-color: #ffffff;
-    --general-black-color: #1e2129;
-
-    --ceny-primary-color: #8359FF;
-    --ceny-secondary-color: #622EFF;
-    --ceny-tertiary-color: #3400D1;
-    --ceny-cuaternary-color: #1D0075;
-
-    --bda-primary-color: #F86392;
-    --bda-secondary-color: #f92c6d;
-    --bda-tertiary-color: #F40B55;
-    --bda-cuaternary-color: #440318;
-
-    --diw-primary-color: #FF8630;
-    --diw-secondary-color: #FF6A00;
-    --diw-tertiary-color: #D15700;
-    --diw-cuaternary-color: #471E00;
-
-    --pcp-primary-color: #64E028;
-    --pcp-secondary-color: #4EB71A;
-    --pcp-tertiary-color: #3D8F14;
-    --pcp-cuaternary-color: #1B3E09;
-
-    --fh-primary-color: #0EF1B8;
-    --fh-secondary-color: #0CC697;
-    --fh-tertiary-color: #066F55;
-    --fh-cuaternary-color: #044334;
-
-  /*
-<span style="color: var(--ceny-secondary-color);">
-</span>
-  --md-code-fg-color
-  --md-code-bg-color
-  --md-code-hl-color
-  --md-code-hl-number-color
-  --md-code-hl-special-color
-  --md-code-hl-function-color
-  --md-code-hl-constant-color
-  --md-code-hl-keyword-color
-  --md-code-hl-string-color
-  --md-code-hl-name-color
-  --md-code-hl-operator-color
-  --md-code-hl-punctuation-color
-  --md-code-hl-comment-color
-  --md-code-hl-generic-color
-  --md-code-hl-variable-color
-  */
+:root {
+  --md-admonition-icon--game: url('data:image/svg+xml;charset=utf-8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 1.25C15.4142 1.25 15.75 1.58579 15.75 2V3C15.75 3.9665 14.9665 4.75 14 4.75H13C12.8619 4.75 12.75 4.86193 12.75 5V6H14C17.7712 6 19.6569 6 20.8284 7.17157C22 8.34315 22 10.2288 22 14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14C2 10.2288 2 8.34315 3.17157 7.17157C4.34315 6 6.22876 6 10 6H11.25V5C11.25 4.0335 12.0335 3.25 13 3.25H14C14.1381 3.25 14.25 3.13807 14.25 3V2C14.25 1.58579 14.5858 1.25 15 1.25ZM8.75 12C8.75 11.5858 8.41421 11.25 8 11.25C7.58579 11.25 7.25 11.5858 7.25 12V13.05C7.25 13.1605 7.16046 13.25 7.05 13.25H6C5.58579 13.25 5.25 13.5858 5.25 14C5.25 14.4142 5.58579 14.75 6 14.75H7.05C7.16046 14.75 7.25 14.8395 7.25 14.95V16C7.25 16.4142 7.58579 16.75 8 16.75C8.41421 16.75 8.75 16.4142 8.75 16V14.95C8.75 14.8395 8.83954 14.75 8.95 14.75H10C10.4142 14.75 10.75 14.4142 10.75 14C10.75 13.5858 10.4142 13.25 10 13.25H8.95C8.83954 13.25 8.75 13.1605 8.75 13.05V12ZM15 13.5C15.5523 13.5 16 13.0523 16 12.5C16 11.9477 15.5523 11.5 15 11.5C14.4477 11.5 14 11.9477 14 12.5C14 13.0523 14.4477 13.5 15 13.5ZM18 15.5C18 16.0523 17.5523 16.5 17 16.5C16.4477 16.5 16 16.0523 16 15.5C16 14.9477 16.4477 14.5 17 14.5C17.5523 14.5 18 14.9477 18 15.5Z" fill="black"/></svg>')
 }
+/*FIN DE LA DEFINICIÓN DEL ADMONITIO PERSONALIZADO -----------------*/
