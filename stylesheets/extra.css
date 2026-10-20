@@ -6,8 +6,8 @@
     background-attachment: fixed;
 } */
 
+/* VARIABLES PROPIAS PARA COLORES DE ENCABEZADOS */
 :root > * {
-    /* VARIABLES PROPIAS PARA COLORES DE ENCABEZADOS */
     --general-white-color: #ffffff;
     --general-black-color: #1e2129;
 
@@ -27,9 +27,9 @@
     --pcp-secondary-color: #4EB71A;
     --pcp-tertiary-color: #3D8F14;
 
-    --fh-primary-color: #0EF1B8;
-    --fh-secondary-color: #0CC697;
-    --fh-tertiary-color: #089B76;
+    --fh-primary-color: #3AAFDE;
+    --fh-secondary-color: #25A7DA;
+    --fh-tertiary-color: #1E89B3;
 
 }
 
@@ -39,7 +39,7 @@
     --bda-cuaternary-color: #FA8EB1;
     --diw-cuaternary-color: #FFA05C;
     --pcp-cuaternary-color: #99EB70;
-    --fh-cuaternary-color: #90F9DE;
+    --fh-cuaternary-color: #9BD6EE;
 }
 
 :root > *[data-md-color-scheme="default"] {
@@ -48,7 +48,7 @@
     --bda-cuaternary-color: #710527;
     --diw-cuaternary-color: #A34400;
     --pcp-cuaternary-color: #2C670F;
-    --fh-cuaternary-color: #066F56;
+    --fh-cuaternary-color: #114D64;
 }
 
 /*PERSONALIZAR EL ANCHO DE LOS CONTENIDOS PRINCIPALES (PARA REDUCIR EL ESPACIO QUE OCUPAN LOS MENUS NAV Y TOC) */
