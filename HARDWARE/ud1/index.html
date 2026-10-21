@@ -747,6 +747,8 @@
       
         
       
+        
+      
     
     
     
@@ -886,6 +888,34 @@
     
   
     UD2. Maquetación CSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Implantación de Multimedia
   
 
     
@@ -1789,6 +1819,35 @@ El firmware de la BIOS <strong>se encuentra</strong> almacenado en un pequeño c
    <img alt="Jumpers CMOS" src="https://hardzone.es/app/uploads-hardzone.es/2018/01/Resetear-la-Bios-01.jpg" width="300" />
    <small><figcaption>Pila CMOS y Cabeceras ClearCMOS</figcaption></small>
  </figure>
+<!--
+**SUPER I/O**
+El chip Super I/O (Super Input/Output) es un circuito integrado de la placa base que controla los dispositivos de entrada y salida de baja velocidad y supervisa el estado del hardware
+Es decir, es un chip independiente y secundario que se subordina al chipset. Su trabajo es gestionar dispositivos de baja velocidad y tareas de monitorización, tales como:
+    • El control de ventiladores y la lectura de temperaturas de la CPU.
+    • Los sensores de voltaje.
+    • Puertos antiguos o heredados (como PS/2 para teclado/ratón o puertos serie/paralelo si existen).
+    • Funciones de encendido y el botón de Reset.
+¿Cómo identificar el integrado Súper IO en una placa base?
+Identificar este integrado en una placa base es fácil, sólo debe buscar un circuito integrado que tenga el nombre de una empresa que fabrique súper chips de E / S. Aquí les muestro los fabricantes de súper E / S más comunes: Fintek, ITE, National Semiconductor, Nuvoton, SMSC, VIA y Winbond.
+¿Cómo se conecta en las placas actuales?
+En lugar de los antiguos buses lentos (como el bus ISA), los chips Super I/O actuales de fabricantes como Nuvoton, ITE o Fintek se comunican con el chipset principal a través del bus LPC (Low Pin Count) o mediante interfaces más modernas como eSPI (Enhanced Serial Peripheral Interface).
+¿Qué controla el IO en una placa madre de PC?
+Puerto serie
+GPIO flexibles
+Puerto paralelo
+Teclado / ratón
+Torre de disquete (obsoleto)
+Monitoreo del sistema (Voltajes, temperaturas)
+¿Qué hace exactamente hoy en día?
+En el pasado, el chip Super I/O se encargaba principalmente de puertos antiguos (o "heredados") como los puertos serie (COM), paralelos (LPT) o las conexiones PS/2 para ratón y teclado. En las placas base actuales, realiza tareas críticas que no requieren el ancho de banda masivo del chipset principal:
+• Monitorización de hardware: Controla en tiempo real los sensores de temperatura de la placa base y el procesador, los voltajes de los componentes y las revoluciones por minuto (RPM) de los ventiladores.
+• Control de ventiladores (PWM): Ajusta las curvas de velocidad de los ventiladores conectados a la placa base según las temperaturas medidas.
+• Gestión de energía menor: Administra el botón de encendido/apagado del chasis y los estados de suspensión del sistema en comunicación con la BIOS/UEFI.
+• Soporte de legado residual: Aunque ya no se usen conectores externos, sigue controlando tecnologías básicas como el puerto para la disquetera (en desuso, pero integrado en el chip de forma nativa), sensores de intrusión del chasis o el chip de la BIOS.
+https://www.electrogenios.com/integrado-super-io-en-una-placa-base/
+
+ -->
+
 <p>En resumen, podemos decir que al encender el ordenador, la BIOS consulta la memoria CMOS para obtener las configuraciones existentes y aplicarlas a los componentes hardware.</p>
 <details class="question">
 <summary>¿Como localizar físicamente la BIOS?</summary>
