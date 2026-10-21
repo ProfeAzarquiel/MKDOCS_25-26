@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://profeazarquiel.github.io/MKDOCS_25-26/BIGDATA/ud3/">
       
       
+        <link rel="prev" href="../ud2/">
+      
+      
+        <link rel="next" href="../../CLOUD/indexc/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>UD3: FORMATOS DE DATOS - MATERIALES INFORMÁTICA IES AZARQUIEL</title>
+        <title>UD3. Formatos de Datos - MATERIALES INFORMÁTICA IES AZARQUIEL</title>
       
     
     
@@ -128,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UD3: FORMATOS DE DATOS
+              UD3. Formatos de Datos
             
           </span>
         </div>
@@ -288,8 +292,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -301,15 +307,17 @@
       
         
       
+        
+      
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -330,7 +338,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -448,6 +456,147 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Formatos de Datos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Formatos de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTRODUCCIÓN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propiedades-de-cada-formato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PROPIEDADES DE CADA FORMATO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filas-vs-columnas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FILAS vs COLUMNAS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AVRO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ARROW
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parquet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PARQUET
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1294,6 +1443,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#arrow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ARROW
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parquet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PARQUET
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1614,7 +1785,7 @@
     <small><figcaption>Logo Apache Avro</figcaption></small>
 </figure>
 <h2 id="avro"><span style="color: var(--bda-primary-color);">AVRO</span></h2>
-<p><a href="https://avro.apache.org/">Apache Avro</a> es un formato de almacenamiento <strong>basado en filas</strong> que <strong>ocupa menos y es más rápido</strong> que JSON, porque los datos se serializan en binario compacto mientras que el esquema que los describe se define en JSON.</p>
+<p><a href="https://avro.apache.org/" target="blank">Apache Avro</a> es un formato de almacenamiento <strong>basado en filas</strong> que <strong>ocupa menos y es más rápido</strong> que JSON, porque los datos se serializan en binario compacto mientras que el esquema que los describe se define en JSON.</p>
 <p>Esa combinación no es casual, y explica por qué <em>Avro</em> es uno de los formatos relevante en el campo del <em>Big Data</em>:</p>
 <ul>
 <li>El esquema viaja siempre con los datos, en la cabecera del fichero. Quien lee un .avro no necesita nada más para interpretarlo, ni tiene que generar clases ni compilar nada.</li>
@@ -1628,7 +1799,7 @@
 <p>Por eso <em>Avro</em> es la elección natural cuando los datos cruzan la frontera entre sistemas que evolucionan por separado (típicamente, un productor y un consumidor de <em>Kafka</em>), y no cuando queremos analizar columnas — para eso ya tenemos <em>Parquet</em>.</p>
 <h3 id="formato-avro"><span style="color: var(--bda-secondary-color);">FORMATO (AVRO)</span></h3>
 <p>Un fichero <em>Avro</em> se compone de una <strong>cabecera</strong> en formato texto y una secuencia de <strong>bloques de datos</strong> en binario. La cabecera contiene los metadatos (entre ellos, el esquema en JSON y el códec de compresión empleado) y un <strong><em>sync marker</em></strong>: 16 bytes aleatorios que se repiten al final de cada bloque.</p>
-<p>Ese <em>sync marker</em> es la clave de dos propiedades que ya anunciamos en la <a href="#">tabla comparativa</a> del principio:</p>
+<p>Ese <em>sync marker</em> es la clave de dos propiedades que ya anunciamos en la tabla comparativa del principio:</p>
 <ul>
 <li><strong>Divisible</strong> (<em>splittable</em>): un lector puede saltar a un punto cualquiera del fichero, buscar hacia delante la siguiente aparición del <em>sync marker</em> y saber que ahí empieza un bloque completo. Así, varios nodos pueden procesar fragmentos distintos del mismo fichero en paralelo.</li>
 <li><strong>Divisible aunque esté comprimido</strong>: la compresión se aplica bloque a bloque, no al fichero entero. Un CSV con <em>gzip</em>, en cambio, deja de ser divisible, porque hay que descomprimir desde el principio.</li>
@@ -1659,7 +1830,7 @@
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">        </span><span class="p">]</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Podemos observar como el esquema es un JSON que describe la estructura de los datos, mediante el atributo <code>fields</code>, donde cada campo tiene un nombre y un tipo. En este caso, hemos definido que el campo <code>nombre</code> es de tipo <code>string</code>, el campo <code>altura</code> es de tipo <code>int</code>, y que el campo <code>edad</code> es <strong>opcional</strong>, ya que puede ser <code>null</code> o un entero. Además, hemos definido un valor por defecto (<code>default</code>) para el caso de que no se proporcione ningún valor.</p>
+<p>Podemos observar como el esquema es un JSON que describe la estructura de los datos, mediante el atributo <code>fields</code>, donde cada campo tiene un nombre y un tipo. En este caso, hemos definido que el campo <code>nombre</code> es de tipo <code>string</code>, el campo <code>altura</code> es de tipo <code>int</code>, y que el campo <code>edad</code> es <strong>opcional</strong>, ya que puede ser <code>null</code> o un entero. Además, hemos definido un valor por defecto (<code>default</code>) para que en caso de que no se proporcione ningún valor, no produzca un error.</p>
 <div class="admonition info">
 <p class="admonition-title"><strong>Campos Opcionales</strong></p>
 <p><strong><em>Avro</em></strong> no tiene un concepto de "<em>campo opcional</em>" como tal, ya que todo campo es obligatorio. Lo que hacemos es declarar que uno de sus tipos válidos es <code>null</code>. Sin esa unión, escribir un empleado sin <code>edad</code> produciría un error.<br />
@@ -1669,8 +1840,10 @@ Esta pareja de unión + <code>default</code> parece un detalle menor, pero es la
 <p>Para trabajar con <em>Avro</em> desde <em>Python</em> utilizaremos la librería <a href="https://github.com/fastavro/fastavro"><em>Fastavro</em></a>, que instalamos mediante pip:</p>
 <div class="language-python highlight"><span class="filename">Instalación Fastavro</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">fastavro</span>
 </span></code></pre></div>
-<p>En el siguiente ejemplo leemos el esquema del fichero <a href="https://aitor-medrano.github.io/iabd/de/resources/empleado.avsc"><strong><code>empleado.avsc</code></strong></a>, escribimos dos empleados en un fichero <code>.avro</code> y volvemos a leerlo. Observa que el segundo empleado no tiene <code>edad</code> y que, al leer el fichero, no le pasamos el esquema en ningún momento:</p>
-<p><a href="https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_2_1">Código Python</a><a href="https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_2_2">Resultado</a></p>
+<p>En el siguiente ejemplo leemos el esquema del fichero <a href="../../resources/empleado.avsc"><strong><code>empleado.avsc</code></strong></a>, escribimos dos empleados en un fichero <code>.avro</code> y volvemos a leerlo. Observa que el segundo empleado no tiene <code>edad</code> y que, al leer el fichero, no le pasamos el esquema en ningún momento:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código Python</label><label for="__tabbed_1_2">Resultado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">**empleado-avro.py**</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -1717,314 +1890,504 @@ Esta pareja de unión + <code>default</code> parece un detalle menor, pero es la
 </span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a>    <span class="n">codec</span> <span class="o">=</span> <span class="n">lector</span><span class="o">.</span><span class="n">codec</span>
 </span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a>    <span class="n">leidos</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">lector</span><span class="p">)</span>
 </span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Esquema almacenado en el fichero:n</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">esquema_del_fichero</span><span class="p">)</span><span class="si">}</span><span class="s2">n&quot;</span><span class="p">)</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Codec de compresión: </span><span class="si">{</span><span class="n">codec</span><span class="si">}</span><span class="s2">n&quot;</span><span class="p">)</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Empleados:n</span><span class="si">{</span><span class="n">leidos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Esquema almacenado en el fichero:</span><span class="se">\n</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">esquema_del_fichero</span><span class="p">)</span><span class="si">}</span><span class="s2">n&quot;</span><span class="p">)</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Codec de compresión: </span><span class="si">{</span><span class="n">codec</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Empleados: </span><span class="se">\n</span><span class="si">{</span><span class="n">leidos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Esquema almacenado en el fichero:
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>{&quot;type&quot;: &quot;record&quot;, &quot;name&quot;: &quot;SeveroOchoa.empleado&quot;, &quot;fields&quot;: [{&quot;name&quot;: &quot;nombre&quot;, &quot;type&quot;: &quot;string&quot;}, {&quot;name&quot;: &quot;altura&quot;, &quot;type&quot;: &quot;int&quot;}, {&quot;default&quot;: null, &quot;name&quot;: &quot;edad&quot;, &quot;type&quot;: [&quot;null&quot;, &quot;int&quot;]}]}
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Codec de compresión: null
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Empleados:
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>[{&#39;nombre&#39;: &#39;Aitor&#39;, &#39;altura&#39;: 182, &#39;edad&#39;: 48}, {&#39;nombre&#39;: &#39;Pedro&#39;, &#39;altura&#39;: 178, &#39;edad&#39;: None}]
+</span></code></pre></div>
+</div>
+</div>
+</div>
 <p>Hay dos cosas que merece la pena destacar del resultado:</p>
 <ol>
-<li>A Pedro le ha aparecido <code>'edad': None</code>. No lo hemos escrito nosotros: lo ha puesto el default del esquema.</li>
-<li>El esquema que recuperamos del fichero es el mismo con el que escribimos, y lo hemos obtenido sin tener el .avsc a mano. A esto nos referimos cuando decimos que <em>Avro</em> es un formato <em>standalone</em>.</li>
+<li>A Pedro le ha aparecido <code>'edad': None</code>. No lo hemos escrito nosotros: lo ha puesto el <code>default</code> del esquema.</li>
+<li>El esquema que recuperamos del fichero es el mismo con el que escribimos, y lo hemos obtenido sin tener el <code>.avsc</code> a mano. A esto nos referimos cuando decimos que <em>Avro</em> es un formato <strong><em>standalone</em></strong>.</li>
 </ol>
 <p>Podemos comprobar la estructura del fichero que acabamos de describir mirando los bytes directamente:</p>
-<p><a href="https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_3_1">Código Python</a><a href="https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_3_2">Resultado</a></p>
-<p><strong>empleado-avro-header.py</strong></p>
-<p>raw = open("empleados.avro", "rb").read()</p>
-<h1 id="los-numeros-magicos-que-identifican-un-fichero-avro">Los "números mágicos" que identifican un fichero Avro</h1>
-<p>print(f"Números mágicos: {raw[:4]}")</p>
-<h1 id="el-sync-marker-son-los-ultimos-16-bytes-cierran-el-ultimo-bloque">El sync marker son los últimos 16 bytes (cierran el último bloque)</h1>
-<p>sync = raw[-16:]</p>
-<p>print(f"Sync marker: {sync.hex()}")</p>
-<h1 id="aparece-dos-veces-al-final-de-la-cabecera-y-al-cerrar-el-unico-bloque">Aparece dos veces: al final de la cabecera y al cerrar el único bloque</h1>
-<p>print(f"Veces que aparece en el fichero: {raw.count(sync)}")</p>
-<p><strong>La librería avro oficial</strong></p>
-<p><em>Apache Avro</em> ofrece su propia librería para <em>Python</em>, llamada <a href="https://avro.apache.org/docs/++version++/getting-started-python/">avro</a>, con una API muy similar (DataFileWriter/DataFileReader en vez de writer/reader). Está escrita en <em>Python</em> puro, mientras que <em>Fastavro</em> implementa las partes críticas en <em>Cython</em>, por lo que es bastante más rápida con volúmenes grandes. Salvo que necesites algo específico de la implementación de referencia, la recomendación es usar <em>Fastavro</em>.</p>
-<p>Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos, ya que desde la versión 1.11 ese paquete se absorbió dentro de avro.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código Python</label><label for="__tabbed_2_2">Resultado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">**empleado-avro.py**</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">raw</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;empleados.avro&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="c1"># Los &quot;números mágicos&quot; que identifican un fichero Avro</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Números mágicos: </span><span class="si">{</span><span class="n">raw</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="c1"># El sync marker son los últimos 16 bytes (cierran el último bloque)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="n">sync</span> <span class="o">=</span> <span class="n">raw</span><span class="p">[</span><span class="o">-</span><span class="mi">16</span><span class="p">:]</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sync marker: </span><span class="si">{</span><span class="n">sync</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="c1"># Aparece dos veces: al final de la cabecera y al cerrar el único bloque</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Veces que aparece en el fichero: </span><span class="si">{</span><span class="n">raw</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">sync</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Números mágicos: b&#39;Obj\x01&#39;
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Sync marker: ea7e87785bfb488f854c1c381ca458dc
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Veces que aparece en el fichero: 2
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>El <strong><em>sync marker</em></strong> es <strong>aleatorio</strong> en cada fichero, así que si replicas el código, el valor será distinto.</p>
+<div class="admonition info">
+<p class="admonition-title"><strong>La librería avro oficial</strong></p>
+<p>Apache Avro<em> ofrece su propia librería para </em>Python<em>, llamada <a href="https://avro.apache.org/docs/++version++/getting-started-python/">avro</a>, con una API muy similar (DataFileWriter/DataFileReader en vez de writer/reader). Está escrita en </em>Python<em> puro, mientras que </em>Fastavro<em> implementa las partes críticas en </em>Cython<em>, por lo que es bastante más rápida con volúmenes grandes. Salvo que necesites algo específico de la implementación de referencia, la recomendación es usar </em>Fastavro*.<br />
+Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos, ya que desde la versión 1.11 ese paquete se absorbió dentro de avro.</p>
+</div>
 <h3 id="evolucion-del-esquema"><span style="color: var(--bda-secondary-color);">EVOLUCIÓN DEL ESQUEMA</span></h3>
-<p>Imagina que llevamos meses escribiendo ficheros empleados.avro con el esquema anterior, y que ahora necesitamos añadir un campo departamento. Tenemos terabytes de ficheros antiguos que no contienen ese campo. ¿Hay que reescribirlos todos?</p>
-<p>La respuesta de <em>Avro</em> es no, y este es uno de sus puntos fuertes. Para conseguirlo distingue entre dos esquemas:</p>
+<p>Imagina que <strong>llevamos meses</strong> escribiendo ficheros <code>empleados.avro</code> con el esquema anterior, y que <strong>ahora necesitamos añadir</strong> un campo <code>departamento</code>. Tenemos terabytes de ficheros antiguos que no contienen ese campo. <strong>¿Hay que reescribirlos todos?</strong></p>
+<p><strong>La respuesta</strong> de <em>Avro</em> <strong>es no</strong>, y este es uno de sus puntos fuertes. Para conseguirlo distingue entre dos esquemas:</p>
 <ul>
 <li>El <strong><em>writer schema</em></strong>: el esquema con el que se escribió el fichero. Está en su cabecera.</li>
 <li>El <strong><em>reader schema</em></strong>: el esquema que espera el programa que lo lee, es decir, su versión actual del contrato.</li>
 </ul>
-<p>Cuando ambos no coinciden, <em>Avro</em> aplica un proceso llamado <strong>resolución de esquemas</strong> para traducir de uno a otro sobre la marcha. Con <em>Fastavro</em>, esto se activa pasando el parámetro reader_schema al lector:</p>
-<p>import fastavro</p>
-<p>def leer_con(reader_schema):</p>
-<p>"""Lee empleados.avro (escrito con el esquema v1) usando otro esquema"""</p>
-<p>with open("empleados.avro", "rb") as f:</p>
-<p>return list(fastavro.reader(f, reader_schema=reader_schema))</p>
-<p>Veamos qué ocurre en los cuatro casos habituales:</p>
+<p>Cuando ambos no coinciden, <em>Avro</em> aplica un proceso llamado <strong>resolución de esquemas</strong> para traducir de uno a otro sobre la marcha. Con <em>Fastavro</em>, esto se activa pasando el parámetro <code>reader_schema</code> al lector:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">fastavro</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">leer_con</span><span class="p">(</span><span class="n">reader_schema</span><span class="p">):</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Lee empleados.avro (escrito con el esquema v1) usando otro esquema&quot;&quot;&quot;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;empleados.avro&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">fastavro</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">reader_schema</span><span class="o">=</span><span class="n">reader_schema</span><span class="p">))</span>
+</span></code></pre></div>
+<p>En relación al supuesto anterio, veamos qué ocurre en los cuatro casos más habituales a la hora de modificar el esquema de un fichero <em>Avro</em>:</p>
+<div class="grid cards">
 <ul>
-<li><strong>Añadir un campo</strong></li>
+<li>
+<p><span style="color: var(--bda-cuaternary-color);"><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.75 1h10.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 15H2.75A1.75 1.75 0 0 1 1 13.25V2.75C1 1.784 1.784 1 2.75 1m10.5 1.5H2.75a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25M8 4a.75.75 0 0 1 .75.75v2.5h2.5a.75.75 0 0 1 0 1.5h-2.5v2.5a.75.75 0 0 1-1.5 0v-2.5h-2.5a.75.75 0 0 1 0-1.5h2.5v-2.5A.75.75 0 0 1 8 4"/></svg></span> <strong>Añadir un nuevo campo</strong></span></p>
+<hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Esquema resultante</label><label for="__tabbed_3_2">Comportamiento</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Añadimos <code>departamento</code> con un valor por defecto:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">v2</span> <span class="o">=</span> <span class="n">fastavro</span><span class="o">.</span><span class="n">parse_schema</span><span class="p">({</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;record&quot;</span><span class="p">,</span> <span class="s2">&quot;namespace&quot;</span><span class="p">:</span> <span class="s2">&quot;SeveroOchoa&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;empleado&quot;</span><span class="p">,</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a>    <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;nombre&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;altura&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">},</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;edad&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;null&quot;</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">],</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;Sin asignar&quot;</span><span class="p">}</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a>    <span class="p">]})</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">leer_con</span><span class="p">(</span><span class="n">v2</span><span class="p">))</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<p>Los ficheros antiguos se leen sin tocarlos, y el campo que les falta se rellena con el valor indicado en <code>default</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">[{</span><span class="s1">&#39;nombre&#39;</span>:<span class="w"> </span><span class="s1">&#39;Aitor&#39;</span>,<span class="w"> </span><span class="s1">&#39;altura&#39;</span>:<span class="w"> </span><span class="m">182</span>,<span class="w"> </span><span class="s1">&#39;edad&#39;</span>:<span class="w"> </span><span class="m">48</span>,
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="s1">&#39;departamento&#39;</span>:<span class="w"> </span><span class="s1">&#39;Sin asignar&#39;</span><span class="o">}</span>,
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="o">{</span><span class="s1">&#39;nombre&#39;</span>:<span class="w"> </span><span class="s1">&#39;Pedro&#39;</span>,<span class="w"> </span><span class="s1">&#39;altura&#39;</span>:<span class="w"> </span><span class="m">178</span>,<span class="w"> </span><span class="s1">&#39;edad&#39;</span>:<span class="w"> </span>None,
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="s1">&#39;departamento&#39;</span>:<span class="w"> </span><span class="s1">&#39;Sin asignar&#39;</span><span class="o">}]</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</li>
 </ul>
-<p>Añadimos departamento <strong>con un valor por defecto</strong>:</p>
-<p>v2 = fastavro.parse_schema({</p>
-<p>"type": "record", "namespace": "SeveroOchoa", "name": "empleado",</p>
-<p>"fields": [</p>
-<p>{"name": "nombre", "type": "string"},</p>
-<p>{"name": "altura", "type": "int"},</p>
-<p>{"name": "edad", "type": ["null", "int"], "default": None},</p>
-<p>{"name": "departamento", "type": "string", "default": "Sin asignar"}</p>
-<p>]})</p>
-<p>print(leer_con(v2))</p>
-<p>Los ficheros antiguos se leen sin tocarlos, y el campo que les falta se rellena con el valor indicado en default:</p>
-<p>[{'nombre': 'Aitor', 'altura': 182, 'edad': 48,</p>
-<p>'departamento': 'Sin asignar'},</p>
-<p>{'nombre': 'Pedro', 'altura': 178, 'edad': None,</p>
-<p>'departamento': 'Sin asignar'}]</p>
+</div>
+<div class="grid cards">
 <ul>
-<li><strong>Añadir un campo sin <em>default</em></strong></li>
+<li>
+<p><span style="color: var(--bda-cuaternary-color);"><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 19c0-2.79 1.91-5.13 4.5-5.8L12 2 1 21h13.35c-.22-.63-.35-1.3-.35-2m-1-1h-2v-2h2zm0-4h-2v-4h2zm8 1v3h3v2h-3v3h-2v-3h-3v-2h3v-3z"/></svg></span> <strong>Añadir un campo sin <code>default</code></strong></span></p>
+<hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Esquema resultante</label><label for="__tabbed_4_2">Comportamiento</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Añadimos <code>departamento</code>, pero en este caso sin valor por defecto:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">v2b</span> <span class="o">=</span> <span class="n">fastavro</span><span class="o">.</span><span class="n">parse_schema</span><span class="p">({</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;record&quot;</span><span class="p">,</span> <span class="s2">&quot;namespace&quot;</span><span class="p">:</span> <span class="s2">&quot;SeveroOchoa&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;empleado&quot;</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>    <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;nombre&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;altura&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">},</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;edad&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;null&quot;</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">],</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a>    <span class="p">]})</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">leer_con</span><span class="p">(</span><span class="n">v2b</span><span class="p">))</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<p>Avro no puede inventarse un valor que <strong>no existe en el fichero</strong> y para el que no hay alternativa, <strong>así que falla</strong>. Este error es la mejor demostración de para qué sirve un <code>default</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>SchemaResolutionError: No default value for field departamento in SeveroOchoa.empleado
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</li>
 </ul>
-<p>El mismo cambio, pero olvidando el default:</p>
-<p>v2b = fastavro.parse_schema({</p>
-<p>"type": "record", "namespace": "SeveroOchoa", "name": "empleado",</p>
-<p>"fields": [</p>
-<p>{"name": "nombre", "type": "string"},</p>
-<p>{"name": "altura", "type": "int"},</p>
-<p>{"name": "edad", "type": ["null", "int"], "default": None},</p>
-<p>{"name": "departamento", "type": "string"}</p>
-<p>]})</p>
-<p>print(leer_con(v2b))</p>
-<p><em>Avro</em> no puede inventarse un valor que no existe en el fichero y para el que no hay alternativa, así que <strong>falla</strong>. Este error es la mejor demostración de para qué sirve un default:</p>
-<p>SchemaResolutionError: No default value for field departamento in SeveroOchoa.empleado</p>
+</div>
+<div class="grid cards">
 <ul>
-<li><strong>Renombrar un campo</strong></li>
+<li>
+<p><span style="color: var(--bda-cuaternary-color);"><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15 16-4 4h10v-4zm-2.94-8.81L3 16.25V20h3.75l9.06-9.06zm6.65.85c.39-.39.39-1.04 0-1.41l-2.34-2.34a1.001 1.001 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"/></svg></span> <strong>Renombrar un campo</strong></span></p>
+<hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Esquema resultante</label><label for="__tabbed_5_2">Comportamiento</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Queremos que <code>nombre</code> pase a llamarse <code>nombre_completo</code>. Para que Avro sepa que se trata del mismo campo, usamos <code>aliases</code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span>
+<span class="normal"><a href="#__codelineno-14-7">7</a></span>
+<span class="normal"><a href="#__codelineno-14-8">8</a></span>
+<span class="normal"><a href="#__codelineno-14-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">v3</span> <span class="o">=</span> <span class="n">fastavro</span><span class="o">.</span><span class="n">parse_schema</span><span class="p">({</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;record&quot;</span><span class="p">,</span> <span class="s2">&quot;namespace&quot;</span><span class="p">:</span> <span class="s2">&quot;SeveroOchoa&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;empleado&quot;</span><span class="p">,</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a>    <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;nombre_completo&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">]},</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;altura&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">},</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;edad&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;null&quot;</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">],</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a>    <span class="p">]})</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">leer_con</span><span class="p">(</span><span class="n">v3</span><span class="p">))</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<p>Los ficheros siguen guardando <code>nombre</code>, pero nuestro programa los ve como <code>nombre_completo</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="o">[{</span><span class="s1">&#39;nombre_completo&#39;</span>:<span class="w"> </span><span class="s1">&#39;Aitor&#39;</span>,<span class="w"> </span><span class="s1">&#39;altura&#39;</span>:<span class="w"> </span><span class="m">182</span>,<span class="w"> </span><span class="s1">&#39;edad&#39;</span>:<span class="w"> </span><span class="m">48</span><span class="o">}</span>,
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="o">{</span><span class="s1">&#39;nombre_completo&#39;</span>:<span class="w"> </span><span class="s1">&#39;Pedro&#39;</span>,<span class="w"> </span><span class="s1">&#39;altura&#39;</span>:<span class="w"> </span><span class="m">178</span>,<span class="w"> </span><span class="s1">&#39;edad&#39;</span>:<span class="w"> </span>None<span class="o">}]</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</li>
 </ul>
-<p>Queremos que nombre pase a llamarse nombre_completo. Para que <em>Avro</em> sepa que se trata del mismo campo, usamos aliases:</p>
-<p>v3 = fastavro.parse_schema({</p>
-<p>"type": "record", "namespace": "SeveroOchoa", "name": "empleado",</p>
-<p>"fields": [</p>
-<p>{"name": "nombre_completo", "type": "string", "aliases": ["nombre"]},</p>
-<p>{"name": "altura", "type": "int"},</p>
-<p>{"name": "edad", "type": ["null", "int"], "default": None}</p>
-<p>]})</p>
-<p>print(leer_con(v3))</p>
-<p>Los ficheros siguen guardando nombre, pero nuestro programa los ve como nombre_completo:</p>
-<p>[{'nombre_completo': 'Aitor', 'altura': 182, 'edad': 48},</p>
-<p>{'nombre_completo': 'Pedro', 'altura': 178, 'edad': None}]</p>
+</div>
+<div class="grid cards">
 <ul>
-<li><strong>Eliminar un campo</strong></li>
-</ul>
+<li>
+<p><span style="color: var(--bda-cuaternary-color);"><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6zm2.46-7.12 1.41-1.41L12 12.59l2.12-2.12 1.41 1.41L13.41 14l2.12 2.12-1.41 1.41L12 15.41l-2.12 2.12-1.41-1.41L10.59 14zM15.5 4l-1-1h-5l-1 1H5v2h14V4z"/></svg></span> <strong>Eliminar un campo</strong></span></p>
+<hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Esquema resultante</label><label for="__tabbed_6_2">Comportamiento</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Ya no nos interesa la edad, así que la quitamos del esquema:</p>
-<p>v4 = fastavro.parse_schema({</p>
-<p>"type": "record", "namespace": "SeveroOchoa", "name": "empleado",</p>
-<p>"fields": [</p>
-<p>{"name": "nombre", "type": "string"},</p>
-<p>{"name": "altura", "type": "int"}</p>
-<p>]})</p>
-<p>print(leer_con(v4))</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span>
+<span class="normal"><a href="#__codelineno-16-6">6</a></span>
+<span class="normal"><a href="#__codelineno-16-7">7</a></span>
+<span class="normal"><a href="#__codelineno-16-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="n">v4</span> <span class="o">=</span> <span class="n">fastavro</span><span class="o">.</span><span class="n">parse_schema</span><span class="p">({</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a>    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;record&quot;</span><span class="p">,</span> <span class="s2">&quot;namespace&quot;</span><span class="p">:</span> <span class="s2">&quot;SeveroOchoa&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;empleado&quot;</span><span class="p">,</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a>    <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;nombre&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a>        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;altura&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">}</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a>    <span class="p">]})</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">leer_con</span><span class="p">(</span><span class="n">v4</span><span class="p">))</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <p>El dato sigue estando en el fichero, pero el lector simplemente lo ignora:</p>
-<p>[{'nombre': 'Aitor', 'altura': 182},</p>
-<p>{'nombre': 'Pedro', 'altura': 178}]</p>
-<p>Resumiendo los cuatro casos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="o">[{</span><span class="s1">&#39;nombre&#39;</span>:<span class="w"> </span><span class="s1">&#39;Aitor&#39;</span>,<span class="w"> </span><span class="s1">&#39;altura&#39;</span>:<span class="w"> </span><span class="m">182</span><span class="o">}</span>,
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="o">{</span><span class="s1">&#39;nombre&#39;</span>:<span class="w"> </span><span class="s1">&#39;Pedro&#39;</span>,<span class="w"> </span><span class="s1">&#39;altura&#39;</span>:<span class="w"> </span><span class="m">178</span><span class="o">}]</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<p>Resumiendo los cuatro casos vistos:</p>
 <table>
 <thead>
 <tr>
 <th>Cambio en el esquema</th>
-<th>¿Puedo leer los ficheros antiguos?</th>
-<th>Condición</th>
+<th style="text-align: left;">¿Puedo leer los ficheros antiguos?</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Añadir un campo</td>
-<td>Sí</td>
-<td>Debe tener default</td>
+<td>Añadir un campo con <code>default</code></td>
+<td style="text-align: left;">Sí</td>
 </tr>
 <tr>
-<td>Añadir un campo</td>
-<td>No</td>
-<td>Si no tiene default</td>
+<td>Añadir un campo sin <code>default</code></td>
+<td style="text-align: left;"><strong>No</strong></td>
 </tr>
 <tr>
 <td>Renombrar un campo</td>
-<td>Sí</td>
-<td>Mediante aliases</td>
+<td style="text-align: left;">Sí (Mediante <code>aliases</code>)</td>
 </tr>
 <tr>
 <td>Eliminar un campo</td>
-<td>Sí</td>
-<td>Siempre</td>
+<td style="text-align: left;">Sí, siempre</td>
 </tr>
 </tbody>
 </table>
-<p>Nada de esto exige reescribir un solo <em>byte</em> de los datos ya almacenados. Por eso podemos afirmar que <em>Avro</em> es el mejor formato para esquemas que evolucionan, ya que ni <em>Parquet</em> ni <em>ORC</em> ofrecen con este nivel de control.</p>
-<p><strong>Compatibilidad hacia atrás y hacia delante</strong></p>
-<p>Lo que acabamos de hacer (un lector nuevo leyendo datos viejos) se denomina <strong>compatibilidad hacia atrás</strong> (<em>backward</em>). El caso inverso, un lector antiguo leyendo datos nuevos, es la <strong>compatibilidad hacia delante</strong> (<em>forward</em>): funciona porque el lector ignora los campos que no conoce. Cuando un cambio cumple ambas, se dice que tiene compatibilidad <strong>completa</strong> (<em>full</em>).</p>
+<p>Nada de esto exige reescribir un solo <em>byte</em> de los datos ya almacenados. Por eso podemos afirmar que <strong><em>Avro</em></strong> es el <mark class="critic"><strong>mejor formato para esquemas que evolucionan</strong></mark>, ya que ni <em>Parquet</em> ni <em>ORC</em> ofrecen con este nivel de control.</p>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Compatibilidad hacia atrás y hacia delante</strong></p>
+<p>Lo que acabamos de hacer (un lector nuevo leyendo datos viejos) se denomina <strong>compatibilidad hacia atrás</strong> (<em>backward</em>). El caso inverso, un lector antiguo leyendo datos nuevos, es la <strong>compatibilidad hacia delante</strong> (<em>forward</em>): funciona porque el lector ignora los campos que no conoce. Cuando un cambio cumple ambas, se dice que tiene compatibilidad <strong>completa</strong> (<em>full</em>).  </p>
 <p>Añadir un campo con default es un cambio con compatibilidad completa. Es la razón por la que la regla de oro al diseñar esquemas <em>Avro</em> es "todo campo nuevo lleva default".</p>
-<p><strong>¿Y si el esquema no cabe en cada mensaje?</strong></p>
-<p>En un fichero .avro el esquema se escribe una vez en la cabecera y se amortiza entre miles de registros. Pero en <em>Kafka</em> cada mensaje es independiente: incluir el esquema JSON completo en cada uno multiplicaría el tamaño de mensajes que a veces son de pocos bytes.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title"><strong>¿Y si el esquema no cabe en cada mensaje?</strong></p>
+<p>En un fichero .avro el esquema se escribe una vez en la cabecera y se amortiza entre miles de registros. Pero en <em>Kafka</em> cada mensaje es independiente: incluir el esquema JSON completo en cada uno multiplicaría el tamaño de mensajes que a veces son de pocos bytes.  </p>
 <p>La solución del ecosistema es el <strong>Schema Registry</strong>: un servicio que guarda los esquemas y les asigna un identificador. Los mensajes viajan con ese id (4 bytes) en lugar de con el esquema, y el consumidor lo resuelve contra el registro. El precio es que <strong>esos mensajes ya no son <em>standalone</em></strong>: sin acceso al registro son ilegibles.</p>
-<p>Lo veremos en las sesiones de <a href="https://aitor-medrano.github.io/iabd/dataflow/kafka1.html">Kafka</a> en la parte final del curso.</p>
+</div>
 <h3 id="avro-y-pandas"><span style="color: var(--bda-secondary-color);">AVRO Y PANDAS</span></h3>
-<p>Terminamos el bloque de <em>Avro</em> con un ejemplo más realista. Vamos a leer un fichero <em>CSV</em> de <a href="https://aitor-medrano.github.io/iabd/de/resources/pdi_sales.csv">ventas</a> mediante <em>Pandas</em>, y tras limpiar los datos y quedarnos únicamente con las ventas de Alemania, almacenaremos el resultado en <em>Avro</em>.</p>
-<p>El fichero de <a href="https://aitor-medrano.github.io/iabd/de/resources/pdi_sales.csv">ventas</a> tiene la siguiente estructura (fíjate que el separador de columnas es el punto y coma ;, además de que los códigos postales tienen espacios a la derecha):</p>
-<p>ProductID;Date;Zip;Units;Revenue;Country</p>
-<p>725;1/15/1999;41540 ;1;115.5;Germany</p>
-<p>787;6/6/2002;41540 ;1;314.9;Germany</p>
-<p>788;6/6/2002;41540 ;1;314.9;Germany</p>
-<p>940;1/15/1999;22587 ;1;687.7;Germany</p>
-<p>...</p>
-<p>2255;3/15/1999;9695 ;1;57.7;Mexico</p>
-<p>2284;3/15/1999;9660 ;1;293.9;Mexico</p>
-<p>609;2/15/1999;M4E ;1;778.8;Canada</p>
-<p>676;2/15/1999;M5X ;1;801.9;Canada</p>
-<p>...</p>
-<p>Vamos con el ejemplo completo, filtrando los datos de Alemania, limpiando los códigos postales y persistiendo en un fichero <em>Avro</em>:</p>
-<p><a href="https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_4_1">Código Python</a><a href="https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_4_2">Google Colab</a></p>
-<p>import pandas as pd</p>
-<p>from fastavro import writer, parse_schema</p>
-<h1 id="leemos-el-csv-mediante-pandas">Leemos el csv mediante pandas</h1>
-<p>df = pd.read_csv('pdi_sales.csv', sep=';')</p>
-<h1 id="limpiamos-los-datos-strip-a-los-codigos-postales-y-nos-quedamos-con-alemania">Limpiamos los datos (strip a los códigos postales) y nos quedamos con Alemania</h1>
-<p>df['Zip'] = df['Zip'].str.strip()</p>
-<p>filtro = df.Country == "Germany"</p>
-<p>df = df[filtro]</p>
-<h1 id="1-definimos-el-esquema">1. Definimos el esquema</h1>
-<p>schema = {</p>
-<p>'name': 'Sales',</p>
-<p>'namespace': 'SeveroOchoa',</p>
-<p>'type': 'record',</p>
-<p>'fields': [</p>
-<p>{'name': 'ProductID', 'type': 'int'},</p>
-<p>{'name': 'Date', 'type': 'string'},</p>
-<p>{'name': 'Zip', 'type': 'string'},</p>
-<p>{'name': 'Units', 'type': 'int'},</p>
-<p>{'name': 'Revenue', 'type': 'float'},</p>
-<p>{'name': 'Country', 'type': 'string'}</p>
-<p>]</p>
-<p>}</p>
-<p>schemaParseado = parse_schema(schema)</p>
-<h1 id="2-convertimos-el-dataframe-a-una-lista-de-diccionarios">2. Convertimos el Dataframe a una lista de diccionarios</h1>
-<p>records = df.to_dict('records')</p>
-<h1 id="3-persistimos-en-un-fichero-avro">3. Persistimos en un fichero avro</h1>
-<p>with open('sales.avro', 'wb') as f:</p>
-<p>writer(f, schemaParseado, records)</p>
-<p>Si quisiéramos comprimir el fichero resultante, sólo tendríamos que añadir el códec como parámetro extra:</p>
-<p>writer(f, schemaParseado, records, 'deflate')</p>
-<p>Sobre los algoritmos de compresión disponibles y cuándo usar cada uno hablaremos <a href="https://aitor-medrano.github.io/iabd/de/formatos.html#compresion">más adelante</a>, una vez hayamos visto todos los formatos.</p>
-<!-- 
-## <span style="color: var(--bda-primary-color);">ARROW</span>
-
-![Arrow](#)Logo de Apache Arrow
-
-[Apache Arrow](https://arrow.apache.org/) es una especificación de formato columnar en memoria diseñada para el procesamiento analítico eficiente de datos. A diferencia de *Avro*, *Parquet* u *ORC* —que son formatos de *almacenamiento en disco*—, Arrow define cómo representar datos **en RAM** de forma que diferentes herramientas y lenguajes puedan compartirlos sin copiarlos ni serializarlos.
-
-Hoy en día *Arrow* se ha convertido en la capa de interoperabilidad estándar del ecosistema de datos en Python: *Pandas* (a partir de la versión 2.0), *Polars*, *DuckDB*, *Spark* y muchas otras herramientas lo utilizan como formato interno o como mecanismo de intercambio.
-
-Sus principales ventajas son:
-
-- **Zero-copy**: dos procesos distintos pueden leer los mismos datos en memoria sin duplicarlos.
-- **Vectorización**: el formato columnar facilita las operaciones SIMD (*Single Instruction, Multiple Data*) que aceleran los cálculos analíticos paralelizando los cálculos.
-- **Interoperabilidad**: la misma representación en memoria funciona en diferentes lenguajes de programación: *Python*, *R*, *Java*, *C++*, *Rust*, etc.
-- **Ecosistema**: es la base sobre la que se construyen *Parquet*, *ORC* (lectura/escritura) y el formato *Feather*.
-
-### <span style="color: var(--bda-secondary-color);">PYARROW</span>
-
-[PyArrow](https://arrow.apache.org/docs/python/) es la librería *Python* que implementa *Apache Arrow*. La documentación de *PyArrow* dispone de un [libro de recetas](https://arrow.apache.org/cookbook/py/) con ejemplos con código para los diferentes casos de uso que se nos puedan plantear. Se instala mediante:
-
-pip install pyarrow
-
-La estructura de datos central de *PyArrow* es la **tabla** (pa.Table), equivalente a un DataFrame pero con tipado estricto y representación columnar:
-
-import pyarrow as pa
-
-# Definimos el esquema
-
-schema = pa.schema([
-
-('nombre', pa.string()),
-
-('altura', pa.int32()),
-
-('edad', pa.int32())
-
-])
-
-# Creamos una tabla a partir de un diccionario (columnas)
-
-datos = {
-
-'nombre': ['Aitor', 'Pedro'],
-
-'altura': [182, 178],
-
-'edad': [48, None]
-
-}
-
-tabla = pa.Table.from_pydict(datos, schema=schema)
-
-print(tabla)
-
-# pyarrow.Table
-
-# nombre: string
-
-# altura: int32
-
-# edad: int32
-
-# nombre: [["Aitor","Pedro"]]
-
-# altura: [[182,178]]
-
-# edad: [[48,null]]
-
-### <span style="color: var(--bda-secondary-color);">PYARROW Y PANDAS</span>
-
-A partir de *Pandas 2.0*, es posible usar *Arrow* para gestionar internamente los datos del *DataFrame*. Esto mejora el rendimiento en operaciones analíticas y reduce el uso de memoria, especialmente con cadenas de texto y valores nulos:
-
-import pandas as pd
-
-# Leemos el CSV usando Arrow como backend
-
-df = pd.read_csv('pdi_sales.csv', sep=';', dtype_backend='pyarrow')
-
-print(df.dtypes)
-
-La diferencia respecto al comportamiento tradicional es que los tipos de columna pasan a ser tipos *Arrow* (string[pyarrow], int64[pyarrow], etc.) en lugar de los tipos *NumPy* habituales.
-
-**¿Cuándo interesa usar el backend *Arrow* en *Pandas*?**
-
-El backend *Arrow* es especialmente útil cuando trabajamos con columnas de texto, valores nulos frecuentes o datos de tipo fecha/hora, ya que los tipos *Arrow* gestionan estos casos de forma más eficiente que *NumPy*. Para operaciones numéricas puras, la diferencia es menor.
-
-### <span style="color: var(--bda-secondary-color);">EL FORMATO FEATHER</span>
-
-Además de ser un formato en memoria, *Arrow* define un formato de fichero denominado [***Feather***](https://arrow.apache.org/docs/python/feather.html) (o *Arrow IPC*). *Feather* está diseñado específicamente para el intercambio local de datos de alto rendimiento y el almacenamiento temporal (*caching*) entre etapas de un *pipeline* de datos, debido, principalmente, a que la estructura en disco es la misma que usa en RAM.
-
-El formato *Feather* está integrado con *Pandas* mediante las operaciones [write_feather](https://arrow.apache.org/docs/python/generated/pyarrow.feather.write_feather.html) y [read_feather](https://arrow.apache.org/docs/python/generated/pyarrow.feather.read_feather.html):
-
-import pyarrow as pa
-
-import pyarrow.feather as feather
-
-import pandas as pd
-
-df = pd.read_csv('pdi_sales.csv', sep=';')
-
-# Persistimos en formato Feather
-
-feather.write_feather(df, 'pdi_sales.feather')
-
-# Leemos el fichero
-
-df2 = feather.read_feather('pdi_sales.feather')
-
-***¿Feather* o *Parquet*?**
-
-Usa *Feather* para ficheros intermedios que se leen y escriben frecuentemente dentro de un mismo pipeline (por ejemplo, guardar el resultado de una transformación para la siguiente fase). Usa *Parquet* para almacenamiento definitivo, especialmente si va a ser leído por *Spark*, *Athena* u otras herramientas de análisis.
-
-## <span style="color: var(--bda-primary-color);">PARQUET</span>
-
-![Parquet](#)Logo de Apache Parquet
-
-[Apache Parquet](https://parquet.apache.org/) es un formato de almacenamiento **basado en columnas**, con soporte en prácticamente todos los *frameworks* de procesamiento y lenguajes de programación. Igual que *Avro*, es un formato auto-descriptivo: embebe el esquema junto con los propios datos.
-
-*Parquet* es idóneo para analizar *datasets* con muchas columnas de los que sólo consultamos unas pocas. Tiene un ratio de compresión muy alto (mediante *Snappy* ronda el 75%) y, además, sólo se recorren las columnas necesarias en cada lectura, lo que reduce las operaciones de entrada/salida en disco.
-
-Si *Avro* era la respuesta a "*los datos cruzan sistemas que evolucionan por separado*", *Parquet* es la respuesta a "*quiero escanear miles de millones de filas por dos columnas y que me cueste barato*".
-
+<p>Terminamos el bloque de <em>Avro</em> con <strong>un ejemplo más realista</strong>. Vamos a leer un fichero <em>CSV</em> de <a href="../../resources/pdi_sales.csv">ventas</a> mediante <strong><em>Pandas</em></strong>, y tras limpiar los datos y quedarnos únicamente con las ventas de Alemania, almacenaremos el resultado en <em>Avro</em>.</p>
+<p>El fichero de <code>ventas</code> tiene la siguiente estructura (fíjate que el <strong>separador de columnas</strong> es el punto y coma <code>;</code>, además de que los códigos postales <strong>tienen espacios</strong> a la derecha):</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ventas.csv</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a>ProductID<span class="p">;</span>Date<span class="p">;</span>Zip<span class="p">;</span>Units<span class="p">;</span>Revenue<span class="p">;</span>Country
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="m">725</span><span class="p">;</span><span class="m">1</span>/15/1999<span class="p">;</span><span class="m">41540</span><span class="w">          </span><span class="p">;</span><span class="m">1</span><span class="p">;</span><span class="m">115</span>.5<span class="p">;</span>Germany
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="m">787</span><span class="p">;</span><span class="m">6</span>/6/2002<span class="p">;</span><span class="m">41540</span><span class="w">          </span><span class="p">;</span><span class="m">1</span><span class="p">;</span><span class="m">314</span>.9<span class="p">;</span>Germany
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="m">788</span><span class="p">;</span><span class="m">6</span>/6/2002<span class="p">;</span><span class="m">41540</span><span class="w">          </span><span class="p">;</span><span class="m">1</span><span class="p">;</span><span class="m">314</span>.9<span class="p">;</span>Germany
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="m">940</span><span class="p">;</span><span class="m">1</span>/15/1999<span class="p">;</span><span class="m">22587</span><span class="w">          </span><span class="p">;</span><span class="m">1</span><span class="p">;</span><span class="m">687</span>.7<span class="p">;</span>Germany
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6"></a>...
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="m">2255</span><span class="p">;</span><span class="m">3</span>/15/1999<span class="p">;</span><span class="m">9695</span><span class="w">           </span><span class="p">;</span><span class="m">1</span><span class="p">;</span><span class="m">57</span>.7<span class="p">;</span>Mexico<span class="w"> </span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="m">2284</span><span class="p">;</span><span class="m">3</span>/15/1999<span class="p">;</span><span class="m">9660</span><span class="w">           </span><span class="p">;</span><span class="m">1</span><span class="p">;</span><span class="m">293</span>.9<span class="p">;</span>Mexico<span class="w"> </span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="m">609</span><span class="p">;</span><span class="m">2</span>/15/1999<span class="p">;</span>M4E<span class="w">            </span><span class="p">;</span><span class="m">1</span><span class="p">;</span><span class="m">778</span>.8<span class="p">;</span>Canada<span class="w"> </span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="m">676</span><span class="p">;</span><span class="m">2</span>/15/1999<span class="p">;</span>M5X<span class="w">            </span><span class="p">;</span><span class="m">1</span><span class="p">;</span><span class="m">801</span>.9<span class="p">;</span>Canada<span class="w"> </span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11"></a>...
+</span></code></pre></div></td></tr></table></div>
+<p>Antes de comenzar, debemos instalar la librería de Pandas, mediante Pip:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+</span></code></pre></div>
+<p>Ahora sí, vamos con el ejemplo completo, filtrando los datos de Alemania, limpiando los códigos postales y persistiendo en un fichero <em>Avro</em>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">limpiar_ventas.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-20-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-20-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-20-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-20-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-20-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-20-10">10</a></span>
+<span class="normal"><a href="#__codelineno-20-11">11</a></span>
+<span class="normal"><a href="#__codelineno-20-12">12</a></span>
+<span class="normal"><a href="#__codelineno-20-13">13</a></span>
+<span class="normal"><a href="#__codelineno-20-14">14</a></span>
+<span class="normal"><a href="#__codelineno-20-15">15</a></span>
+<span class="normal"><a href="#__codelineno-20-16">16</a></span>
+<span class="normal"><a href="#__codelineno-20-17">17</a></span>
+<span class="normal"><a href="#__codelineno-20-18">18</a></span>
+<span class="normal"><a href="#__codelineno-20-19">19</a></span>
+<span class="normal"><a href="#__codelineno-20-20">20</a></span>
+<span class="normal"><a href="#__codelineno-20-21">21</a></span>
+<span class="normal"><a href="#__codelineno-20-22">22</a></span>
+<span class="normal"><a href="#__codelineno-20-23">23</a></span>
+<span class="normal"><a href="#__codelineno-20-24">24</a></span>
+<span class="normal"><a href="#__codelineno-20-25">25</a></span>
+<span class="normal"><a href="#__codelineno-20-26">26</a></span>
+<span class="normal"><a href="#__codelineno-20-27">27</a></span>
+<span class="normal"><a href="#__codelineno-20-28">28</a></span>
+<span class="normal"><a href="#__codelineno-20-29">29</a></span>
+<span class="normal"><a href="#__codelineno-20-30">30</a></span>
+<span class="normal"><a href="#__codelineno-20-31">31</a></span>
+<span class="normal"><a href="#__codelineno-20-32">32</a></span>
+<span class="normal"><a href="#__codelineno-20-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fastavro</span><span class="w"> </span><span class="kn">import</span> <span class="n">writer</span><span class="p">,</span> <span class="n">parse_schema</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="c1"># Leemos el csv mediante pandas</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;pdi_sales.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6"></a>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="c1"># Limpiamos los datos (strip a los códigos postales) y nos quedamos con Alemania</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Zip&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Zip&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="n">filtro</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Country</span> <span class="o">==</span> <span class="s2">&quot;Germany&quot;</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">filtro</span><span class="p">]</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11"></a>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12"></a><span class="c1"># 1. Definimos el esquema</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13"></a><span class="n">schema</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14"></a>    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Sales&#39;</span><span class="p">,</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15"></a>    <span class="s1">&#39;namespace&#39;</span><span class="p">:</span> <span class="s1">&#39;SeveroOchoa&#39;</span><span class="p">,</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16"></a>    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;record&#39;</span><span class="p">,</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17"></a>    <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;ProductID&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;int&#39;</span><span class="p">},</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;string&#39;</span><span class="p">},</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Zip&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;string&#39;</span><span class="p">},</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Units&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;int&#39;</span><span class="p">},</span>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Revenue&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;float&#39;</span><span class="p">},</span>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;string&#39;</span><span class="p">}</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24"></a>    <span class="p">]</span>
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25"></a><span class="p">}</span>
+</span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26"></a><span class="n">schemaParseado</span> <span class="o">=</span> <span class="n">parse_schema</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
+</span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27"></a>
+</span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28"></a><span class="c1"># 2. Convertimos el Dataframe a una lista de diccionarios</span>
+</span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29"></a><span class="n">records</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">)</span>
+</span><span id="__span-20-30"><a id="__codelineno-20-30" name="__codelineno-20-30"></a>
+</span><span id="__span-20-31"><a id="__codelineno-20-31" name="__codelineno-20-31"></a><span class="c1"># 3. Persistimos en un fichero avro</span>
+</span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;sales.avro&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-20-33"><a id="__codelineno-20-33" name="__codelineno-20-33"></a>    <span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">schemaParseado</span><span class="p">,</span> <span class="n">records</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Si quisiéramos comprimir el fichero resultante, sólo tendríamos que añadir el códec como parámetro extra (en próximas unidades profundizaremos en los mecanismos de compresión disponibles y cuando usar cada uno):</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">schemaParseado</span><span class="p">,</span> <span class="n">records</span><span class="p">,</span> <span class="s1">&#39;deflate&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<figure style="float:right;">
+    <img alt="Logo Apache Arrow" src="https://arrow.apache.org/img/arrow-logo_hex_black-txt_white-bg.png" width="150" />
+    <small><figcaption>Logo Apache Arrow</figcaption></small>
+</figure>
+<h2 id="arrow"><span style="color: var(--bda-primary-color);">ARROW</span></h2>
+<p><a href="https://arrow.apache.org/">Apache Arrow</a> es una <strong>especificación de formato columnar en memoria</strong> diseñada para el procesamiento analítico eficiente de datos. <strong>A diferencia de</strong> <em>Avro</em>, <em>Parquet</em> u <em>ORC</em> —que son <strong>formatos de <em>almacenamiento en disco</em></strong>—, Arrow define cómo <strong>representar datos en RAM</strong> de forma que diferentes herramientas y lenguajes puedan <strong>compartirlos sin copiarlos</strong> ni serializarlos.</p>
+<p>Hoy en día <em>Arrow</em> se ha convertido en <strong>la capa de interoperabilidad estándar</strong> del ecosistema de datos en Python: <em>Pandas</em> (a partir de la versión 2.0), <em>Polars</em>, <em>DuckDB</em>, <em>Spark</em> y muchas otras herramientas lo utilizan como formato interno o como mecanismo de intercambio. Sus <strong>principales ventajas</strong> son:</p>
+<ul>
+<li><mark class="critic"><strong>Zero-copy</strong></mark>: dos procesos distintos pueden leer los mismos datos en memoria sin duplicarlos.</li>
+<li><mark class="critic"><strong>Vectorización</strong></mark>: el formato columnar facilita las operaciones SIMD (<em>Single Instruction, Multiple Data</em>) que aceleran los cálculos analíticos paralelizando los cálculos.</li>
+<li><mark class="critic"><strong>Interoperabilidad</strong></mark>: la misma representación en memoria funciona en diferentes lenguajes de programación: <em>Python</em>, <em>R</em>, <em>Java</em>, <em>C++</em>, <em>Rust</em>, etc.</li>
+<li><mark class="critic"><strong>Ecosistema</strong></mark>: arrow es la base sobre la que se construyen <em>Parquet</em>, <em>ORC</em> (lectura/escritura) y el formato <em>Feather</em>.</li>
+</ul>
+<h3 id="pyarrow"><span style="color: var(--bda-secondary-color);">PYARROW</span></h3>
+<p><a href="https://arrow.apache.org/docs/python/">PyArrow</a> es la librería <em>Python</em> que implementa <em>Apache Arrow</em>. La documentación de <em>PyArrow</em> dispone de un <a href="https://arrow.apache.org/cookbook/py/">libro de recetas</a> con ejemplos de código para los diferentes casos de uso que se nos puedan plantear. Lo podemos instalar mediante:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">pyarrow</span>
+</span></code></pre></div>
+<p>La estructura de datos central de <em>PyArrow</em> es la <strong>tabla</strong> (pa.Table), equivalente a un <em>DataFrame</em> pero con <strong>tipado estricto</strong> y representación <strong>columnar</strong>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ejemplo_arrow.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span>
+<span class="normal"><a href="#__codelineno-23-12">12</a></span>
+<span class="normal"><a href="#__codelineno-23-13">13</a></span>
+<span class="normal"><a href="#__codelineno-23-14">14</a></span>
+<span class="normal"><a href="#__codelineno-23-15">15</a></span>
+<span class="normal"><a href="#__codelineno-23-16">16</a></span>
+<span class="normal"><a href="#__codelineno-23-17">17</a></span>
+<span class="normal"><a href="#__codelineno-23-18">18</a></span>
+<span class="normal"><a href="#__codelineno-23-19">19</a></span>
+<span class="normal"><a href="#__codelineno-23-20">20</a></span>
+<span class="normal"><a href="#__codelineno-23-21">21</a></span>
+<span class="normal"><a href="#__codelineno-23-22">22</a></span>
+<span class="normal"><a href="#__codelineno-23-23">23</a></span>
+<span class="normal"><a href="#__codelineno-23-24">24</a></span>
+<span class="normal"><a href="#__codelineno-23-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="c1"># Definimos el esquema</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="n">schema</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5"></a>    <span class="p">(</span><span class="s1">&#39;nombre&#39;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()),</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6"></a>    <span class="p">(</span><span class="s1">&#39;altura&#39;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">int32</span><span class="p">()),</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7"></a>    <span class="p">(</span><span class="s1">&#39;edad&#39;</span><span class="p">,</span>   <span class="n">pa</span><span class="o">.</span><span class="n">int32</span><span class="p">())</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="p">])</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9"></a>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="c1"># Creamos una tabla a partir de un diccionario (columnas)</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="n">datos</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12"></a>    <span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Aitor&#39;</span><span class="p">,</span> <span class="s1">&#39;Pedro&#39;</span><span class="p">],</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13"></a>    <span class="s1">&#39;altura&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">182</span><span class="p">,</span> <span class="mi">178</span><span class="p">],</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14"></a>    <span class="s1">&#39;edad&#39;</span><span class="p">:</span>   <span class="p">[</span><span class="mi">48</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15"></a><span class="p">}</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16"></a>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17"></a><span class="n">tabla</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">from_pydict</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">)</span>
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">tabla</span><span class="p">)</span>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19"></a><span class="c1"># pyarrow.Table</span>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20"></a><span class="c1"># nombre: string</span>
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21"></a><span class="c1"># altura: int32</span>
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22"></a><span class="c1"># edad: int32</span>
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23"></a><span class="c1"># nombre: [[&quot;Aitor&quot;,&quot;Pedro&quot;]]</span>
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24"></a><span class="c1"># altura: [[182,178]]</span>
+</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25"></a><span class="c1"># edad: [[48,null]]</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="pyarrow-y-pandas"><span style="color: var(--bda-secondary-color);">PYARROW Y PANDAS</span></h3>
+<p>A partir de <em>Pandas 2.0</em>, es posible usar <em>Arrow</em> para gestionar internamente los datos del <em>DataFrame</em>. Esto mejora el rendimiento en operaciones analíticas y reduce el uso de memoria, especialmente con cadenas de texto y valores nulos:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Gestión de Pandas con Arrow</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span>
+<span class="normal"><a href="#__codelineno-24-4">4</a></span>
+<span class="normal"><a href="#__codelineno-24-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="c1"># Leemos el CSV usando Arrow como backend</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;pdi_sales.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">dtype_backend</span><span class="o">=</span><span class="s1">&#39;pyarrow&#39;</span><span class="p">)</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>La diferencia respecto al comportamiento tradicional es que los <strong>tipos de columna</strong> pasan a ser tipos <strong><em>Arrow</em></strong> (<code>string[pyarrow]</code>, <code>int64[pyarrow]</code>, etc.) <strong>en lugar de</strong> los tipos <strong><em>NumPy</em></strong> habituales.</p>
+<div class="admonition question">
+<p class="admonition-title"><strong>¿Cuándo interesa usar el backend <em>Arrow</em> en <em>Pandas</em>?</strong></p>
+<p>El backend <em>Arrow</em> es especialmente útil cuando trabajamos con columnas de texto, valores nulos frecuentes o datos de tipo fecha/hora, ya que los tipos <em>Arrow</em> gestionan estos casos de forma más eficiente que <em>NumPy</em>. Para operaciones numéricas puras, la diferencia es menor.</p>
+</div>
+<h3 id="el-formato-feather"><span style="color: var(--bda-secondary-color);">EL FORMATO FEATHER</span></h3>
+<p>Además de ser un formato en memoria, <em>Arrow</em> define un <strong>formato de fichero</strong> denominado <a href="https://arrow.apache.org/docs/python/feather.html"><strong><em>Feather</em></strong></a> (o <em>Arrow IPC</em>).</p>
+<p><em>Feather</em> está diseñado específicamente para el <strong>intercambio local de datos</strong> de alto rendimiento y el almacenamiento temporal (<em>caching</em>) entre etapas de un <em>pipeline</em> de datos, debido, principalmente, a que la estructura en disco es la misma que usa en RAM.</p>
+<p>El formato <em>Feather</em> está integrado con <em>Pandas</em> mediante las operaciones <a href="https://arrow.apache.org/docs/python/generated/pyarrow.feather.write_feather.html"><code>write_feather</code></a> y <a href="https://arrow.apache.org/docs/python/generated/pyarrow.feather.read_feather.html"><code>read_feather</code></a>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Ejemplo uso Feather</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-25-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-25-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-25-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-25-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-25-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-25-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-25-10">10</a></span>
+<span class="normal"><a href="#__codelineno-25-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.feather</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">feather</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4"></a>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;pdi_sales.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6"></a>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7"></a><span class="c1"># Persistimos en formato Feather</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="hll"><span class="n">feather</span><span class="o">.</span><span class="n">write_feather</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;pdi_sales.feather&#39;</span><span class="p">)</span>
+</span></span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9"></a>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="c1"># Leemos el fichero</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11"></a><span class="hll"><span class="n">df2</span> <span class="o">=</span> <span class="n">feather</span><span class="o">.</span><span class="n">read_feather</span><span class="p">(</span><span class="s1">&#39;pdi_sales.feather&#39;</span><span class="p">)</span>
+</span></span></code></pre></div></td></tr></table></div>
+<div class="admonition question">
+<p class="admonition-title"><strong><em>¿Feather</em> o <em>Parquet</em>?</strong></p>
+<p>Usa <strong><em>Feather</em></strong> para <strong>ficheros intermedios</strong> que se leen y escriben frecuentemente dentro de un mismo pipeline (por ejemplo, guardar el resultado de una transformación para la siguiente fase). Usa <strong><em>Parquet</em></strong> para <strong>almacenamiento definitivo</strong>, especialmente si va a ser leído por <em>Spark</em>, <em>Athena</em> u otras herramientas de análisis.</p>
+</div>
+<figure style="float:right;">
+    <img alt="Logo Apache Parquet" src="https://www.casd.eu/wp/wp-content/uploads/parquet-logo_transparent.png" width="200" />
+    <small><figcaption>Logo Apache Parquet</figcaption></small>
+</figure>
+<h2 id="parquet"><span style="color: var(--bda-primary-color);">PARQUET</span></h2>
+<p><a href="https://parquet.apache.org/">Apache Parquet</a> es un formato de <strong>almacenamiento basado en columnas</strong>, con soporte en prácticamente todos los <em>frameworks</em> de procesamiento y lenguajes de programación. Igual que <em>Avro</em>, es un formato <strong>auto-descriptivo</strong>: embebe el esquema junto con los propios datos.</p>
+<p><em>Parquet</em> es idóneo para analizar <em>datasets</em> con muchas columnas de las que sólo consultamos unas pocas. Tiene un <strong>ratio de compresión muy alto</strong> (mediante <em>Snappy</em> ronda el 75%) y, además, sólo se recorren las columnas necesarias en cada lectura, lo que <strong>reduce las operaciones de entrada/salida</strong> en disco.</p>
+<p>Si <strong><em>Avro</em></strong> era la respuesta a "<strong><em>los datos cruzan sistemas que evolucionan por separado</em></strong>", <strong><em>Parquet</em></strong> es la respuesta a <mark class="critic">"<strong><em>quiero escanear miles de millones de filas por dos columnas y que me cueste barato</em></strong>"</mark>.</p>
+<!--
 ### <span style="color: var(--bda-secondary-color);">FORMATO (PARQUET)</span>
 
 Formato de un archivo Parquet
