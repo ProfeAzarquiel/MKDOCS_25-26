@@ -301,6 +301,8 @@
       
         
       
+        
+      
     
     
     
@@ -440,6 +442,34 @@
     
   
     UD2. Arquitecturas BigData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Formatos de Datos
   
 
     
@@ -1392,7 +1422,7 @@
 <p>El Application Master es una librería específica encargada de negociar los recursos con el ResourceManager y de trabajar con los Node Manager para ejecutar y monitorizar las tareas.</p>
 <p>Finalmente, en nuestro clúster, tendremos corriendo un Job History Server encargado de archivar los fichero de log de los jobs. Aunque es un proceso opcional, se recomienda su uso para monitorizar los jobs ejecutados.</p>
 <figure>
-    <img alt="YARN Architecture" src="../../img/yarn_schema.png" width="600" />
+    <img alt="YARN Architecture" src="https://res.cloudinary.com/dp56lzsjs/image/upload/v1791448171/yarn_schema_tncnkd.png" width="600" />
     <small><figcaption>Arquitectura YARN</figcaption></small>
 </figure>
 <h3 id="map-reduce"><strong>MAP-REDUCE</strong></h3>
@@ -1758,10 +1788,10 @@ ambari-agent start
 <p>Por lo tanto, solo mantendremos seleccionados <strong>HDFS</strong>, <strong>YARN</strong>, <strong>MapReduce2</strong>, <strong>ZooKeeper</strong> y <strong>Ambari Metrics</strong>. Más adelante, por ejemplo tendremos que instalar <strong>HBase</strong>, ya que sin él no funcionará Ambari Metrics.</p>
 <p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 13h-4v4h-2v-4H7v-2h4V7h2v4h4m2-8H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> <a class="md-button" href="# ."><small>PROCEED ANYWAY</small></a></p>
 <p>Continuaremos con la opción de <strong>Asign Masters</strong>, esto es personalizable según las necesidades y recursos de cada cluster, pero un ejemplo para un laboratorio similar al nuestro, podría ser el siguiente:</p>
-<p><img alt="Ejemplo Masters Hadoop" src="../../img/mastersAmbari.png" /></p>
+<p><img alt="Ejemplo Masters Hadoop" src="https://res.cloudinary.com/dp56lzsjs/image/upload/v1791448159/mastersAmbari_fnfli3.png" /></p>
 <p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
 <p>Al igual que pasaba en el paso anterior, la configuración de <strong>Assign Slaves and Clients</strong> puede variar de un escenario a otro, en este caso podemos establecer algo como lo siguiente:</p>
-<p><img alt="Ejemplo Slaves Hadoop" src="../../img/slavesAmbari.png" /></p>
+<p><img alt="Ejemplo Slaves Hadoop" src="https://res.cloudinary.com/dp56lzsjs/image/upload/v1791448166/slavesAmbari_jm9jve.png" /></p>
 <p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
 <p>En la pestaña <strong>Credentials</strong> nos pedirá configurar usauraio y contraseña para Grafana, podemos dejarlo como <code>admin / admin</code>.</p>
 <p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
@@ -1821,11 +1851,11 @@ docker compose up -d
 </ul>
 <p>Además de esas, hay que añadir dos traducciones más a <code>/etc/hosts</code>, que podemos ver en la interfaz gráfica de los servicios:</p>
 <figure style="display: inline-block; margin-left: 2rem">
-    <img alt="HDFS Datanode" src="../../img/azarquiel.png" width="275" />
+    <img alt="HDFS Datanode" src="https://res.cloudinary.com/dp56lzsjs/image/upload/v1791448140/azarquiel_wmlwlc.png" width="275" />
     <small><figcaption>Captura Datanode</figcaption></small>
 </figure>
 <figure style="display: inline-block; margin-left: 2rem">
-    <img alt="YARN Nodemanager" src="../../img/azarquiel.png" width="275" />
+    <img alt="YARN Nodemanager" src="https://res.cloudinary.com/dp56lzsjs/image/upload/v1791448140/azarquiel_wmlwlc.png" width="275" />
     <small><figcaption>Captura Nodemanager</figcaption></small>
 </figure>
 <p>Y con esto tendríamos nuestro clúster Hadoop listo. Que aunque sea un clúster simulado, pues los nodos corren como servicios dentro de una única máquina física, estós se configuran para actuar como nodos de un clúster distribuido, permitiendo ejecutar aplicaciones MapReduce y usar HDFS.</p>
