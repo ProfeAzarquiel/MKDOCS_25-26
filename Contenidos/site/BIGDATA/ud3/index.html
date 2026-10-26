@@ -2186,13 +2186,13 @@ Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos,
 </tbody>
 </table>
 <p>Nada de esto exige reescribir un solo <em>byte</em> de los datos ya almacenados. Por eso podemos afirmar que <strong><em>Avro</em></strong> es el <mark class="critic"><strong>mejor formato para esquemas que evolucionan</strong></mark>, ya que ni <em>Parquet</em> ni <em>ORC</em> ofrecen con este nivel de control.</p>
-<div class="admonition tip">
-<p class="admonition-title"><strong>Compatibilidad hacia atrás y hacia delante</strong></p>
-<p>Lo que acabamos de hacer (un lector nuevo leyendo datos viejos) se denomina <strong>compatibilidad hacia atrás</strong> (<em>backward</em>). El caso inverso, un lector antiguo leyendo datos nuevos, es la <strong>compatibilidad hacia delante</strong> (<em>forward</em>): funciona porque el lector ignora los campos que no conoce. Cuando un cambio cumple ambas, se dice que tiene compatibilidad <strong>completa</strong> (<em>full</em>).  </p>
-<p>Añadir un campo con default es un cambio con compatibilidad completa. Es la razón por la que la regla de oro al diseñar esquemas <em>Avro</em> es "todo campo nuevo lleva default".</p>
+<div class="admonition danger">
+<p class="admonition-title"><strong>COMPATIBILIDAD HACIA ATRÁS Y HACIA DELANTE</strong></p>
+<p>Lo que acabamos de hacer (un lector nuevo leyendo datos viejos) se denomina <strong>compatibilidad hacia atrás</strong> (<code>*backward-compatible*</code>). El caso inverso, un lector antiguo leyendo datos nuevos, es la <strong>compatibilidad hacia delante</strong> (<code>*forward-compatible*</code>): funciona porque el lector ignora los campos que no conoce. Cuando un cambio cumple ambas, se dice que tiene compatibilidad <strong>completa</strong> (<code>*full-compatible*</code>).  </p>
+<p>Añadir un campo con default es un cambio con compatibilidad completa. Es la razón por la que la <strong>regla de oro</strong> al diseñar esquemas <em>Avro</em> es <mark class="critic"><strong>"todo campo nuevo lleva default"</strong></mark>.</p>
 </div>
 <div class="admonition question">
-<p class="admonition-title"><strong>¿Y si el esquema no cabe en cada mensaje?</strong></p>
+<p class="admonition-title"><strong>¿Y SI EL ESQUEMA NO CABE EN CADA MENSAJE?</strong></p>
 <p>En un fichero .avro el esquema se escribe una vez en la cabecera y se amortiza entre miles de registros. Pero en <em>Kafka</em> cada mensaje es independiente: incluir el esquema JSON completo en cada uno multiplicaría el tamaño de mensajes que a veces son de pocos bytes.  </p>
 <p>La solución del ecosistema es el <strong>Schema Registry</strong>: un servicio que guarda los esquemas y les asigna un identificador. Los mensajes viajan con ese id (4 bytes) en lugar de con el esquema, y el consumidor lo resuelve contra el registro. El precio es que <strong>esos mensajes ya no son <em>standalone</em></strong>: sin acceso al registro son ilegibles.</p>
 </div>
