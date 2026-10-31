@@ -1579,7 +1579,7 @@
 <div class="admonition info">
 <p class="admonition-title">Datos Abiertos</p>
 <p>Cabe destacar el concepto de <em>Datos Abiertos</em> (<strong><code>Open Data</code></strong>), que son aquella <strong>información digital</strong>, generada o recopilada por instituciones públicas o privadas, que se pone <strong>a disposición de cualquier persona para</strong> que pueda <strong>usarla</strong>, reutilizarla y redistribuirla <strong>libremente</strong>, sin restricciones de derechos de autor, patentes o costos; generalmente con la única condición de la atribución. Estos suelen presentarse en <strong>formatos estructurados</strong> en bruto como CSV, JSON o XML.</p>
-<p>Existe el sitio web de <a href="https://dataportals.org/" target="blank"><strong>Data Portals</strong></a>, gestionado por la <a href="https://okfn.org/es/quienes-somos/">Open Knowledge Foundation</a>, en donde esta publicada la mayor <strong>lista de portales de datos abiertos</strong> de todo el mundo, georreferenciados en un mapa global y con su información de acceso, metadatos, API endpoints, entre otros aspectos.</p>
+<p>Existe el sitio web de <a href="https://dataportals.org/" target="_blank"><strong>Data Portals</strong></a>, gestionado por la <a href="https://okfn.org/es/quienes-somos/" target="_blank">Open Knowledge Foundation</a>, en donde esta publicada la mayor <strong>lista de portales de datos abiertos</strong> de todo el mundo, georreferenciados en un mapa global y con su información de acceso, metadatos, API endpoints, entre otros aspectos.</p>
 </div>
 <h2 id="propiedades-de-cada-formato"><span style="color: var(--bda-primary-color);">PROPIEDADES DE CADA FORMATO</span></h2>
 <p>Las propiedades que ha de tener un formato de datos son:</p>
@@ -1748,7 +1748,7 @@
 
 <!-- !!! info "El precio de no tener esquema"
     Guardar JSON como texto es cómodo pero caro: cada consulta tiene que *parsear* el documento entero de cada fila, y una columna de texto no se beneficia de nada de lo que veremos después. La alternativa clásica —aplanar el JSON a columnas tipadas— es rápida, pero cualquier cambio en el origen rompe el *pipeline*.  
-    Existe una tercera vía moderna, el tipo **VARIANT**, incorporado a la especificación de *Parquet* en 2025 y soportado ya por *DuckDB*, *Spark* y *Delta Lake*. La veremos en la [siguiente sesión](https://aitor-medrano.github.io/iabd/de/sql-analitico.html), cuando tengamos un motor con el que interrogarlo. -->
+    Existe una tercera vía moderna, el tipo **VARIANT**, incorporado a la especificación de *Parquet* en 2025 y soportado ya por *DuckDB*, *Spark* y *Delta Lake*. La veremos en la [siguiente sesión](https://aitor-medrano.github.io/iabd/de/sql-analitico.html){target="_blank"}, cuando tengamos un motor con el que interrogarlo. -->
 
 <p>En un <strong>formato basado en columnas</strong>, cada columna se almacena en un conjunto de ficheros, es decir, cada registro almacena toda la información de una columna. Al basarse en columnas, ofrece <ins class="critic">mejor rendimiento</ins> para consultas de determinadas columnas y/o agregaciones, y el <ins class="critic">almacenamiento es más óptimo</ins> (como todos los datos de una columna son del mismo tipo, la <ins class="critic">compresión es mayor</ins>).</p>
 <p>Supongamos que tenemos los siguientes datos de la tabla <code>orders</code>:</p>
@@ -1798,7 +1798,7 @@
 <p>En un <strong>formato de filas esto no es posible</strong>: en cada registro se mezclan cadenas, enteros y fechas, de manera que no hay homogeneidad que explotar. Esta es la razón de fondo por la que, como veremos ahora, <strong>1TB de CSV se queda en 130GB al pasarlo a <em>Parquet</em></strong>.</p>
 <p>Más adelante, cuando trabajemos con <em>Parquet</em> y <em>PyArrow</em>, veremos cómo inspeccionar qué codificación se ha aplicado realmente a cada columna de un fichero.</p>
 <h3 id="el-tamano-importa"><span style="color: var(--bda-secondary-color);">EL TAMAÑO IMPORTA</span></h3>
-<p>En el artículo <a href="https://blog.openbridge.com/how-to-be-a-hero-with-powerful-parquet-google-and-amazon-f2ae0f35ee04">Apache Parquet: How to be a hero with the open-source columnar data format</a> podemos ver una <strong>comparativa</strong> entre un <strong>formato basado en filas</strong>, como <em><code>CSV</code></em>, con uno <strong>basado en columnas</strong> como <em><code>Parquet</code></em>; en base al tiempo y el coste de su lectura en AWS (por ejemplo, <em>AWS Athena</em> cobra 5$ por cada TB escaneado):</p>
+<p>En el artículo <a href="https://blog.openbridge.com/how-to-be-a-hero-with-powerful-parquet-google-and-amazon-f2ae0f35ee04" target="_blank">Apache Parquet: How to be a hero with the open-source columnar data format</a> podemos ver una <strong>comparativa</strong> entre un <strong>formato basado en filas</strong>, como <em><code>CSV</code></em>, con uno <strong>basado en columnas</strong> como <em><code>Parquet</code></em>; en base al tiempo y el coste de su lectura en AWS (por ejemplo, <em>AWS Athena</em> cobra 5$ por cada TB escaneado):</p>
 <figure>
     <img alt="Comparación de costes entre CSV y Parquet" src="https://aitor-medrano.github.io/iabd/de/images/04formatos-comparativa1.webp" width="700" />
     <small><figcaption>Comparación de costes, CSV vs Parquet</figcaption></small>
@@ -1815,7 +1815,7 @@
     <small><figcaption>Logo Apache Avro</figcaption></small>
 </figure>
 <h2 id="avro"><span style="color: var(--bda-primary-color);">AVRO</span></h2>
-<p><a href="https://avro.apache.org/" target="blank">Apache Avro</a> es un formato de almacenamiento <strong>basado en filas</strong> que <strong>ocupa menos y es más rápido</strong> que JSON, porque los datos se serializan en binario compacto mientras que el esquema que los describe se define en JSON.</p>
+<p><a href="https://avro.apache.org/" target="_blank">Apache Avro</a> es un formato de almacenamiento <strong>basado en filas</strong> que <strong>ocupa menos y es más rápido</strong> que JSON, porque los datos se serializan en binario compacto mientras que el esquema que los describe se define en JSON.</p>
 <p>Esa combinación no es casual, y explica por qué <em>Avro</em> es uno de los formatos relevante en el campo del <em>Big Data</em>:</p>
 <ul>
 <li>El esquema viaja siempre con los datos, en la cabecera del fichero. Quien lee un .avro no necesita nada más para interpretarlo, ni tiene que generar clases ni compilar nada.</li>
@@ -1867,7 +1867,7 @@
 Esta pareja de unión + <code>default</code> parece un detalle menor, pero es la <strong>base de la evolución de esquemas</strong> que veremos más adelante.</p>
 </div>
 <h3 id="avro-y-python"><span style="color: var(--bda-secondary-color);">AVRO Y PYTHON</span></h3>
-<p>Para trabajar con <em>Avro</em> desde <em>Python</em> utilizaremos la librería <a href="https://github.com/fastavro/fastavro"><em>Fastavro</em></a>, que instalamos mediante pip:</p>
+<p>Para trabajar con <em>Avro</em> desde <em>Python</em> utilizaremos la librería <a href="https://github.com/fastavro/fastavro" target="_blank"><em>Fastavro</em></a>, que instalamos mediante pip:</p>
 <div class="language-python highlight"><span class="filename">Instalación Fastavro</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">fastavro</span>
 </span></code></pre></div>
 <p>En el siguiente ejemplo leemos el esquema del fichero <a href="../../resources/empleado.avsc"><strong><code>empleado.avsc</code></strong></a>, escribimos dos empleados en un fichero <code>.avro</code> y volvemos a leerlo. Observa que el segundo empleado no tiene <code>edad</code> y que, al leer el fichero, no le pasamos el esquema en ningún momento:</p>
@@ -1980,7 +1980,7 @@ Esta pareja de unión + <code>default</code> parece un detalle menor, pero es la
 <p>El <strong><em>sync marker</em></strong> es <strong>aleatorio</strong> en cada fichero, así que si replicas el código, el valor será distinto.</p>
 <div class="admonition info">
 <p class="admonition-title"><strong>La librería avro oficial</strong></p>
-<p>Apache Avro<em> ofrece su propia librería para </em>Python<em>, llamada <a href="https://avro.apache.org/docs/++version++/getting-started-python/">avro</a>, con una API muy similar (DataFileWriter/DataFileReader en vez de writer/reader). Está escrita en </em>Python<em> puro, mientras que </em>Fastavro<em> implementa las partes críticas en </em>Cython<em>, por lo que es bastante más rápida con volúmenes grandes. Salvo que necesites algo específico de la implementación de referencia, la recomendación es usar </em>Fastavro*.<br />
+<p>Apache Avro<em> ofrece su propia librería para </em>Python<em>, llamada <a href="https://avro.apache.org/docs/++version++/getting-started-python/" target="_blank">avro</a>, con una API muy similar (DataFileWriter/DataFileReader en vez de writer/reader). Está escrita en </em>Python<em> puro, mientras que </em>Fastavro<em> implementa las partes críticas en </em>Cython<em>, por lo que es bastante más rápida con volúmenes grandes. Salvo que necesites algo específico de la implementación de referencia, la recomendación es usar </em>Fastavro*.<br />
 Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos, ya que desde la versión 1.11 ese paquete se absorbió dentro de avro.</p>
 </div>
 <h3 id="evolucion-del-esquema"><span style="color: var(--bda-secondary-color);">EVOLUCIÓN DEL ESQUEMA</span></h3>
@@ -2299,7 +2299,7 @@ Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos,
     <small><figcaption>Logo Apache Arrow</figcaption></small>
 </figure>
 <h2 id="arrow"><span style="color: var(--bda-primary-color);">ARROW</span></h2>
-<p><a href="https://arrow.apache.org/">Apache Arrow</a> es una <strong>especificación de formato columnar en memoria</strong> diseñada para el procesamiento analítico eficiente de datos. <strong>A diferencia de</strong> <em>Avro</em>, <em>Parquet</em> u <em>ORC</em> —que son <strong>formatos de <em>almacenamiento en disco</em></strong>—, Arrow define cómo <strong>representar datos en RAM</strong> de forma que diferentes herramientas y lenguajes puedan <strong>compartirlos sin copiarlos</strong> ni serializarlos.</p>
+<p><a href="https://arrow.apache.org/" target="_blank">Apache Arrow</a> es una <strong>especificación de formato columnar en memoria</strong> diseñada para el procesamiento analítico eficiente de datos. <strong>A diferencia de</strong> <em>Avro</em>, <em>Parquet</em> u <em>ORC</em> —que son <strong>formatos de <em>almacenamiento en disco</em></strong>—, Arrow define cómo <strong>representar datos en RAM</strong> de forma que diferentes herramientas y lenguajes puedan <strong>compartirlos sin copiarlos</strong> ni serializarlos.</p>
 <p>Hoy en día <em>Arrow</em> se ha convertido en <strong>la capa de interoperabilidad estándar</strong> del ecosistema de datos en Python: <em>Pandas</em> (a partir de la versión 2.0), <em>Polars</em>, <em>DuckDB</em>, <em>Spark</em> y muchas otras herramientas lo utilizan como formato interno o como mecanismo de intercambio. Sus <strong>principales ventajas</strong> son:</p>
 <ul>
 <li><mark class="critic"><strong>Zero-copy</strong></mark>: dos procesos distintos pueden leer los mismos datos en memoria sin duplicarlos.</li>
@@ -2308,7 +2308,7 @@ Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos,
 <li><mark class="critic"><strong>Ecosistema</strong></mark>: arrow es la base sobre la que se construyen <em>Parquet</em>, <em>ORC</em> (lectura/escritura) y el formato <em>Feather</em>.</li>
 </ul>
 <h3 id="pyarrow"><span style="color: var(--bda-secondary-color);">PYARROW</span></h3>
-<p><a href="https://arrow.apache.org/docs/python/">PyArrow</a> es la librería <em>Python</em> que implementa <em>Apache Arrow</em>. La documentación de <em>PyArrow</em> dispone de un <a href="https://arrow.apache.org/cookbook/py/">libro de recetas</a> con ejemplos de código para los diferentes casos de uso que se nos puedan plantear. Lo podemos instalar mediante:</p>
+<p><a href="https://arrow.apache.org/docs/python/" target="_blank">PyArrow</a> es la librería <em>Python</em> que implementa <em>Apache Arrow</em>. La documentación de <em>PyArrow</em> dispone de un <a href="https://arrow.apache.org/cookbook/py/" target="_blank">libro de recetas</a> con ejemplos de código para los diferentes casos de uso que se nos puedan plantear. Lo podemos instalar mediante:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">pyarrow</span>
 </span></code></pre></div>
 <p>La estructura de datos central de <em>PyArrow</em> es la <strong>tabla</strong> (pa.Table), equivalente a un <em>DataFrame</em> pero con <strong>tipado estricto</strong> y representación <strong>columnar</strong>:</p>
@@ -2380,9 +2380,9 @@ Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos,
 <p>El backend <em>Arrow</em> es especialmente útil cuando trabajamos con columnas de texto, valores nulos frecuentes o datos de tipo fecha/hora, ya que los tipos <em>Arrow</em> gestionan estos casos de forma más eficiente que <em>NumPy</em>. Para operaciones numéricas puras, la diferencia es menor.</p>
 </div>
 <h3 id="el-formato-feather"><span style="color: var(--bda-secondary-color);">EL FORMATO FEATHER</span></h3>
-<p>Además de ser un formato en memoria, <em>Arrow</em> define un <strong>formato de fichero</strong> denominado <a href="https://arrow.apache.org/docs/python/feather.html"><strong><em>Feather</em></strong></a> (o <em>Arrow IPC</em>).</p>
+<p>Además de ser un formato en memoria, <em>Arrow</em> define un <strong>formato de fichero</strong> denominado <a href="https://arrow.apache.org/docs/python/feather.html" target="_blank"><strong><em>Feather</em></strong></a> (o <em>Arrow IPC</em>).</p>
 <p><em>Feather</em> está diseñado específicamente para el <strong>intercambio local de datos</strong> de alto rendimiento y el almacenamiento temporal (<em>caching</em>) entre etapas de un <em>pipeline</em> de datos, debido, principalmente, a que la estructura en disco es la misma que usa en RAM.</p>
-<p>El formato <em>Feather</em> está integrado con <em>Pandas</em> mediante las operaciones <a href="https://arrow.apache.org/docs/python/generated/pyarrow.feather.write_feather.html"><code>write_feather</code></a> y <a href="https://arrow.apache.org/docs/python/generated/pyarrow.feather.read_feather.html"><code>read_feather</code></a>:</p>
+<p>El formato <em>Feather</em> está integrado con <em>Pandas</em> mediante las operaciones <a href="https://arrow.apache.org/docs/python/generated/pyarrow.feather.write_feather.html" target="_blank"><code>write_feather</code></a> y <a href="https://arrow.apache.org/docs/python/generated/pyarrow.feather.read_feather.html" target="_blank"><code>read_feather</code></a>:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Ejemplo uso Feather</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
@@ -2414,7 +2414,7 @@ Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos,
     <small><figcaption>Logo Apache Parquet</figcaption></small>
 </figure>
 <h2 id="parquet"><span style="color: var(--bda-primary-color);">PARQUET</span></h2>
-<p><a href="https://parquet.apache.org/">Apache Parquet</a> es un formato de <strong>almacenamiento basado en columnas</strong>, con soporte en prácticamente todos los <em>frameworks</em> de procesamiento y lenguajes de programación. Igual que <em>Avro</em>, es un formato <strong>auto-descriptivo</strong>: embebe el esquema junto con los propios datos.</p>
+<p><a href="https://parquet.apache.org/" target="_blank">Apache Parquet</a> es un formato de <strong>almacenamiento basado en columnas</strong>, con soporte en prácticamente todos los <em>frameworks</em> de procesamiento y lenguajes de programación. Igual que <em>Avro</em>, es un formato <strong>auto-descriptivo</strong>: embebe el esquema junto con los propios datos.</p>
 <p><em>Parquet</em> es idóneo para analizar <em>datasets</em> con muchas columnas de las que sólo consultamos unas pocas. Tiene un <strong>ratio de compresión muy alto</strong> (mediante <em>Snappy</em> ronda el 75%) y, además, sólo se recorren las columnas necesarias en cada lectura, lo que <strong>reduce las operaciones de entrada/salida</strong> en disco.</p>
 <p>Si <strong><em>Avro</em></strong> era la respuesta a "<strong><em>los datos cruzan sistemas que evolucionan por separado</em></strong>", <strong><em>Parquet</em></strong> es la respuesta a <mark class="critic">"<strong><em>quiero escanear miles de millones de filas por dos columnas y que me cueste barato</em></strong>"</mark>.</p>
 <!--
@@ -2436,17 +2436,17 @@ Como veremos en un momento, ese pie es lo que convierte a *Parquet* en algo más
 
 Al almacenar como página el tipo de codificación y compresión que se ha usado, *Parquet* permite que cada columna elija la que mejor le va para los datos incluidos.
 
-- Las técnicas de [codificación](https://aitor-medrano.github.io/iabd/de/formatos.html#codificando-las-columnas) que estudiamos (diccionario, RLE, *bit-packing*) se aplican por página, no al fichero entero. Por eso cada columna puede llevar una codificación distinta: cada una elige la que mejor le va.
+- Las técnicas de [codificación](https://aitor-medrano.github.io/iabd/de/formatos.html#codificando-las-columnas){target="_blank"} que estudiamos (diccionario, RLE, *bit-packing*) se aplican por página, no al fichero entero. Por eso cada columna puede llevar una codificación distinta: cada una elige la que mejor le va.
 - Cuando se usa codificación por diccionario, el diccionario se guarda en una página especial al principio del *column chunk* (la *dictionary page*), y el resto de páginas sólo contienen índices.
 - La compresión (*Snappy*, *zstd*...) se aplica después de la codificación, y también página a página, lo que mantiene a *Parquet* divisible aun comprimido, igual que los bloques de *Avro*.
 
 ### <span style="color: var(--bda-secondary-color);">PARQUET Y PYTHON</span>
 
-Ya conocemos *PyArrow* de la sección anterior. Para trabajar con *Parquet* usaremos su módulo [pyarrow.parquet](https://arrow.apache.org/docs/python/parquet.html), que ofrece principalmente dos funciones: [write_table](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.write_table.html#pyarrow.parquet.write_table) para persistir una tabla *Arrow* y [read_table](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.read_table.html#pyarrow.parquet.read_table) para recuperarla.
+Ya conocemos *PyArrow* de la sección anterior. Para trabajar con *Parquet* usaremos su módulo [pyarrow.parquet](https://arrow.apache.org/docs/python/parquet.html){target="_blank"}, que ofrece principalmente dos funciones: [write_table](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.write_table.html#pyarrow.parquet.write_table){target="_blank"} para persistir una tabla *Arrow* y [read_table](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.read_table.html#pyarrow.parquet.read_table){target="_blank"} para recuperarla.
 
 Vamos a repetir el ejemplo de los empleados que ya hicimos con *Avro*, esta vez en *Parquet*:
 
-[Empleados en columnas](https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_5_1)[Empleados en filas](https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_5_2)
+[Empleados en columnas](https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_5_1){target="_blank"}[Empleados en filas](https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_5_2)
 
 **empleado-parquet-columnas.py**
 
@@ -2506,7 +2506,7 @@ Es un patrón que se repite en toda la ingeniería de datos: **inferir el esquem
 
 #### <span style="color: var(--bda-tertiary-color);">PARQUET Y PANDAS</span>
 
-Con *Pandas* el código se simplifica todavía más, ya que los *DataFrames* ofrecen el método [to_parquet](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_parquet.html) (que por debajo usa *PyArrow*):
+Con *Pandas* el código se simplifica todavía más, ya que los *DataFrames* ofrecen el método [to_parquet](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_parquet.html){target="_blank"} (que por debajo usa *PyArrow*):
 
 **sales-parquet.py**
 
@@ -2562,7 +2562,7 @@ row_group_size=filas_por_grupo
 
 )
 
-Para leer un archivo utilizaremos el método [read_parquet](https://pandas.pydata.org/docs/reference/api/pandas.read_parquet.html):
+Para leer un archivo utilizaremos el método [read_parquet](https://pandas.pydata.org/docs/reference/api/pandas.read_parquet.html){target="_blank"}:
 
 df_parquet = pd.read_parquet("pdi_sales.parquet")
 
@@ -2658,9 +2658,9 @@ Y los tres tienen algo en común: son gratis para quien consulta, transparentes 
 
 #### <span style="color: var(--bda-tertiary-color);">ENCODING</span>
 
-Cuando vimos cómo se [codificaban las columnas](https://aitor-medrano.github.io/iabd/de/formatos.html#codificando-las-columnas), dijimos que *Parquet* elegía automáticamente la codificación más eficiente para cada columna. Pero, ¿cómo podemos comprobar qué codificación se ha aplicado realmente?
+Cuando vimos cómo se [codificaban las columnas](https://aitor-medrano.github.io/iabd/de/formatos.html#codificando-las-columnas){target="_blank"}, dijimos que *Parquet* elegía automáticamente la codificación más eficiente para cada columna. Pero, ¿cómo podemos comprobar qué codificación se ha aplicado realmente?
 
-Toda esta información reside en el pie del fichero, y podemos leerlo sin tocar los datos. Como ejemplo, vamos a utilizar el fichero de ventas que hemos [dividido en cuatro *row groups*](https://aitor-medrano.github.io/iabd/de/formatos.html#parquet-y-pandas) y que contiene más de 800.000 filas, ordenadas por país y fecha. El siguiente código inspecciona el primer *row group* y nos dice qué codificación y compresión se ha aplicado a cada columna, así como sus estadísticas:
+Toda esta información reside en el pie del fichero, y podemos leerlo sin tocar los datos. Como ejemplo, vamos a utilizar el fichero de ventas que hemos [dividido en cuatro *row groups*](https://aitor-medrano.github.io/iabd/de/formatos.html#parquet-y-pandas){target="_blank"} y que contiene más de 800.000 filas, ordenadas por país y fecha. El siguiente código inspecciona el primer *row group* y nos dice qué codificación y compresión se ha aplicado a cada columna, así como sus estadísticas:
 
 **sales-encoding-parquet.py**
 
@@ -2786,7 +2786,7 @@ Tres lecturas de esta salida:
 
 Antes hemos visto que *Parquet* almacena los datos por columnas, y que cada columna se divide en *row groups* y páginas, y que el pie del fichero contiene estadísticas de cada columna. Vamos a ver para qué sirven realmente, porque son las que permiten que las consultas sobre *Parquet* sean tan rápidas (y baratas), leyendo solo lo necesario, gracias a dos optimizaciones que aplican automáticamente motores como *Spark*, *Athena*, *DuckDB* o el propio *PyArrow*:
 
-- ***Projection pushdown*** (poda de columnas): como cada columna se almacena de forma contigua, el motor sólo lee del disco las columnas que aparecen en la consulta. Si nuestro fichero tiene 30 columnas y sólo consultamos 2, nos ahorramos leer las otras 28. Es la optimización que veíamos en la [comparativa de costes](https://aitor-medrano.github.io/iabd/de/formatos.html#el-tamano-importa) del principio de la sesión.
+- ***Projection pushdown*** (poda de columnas): como cada columna se almacena de forma contigua, el motor sólo lee del disco las columnas que aparecen en la consulta. Si nuestro fichero tiene 30 columnas y sólo consultamos 2, nos ahorramos leer las otras 28. Es la optimización que veíamos en la [comparativa de costes](https://aitor-medrano.github.io/iabd/de/formatos.html#el-tamano-importa){target="_blank"} del principio de la sesión.
 - ***Predicate pushdown*** (filtrado anticipado o *data skipping*): para cada *row group*, el pie almacena el **mínimo, el máximo y el número de nulos** de cada columna. Antes de leer los datos, el motor compara el filtro de la consulta con estas estadísticas y descarta los *row groups* que no pueden contener resultados.
 
 Volvamos a la salida anterior y quedémonos sólo con Country:
@@ -2816,7 +2816,7 @@ En el mismo fichero, con el mismo formato y la misma codificación, el filtrado 
 
 El motor descarta los row groups cuyas estadísticas min/max no satisfacen el filtro
 
-Con *PyArrow*, ambas optimizaciones se activan mediante los parámetros columns y filters de [read_table](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.read_table.html#pyarrow.parquet.read_table):
+Con *PyArrow*, ambas optimizaciones se activan mediante los parámetros columns y filters de [read_table](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.read_table.html#pyarrow.parquet.read_table){target="_blank"}:
 
 import pyarrow.parquet as pq
 
@@ -2883,15 +2883,15 @@ Observa un detalle elegante: dentro de Country=Germany/ los ficheros **ya no con
 
 Esto es codificación por diccionario llevada al sistema de ficheros: la partición cuesta cero bytes de datos.
 
-Elegir bien la columna de particionado es una de las decisiones de diseño más importantes de un *data lake*: hay que particionar por aquello por lo que se filtra (típicamente la fecha), y no pasarse, porque miles de directorios con un fichero minúsculo cada uno degradan el rendimiento en lugar de mejorarlo. Volveremos sobre ello, y lo pondremos en práctica, en la sesión sobre [object storage](https://aitor-medrano.github.io/iabd/de/object-storage.html).
+Elegir bien la columna de particionado es una de las decisiones de diseño más importantes de un *data lake*: hay que particionar por aquello por lo que se filtra (típicamente la fecha), y no pasarse, porque miles de directorios con un fichero minúsculo cada uno degradan el rendimiento en lugar de mejorarlo. Volveremos sobre ello, y lo pondremos en práctica, en la sesión sobre [object storage](https://aitor-medrano.github.io/iabd/de/object-storage.html){target="_blank"}.
 
 **¿Y Apache ORC?**
 
-[Apache ORC](https://orc.apache.org/) es un formato de datos columnar (***O****ptimized* ***R****ow* ***C****olumnar*) nacido en 2013, el mismo año que *Parquet*, con el mismo objetivo y un diseño casi calcado: bloques horizontales de filas (que aquí se llaman *stripes* en vez de *row groups*), codificación por columna, compresión por bloque y estadísticas para el *pushdown*. Durante años fue el formato nativo de *Hive*.
+[Apache ORC](https://orc.apache.org/){target="_blank"} es un formato de datos columnar (***O****ptimized* ***R****ow* ***C****olumnar*) nacido en 2013, el mismo año que *Parquet*, con el mismo objetivo y un diseño casi calcado: bloques horizontales de filas (que aquí se llaman *stripes* en vez de *row groups*), codificación por columna, compresión por bloque y estadísticas para el *pushdown*. Durante años fue el formato nativo de *Hive*.
 
 Hoy *Parquet* ha ganado la partida fuera del ecosistema *Hive*, sobre todo desde que incorporó *zstd* y cerró la diferencia de compresión que era la principal ventaja de *ORC*. Este sigue siendo relevante en dos sitios: las tablas *Hive* con transacciones ACID, y las migraciones de ese estado heredado (*Iceberg* lo soporta de forma nativa junto a *Parquet* y *Avro*).
 
-La buena noticia es que todo lo que has aprendido sobre *Parquet* se aplica igual a *ORC*: columnar, codificación, *pushdown* y particionado. Si algún día te topas con un .orc, *Pandas* lo lee con [pd.read_orc](https://pandas.pydata.org/docs/reference/api/pandas.read_orc.html) y lo persisten mediante [to_orc](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html).
+La buena noticia es que todo lo que has aprendido sobre *Parquet* se aplica igual a *ORC*: columnar, codificación, *pushdown* y particionado. Si algún día te topas con un .orc, *Pandas* lo lee con [pd.read_orc](https://pandas.pydata.org/docs/reference/api/pandas.read_orc.html){target="_blank"} y lo persisten mediante [to_orc](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html){target="_blank"}.
 
 ## <span style="color: var(--bda-primary-color);">COMPRESIÓN</span>
 
@@ -2907,9 +2907,9 @@ Por eso *Parquet* y *ORC* comprimen mejor que un CSV: no es que usen mejores alg
 
 ### <span style="color: var(--bda-secondary-color);">ELIGIENDO EL ALGORITMO</span>
 
-Elegir códec fue durante una década un dilema: o rápido (***[Snappy](https://github.com/google/snappy)***) o pequeño (*gzip*), pero no las dos cosas a la vez. Esa disyuntiva explica por qué *Snappy* acabó siendo el valor por defecto de *Parquet*: en un clúster, cada ciclo de CPU que gastas descomprimiendo se lo estás quitando a la consulta, así que compensaba almacenar de más con tal de leer rápido.
+Elegir códec fue durante una década un dilema: o rápido (***[Snappy](https://github.com/google/snappy){target="_blank"}***) o pequeño (*gzip*), pero no las dos cosas a la vez. Esa disyuntiva explica por qué *Snappy* acabó siendo el valor por defecto de *Parquet*: en un clúster, cada ciclo de CPU que gastas descomprimiendo se lo estás quitando a la consulta, así que compensaba almacenar de más con tal de leer rápido.
 
-[***Zstandard***](https://facebook.github.io/zstd/) rompió ese equilibrio, combinando una velocidad comparable a *Snappy* con ratios de compresión similares a *gzip*, lo que lo convierte en la opción preferida en los entornos *Parquet* más recientes.
+[***Zstandard***](https://facebook.github.io/zstd/){target="_blank"} rompió ese equilibrio, combinando una velocidad comparable a *Snappy* con ratios de compresión similares a *gzip*, lo que lo convierte en la opción preferida en los entornos *Parquet* más recientes.
 
 La siguiente tabla compara los algoritmos más habituales. Antes de leerla, fíjate en la segunda columna, porque esconde una trampa práctica: el mismo algoritmo cambia de nombre según el formato. El *DEFLATE* de toda la vida se llama gzip en *Parquet*, deflate en *Avro* y ZLIB en *ORC* — que, además, rechazará el nombre GZIP si se lo pides.
 
@@ -2926,7 +2926,7 @@ Si te interesa el tema, es muy interesante el artículo [Data Compression in Had
 
 Para indicar el tipo de compresión, únicamente hemos de añadir un parámetro extra en la función o constructor de persistencia:
 
-[Avro](https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_6_1)[Parquet](https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_6_2)[ORC](https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_6_3)
+[Avro](https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_6_1){target="_blank"}[Parquet](https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_6_2)[ORC](https://aitor-medrano.github.io/iabd/de/formatos.html#__tabbed_6_3){target="_blank"}
 
 Con *Fastavro*, la compresión se indica en el parámetro codec del escritor:
 
@@ -2934,7 +2934,7 @@ writer(f, schemaParseado, records, codec='deflate')
 
 *Fastavro* soporta deflate (el algoritmo de *gzip*) y snappy. Para este último hay que instalar previamente pip install python-snappy.
 
-Si aplicamos estos códigos al fichero pdi_sales.csv, podremos comparar los tamaños de ficheros obtenidos (puedes probarlo tú mismo con el [siguiente script](https://aitor-medrano.github.io/iabd/de/sandbox/sales-compresion.py)):
+Si aplicamos estos códigos al fichero pdi_sales.csv, podremos comparar los tamaños de ficheros obtenidos (puedes probarlo tú mismo con el [siguiente script](https://aitor-medrano.github.io/iabd/de/sandbox/sales-compresion.py){target="_blank"}):
 
 Fichero de partida: pdi_sales.csv · 37.84 MiB
 
@@ -2987,7 +2987,7 @@ Fíjate en el detalle más revelador de la tabla: **ventas.parquet sin comprimir
 
 ## <span style="color: var(--bda-primary-color);">FORMATOS DE TABLA ABIERTOS</span>
 
-En el apartado de [Particionado](https://aitor-medrano.github.io/iabd/de/formatos.html#particionado) hemos dicho que una tabla *Parquet* no es un fichero, sino un directorio. Esto tiene consecuencias importantes en entornos de producción, donde los datos cambian y se consultan de forma concurrente. Imagina que nuestro sales_particionado/ está en producción:
+En el apartado de [Particionado](https://aitor-medrano.github.io/iabd/de/formatos.html#particionado){target="_blank"} hemos dicho que una tabla *Parquet* no es un fichero, sino un directorio. Esto tiene consecuencias importantes en entornos de producción, donde los datos cambian y se consultan de forma concurrente. Imagina que nuestro sales_particionado/ está en producción:
 
 - Escribimos 200 ficheros y el proceso muere en el 120. El directorio queda con datos a medias, y nada indica que esté incompleto. Quien consulte ahora obtendrá resultados incorrectos sin enterarse.
 - Alguien consulta mientras escribimos. Verá una mezcla de ficheros viejos y nuevos: un estado que no existió nunca.
@@ -2998,23 +2998,23 @@ Ninguno de estos problemas es de *Parquet*. *Parquet* hace muy bien su trabajo, 
 
 Esa capa existe, se llama **formato de tabla abierto** (*open table format*), y su idea es sorprendentemente simple: los ficheros *Parquet* no se tocan jamás; cada escritura crea ficheros nuevos y **anota el cambio en un registro de transacciones**. Ese registro —y no el directorio— es el que define qué ficheros forman la tabla en cada momento, y permite gestionar cambios sobre los datos (actualizaciones, borrados, versionado, transacciones ACID) sin las limitaciones de un sistema de ficheros simple.
 
-Los tres productos más destacados son [Delta Lake](https://delta.io/) (*Databricks*), [Apache Iceberg](https://iceberg.apache.org/) (*Netflix*) y [Apache Hudi](https://hudi.apache.org/) (*Uber*). Los tres resuelven lo mismo de forma parecida, y en los tres el fichero de datos que hay debajo sigue siendo *Parquet*.
+Los tres productos más destacados son [Delta Lake](https://delta.io/){target="_blank"} (*Databricks*), [Apache Iceberg](https://iceberg.apache.org/){target="_blank"} (*Netflix*) y [Apache Hudi](https://hudi.apache.org/){target="_blank"} (*Uber*). Los tres resuelven lo mismo de forma parecida, y en los tres el fichero de datos que hay debajo sigue siendo *Parquet*.
 
-Volveremos con [Delta Lake](https://aitor-medrano.github.io/iabd/spark/deltalake.html) en el bloque de *Spark*, cuando tengamos un motor capaz de escribir ese registro de transacciones.
+Volveremos con [Delta Lake](https://aitor-medrano.github.io/iabd/spark/deltalake.html){target="_blank"} en el bloque de *Spark*, cuando tengamos un motor capaz de escribir ese registro de transacciones.
 
 **El suelo se está moviendo**
 
 *Parquet* se diseñó en 2013 pensando en escaneos por lotes sobre tablas de anchura moderada con números, cadenas y fechas. Las cargas de trabajo de IA han roto esa suposición: búsquedas puntuales dentro de conjuntos de miles de millones de vectores, tablas de decenas de miles de columnas alimentando GPUs, y ficheros multimedia conviviendo con columnas estructuradas. De ahí que en los últimos años haya aparecido toda una generación de formatos nuevos:
 
-- [**Lance**](https://lance.org/): columnar orientado a IA. Su fuerte es el acceso aleatorio sobre datos de alta dimensionalidad (*embeddings*), donde *Parquet* es lento.
-- [**Vortex**](https://vortex.dev/): el aspirante más serio a suceder a *Parquet* de forma general. Proyecto de la Linux Foundation, escrito en Rust, con Microsoft, Snowflake, Palantir y NVIDIA detrás. Su truco es aplicar los filtros sobre los datos todavía comprimidos, sin descodificarlos.
-- [**Nimble**](https://github.com/facebookincubator/nimble): el formato que Meta liberó desde su plataforma de *machine learning*, centrado en la velocidad de descodificación durante el entrenamiento.
+- [**Lance**](https://lance.org/){target="_blank"}: columnar orientado a IA. Su fuerte es el acceso aleatorio sobre datos de alta dimensionalidad (*embeddings*), donde *Parquet* es lento.
+- [**Vortex**](https://vortex.dev/){target="_blank"}: el aspirante más serio a suceder a *Parquet* de forma general. Proyecto de la Linux Foundation, escrito en Rust, con Microsoft, Snowflake, Palantir y NVIDIA detrás. Su truco es aplicar los filtros sobre los datos todavía comprimidos, sin descodificarlos.
+- [**Nimble**](https://github.com/facebookincubator/nimble){target="_blank"}: el formato que Meta liberó desde su plataforma de *machine learning*, centrado en la velocidad de descodificación durante el entrenamiento.
 
 Ninguno va a desplazar a *Parquet* a corto plazo, pero el campo de la IA está provocando cambios. -->
 
 <blockquote>
-<p><small><em>Fuentes: <a href="https://aitor-medrano.github.io/iabd/">Aitor Medrano</a></em>,</small>
-<small><em><a href="https://www.vladsiv.com/posts/big-data-file-formats">Vladsiv</a></em></small>
+<p><small><em>Fuentes: <a href="https://aitor-medrano.github.io/iabd/" target="_blank">Aitor Medrano</a></em>,</small>
+<small><em><a href="https://www.vladsiv.com/posts/big-data-file-formats" target="_blank">Vladsiv</a></em></small>
 </p>
 </blockquote>
 

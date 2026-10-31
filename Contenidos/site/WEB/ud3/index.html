@@ -1707,14 +1707,14 @@
 <p>Cualquier otro formato no mostrado en esta lista <strong>no está recomendado</strong> para utilizar en web. Formatos como <code>BMP</code>, <code>TIFF</code>, <code>RAW</code>, <code>NEF</code>, <code>PSD</code>, <code>CDR</code> son formatos no orientados para su uso en la web, además de ser propietarios y muy pesados. Asegúrate utilizar alguuno de los recomendados de la tabla anterior.</p>
 <div class="admonition example">
 <p class="admonition-title">Mi formato no aparece en la tabla</p>
-<p>Si por alguna razón, no nos quedará de otra que utilizar algún formato no recomendado par web, podemos incorporarlo a nuestro sitio utilizando un <strong>enfoque progresivo</strong> con <strong>fallbacks</strong>. Se usaría <a href="https://lenguajehtml.com/html/multimedia/etiqueta-html-picture/">la etiqueta HTML <code>&lt;picture&gt;</code></a>, de modo que si el navegador no soporta el formato, intenta con el siguiente.</p>
+<p>Si por alguna razón, no nos quedará de otra que utilizar algún formato no recomendado par web, podemos incorporarlo a nuestro sitio utilizando un <strong>enfoque progresivo</strong> con <strong>fallbacks</strong>. Se usaría <a href="#la-etiqueta-html-picture">la etiqueta HTML <code>&lt;picture&gt;</code></a>, de modo que si el navegador no soporta el formato, intenta con el siguiente.</p>
 </div>
 <h2 id="la-etiqueta-html-img"><span style="color: var(--diw-primary-color);">LA ETIQUETA HTML <strong><code>&lt;img&gt;</code></strong></span></h2>
 <p>Un tipo de recurso muy frecuente en nuestras páginas son las imágenes. Las imágenes son importantísimas para conseguir que nuestra página se vea bien y sea agradable. En principio, tenemos <strong>dos posibles situaciones</strong> al utilizar imágenes:</p>
 <p>&emsp;<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7zm2-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> Las imágenes a mostrar forman parte del <strong>contenido</strong>.</p>
 <p>&emsp;<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 0 0-2 2v4h6v-2h-4v-2h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm3-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> Las imágenes a mostrar forman parte de la <strong>decoración</strong> de la web.</p>
 <p>En el <strong>primer caso</strong>, debemos utilizar una etiqueta <code>&lt;img&gt;</code>, que es la situación que explicaremos en este artículo.</p>
-<p>En el <strong>segundo caso</strong>, si son imágenes de decoración que no tienen que ver con el contenido, sería más adecuado incluirlas como un fondo mediante <a href="https://lenguajecss.com/css/imagenes-y-fondos/propiedad-background-image/">la propiedad CSS background-image</a>.</p>
+<p>En el <strong>segundo caso</strong>, si son imágenes de decoración que no tienen que ver con el contenido, sería más adecuado incluirlas como un fondo mediante <a href="https://lenguajecss.com/css/imagenes-y-fondos/propiedad-background-image/" target="_blank">la propiedad CSS background-image</a>.</p>
 <p>En esta ocasión, vamos a centrarnos en el primer tipo, es decir, el uso de <code>&lt;img&gt;</code>. Se trata de una etiqueta muy sencilla, que necesita <strong>al menos</strong> incluir <strong>obligatoriamente</strong> dos atributos: el atributo <code>src</code> y el atributo <code>alt</code>:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/html/multimedia/etiqueta-html-img/html.webp&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Logo de HTML5&quot;</span><span class="p">/&gt;</span>  
 </span></code></pre></div>
@@ -1938,7 +1938,7 @@ Observamos varias cosas:</p>
 </ul>
 </div>
 <div class="tabbed-block">
-<p>De la misma forma que vimos con el atributo <code>srcset</code>, con el atributo <code>sizes</code> se puede establecer una lista de condiciones de medios, ver <a href="https://lenguajecss.com/css/responsive-web-design/media-queries/">media queries</a>, que se aplicarán en cada uno de los criterios del <code>srcset</code>.</p>
+<p>De la misma forma que vimos con el atributo <code>srcset</code>, con el atributo <code>sizes</code> se puede establecer una lista de condiciones de medios, ver <a href="https://lenguajecss.com/css/responsive-web-design/media-queries/" target="_blank">media queries</a>, que se aplicarán en cada uno de los criterios del <code>srcset</code>.</p>
 <p>Estos seguirán el siguiente formato:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;imagen\_1200w.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Logotipo HTML5&quot;</span>  
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;imagen\_1200w.jpg 1200w,  </span>
@@ -2053,7 +2053,7 @@ Observamos varias cosas:</p>
 <li><strong>Si no cumple las anteriores</strong> (o no soporta estas etiquetas): Muestra la imagen <code>logo-medium.png</code></li>
 </ul>
 <blockquote>
-<p><img alt="🔍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f50d.svg" title=":mag:" /> Nótese que esto sólo hará cambio de imagen efectivo justo en los cambios de los rangos indicados (600 y 900). Si se desea que la imagen se adapte proporcionalmente en cada punto, lo mejor es recurrir a <a href="https://lenguajecss.com/css/modelo-de-cajas/que-es/#rango-de-dimensiones">tamaños máximos y mínimos con CSS</a>.</p>
+<p><img alt="🔍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f50d.svg" title=":mag:" /> Nótese que esto sólo hará cambio de imagen efectivo justo en los cambios de los rangos indicados (600 y 900). Si se desea que la imagen se adapte proporcionalmente en cada punto, lo mejor es recurrir a <a href="https://lenguajecss.com/css/modelo-de-cajas/que-es/#rango-de-dimensiones" target="_blank">tamaños máximos y mínimos con CSS</a>.</p>
 </blockquote>
 <h4 id="diferentes-densidades"><span style="color: var(--diw-tertiary-color);">DIFERENTES DENSIDADES</span></h4>
 <p>Además, este sistema también permite especificar diferentes imágenes dependiendo de la densidad de pantalla del dispositivo (<em>tamaño del píxel en las diferentes pantallas de dispositivos móviles, tablets o monitores</em>). Para ello, tenemos que usar una palabra clave que se forma de un número (<em>multiplicador de densidad</em>) seguido de una <code>x</code>:</p>
@@ -2081,30 +2081,30 @@ Observamos varias cosas:</p>
 <h3 id="recursos-web-para-trabajar-con-imagenes"><span style="color: var(--diw-secondary-color);">RECURSOS WEB PARA TRABAJAR CON IMÁGENES</span></h3>
 <h4 id="imagenes-vectoriales"><span style="color: var(--diw-tertiary-color);">IMÁGENES VECTORIALES</span></h4>
 <ul>
-<li><a href="https://liveweave.com/designer/index.html">Liveweave:</a> Editor web de imágenes SVG.</li>
-<li><a href="https://tablericons.com/">Tablericons:</a> Banco de Iconos SVG gratuitos.</li>
-<li><a href="https://web.iconly.pro/">Iconly:</a> Banco de Iconos SVG gratuitos.</li>
-<li><a href="https://app.iconsax.io/">Iconsax:</a> Banco de Iconos SVG gratuitos.</li>
-<li><a href="https://icones.js.org/">Icones:</a> Banco de Iconos SVG gratuitos organizados por bloques y con diversas opciones de exportación.</li>
-<li><a href="https://www.runeicons.com/icons">Runeicons:</a> Libreria de iconos open-source, en 5 estilos diferentes.</li>
-<li><a href="https://www.magnific.com/search?format=search&amp;iconType=uicon&amp;last_filter=query&amp;last_value=&amp;query=&amp;type=icon#from_element=subhome_catalog">Magnific:</a> Banco de Iconos SVG gratuitos.</li>
+<li><a href="https://liveweave.com/designer/index.html" target="_blank">Liveweave:</a> Editor web de imágenes SVG.</li>
+<li><a href="https://tablericons.com/" target="_blank">Tablericons:</a> Banco de Iconos SVG gratuitos.</li>
+<li><a href="https://web.iconly.pro/" target="_blank">Iconly:</a> Banco de Iconos SVG gratuitos.</li>
+<li><a href="https://app.iconsax.io/" target="_blank">Iconsax:</a> Banco de Iconos SVG gratuitos.</li>
+<li><a href="https://icones.js.org/" target="_blank">Icones:</a> Banco de Iconos SVG gratuitos organizados por bloques y con diversas opciones de exportación.</li>
+<li><a href="https://www.runeicons.com/icons" target="_blank">Runeicons:</a> Libreria de iconos open-source, en 5 estilos diferentes.</li>
+<li><a href="https://www.magnific.com/search?format=search&amp;iconType=uicon&amp;last_filter=query&amp;last_value=&amp;query=&amp;type=icon#from_element=subhome_catalog" target="_blank">Magnific:</a> Banco de Iconos SVG gratuitos.</li>
 </ul>
 <h4 id="mapas-de-bits"><span style="color: var(--diw-tertiary-color);">MAPAS DE BITS</span></h4>
 <ul>
-<li><a href="https://unsplash.com/es">Unsplash:</a> Banco de imágenes con licencias de libre uso.</li>
-<li><a href="https://pixabay.com/es/">Pixabay:</a> Banco de imágenes con licencias de libre uso.</li>
-<li><a href="https://www.pexels.com/es-es/">Pexels:</a> Banco de <strong>imágenes y videos</strong> con licencias de libre uso.</li>
-<li><a href="https://picsum.photos/">Picsum:</a> Ofrece URLs de imágenes online de libre uso, para usar en como <code>placeholders</code>.</li>
-<li><a href="https://www.photopea.com/">Photopea:</a> Editor web de imágenes con herramientas y atajos de teclado muy similares a los de Adobe Photoshop.</li>
-<li><a href="https://squoosh.app/">Squoosh:</a> Herramienta para comprimir, convertir y redimensionar imágenes directamente en tu navegador. Desarrollado por Google.</li>
-<li><a href="https://tinypng.com/">TinyPng:</a> Compresor y conversor de imágenes online, sin perder calidad visual de manera perceptible.</li>
-<li><a href="https://shortpixel.com/online-image-compression">ShortPixel:</a> Compresor y conversor de imágenes online.</li>
+<li><a href="https://unsplash.com/es" target="_blank">Unsplash:</a> Banco de imágenes con licencias de libre uso.</li>
+<li><a href="https://pixabay.com/es/" target="_blank">Pixabay:</a> Banco de imágenes con licencias de libre uso.</li>
+<li><a href="https://www.pexels.com/es-es/" target="_blank">Pexels:</a> Banco de <strong>imágenes y videos</strong> con licencias de libre uso.</li>
+<li><a href="https://picsum.photos/" target="_blank">Picsum:</a> Ofrece URLs de imágenes online de libre uso, para usar en como <code>placeholders</code>.</li>
+<li><a href="https://www.photopea.com/" target="_blank">Photopea:</a> Editor web de imágenes con herramientas y atajos de teclado muy similares a los de Adobe Photoshop.</li>
+<li><a href="https://squoosh.app/" target="_blank">Squoosh:</a> Herramienta para comprimir, convertir y redimensionar imágenes directamente en tu navegador. Desarrollado por Google.</li>
+<li><a href="https://tinypng.com/" target="_blank">TinyPng:</a> Compresor y conversor de imágenes online, sin perder calidad visual de manera perceptible.</li>
+<li><a href="https://shortpixel.com/online-image-compression" target="_blank">ShortPixel:</a> Compresor y conversor de imágenes online.</li>
 </ul>
 <details class="game">
 <summary>TALLER PRÁCTICO 1: Conversión a SVG con Inkscape</summary>
 <p><strong>Inkscape</strong> es un editor de gráficos vectoriales gratuito y de código abierto, similar a <em>Adobe Illustrator</em>, que permite crear y editar logotipos, diagramas, ilustraciones y cómics usando el estándar SVG.</p>
 <p>Por motivos de tiempo, dentro del módulo de Diseño de Interfaces Web, no vamos a profundizar en como usarlo para crear gráficos vectoriales desde cero. Pero si que nos puede resultar muy valioso para <strong>convertir</strong> una imágen de <strong>Mapa de Bits</strong> (JPG o PNG, por ejemplo) <strong>a una imagen vectorial</strong>. Y es lo que vamos a ver a continuación.</p>
-<p>En primer lugar, descargamos la herramienta de la <a href="https://inkscape.org/release/inkscape-1.4.2/windows/64-bit/msi/">página oficial</a>, en nuestro caso el instalador para Windows. Lo instalamos en nuestro equipo y una vez accedamos a la aplicación, haremos lo siguiente:</p>
+<p>En primer lugar, descargamos la herramienta de la <a href="https://inkscape.org/release/inkscape-1.4.2/windows/64-bit/msi/" target="_blank">página oficial</a>, en nuestro caso el instalador para Windows. Lo instalamos en nuestro equipo y una vez accedamos a la aplicación, haremos lo siguiente:</p>
 <ol>
 <li>En la ventana de Bienvenida de la aplicación, seleccionamos la pestaña <strong>"Hora de dibujar"</strong> y luego la opción <strong>"ABRIR"</strong>, para abrir una imagen existente en formato mapa de bits.</li>
 <li>Seleccionamos nuestra imagen y en las características de importación que nos consulta, indicamos <strong>"Incrustar"</strong>, <strong>"Desde Archivo"</strong> y <strong>"Ninguno"</strong>; luego pulsamos <strong>"OK"</strong>.</li>
@@ -2307,13 +2307,13 @@ Observamos varias cosas:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">ATRIBUTO <code>src</code></label><label for="__tabbed_4_2">ATRIBUTOS <code>width/height</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Al igual que vimos en el apartado de <a href="https://lenguajehtml.com/html/multimedia/etiqueta-html-img/">etiqueta <code>&lt;img&gt;</code></a>, tenemos a nuestra disposición el atributo <code>src</code> para indicar la ruta o archivo de video, el cuál se encontrará en un formato concreto, como puede ser por ejemplo <code>.mp4</code> o <code>.webm</code>.</p>
+<p>Al igual que vimos en el apartado de <a href="https://lenguajehtml.com/html/multimedia/etiqueta-html-img/" target="_blank">etiqueta <code>&lt;img&gt;</code></a>, tenemos a nuestra disposición el atributo <code>src</code> para indicar la ruta o archivo de video, el cuál se encontrará en un formato concreto, como puede ser por ejemplo <code>.mp4</code> o <code>.webm</code>.</p>
 <p>Un primer ejemplo muy básico para colocar un video en nuestra página web:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">video</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.mp4&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>  
 </span></code></pre></div>
-<p>Es importante conocer los diferentes <a href="https://lenguajehtml.com/html/multimedia/formatos-multimedia/">formatos multimedia</a> que podemos utilizar en la etiqueta <code>&lt;video&gt;</code>. Hoy en día, lo más habitual suelen tener extensiones <code>.mp4</code> o <code>.webm</code>, aunque pueden estar codificadas de diferente forma.</p>
+<p>Es importante conocer los diferentes <a href="https://lenguajehtml.com/html/multimedia/formatos-multimedia/" target="_blank">formatos multimedia</a> que podemos utilizar en la etiqueta <code>&lt;video&gt;</code>. Hoy en día, lo más habitual suelen tener extensiones <code>.mp4</code> o <code>.webm</code>, aunque pueden estar codificadas de diferente forma.</p>
 <blockquote>
-<p><img alt="📌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" title=":pushpin:" /> <strong>Recuerda</strong>: Si lo que quieres es insertar videos desde <strong>Youtube</strong>, <strong>Vimeo</strong> u otro servicio alternativo, debes utilizar la <a href="https://lenguajehtml.com/html/multimedia/etiqueta-html-iframe/">etiqueta HTML iframe</a> en lugar de la etiqueta <code>&lt;video&gt;</code>. Esta última sólo sirve para archivos en formato de video directamente.</p>
+<p><img alt="📌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" title=":pushpin:" /> <strong>Recuerda</strong>: Si lo que quieres es insertar videos desde <strong>Youtube</strong>, <strong>Vimeo</strong> u otro servicio alternativo, debes utilizar la <a href="https://lenguajehtml.com/html/multimedia/etiqueta-html-iframe/" target="_blank">etiqueta HTML iframe</a> en lugar de la etiqueta <code>&lt;video&gt;</code>. Esta última sólo sirve para archivos en formato de video directamente.</p>
 </blockquote>
 </div>
 <div class="tabbed-block">
@@ -2362,7 +2362,7 @@ Observamos varias cosas:</p>
 </span></code></pre></div>
 <p>Este video se reproducirá automáticamente, silenciado y en modo bucle, es decir, cuando llegue al final, comenzará a reproducirse de nuevo. Ten en cuenta que un video <code>.mp4</code> que no tenga el atributo <code>controls</code>, por norma general, el usuario lo interpretará como si fuera una imagen o <code>.gif</code> animado. Si no ve claramente que hay una barra de controles, no caerá en que se trata de un video.</p>
 <blockquote>
-<p><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2139.svg" title=":information_source:" /> Desde 2017, Chrome, Firefox y otros navegadores establecieron un <a href="https://developer.chrome.com/blog/autoplay?hl=es-419">cambio de políticas</a> con el atributo de reproducción automática <code>autoplay</code>, por lo que lo más probable es que la autoreproducción no funcione salvo que el usuario haya interactuado antes en la página (<em>click, scroll, etc...</em>).</p>
+<p><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2139.svg" title=":information_source:" /> Desde 2017, Chrome, Firefox y otros navegadores establecieron un <a href="https://developer.chrome.com/blog/autoplay?hl=es-419" target="_blank">cambio de políticas</a> con el atributo de reproducción automática <code>autoplay</code>, por lo que lo más probable es que la autoreproducción no funcione salvo que el usuario haya interactuado antes en la página (<em>click, scroll, etc...</em>).</p>
 </blockquote>
 <hr />
 <blockquote>
@@ -2472,7 +2472,7 @@ Observamos varias cosas:</p>
 </ol>
 <p>De esta forma tenemos soporte completo para todo tipo de dispositivos.</p>
 <h4 id="acceso-a-segundos-especificos"><span style="color: var(--diw-tertiary-color);">ACCESO A SEGUNDOS ESPECÍFICOS</span></h4>
-<p>Utilizando los <a href="https://www.w3.org/TR/media-frags/">fragmentos multimedia</a> se pueden conseguir algunas acciones interesantes, como por ejemplo especificar el momento concreto del video (<em>o audio</em>) en el que se quiere empezar a reproducir o terminar de reproducir.</p>
+<p>Utilizando los <a href="https://www.w3.org/TR/media-frags/" target="_blank">fragmentos multimedia</a> se pueden conseguir algunas acciones interesantes, como por ejemplo especificar el momento concreto del video (<em>o audio</em>) en el que se quiere empezar a reproducir o terminar de reproducir.</p>
 <p>Veamos algunos ejemplos:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.mp4#t=15&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>  
 </span></code></pre></div>
@@ -2541,7 +2541,7 @@ Observamos varias cosas:</p>
 </blockquote>
 <h2 id="la-etiqueta-html-audio"><span style="color: var(--diw-primary-color);">LA ETIQUETA HTML <strong><code>&lt;audio&gt;</code></strong></span></h2>
 <p>Al igual que existe una etiqueta para añadir archivos de video a una página web, también es posible añadir archivos de audio y colocar conversaciones de voz, podcasts, sonidos o simplemente usar música como ambientación.</p>
-<p>En versiones anteriores de HTML se usaba una <a href="https://lenguajehtml.com/html/introduccion/etiquetas-html-obsoletas/">etiqueta HTML obsoleta</a> denominada <code>&lt;bgsound&gt;</code> que realizaba algo similar. Actualmente, esta etiqueta ya no está soportada. Hoy en día, usaremos la etiqueta HTML <code>&lt;audio&gt;</code>, que funciona prácticamente igual que <code>&lt;video&gt;</code>, sólo que utilizando archivos de audio.</p>
+<p>En versiones anteriores de HTML se usaba una <a href="https://lenguajehtml.com/html/introduccion/etiquetas-html-obsoletas/" target="_blank">etiqueta HTML obsoleta</a> denominada <code>&lt;bgsound&gt;</code> que realizaba algo similar. Actualmente, esta etiqueta ya no está soportada. Hoy en día, usaremos la etiqueta HTML <code>&lt;audio&gt;</code>, que funciona prácticamente igual que <code>&lt;video&gt;</code>, sólo que utilizando archivos de audio.</p>
 <p>La etiqueta HTML <code>&lt;audio&gt;</code> tiene varios atributos que podemos utilizar:</p>
 <table>
 <thead>
@@ -2671,12 +2671,12 @@ Observamos varias cosas:</p>
 <p>De esta forma, podemos establecer varias opciones para aprovechar los formatos modernos, y en caso que no estén soportados, utilizar formatos más antiguos o tradicionales.</p>
 <h3 id="recursos-para-trabajar-con-audio"><span style="color: var(--diw-secondary-color);">RECURSOS PARA TRABAJAR CON AUDIO</span></h3>
 <ul>
-<li><a href="https://www.jamendo.com/?language=es">Jamendo</a>: plataforma web y una comunidad internacional de música libre y de artistas independientes</li>
-<li><a href="https://https://elandroidefeliz.com/8-bancos-audios-efectos-sonido-libres-derechos/">Bancos de sonidos sin Copyright</a></li>
-<li><a href="https://www.audacityteam.org/download/">Audacity</a>: software de código abierto y distribución gratuita que sirve para grabar y editar audio digital</li>
+<li><a href="https://www.jamendo.com/?language=es" target="_blank">Jamendo</a>: plataforma web y una comunidad internacional de música libre y de artistas independientes</li>
+<li><a href="https://https://elandroidefeliz.com/8-bancos-audios-efectos-sonido-libres-derechos/" target="_blank">Bancos de sonidos sin Copyright</a></li>
+<li><a href="https://www.audacityteam.org/download/" target="_blank">Audacity</a>: software de código abierto y distribución gratuita que sirve para grabar y editar audio digital</li>
 </ul>
 <h2 id="la-etiqueta-html-track"><span style="color: var(--diw-primary-color);">LA ETIQUETA HTML <strong><code>&lt;track&gt;</code></strong></span></h2>
-<p>Con la llegada de HTML5, se añade un estándar llamado <a href="https://www.w3.org/TR/webvtt1/">WebVTT</a>, que no es más que un formato abierto orientado a web para la creación de subtítulos en archivos de video o audio. Este formato proviene del popular y extendido formato de subtitulos <code>.srt</code>, ya que es muy similar, sin embargo, en este caso se trata de un formato propio que no depende de una entidad o compañía externa.</p>
+<p>Con la llegada de HTML5, se añade un estándar llamado <a href="https://www.w3.org/TR/webvtt1/" target="_blank">WebVTT</a>, que no es más que un formato abierto orientado a web para la creación de subtítulos en archivos de video o audio. Este formato proviene del popular y extendido formato de subtitulos <code>.srt</code>, ya que es muy similar, sin embargo, en este caso se trata de un formato propio que no depende de una entidad o compañía externa.</p>
 <p>Este formato se puede utilizar mediante la etiqueta <code>&lt;track&gt;</code>, que puede establecerse dentro de una etiqueta contenedora <code>&lt;video&gt;</code> o <code>&lt;audio&gt;</code>, y después de las etiquetas <code>&lt;source&gt;</code> de su interior:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">&lt;</span><span class="nt">video</span><span class="p">&gt;</span>  
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;video.mp4&quot;</span><span class="p">&gt;</span>  
@@ -2776,7 +2776,7 @@ Observamos varias cosas:</p>
 </div>
 </div>
 </div>
-<h3 id="formato-webvtt"><a href="https://lenguajehtml.com/html/multimedia/etiqueta-html-track/#formato-webvtt">Formato WebVTT</a></h3>
+<h3 id="formato-webvtt"><a href="https://lenguajehtml.com/html/multimedia/etiqueta-html-track/#formato-webvtt" target="_blank">Formato WebVTT</a></h3>
 <p>Los archivos de subtítulo utilizados con la etiqueta <code>&lt;track&gt;</code> tienen el formato denominado <strong>WebVTT</strong> y utilizan la extensión <code>.vtt</code>. Se trata de un formato de texto bastante legible y fácil de entender.</p>
 <p>Su sintaxis es similar al siguiente fragmento de código:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>WEBVTT  
@@ -2792,7 +2792,7 @@ Observamos varias cosas:</p>
 <p>Como se puede ver, el archivo empieza con el texto <code>WEBVTT</code> que lo identifica. Continua con una línea que indica la marca de tiempo de inicio y final en el que permanecerá visible la frase de la siguiente línea.</p>
 <p>En dicha frase, se puede indicar el personaje que está hablando (<em>para posteriormente aplicarles estilos CSS</em>) e incluso incluir etiquetas simples para dar formato al texto. De forma adicional, también se pueden alinear textos, modificar su tamaño o cambiar la posición, entre otras cosas.</p>
 <blockquote>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> Un excelente software para crear subtítulos es <a href="https://aegisub.org/">AegiSub</a>. Es una aplicación multiplataforma, open source e incorpora multitud de características. Puedes guardarlos en formato <code>.srt</code> y convertirlos a <code>.vtt</code> utilizando <a href="https://dthompson.us/projects/srt2vtt.html">srt2vtt</a> o <a href="https://github.com/deestan/srt2vtt">srt2vtt en npm</a>.</p>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> Un excelente software para crear subtítulos es <a href="https://aegisub.org/" target="_blank">AegiSub</a>. Es una aplicación multiplataforma, open source e incorpora multitud de características. Puedes guardarlos en formato <code>.srt</code> y convertirlos a <code>.vtt</code> utilizando <a href="https://dthompson.us/projects/srt2vtt.html" target="_blank">srt2vtt</a> o <a href="https://github.com/deestan/srt2vtt" target="_blank">srt2vtt en npm</a>.</p>
 </blockquote>
 <h2 id="la-etiqueta-html-iframe"><span style="color: var(--diw-primary-color);">LA ETIQUETA HTML <strong><code>&lt;iframe&gt;</code></strong></span></h2>
 <p>Si queremos colocar contenido en una página, lo conveniente es utilizar formatos libres para garantizar que sean accesibles desde cualquier tipo de dispositivo, independientemente del navegador o el sistema operativo.</p>
@@ -2916,8 +2916,8 @@ Como se puede ver, en este caso hemos indicado el atributo <code>srcdoc</code> y
 </div>
 </div>
 <blockquote>
-<p><small><em>Fuentes: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">Mozilla Developer Network</a></em>,</small>
-<small><em><a href="https://lenguajehtml.com/html/">Lenguaje HTML</a></em>,</small>
+<p><small><em>Fuentes: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Mozilla Developer Network</a></em>,</small>
+<small><em><a href="https://lenguajehtml.com/html/" target="_blank">Lenguaje HTML</a></em>,</small>
 </p>
 </blockquote>
 
