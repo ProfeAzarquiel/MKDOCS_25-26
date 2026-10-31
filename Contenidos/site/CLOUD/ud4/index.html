@@ -1599,7 +1599,7 @@
 </ul>
 <h2 id="instalacion-de-docker"><span style="color: var(--ceny-primary-color);">INSTALACIÓN DE DOCKER</span></h2>
 <ul>
-<li><a href="https://docs.docker.com/engine/install/">Documentación oficial</a></li>
+<li>Los siguientes pasos están basados en la <a href="https://docs.docker.com/engine/install/">Documentación oficial de Docker</a>, que consultaremos ante cualquier contratiempo.</li>
 <li><a href="https://docs.docker.com/engine/install/ubuntu/">Requerimientos mínimos Ubuntu</a></li>
 <li>
 <p>Docker solo corre sobre distribuciones Linux, para Windows y MAC, se puede usar instalando el software <strong>Docker Desktop</strong>, que en realidad crea una máquina virtual Linux para ejecutar el demonio Docker sobre ella. Sin embargo el cliente si corre sobre el SO anfitrión.</p>
@@ -1858,12 +1858,22 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 </tbody>
 </table>
 <h3 id="practica-desplegar-servidor-web-apache"><span style="color: var(--ceny-secondary-color);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 1c-1.1 0-2 .9-2 2v18a2 2 0 0 0 2 2h7c2.76 0 5-2.24 5-5V3a2 2 0 0 0-2-2zm1 3h8v7H8zm1 10h1v2h2v1h-2v2H9v-2H7v-1h2zm7 1c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1m-2 2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1"/></svg></span> <strong>PRÁCTICA</strong>: DESPLEGAR SERVIDOR WEB APACHE</span></h3>
-<div class="language-text highlight"><pre><span></span><code>docker run -d --name my-apache-app -p 8080:80 httpd:2.4
-</code></pre></div>
-<p>Para ver las redirecciones o nateos que se están haciendo en nuestro contenedor:</p>
-<div class="language-text highlight"><pre><span></span><code>docker port my-apache-app
-</code></pre></div>
-<p>Para conectarnos al servidor web bastará con ir al navegador del host y acceder a <code>https://localhost:8080</code>.</p>
+<details class="game">
+<summary>Solución... (Inténtalo primero por ti mismo)</summary>
+<div class="language-python highlight"><span class="filename">Lanzamos el contenedor</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">--</span><span class="n">name</span> <span class="n">my</span><span class="o">-</span><span class="n">apache</span><span class="o">-</span><span class="n">app</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8080</span><span class="p">:</span><span class="mi">80</span> <span class="n">httpd</span><span class="p">:</span><span class="mf">2.4</span>
+</span></code></pre></div>
+<p>A continuación, creamos un fichero index.html en el directorio donde hemos montado el volumen, por lo tanto esta información no se perderá:</p>
+<div class="language-docker highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>my-apache-app<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo &quot;&lt;h1&gt;Hola&lt;/h1&gt;&quot; &gt; /usr/local/apache2/htdocs/index.html&#39;</span>
+</span></code></pre></div>
+<p>Podemos ver las redirecciones o nateos que se están haciendo en nuestro contenedor:</p>
+<div class="language-python highlight"><span class="filename">Ver redirecciones o nateos del servicio</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">docker</span> <span class="n">port</span> <span class="n">my</span><span class="o">-</span><span class="n">apache</span><span class="o">-</span><span class="n">app</span>
+</span></code></pre></div>
+<p>Y por otro lado, podemos comprobar el acceso al servidor web a través de nuestro navegador web o usando el comando <code>curl</code> desde el terminal:</p>
+<div class="language-python highlight"><span class="filename">Usando el comando curl</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">curl</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span>
+</span></code></pre></div>
+<div class="language-python highlight"><span class="filename">Usando el navegador web</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span>
+</span></code></pre></div>
+</details>
 <h2 id="gestion-de-imagenes-en-docker"><span style="color: var(--ceny-primary-color);">GESTIÓN DE IMAGENES EN DOCKER</span></h2>
 <p>Las imágenes son plantillas de solo lectura que define el sistema de ficheros que va a tener el contenedor. También establece el comando por defecto que ejecutará ese contenedor, siempre que no se indique otro.</p>
 <p>Por defecto en docker se usa el registro público de Docker Hub para descargar imágenes a nuestro registro local.</p>
@@ -1881,16 +1891,16 @@ El sistema de ficheros (FS) de una imágen se llama sistema de ficheros de unió
     <small><figcaption>Estructura en capas Docker</figcaption></small>
 </figure>
 <p>Si tengo varias imágenes que tengan la misma capa base, solo se almacenará una vez en nuestra máquina y será compartida por todas esas imágenes. Esto podemos verlo con el comando:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Nos da la información del almacenamiento utilizado por docker</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>system<span class="w"> </span>df<span class="w"> </span>-v
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Nos da la información del almacenamiento utilizado por docker</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>system<span class="w"> </span>df<span class="w"> </span>-v
 </span></code></pre></div>
 <p>Esto por ejemplo tambien ocurre cuando creamos contenedores con diferentes versiones de una misma imagen, muchas de sus capas, son compartidas.</p>
 <p>Cuando creamos un contenedor, usa el FS de la imagen en <code>solo lectura</code>. Por tanto, cuando instalamos o modificamos algo en un contenedor, esto se hace en una nueva <code>capa de lectura/escritura</code> que se genera al crearlo, para así no modificar las capas de la imagen. De este modo, si creamos varios contenedores a partir de la misma imagen, todos ellos compartirar el mismo FS.</p>
 <p>Esto hace que al crear un contenedor, su tamaño sea mínimo Esto podemos verlo con el comando:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># La opción -s nos muestra el tamaño del contenedor</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># indicando el tamaño de la capa R/W del contenedor y</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># el tamaño (virtual) del FS de la imagen usada</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w"> </span>-s
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># La opción -s nos muestra el tamaño del contenedor</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># indicando el tamaño de la capa R/W del contenedor y</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># el tamaño (virtual) del FS de la imagen usada</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w"> </span>-s
 </span></code></pre></div>
 <p>Cuando borramos un contenedor, esta capa R/W desaparece, se perderían los datos de ese contenedor.</p>
 <h3 id="comandos-de-gestion-de-imagenes"><span style="color: var(--ceny-secondary-color);">COMANDOS DE GESTIÓN DE IMÁGENES</span></h3>
@@ -1951,6 +1961,8 @@ El sistema de ficheros (FS) de una imágen se llama sistema de ficheros de unió
 <p>Podemos entrar a un repositorio par ver toda su información, etiquetas, versiones, como utilizarlo... Hay imagenes de SO, de servicios (apache, maraidb...), de lenguajes de programación o aplicaciones comerciales (Wordpress...)</p>
 <p>Es imporante tener en cuenta la arquitectura en la que estamos trabajando, ya que dependiendo de eso deberemos buscar una imagen u otra.</p>
 <h3 id="practica-busqueda-descarga-uso-y-borrado-de-imagen"><span style="color: var(--ceny-secondary-color);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 1c-1.1 0-2 .9-2 2v18a2 2 0 0 0 2 2h7c2.76 0 5-2.24 5-5V3a2 2 0 0 0-2-2zm1 3h8v7H8zm1 10h1v2h2v1h-2v2H9v-2H7v-1h2zm7 1c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1m-2 2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1"/></svg></span> <strong>PRÁCTICA</strong>: BUSQUEDA, DESCARGA, USO Y BORRADO DE IMAGEN </span></h3>
+<details class="game">
+<summary>Solución... (Inténtalo primero por ti mismo)</summary>
 <p>Buscar imágenes en Docker Hub:</p>
 <div class="language-text highlight"><pre><span></span><code>docker search nginx
 </code></pre></div>
@@ -1968,6 +1980,7 @@ curl http://localhost:8080
 <div class="language-text highlight"><pre><span></span><code>docker stop proxy_inverso
 docker rmi nginx
 </code></pre></div>
+</details>
 <h2 id="almacenamiento-de-datos-en-docker"><span style="color: var(--ceny-primary-color);">ALMACENAMIENTO DE DATOS EN DOCKER</span></h2>
 <p>Para no perder la información generada por los contenedores una vez sean borrados (por defecto se guarda en la capa R/W del contenedor), existen formas de almacenarla en el equipo anfitrión.</p>
 <p>Un <strong>VOLUMEN</strong> es un directorio creado y gestionados únicamente por Docker, que se va a montar en un directorio interno del contenedor. Es decir, cuando guardemos información en ese directorio montado, se estaremos escribiendo en el directorio de nuestro Host que corresponde a ese volumen. Es decir, esa información no se perdería al borrar el contenedor.</p>
@@ -1978,11 +1991,11 @@ docker rmi nginx
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Volumen con <code>-v</code></label><label for="__tabbed_1_2">Volumen con <code>--mount</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span>-v<span class="w"> </span>miweb:/usr/local/apache2/htdocs:ro
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">    </span>-v<span class="w"> </span>miweb:/usr/local/apache2/htdocs:ro
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">    </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>volume,src<span class="o">=</span>miweb,dst<span class="o">=</span>/usr/local/apache2/htdocs,ro
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">    </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>volume,src<span class="o">=</span>miweb,dst<span class="o">=</span>/usr/local/apache2/htdocs,ro
 </span></code></pre></div>
 </div>
 </div>
@@ -1994,11 +2007,11 @@ docker rmi nginx
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Bind Mount con <code>-v</code></label><label for="__tabbed_2_2">Bind Mount con <code>--mount</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">    </span>-v<span class="w"> </span>/opt/web:/usr/local/apache2/htdocs:ro
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span>-v<span class="w"> </span>/opt/web:/usr/local/apache2/htdocs:ro
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">    </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,src<span class="o">=</span>/opt/web,dst<span class="o">=</span>/usr/local/apache2/htdocs,ro
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,src<span class="o">=</span>/opt/web,dst<span class="o">=</span>/usr/local/apache2/htdocs,ro
 </span></code></pre></div>
 </div>
 </div>
@@ -2038,7 +2051,25 @@ docker rmi nginx
 </tr>
 </tbody>
 </table>
-<h3 id="practica-volumenes"><span style="color: var(--ceny-secondary-color);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 1c-1.1 0-2 .9-2 2v18a2 2 0 0 0 2 2h7c2.76 0 5-2.24 5-5V3a2 2 0 0 0-2-2zm1 3h8v7H8zm1 10h1v2h2v1h-2v2H9v-2H7v-1h2zm7 1c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1m-2 2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1"/></svg></span> <strong>PRÁCTICA</strong>: VOLUMENES</span></h3>
+<h3 id="practica-contenedor-mariadb-con-almacenamiento-persistente"><span style="color: var(--ceny-secondary-color);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 1c-1.1 0-2 .9-2 2v18a2 2 0 0 0 2 2h7c2.76 0 5-2.24 5-5V3a2 2 0 0 0-2-2zm1 3h8v7H8zm1 10h1v2h2v1h-2v2H9v-2H7v-1h2zm7 1c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1m-2 2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1"/></svg></span> <strong>PRÁCTICA</strong>: CONTENEDOR MARIADB CON ALMACENAMIENTO PERSISTENTE</span></h3>
+<details class="game">
+<summary>Solución... (Inténtalo primero por ti mismo)</summary>
+<p>Si estudiamos la documentación de la imagen mariadb en Docker Hub, nos indica que la información que hay que guardar de la base de datos se encuentra en el directorio /var/lib/mysql. Por lo tanto si queremos crear una contenedor de MariaDB donde no se pierda los datos de la base de datos, debemos ejecutar <strong>una de estas dos opciones</strong>:</p>
+<div class="language-docker highlight"><span class="filename">Usando Volúmenes</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>mi-mariadb<span class="w"> </span>-v<span class="w"> </span>vol_mariadb:/var/lib/mysql<span class="w"> </span>-e<span class="w"> </span><span class="nv">MARIADB_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw<span class="w"> </span>-d<span class="w"> </span>mariadb:10.5
+</span></code></pre></div>
+<div class="language-docker highlight"><span class="filename">Usando Bind-Mount</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>mi-mariadb<span class="w"> </span>-v<span class="w"> </span>/opt/mariadb:/var/lib/mysql<span class="w"> </span>-e<span class="w"> </span><span class="nv">MARIADB_ROOT_PASSWORD</span><span class="o">=</span>my-secret-pw<span class="w"> </span>-d<span class="w"> </span>mariadb:10.5
+</span></code></pre></div>
+<p>Es decir, según la opción que usemos, se creará un volumen Docker o un directorio <code>/opt/mariadb</code> en el PC anfitrión; donde se guardará la información de la BBDD. Si por algún motivo borramos ese contenedor y tenemos que volver a crearlo de nuevo, podemos indicar ese mismo volumen o directorio y así <strong>volveremos a tener accesible la información</strong>.</p>
+<p>Podemos comprobar este funcionamiento, creando una BBDD de prueba en MariDB, luego paramos y borramos nuestro contenedor. Y volvemos a crearlo asignandole el mismo volumen o bind-mount:</p>
+<div class="language-docker highlight"><span class="filename">Nos conectamos a la consola del contenedor, lanzando el comando de conexión a la BBDD</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>mi-mariadb<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;mysql -u root -p$MARIADB_ROOT_PASSWORD&#39;</span>
+</span></code></pre></div>
+<div class="language-sql highlight"><span class="filename">Creamos la base de datos Prueba y lo confirmamos</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">MariaDB</span><span class="w"> </span><span class="p">[(</span><span class="k">none</span><span class="p">)]</span><span class="o">&gt;</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">prueba</span><span class="p">;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">MariaDB</span><span class="w"> </span><span class="p">[(</span><span class="k">none</span><span class="p">)]</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">databases</span><span class="p">;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">MariaDB</span><span class="w"> </span><span class="p">[(</span><span class="k">none</span><span class="p">)]</span><span class="o">&gt;</span><span class="w"> </span><span class="n">quit</span>
+</span></code></pre></div>
+<div class="language-docker highlight"><span class="filename">Por último, borramos el contenedor para <mark class="critic">luego volverlo a crear con el mismo volumen o bind-mount</mark></span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>mi-mariadb
+</span></code></pre></div>
+</details>
 <h2 id="redes-en-docker"><span style="color: var(--ceny-primary-color);">REDES EN DOCKER</span></h2>
 <p>Generalmente, nunca se va a utilizar la dirección IP del contenedor para acceder a los servicios que despliega, ya que esta es dinámica y puede ir cambiando dependiendo de que acciones realicemos en el contenedor.</p>
 <p>Además, la dirección IP de un contenedor solamente es accesible desde el anfitrión. No sería alcanzable desde otros equipos de la red.</p>
@@ -2089,7 +2120,20 @@ docker rmi nginx
 </tr>
 </tbody>
 </table>
-<h3 id="practica-redes"><span style="color: var(--ceny-secondary-color);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 1c-1.1 0-2 .9-2 2v18a2 2 0 0 0 2 2h7c2.76 0 5-2.24 5-5V3a2 2 0 0 0-2-2zm1 3h8v7H8zm1 10h1v2h2v1h-2v2H9v-2H7v-1h2zm7 1c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1m-2 2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1"/></svg></span> <strong>PRÁCTICA</strong>: REDES </span></h3>
+<h3 id="practica-despliegue-de-wordpress-con-mariadb-en-red-definida-por-el-usuario"><span style="color: var(--ceny-secondary-color);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 1c-1.1 0-2 .9-2 2v18a2 2 0 0 0 2 2h7c2.76 0 5-2.24 5-5V3a2 2 0 0 0-2-2zm1 3h8v7H8zm1 10h1v2h2v1h-2v2H9v-2H7v-1h2zm7 1c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1m-2 2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1"/></svg></span> <strong>PRÁCTICA</strong>: DESPLIEGUE DE WORDPRESS CON MARIADB, EN RED DEFINIDA POR EL USUARIO</span></h3>
+<details class="game">
+<summary>Solución (Intenta resolverlo primero por tu cuenta)</summary>
+<p>Los dos contenedores tienen que estar en la misma red y deben tener acceso por nombre (resolución DNS) ya que al lanzarlos no sabemos que dirección IP va a coger cada uno. Por lo tanto vamos a crear la red a la que se conectarán ambos contenedores:
+<div class="language-docker highlight"><span class="filename">Creación de la red definida por el usuario</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>--subnet<span class="o">=</span><span class="m">192</span>.168.10.0/24<span class="w"> </span>--gateway<span class="o">=</span><span class="m">192</span>.168.10.1<span class="w"> </span>red_wordpress
+</span></code></pre></div></p>
+<p>Ahora, siguiendo la documentación de la imagen <a href="https://hub.docker.com/_/mariadb">mariadb</a> y la imagen <a href="https://hub.docker.com/_/wordpress">wordpress</a> podemos ejecutar los siguientes comandos para crear los dos contenedores:
+<div class="language-python highlight"><span class="filename">Creación del contenedor MariaDB</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">--</span><span class="n">name</span> <span class="n">servidor_mariadb</span> <span class="o">--</span><span class="n">network</span> <span class="n">red_wp</span> <span class="o">-</span><span class="n">v</span> <span class="n">vol_mariadb</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span> <span class="o">-</span><span class="n">e</span> <span class="n">MARIADB_DATABASE</span><span class="o">=</span><span class="n">bd_wp</span> <span class="o">-</span><span class="n">e</span> <span class="n">MARIADB_USER</span><span class="o">=</span><span class="n">user_wp</span> <span class="o">-</span><span class="n">e</span> <span class="n">MARIADB_PASSWORD</span><span class="o">=</span><span class="n">user123</span> <span class="o">-</span><span class="n">e</span> <span class="n">MARIADB_ROOT_PASSWORD</span><span class="o">=</span><span class="n">admin123</span> <span class="n">mariadb</span>
+</span></code></pre></div></p>
+<div class="language-python highlight"><span class="filename">Creación del contenedor Wrodpress</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">--</span><span class="n">name</span> <span class="n">servidor_wp</span> <span class="o">--</span><span class="n">network</span> <span class="n">red_wp</span> <span class="o">-</span><span class="n">v</span> <span class="n">vol_wordpress</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span> <span class="o">-</span><span class="n">e</span> <span class="n">WORDPRESS_DB_HOST</span><span class="o">=</span><span class="n">servidor_mariadb</span> <span class="o">-</span><span class="n">e</span> <span class="n">WORDPRESS_DB_USER</span><span class="o">=</span><span class="n">user_wp</span> <span class="o">-</span><span class="n">e</span> <span class="n">WORDPRESS_DB_PASSWORD</span><span class="o">=</span><span class="n">user123</span> <span class="o">-</span><span class="n">e</span> <span class="n">WORDPRESS_DB_NAME</span><span class="o">=</span><span class="n">bd_wp</span> <span class="o">-</span><span class="n">p</span> <span class="mi">80</span><span class="p">:</span><span class="mi">80</span> <span class="n">wordpress</span>
+</span></code></pre></div>
+<p>Ahora podemos revisar las direcciones IP que ha cogido cada contenedor, con el comando:</p>
+<p>Y abrir Wordpress en nuestro navegador web, para instalarlo, configurarlo y crear al menos una entrada. Luego </p>
+</details>
 <h2 id="escenarios-multicontenedor"><span style="color: var(--ceny-primary-color);">ESCENARIOS MULTICONTENEDOR</span></h2>
 <p>Cuando queremos levantar aplicaciones o servicios compuestos por varios microservicios (contenedores), normalmente se hace uso de <mark class="critic"><strong>DOCKER COMPOSE</strong></mark>.</p>
 <p>Compose es una especificación de Docker que permite declrar en un único fichero con formato <strong>.YAML</strong> o <strong>.YML</strong>, todas las características del escenario que queremos desplegar; como contenedores, volúmenes, redes, orden de arranque, variables de entorno, etc.</p>
@@ -2148,6 +2192,39 @@ docker rmi nginx
 <p>Por defecto, <strong>al ejecutar un escenario</strong> compose, se <strong>crea una red definida por el usuario</strong>, que permite la <strong>conexión entre todos los contenedores</strong> que se han generado, aceptando conexiones por nombre de contenedor o por nombre de servicio. Es por esto, que <strong>no suelen definirse redes</strong> en los ficheros .YAML:</p>
 <p>Para <strong>arrancar un escenario</strong>, vamos al directorio donde está nuestro <em>docker-compose.yaml</em> y ejecutamos <mark class="critic"><strong>docker compose up -d</strong></mark>.</p>
 <p>Para <strong>eliminar un escenario</strong>, sería con el comando <mark class="critic"><strong>docker compose down -v</strong></mark>. ¡OJO! Esto eliminará tambien los volumenes asociados al escenario, si quisieramos mantenerlos, <strong>podemos quitar la opción <code>-v</code></strong>.</p>
+<details class="example">
+<summary>Ejemplo básico de fichero <strong>compose.yaml</strong></summary>
+<div class="language-docker highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Escenario con tres servicios</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-19-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-19-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-19-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-19-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-19-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-19-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-19-10">10</a></span>
+<span class="normal"><a href="#__codelineno-19-11">11</a></span>
+<span class="normal"><a href="#__codelineno-19-12">12</a></span>
+<span class="normal"><a href="#__codelineno-19-13">13</a></span>
+<span class="normal"><a href="#__codelineno-19-14">14</a></span>
+<span class="normal"><a href="#__codelineno-19-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a>services:
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a>proxy:
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">    </span>image:<span class="w"> </span>nginx:latest
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">    </span>ports:
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="w">    </span>-<span class="w"> </span><span class="s2">&quot;8080:80&quot;</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7"></a>bbdd:
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="w">    </span>image:<span class="w"> </span>postgres:15-alpine
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="w">    </span>environment:
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="w">    </span>POSTGRES_USER:<span class="w"> </span>usuario
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="w">    </span>POSTGRES_PASSWORD:<span class="w"> </span>password123
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12"></a><span class="w">    </span>POSTGRES_DB:<span class="w"> </span>mibase
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13"></a>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14"></a>cache:
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15"></a><span class="w">    </span>image:<span class="w"> </span>redis:alpine
+</span></code></pre></div></td></tr></table></div>
+</details>
 <h3 id="almacenamiento-con-docker-compose"><span style="color: var(--ceny-secondary-color);"> ALMACENAMIENTO CON DOCKER COMPOSE</span></h3>
 <p>Además de definir los servicios (parámetro <code>services</code>) en el fichero compose.yaml, podemos definir los volúmenes que vamos a necesitar en nuestra infraestructura e indicar que volumen va a utilizar cada contenedor.</p>
 <p>Para la definición del servicio indicamos que el contenedor montará un volumen en un directorio determinado con el parámetro <code>volumes</code>.</p>
@@ -2241,34 +2318,34 @@ networks:
 <h3 id="uso-de-parametros-en-docker-compose"><span style="color: var(--ceny-secondary-color);"> USO DE PARÁMETROS EN DOCKER COMPOSE</span></h3>
 <p>Podemos crear plantillas para el despliegue de aplicaciones o servicios mediante Docker Compose, y arrancarlas con diferentes valores, según la finalidad o necesidades de los distintos entornos donde se pueda ejecutar nuestro escenario.</p>
 <p>Para ello, en lugar de dar valores estáticos a las características definidas en el fichero .YAML, podemos usar variables que definiermos en un fichero externo, usando la nomenclatura <code>${NOMBRE_VARIABLE}</code>. Es lo que se denomina <mark class="critic"><strong>parametrizar el Docker Compose</strong></mark>. Por ejemplo:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.1&#39;</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bbdd_persistente</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">services</span><span class="p">:</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nt">db</span><span class="p">:</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">servidor_mysql</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb:${VERSION_MDB}</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">      </span><span class="nt">MARIADB_DATABASE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${BASEDEDATOS}</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">      </span><span class="nt">MARIADB_USER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${USUARIO}</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nt">MARIADB_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PASS}</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">      </span><span class="nt">MARIADB_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PASS_ROOT}</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb_data:/var/lib/mysql</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="nt">volumes</span><span class="p">:</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="nt">mariadb_data</span><span class="p">:</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.1&#39;</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bbdd_persistente</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nt">services</span><span class="p">:</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nt">db</span><span class="p">:</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">servidor_mysql</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb:${VERSION_MDB}</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">      </span><span class="nt">MARIADB_DATABASE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${BASEDEDATOS}</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">      </span><span class="nt">MARIADB_USER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${USUARIO}</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">      </span><span class="nt">MARIADB_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PASS}</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">      </span><span class="nt">MARIADB_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PASS_ROOT}</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb_data:/var/lib/mysql</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="nt">volumes</span><span class="p">:</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">    </span><span class="nt">mariadb_data</span><span class="p">:</span>
 </span></code></pre></div>
 <p>Los valores de esas variables se definen en un fichero aparte de tipo <code>CLAVE=valor</code>, que por convenio se suele nombrar como <code>env_nombre_entorno</code>. Es decir, en el directorio donde se encuentra nuestro fichero .YAML crearemos tantos ficheros como posibles entornos de ejecución hayamos previsto. Por ejemplo, "<strong>env_desarrollo</strong>" y "<strong>env_produccion</strong>". Su aspecto será similar a lo siguiente:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">VERSION_MDB</span><span class="o">=</span>latest
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nv">PUERTO</span><span class="o">=</span><span class="m">8080</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nv">USUARIO</span><span class="o">=</span><span class="s2">&quot;user1&quot;</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nv">PASS</span><span class="o">=</span><span class="s2">&quot;pass123&quot;</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nv">PASS_ROOT</span><span class="o">=</span><span class="s2">&quot;admin&quot;</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nv">BASEDEDATOS</span><span class="o">=</span><span class="s2">&quot;wordpress&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nv">VERSION_MDB</span><span class="o">=</span>latest
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nv">PUERTO</span><span class="o">=</span><span class="m">8080</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nv">USUARIO</span><span class="o">=</span><span class="s2">&quot;user1&quot;</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="nv">PASS</span><span class="o">=</span><span class="s2">&quot;pass123&quot;</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nv">PASS_ROOT</span><span class="o">=</span><span class="s2">&quot;admin&quot;</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nv">BASEDEDATOS</span><span class="o">=</span><span class="s2">&quot;wordpress&quot;</span>
 </span></code></pre></div>
 <p>Cuando queramos que nuestra plantilla arranque con los valores de un entorno específico, simplemente tendremos que renombrar ese fichero como <strong><code>.env</code></strong>, por ejemplo: <em><code>mv env_desarrollo .env</code></em>; y luego arrancar el escenario normalmente con <em><code>docker compose up -d</code></em>.</p>
 <p>Podemos comprobar el valor de las variables de entorno con las que ha arrancado nuestro contenedor con:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>db<span class="w"> </span>env
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>db<span class="w"> </span>env
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">IMPORTANTE</p>
@@ -2291,20 +2368,20 @@ networks:
 <p><strong>EJERCICIO PRÁCTICO</strong>: Creación de una imágen a partir de un contenedor.
 Vamos a crear un contenedor a partir de una imagen base del SO Debian.</p>
 </blockquote>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker<span class="w">  </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>contenedor1<span class="w"> </span>debian<span class="w"> </span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>docker<span class="w">  </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>contenedor1<span class="w"> </span>debian<span class="w"> </span>
 </span></code></pre></div>
 <blockquote>
 <p>Realizamos las modificaciones que queramos sobre el contenedor, por ejemplo, actualizar, instalar un servidor web y modificar el fichero <em>index.html</em>:</p>
 </blockquote>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>apt<span class="w"> </span>update
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;h1&gt;Curso Docker&lt;/h1&gt;&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/var/www/html/index.html
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nb">exit</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>apt<span class="w"> </span>update
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;h1&gt;Curso Docker&lt;/h1&gt;&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/var/www/html/index.html
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="nb">exit</span>
 </span></code></pre></div>
 <blockquote>
 <p>Creamos una nueva imagen partiendo de ese contenedor usando <code>docker commit</code>.</p>
 </blockquote>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w"> </span>docker<span class="w"> </span>commit<span class="w"> </span>--change<span class="o">=</span><span class="s1">&#39;CMD apachectl -D FOREGROUND&#39;</span><span class="w"> </span>contenedor1<span class="w"> </span>josedom24/myapache2:v1
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="w"> </span>docker<span class="w"> </span>commit<span class="w"> </span>--change<span class="o">=</span><span class="s1">&#39;CMD apachectl -D FOREGROUND&#39;</span><span class="w"> </span>contenedor1<span class="w"> </span>josedom24/myapache2:v1
 </span></code></pre></div>
 <blockquote>
 <p>Si quiero subir mi imagen a <strong>Docker Hub</strong>, es muy importante ponerle delante nuestro nombre de usuario de Docker Hub, si no, no me dejará. El formato sería <em>nombre_usuario</em>/<em>nombre_imagen</em>:<em>versión</em> (si no indicamos versión, asignará la etiqueta <em>latest</em>)</p>
