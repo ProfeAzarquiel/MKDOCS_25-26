@@ -110,6 +110,13 @@ pre {
   /*border: 1px solid var(--grid-cards-border-color);*/
 }
 
+/* Cambia el color del TITULO de BLOQUE DE CÓDIGO */
+.md-typeset .highlight .filename,
+.md-typeset .codehilite .filename {
+  background-color: transparent !important;
+  border-bottom: none !important;  
+}
+
 /*CAMBIO DE COLOR DEL LOGO PRINCIPAL PERSONALIZADO SEGÚN EL TEMA ELEGIDO: */
 /* Color del LOGO principal en modo claro */
 [data-md-color-scheme="default"] #path-logo {
