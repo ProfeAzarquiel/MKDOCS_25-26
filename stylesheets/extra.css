@@ -8,8 +8,8 @@
 
 /* VARIABLES PROPIAS PARA COLORES DE ENCABEZADOS */
 :root > * {
-    --general-white-color: #ffffff;
-    --general-black-color: #1e2129;
+    /* COLORES */
+    --site-accent-color: #FF6E42;
 
     --ceny-primary-color: #8359FF;
     --ceny-secondary-color: #622EFF;
@@ -31,24 +31,40 @@
     --fh-secondary-color: #25A7DA;
     --fh-tertiary-color: #1E89B3;
 
+    /* RADIUS */
+    --grid-cards-border-radius: 4px;
+    --grid-cards-border-radiusx2: 8px;
+
 }
 
 :root > *[data-md-color-scheme="slate"] {
       /* Colores de texto para los títulos h4 en modo OSCURO*/
+    --site-main-color: #cbdc38;
+    --site-accent-color-soft: #471100;
+    --general-text-color: #ffffff;
     --ceny-cuaternary-color: #A78AFF;
     --bda-cuaternary-color: #FA8EB1;
     --diw-cuaternary-color: #FFA05C;
     --pcp-cuaternary-color: #99EB70;
     --fh-cuaternary-color: #9BD6EE;
+    --grid-cards-bg-color: #141604;
+    --grid-cards-border-color: #EFF4C2;
+    --grid-cards-border-hover-color: #A3B21F;
 }
 
 :root > *[data-md-color-scheme="default"] {
     /*Colores de texto para los títulos h4 en modo CLARO*/
+    --site-main-color: #009485;
+    --site-accent-color-soft: #FFC8B8;
+    --general-text-color: #1e2129;
     --ceny-cuaternary-color: #1D0075;
     --bda-cuaternary-color: #710527;
     --diw-cuaternary-color: #A34400;
     --pcp-cuaternary-color: #2C670F;
     --fh-cuaternary-color: #114D64;
+    --grid-cards-bg-color: #E6FFFC;
+    --grid-cards-border-color: #A4BBBA;
+    --grid-cards-border-hover-color: #00756A;
 }
 
 /*PERSONALIZAR EL ANCHO DE LOS CONTENIDOS PRINCIPALES (PARA REDUCIR EL ESPACIO QUE OCUPAN LOS MENUS NAV Y TOC) */
@@ -58,10 +74,33 @@
 
 /* Cambiar el estilo de las citas en bloque */
 .md-typeset blockquote {
-  color: var(--general-black-color);                 /* Color del texto de la cita */
-  border-left: 8px solid #d9d931;   /* Color y grosor de la línea lateral */
-  background-color: #fdffe6;        /* Color de fondo de la cita (opcional) */
-  padding: 0.1em 0.1em;               /* Espaciado interno */
+  color: var(--general-black-color);
+  border-left: .4rem solid var(--site-accent-color) !important;
+  background-color: var(--site-accent-color-soft);
+  padding: 0.1em 0.1em;
+  border-radius: var(--grid-cards-border-radius);
+}
+
+/* Color de fondo de las etiquetas de pestañas */
+/* .md-typeset .tabbed-labels > label {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid var(--grid-cards-border-color);
+} */
+
+/* Color de LA BARRA de la pestaña activa o hover */
+.js .md-typeset .tabbed-labels:before {
+  height: var(--grid-cards-border-radiusx2);
+  background-color: var(--site-accent-color);
+  border-radius: var(--grid-cards-border-radiusx2);
+}
+
+/* Cambiar el fondo y el borde del bloque de contenido de las pestañas */
+.md-typeset .tabbed-content {
+  background-color: var(--grid-cards-bg-color);
+  padding: 12px; 
+  border-radius: var(--grid-cards-border-radius);        
+  border: 1px solid var(--grid-cards-border-color);
 }
 
 /*CAMBIO DE COLOR DEL LOGO PRINCIPAL PERSONALIZADO SEGÚN EL TEMA ELEGIDO: */
@@ -80,6 +119,18 @@
     --md-code-bg-color: #e4e4e4;
   /* Color del texto genérico formateado*/
     --main-text-color: #009485;
+  /* Ejemplo para cambiar fondo y borde de las tarjetas */
+    .grid.cards > ul > li, 
+    .grid.cards > div {
+        background-color: var(--grid-cards-bg-color); /* Color de fondo deseado */
+        border-color: var(--grid-cards-border-color);      /* Color del borde */
+        border-radius: var(--grid-cards-border-radius);
+    }
+    .grid.cards > ul > li:hover, 
+    .grid.cards > div:hover {
+        /*background-color: #92f5eb; /* Color de fondo deseado */ 
+        border-color: var(--grid-cards-border-hover-color);      /* Color del borde */
+    }
 }
 /* --- COLORES PERSONALIZADOS PARA MODO OSCURO --- */
 [data-md-color-scheme="slate"] {
@@ -87,6 +138,18 @@
     --md-code-bg-color: #404454;
   /* Color del texto genérico formateado*/
     --main-text-color: #cbdc38;
+  /* Ejemplo para cambiar fondo y borde de las tarjetas */
+    .grid.cards > ul > li, 
+    .grid.cards > div {
+        background-color: var(--grid-cards-bg-color); /* Color de fondo deseado */
+        border-color: var(--grid-cards-border-color);      /* Color del borde */
+        border-radius: var(--grid-cards-border-radius);
+    }
+    .grid.cards > ul > li:hover, 
+    .grid.cards > div:hover {
+        /*background-color: #92f5eb; /* Color de fondo deseado */ 
+        border-color: var(--grid-cards-border-hover-color);      /* Color del borde */
+    }
 }
 
 /* CREACIÓN DE UN ADMONITION PERSONALIZADO: -------------------------*/
