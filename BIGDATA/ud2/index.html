@@ -1741,7 +1741,7 @@
 </table>
 </div>
 <h2 id="arquitectura-kappa"><span style="color: var(--bda-primary-color);">ARQUITECTURA KAPPA</span></h2>
-<p>Introducida en 2014 por <a href="https://blog.empathybox.com/"><em>Jay Kreps</em></a> en su artículo <a href="https://www.oreilly.com/radar/questioning-the-lambda-architecture/"><em>Questioning the Lambda Architecture</em></a>, señala el principal inconveniente de <em>Lambda</em> —su complejidad, al duplicar la lógica en dos caminos— y propone que <strong>todos los datos fluyan por un único camino</strong>, eliminando la capa <em>batch</em> y dejando solo la de <em>streaming</em>. Para ello, las fuentes se sustituyen por colas de mensajes (por ejemplo, <strong>Apache Kafka</strong>), obteniendo flujos de datos accesibles en tiempo real.</p>
+<p>Introducida en 2014 por <a href="https://blog.empathybox.com/" target="_blank"><em>Jay Kreps</em></a> en su artículo <a href="https://www.oreilly.com/radar/questioning-the-lambda-architecture/" target="_blank"><em>Questioning the Lambda Architecture</em></a>, señala el principal inconveniente de <em>Lambda</em> —su complejidad, al duplicar la lógica en dos caminos— y propone que <strong>todos los datos fluyan por un único camino</strong>, eliminando la capa <em>batch</em> y dejando solo la de <em>streaming</em>. Para ello, las fuentes se sustituyen por colas de mensajes (por ejemplo, <strong>Apache Kafka</strong>), obteniendo flujos de datos accesibles en tiempo real.</p>
 <figure>
     <img alt="Arquitecturas Lambda y Kappa" src="https://welearndata.com/wp-content/uploads/2023/06/imagen-4.png" width="500" />
     <small><figcaption>Arquitecturas Lambda y Kappa</figcaption></small>
@@ -1754,7 +1754,7 @@
 </div>
 <h2 id="arquitectura-por-capas"><span style="color: var(--bda-primary-color);">ARQUITECTURA POR CAPAS</span></h2>
 <p>Además de las dos soluciones que acabamos de conocer, otra forma de diseñar las capas de una arquitectura <em>Big Data</em> consiste en separar las diferentes fases del ciclo de vida del dato en capas diferenciadas.</p>
-<p><a href="https://docs.microsoft.com/en-us/azure/architecture/data-guide/big-data/">La arquitectura por capas</a> da soporte tanto al procesamiento <em>batch</em> como por <em>streaming</em>, y consiste en 6 capas que garantizan un flujo seguro de los datos:</p>
+<p><a href="https://docs.microsoft.com/en-us/azure/architecture/data-guide/big-data/" target="_blank">La arquitectura por capas</a> da soporte tanto al procesamiento <em>batch</em> como por <em>streaming</em>, y consiste en 6 capas que garantizan un flujo seguro de los datos:</p>
 <figure>
     <img alt="Arquitectura por Capas" src="https://res.cloudinary.com/dp56lzsjs/image/upload/v1791762276/arquitecturaCapas_fog77o.png" width="500" />
     <small><figcaption>Arquitectura por Capas</figcaption></small>
@@ -1768,11 +1768,11 @@
 <li>Capa de <strong>visualización</strong>: también conocida como capa de presentación, es con la que interactúan los usuarios.</li>
 </ul>
 <h2 id="tecnologias"><span style="color: var(--bda-primary-color);">TECNOLOGÍAS</span></h2>
-<p>Por ejemplo, la <mark class="critic"><strong>ingesta</strong></mark> de datos hacia las arquitecturas <em>Lambda</em> y <em>Kappa</em> se pueden realizar mediante un sistema de mensajería de colas <em>publish/subscribe</em> como <a href="https://kafka.apache.org/"><ins class="critic"><em>Apache Kafka</em></ins></a> y/o un servicio de flujo de datos como <a href="https://nifi.apache.org/"><ins class="critic"><em>Apache Nifi</em></ins></a>.</p>
-<p>El <mark class="critic"><strong>almacenamiento</strong></mark> de los datos y modelos lo podemos realizar mediante <a href="https://hadoop.apache.org/docs/r3.5.0/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html"><ins class="critic"><em>HDFS</em></ins></a> o <a href="https://aws.amazon.com/es/s3/?trk=aebc39a1-139c-43bb-8354-211ac811b83a&amp;sc_channel=ps&amp;ef_id=EAIaIQobChMIkuOZgJWzlwMV9quDBx3DowlhEAAYASAAEgIN8fD_BwE:G:s&amp;gads_camp=23523528411&amp;gads_ag=189966174142&amp;gads_ad=795841362691&amp;gads_kw=amazon%20s3&amp;gads_matchtype=e&amp;gads_network=g&amp;gads_device=c&amp;gads_geo=9207351&amp;gad_campaignid=23523528411&amp;gbraid=0AAAAADjHtp_skX1Cn0I2n3nT3WEyqI0uv&amp;gclid=EAIaIQobChMIkuOZgJWzlwMV9quDBx3DowlhEAAYASAAEgIN8fD_BwE"><ins class="critic"><em>S3</em></ins></a>.</p>
-<p>Dentro de una arquitectura <em>Lambda</em>, en el sistema batch, mediante algoritmos <a href="https://hadoop.apache.org/docs/r3.5.0/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html"><ins class="critic"><em>MapReduce de Hadoop</em></ins></a> o consultas <a href="https://hive.apache.org/"><ins class="critic"><em>Hive</em></ins></a> podemos generar modelos. Para la capa de <em>streaming</em> (tanto para Lambda como Kappa) se pueden utilizar otras tecnologías como <a href="http://storm.apache.org/"><ins class="critic"><em>Apache Storm</em></ins></a>, <a href="http://samza.apache.org/"><ins class="critic"><em>Apache Samza</em></ins></a> o <a href="https://spark.apache.org/streaming/"><ins class="critic"><em>Spark Streaming</em></ins></a> para modificar modelos de forma incremental.</p>
-<p>De forma alternativa, <a href="https://spark.apache.org/"><ins class="critic"><em>Apache Spark</em></ins></a> se puede utilizar como plataforma común para desarrollar las capas <em>batch</em> y <em>streaming</em> de la arquitectura <em>Lambda</em>. De ahí su amplia aceptación y uso a día de hoy en la industria, se codifica una vez y se comparte en ambas capas.</p>
-<p>La capa de <mark class="critic"><strong>serving</strong></mark> se puede implementar mediante una base de datos NoSQL como pueda ser <a href="https://hbase.apache.org/"><ins class="critic"><em>Apache HBase</em></ins></a>, <a href="https://www.mongodb.com/"><ins class="critic"><em>MongoDB</em></ins></a>, <a href="https://redis.com/"><ins class="critic"><em>Redis</em></ins></a> o <a href="https://aws.amazon.com/es/dynamodb/?trk=74170a9b-a5a7-4ce1-bcfe-f169435ed8a4&amp;sc_channel=ps&amp;ef_id=EAIaIQobChMIrKj865OzlwMVE49QBh1oTTCEEAAYASAAEgLl1PD_BwE:G:s&amp;gads_camp=23523528411&amp;gads_ag=189966174182&amp;gads_ad=795841362694&amp;gads_kw=aws%20dynamodb&amp;gads_matchtype=e&amp;gads_network=g&amp;gads_device=c&amp;gads_geo=9207351&amp;gad_campaignid=23523528411&amp;gbraid=0AAAAADjHtp_skX1Cn0I2n3nT3WEyqI0uv&amp;gclid=EAIaIQobChMIrKj865OzlwMVE49QBh1oTTCEEAAYASAAEgLl1PD_BwE"><ins class="critic"><em>AWS Dynamo DB</em></ins></a>. También se pueden utilizar motores de consultas como <a href="https://drill.apache.org/"><ins class="critic"><em>Apache Drill</em></ins></a> o <a href="https://prestodb.io/"><ins class="critic"><em>Presto</em></ins></a>.</p>
+<p>Por ejemplo, la <mark class="critic"><strong>ingesta</strong></mark> de datos hacia las arquitecturas <em>Lambda</em> y <em>Kappa</em> se pueden realizar mediante un sistema de mensajería de colas <em>publish/subscribe</em> como <a href="https://kafka.apache.org/" target="_blank"><ins class="critic"><em>Apache Kafka</em></ins></a> y/o un servicio de flujo de datos como <a href="https://nifi.apache.org/" target="_blank"><ins class="critic"><em>Apache Nifi</em></ins></a>.</p>
+<p>El <mark class="critic"><strong>almacenamiento</strong></mark> de los datos y modelos lo podemos realizar mediante <a href="https://hadoop.apache.org/docs/r3.5.0/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank"><ins class="critic"><em>HDFS</em></ins></a> o <a href="https://aws.amazon.com/es/s3/?trk=aebc39a1-139c-43bb-8354-211ac811b83a&amp;sc_channel=ps&amp;ef_id=EAIaIQobChMIkuOZgJWzlwMV9quDBx3DowlhEAAYASAAEgIN8fD_BwE:G:s&amp;gads_camp=23523528411&amp;gads_ag=189966174142&amp;gads_ad=795841362691&amp;gads_kw=amazon%20s3&amp;gads_matchtype=e&amp;gads_network=g&amp;gads_device=c&amp;gads_geo=9207351&amp;gad_campaignid=23523528411&amp;gbraid=0AAAAADjHtp_skX1Cn0I2n3nT3WEyqI0uv&amp;gclid=EAIaIQobChMIkuOZgJWzlwMV9quDBx3DowlhEAAYASAAEgIN8fD_BwE" target="_blank"><ins class="critic"><em>S3</em></ins></a>.</p>
+<p>Dentro de una arquitectura <em>Lambda</em>, en el sistema batch, mediante algoritmos <a href="https://hadoop.apache.org/docs/r3.5.0/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html" target="_blank"><ins class="critic"><em>MapReduce de Hadoop</em></ins></a> o consultas <a href="https://hive.apache.org/" target="_blank"><ins class="critic"><em>Hive</em></ins></a> podemos generar modelos. Para la capa de <em>streaming</em> (tanto para Lambda como Kappa) se pueden utilizar otras tecnologías como <a href="http://storm.apache.org/"><ins class="critic"><em>Apache Storm</em></ins></a>, <a href="http://samza.apache.org/"><ins class="critic"><em>Apache Samza</em></ins></a> o <a href="https://spark.apache.org/streaming/" target="_blank"><ins class="critic"><em>Spark Streaming</em></ins></a> para modificar modelos de forma incremental.</p>
+<p>De forma alternativa, <a href="https://spark.apache.org/" target="_blank"><ins class="critic"><em>Apache Spark</em></ins></a> se puede utilizar como plataforma común para desarrollar las capas <em>batch</em> y <em>streaming</em> de la arquitectura <em>Lambda</em>. De ahí su amplia aceptación y uso a día de hoy en la industria, se codifica una vez y se comparte en ambas capas.</p>
+<p>La capa de <mark class="critic"><strong>serving</strong></mark> se puede implementar mediante una base de datos NoSQL como pueda ser <a href="https://hbase.apache.org/" target="_blank"><ins class="critic"><em>Apache HBase</em></ins></a>, <a href="https://www.mongodb.com/" target="_blank"><ins class="critic"><em>MongoDB</em></ins></a>, <a href="https://redis.com/" target="_blank"><ins class="critic"><em>Redis</em></ins></a> o <a href="https://aws.amazon.com/es/dynamodb/?trk=74170a9b-a5a7-4ce1-bcfe-f169435ed8a4&amp;sc_channel=ps&amp;ef_id=EAIaIQobChMIrKj865OzlwMVE49QBh1oTTCEEAAYASAAEgLl1PD_BwE:G:s&amp;gads_camp=23523528411&amp;gads_ag=189966174182&amp;gads_ad=795841362694&amp;gads_kw=aws%20dynamodb&amp;gads_matchtype=e&amp;gads_network=g&amp;gads_device=c&amp;gads_geo=9207351&amp;gad_campaignid=23523528411&amp;gbraid=0AAAAADjHtp_skX1Cn0I2n3nT3WEyqI0uv&amp;gclid=EAIaIQobChMIrKj865OzlwMVE49QBh1oTTCEEAAYASAAEgLl1PD_BwE" target="_blank"><ins class="critic"><em>AWS Dynamo DB</em></ins></a>. También se pueden utilizar motores de consultas como <a href="https://drill.apache.org/" target="_blank"><ins class="critic"><em>Apache Drill</em></ins></a> o <a href="https://prestodb.io/" target="_blank"><ins class="critic"><em>Presto</em></ins></a>.</p>
 <h2 id="el-stack-moderno-de-datos"><span style="color: var(--bda-primary-color);">EL STACK MODERNO DE DATOS</span></h2>
 <p>El principal objetivo de una arquitectura de datos moderna es <strong>unificar las diferentes fuentes en un único lugar que sea la fuente veraz</strong> de nuestros datos, y hacerlo con herramientas desacopladas que podamos sustituir según la necesidad.</p>
 <p>Rara vez <strong>una arquitectura</strong> se construye sobre una única herramienta; <strong>se combinan piezas especializadas</strong> por cada fase del ciclo de vida. Este es el mapa de las herramientas que trabajaremos en el curso, situadas sobre las fases que ya conocemos:</p>
@@ -1790,7 +1790,7 @@
 </tr>
 <tr>
 <td>Ingesta (EL)</td>
-<td><a href="https://dlthub.com/">dlt</a>, Kafka Connect, Debezium (CDC)</td>
+<td><a href="https://dlthub.com/" target="_blank">dlt</a>, Kafka Connect, Debezium (CDC)</td>
 </tr>
 <tr>
 <td>Almacenamiento</td>
@@ -1810,7 +1810,7 @@
 </tr>
 <tr>
 <td>Calidad y gobierno</td>
-<td><a href="https://www.getdbt.com/">dbt</a> tests, Great Expectations</td>
+<td><a href="https://www.getdbt.com/" target="_blank">dbt</a> tests, Great Expectations</td>
 </tr>
 <tr>
 <td>Consumo</td>
@@ -1820,12 +1820,12 @@
 </table>
 <div class="admonition info">
 <p class="admonition-title">Informe Matt Turck (MAD Landscape)</p>
-<p>Cada año, <em>Matt Turck</em> publica un informe con la amalgama de herramientas y tecnologías del escenario de <em>Machine Learning</em>, <em>AI</em> y <em>Data</em>, que recomendamos consultar para hacerse una idea de lo vivo que está el sector: <a href="https://mattturck.com/landscape/">https://mattturck.com/landscape/</a></p>
+<p>Cada año, <em>Matt Turck</em> publica un informe con la amalgama de herramientas y tecnologías del escenario de <em>Machine Learning</em>, <em>AI</em> y <em>Data</em>, que recomendamos consultar para hacerse una idea de lo vivo que está el sector: <a href="https://mattturck.com/landscape/" target="_blank">https://mattturck.com/landscape/</a></p>
 </div>
 <p>A lo largo del bloque iremos rellenando este mapa con las manos: en las próximas sesiones almacenaremos datos en <em>object storage</em>, los consultaremos con SQL sobre el propio lago, los ingestaremos con <em>dlt</em> y los transformaremos con <em>dbt</em>.</p>
 <blockquote>
-<p><small><em>Fuentes: <a href="https://aitor-medrano.github.io/iabd/">Aitor Medrano</a></em>,</small>
-<small><em><a href="https://aprenderbigdata.com/">Aprender BigData</a></em></small>
+<p><small><em>Fuentes: <a href="https://aitor-medrano.github.io/iabd/" target="_blank">Aitor Medrano</a></em>,</small>
+<small><em><a href="https://aprenderbigdata.com/" target="_blank">Aprender BigData</a></em></small>
 </p>
 </blockquote>
 

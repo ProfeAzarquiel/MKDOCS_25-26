@@ -1928,7 +1928,7 @@
 <h5 id="etl-vs-elt">ETL vs ELT</h5>
 <p>Los procesos <strong>ETL</strong> (<em>extract, transform, load</em>) extraen los datos de las fuentes, los limpian y transforman, y solo entonces los cargan en el destino (normalmente un <em>data warehouse</em>). Es el enfoque clásico: los datos no están disponibles hasta que se han transformado.</p>
 <p>Con la llegada del almacenamiento barato y escalable y de los motores que transforman <em>in situ</em>, el mercado se ha movido hacia <strong>ELT</strong> (<em>extract, load, transform</em>): primero se <strong>cargan los datos en crudo</strong> en el lago o <em>lakehouse</em> y la transformación se realiza después, ya dentro del propio sistema de destino.</p>
-<p>En este bloque <strong>adoptaremos el enfoque ELT</strong>: cargaremos en crudo con <a href="https://dlthub.com/">dlt</a>, almacenaremos sobre object storage y transformaremos con SQL y dbt.</p>
+<p>En este bloque <strong>adoptaremos el enfoque ELT</strong>: cargaremos en crudo con <a href="https://dlthub.com/" target="_blank">dlt</a>, almacenaremos sobre object storage y transformaremos con SQL y dbt.</p>
 <figure>
     <img alt="ETL vs ELT" src="https://aitor-medrano.github.io/iabd/de/images/02etl-vs-elt.svg" width="600" />
     <small><figcaption>ETL vs ELT</figcaption></small>
@@ -1940,7 +1940,7 @@
 <h4 id="transformacion">TRANSFORMACIÓN</h4>
 <p>Es donde se introduce la lógica de negocio. Podemos desglosarla en:</p>
 <ul>
-<li><strong>Consultas</strong>, siendo muy importante saber leer el plan de ejecución y cómo funciona el optimizador de consultas de cada motor. Como recomendaciones: <strong>evitar <em>joins</em></strong> innecesarios, <strong>utilizar</strong> <a href="https://learnsql.es/blog/cuando-debo-utilizar-una-expresion-de-tabla-comun-cte/"><strong>CTE</strong></a> en lugar de subconsultas, y <strong>evitar</strong> los <strong><em>full scan</em></strong> (consultas que escanean todos los datos) filtrando filas y columnas.</li>
+<li><strong>Consultas</strong>, siendo muy importante saber leer el plan de ejecución y cómo funciona el optimizador de consultas de cada motor. Como recomendaciones: <strong>evitar <em>joins</em></strong> innecesarios, <strong>utilizar</strong> <a href="https://learnsql.es/blog/cuando-debo-utilizar-una-expresion-de-tabla-comun-cte/" target="_blank"><strong>CTE</strong></a> en lugar de subconsultas, y <strong>evitar</strong> los <strong><em>full scan</em></strong> (consultas que escanean todos los datos) filtrando filas y columnas.</li>
 <li><strong>Modelado de datos</strong>, para introducir la lógica de negocio en los datos, mediante la definición de los modelos conceptuales, lógicos y físicos (sean relacionales o no), así como la normalización o denormalización de las tablas resultantes. Tambien conviene conocer el <strong>modelado multidimensional</strong>, ya sea la técnica de <strong><em>Kimball</em></strong> (mediante modelos en estrella con una tabla central de hechos y varias tablas para las dimensiones) o <strong><em>Data Vault</em></strong> (mediante Hubs, enlaces y satélites) para diseñar la estructura de nuestro data warehouse o data lakehouse.</li>
 <li><strong>Transformaciones</strong> propiamente dichas, que unen el resultado de las consultas y los modelos de datos para generar valor y que podamos ver los datos transformados como una única entidad. Podemos emplear herramientas basadas en SQL (como <em>dbt</em> o <em>Spark SQL</em>) o en código (<em>Pandas</em>, <em>PySpark</em>).</li>
 </ul>
@@ -1952,7 +1952,7 @@
 <li>La <strong>analítica operacional</strong>, que utiliza los datos para tomar medidas inmediatas. Mientras que la analítica de negocio se centra en tomar medidas a medio plazo y utilizando datos a más largo plazo, en la analítica operacional, nos interesan los datos más recientes que pueden alertar de un problema.</li>
 <li>La <strong>analítica embebida</strong>, entendida como la que se ofrece en las aplicaciones de datos para que usuarios externos obtengan mayor valor de la aplicación. Por ejemplo, la monitorización de las instancias de EC2 nos permite tomar decisiones a los usuarios sobre si debemos incrementar o reducir el tipo de instancia necesaria.</li>
 <li><strong>Machine Learning:</strong> Si los datos que alimentan un entrenamiento ML son malos, el modelo será malo. Por ende, la elección de las características de entrada a los modelos ML debe seguir todas las fases del ciclo de vida del dato.</li>
-<li><strong>Reverse ETL</strong>: en pocas palabras, consiste en volver a cargar los datos transformados en una fuente de origen. Por ejemplo, en el <a href="https://piafplara.es/"><em>proyecto Lara</em></a>, si con el audio generado a partir de una nueva muestra, el usuario nos dice que la predicción ha sido correcta, podemos insertar el nuevo audio etiquetado en la fuente de origen.</li>
+<li><strong>Reverse ETL</strong>: en pocas palabras, consiste en volver a cargar los datos transformados en una fuente de origen. Por ejemplo, en el <a href="https://piafplara.es/" target="_blank"><em>proyecto Lara</em></a>, si con el audio generado a partir de una nueva muestra, el usuario nos dice que la predicción ha sido correcta, podemos insertar el nuevo audio etiquetado en la fuente de origen.</li>
 </ul>
 <details class="question">
 <summary><strong>¿Cuánto de ML debe saber un Ingeniero de Datos?</strong></summary>
@@ -2007,8 +2007,8 @@
 </ul>
 <p>También es recomendable tener soltura en algún lenguaje de programación, por ejemplo, <strong>Python</strong>. Un ingeniero de datos no es un desarrollador de software, pero sí que debe codificar <em>scripts</em> o pequeños programas que faciliten su día a día. Otro lenguaje que tiene cierta importancia dentro de la ingeniería de datos es <strong>Scala</strong>.</p>
 <blockquote>
-<p><small><em>Fuentes: <a href="https://aitor-medrano.github.io/iabd/">Aitor Medrano</a></em>,</small>
-<small><em><a href="https://www.dataprix.com/blog-it/dataprix/oltp-vs-olap-patrones-y-anti-patrones-consistencia-latencia-y-particionado">DataPrix</a></em></small>
+<p><small><em>Fuentes: <a href="https://aitor-medrano.github.io/iabd/" target="_blank">Aitor Medrano</a></em>,</small>
+<small><em><a href="https://www.dataprix.com/blog-it/dataprix/oltp-vs-olap-patrones-y-anti-patrones-consistencia-latencia-y-particionado" target="_blank">DataPrix</a></em></small>
 </p>
 </blockquote>
 

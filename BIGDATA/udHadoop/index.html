@@ -1410,7 +1410,7 @@
 <p>Si queremos empezar a utilizar Hadoop y todo su ecosistema, disponemos de diversas distribuciones con toda la arquitectura, herramientas y configuración ya preparadas. Las más reseñables son:</p>
 <ul>
 <li><strong>EMR de AWS</strong> (Amazon Elastic MapReduce)</li>
-<li><strong>CDP de Cloudera</strong>: es la evolución de CDH y HDP (antiguas distribuciones de código abierto de Apache Hadoop y otros proyectos relacionados, actualmente sin soporte). Cloudera ofrecia estas distribuciones de forma gratuita, cosa que ya no sucede con CDP, pero aún se puede descargar la MV de HDP en el siguiente <a href="https://archive.cloudera.com/hwx-sandbox/hdp/hdp-3.0.1/HDP_3.0.1_virtualbox_181205.ova">enlace</a>.</li>
+<li><strong>CDP de Cloudera</strong>: es la evolución de CDH y HDP (antiguas distribuciones de código abierto de Apache Hadoop y otros proyectos relacionados, actualmente sin soporte). Cloudera ofrecia estas distribuciones de forma gratuita, cosa que ya no sucede con CDP, pero aún se puede descargar la MV de HDP en el siguiente <a href="https://archive.cloudera.com/hwx-sandbox/hdp/hdp-3.0.1/HDP_3.0.1_virtualbox_181205.ova" target="_blank">enlace</a>.</li>
 <li><strong>Azure HDInsight</strong> de Microsoft.</li>
 <li><strong>DataProc</strong> de Google.</li>
 </ul>
@@ -1468,7 +1468,7 @@
 <h4 id="limitaciones"><strong>Limitaciones</strong></h4>
 <p>MapReduce es la implementación básica de un framework de procesamiento en paralelo para cargas big data, por lo que al final tiene ciertas limitaciones como, por ejemplo, hasta que la fase map completa su procesamiento, los reducers no empiezan a ejecutarse; o que no se puede controlar su orden de ejecución.</p>
 <p>Es por ello, que existen alternativas como Apache Spark, Apache Hive o Pig; las cuales mantienen los principales puntos de MapReduce, pero son capaces de usar HDFS de manera más eficiente. La que resalta más entre el resto es <strong>SPARK</strong>, la cual veremos más adelante.</p>
-<p><em><small><a href="https://aitor-medrano.github.io/iabd/">Fuente 1: Aitor Medrano</a></small></em>, <em><small><a href="https://aprenderbigdata.com/hadoop/">Fuente 2: Oscar Fernández</a></small></em></p>
+<p><em><small><a href="https://aitor-medrano.github.io/iabd/" target="_blank">Fuente 1: Aitor Medrano</a></small></em>, <em><small><a href="https://aprenderbigdata.com/hadoop/" target="_blank">Fuente 2: Oscar Fernández</a></small></em></p>
 <h2 id="despliegue-cluster-hadoop-con-ambari-y-docker">DESPLIEGUE CLÚSTER HADOOP CON AMBARI Y DOCKER</h2>
 <figure>
     <img alt="Apache Ambari" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Apache_Ambari_Logo.svg/2560px-Apache_Ambari_Logo.svg.png" width="500" />
@@ -1839,7 +1839,7 @@ ambari-agent start
 <div class="language-text highlight"><pre><span></span><code>con ambari_server
 hadoop fs -ls /
 </code></pre></div>
-<p><em><small><a href="https://ambari.apache.org/docs/3.0.0/quick-start/environment-setup/docker-environment-setup/">Fuente 1: Ambari Docker Environmet Setup</a></small></em> , <em><small><a href="https://ambari.apache.org/docs/3.0.0/quick-start/installation-guide">Fuente 2: Ambari Installation Guide</a></small></em> , <em><small><a href="https://youtu.be/Ao95xAGsA20">Fuente 3: Edward Viaene</a></small></em></p>
+<p><em><small><a href="https://ambari.apache.org/docs/3.0.0/quick-start/environment-setup/docker-environment-setup/" target="_blank">Fuente 1: Ambari Docker Environmet Setup</a></small></em> , <em><small><a href="https://ambari.apache.org/docs/3.0.0/quick-start/installation-guide" target="_blank">Fuente 2: Ambari Installation Guide</a></small></em> , <em><small><a href="https://youtu.be/Ao95xAGsA20" target="_blank">Fuente 3: Edward Viaene</a></small></em></p>
 <h2 id="despliegue-cluster-hadoop-sobre-docker">DESPLIEGUE CLÚSTER HADOOP SOBRE DOCKER</h2>
 <figure>
     <img alt="Hadoop over Docker" src="https://miro.medium.com/v2/resize:fit:1200/0*yJCSYpFpPk_VU2zi.png" width="450" />
@@ -1889,10 +1889,10 @@ docker compose up -d
     <small><figcaption>Captura Nodemanager</figcaption></small>
 </figure>
 <p>Y con esto tendríamos nuestro clúster Hadoop listo. Que aunque sea un clúster simulado, pues los nodos corren como servicios dentro de una única máquina física, estós se configuran para actuar como nodos de un clúster distribuido, permitiendo ejecutar aplicaciones MapReduce y usar HDFS.</p>
-<p><em><small><a href="https://escueladeinformatica.com/">Fuente 1: Escuela de Informática</a></small></em>, <em><small><a href="https://www.tutorialspoint.com/hadoop/index.htm">Fuente 2: Tutorials Point</a></small></em></p>
+<p><em><small><a href="https://escueladeinformatica.com/" target="_blank">Fuente 1: Escuela de Informática</a></small></em>, <em><small><a href="https://www.tutorialspoint.com/hadoop/index.htm" target="_blank">Fuente 2: Tutorials Point</a></small></em></p>
 <h2 id="practica-1-hola-mundo-en-hadoop"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> PRÁCTICA 1: HOLA MUNDO EN HADOOP</h2>
 <p>El primer ejemplo que suele realizarse como Hola Mundo en Hadoop, es una aplicación que cuente el número de ocurrencias de cada palabra en un documento de texto.</p>
-<p>En este caso, nosotros vamos a <strong>contar las palabras de El Quijote</strong>, el cual podemos descargar en formato de texto plano, desde el siguiente <a href="https://gist.githubusercontent.com/jsdario/6d6c69398cb0c73111e49f1218960f79/raw/8d4fc4548d437e2a7203a5aeeace5477f598827d/el_quijote.txt">enlace de GitHub</a> <img alt="📥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e5.svg" title=":inbox_tray:" />.</p>
+<p>En este caso, nosotros vamos a <strong>contar las palabras de El Quijote</strong>, el cual podemos descargar en formato de texto plano, desde el siguiente <a href="https://gist.githubusercontent.com/jsdario/6d6c69398cb0c73111e49f1218960f79/raw/8d4fc4548d437e2a7203a5aeeace5477f598827d/el_quijote.txt" target="_blank">enlace de GitHub</a> <img alt="📥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e5.svg" title=":inbox_tray:" />.</p>
 <p>Si se ha descargado en nuestra carpeta de Descargas, accedemos a ella desde el terminal y lo copiamos en el directorio raíz del nodo Maestro de HDFS. Luego creamos una carpeta personal dentro de HDFS y ahí moveremos nuestro fichero de texto. Los comandos serían estos:</p>
 <div class="language-text highlight"><pre><span></span><code>cd ~/Descargas
 
@@ -2006,12 +2006,12 @@ apt-get install python3
 -output /user/profe/salidaPY \
 -mapper ./mapper.py -reducer ./reducer.py
 </code></pre></div>
-<p><em><small><a href="https://aitor-medrano.github.io/iabd/hadoop/hadoop.html">Fuente: Aitor Medrano</a></small></em></p>
+<p><em><small><a href="https://aitor-medrano.github.io/iabd/hadoop/hadoop.html" target="_blank">Fuente: Aitor Medrano</a></small></em></p>
 <h2 id="practica-2-trabajando-con-hdfs"><img alt="🎮" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ae.svg" title=":video_game:" /> PRÁCTICA 2: TRABAJANDO CON HDFS</h2>
-<p><a href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html">Guía oficial comandos HDFS</a></p>
-<p><a href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html">Guía oficial shell FS Hadoop</a></p>
+<p><a href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html" target="_blank">Guía oficial comandos HDFS</a></p>
+<p><a href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html" target="_blank">Guía oficial shell FS Hadoop</a></p>
 <h3 id="_1"></h3>
-<p><em><small><a href="https://aitor-medrano.github.io/iabd/hadoop/hdfs.html">Fuente: Aitor Medrano</a></small></em></p>
+<p><em><small><a href="https://aitor-medrano.github.io/iabd/hadoop/hdfs.html" target="_blank">Fuente: Aitor Medrano</a></small></em></p>
 
 
 

@@ -1874,7 +1874,7 @@ kubectl get secret -n monitoring grafana-admin-credentials -o jsonpath=&quot;{.d
 kubectl get secret -n monitoring grafana-admin-credentials -o jsonpath=&quot;{.data.admin-password}&quot; | base64 --decode
 </code></pre></div>
 </div>
-<p>Descargamos el archivo <a href="https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml">values.yaml</a> <img alt="📥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e5.svg" title=":inbox_tray:" /> desde el repositorio de Prometheus. Este archivo contiene todos los parámentros que podemos configurar dentro de la herramienta (nombre de los elementos, servicios habilitados, permisos...):</p>
+<p>Descargamos el archivo <a href="https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml" target="_blank">values.yaml</a> <img alt="📥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e5.svg" title=":inbox_tray:" /> desde el repositorio de Prometheus. Este archivo contiene todos los parámentros que podemos configurar dentro de la herramienta (nombre de los elementos, servicios habilitados, permisos...):</p>
 <div class="language-text highlight"><pre><span></span><code>curl -O https://raw.githubusercontent.com/prometheus-community/helm-charts/refs/heads/main/charts/kube-prometheus-stack/values.yaml
 </code></pre></div>
 <p>Y lo personalizamos para que Grafana coja las credenciales que hemos creado más arriba:</p>
