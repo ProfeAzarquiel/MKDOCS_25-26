@@ -128,7 +128,23 @@ pre {
 }
 
 /* --- COLORES PERSONALIZADOS PARA MODO CLARO --- */
+
 [data-md-color-scheme="default"] {
+  /* Cambia el color de fondo y del icono del botón Volver Arriba */
+    .md-top {
+      background-color: var(--main-text-color);
+      /* Color de fondo */
+      color: #ffffff;
+      /* Color de la flecha/texto */
+    }
+  
+    /* Cambia el color cuando el usuario pasa el ratón por encima (Hover) */
+    .md-top:hover {
+      background-color: var(--site-accent-color);
+      /* Color al hacer hover */
+      color: #ffffff;
+    }
+
   /* Color para los cuadros de código fuente en modo CLARO:*/
     --md-code-bg-color: #e4e4e4;
   /* Color del texto genérico formateado*/
@@ -148,6 +164,20 @@ pre {
 }
 /* --- COLORES PERSONALIZADOS PARA MODO OSCURO --- */
 [data-md-color-scheme="slate"] {
+  /* Cambia el color de fondo y del icono del botón Volver Arriba */
+    .md-top {
+      background-color: var(--site-main-color);
+      /* Color de fondo */
+      color: #1e2129;
+      /* Color de la flecha/texto */
+    }
+  
+    /* Cambia el color cuando el usuario pasa el ratón por encima (Hover) */
+    .md-top:hover {
+      background-color: var(--site-accent-color);
+      /* Color al hacer hover */
+      color: #ffffff;
+    }
   /* Color para los cuadros de código fuente en modo CLARO:*/
     --md-code-bg-color: #404454;
   /* Color del texto genérico formateado*/
