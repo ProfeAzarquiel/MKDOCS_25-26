@@ -18,7 +18,7 @@
         <link rel="prev" href="../ud2/">
       
       
-        <link rel="next" href="../../CLOUD/indexc/">
+        <link rel="next" href="../ud4/">
       
       
         
@@ -298,6 +298,8 @@
   
     
     
+      
+        
       
         
       
@@ -624,6 +626,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4. SQL Analítico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -639,6 +669,8 @@
   
     
     
+      
+        
       
         
       
@@ -860,6 +892,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLOUD/ud5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5. Orquestación de contenedores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -875,6 +935,8 @@
   
     
     
+      
+        
       
         
       
@@ -1053,6 +1115,34 @@
     
   
     UD3. Implantación de Multimedia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/ud4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4. Frameworks CSS
   
 
     
@@ -1266,6 +1356,8 @@
       
         
       
+        
+      
     
     
     
@@ -1405,6 +1497,34 @@
     
   
     UD2. Análisis de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYTHON/ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Creación de APIs REST
   
 
     
@@ -2627,9 +2747,9 @@ Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos,
 <p>Antes hemos visto que <em>Parquet</em> almacena los datos por columnas, y que cada columna se divide en <em>row groups</em> y páginas, y que el pie del fichero contiene estadísticas de cada columna. Vamos a ver para qué sirven realmente, porque son las que permiten que las consultas sobre <em>Parquet</em> sean tan rápidas (y baratas), leyendo solo lo necesario, gracias a dos optimizaciones que aplican automáticamente motores como <em>Spark</em>, <em>Athena</em>, <em>DuckDB</em> o el propio <em>PyArrow</em>:</p>
 <ul>
 <li><strong><em>Projection pushdown</em></strong> (poda de columnas): como cada columna se almacena de forma contigua, el motor sólo lee del disco las columnas que aparecen en la consulta. Si nuestro fichero tiene 30 columnas y sólo consultamos 2, nos ahorramos leer las otras 28. Es la optimización que veíamos en la <a href="https://aitor-medrano.github.io/iabd/de/formatos.html#el-tamano-importa">comparativa de costes</a> del principio de la sesión.</li>
-<li><strong><em>Predicate pushdown</em></strong> (filtrado anticipado o <em>data skipping</em>): para cada <em>row group</em>, el pie almacena el <strong>mínimo, el máximo y el número de nulos</strong> de cada columna. Antes de leer los datos, el motor compara el filtro de la consulta con estas estadísticas y descarta los <em>row groups</em> que no pueden contener resultados.<br />
-    Volvamos a la salida anterior y quedémonos sólo con <code>Country</code>:</li>
+<li><strong><em>Predicate pushdown</em></strong> (filtrado anticipado o <em>data skipping</em>): para cada <em>row group</em>, el pie almacena el <strong>mínimo, el máximo y el número de nulos</strong> de cada columna. Antes de leer los datos, el motor compara el filtro de la consulta con estas estadísticas y descarta los <em>row groups</em> que no pueden contener resultados.</li>
 </ul>
+<p>Volvamos a la salida anterior y quedémonos sólo con <code>Country</code>:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>RG0<span class="w"> </span>·<span class="w"> </span>Country<span class="w"> </span>·<span class="w"> </span><span class="nv">min</span><span class="o">=</span>Canada<span class="w">  </span>·<span class="w"> </span><span class="nv">max</span><span class="o">=</span>France
 </span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>RG1<span class="w"> </span>·<span class="w"> </span>Country<span class="w"> </span>·<span class="w"> </span><span class="nv">min</span><span class="o">=</span>France<span class="w">  </span>·<span class="w"> </span><span class="nv">max</span><span class="o">=</span>Germany
 </span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>RG2<span class="w"> </span>·<span class="w"> </span>Country<span class="w"> </span>·<span class="w"> </span><span class="nv">min</span><span class="o">=</span>Germany<span class="w"> </span>·<span class="w"> </span><span class="nv">max</span><span class="o">=</span>Mexico
@@ -2642,8 +2762,8 @@ Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos,
 <li><strong>RG2</strong> va de <code>Germany</code> a <code>Mexico</code>: puede contenerlo. Se lee.</li>
 <li><strong>RG3</strong> es todo <code>Mexico</code>, y <code>Germany</code> es anterior: descartado.</li>
 </ul>
-<p>Se leen 2 de los 4 <em>row groups</em>: 420.574 filas de 841.147. La mitad del fichero no se llega a tocar, y lo único que hemos leído para decidirlo son cuatro líneas del pie.</p>
-<p>De hecho, si repetimos este mismo razonamiento para la columna <code>Date</code>, comprobaremos que en el mismo fichero, con el mismo formato y la misma codificación, el filtrado anticipado funciona a la perfección para <code>Country</code> y no sirve absolutamente para nada para <code>Date</code>. La diferencia no está en <em>Parquet</em>: está en que el fichero se escribió <strong>ordenado por <code>**Country**</code></strong>, y por tanto cada <em>row group</em> contiene un rango reducido de países... pero todo el rango de fechas.</p>
+<p>Se leen 2 de los 4 <em>row groups</em>: 420.574 filas de 841.147. La mitad del fichero no se llega a tocar, y lo único que hemos leído para decidirlo son cuatro líneas del <em>Footer</em>.</p>
+<p>De hecho, si repetimos este mismo razonamiento para la columna <code>Date</code>, comprobaremos que en el mismo fichero, con el mismo formato y la misma codificación, el filtrado anticipado funciona a la perfección para <code>Country</code> y no sirve absolutamente para nada para <code>Date</code>. La diferencia no está en <em>Parquet</em>: está en que el fichero se escribió <strong>ordenado por <code>Country</code></strong>, y por tanto cada <em>row group</em> contiene un rango reducido de países... pero todo el rango de fechas.</p>
 <figure>
     <img alt="Ejemplo Pushdown Parquet" src="https://res.cloudinary.com/dp56lzsjs/image/upload/v1793722520/formatos-pushdown_wfhxzo.svg" width="700" />
     <small><figcaption>El motor descarta los row groups cuyas estadísticas min/max no satisfacen el filtro</figcaption></small>
@@ -2818,7 +2938,7 @@ Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos,
 <p class="admonition-title">RESUMIENDO, ¿QUÉ FORMATO ELEGIR?</p>
 <ul>
 <li>¿Lo va a leer un humano o una hoja de cálculo? <strong>CSV</strong>.</li>
-<li>¿Es un fichero intermedio dentro del mismo <em>pipeline</em>? <strong>Arrow</strong>.</li>
+<li>¿Es un fichero intermedio dentro del mismo <em>pipeline</em>? <strong>Feather</strong> (Arrow).</li>
 <li>¿Viaja entre sistemas que evolucionan por separado (típicamente <em>Kafka</em>)? <strong>Avro</strong>.</li>
 <li>¿Es para analítica? <strong>Parquet con zstd</strong>.</li>
 </ul>

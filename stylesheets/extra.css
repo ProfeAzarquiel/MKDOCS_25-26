@@ -67,13 +67,12 @@
     --grid-cards-border-hover-color: #00756A;
 }
 
-/*PERSONALIZAR EL ANCHO DE LOS CONTENIDOS PRINCIPALES (PARA REDUCIR EL ESPACIO QUE OCUPAN LOS MENUS NAV Y TOC) */
-.md-grid {
+
+.md-grid {  /*PERSONALIZAR EL ANCHO DE LOS CONTENIDOS PRINCIPALES (PARA REDUCIR EL ESPACIO QUE OCUPAN LOS MENUS NAV Y TOC) */
   max-width: 1440px; 
 }
 
-/* Cambiar el estilo de las CITAS en bloque */
-.md-typeset blockquote {
+.md-typeset blockquote {  /* Cambiar el estilo de las CITAS en bloque */
   color: var(--general-black-color);
   border-left: .4rem solid var(--site-accent-color) !important;
   background-color: var(--site-accent-color-soft);
@@ -81,19 +80,20 @@
   border-radius: var(--grid-cards-border-radius);
 }
 
-/* Personalizar el contenedor del BLOQUES DE CÓDIGO */
-pre {
+pre {   /* Personalizar el contenedor de los BLOQUES DE CÓDIGO */
   border: 1px dashed #cccccc;
   border-radius: 10px;
   overflow: hidden;  /* Evita que el fondo del código sobresalga de las esquinas redondeadas */
 }
 
-/* Color de fondo de las etiquetas de pestañas */
-/* .md-typeset .tabbed-labels > label {
-  background-color: white;
-  border-radius: 8px;
-  border: 1px solid var(--grid-cards-border-color);
-} */
+.md-typeset .tabbed-labels > label {  /* Tamaño de texto de las PESTAÑAS en un Content Tab */
+  font-size: 0.7rem;
+}
+
+.md-typeset .tabbed-labels {
+    border-top: none !important;
+    box-shadow: none !important;
+}
 
 /* Color de LA BARRA de la PESTAÑA activa o hover */
 .js .md-typeset .tabbed-labels:before {
@@ -106,7 +106,7 @@ pre {
 .md-typeset .tabbed-content {
   background-color: var(--grid-cards-bg-color);
   padding: 12px; 
-  border-radius: var(--grid-cards-border-radius);        
+  border-radius: var(--grid-cards-border-radiusx2);       
   /*border: 1px solid var(--grid-cards-border-color);*/
 }
 
