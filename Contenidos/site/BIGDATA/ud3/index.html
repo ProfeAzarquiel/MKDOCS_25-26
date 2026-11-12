@@ -50,8 +50,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CHack:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Hack"}</style>
       
     
     
@@ -2499,7 +2499,7 @@ Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos,
 <p class="admonition-title">LA PÁGINA ES LA PIEZA CLAVE</p>
 <p>Al almacenar como página el tipo de codificación y compresión que se ha usado, <em>Parquet</em> permite que cada columna elija la que mejor le va para los datos incluidos.</p>
 <ul>
-<li>Las técnicas de <a href="#codificación-de-columnas">codificación</a> que estudiamos (diccionario, RLE, <em>bit-packing</em>) se aplican por página, no al fichero entero. Por eso cada columna puede llevar una codificación distinta: cada una elige la que mejor le va.</li>
+<li>Las técnicas de <a href="#codificacion-de-columnas">codificación</a> que estudiamos (diccionario, RLE, <em>bit-packing</em>) se aplican por página, no al fichero entero. Por eso cada columna puede llevar una codificación distinta: cada una elige la que mejor le va.</li>
 <li>Cuando se usa codificación por diccionario, el diccionario se guarda en una página especial al principio del <em>column chunk</em> (la <em>dictionary page</em>), y el resto de páginas sólo contienen índices.</li>
 <li>La compresión (<em>Snappy</em>, <em>zstd</em>...) se aplica después de la codificación, y también página a página, lo que mantiene a <em>Parquet</em> divisible aun comprimido, igual que los bloques de <em>Avro</em>.</li>
 </ul>
@@ -2670,7 +2670,7 @@ Si encuentras ejemplos por internet que instalan avro-python3, están obsoletos,
 </ul>
 <p>Cada nivel amplía el plano del anterior: del byte al <em>row group</em>, y del <em>row group</em> al directorio. Y los tres tienen algo en común: son gratis para quien consulta, transparentes al desarrollador, siempre que los datos se hayan persistido con sentido. Ese "siempre que" es el trabajo del ingeniero de datos.</p>
 <h4 id="encoding"><span style="color: var(--bda-tertiary-color);">ENCODING</span></h4>
-<p>Cuando vimos cómo se <a href="#codificación-de-columnas">codificaban las columnas</a>, dijimos que <em>Parquet</em> elegía automáticamente la codificación más eficiente para cada columna. Pero, ¿cómo podemos comprobar qué codificación se ha aplicado realmente?</p>
+<p>Cuando vimos cómo se <a href="#codificacion-de-columnas">codificaban las columnas</a>, dijimos que <em>Parquet</em> elegía automáticamente la codificación más eficiente para cada columna. Pero, ¿cómo podemos comprobar qué codificación se ha aplicado realmente?</p>
 <p>Toda esta información reside en el pie del fichero, y podemos leerlo sin tocar los datos. Como ejemplo, vamos a utilizar el fichero de ventas que hemos <a href="#parquet-y-pandas">dividido en cuatro <em>row groups</em></a> y que contiene más de 800.000 filas, ordenadas por país y fecha. El siguiente código inspecciona el primer <em>row group</em> y nos dice qué codificación y compresión se ha aplicado a cada columna, así como sus estadísticas:</p>
 <div class="language-python highlight"><span class="filename">sales-encoding-parquet.py</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.parquet</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pq</span>
 </span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>

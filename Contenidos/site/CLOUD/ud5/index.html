@@ -50,8 +50,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CHack:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Hack"}</style>
       
     
     
@@ -1943,7 +1943,7 @@ helm template cilium cilium/cilium --version 1.16.1 --namespace kube-system &gt;
 kubectl apply -f cilium.yaml
 </code></pre></div>
 <h4 id="unir-todos-los-nodos-al-cluster">UNIR TODOS LOS NODOS AL CLUSTER</h4>
-<p>En cada uno de los nodos worker pegamos el comando que nos devolvio la instrucción <a href="#alertwidth30-a-ejecutar-solo-en-el-nodo-maestro"><code>kubeadm init</code></a> lanzar el siguiente comando:</p>
+<p>En cada uno de los nodos worker pegamos el comando que nos devolvio la instrucción <a href="#a-ejecutar-solo-en-el-nodo-maestro"><code>kubeadm init</code></a> lanzar el siguiente comando:</p>
 <div class="language-text highlight"><pre><span></span><code>    kubeadm join &lt;hostname_nodo_maestro&gt;:6443 --token &lt;token&gt; --discovery-token-ca-cert-hash sha256:&lt;hash&gt;
 </code></pre></div>
 <p>Si por algún motivo, no copiamos ese comando o no conocemos algunos de los datos necesarios, podemos ejecutar lo siguiente en el Nodo Maestro para conseguir la información:</p>

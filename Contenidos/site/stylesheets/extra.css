@@ -69,7 +69,7 @@
 
 
 .md-grid {  /*PERSONALIZAR EL ANCHO DE LOS CONTENIDOS PRINCIPALES (PARA REDUCIR EL ESPACIO QUE OCUPAN LOS MENUS NAV Y TOC) */
-  max-width: 1440px; 
+  max-width: initial;  /*Antiguo 1440px*/ 
 }
 
 .md-typeset blockquote {  /* Cambiar el estilo de las CITAS en bloque */
