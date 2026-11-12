@@ -46,8 +46,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CHack:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Hack"}</style>
       
     
     
@@ -1930,31 +1930,31 @@ ambari-agent start
 </div>
 <h3 id="instalacion-de-hadoop">INSTALACION DE HADOOP</h3>
 <p>Cuando iniciemos sesión en Ambari, veremos que no hay nada configurado y la primera opción que nos muestra es la de crear nuestro cluster Hadoop usando un assitente de instalación, para ello pulsamos en el botón:</p>
-<p><a class="md-button" href="# ."><small>LAUNCH INSTALL WIZARD</small></a></p>
+<p><a class="md-button" href=""><small>LAUNCH INSTALL WIZARD</small></a></p>
 <p>Comenzamos por poner un nombre a nuestro cluster y luego seleccionamos la versión de BIGTOP que queremos, nosotros elegimos la 3.3.0, ya que es la que hemos utilizado en nuestros nodos.</p>
 <p>Más abajo, en esta misma página debemos marcar la opción de <strong>Usar Repositorio Local</strong> e indicar que distribución de SO tenemos, en nuestro caso Rocky Linux 8, esta basado en <strong>Red Hat 8</strong>. El resto de distribuciones las debemos borrar haciendo click en el botón <strong><code>- Remove</code></strong> que aparece en la parte izquierda de cada una de ellas.</p>
 <p>Por último, especificamos en el campo <strong>"Base URL"</strong> donde se encuentra nuestro repositorio local. Aquí debemos indicar el valor que pusimos al configurar el <a href="#acceso-al-repositorio-local">Repositorio Local</a> en los nodos:</p>
 <div class="language-text highlight"><pre><span></span><code>file:///var/repo/ambari
 </code></pre></div>
-<p><a class="md-button md-button--primary" href="# ."><small>NEXT</small></a></p>
+<p><a class="md-button md-button--primary" href=""><small>NEXT</small></a></p>
 <p>En la siguiente página, donde dice <strong>Target Hosts</strong> tenemos que indicar el hostname de cada nodo de nuestro cluster, separados por saltos de línea.</p>
 <p>Luego en el apartado de <strong>Host Registration Information</strong> como nosotros ya hemos copiado manualmente la clave SSH del servidor en el fichero de autorizados de los agentes, simplemente marcamos la opción de <code>Perform Manual Registration on Hosts</code>.</p>
-<p><a class="md-button md-button--primary" href="# ."><small>REGISTER AND CONFIRM</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
+<p><a class="md-button md-button--primary" href=""><small>REGISTER AND CONFIRM</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
 <p>Esperamos a que finalice el proceso de registro de los nodos y si todo va bien recibiremos un mensaje que dirá <code>All hosts checks passed on 4 registered hosts</code>.</p>
-<p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
+<p><a class="md-button md-button--primary" href=""><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
 <p>Pasaremos a la siguiente ventana donde vamos a elegir los servicios que queremos instalar. En nuestro caso, como estamos creando un laboratorio de prácticas y nuestros recursos son limitados, seleccionaremos los más esenciales para empezar (siempre podemos instalar servicios más adelante, una vez que esté funcionando nuestro cluster desde la sección <em><code>Stack an Versions</code></em>).</p>
 <p>Por lo tanto, solo mantendremos seleccionados <strong>HDFS</strong>, <strong>YARN</strong>, <strong>MapReduce2</strong>, <strong>ZooKeeper</strong> y <strong>Ambari Metrics</strong>. Más adelante, por ejemplo tendremos que instalar <strong>HBase</strong>, ya que sin él no funcionará Ambari Metrics.</p>
-<p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 13h-4v4h-2v-4H7v-2h4V7h2v4h4m2-8H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> <a class="md-button" href="# ."><small>PROCEED ANYWAY</small></a></p>
+<p><a class="md-button md-button--primary" href=""><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 13h-4v4h-2v-4H7v-2h4V7h2v4h4m2-8H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> <a class="md-button" href=""><small>PROCEED ANYWAY</small></a></p>
 <p>Continuaremos con la opción de <strong>Asign Masters</strong>, esto es personalizable según las necesidades y recursos de cada cluster, pero un ejemplo para un laboratorio similar al nuestro, podría ser el siguiente:</p>
 <p><img alt="Ejemplo Masters Hadoop" src="https://res.cloudinary.com/dp56lzsjs/image/upload/v1791448159/mastersAmbari_fnfli3.png" /></p>
-<p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
+<p><a class="md-button md-button--primary" href=""><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
 <p>Al igual que pasaba en el paso anterior, la configuración de <strong>Assign Slaves and Clients</strong> puede variar de un escenario a otro, en este caso podemos establecer algo como lo siguiente:</p>
 <p><img alt="Ejemplo Slaves Hadoop" src="https://res.cloudinary.com/dp56lzsjs/image/upload/v1791448166/slavesAmbari_jm9jve.png" /></p>
-<p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
+<p><a class="md-button md-button--primary" href=""><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
 <p>En la pestaña <strong>Credentials</strong> nos pedirá configurar usauraio y contraseña para Grafana, podemos dejarlo como <code>admin / admin</code>.</p>
-<p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
+<p><a class="md-button md-button--primary" href=""><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
 <p>En las siguientes pestañas <strong>Directories</strong>, <strong>Accounts</strong> y <strong>All Configurations</strong>; podremos hacer cambios más adelante si fuese necesario, pero por el momento vamos a dejarlos con sus valores por defecto, así que solo pulsamos en siguiente para avanzar.</p>
-<p><a class="md-button md-button--primary" href="# ."><small>DEPLOY</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
+<p><a class="md-button md-button--primary" href=""><small>DEPLOY</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
 <p>Comenzará el despliegue de los servicios en los nodos de nuestro cluster, esto puede llevar un tiempo según las caracteristicas de nuestra máquina</p>
 <p>Además, el servicio <em>Timeline Service V2</em> va a fallar, pero no es un problema, así que vamos a ignorarlo por el momento. El resto de servicios, deberían instalarse con éxito, si no es así, podemos pulsar en el botón <strong><code>RETRY</code><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9H0l4 4 4-4H5a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.5 0-2.91-.5-4.06-1.3L6.5 19.14A9.1 9.1 0 0 0 12 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9m2 9a2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2"/></svg></span></strong>, para volver a intentarlo. Si todo va bien, debería finalizar el despliegue con 2 o 3 warnings, pero sin errores.</p>
 <div class="admonition warning">
@@ -1962,7 +1962,7 @@ ambari-agent start
 <p>Si por algún motivo, como recursos insuficientes el despliegue se queda congelado y no responde; podemos conectarnos a la consola de nuestro nodo SERVIDOR y ejecutar el siguiente comando:
     ambari-server restart</p>
 </div>
-<p><a class="md-button md-button--primary" href="# ."><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 13h-4v4h-2v-4H7v-2h4V7h2v4h4m2-8H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> <a class="md-button" href="# ."><small>COMPLETE</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
+<p><a class="md-button md-button--primary" href=""><small>NEXT</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 13h-4v4h-2v-4H7v-2h4V7h2v4h4m2-8H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> <a class="md-button" href=""><small>COMPLETE</small> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 16.94v-4H5.08l-.03-2.01H14V6.94l5 5Z"/></svg></span></a></p>
 <p>Dejaremos unos segundos (o minutos) a que los servicios terminen de arrancar y podremos conectarnos a nuestro nodo SERVIDOR y comprobar que efectivamente tenemos habilitado el sistema de archivos de Hadoop:</p>
 <div class="language-text highlight"><pre><span></span><code>con ambari_server
 hadoop fs -ls /

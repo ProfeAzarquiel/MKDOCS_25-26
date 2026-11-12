@@ -50,8 +50,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CHack:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Hack"}</style>
       
     
     
@@ -1246,6 +1246,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#modificacion-del-orden-de-arranque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MODIFICACIÓN DEL ORDEN DE ARRANQUE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-medios-de-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CREACIÓN DE MEDIOS DE INSTALACIÓN
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1505,6 +1527,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#modificacion-del-orden-de-arranque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MODIFICACIÓN DEL ORDEN DE ARRANQUE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-medios-de-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CREACIÓN DE MEDIOS DE INSTALACIÓN
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1585,169 +1629,233 @@
 </ul>
 </div>
 <h2 id="secuencia-de-arranque"><span style="color: var(--fh-primary-color);">SECUENCIA DE ARRANQUE</span></h2>
-<h3 id="paso-a-paso"><span style="color: var(--fh-secondary-color);">PASO A PASO</span></h3>
+<p>Aunque nos parezca una cuestión de segundos, desde que <strong>pulsamos el botón de encendido</strong> de un ordenador, <strong>hasta que vemos</strong> por pantalla la imagen del <strong>sistema operativo</strong>, nuestro dispositivo lleva a cabo una seríe de acciones y comprobaciones internas (invisibles para el usuario), de las que depende que nuestro sistema arranque o no.</p>
+<p>A este proceso, compouesto por varios pasos, se le conoce como la <strong>secuencia de arranque</strong> del equipo, y en ella están implicados todos los componentes que lo forman, de modo que si alguno falla, es muy posible que el ordenador no arranque o su funcionamiento no sea el esperado. A continuación, vamos a entrar en el detalle de cada uno de esos pasos:</p>
+<p><img alt="1⃣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/31-20e3.svg" title=":one:" /> <span style="color: var(--fh-tertiary-color);"><strong>Alimentación y señal de control (Power On &amp; Power Good)</strong>:</p>
+<ul>
+<li><strong>Circuito de encendido:</strong> Al pulsar el botón, se cierra un circuito momentáneo en los pines POWER SW de la placa base, enviando un pulso lógico al chip <strong>Super I/O</strong> o al <strong>Chipset</strong> (tamien llamado <em>PCH</em>).</li>
+<li><strong>Arranque de la fuente (PSU):</strong> La placa base conmuta la línea <em>PS_ON</em> de la fuente de alimentación a tierra (0V), indicándole que convierta la corriente alterna en las líneas continuas de +3.3V, +5V y +12V.</li>
+<li><strong>Señal Power Good (PWR_OK):</strong> Cuando las tensiones de la fuente se estabilizan, esta envía una señal lógica de +5V a la placa base mediante la línea <em>Power Good</em> (en unos 100 a 500 ms).</li>
+<li><strong>Liberación del Reset del CPU:</strong> Al recibir la señal Power Good, el regulador de voltaje (VRM) de la placa base quita la señal de <em>Reset</em> aplicada al procesador (CPU).</li>
+</ul>
+<p><img alt="2⃣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/32-20e3.svg" title=":two:" /> <span style="color: var(--fh-tertiary-color);"><strong>Ejecución inicial del firmware (Reset Vector)</strong>:</span></p>
+<ul>
+<li><strong>Vector de Reset:</strong> El procesador despierta en un estado especial (modo real o modo de gestión de sistema) y ejecuta automáticamente la primera instrucción apuntada por el registro CS:IP. Esta dirección física es fija y está predeterminada por el fabricante (conocida como <strong>Reset Vector</strong>, ej. 0xFFFFFFF0 en arquitecturas x86).</li>
+<li><strong>Mapeo de memoria:</strong> Esa dirección apunta directamente a la memoria Flash de la placa base donde reside el <strong>firmware UEFI/BIOS</strong>.</li>
+<li><strong>Inicio de ejecución:</strong> El procesador comienza a ejecutar el código del firmware sin haber inicializado aún la memoria RAM principal, utilizando únicamente los registros internos y la caché L1/L2 configurada temporalmente como memoria (técnica <em>Cache-as-RAM</em> / CAR).</li>
+</ul>
+<p><img alt="3⃣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/33-20e3.svg" title=":three:" /> <span style="color: var(--fh-tertiary-color);"><strong>Comprobación del hardware (POST - Power-On Self-Test)</strong>:</span></p>
+<p>Durante la fase POST, el firmware verifica la presencia y correcto funcionamiento de los componentes esenciales del sistema:</p>
+<ul>
+<li><strong>Comprobación de bus y buses internos:</strong> Se verifican los buses de comunicación internos de la placa base.</li>
+<li><strong>Inicialización del controlador de memoria y DRAM:</strong> El firmware lee los perfiles SPD (<em>Serial Presence Detect</em>) de los módulos RAM mediante el bus I²C/SMBus, ajustando frecuencias, voltajes y latencias. Una vez configurados los buses, la memoria RAM principal pasa a estar disponible.</li>
+<li><strong>Inicialización de periféricos esenciales:</strong> Se detectan y configuran los buses PCIe, controladores USB, almacenamiento (NVMe, SATA) y el adaptador gráfico.</li>
+<li><strong>Firmware de componentes (Option ROMs):</strong> Si la tarjeta gráfica o una controladora RAID tienen su propio firmware, la UEFI los ejecuta para inicializar esos componentes específicos.</li>
+<li><strong>Autodiagnóstico:</strong> Si ocurre un fallo en esta etapa, la placa base emite un código de error (por tonos de <em>buzzer</em>, leds de diagnóstico POST o códigos en un display de 7 segmentos).</li>
+</ul>
+<details class="question">
+<summary>¿COMO INTERPRETAR LOS PITIDOS DEL POST?</summary>
+<p>Según en que componente o que tipo de error se encuentre en el POST, el equipo emitirá <strong>diferentes combinaciones de pitidos</strong> que, si sabemos interpretar, nos van a decir <strong>que parte</strong> de la máquina <strong>debemos revisar</strong>.</p>
+<p>Aunque <strong>no hay un estándar universal</strong>, ya que cada fabricante usa sus propias combinaciones, <strong>existe una base genérica</strong> que puede sernos de ayuda en la mayoría de los casos:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">CANTIDAD DE PITIDOS</th>
+<th style="text-align: left;">SIGNIFICADO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">Sin pitido (o 1 corto)</td>
+<td style="text-align: left;">Arranque correcto (POST exitoso).</td>
+</tr>
+<tr>
+<td style="text-align: right;">1 largo</td>
+<td style="text-align: left;">Fallo o ausencia de la memoria RAM.</td>
+</tr>
+<tr>
+<td style="text-align: right;">1 largo + 1 corto</td>
+<td style="text-align: left;">Error en la placa base o en la memoria ROM.</td>
+</tr>
+<tr>
+<td style="text-align: right;">1 largo + 2 cortos (o 8 cortos)</td>
+<td style="text-align: left;">Fallo o ausencia de la tarjeta gráfica / memoria de vídeo.</td>
+</tr>
+<tr>
+<td style="text-align: right;">2 cortos</td>
+<td style="text-align: left;">Error de paridad en la memoria RAM.</td>
+</tr>
+<tr>
+<td style="text-align: right;">3 cortos</td>
+<td style="text-align: left;">Fallo en los primeros 64 KB de la memoria RAM.</td>
+</tr>
+<tr>
+<td style="text-align: right;">4 cortos</td>
+<td style="text-align: left;">Error de temporizador del reloj del sistema.</td>
+</tr>
+<tr>
+<td style="text-align: right;">5 cortos</td>
+<td style="text-align: left;">Error en el procesador (CPU).</td>
+</tr>
+<tr>
+<td style="text-align: right;">6 cortos</td>
+<td style="text-align: left;">Error en el controlador o conexión del teclado.</td>
+</tr>
+<tr>
+<td style="text-align: right;">9 cortos</td>
+<td style="text-align: left;">Error de suma de verificación (checksum?) en la ROM de la BIOS.</td>
+</tr>
+<tr>
+<td style="text-align: right;">10 cortos</td>
+<td style="text-align: left;">Error en la memoria CMOS.</td>
+</tr>
+<tr>
+<td style="text-align: right;">Continuo / ininterrumpido</td>
+<td style="text-align: left;">Fallo en el suministro eléctrico o fuente de alimentación.</td>
+</tr>
+<tr>
+<td style="text-align: right;">Varios cortos y seguidos</td>
+<td style="text-align: left;">Placa base averiada o problema de conexión.</td>
+</tr>
+<tr>
+<td style="text-align: right;">Sirena (tonos altos y bajos alternos)</td>
+<td style="text-align: left;">Sobrecalentamiento del procesador o fallo en el ventilador de la CPU.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><img alt="4⃣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/34-20e3.svg" title=":four:" /> <span style="color: var(--fh-tertiary-color);"><strong>Inicialización UEFI / Boot Device Selection</strong>:</span></p>
+<p>En los ordenadores modernos con firmware <strong>UEFI</strong>, el POST se organiza en fases estructuradas formalmente bajo la especificación PI (<em>Platform Initialization</em>):</p>
+<ul>
+<li><strong>SEC (Security):</strong> Inicialización en modo real/CAR y verificación de la integridad inicial.</li>
+<li><strong>PEI (Pre-EFI Initialization):</strong> Diagnóstico e inicialización básica de la memoria RAM y estado del chipset.</li>
+<li><strong>DXE (Driver Execution Environment):</strong> Carga de los controladores de dispositivos nativos de la UEFI (disco, red, gráficos en alta resolución mediante GOP - <em>Graphics Output Protocol</em>).</li>
+<li><strong>BDS (Boot Device Selection):</strong> Interfaz donde la UEFI determina la prioridad del dispositivo de arranque configurado por el usuario o administrador.</li>
+</ul>
+<p><img alt="5⃣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/35-20e3.svg" title=":five:" /> <span style="color: var(--fh-tertiary-color);"><strong>Búsqueda y ejecución del gestor de arranque (<em>Bootloader</em>)</strong>:</span></p>
+<ul>
+<li><strong>Acceso al almacenamiento:</strong> La UEFI consulta la memoria CMOS (antigua NVRAM) para obtener la lista de dispositivos de arranque registrados.</li>
+<li><strong>Partición de sistema ESP (EFI System Partition):</strong> En discos con esquema de particiones <strong>GPT</strong> (<em>GUID Partition Table</em>), la UEFI busca una partición formateada en FAT32 que contiene los ejecutables EFI.</li>
+<li><strong>Verificación de arranque seguro (Secure Boot):</strong> Si está activado, la UEFI valida la firma digital de la clave criptográfica guardada en la NVRAM antes de permitir la ejecución del gestor de arranque.</li>
+<li><strong>Carga del Bootloader:</strong><ul>
+<li><strong>Sistemas UEFI:</strong> Ejecuta el archivo ejecutable .efi registrado (por ejemplo, bootmgfw.efi en Windows o grubx64.efi en Linux).</li>
+<li><strong>Sistemas BIOS tradicionales (Legacy MBR):</strong> El firmware lee los primeros 512 bytes del primer sector del disco (<strong>MBR</strong> - <em>Master Boot Record</em>), donde se encuentra el código de arranque de primera etapa (<em>Stage 1 Bootloader</em>), transfiriéndole el control.</li>
+</ul>
+</li>
+</ul>
+<details class="info">
+<summary>DIFERENCIA ENTRE BIOS Y UEFI</summary>
+<p>El <strong>firmware</strong> es el primer software que se ejecuta al encender el equipo, y aúnque a día de hoy seguimos llamándolo <strong>BIOS</strong> (<em>Basic Input/Output System</em>) indistintamente, lo cierto es que hace ya tiempo que evolucionó para convertirse en <strong>UEFI</strong> (<em>Unified Extensible Firmware Interface</em>). Las principales diferencias entre ambos son:</p>
+<table>
+<thead>
+<tr>
+<th>CARACTERÍSTICAS</th>
+<th>BIOS (heredado)</th>
+<th>UEFI (actual)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dónde lee el arranque</td>
+<td>Primer sector del disco (MBR)</td>
+<td>Archivo EFI en la partición ESP</td>
+</tr>
+<tr>
+<td>Tabla de particiones</td>
+<td>MBR</td>
+<td>GPT</td>
+</tr>
+<tr>
+<td>Interfaz</td>
+<td>Texto, solo teclado</td>
+<td>Gráfica, con ratón y red</td>
+</tr>
+<tr>
+<td>Seguridad</td>
+<td>Contraseñas de Setup</td>
+<td>Secure Boot: solo cargadores firmados</td>
+</tr>
+</tbody>
+</table>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13M6.92 6.085h.001a.749.749 0 1 1-1.342-.67c.169-.339.436-.701.849-.977C6.845 4.16 7.369 4 8 4a2.76 2.76 0 0 1 1.637.525c.503.377.863.965.863 1.725 0 .448-.115.83-.329 1.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6 6 0 0 0-.26.16 1 1 0 0 0-.276.245.75.75 0 0 1-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1 1 0 0 0 .277-.245C8.96 6.514 9 6.427 9 6.25a.61.61 0 0 0-.262-.525A1.27 1.27 0 0 0 8 5.5c-.369 0-.595.09-.74.187a1 1 0 0 0-.34.398M9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg></span> <ins class="critic"><strong>Secure Boot</strong></ins>: es la función de UEFI que verifica la firma digital de cada pieza del software de arranque antes de ejecutarla, impidiendo que rootkits y cargadores no firmados se ejecuten antes que el sistema operativo. Por ejemplo, Windows 11 exige que esté activado y para poder arrancar un Live USB sin firma (GParted, Clonezilla) es posible que necesitemos desactivarlo temporalmente.</p>
+</details>
+<p><img alt="6⃣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/36-20e3.svg" title=":six:" /> <span style="color: var(--fh-tertiary-color);"><strong>Carga del Kernel y traspaso de control al Sistema Operativo</strong>:</span></p>
+<ul>
+<li><strong>Ejecución del Bootloader:</strong> El gestor de arranque (como <em>Windows Boot Manager</em> o <em>GRUB</em>) pasa a tomar el control absoluto del procesador.</li>
+<li><strong>Cambio de modo de ejecución:</strong> El Bootloader conmuta la CPU del modo UEFI a modo protegido o <strong>modo largo de 64 bits</strong> (<em>Long Mode</em>), habilitando la memoria pagada y el espacio de direcciones virtuales.</li>
+<li><strong>Carga del Kernel y controladores de arranque:</strong><ul>
+<li>El bootloader lee de la unidad de disco el ejecutable del Kernel del sistema operativo (ej. ntoskrnl.exe en Windows, vmlinuz en Linux) y la imagen de controladores esenciales iniciales (<em>initramfs</em> / controladores de almacenamiento de nivel bajo).</li>
+<li>Se cargan en la RAM las estructuras de datos fundamentales para el sistema operativo.</li>
+</ul>
+</li>
+<li><strong>Traspaso final de control:</strong> El bootloader ejecuta una instrucción de salto hacia el punto de entrada del Kernel. En este instante, el firmware (UEFI) cede el control por completo y se libera la memoria reservada para el arranque.</li>
+</ul>
+<p><img alt="7⃣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/37-20e3.svg" title=":seven:" /> <span style="color: var(--fh-tertiary-color);"><strong>Inicialización del Sistema Operativo y la Interfaz Gráfica</strong>:</span></p>
+<ul>
+<li><strong>Inicialización del Kernel:</strong> El Kernel toma el control, escanea la topología completa del hardware (núcleos de CPU, dispositivos PCIe, dispositivos USB) y carga los controladores definitivos para cada dispositivo.</li>
+<li><strong>Inicio del sistema de entrada/salida (I/O) y subsistemas:</strong> Se montan los sistemas de archivos principales del disco duro/SSD.</li>
+<li><strong>Ejecución del gestor de servicios/procesos inicial:</strong><ul>
+<li>En <strong>Linux</strong>: Se ejecuta el proceso con PID 1 (systemd o init).</li>
+<li>En <strong>Windows</strong>: Se inicia el servicio de administración del sistema smss.exe (<em>Session Manager Subsystem</em>).</li>
+</ul>
+</li>
+<li><strong>Carga del gestor de inicio de sesión e interfaz gráfica:</strong><ul>
+<li>Se inician los servicios en segundo plano (daemon/servicios).</li>
+<li>Se arranca el servidor gráfico y el administrador de ventanas (ej. <em>Desktop Window Manager</em> / dwm.exe en Windows, o <em>Wayland/X11</em> en Linux).</li>
+</ul>
+</li>
+<li><strong>Pantalla de usuario:</strong> El sistema presenta la interfaz gráfica (pantalla de autenticación o escritorio), quedando el ordenador totalmente operativo para el usuario.</li>
+</ul>
+<h3 id="resumen-de-pasos"><span style="color: var(--fh-secondary-color);">RESUMEN DE PASOS</span></h3>
 <table>
 <thead>
 <tr>
 <th>ORDEN</th>
 <th>ACCIÓN</th>
-<th>DETALLES</th>
+<th>COMPONENTES</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>a</td>
-<td>-</td>
+<td>1º</td>
+<td>Encendido</td>
+<td>PWR BUTTON (CHASIS) &gt; CABECERA F.PANEL &gt; CPU</td>
 </tr>
 <tr>
-<td>2</td>
-<td>b</td>
-<td>-</td>
+<td>2º</td>
+<td>Inicio del Firmware</td>
+<td>CPU &gt; MEMORIA ROM (BIOS) &gt; CPU</td>
 </tr>
 <tr>
-<td>3</td>
-<td>c</td>
-<td>-</td>
+<td>3º</td>
+<td>Autodiagnóstico Hardware</td>
+<td>BUSES, CONECTORES (Ranuras RAM, PCIe, USB, NVMe, SATA, HDMI, Display Port)</td>
 </tr>
 <tr>
-<td>4</td>
-<td>d</td>
-<td>-</td>
+<td>4º</td>
+<td>Inicialización de Drivers</td>
+<td>MEMORIA RAM, CHIPSET</td>
 </tr>
 <tr>
-<td>5</td>
-<td>e</td>
-<td>-</td>
+<td>5º</td>
+<td>Gestor de arranque</td>
+<td>MEMORIA CMOS (SYS. CONFIG) &gt; UNIDAD DE ALMACENAMIENTO (HDD/SSD/NVMe)</td>
 </tr>
 <tr>
-<td>6</td>
-<td>f</td>
-<td>-</td>
+<td>6º</td>
+<td>Carga del Kernel</td>
+<td>CPU</td>
 </tr>
 <tr>
-<td>7</td>
-<td>g</td>
-<td>-</td>
-</tr>
-<tr>
-<td>8</td>
-<td>h</td>
-<td>-</td>
+<td>7º</td>
+<td>Inicio SO y GUI</td>
+<td>CPU &gt; UNIDAD ALMACENAMIENTO &gt; MONITOR</td>
 </tr>
 </tbody>
 </table>
-<ol>
-<li>ENCENDIDO (Power On + Power Good)<br />
-&emsp;a. Señal Power On<br />
-&emsp;b. Señal Power Good  </li>
-<li>INICIO DEL FIRMWARE (Vector Reset)<br />
-&emsp;a. Vector Reset  </li>
-<li>COMPROBACIÓN DEL HARDWARE (POST)<br />
-&emsp;a. Autodiagnóstico<br />
-&emsp;b. Tabla códigos de error (pitidos)  </li>
-<li>INICIALIZACIÓN DE DRIVERS<br />
-&emsp;a. Carga de controladores<br />
-&emsp;b. Selección del dispositivo de arranque  </li>
-<li>CARGA DEL GESTOR DE ARRANQUE (Bootloader)  </li>
-<li>CARGA DEL KERNEL  </li>
-<li>INICIO DEL SO E INTERFAZ GRÁFICA  </li>
-</ol>
-<!--
-
-Si entramos más en detalle:
-
-### <span style="color: var(--bda-secondary-color);">:one: Alimentación y señal de control (Power On & Power Good)</span>
-
-- **Circuito de encendido:** Al pulsar el botón, se cierra un circuito momentáneo en los pines POWER SW de la placa base, enviando un pulso lógico al chip **Super I/O** o al **Chipset** (tamien llamado *PCH*).
-- **Arranque de la fuente (PSU):** La placa base conmuta la línea PS\_ON de la fuente de alimentación a tierra (0V), indicándole que convierta la corriente alterna en las líneas continuas de +3.3V, +5V y +12V.
-- **Señal Power Good (PWR\_OK):** Cuando las tensiones de la fuente se estabilizan, esta envía una señal lógica de +5V a la placa base mediante la línea Power Good (en unos 100 a 500 ms).
-- **Liberación del Reset del CPU:** Al recibir la señal Power Good, el regulador de voltaje (VRM) de la placa base quita la señal de *Reset* aplicada al procesador (CPU).
-
-## [2\. Ejecución inicial del firmware (Reset Vector)](https://)
-
-1. **Vector de Reset:** El procesador despierta en un estado especial (modo real o modo de gestión de sistema) y ejecuta automáticamente la primera instrucción apuntada por el registro CS:IP. Esta dirección física es fija y está predeterminada por el fabricante (conocida como **Reset Vector**, ej. 0xFFFFFFF0 en arquitecturas x86).
-2. **Mapeo de memoria:** Esa dirección apunta directamente a la memoria Flash de la placa base donde reside el **firmware UEFI/BIOS**.
-3. **Inicio de ejecución:** El procesador comienza a ejecutar el código del firmware sin haber inicializado aún la memoria RAM principal, utilizando únicamente los registros internos y la caché L1/L2 configurada temporalmente como memoria (técnica *Cache-as-RAM* / CAR).
-
-## [3\. Comprobación del hardware (POST - Power-On Self-Test)](https://)
-
-Durante la fase POST, el firmware verifica la presencia y correcto funcionamiento de los componentes esenciales del sistema:
-
-1. **Comprobación de bus y buses internos:** Se verifican los buses de comunicación internos de la placa base.
-2. **Inicialización del controlador de memoria y DRAM:** El firmware lee los perfiles SPD (*Serial Presence Detect*) de los módulos RAM mediante el bus I²C/SMBus, ajustando frecuencias, voltajes y latencias. Una vez configurados los buses, la memoria RAM principal pasa a estar disponible.
-3. **Inicialización de periféricos esenciales:** Se detectan y configuran los buses PCIe, controladores USB, almacenamiento (NVMe, SATA) y el adaptador gráfico.
-4. **Firmware de componentes (Option ROMs):** Si la tarjeta gráfica o una controladora RAID tienen su propio firmware, la UEFI los ejecuta para inicializar esos componentes específicos.
-5. **Autodiagnóstico:** Si ocurre un fallo en esta etapa, la placa base emite un código de error (por tonos de *buzzer*, leds de diagnóstico POST o códigos en un display de 7 segmentos).
-
-## [4\. Inicialización UEFI / Fase SEC-PEI-DXE](https://)
-
-En los ordenadores modernos con firmware **UEFI**, el POST se organiza en fases estructuradas formalmente bajo la especificación PI (*Platform Initialization*):
-
-- **SEC (Security):** Inicialización en modo real/CAR y verificación de la integridad inicial.
-- **PEI (Pre-EFI Initialization):** Diagnóstico e inicialización básica de la memoria RAM y estado del chipset.
-- **DXE (Driver Execution Environment):** Carga de los controladores de dispositivos nativos de la UEFI (disco, red, gráficos en alta resolución mediante GOP - *Graphics Output Protocol*).
-- **BDS (Boot Device Selection):** Interfaz donde la UEFI determina la prioridad del dispositivo de arranque configurado por el usuario o administrador.
-
-## [5\. Búsqueda y ejecución del gestor de arranque (*Bootloader*)](https://)
-
-1. **Acceso al almacenamiento:** La UEFI consulta la memoria CMOS (antigua NVRAM) para obtener la lista de dispositivos de arranque registrados.
-2. **Partición de sistema ESP (EFI System Partition):** En discos con esquema de particiones **GPT** (*GUID Partition Table*), la UEFI busca una partición formateada en FAT32 que contiene los ejecutables EFI.
-3. **Verificación de arranque seguro (Secure Boot):** Si está activado, la UEFI valida la firma digital de la clave criptográfica guardada en la NVRAM antes de permitir la ejecución del gestor de arranque.
-4. **Carga del Bootloader:**
-5. - **Sistemas UEFI:** Ejecuta el archivo ejecutable .efi registrado (por ejemplo, bootmgfw.efi en Windows o grubx64.efi en Linux).
-    - **Sistemas BIOS tradicionales (Legacy MBR):** El firmware lee los primeros 512 bytes del primer sector del disco (**MBR** - *Master Boot Record*), donde se encuentra el código de arranque de primera etapa (*Stage 1 Bootloader*), transfiriéndole el control.
-
-## [6\. Carga del Kernel y traspaso de control al Sistema Operativo](https://)
-
-1. **Ejecución del Bootloader:** El gestor de arranque (como *Windows Boot Manager* o *GRUB*) pasa a tomar el control absoluto del procesador.
-2. **Cambio de modo de ejecución:** El Bootloader conmuta la CPU del modo UEFI a modo protegido o **modo largo de 64 bits** (*Long Mode*), habilitando la memoria pagada y el espacio de direcciones virtuales.
-3. **Carga del Kernel y controladores de arranque:**
-4. - El bootloader lee de la unidad de disco el ejecutable del Kernel del sistema operativo (ej. ntoskrnl.exe en Windows, vmlinuz en Linux) y la imagen de controladores esenciales iniciales (*initramfs* / controladores de almacenamiento de nivel bajo).
-    - Se cargan en la RAM las estructuras de datos fundamentales para el sistema operativo.
-5. **Traspaso final de control:** El bootloader ejecuta una instrucción de salto hacia el punto de entrada del Kernel. En este instante, el firmware (UEFI) cede el control por completo y se libera la memoria reservada para el arranque.
-
-## [7\. Inicialización del Sistema Operativo y la Interfaz Gráfica](https://)
-
-1. **Inicialización del Kernel:** El Kernel toma el control, escanea la topología completa del hardware (núcleos de CPU, dispositivos PCIe, dispositivos USB) y carga los controladores definitivos para cada dispositivo.
-2. **Inicio del sistema de entrada/salida (I/O) y subsistemas:** Se montan los sistemas de archivos principales del disco duro/SSD.
-3. **Ejecución del gestor de servicios/procesos inicial:**
-4. - En **Linux**: Se ejecuta el proceso con PID 1 (systemd o init).
-    - En **Windows**: Se inicia el servicio de administración del sistema smss.exe (*Session Manager Subsystem*).
-5. **Carga del gestor de inicio de sesión e interfaz gráfica:**
-6. - Se inician los servicios en segundo plano (daemon/servicios).
-    - Se arranca el servidor gráfico y el administrador de ventanas (ej. *Desktop Window Manager* / dwm.exe en Windows, o *Wayland/X11* en Linux).
-7. **Pantalla de usuario:** El sistema presenta la interfaz gráfica (pantalla de autenticación o escritorio), quedando el ordenador totalmente operativo para el usuario.
-
-### <span style="color: var(--fh-secondary-color);">CONFIGURACIÓN DE LA SECUENCIA DE ARRANQUE</span>
-
-## 1. Configuración del arranque
-
-**Criterios relacionados:** CE 3.3 (secuencias de arranque), CE 1.4 (parámetros de configuración).
-
-### 1.1. El proceso de arranque
-
-El arranque de un equipo avanza en cuatro fases:
-
-1. **POST (Power-On Self-Test):** al encender, el firmware comprueba CPU, memoria, tarjeta gráfica, teclado y unidades. Si falla, detiene el arranque e informa mediante pitidos, códigos en pantalla o LED de diagnóstico (cada fabricante publica su tabla: por ejemplo, en Dell 2 pitidos indican RAM no detectada) ([Dell: códigos de sonido](https://www.dell.com/support/kbdoc/es-co/000124349/descripci%C3%B3n-del-sonido-sonido-on-a-dell-desktop-pc), [HP: indicadores de diagnóstico](https://support.hp.com/us-en/document/ish_1997719-1528356-16)).
-2. **Firmware (BIOS/UEFI):** consulta su lista de dispositivos por prioridad (secuencia de arranque) hasta encontrar uno arrancable.
-3. **Gestor de arranque:** en BIOS lee el primer sector del disco (MBR); en UEFI carga un archivo ejecutable EFI desde la partición de sistema EFI (ESP), según la [documentación de Microsoft sobre UEFI y GPT](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq?view=windows-10).
-4. **Sistema operativo:** el gestor (Windows Boot Manager, GRUB) entrega el control al núcleo y se cargan los servicios del sistema.
-
-### 1.2. BIOS y UEFI
-
-El firmware es el primer software que se ejecuta al encender el equipo. La pareja clásica es BIOS+MBR frente a UEFI+GPT ([Dell: Boot Mode Considerations](https://dl.dell.com/manuals/common/dellemc-boot-mode-bios-uefi.pdf), [HP: BIOS y UEFI](https://www.hp.com/es-es/shop/tech-insights/bios-uefi)):
-
-| Aspecto | BIOS (heredado) | UEFI (actual) |
-| --- | --- | --- |
-| Dónde lee el arranque | Primer sector del disco (MBR) | Archivo EFI en la partición ESP |
-| Tabla de particiones | MBR | GPT |
-| Interfaz | Texto, solo teclado | Gráfica, con ratón y red |
-| Seguridad | Contraseñas de Setup | Secure Boot: solo cargadores firmados |
-
-**Secure Boot** es la función de UEFI que verifica la firma digital de cada pieza del software de arranque antes de ejecutarla, impidiendo que rootkits y cargadores no firmados se ejecuten antes que el sistema operativo. Windows 11 lo exige activado ([Microsoft: Windows 11 y el arranque seguro](https://support.microsoft.com/es-es/windows/security/devicesecurity/windows-11-and-secure-boot)). Para arrancar un USB live sin firma (GParted, Clonezilla) puede ser necesario desactivarlo temporalmente.
-
-### 1.3. La secuencia de arranque y sus modos
+<h2 id="modificacion-del-orden-de-arranque"><span style="color: var(--fh-secondary-color);">MODIFICACIÓN DEL ORDEN DE ARRANQUE</span></h2>
+<p>Próximamente ... <img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f6a7.svg" title=":construction:" /></p>
+<!-- ### 1.3. La secuencia de arranque y sus modos
 
 - **Qué es:** lista priorizada de dispositivos que el firmware consulta en orden. En UEFI cada entrada apunta a un archivo de arranque concreto, por lo que un mismo disco puede tener varias entradas ([Dell](https://dl.dell.com/manuals/common/dellemc-boot-mode-bios-uefi.pdf)).
 - **Cómo se cambia:** de forma permanente desde el Setup (Supr, F2 o F10 según fabricante), o de forma puntual con el Boot Menu (F8, F11, F12 o Esc) sin modificar la configuración guardada.
@@ -1757,8 +1865,117 @@ El firmware es el primer software que se ejecuta al encender el equipo. La parej
   - **Unidad óptica:** arranque desde CD/DVD (norma El Torito); equipos antiguos y discos de rescate.
   - **Red (PXE):** la tarjeta de red descarga el cargador por DHCP y TFTP; base del despliegue masivo de aulas.
   - **Multiarranque:** un gestor (GRUB) ofrece un menú con varios sistemas instalados.
-- **CSM/Legacy Boot:** modo de compatibilidad de las placas UEFI para arrancar medios antiguos estilo BIOS; conviene desactivarlo cuando no se usa.
+- **CSM/Legacy Boot:** modo de compatibilidad de las placas UEFI para arrancar medios antiguos estilo BIOS; conviene desactivarlo cuando no se usa. -->
 
+<figure style="float:right;">
+    <img alt="Ejecutar PowerShell como Administrador" src="https://www.solvetic.com/uploads/monthly_10_2019/tutorials-9832-0-59627700-1572281022.png" width="300" />
+    <small><figcaption>Ejecutar PowerShell como Administrador</figcaption></small>
+</figure>
+<h3 id="herramientas-nativas-de-chequeo-y-diagnostico"><span style="color: var(--bda-secondary-color);">HERRAMIENTAS NATIVAS DE CHEQUEO Y DIAGNÓSTICO</span></h3>
+<p>Windows incorpora una serie herramientas de forma nativa para chequear y diagnosticar el estado del hardware y componentes principales del equipo.</p>
+<p>A la hora de ejecutarlas, se recomienda hacerlo <strong>desde PowerShell</strong>, con la opción de <strong><em>Ejecutar como Administrador</em></strong>:</p>
+<p><br></p>
+<ul>
+<li><strong><code>chkdsk</code></strong>: Analiza el sistema de archivos y el estado físico de los discos duros en busca de sectores defectuosos.
+    Una <strong>forma común de usarlo</strong> para reparar errores y recuperar sectores dañados, es <ins class="critic"><strong><code>chkdsk /f /r</code></strong></ins>.</li>
+<li><strong><code>mdsched</code></strong>: Inicia el diagnóstico de memoria para comprobar errores físicos en la memoria RAM, <strong>requiere reiniciar</strong> el equipo para ello.</li>
+<li><strong><code>powercfg</code></strong>: Diágnostico general de las opciones de energía del equipo, se usa principalmente con las opciones:<ul>
+<li><ins class="critic"><strong><code>powercfg /energy</code></strong></ins>: genera un informe detallado sobre el consumo energético y la eficiencia.</li>
+<li><ins class="critic"><strong><code>powercfg /batteryreport</code></strong></ins>: genera un informe del estado de desgaste de la batería en portátiles.</li>
+</ul>
+</li>
+<li><strong><code>systeminfo</code></strong>: Muestra una lista detallada de la configuración del equipo, procesador, memoria RAM instalada y placa base.</li>
+<li><strong><code>sfc /scannow</code></strong>: Examina la integridad de todos los archivos protegidos del sistema y repara los archivos con problemas si es posible.</li>
+<li><strong><code>DISM</code></strong>: Diágnostico y reparación de la imagen del sistema operativo, se usa generalmente con las siguientes opciones:<ul>
+<li><ins class="critic"><strong><code>DISM /Online /Cleanup-Image /CheckHealth</code></strong></ins>: Verifica de forma rápida y con solo lectura, si la imagen del sistema está dañada.</li>
+<li><ins class="critic"><strong><code>DISM /Online /Cleanup-Image /ScanHealth</code></strong></ins>: Realiza un análisis profundo de la imagen del sistema, para detectar si existen corrupciones.</li>
+<li><ins class="critic"><strong><code>DISM /Online /Cleanup-Image /RestoreHealth</code></strong></ins>: Repara la imagen del sistema (en caso de estar dañada), usando Windows Update para sustituir los componentes defectuosos. Cuando hacemos un <em>Restore</em>, es muy común ejecutar a continuación un <code>sfc /scannow</code> para reparar archivos de sistema individuales que hallan podido quedar dañados.</li>
+<li><ins class="critic"><strong><code>DISM /Online /Cleanup-Image /StartComponentCleanup</code></strong></ins>: Liberar espacio eliminando componentes antiguos o en desuso. </li>
+</ul>
+</li>
+<li>
+<p><strong><code>winsat formal</code></strong>: Ejecuta una <strong>evaluación de rendimiento</strong> del sistema para medir las capacidades de la CPU, gráficos, memoria y disco. Una vez que finaliza la prueba, podemos <strong>ver los resultados</strong> de forma limpia, usando el comando <ins class="critic"><strong><code>Get-CimInstance Win32_WinSat</code></strong></ins> en nuestra consola de PowerShell.</p>
+<p>Esto nos mostrará el listado de puntuaciones individuales, que va del 1.0 al 9.9. y en donde podremos comprobar si nuestro equipo esta equilibrado o en cambio hay algún componente descompensado que está limitando el rendimiento general del conjunto, lo que se conoce como "<em>cuello de botella</em>".</p>
+</li>
+</ul>
+<details class="question">
+<summary>¿COMO INTERPRETAR LOS RESULTADOS DE WINSAT?</summary>
+<p>Para saber a que componentes se refiere cada categoría que aparece en el listado, podemos consultar la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Métrica / Puntuación</th>
+<th>Componente evaluado</th>
+<th>¿Qué mide exactamente?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPUScore</td>
+<td>Procesador (CPU)</td>
+<td>Capacidad de cálculo bruto, pruebas de compresión y algoritmos de cifrado.</td>
+</tr>
+<tr>
+<td>MemoryScore</td>
+<td>Memoria RAM</td>
+<td>La velocidad y el ancho de banda para leer y escribir datos rápidamente en el sistema.</td>
+</tr>
+<tr>
+<td>GraphicsScore</td>
+<td>Gráficos de escritorio</td>
+<td>Rendimiento de la tarjeta gráfica para la interfaz de Windows, reproducción de video y composición general.</td>
+</tr>
+<tr>
+<td>D3DScore</td>
+<td>Gráficos de juegos (3D)</td>
+<td>Rendimiento de modelado 3D y capacidades de DirectX. Es vital para el rendimiento en videojuegos y apps pesadas.</td>
+</tr>
+<tr>
+<td>DiskScore</td>
+<td>Almacenamiento primario</td>
+<td>Velocidades de lectura y escritura secuenciales y aleatorias de tu disco principal (donde está instalado Windows).</td>
+</tr>
+<tr>
+<td>WinSPRLevel</td>
+<td>Puntuación Base</td>
+<td>El subscore más bajo de la lista. Refleja el principal cuello de botella de tu PC.</td>
+</tr>
+</tbody>
+</table>
+<p>Y en cuanto a las puntuaciones, podemos interpretarlas con la siguiente escala:</p>
+<p><img alt="🐢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f422.svg" title=":turtle:" /> <strong>De 1.0 a 4.0</strong> (Rendimiento bajo): El hardware se queda corto.<br />
+<img alt="⚡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a1.svg" title=":zap:" /> <strong>De 4.1 a 7.0</strong> (Rendimiento medio): Equipos solventes para la mayoría de actividades del día a día.<br />
+<img alt="🚀" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f680.svg" title=":rocket:" /> <strong>De 7.1 a 9.9</strong> (Rendimiento alto): Hardware moderno y potente.</p>
+</details>
+<p>Complementariamente a estos comandos, también podemos lanzar una serie de <strong>herramientas gráficas</strong> de diagnóstico desde la línea de comandos, usando las siguientes opciones:</p>
+<ul>
+<li><strong><code>msinfo32</code></strong>: Abre la ventana de <strong>Información del sistema</strong> con un desglose completo y totalmente detallado del hardware del equipo. Entre otras muchas cosas, podemos ver el tipo de BIOS de nuestra máquina.</li>
+<li><strong><code>dxdiag</code></strong>: Abre la herramienta de <strong>Diagnóstico de DirectX</strong>, ideal para revisar todos lo referente a componentes multimedia, como pantalla, tarjeta gráfica y audio.</li>
+<li><strong><code>perfmon</code></strong>: Lanza el <strong>Monitor de rendimiento</strong> para detectar cuellos de botella en tiempo real. Aquí podemos ver la carga de trabajo actual que está teniendo cada componente.</li>
+</ul>
+<h2 id="creacion-de-medios-de-instalacion"><span style="color: var(--fh-secondary-color);">CREACIÓN DE MEDIOS DE INSTALACIÓN</span></h2>
+<p><strong>Criterios relacionados:</strong> CE 3.3 (arranque desde USB), CE 3.5 (utilidades y soportes).</p>
+<h3 id="31-del-iso-al-usb-arrancable">3.1. Del ISO al USB arrancable</h3>
+<p>Un medio de instalación se prepara a partir de la imagen ISO oficial del sistema o de la utilidad (Windows 10/11, GParted Live, Clonezilla Live). El proceso general:</p>
+<ol>
+<li><strong>Descargar la ISO desde la fuente oficial</strong> y anotar la suma de comprobación publicada (SHA-256).</li>
+<li><strong>Verificar la integridad</strong> de la descarga comparando sumas (en Windows, <code>certutil -hash archivo.iso SHA256</code>).</li>
+<li><strong>Volcar la ISO a un USB</strong> con una utilidad de creación de medios.</li>
+<li><strong>Probar el medio</strong> arrancándolo en un equipo de prácticas con la secuencia de arranque adecuada.</li>
+</ol>
+<h3 id="32-utilidades-de-creacion-de-medios">3.2. Utilidades de creación de medios</h3>
+<ul>
+<li><strong><a href="https://rufus.ie/es/">Rufus</a>:</strong> crea USB arrancables desde ISO, con elección de esquema de particiones (GPT/UEFI o MBR/BIOS) y sistema de archivos. Es la opción estándar para un solo medio.</li>
+<li><strong><a href="https://www.ventoy.net/">Ventoy</a>:</strong> permite copiar varias ISO a un mismo USB tal cual y elegir entre ellas desde un menú al arrancar; ideal para un técnico que lleva varias herramientas (GParted, Clonezilla, instaladores).</li>
+<li><strong>Media Creation Tool de Windows:</strong> descarga y prepara el medio oficial de instalación de Windows.</li>
+</ul>
+<h3 id="33-consideraciones-practicas">3.3. Consideraciones prácticas</h3>
+<ul>
+<li>El USB se <strong>borra por completo</strong> al crear el medio: verificar dos veces el dispositivo seleccionado.</li>
+<li>El <strong>sistema de archivos</strong> del USB viene determinado por la utilidad y el esquema elegido; el límite de 4 GiB por archivo de FAT32 condiciona los medios de más de 4 GiB (los instaladores modernos de Windows lo dividen en varias partes por esto).</li>
+<li>El medio debe ser <strong>arrancable en el modo correcto</strong>: un USB preparado para UEFI/GPT puede no arrancar en un equipo configurado en modo legacy, y viceversa.</li>
+</ul>
+<!--
 ## <span style="color: var(--fh-primary-color);">INSTALACIÓN DEL SISTEMA OPERATIVO</span>
 
 ## 2. Instalación del sistema operativo
@@ -1790,107 +2007,6 @@ La instalación asistida desde el medio original avanza por fases:
 - **Instalación estándar asistida:** la descrita arriba, paso a paso.
 - **Instalación desatendida:** instala lo mismo pero automatizada con un archivo de respuestas que responde a todos los diálogos (punto intermedio entre la instalación manual y la imagen).
 - **Instalación por imagen:** se vuelca una imagen de un sistema ya configurado (se desarrolla en los apartados 5 y 8).
-
-### <span style="color: var(--fh-secondary-color);">CREACIÓN DE MEDIOS DE INSTALACIÓN</span>
-
-## 3. Creación de medios de instalación
-
-**Criterios relacionados:** CE 3.3 (arranque desde USB), CE 3.5 (utilidades y soportes).
-
-### 3.1. Del ISO al USB arrancable
-
-Un medio de instalación se prepara a partir de la imagen ISO oficial del sistema o de la utilidad (Windows 10/11, GParted Live, Clonezilla Live). El proceso general:
-
-1. **Descargar la ISO desde la fuente oficial** y anotar la suma de comprobación publicada (SHA-256).
-2. **Verificar la integridad** de la descarga comparando sumas (en Windows, `certutil -hash archivo.iso SHA256`).
-3. **Volcar la ISO a un USB** con una utilidad de creación de medios.
-4. **Probar el medio** arrancándolo en un equipo de prácticas con la secuencia de arranque adecuada.
-
-### 3.2. Utilidades de creación de medios
-
-- **[Rufus](https://rufus.ie/es/):** crea USB arrancables desde ISO, con elección de esquema de particiones (GPT/UEFI o MBR/BIOS) y sistema de archivos. Es la opción estándar para un solo medio.
-- **[Ventoy](https://www.ventoy.net/):** permite copiar varias ISO a un mismo USB tal cual y elegir entre ellas desde un menú al arrancar; ideal para un técnico que lleva varias herramientas (GParted, Clonezilla, instaladores).
-- **Media Creation Tool de Windows:** descarga y prepara el medio oficial de instalación de Windows.
-
-### 3.3. Consideraciones prácticas
-
-- El USB se **borra por completo** al crear el medio: verificar dos veces el dispositivo seleccionado.
-- El **sistema de archivos** del USB viene determinado por la utilidad y el esquema elegido; el límite de 4 GiB por archivo de FAT32 condiciona los medios de más de 4 GiB (los instaladores modernos de Windows lo dividen en varias partes por esto).
-- El medio debe ser **arrancable en el modo correcto**: un USB preparado para UEFI/GPT puede no arrancar en un equipo configurado en modo legacy, y viceversa.
-
-### <span style="color: var(--bda-secondary-color);">UTILIDADES DE CHEQUEO Y DIAGNÓSTICO</span>
-
-Windows incorpora una serie herramientas de forma nativa para chequear y diagnosticar el estado del hardware y componentes principales del equipo:
-
-- **`chkdsk`**: Analiza el sistema de archivos y el estado físico de los discos duros en busca de sectores defectuosos.
-    - Uso común: chkdsk /f /r (para reparar errores y recuperar sectores dañados, ejecutándose como administrador). Más detalles disponibles en la guía sobre Comandos CHKDSK en AVG o en la documentación oficial de Microsoft Learn - chkdsk.
-- **`mdsched`**: Inicia el Diagnóstico de memoria de Windows para comprobar errores físicos en la memoria RAM (requiere reiniciar el equipo).
-- **`powercfg`** /energy o powercfg /batteryreport: Genera un informe detallado sobre el consumo energético, la eficiencia y el estado de desgaste de la batería en portátiles.
-- **`systeminfo`**: Muestra una lista detallada de la configuración del equipo, procesador, memoria RAM instalada y placa base, como se resume en el repaso de Xataka Basics.
-- **`winsat formal`**: Ejecuta una evaluación de rendimiento del sistema para medir las capacidades de la CPU, gráficos, memoria y disco.
-
-Para interpretar las estadísticas de winsat formal, debes fijarte en las puntuaciones numéricas individuales (subscores) que van en una escala del 1.0 al 9.9 en las versiones actuales de Windows (10 y 11). Tradicionalmente, la puntuación general de tu sistema (el antiguo Índice de Experiencia de Windows o WEI) no es un promedio, sino que equivale a la puntuación más baja obtenida por el componente más
-
-Si utilizas el comando de PowerShell **Get-CimInstance Win32_WinSat** para ver los resultados de forma limpia, esto es lo que significa cada apartado:
-
-📊Desglose de los resultados de WinSAT
-
-| Métrica / Puntuación | Componente evaluado     | ¿Qué mide exactamente?                                                                                             |
-| -------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| CPUScore             | Procesador (CPU)        | Capacidad de cálculo bruto, pruebas de compresión y algoritmos de cifrado.                                         |
-| MemoryScore          | Memoria RAM             | La velocidad y el ancho de banda para leer y escribir datos rápidamente en el sistema.                             |
-| GraphicsScore        | Gráficos de escritorio  | Rendimiento de la tarjeta gráfica para la interfaz de Windows, reproducción de video y composición general.        |
-| D3DScore             | Gráficos de juegos (3D) | Rendimiento de modelado 3D y capacidades de DirectX. Es vital para el rendimiento en videojuegos y apps pesadas.   |
-| DiskScore            | Almacenamiento primario | Velocidades de lectura y escritura secuenciales y aleatorias de tu disco principal (donde está instalado Windows). |
-| WinSPRLevel          | Puntuación Base         | El subscore más bajo de la lista. Refleja el principal cuello de botella de tu PC.                                 |
-
-🔑 Cómo valorar los rangos de puntuación
-
-• De 1.0 a 4.0 (Rendimiento bajo): El hardware se queda corto. Es común encontrar discos mecánicos antiguos (HDD) o gráficos integrados muy viejos en este rango. Ideal únicamente para tareas de oficina básicas o navegación web ligera.
-• De 4.1 a 7.0 (Rendimiento medio): Equipos solventes para la mayoría de actividades del día a día, reproducción multimedia en alta definición y multitarea moderada.
-• De 7.1 a 9.9 (Rendimiento alto): Hardware moderno y potente. Si tu puntuación de disco (DiskScore) está aquí, significa que cuentas con un SSD de estado sólido (SATA o NVMe) que asegura la máxima fluidez del sistema. Es el rango esperado para ordenadores de gaming o estaciones de trabajo optimizadas.
-
-💡 El truco del "Cuello de Botella"
-
-La gran utilidad de WinSAT es identificar piezas descompensadas. Por ejemplo, si tu CPUScore y MemoryScore están en 8.5, pero tu DiskScore marca 5.2, tu sistema se siente lento porque el almacenamiento frena al procesador. Un cambio a un disco SSD resolverá inmediatamente el problema
-
-
-- **`driverquery`**: Lista todos los controladores de dispositivos instalados para verificar incompatibilidades o fallos de drivers de hardware.
-- **`sfc /scannow`**: Aunque están más orientados a la integridad del software y archivos del sistema operativo, ayudan a descartar que un fallo aparente de hardware sea en realidad corrupción del sistema.
-- **`DISM`**: La herramienta DISM (Deployment Image Servicing and Management o Administración y mantenimiento de imágenes de implementación) es una utilidad de línea de comandos en Windows que sirve para reparar, modificar y preparar imágenes del sistema operativo y el almacén de componentes de Windows (WinSxS), evitando tener que formatear el equipo.
-También se usa en entornos empresariales para instalar, desinstalar o actualizar características y controladores en imágenes .wim o en instalaciones sin conexión.
-
-Cómo se suele ejecutar
-
-Para usar DISM en tu equipo, debes abrir la terminal con privilegios de administrador (puedes buscar cmd o PowerShell, hacer clic derecho y seleccionar Ejecutar como administrador).
-Los comandos más habituales se ejecutan en este orden cuando se busca solucionar errores del sistema:
-
-1. Comprobar el estado de salud (rápido, de solo lectura):cmd
-DISM /Online /Cleanup-Image /CheckHealth
-Usa el código con precaución.
-Verifica si la imagen del sistema está marcada como dañada.
-2. Escanear en busca de daños:cmd
-DISM /Online /Cleanup-Image /ScanHealth
-Usa el código con precaución.
-Realiza un análisis más profundo para detectar si existen corrupciones.
-3. Reparar la imagen del sistema (el comando más común):cmd
-DISM /Online /Cleanup-Image /RestoreHealth
-Usa el código con precaución.
-Se conecta a través de Windows Update para descargar y sustituir los archivos dañados del almacén de componentes.
-4. Liberar espacio eliminando componentes antiguos:cmd
-DISM /Online /Cleanup-Image /StartComponentCleanup
-Usa el código con precaución.
-Limpia los archivos sobrantes que dejan las actualizaciones de Windows para recuperar espacio en disco.
-Consejo útil: Tras terminar con DISM /RestoreHealth, es muy habitual ejecutar a continuación el comando SFC para reparar los archivos del sistema individuales:
-cmd
-sfc /scannow
-
-
-Herramientas gráficas complementarias (vía comandos)
-
-- msinfo32: Abre la ventana de Información del sistema con un desglose completo del hardware.
-- dxdiag: Abre la herramienta de diagnóstico de DirectX, ideal para revisar componentes de pantalla, tarjeta gráfica y audio.
-- perfmon: Lanza el Monitor de rendimiento para detectar cuellos de botella en tiempo real.
 
 ### <span style="color: var(--fh-secondary-color);">CREACIÓN DE PARTICIONES</span>
 

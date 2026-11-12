@@ -1,0 +1,2035 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sitio para englobar los contenidos teórico/prácticos de varios del os módulos profesionales impartidos en la especialidad de Informática del IES Azarquiel.">
+      
+      
+        <meta name="author" content="Lorenzo LV">
+      
+      
+        <link rel="canonical" href="https://profeazarquiel.github.io/MKDOCS_25-26/HARDWARE/Guion%20de%20contenidos/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://res.cloudinary.com/dp56lzsjs/image/upload/v1792966152/favicon_gwap5r.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Configuración, instalación y recuperación del software base - MATERIALES INFORMÁTICA IES AZARQUIEL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CHack:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Hack"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuracion-instalacion-y-recuperacion-del-software-base" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="MATERIALES INFORMÁTICA IES AZARQUIEL" class="md-header__button md-logo" aria-label="MATERIALES INFORMÁTICA IES AZARQUIEL" data-md-component="logo">
+      
+  
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="logo"
+   width="273.09064"
+   height="272.77676"
+   viewBox="0 0 273.09064 272.77676"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g id="g1" transform="translate(-138.03281,-136.63254)">
+    <path id="path-logo" style="stroke-width:0.5" d="m 177.79014,408.79785 c -18.46182,-3.44154 -32.94388,-16.7821 -38.23446,-35.22075 l -1.22423,-4.26667 -0.14932,-78.63672 -0.14933,-78.63672 1.35099,-2.76132 c 0.86719,-1.77247 2.14436,-3.31113 3.56641,-4.29661 l 2.21541,-1.53528 h 129.42452 129.42452 l 2.20341,1.52696 c 1.37682,0.95413 2.71022,2.54401 3.5544,4.23805 l 1.35099,2.71109 -0.0117,48.29528 c -0.0111,45.87079 -0.0613,48.40237 -0.99941,50.42861 -0.54323,1.17333 -1.67796,2.7806 -2.52162,3.57171 -3.19313,2.99423 -3.94428,3.09496 -23.08057,3.09496 h -17.58092 l -0.2009,26 c -0.1931,24.98982 -0.24727,26.16315 -1.3942,30.19939 -4.8828,17.18346 -17.26644,29.57625 -34.52028,34.5458 l -4.22371,1.21654 -72.53333,0.11081 c -57.76705,0.0883 -73.29335,-0.0308 -76.26666,-0.58513 z m 39.46666,-70.81341 c 3.42086,-1.79451 5.60901,-5.54964 5.58828,-9.59021 -0.0214,-4.17551 -1.63118,-6.56829 -9.6096,-14.28384 -4.09494,-3.96002 -7.44535,-7.44324 -7.44535,-7.74047 0,-0.29724 3.38535,-3.89722 7.52299,-7.99996 4.39635,-4.35926 7.93803,-8.34616 8.52162,-9.59285 3.31395,-7.07945 -2.21725,-15.73334 -10.05609,-15.73334 -4.05164,0 -6.69843,2.0055 -19.15737,14.51575 -14.16513,14.22346 -15.13275,15.80796 -13.44556,22.01758 0.47667,1.75434 2.77382,4.34337 12.93036,14.57329 6.79289,6.84198 13.00365,12.91328 13.80167,13.4918 2.79735,2.02788 7.84554,2.18012 11.34905,0.34225 z m 36.53333,0.10091 c 2.37641,-1.19386 3.99902,-2.93741 5.03002,-5.40495 0.9217,-2.20593 8.30963,-45.69948 8.2916,-48.81354 -0.0325,-5.62108 -5.35152,-10.82309 -11.06644,-10.82309 -2.97474,0 -7.38247,2.37818 -9.03448,4.87454 -1.2055,1.82164 -1.85545,4.94202 -5.29078,25.40111 -2.15404,12.82839 -3.91948,24.23206 -3.92318,25.34148 -0.0268,8.02395 8.62853,13.12434 15.99326,9.42445 z m 44.53333,-0.11199 c 0.88,-0.46773 7.2779,-6.56823 14.21757,-13.55667 10.39127,-10.46431 12.71981,-13.08267 13.19702,-14.83959 1.68677,-6.21 0.71932,-7.7942 -13.44574,-22.01758 -12.45894,-12.51025 -15.10573,-14.51575 -19.15736,-14.51575 -7.64481,0 -13.18099,8.28469 -10.25783,15.35047 0.49979,1.20805 3.87741,5.05048 8.64387,9.83338 l 7.82354,7.85051 -7.57659,7.68989 c -8.04433,8.16462 -9.67893,10.62951 -9.69943,14.62621 -0.0428,8.33462 8.79624,13.54348 16.25495,9.57913 z m 90.80383,-77.86292 0.13717,-35.06666 h -11.20384 -11.20383 v 35.21081 35.21082 l 11.06666,-0.14415 11.06667,-0.14416 z M 203.92347,179.72799 c -4.12284,-1.98224 -6.08132,-4.63343 -6.51307,-8.81674 -0.54546,-5.28499 0.0478,-6.12547 14.38361,-20.37631 11.34891,-11.28166 13.22216,-12.93117 15.32394,-13.49364 6.54478,-1.75148 13.01236,2.41134 14.07546,9.0596 0.18969,1.18627 -0.0245,3.15084 -0.53043,4.86617 -0.78835,2.67257 -1.72466,3.75479 -13.19404,15.2501 -13.0026,13.032 -14.99794,14.53652 -19.27881,14.53652 -1.17333,0 -3.09333,-0.46157 -4.26666,-1.0257 z m 67.29865,0.5068 c -2.37431,-0.71267 -5.07515,-3.05769 -6.32137,-5.48857 -1.44401,-2.81669 -1.53628,-7.33949 -0.20338,-9.96911 1.53984,-3.03788 24.66137,-25.87798 27.49276,-27.15813 9.15199,-4.13786 18.68825,5.51292 14.45124,14.6248 -0.6372,1.37034 -5.54481,6.64349 -13.72162,14.74369 -10.43778,10.33998 -13.11371,12.71598 -14.86296,13.19702 -2.45862,0.67613 -4.69485,0.69259 -6.83467,0.0503 z"/>
+  </g>
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MATERIALES INFORMÁTICA IES AZARQUIEL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuración, instalación y recuperación del software base
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="lime" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MATERIALES INFORMÁTICA IES AZARQUIEL" class="md-nav__button md-logo" aria-label="MATERIALES INFORMÁTICA IES AZARQUIEL" data-md-component="logo">
+      
+  
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="logo"
+   width="273.09064"
+   height="272.77676"
+   viewBox="0 0 273.09064 272.77676"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g id="g1" transform="translate(-138.03281,-136.63254)">
+    <path id="path-logo" style="stroke-width:0.5" d="m 177.79014,408.79785 c -18.46182,-3.44154 -32.94388,-16.7821 -38.23446,-35.22075 l -1.22423,-4.26667 -0.14932,-78.63672 -0.14933,-78.63672 1.35099,-2.76132 c 0.86719,-1.77247 2.14436,-3.31113 3.56641,-4.29661 l 2.21541,-1.53528 h 129.42452 129.42452 l 2.20341,1.52696 c 1.37682,0.95413 2.71022,2.54401 3.5544,4.23805 l 1.35099,2.71109 -0.0117,48.29528 c -0.0111,45.87079 -0.0613,48.40237 -0.99941,50.42861 -0.54323,1.17333 -1.67796,2.7806 -2.52162,3.57171 -3.19313,2.99423 -3.94428,3.09496 -23.08057,3.09496 h -17.58092 l -0.2009,26 c -0.1931,24.98982 -0.24727,26.16315 -1.3942,30.19939 -4.8828,17.18346 -17.26644,29.57625 -34.52028,34.5458 l -4.22371,1.21654 -72.53333,0.11081 c -57.76705,0.0883 -73.29335,-0.0308 -76.26666,-0.58513 z m 39.46666,-70.81341 c 3.42086,-1.79451 5.60901,-5.54964 5.58828,-9.59021 -0.0214,-4.17551 -1.63118,-6.56829 -9.6096,-14.28384 -4.09494,-3.96002 -7.44535,-7.44324 -7.44535,-7.74047 0,-0.29724 3.38535,-3.89722 7.52299,-7.99996 4.39635,-4.35926 7.93803,-8.34616 8.52162,-9.59285 3.31395,-7.07945 -2.21725,-15.73334 -10.05609,-15.73334 -4.05164,0 -6.69843,2.0055 -19.15737,14.51575 -14.16513,14.22346 -15.13275,15.80796 -13.44556,22.01758 0.47667,1.75434 2.77382,4.34337 12.93036,14.57329 6.79289,6.84198 13.00365,12.91328 13.80167,13.4918 2.79735,2.02788 7.84554,2.18012 11.34905,0.34225 z m 36.53333,0.10091 c 2.37641,-1.19386 3.99902,-2.93741 5.03002,-5.40495 0.9217,-2.20593 8.30963,-45.69948 8.2916,-48.81354 -0.0325,-5.62108 -5.35152,-10.82309 -11.06644,-10.82309 -2.97474,0 -7.38247,2.37818 -9.03448,4.87454 -1.2055,1.82164 -1.85545,4.94202 -5.29078,25.40111 -2.15404,12.82839 -3.91948,24.23206 -3.92318,25.34148 -0.0268,8.02395 8.62853,13.12434 15.99326,9.42445 z m 44.53333,-0.11199 c 0.88,-0.46773 7.2779,-6.56823 14.21757,-13.55667 10.39127,-10.46431 12.71981,-13.08267 13.19702,-14.83959 1.68677,-6.21 0.71932,-7.7942 -13.44574,-22.01758 -12.45894,-12.51025 -15.10573,-14.51575 -19.15736,-14.51575 -7.64481,0 -13.18099,8.28469 -10.25783,15.35047 0.49979,1.20805 3.87741,5.05048 8.64387,9.83338 l 7.82354,7.85051 -7.57659,7.68989 c -8.04433,8.16462 -9.67893,10.62951 -9.69943,14.62621 -0.0428,8.33462 8.79624,13.54348 16.25495,9.57913 z m 90.80383,-77.86292 0.13717,-35.06666 h -11.20384 -11.20383 v 35.21081 35.21082 l 11.06666,-0.14415 11.06667,-0.14416 z M 203.92347,179.72799 c -4.12284,-1.98224 -6.08132,-4.63343 -6.51307,-8.81674 -0.54546,-5.28499 0.0478,-6.12547 14.38361,-20.37631 11.34891,-11.28166 13.22216,-12.93117 15.32394,-13.49364 6.54478,-1.75148 13.01236,2.41134 14.07546,9.0596 0.18969,1.18627 -0.0245,3.15084 -0.53043,4.86617 -0.78835,2.67257 -1.72466,3.75479 -13.19404,15.2501 -13.0026,13.032 -14.99794,14.53652 -19.27881,14.53652 -1.17333,0 -3.09333,-0.46157 -4.26666,-1.0257 z m 67.29865,0.5068 c -2.37431,-0.71267 -5.07515,-3.05769 -6.32137,-5.48857 -1.44401,-2.81669 -1.53628,-7.33949 -0.20338,-9.96911 1.53984,-3.03788 24.66137,-25.87798 27.49276,-27.15813 9.15199,-4.13786 18.68825,5.51292 14.45124,14.6248 -0.6372,1.37034 -5.54481,6.64349 -13.72162,14.74369 -10.43778,10.33998 -13.11371,12.71598 -14.86296,13.19702 -2.45862,0.67613 -4.69485,0.69259 -6.83467,0.0503 z"/>
+  </g>
+</svg>
+
+    </a>
+    MATERIALES INFORMÁTICA IES AZARQUIEL
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INICIO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BIGDATA APLICADO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BIGDATA APLICADO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BIGDATA/indexb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice Big Data Aplicado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BIGDATA/ud0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD0. Libros y Herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BIGDATA/ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1. Introducción a BigData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BIGDATA/ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2. Arquitecturas BigData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BIGDATA/ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Formatos de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BIGDATA/ud4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4. SQL Analítico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTACIÓN EN LA NUBE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    COMPUTACIÓN EN LA NUBE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLOUD/indexc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice Computación en la Nube
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLOUD/ud0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD0. Libros y Herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLOUD/ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1. Infraestructura de Red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLOUD/ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2. Infraestructura Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLOUD/ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Virtualización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLOUD/ud4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4. Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLOUD/ud5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5. Orquestación de contenedores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DISEÑO WEB
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DISEÑO WEB
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/indexw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice Diseño de Interfaces Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/ud0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD0. Libros y Herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1. Planificación de interfaces Gráficas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2. Maquetación CSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Implantación de Multimedia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WEB/ud4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4. Frameworks CSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FUNDAMENTOS HARDWARE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FUNDAMENTOS HARDWARE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../indexh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice Fundamentos Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD0. Libros y Herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1. Estructura Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2. Instalación del SO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PYTHON
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PYTHON
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYTHON/indexp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice Programación con Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYTHON/ud0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD0. Libros y Herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYTHON/ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1. Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYTHON/ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2. Análisis de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYTHON/ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3. Creación de APIs REST
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documento-de-contenidos-teoricos-modulo-fundamentos-de-hardware-1o-asir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documento de contenidos teóricos — Módulo Fundamentos de Hardware · 1º ASIR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-configuracion-del-arranque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Configuración del arranque
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-instalacion-del-sistema-operativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Instalación del sistema operativo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creacion-de-medios-de-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Creación de medios de instalación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-creacion-de-particiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Creación de particiones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-instalacion-estandar-vs-preinstalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Instalación estándar vs preinstalación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-recuperacion-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Recuperación del sistema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-soportes-de-memoria-auxiliar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Soportes de memoria auxiliar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-creacion-de-imagenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Creación de imágenes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes principales
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="configuracion-instalacion-y-recuperacion-del-software-base">Configuración, instalación y recuperación del software base</h1>
+<h2 id="documento-de-contenidos-teoricos-modulo-fundamentos-de-hardware-1o-asir">Documento de contenidos teóricos — Módulo Fundamentos de Hardware · 1º ASIR</h2>
+<p>Este documento reorganiza los contenidos teóricos de las unidades 1 a 3 del bloque "configuración de equipos microinformáticos e instalación y recuperación de software base mediante imágenes" siguiendo el guion de contenidos indicado. Cada apartado indica el criterio de evaluación (CE) del currículo con el que se relaciona.</p>
+<p><strong>Índice:</strong></p>
+<ol>
+<li>Configuración del arranque</li>
+<li>Instalación del sistema operativo</li>
+<li>Creación de medios de instalación</li>
+<li>Creación de particiones</li>
+<li>Instalación estándar vs preinstalación</li>
+<li>Recuperación del sistema</li>
+<li>Soportes de memoria auxiliar</li>
+<li>Creación de imágenes</li>
+</ol>
+<hr />
+<h2 id="1-configuracion-del-arranque">1. Configuración del arranque</h2>
+<p><strong>Criterios relacionados:</strong> CE 3.3 (secuencias de arranque), CE 1.4 (parámetros de configuración).</p>
+<h3 id="11-el-proceso-de-arranque">1.1. El proceso de arranque</h3>
+<p>El arranque de un equipo avanza en cuatro fases:</p>
+<ol>
+<li><strong>POST (Power-On Self-Test):</strong> al encender, el firmware comprueba CPU, memoria, tarjeta gráfica, teclado y unidades. Si falla, detiene el arranque e informa mediante pitidos, códigos en pantalla o LED de diagnóstico (cada fabricante publica su tabla: por ejemplo, en Dell 2 pitidos indican RAM no detectada) (<a href="https://www.dell.com/support/kbdoc/es-co/000124349/descripci%C3%B3n-del-sonido-sonido-on-a-dell-desktop-pc">Dell: códigos de sonido</a>, <a href="https://support.hp.com/us-en/document/ish_1997719-1528356-16">HP: indicadores de diagnóstico</a>).</li>
+<li><strong>Firmware (BIOS/UEFI):</strong> consulta su lista de dispositivos por prioridad (secuencia de arranque) hasta encontrar uno arrancable.</li>
+<li><strong>Gestor de arranque:</strong> en BIOS lee el primer sector del disco (MBR); en UEFI carga un archivo ejecutable EFI desde la partición de sistema EFI (ESP), según la <a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq?view=windows-10">documentación de Microsoft sobre UEFI y GPT</a>.</li>
+<li><strong>Sistema operativo:</strong> el gestor (Windows Boot Manager, GRUB) entrega el control al núcleo y se cargan los servicios del sistema.</li>
+</ol>
+<h3 id="12-bios-y-uefi">1.2. BIOS y UEFI</h3>
+<p>El firmware es el primer software que se ejecuta al encender el equipo. La pareja clásica es BIOS+MBR frente a UEFI+GPT (<a href="https://dl.dell.com/manuals/common/dellemc-boot-mode-bios-uefi.pdf">Dell: Boot Mode Considerations</a>, <a href="https://www.hp.com/es-es/shop/tech-insights/bios-uefi">HP: BIOS y UEFI</a>):</p>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>BIOS (heredado)</th>
+<th>UEFI (actual)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dónde lee el arranque</td>
+<td>Primer sector del disco (MBR)</td>
+<td>Archivo EFI en la partición ESP</td>
+</tr>
+<tr>
+<td>Tabla de particiones</td>
+<td>MBR</td>
+<td>GPT</td>
+</tr>
+<tr>
+<td>Interfaz</td>
+<td>Texto, solo teclado</td>
+<td>Gráfica, con ratón y red</td>
+</tr>
+<tr>
+<td>Seguridad</td>
+<td>Contraseñas de Setup</td>
+<td>Secure Boot: solo cargadores firmados</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Secure Boot</strong> es la función de UEFI que verifica la firma digital de cada pieza del software de arranque antes de ejecutarla, impidiendo que rootkits y cargadores no firmados se ejecuten antes que el sistema operativo. Windows 11 lo exige activado (<a href="https://support.microsoft.com/es-es/windows/security/devicesecurity/windows-11-and-secure-boot">Microsoft: Windows 11 y el arranque seguro</a>). Para arrancar un USB live sin firma (GParted, Clonezilla) puede ser necesario desactivarlo temporalmente.</p>
+<h3 id="13-la-secuencia-de-arranque-y-sus-modos">1.3. La secuencia de arranque y sus modos</h3>
+<ul>
+<li><strong>Qué es:</strong> lista priorizada de dispositivos que el firmware consulta en orden. En UEFI cada entrada apunta a un archivo de arranque concreto, por lo que un mismo disco puede tener varias entradas (<a href="https://dl.dell.com/manuals/common/dellemc-boot-mode-bios-uefi.pdf">Dell</a>).</li>
+<li><strong>Cómo se cambia:</strong> de forma permanente desde el Setup (Supr, F2 o F10 según fabricante), o de forma puntual con el Boot Menu (F8, F11, F12 o Esc) sin modificar la configuración guardada.</li>
+<li><strong>Modos de arranque configurables:</strong></li>
+<li><strong>Disco interno:</strong> arranque diario del sistema instalado.</li>
+<li><strong>USB:</strong> el firmware carga el cargador del USB como si fuera un disco; instalación de sistemas y medios live.</li>
+<li><strong>Unidad óptica:</strong> arranque desde CD/DVD (norma El Torito); equipos antiguos y discos de rescate.</li>
+<li><strong>Red (PXE):</strong> la tarjeta de red descarga el cargador por DHCP y TFTP; base del despliegue masivo de aulas.</li>
+<li><strong>Multiarranque:</strong> un gestor (GRUB) ofrece un menú con varios sistemas instalados.</li>
+<li><strong>CSM/Legacy Boot:</strong> modo de compatibilidad de las placas UEFI para arrancar medios antiguos estilo BIOS; conviene desactivarlo cuando no se usa.</li>
+</ul>
+<hr />
+<h2 id="2-instalacion-del-sistema-operativo">2. Instalación del sistema operativo</h2>
+<p><strong>Criterios relacionados:</strong> CE 3.2 (instalación estándar), CE 3.3 (arranque desde el medio).</p>
+<h3 id="21-requisitos-previos">2.1. Requisitos previos</h3>
+<p>Antes de instalar un sistema operativo hay que verificar:</p>
+<ul>
+<li><strong>Compatibilidad de firmware:</strong> el equipo debe poder arrancar desde el medio elegido (USB, en la actualidad) y tener el modo adecuado activado (UEFI nativo o CSM según el medio).</li>
+<li><strong>Requisitos del sistema:</strong> espacio en disco, RAM y, en el caso de Windows 11, TPM 2.0 y Secure Boot activado (<a href="https://support.microsoft.com/es-es/windows/security/devicesecurity/windows-11-and-secure-boot">Microsoft</a>).</li>
+<li><strong>Licencia y activación:</strong> clave de producto o cuenta con licencia digital.</li>
+<li><strong>Copia de seguridad:</strong> si se instala sobre un disco con datos, estos se pierden salvo copia previa.</li>
+</ul>
+<h3 id="22-fases-de-una-instalacion-estandar">2.2. Fases de una instalación estándar</h3>
+<p>La instalación asistida desde el medio original avanza por fases:</p>
+<ol>
+<li><strong>Arranque desde el medio de instalación</strong> (secuencia de arranque configurada a tal efecto).</li>
+<li><strong>Configuración inicial:</strong> idioma, formato de hora y distribución de teclado.</li>
+<li><strong>Elección de destino:</strong> selección del disco y de las particiones (el instalador puede crearlas automáticamente o permitir el particionado manual, apartado 4).</li>
+<li><strong>Copia de archivos y configuración:</strong> el instalador descomprime la imagen del sistema sobre el disco destino y detecta el hardware.</li>
+<li><strong>Primera configuración:</strong> creación de usuario, región, red, privacidad y actualizaciones.</li>
+<li><strong>Postinstalación:</strong> controladores que el instalador no incluyó, actualizaciones del sistema y aplicaciones.</li>
+</ol>
+<h3 id="23-variantes-de-instalacion">2.3. Variantes de instalación</h3>
+<ul>
+<li><strong>Instalación estándar asistida:</strong> la descrita arriba, paso a paso.</li>
+<li><strong>Instalación desatendida:</strong> instala lo mismo pero automatizada con un archivo de respuestas que responde a todos los diálogos (punto intermedio entre la instalación manual y la imagen).</li>
+<li><strong>Instalación por imagen:</strong> se vuelca una imagen de un sistema ya configurado (se desarrolla en los apartados 5 y 8).</li>
+</ul>
+<hr />
+<h2 id="3-creacion-de-medios-de-instalacion">3. Creación de medios de instalación</h2>
+<p><strong>Criterios relacionados:</strong> CE 3.3 (arranque desde USB), CE 3.5 (utilidades y soportes).</p>
+<h3 id="31-del-iso-al-usb-arrancable">3.1. Del ISO al USB arrancable</h3>
+<p>Un medio de instalación se prepara a partir de la imagen ISO oficial del sistema o de la utilidad (Windows 10/11, GParted Live, Clonezilla Live). El proceso general:</p>
+<ol>
+<li><strong>Descargar la ISO desde la fuente oficial</strong> y anotar la suma de comprobación publicada (SHA-256).</li>
+<li><strong>Verificar la integridad</strong> de la descarga comparando sumas (en Windows, <code>certutil -hash archivo.iso SHA256</code>).</li>
+<li><strong>Volcar la ISO a un USB</strong> con una utilidad de creación de medios.</li>
+<li><strong>Probar el medio</strong> arrancándolo en un equipo de prácticas con la secuencia de arranque adecuada.</li>
+</ol>
+<h3 id="32-utilidades-de-creacion-de-medios">3.2. Utilidades de creación de medios</h3>
+<ul>
+<li><strong><a href="https://rufus.ie/es/">Rufus</a>:</strong> crea USB arrancables desde ISO, con elección de esquema de particiones (GPT/UEFI o MBR/BIOS) y sistema de archivos. Es la opción estándar para un solo medio.</li>
+<li><strong><a href="https://www.ventoy.net/">Ventoy</a>:</strong> permite copiar varias ISO a un mismo USB tal cual y elegir entre ellas desde un menú al arrancar; ideal para un técnico que lleva varias herramientas (GParted, Clonezilla, instaladores).</li>
+<li><strong>Media Creation Tool de Windows:</strong> descarga y prepara el medio oficial de instalación de Windows.</li>
+</ul>
+<h3 id="33-consideraciones-practicas">3.3. Consideraciones prácticas</h3>
+<ul>
+<li>El USB se <strong>borra por completo</strong> al crear el medio: verificar dos veces el dispositivo seleccionado.</li>
+<li>El <strong>sistema de archivos</strong> del USB viene determinado por la utilidad y el esquema elegido; el límite de 4 GiB por archivo de FAT32 condiciona los medios de más de 4 GiB (los instaladores modernos de Windows lo dividen en varias partes por esto).</li>
+<li>El medio debe ser <strong>arrancable en el modo correcto</strong>: un USB preparado para UEFI/GPT puede no arrancar en un equipo configurado en modo legacy, y viceversa.</li>
+</ul>
+<hr />
+<h2 id="4-creacion-de-particiones">4. Creación de particiones</h2>
+<p><strong>Criterio relacionado:</strong> CE 3.4 (herramientas de particionado).</p>
+<h3 id="41-conceptos-fundamentales">4.1. Conceptos fundamentales</h3>
+<ul>
+<li><strong>Partición:</strong> región del disco delimitada en la tabla de particiones; <strong>volumen:</strong> espacio de almacenamiento con formato dentro de una partición; <strong>letra de unidad / punto de montaje:</strong> cómo accede el sistema a cada volumen.</li>
+<li><strong>Por qué particionar:</strong> separar sistema y datos (una reinstalación no toca los datos), convivir varios sistemas (multiarranque) y aislar fallos o llenados entre unidades.</li>
+<li><strong>Formatear</strong> es dar sistema de archivos a una partición: la tabla dice dónde está la partición, el sistema de archivos dice cómo se organizan los archivos dentro.</li>
+</ul>
+<h3 id="42-tablas-de-particiones-mbr-y-gpt">4.2. Tablas de particiones: MBR y GPT</h3>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>MBR (heredado)</th>
+<th>GPT (actual)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Particiones primarias</td>
+<td>4 (o 3 + una extendida con lógicas)</td>
+<td>128</td>
+</tr>
+<tr>
+<td>Tamaño máximo de disco</td>
+<td>2 TiB</td>
+<td>Hasta 18 EiB</td>
+</tr>
+<tr>
+<td>Fiabilidad de la tabla</td>
+<td>Una sola copia, sin CRC</td>
+<td>Cabecera y tabla duplicadas con comprobación CRC32</td>
+</tr>
+<tr>
+<td>Firmware de arranque</td>
+<td>BIOS clásico</td>
+<td>UEFI nativo (exigido por Windows)</td>
+</tr>
+</tbody>
+</table>
+<p>Fuentes: <a href="https://docs.redhat.com/es/documentation/red_hat_enterprise_linux_8/html/system_design_guide/ref_comparison-of-partition-table-types_assembly_creating-a-partition-table-on-a-disk">Red Hat: comparativa de tipos de tabla de particiones</a>, <a href="https://www.dell.com/support/kbdoc/es-vg/000143245/preguntas-frecuentes-relacionadas-con-las-unidades-de-estado-s%C3%B3lido-ssd-nvme">Dell: FAQ SSD NVMe (MBR y GPT)</a>, <a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq?view=windows-10">Microsoft Learn: Windows and GPT FAQ</a>. Windows incluye MBR2GPT para convertir un disco ya instalado de MBR a GPT sin perder datos (<a href="https://learn.microsoft.com/es-es/windows/deployment/mbr-to-gpt">Microsoft Learn</a>).</p>
+<h3 id="43-particiones-especiales">4.3. Particiones especiales</h3>
+<table>
+<thead>
+<tr>
+<th>Partición</th>
+<th>Qué contiene</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESP (sistema EFI)</td>
+<td>Cargadores de arranque UEFI en la carpeta EFI; imprescindible para arrancar</td>
+</tr>
+<tr>
+<td>Reservada (MSR)</td>
+<td>Espacio reservado de Microsoft, sin datos, para uso interno de Windows</td>
+</tr>
+<tr>
+<td>Recuperación</td>
+<td>Imagen de fábrica y entorno WinRE para restaurar sin medios externos</td>
+</tr>
+<tr>
+<td>Swap de Linux</td>
+<td>Área de intercambio: memoria virtual en disco</td>
+</tr>
+</tbody>
+</table>
+<p>Estas particiones no llevan letra en el Explorador: se gestionan con las herramientas de discos, y borrarlas rompe el arranque o la recuperación.</p>
+<h3 id="44-sistemas-de-archivos">4.4. Sistemas de archivos</h3>
+<table>
+<thead>
+<tr>
+<th>Sistema</th>
+<th>Límites y uso típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FAT32</td>
+<td>Compatible con todo; máximo de 4 GiB por archivo. Pendrives de arranque e intercambio</td>
+</tr>
+<tr>
+<td>exFAT</td>
+<td>Sin el límite de 4 GiB ni registro de cambios; discos externos y tarjetas de gran capacidad</td>
+</tr>
+<tr>
+<td>NTFS</td>
+<td>Con journaling, permisos y cifrado; particiones de sistema en Windows</td>
+</tr>
+<tr>
+<td>ext4</td>
+<td>Con journaling; particiones de sistema y de datos en Linux</td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>journaling</strong> permite recuperar la coherencia tras un corte eléctrico: NTFS y ext4 lo tienen; FAT32 y exFAT no. El límite de 4 GiB de FAT32 es un dato clave al guardar imágenes de disco.</p>
+<h3 id="45-herramientas-de-particionado">4.5. Herramientas de particionado</h3>
+<ul>
+<li><strong>Administración de discos (Windows):</strong> gráfico, incluido en el sistema: crear, formatear, cambiar letras y extender volúmenes.</li>
+<li><strong>diskpart (Windows):</strong> consola; mismas operaciones con órdenes (<code>list disk</code>, <code>select disk</code>, <code>create partition</code>, <code>format</code>).</li>
+<li><strong><a href="https://gparted.org/display-doc.php?name=help-manual">GParted</a>:</strong> gráfico y multiplataforma, arranca desde USB (GParted Live): crear, borrar, mover, redimensionar y copiar particiones preservando los datos (<a href="https://gparted.org/features.php">funcionalidades</a>).</li>
+<li><strong>fdisk y parted (Linux):</strong> consola, particionado clásico.</li>
+</ul>
+<p><strong>Normas de seguridad:</strong> copia de seguridad previa (toda operación puede fallar), esquema planificado antes de operar (tabla, número de particiones, tamaños y sistemas de archivos) y no interrumpir nunca una operación en curso (un redimensionado interrumpido puede dejar la partición inutilizable). Verificación cruzada del disco seleccionado antes de aplicar cambios: un error de disco no tiene marcha atrás.</p>
+<hr />
+<h2 id="5-instalacion-estandar-vs-preinstalacion">5. Instalación estándar vs preinstalación</h2>
+<p><strong>Criterio relacionado:</strong> CE 3.2 (diferencia entre instalación estándar y preinstalación o imagen).</p>
+<h3 id="51-la-instalacion-estandar">5.1. La instalación estándar</h3>
+<p>Parte del medio original del sistema operativo y avanza por los diálogos del instalador (apartado 2.2), configurando cada equipo paso a paso: idioma, particiones, usuario, red, controladores y aplicaciones. Ofrece la personalización máxima y siempre instala la versión más actualizada del medio, a cambio de un tiempo de puesta a punto de horas por equipo.</p>
+<h3 id="52-la-imagen-y-la-preinstalacion">5.2. La imagen y la preinstalación</h3>
+<p>Una <strong>imagen de software</strong> es una copia exacta y comprimida de un disco o partición de un sistema ya configurado (imagen maestra) que se <strong>vuelca</strong> sobre el equipo destino en minutos. La <strong>preinstalación OEM</strong> es el caso comercial: los equipos nuevos llegan con una imagen de fábrica y una partición de recuperación que permite restaurarlos sin medios externos. La instalación desatendida es el punto intermedio: instalación estándar automatizada con un archivo de respuestas.</p>
+<h3 id="53-comparativa">5.3. Comparativa</h3>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Instalación estándar</th>
+<th>Imagen / preinstalación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tiempo de puesta a punto</td>
+<td>Largo (horas con aplicaciones)</td>
+<td>Corto (minutos)</td>
+</tr>
+<tr>
+<td>Homogeneidad de los equipos</td>
+<td>Baja (configuración manual)</td>
+<td>Alta (equipos idénticos)</td>
+</tr>
+<tr>
+<td>Actualización del sistema</td>
+<td>Siempre la del medio</td>
+<td>Congelada: hay que regenerar la imagen</td>
+</tr>
+<tr>
+<td>Personalización</td>
+<td>Máxima</td>
+<td>La de la imagen base</td>
+</tr>
+<tr>
+<td>Mantenimiento en aulas y talleres</td>
+<td>Inasumible equipo a equipo</td>
+<td>Restauración rápida ante fallos</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conceptos técnicos asociados:</strong> imagen de disco completo frente a imagen de particiones; clonación de bloques en uso (solo lo ocupado, con compresión) frente a clonación bloque a bloque; imagen a archivo (device-image) frente a clonación directa (device-device); y generalización de la imagen maestra (identificadores, licencias, SID) con utilidades como Sysprep antes de duplicarla en muchos equipos.</p>
+<hr />
+<h2 id="6-recuperacion-del-sistema">6. Recuperación del sistema</h2>
+<p><strong>Criterio relacionado:</strong> CE 3.6 (restauración de imágenes desde distintas ubicaciones).</p>
+<h3 id="61-vias-de-recuperacion">6.1. Vías de recuperación</h3>
+<ul>
+<li><strong>Restauración de una imagen propia:</strong> se vuelve a volcar la última imagen buena sobre el disco (apartado 8). Es la vía profesional en talleres y aulas.</li>
+<li><strong>Herramientas propias de Windows (WinRE):</strong> el entorno de recuperación se abre desde el arranque avanzado y ofrece reparación de inicio, restaurar desde una imagen de sistema, desinstalar actualizaciones y "Restablecer este equipo" (reinstala Windows conservando o borrando los archivos personales).</li>
+<li><strong>Partición de recuperación OEM:</strong> la imagen de fábrica del fabricante, invocada con la tecla de recuperación del equipo al arrancar (F11 o similar según marca).</li>
+<li><strong>Puntos de restauración:</strong> devuelven la configuración del sistema a un estado anterior (útiles tras un controlador o actualización problemáticos, no ante fallos de disco).</li>
+</ul>
+<h3 id="62-restauracion-desde-distintas-ubicaciones">6.2. Restauración desde distintas ubicaciones</h3>
+<p>El criterio exige saber restaurar la misma imagen desde ubicaciones distintas:</p>
+<ul>
+<li><strong>Repositorio local:</strong> USB externo o segundo disco conectado al equipo (Clonezilla: <code>local_dev</code>).</li>
+<li><strong>Repositorio en red:</strong> servidor SSH, recurso compartido Samba o NFS; hay que aportar dirección, ruta y credenciales. Es la base del despliegue de aulas.</li>
+<li><strong>NAS o almacenamiento centralizado del centro:</strong> repositorio compartido para todo el taller.</li>
+</ul>
+<h3 id="63-precauciones-y-verificacion-posterior">6.3. Precauciones y verificación posterior</h3>
+<ul>
+<li>La restauración <strong>sobrescribe por completo el disco destino</strong>: verificación cruzada del disco (número, nombre y tamaño) antes de confirmar; Clonezilla pide doble confirmación.</li>
+<li>Tras restaurar: comprobar el arranque, revisar controladores si el hardware destino difiere del origen, y verificar activación de licencias.</li>
+<li>Comprobar la tabla de particiones y los datos restaurados (los archivos de prueba deben estar exactamente donde estaban).</li>
+</ul>
+<hr />
+<h2 id="7-soportes-de-memoria-auxiliar">7. Soportes de memoria auxiliar</h2>
+<p><strong>Criterio relacionado:</strong> CE 3.1 (soportes adecuados para almacenar y restaurar imágenes).</p>
+<p>La imagen se guarda en un soporte distinto del disco que se copia: de ahí el nombre de <strong>memoria auxiliar</strong>. En esta unidad juegan dos papeles distintos: <strong>medio de arranque</strong> de la utilidad (el USB con Clonezilla o GParted) y <strong>repositorio</strong> donde se guarda la imagen.</p>
+<h3 id="71-disco-duro-externo">7.1. Disco duro externo</h3>
+<ul>
+<li><strong>Tipo:</strong> soporte magnético de gran capacidad (del orden de terabytes) y buen precio por GB.</li>
+<li><strong>Papel:</strong> repositorio habitual de las imágenes de un taller: admite varias imágenes completas, con conexiones rápidas (USB 3.x) y suficiente velocidad para crear y restaurar en tiempos razonables.</li>
+<li><strong>Criterios de uso:</strong> formateado en NTFS o exFAT (no en FAT32, por el límite de 4 GiB por archivo); conservar más de una copia de las imágenes críticas porque el propio soporte puede fallar.</li>
+</ul>
+<h3 id="72-usb-memorias-flash-y-ssd-externos">7.2. USB (memorias flash y SSD externos)</h3>
+<ul>
+<li><strong>Tipo:</strong> soporte electrónico de estado sólido, sin partes móviles: resistentes a golpes, rápidos en lectura y de capacidad media.</li>
+<li><strong>Papel doble:</strong></li>
+<li><strong>Medio de arranque</strong> de las utilidades (GParted Live, Clonezilla Live): bastan 2-8 GB.</li>
+<li><strong>Repositorio de imágenes</strong> puntual o de campo: cómodo para llevar la imagen de un cliente al equipo que se repara.</li>
+<li><strong>Limitaciones:</strong> capacidad más reducida y coste por GB superior al disco externo; los USB de baja calidad o muy usados pueden degradarse. La velocidad del puerto (USB 2.0 frente a 3.x) marca el tiempo de creación y restauración.</li>
+</ul>
+<h3 id="73-almacenamiento-en-la-nube">7.3. Almacenamiento en la nube</h3>
+<ul>
+<li><strong>Tipo:</strong> soporte en red bajo demanda: capacidad elástica, sin hardware propio que administrar.</li>
+<li><strong>Papel:</strong> copia de seguridad de imágenes <strong>fuera del centro</strong> (protección ante robo, incendio o fallo del repositorio local) y acceso desde cualquier punto con conexión.</li>
+<li><strong>Limitaciones:</strong> depende de la conexión (crear o restaurar una imagen de decenas de GB por red doméstica es lento), coste recurrente por suscripción, y consideraciones de privacidad y protección de datos: las imágenes contienen sistemas completos con datos personales.</li>
+</ul>
+<h3 id="74-otros-soportes-de-referencia">7.4. Otros soportes de referencia</h3>
+<ul>
+<li><strong>Ópticos (CD/DVD/BD):</strong> capacidad limitada (0,7 a 25 GB), lentos y sensibles a rayaduras; cada vez más residuales, aunque los discos de rescate antiguos siguen apareciendo en talleres.</li>
+<li><strong>NAS y servidor del centro:</strong> almacenamiento en red compartido; el repositorio natural de las imágenes de un aula completa, accesible desde Clonezilla por Samba, SSH o NFS.</li>
+</ul>
+<h3 id="75-criterios-de-seleccion-del-soporte">7.5. Criterios de selección del soporte</h3>
+<ol>
+<li><strong>Capacidad:</strong> debe caber la imagen completa (la imagen comprimida suele ocupar bastante menos que el disco origen, pero conviene estimar antes).</li>
+<li><strong>Sistema de archivos:</strong> FAT32 no admite archivos de más de 4 GiB; el repositorio debe formatearse en NTFS o exFAT.</li>
+<li><strong>Velocidad:</strong> condiciona el tiempo de creación y restauración (un USB 2.0 puede multiplicar por diez la espera).</li>
+<li><strong>Fiabilidad y durabilidad:</strong> el repositorio debe conservar la imagen durante meses.</li>
+<li><strong>Coste por GB y portabilidad:</strong> según el escenario (taller, aula, campo).</li>
+</ol>
+<hr />
+<h2 id="8-creacion-de-imagenes">8. Creación de imágenes</h2>
+<p><strong>Criterios relacionados:</strong> CE 3.5 (utilidades y soportes para realizar imágenes), CE 3.6 (restauración).</p>
+<h3 id="81-panorama-de-herramientas">8.1. Panorama de herramientas</h3>
+<ul>
+<li><strong><a href="https://clonezilla.org/clonezilla-live-doc.php">Clonezilla Live</a>:</strong> utilidad libre de referencia; arranca desde USB, crea y restaura imágenes en repositorios locales o de red (SSH, Samba, NFS) y copia solo los bloques en uso con compresión.</li>
+<li><strong>Utilidades de Windows:</strong> copia de seguridad de imagen del sistema, unidad de recuperación y "Restablecer este equipo" (WinRE).</li>
+<li><strong>Soluciones comerciales:</strong> Macrium Reflect, Acronis True Image / Cyber Protect: interfaz cómoda, programación y soporte del fabricante.</li>
+<li><strong>Herramientas de bajo nivel:</strong> dd (copia bit a bit, incluido el espacio vacío) y partclone/partimage (solo bloques en uso): los motores internos que emplean las utilidades anteriores.</li>
+</ul>
+<h3 id="82-clonezilla-modos-y-operaciones">8.2. Clonezilla: modos y operaciones</h3>
+<ul>
+<li><strong>Modo device-image:</strong> guarda el disco en un archivo dentro de un repositorio. Operaciones: <strong>savedisk</strong> (imagen del disco completo), <strong>saveparts</strong> (imagen de particiones concretas), <strong>restoredisk</strong> (volver a volcar la imagen de un disco) y <strong>restoreparts</strong> (restaurar solo algunas particiones).</li>
+<li><strong>Modo device-device:</strong> clonación directa de un disco a otro, sin imagen intermedia; para duplicar o migrar discos.</li>
+<li>El <strong>modo principiante</strong> oculta las opciones avanzadas y es suficiente para el trabajo habitual; la imagen resultante es una carpeta con varias partes (de 4 GB máximo cada una, por el límite de FAT32), un registro y sumas de comprobación.</li>
+</ul>
+<h3 id="83-flujo-de-creacion-savedisk">8.3. Flujo de creación (savedisk)</h3>
+<ol>
+<li><strong>Arrancar</strong> desde el USB de Clonezilla (secuencia de arranque de la UD 2).</li>
+<li><strong>Elegir el repositorio</strong> de destino: disco local (local_dev), SSH, Samba o NFS.</li>
+<li><strong>Elegir origen y nombre:</strong> savedisk o saveparts, con un nombre normalizado (equipo, fecha y versión, p. ej. <code>AULA21-PC07_2026-11-13_v2</code>).</li>
+<li><strong>Ejecutar y verificar:</strong> compresión por defecto y comprobación final de la imagen.</li>
+</ol>
+<h3 id="84-flujo-de-restauracion-restoredisk">8.4. Flujo de restauración (restoredisk)</h3>
+<ol>
+<li><strong>Arrancar</strong> el USB de Clonezilla y elegir el <strong>repositorio</strong> donde reside la imagen (el mismo tipo donde se guardó).</li>
+<li><strong>Seleccionar la imagen</strong> de la lista del repositorio.</li>
+<li><strong>Seleccionar el disco destino</strong> con verificación cruzada: el disco destino se sobrescribe por completo.</li>
+<li><strong>Confirmar dos veces</strong> y dejar que Clonezilla vuelque la imagen.</li>
+<li><strong>Verificar después:</strong> arranque, tabla de particiones, datos, controladores y activación si cambió el hardware.</li>
+</ol>
+<h3 id="85-buenas-practicas-del-tecnico">8.5. Buenas prácticas del técnico</h3>
+<ul>
+<li><strong>Nombrar y documentar cada imagen</strong> (equipo, fecha, contenido): una imagen sin nombre es una imagen perdida.</li>
+<li><strong>Verificar la integridad</strong> tras crearla: una imagen corrupta solo se descubre al restaurarla, cuando ya es tarde.</li>
+<li><strong>Conservar más de una copia</strong> en soportes distintos: el repositorio también puede fallar.</li>
+<li><strong>Caso de uso del aula:</strong> una imagen maestra generalizada (Sysprep) restaurada en todos los equipos deja el aula idéntica y lista para examinar; la restauración desde el NAS del centro evita llevar el repositorio equipo a equipo.</li>
+</ul>
+<hr />
+<h2 id="fuentes-principales">Fuentes principales</h2>
+<ul>
+<li><a href="https://boe.es/eli/es/rd/2009/10/30/1629/">Real Decreto 1629/2009, currículo del título de Técnico Superior en ASIR</a></li>
+<li><a href="https://clonezilla.org/clonezilla-live-doc.php">Clonezilla Live Doc — documentación oficial</a></li>
+<li><a href="https://gparted.org/display-doc.php?name=help-manual">GParted — manual oficial</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/hardware/manufacture/desktop/windows-and-gpt-faq?view=windows-10">Microsoft Learn — Windows and GPT FAQ</a></li>
+<li><a href="https://support.microsoft.com/es-es/windows/security/devicesecurity/windows-11-and-secure-boot">Microsoft — Windows 11 y el arranque seguro</a></li>
+<li><a href="https://learn.microsoft.com/es-es/windows/deployment/mbr-to-gpt">Microsoft Learn — MBR2GPT</a></li>
+<li><a href="https://www.hp.com/es-es/shop/tech-insights/bios-uefi">HP — BIOS y UEFI</a></li>
+<li><a href="https://dl.dell.com/manuals/common/dellemc-boot-mode-bios-uefi.pdf">Dell — Boot Mode Considerations (BIOS vs UEFI)</a></li>
+<li><a href="https://www.dell.com/support/kbdoc/es-co/000124349/descripci%C3%B3n-del-sonido-sonido-on-a-dell-desktop-pc">Dell — códigos de sonido de equipos de escritorio</a></li>
+<li><a href="https://docs.redhat.com/es/documentation/red_hat_enterprise_linux_8/html/system_design_guide/ref_comparison-of-partition-table-types_assembly_creating-a-partition-table-on-a-disk">Red Hat — tipos de tabla de particiones</a></li>
+<li><a href="https://rufus.ie/es/">Rufus</a>, <a href="https://www.ventoy.net/">Ventoy</a>, <a href="https://crystalmark.info/en/software/crystaldiskinfo/">CrystalDiskInfo</a>, <a href="https://www.hwinfo.com/download/">HWiNFO</a>, <a href="https://www.memtest86.com/">MemTest86</a></li>
+<li>Moreno Pérez, J. C.: <em>Fundamentos de hardware</em> (Síntesis) · Oliva, J. R.: <em>Montaje y mantenimiento de equipos</em> (Paraninfo) · Jiménez, M. y Trani, F. J.: <em>Fundamentos del hardware</em> (Garceta)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Licencia CC BY-NC-SA 4.0, Lorenzo LV 2025 - 2026
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/ProfeAzarquiel" target="_blank" rel="noopener" title="ProfeAzarquiel on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["header.autohide", "navigation.path", "navigation.top", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
